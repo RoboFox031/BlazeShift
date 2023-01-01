@@ -1,6 +1,10 @@
 extends Node2D
 
 var track = globalVars.track
+signal _startRace
+signal _startRaceTimer
+var trackName = track.instantiate().name
+var timer = 'on'
 
 @onready var players := {
 	"1": {
@@ -28,3 +32,13 @@ func _ready():
 		remote_transform.remote_path = node.camera.get_path()
 		node.player.add_child(remote_transform)
 	pass # Replace with function body.
+	
+func _physics_process(delta):
+	if globalVars.canMove == true:
+		pTwoTimer.text = str(snapped((float(pTwoTimer.text) + delta),.001))
+	if globalVars.canMove == true:
+		pOneTimer.text = str(snapped((float(pOneTimer.text) + delta),.001))
+func _on_pause_screen_p_pause():
+	globalVars.canMove = false
+func _on_pause_screen_p_resume() -> void:
+	globalVars.canMove = true

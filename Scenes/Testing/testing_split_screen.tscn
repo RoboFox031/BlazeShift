@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://nfl1mxr08c1x"]
+
+[ext_resource type="PackedScene" uid="uid://dfu3xceea3ijv" path="res://Scenes/Testing/screen_player_1.tscn" id="1_2yhu2"]
+[ext_resource type="PackedScene" uid="uid://dhp7lhyktygkm" path="res://Scenes/Testing/screen_player_2.tscn" id="2_f4w8g"]
+
+[node name="Testing SplitScreen" type="Node2D"]
+
+[node name="ScreenPlayer1" parent="." instance=ExtResource("1_2yhu2")]
+position = Vector2(409, 566)
+
+[node name="ScreenPlayer2" parent="." instance=ExtResource("2_f4w8g")]
+position = Vector2(949, 542)
+
+[node name="Camera2D" type="Camera2D" parent="ScreenPlayer2"]

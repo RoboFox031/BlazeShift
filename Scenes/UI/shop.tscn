@@ -1,0 +1,368 @@
+[gd_scene load_steps=9 format=3 uid="uid://j4taoq0kw7b1"]
+
+[ext_resource type="Script" path="res://Scripts/UI/shop.gd" id="1_6j5yt"]
+[ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="2_qad3o"]
+[ext_resource type="Texture2D" uid="uid://bv3prfv0yhkc" path="res://Assets/Sprites/UI/whiteCircle.png" id="3_sycxl"]
+[ext_resource type="Texture2D" uid="uid://cwie6jc02kiqw" path="res://Assets/Sprites/UI/blackRing.png" id="4_wo2en"]
+[ext_resource type="Texture2D" uid="uid://bubvui6wq7y2v" path="res://Assets/Sprites/Poweups/coin.png" id="4_wvvxd"]
+[ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="5_bmb0r"]
+[ext_resource type="Texture2D" uid="uid://cdienlvw5alel" path="res://Assets/Sprites/UI/whiteArrow.png" id="7_bjm5q"]
+[ext_resource type="Texture2D" uid="uid://eod83ktvte4" path="res://Assets/Sprites/UI/blackOutlineArrow.png" id="8_o1agm"]
+
+[node name="shop" type="Node2D"]
+script = ExtResource("1_6j5yt")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960.5, 540.25)
+scale = Vector2(3.20167, 2.884)
+texture = ExtResource("2_qad3o")
+metadata/_edit_lock_ = true
+
+[node name="divider" type="Line2D" parent="."]
+position = Vector2(960, 0)
+points = PackedVector2Array(0, 1080, 0, 0)
+width = 20.0
+default_color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="playerOneCarDisplay" type="Sprite2D" parent="."]
+
+[node name="playerOneCarDisplay2" type="Sprite2D" parent="."]
+
+[node name="pOneWhiteCircle" type="Sprite2D" parent="."]
+position = Vector2(79.5, 775)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneWhiteCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneBlackCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(185.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneBlackCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneRedCircle" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(291.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneRedCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneOrangeCircle" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.647059, 0, 1)
+position = Vector2(388.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneOrangeCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneYellowCircle" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(498.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneYellowCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneGreenCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0.592157, 0, 1)
+position = Vector2(609.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneGreenCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneBlueCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 1, 1)
+position = Vector2(715.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneBlueCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOnePurpleCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0.627451, 0.12549, 0.941176, 1)
+position = Vector2(821.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pOnePurpleCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoWhiteCircle" type="Sprite2D" parent="."]
+position = Vector2(1039.53, 775.396)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoWhiteCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoBlackCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1145.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoBlackCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoRedCircle" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(1251.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoRedCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoOrangeCircle" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.647059, 0, 1)
+position = Vector2(1348.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoOrangeCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoYellowCircle" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(1458.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoYellowCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoGreenCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0.592157, 0, 1)
+position = Vector2(1569.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoGreenCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoBlueCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 1, 1)
+position = Vector2(1675.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoBlueCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoPurpleCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0.627451, 0.12549, 0.941176, 1)
+position = Vector2(1781.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoPurpleCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneCarOne" type="ColorRect" parent="."]
+offset_left = 437.0
+offset_top = 927.0
+offset_right = 520.0
+offset_bottom = 967.0
+scale = Vector2(4, 4)
+pivot_offset = Vector2(41, 19.75)
+metadata/_edit_lock_ = true
+
+[node name="pOneCarTwo" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 437.0
+offset_top = 927.0
+offset_right = 520.0
+offset_bottom = 967.0
+scale = Vector2(4, 4)
+pivot_offset = Vector2(41, 19.75)
+metadata/_edit_lock_ = true
+
+[node name="pOneCarThree" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color(0.15073, 0.0933183, 0.999832, 1)
+offset_left = 437.0
+offset_top = 927.0
+offset_right = 520.0
+offset_bottom = 967.0
+scale = Vector2(4, 4)
+pivot_offset = Vector2(41, 19.75)
+metadata/_edit_lock_ = true
+
+[node name="pTwoCarOne" type="ColorRect" parent="."]
+offset_left = 1405.0
+offset_top = 932.25
+offset_right = 1488.0
+offset_bottom = 972.25
+scale = Vector2(4, 4)
+pivot_offset = Vector2(41, 19.75)
+metadata/_edit_lock_ = true
+
+[node name="pTwoCarTwo" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 1405.0
+offset_top = 932.25
+offset_right = 1488.0
+offset_bottom = 972.25
+scale = Vector2(4, 4)
+pivot_offset = Vector2(41, 19.75)
+metadata/_edit_lock_ = true
+
+[node name="pTwoCarThree" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color(0.14902, 0.0941176, 1, 1)
+offset_left = 1405.0
+offset_top = 932.25
+offset_right = 1488.0
+offset_bottom = 972.25
+scale = Vector2(4, 4)
+pivot_offset = Vector2(41, 19.75)
+metadata/_edit_lock_ = true
+
+[node name="pOneCoin" type="Sprite2D" parent="."]
+position = Vector2(90, 90)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_wvvxd")
+metadata/_edit_lock_ = true
+
+[node name="pOneCoinLabel" type="Label" parent="."]
+offset_left = 160.0
+offset_top = 48.0
+offset_right = 322.0
+offset_bottom = 139.0
+pivot_offset = Vector2(23, 44)
+theme_override_fonts/font = ExtResource("5_bmb0r")
+theme_override_font_sizes/font_size = 90
+text = "0"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="pTwoCoin" type="Sprite2D" parent="."]
+position = Vector2(1050, 90)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_wvvxd")
+metadata/_edit_lock_ = true
+
+[node name="pTwoCoinLabel" type="Label" parent="."]
+offset_left = 1120.0
+offset_top = 48.0
+offset_right = 1282.0
+offset_bottom = 139.0
+pivot_offset = Vector2(23, 44)
+theme_override_fonts/font = ExtResource("5_bmb0r")
+theme_override_font_sizes/font_size = 90
+text = "0"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="pOneRightArrow" type="Sprite2D" parent="."]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(783, 946)
+scale = Vector2(2, 2)
+texture = ExtResource("7_bjm5q")
+offset = Vector2(9, 28)
+
+[node name="pOneOutlineArrow" type="Sprite2D" parent="pOneRightArrow"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("8_o1agm")
+offset = Vector2(8, 28)
+
+[node name="pOneLeftArrow" type="Sprite2D" parent="."]
+modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(171, 946)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("7_bjm5q")
+offset = Vector2(9, 28)
+
+[node name="pOneOutlineArrow" type="Sprite2D" parent="pOneLeftArrow"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("8_o1agm")
+offset = Vector2(8, 28)
+
+[node name="pTwoRightArrow" type="Sprite2D" parent="."]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(1743, 946)
+scale = Vector2(2, 2)
+texture = ExtResource("7_bjm5q")
+offset = Vector2(9, 28)
+
+[node name="pOneOutlineArrow" type="Sprite2D" parent="pTwoRightArrow"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("8_o1agm")
+offset = Vector2(8, 28)
+
+[node name="pTwoLeftArrow" type="Sprite2D" parent="."]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(1158, 946)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("7_bjm5q")
+offset = Vector2(9, 28)
+
+[node name="pOneOutlineArrow" type="Sprite2D" parent="pTwoLeftArrow"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("8_o1agm")
+offset = Vector2(8, 28)

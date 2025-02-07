@@ -10,11 +10,13 @@ size = Vector2(44, 98)
 script = ExtResource("1_bubl4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 texture = ExtResource("2_6kyu6")
 region_enabled = true
 region_rect = Rect2(64, 20, 43, 98)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_v4y51")
 debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)

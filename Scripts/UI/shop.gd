@@ -42,19 +42,33 @@ var pTwoCarSelection = 0
 @onready var pTwoBlue = $pTwoBlueCircle
 @onready var pTwoPurple = $pTwoPurpleCircle
 
+@onready var pOneCarOneFinal = $pOneCarOneFinal
+@onready var pOneCarTwoFinal = $pOneCarTwoFinal
+@onready var pOneCarThreeFinal = $pOneCarThreeFinal
+
+@onready var pTwoCarOneFinal = $pTwoCarOneFinal
+@onready var pTwoCarTwoFinal = $pTwoCarTwoFinal
+@onready var pTwoCarThreeFinal = $pTwoCarThreeFinal
+
 var pOneColors: Array
 var pTwoColors: Array
 var pOneCars: Array
 var pTwoCars: Array
+var pOneCarsFinal: Array
+var pTwoCarsFinal: Array
+
+var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 
 func _ready() -> void:
 	pOneColors = [pOneWhite, pOneBlack, pOneRed, pOneOrange, pOneYellow, pOneGreen, pOneBlue, pOnePurple]
 	pTwoColors = [pTwoWhite, pTwoBlack, pTwoRed, pTwoOrange, pTwoYellow, pTwoGreen, pTwoBlue, pTwoPurple]
 	pOneCars = [pOneCarOne, pOneCarTwo, pOneCarThree]
 	pTwoCars = [pTwoCarOne, pTwoCarTwo, pTwoCarThree]
+	pOneCarsFinal = [pOneCarOneFinal, pOneCarTwoFinal, pOneCarThreeFinal]
+	pTwoCarsFinal = [pTwoCarOneFinal, pTwoCarTwoFinal, pTwoCarThreeFinal]
 	_updateCarDisplay(pOneCars[pOneCarSelection],pTwoCars[pTwoCarSelection])
 	_updateColorDisplay(pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
-
+	_updateFinalDisplay(pOneCarsFinal[pOneCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("p1_down") or Input.is_action_just_pressed("p1_up"):
 		if pOneOptionSelected == "car":
@@ -152,6 +166,8 @@ func _updateCarDisplay(pOneCar,pTwoCar):
 			c.visible = true
 		else:
 			c.visible = false
+	_updateFinalDisplay(pOneCarsFinal[pOneCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
+
 
 func _updateColorDisplay(pOneColor,pTwoColor):
 	if pOneOptionSelected == "color":
@@ -174,3 +190,20 @@ func _updateColorDisplay(pOneColor,pTwoColor):
 				c.scale.x = .088
 				c.scale.y = .088
 				c.get_child(0).visible = false
+	_updateFinalDisplay(pOneCarsFinal[pOneCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
+
+
+func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
+	for c in pOneCarsFinal:
+		if c == pOneCar:
+			c.visible = true
+			c.play(colors[pOneColorSelected])
+			print(colors[pOneColorSelected])
+		else:
+			c.visible = false
+	for c in pTwoCarsFinal:
+		if c == pTwoCar:
+			c.visible = true
+			c.play(colors[pTwoColorSelected])
+		else:
+			c.visible = false

@@ -16,6 +16,10 @@ func _ready() -> void:
 	_updateMapSelected(maps[selected])
 
 func _process(delta: float) -> void:
+	if selected == 0 and Input.is_action_just_pressed("p1_start"):
+		globalVars.track = preload("res://Scenes/Testing/testing_racetrack.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Testing/trackLoader.tscn")
+
 	if Input.is_action_just_pressed("p1_right"):
 		if selected + 1 < len(maps):
 			selected += 1

@@ -5,18 +5,18 @@ class_name Car
 #Important Car Stats:
 ########
 #The variables that change based on cars
-@export var baseAcceleration=20
-@export var baseTopSpeed=400
-#How quickly you turn
-@export var baseTurnSpeed=10
-#how sharply you turn
-@export var baseTurnPower=45
+@export var baseAcceleration=40
+@export var baseTopSpeed=800
+#controls How quickly you turn
+@export var baseTurnSpeed=3
+#controls how sharply you turn
+@export var baseTurnPower=20
 #The base deceleration value
-var baseDecel=5
+var baseDecel=8
 #Stores the speed of the car
 var currentLinSpeed:float =0
 #Stores the turning speed of the car
-var currentTurnSpeed:float =0
+var currentTurnPower:float =0
 
 ############End of Important Car Stats
 
@@ -35,13 +35,17 @@ func _physics_process(delta):
 	#Gets the input, and converts it to positive or negitive 1
 	var turnDirection = Input.get_axis("p1_left", "p1_right")
 	#If you are clicking a button, turns in that direction based on the acceleration value
-	if turnDirection:
-		currentTurnSpeed = move_toward(currentTurnSpeed, baseTurnPower*turnDirection, baseTurnSpeed)
+	#The /1000 at the end makes the number small, to prevent people from habing to deal with tiny decimals while playing with stats
+	if turnDirection and currentLinSpeed!=0:
+		currentTurnPower = move_toward(currentTurnPower, baseTurnPower*turnDirection, baseTurnSpeed)/1000
 	#If no button is being clicked, decelerates by the half of the turning speed speed
 	else:
-		currentTurnSpeed = move_toward(currentTurnSpeed, 0,baseTurnSpeed/2)
-	rotation+=currentTurnSpeed
+		currentTurnPower = 0#move_toward(currentTurnPower, 0,baseTurnSpeed/2)
 	
+	#Like a car, you can only turn while moving, and going backwards reverses your turn
+	var turnOutput= currentLinSpeed*currentTurnPower
+	rotation_degrees+=turnOutput
+	print(currentTurnPower)
 	
 	move_and_slide()
 

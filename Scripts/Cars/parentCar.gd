@@ -17,9 +17,14 @@ var baseDecel=8
 var currentLinSpeed:float =0
 #Stores the turning speed of the car
 var currentTurnPower:float =0
-
+#Outputs the true linear movement of the car
+var linOutput:float=0
+#Outputs the true turning speed of the car
+var turnOutput:float=0
 ############End of Important Car Stats
 
+#Stores what terrain the car is on
+var currentTerrain:trackEnums.terrainTypes
 
 func _physics_process(delta):
 	#Gets the input, and converts it to positive or negitive 1
@@ -43,9 +48,8 @@ func _physics_process(delta):
 		currentTurnPower = 0#move_toward(currentTurnPower, 0,baseTurnSpeed/2)
 	
 	#Like a car, you can only turn while moving, and going backwards reverses your turn
-	var turnOutput= currentLinSpeed*currentTurnPower
+	turnOutput= currentLinSpeed*currentTurnPower
 	rotation_degrees+=turnOutput
-	print(currentTurnPower)
 	
 	move_and_slide()
 

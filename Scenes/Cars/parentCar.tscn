@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwu3f2og4hln5"]
+[gd_scene load_steps=6 format=3 uid="uid://bwu3f2og4hln5"]
 
 [ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_bubl4"]
 [ext_resource type="Texture2D" uid="uid://culs8qglxkg03" path="res://Assets/Sprites/Cars/Mustang Top View.png" id="2_6kyu6"]
+[ext_resource type="Script" path="res://Scripts/Cars/terrain_detector.gd" id="3_mcchu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y51"]
 size = Vector2(44, 98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
-size = Vector2(44, 98)
+size = Vector2(8.99993, 13.9999)
 
 [node name="parentCar" type="CharacterBody2D"]
 script = ExtResource("1_bubl4")
@@ -28,11 +29,28 @@ debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="terrainDetector" type="Area2D" parent="."]
+[node name="terrainDetector" type="Node2D" parent="."]
+script = ExtResource("3_mcchu")
+
+[node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]
 collision_layer = 0
 collision_mask = 2
 
-[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector"]
-position = Vector2(0, 7.05898e-05)
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorL"]
+position = Vector2(0, -17)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_mox8c")
+
+[node name="terrainDetectorR" type="Area2D" parent="terrainDetector"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorR"]
+position = Vector2(0, 17)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_mox8c")
+
+[connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_exited"]
+[connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]

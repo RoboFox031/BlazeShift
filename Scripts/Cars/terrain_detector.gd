@@ -15,19 +15,20 @@ func _ready() -> void:
 func terrainCheck():
 	#If both detectors are on the same terrain, set the car's terrain to that terrain
 	if currentRTerrain==currentLTerrain:
-		parentCar.currentTerrain=currentRTerrain
+		parentCar.updateTerrain(currentRTerrain)
+		
 
 func _on_terrain_detector_l_area_entered(area: Area2D) -> void:
 	#Sets the currentLTerrain varible to whatever terrain it is touching
-	if area.myTerrain==trackEnums.terrainTypes.offroad:
-		currentLTerrain=trackEnums.terrainTypes.offroad
+	if area.myTerrain==trackEnums.terrainTypes.offRoad:
+		currentLTerrain=trackEnums.terrainTypes.offRoad
 	#Checks the car's overall terrain
 	terrainCheck()
 
 func _on_terrain_detector_r_area_entered(area: Area2D) -> void:
 	#Sets the currentRTerrain varible to whatever terrain it is touching
-	if area.myTerrain==trackEnums.terrainTypes.offroad:
-		currentRTerrain=trackEnums.terrainTypes.offroad
+	if area.myTerrain==trackEnums.terrainTypes.offRoad:
+		currentRTerrain=trackEnums.terrainTypes.offRoad
 	#Checks the car's overall terrain
 	terrainCheck()
 

@@ -17,13 +17,13 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+trackEnums="*res://Scripts/Tracks/trackEnums.gd"
 globalVars="*res://Scripts/globalVars.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/size/resizable=false
 window/size/borderless=true
 window/stretch/mode="viewport"
@@ -461,7 +461,12 @@ quit={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_2="terrain"
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

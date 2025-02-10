@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Blaze Shift"
-run/main_scene="res://Scenes/UI/titleScreen.tscn"
+run/main_scene="res://Scenes/UI/trackSelection.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+globalVars="*res://Scripts/globalVars.gd"
 
 [display]
 
@@ -22,6 +26,7 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/size/resizable=false
 window/size/borderless=true
+window/stretch/mode="viewport"
 
 [editor]
 

@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2niajha8ghph"]
+
+[sub_resource type="GDScript" id="GDScript_fruoy"]
+script/source = "extends Node2D
+var selectedTrack = globalVars.track
+@onready var players := {
+	\"1\": {
+	viewport = $HBoxContainer/SubViewportContainer/SubViewport, 
+	camera = $HBoxContainer/SubViewportContainer/SubViewport/camera2d, 
+	player = null
+	},
+	\"2\": {
+	viewport = $HBoxContainer/SubViewportContainer2/SubViewport, 
+	camera = $HBoxContainer/SubViewportContainer2/SubViewport/camera2d, 
+	player = null}
+}
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	if globalVars.track:
+		var track = selectedTrack.instantiate()
+		players['1'].viewport.add_child(track)
+		players['2'].viewport.world_2d = players['1'].viewport.world_2d
+		players['1'].player = $HBoxContainer/SubViewportContainer/SubViewport/RaceTrackTesting/ScreenPlayer1
+		players['2'].player = $HBoxContainer/SubViewportContainer/SubViewport/RaceTrackTesting/ScreenPlayer2
+		for node in players.values():
+			var remote_transform := RemoteTransform2D.new()
+			remote_transform.remote_path = node.camera.get_path()
+			print(node)
+			node.player.add_child(remote_transform)
+		pass # Replace with function body.
+"
+
+[sub_resource type="GDScript" id="GDScript_wxep4"]
+script/source = "extends HBoxContainer
+"
+
+[node name="trackLoader2" type="Node2D"]
+script = SubResource("GDScript_fruoy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+alignment = 1
+script = SubResource("GDScript_wxep4")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(954, 1080)
+render_target_update_mode = 4
+
+[node name="camera2d" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport"]
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer2"]
+handle_input_locally = false
+size = Vector2i(954, 1080)
+render_target_update_mode = 4
+
+[node name="camera2d" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport"]
+
+[node name="colorRect" type="ColorRect" parent="."]
+offset_left = 955.0
+offset_right = 965.0
+offset_bottom = 1080.0

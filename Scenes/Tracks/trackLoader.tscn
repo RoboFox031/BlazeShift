@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://cumywcavpuxlb"]
+
+[ext_resource type="Script" path="res://Scripts/Tracks/trackLoader.gd" id="1_txhea"]
+
+[node name="trackLoader" type="Node2D"]
+script = ExtResource("1_txhea")
+
+[node name="hSplitContainer" type="HSplitContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="subViewportContainer" type="SubViewportContainer" parent="hSplitContainer"]
+layout_mode = 2
+
+[node name="subViewport" type="SubViewport" parent="hSplitContainer/subViewportContainer"]
+handle_input_locally = false
+size = Vector2i(954, 1080)
+render_target_update_mode = 4
+
+[node name="camera2d" type="Camera2D" parent="hSplitContainer/subViewportContainer/subViewport"]
+
+[node name="subViewportContainer2" type="SubViewportContainer" parent="hSplitContainer"]
+layout_mode = 2
+
+[node name="subViewport" type="SubViewport" parent="hSplitContainer/subViewportContainer2"]
+handle_input_locally = false
+size = Vector2i(954, 1080)
+render_target_update_mode = 4
+
+[node name="camera2d" type="Camera2D" parent="hSplitContainer/subViewportContainer2/subViewport"]

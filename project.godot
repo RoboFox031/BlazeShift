@@ -11,19 +11,22 @@ config_version=5
 [application]
 
 config/name="Blaze Shift"
-run/main_scene="res://Scenes/Testing/testDriveEnviornment.tscn"
+run/main_scene="res://Scenes/UI/trackSelection.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 trackEnums="*res://Scripts/Tracks/trackEnums.gd"
+globalVars="*res://Scripts/globalVars.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/resizable=false
+window/size/borderless=true
+window/stretch/mode="viewport"
 
 [editor]
 

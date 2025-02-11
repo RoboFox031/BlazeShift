@@ -26,9 +26,9 @@ var turnOutput:float=0
 @export var offRoadTurnMult=.8 ##Controls how offroading affects turning
 @export var offRoadDecelMult=2 ##Controls how offroading affects decleration
 #controls how the car reacts to ice
-@export var iceLinMult=0 ##Controls how offroading affects speed and acceleration
-@export var iceTurnMult=0 ##Controls how offroading affects turning
-@export var iceDecelMult=0 ##Controls how offroading affects decleration
+@export var iceLinMult=0.1 ##Controls how offroading affects speed and acceleration
+@export var iceTurnMult=0.1 ##Controls how offroading affects turning
+@export var iceDecelMult=0.1 ##Controls how offroading affects decleration
 ############End of Important Car Stats
 
 #Stores what terrain the car is on

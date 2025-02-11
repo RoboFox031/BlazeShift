@@ -28,3 +28,8 @@ size = Vector2i(954, 1080)
 render_target_update_mode = 4
 
 [node name="camera2d" type="Camera2D" parent="hSplitContainer/subViewportContainer2/subViewport"]
+
+[node name="colorRect" type="ColorRect" parent="."]
+offset_left = 954.0
+offset_right = 966.0
+offset_bottom = 1080.0

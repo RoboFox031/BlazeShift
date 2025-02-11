@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch2msowp58goa"
-path="res://.godot/imported/NSX Top View-1.png.png-3dce9b365a3740fb7d152f56ab1d3d92.ctex"
+uid="uid://c67td8osonx1b"
+path="res://.godot/imported/NSX Top View Blue-1.png.png-8de3f5a5bf9704ded797f5e0b9e699ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/NSX Top View/NSX Top View-1.png.png"
-dest_files=["res://.godot/imported/NSX Top View-1.png.png-3dce9b365a3740fb7d152f56ab1d3d92.ctex"]
+source_file="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Blue-1.png.png"
+dest_files=["res://.godot/imported/NSX Top View Blue-1.png.png-8de3f5a5bf9704ded797f5e0b9e699ac.ctex"]
 
 [params]
 

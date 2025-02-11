@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bubvui6wq7y2v" path="res://Assets/Sprites/Poweups/coin.png" id="4_wvvxd"]
 [ext_resource type="Texture2D" uid="uid://car7cfgit2wej" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View-1.png (1).png" id="5_42t1h"]
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="5_bmb0r"]
-[ext_resource type="Texture2D" uid="uid://duf88jw4jjdxy" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View-1.png.png" id="6_d54r6"]
+[ext_resource type="Texture2D" uid="uid://ch2msowp58goa" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View-1.png.png" id="6_d54r6"]
 [ext_resource type="Texture2D" uid="uid://cdienlvw5alel" path="res://Assets/Sprites/UI/whiteArrow.png" id="7_bjm5q"]
 [ext_resource type="Texture2D" uid="uid://c224p2kh502n0" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View-1.png.png" id="7_dyvlg"]
 [ext_resource type="Texture2D" uid="uid://eod83ktvte4" path="res://Assets/Sprites/UI/blackOutlineArrow.png" id="8_o1agm"]

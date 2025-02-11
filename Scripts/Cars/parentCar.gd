@@ -25,6 +25,10 @@ var turnOutput:float=0
 @export var offRoadLinMult=.6 ##Controls how offroading affects speed and acceleration
 @export var offRoadTurnMult=.8 ##Controls how offroading affects turning
 @export var offRoadDecelMult=2 ##Controls how offroading affects decleration
+#controls how the car reacts to ice
+@export var iceLinMult=0 ##Controls how offroading affects speed and acceleration
+@export var iceTurnMult=0 ##Controls how offroading affects turning
+@export var iceDecelMult=0 ##Controls how offroading affects decleration
 ############End of Important Car Stats
 
 #Stores what terrain the car is on
@@ -42,7 +46,7 @@ func _physics_process(delta):
 		currentLinSpeed = move_toward(currentLinSpeed, baseTopSpeed*linDirection*terrainLinMult, baseAcceleration*terrainLinMult)
 	#If no button is being clicked, decelerates by the deceleration speed
 	else:
-		currentLinSpeed = move_toward(currentLinSpeed, 0, baseDecel*offRoadDecelMult)
+		currentLinSpeed = move_toward(currentLinSpeed, 0, baseDecel*terrainDecelMult)
 	
 	#Gets the input, and converts it to positive or negitive 1
 	var turnDirection = Input.get_axis("p1_left", "p1_right")
@@ -71,7 +75,14 @@ func updateTerrain(newTerrain:trackEnums.terrainTypes):
 		if newTerrain==trackEnums.terrainTypes.track:
 			terrainLinMult=1
 			terrainTurnMult=1
+			terrainDecelMult=1
 		#If the car is going off road, set the terrain mults accordingly
 		elif newTerrain==trackEnums.terrainTypes.offRoad:
 			terrainLinMult=offRoadLinMult
 			terrainTurnMult=offRoadTurnMult
+			terrainDecelMult=offRoadDecelMult
+		#If the car is going onto ice, set the terrain mults accordingly
+		elif newTerrain==trackEnums.terrainTypes.ice:
+			terrainLinMult=iceLinMult
+			terrainTurnMult=iceTurnMult
+			terrainDecelMult=iceDecelMult

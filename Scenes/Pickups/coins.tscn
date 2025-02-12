@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://2fyf7p61isvx"]
+
+[ext_resource type="Texture2D" uid="uid://bubvui6wq7y2v" path="res://Assets/Sprites/Poweups/coin.png" id="1_0kqqy"]
+[ext_resource type="Script" path="res://Scripts/Pickups/coins.gd" id="1_ad2tf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dib6k"]
+radius = 177.071
+
+[node name="coins" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ad2tf")
+
+[node name="sprite2d" type="Sprite2D" parent="."]
+scale = Vector2(0.376667, 0.376667)
+texture = ExtResource("1_0kqqy")
+
+[node name="area2d" type="Area2D" parent="."]
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="area2d"]
+shape = SubResource("CircleShape2D_dib6k")
+
+[connection signal="body_entered" from="area2d" to="." method="_on_area_2d_body_entered"]

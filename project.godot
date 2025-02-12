@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Blaze Shift"
-run/main_scene="res://Scenes/UI/track_selection.tscn"
+run/main_scene="res://Scenes/UI/trackSelection.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d37o5pocgyfqp"
-path="res://.godot/imported/NSX Top View Green-1.png.png-1c7bf1ab53a2a0282d24639b4e132a56.ctex"
+uid="uid://culs8qglxkg03"
+path="res://.godot/imported/Mustang Top View.png-9cce714ee7f81762574d1fb151a6092e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Green-1.png.png"
-dest_files=["res://.godot/imported/NSX Top View Green-1.png.png-1c7bf1ab53a2a0282d24639b4e132a56.ctex"]
+source_file="res://Assets/Sprites/Cars/Mustang Top View.png"
+dest_files=["res://.godot/imported/Mustang Top View.png-9cce714ee7f81762574d1fb151a6092e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d37o5pocgyfqp"
-path="res://.godot/imported/NSX Top View Green-1.png.png-1c7bf1ab53a2a0282d24639b4e132a56.ctex"
+uid="uid://dinjuixewbhxo"
+path="res://.godot/imported/checkboard pattern.png-bab5e7008655c522e7b4fb2b10d0693f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Green-1.png.png"
-dest_files=["res://.godot/imported/NSX Top View Green-1.png.png-1c7bf1ab53a2a0282d24639b4e132a56.ctex"]
+source_file="res://Assets/Sprites/Tracks/checkboard pattern.png"
+dest_files=["res://.godot/imported/checkboard pattern.png-bab5e7008655c522e7b4fb2b10d0693f.ctex"]
 
 [params]
 

@@ -2,6 +2,8 @@ extends Node2D
 
 var parentCar:Car
 
+signal updateTerrain(newTerrain)
+
 #enum for the diffrent types of terrain
 #Stores what type of terrain each is touching
 var currentLTerrain:trackEnums.terrainTypes
@@ -14,7 +16,7 @@ func _ready() -> void:
 func matchCheck():
 	#If both detectors are on the same terrain, set the car's terrain to that terrain
 	if currentRTerrain==currentLTerrain:
-		parentCar.updateTerrain(currentRTerrain)
+		updateTerrain.emit(currentRTerrain)
 
 func terrainCheck(area,newTerrain):
 	#Sets the new terrain variable to whatever the terrain of the area is

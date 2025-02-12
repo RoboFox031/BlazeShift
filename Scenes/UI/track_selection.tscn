@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://di3oneskue81h"]
+[gd_scene load_steps=4 format=3 uid="uid://bardfnrn6grwc"]
 
 [ext_resource type="Script" path="res://Scripts/UI/trackSelection.gd" id="1_orx78"]
 [ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="2_cmn5v"]

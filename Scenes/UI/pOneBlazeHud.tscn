@@ -7,7 +7,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh6hi"]
 bg_color = Color(0.764706, 0.384314, 0.0156863, 1)
 
-[node name="blazeHUD" type="Node2D"]
+[node name="pOneBlazeHud" type="Node2D"]
 script = ExtResource("1_blu8n")
 
 [node name="label" type="Label" parent="."]

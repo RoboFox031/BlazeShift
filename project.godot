@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Blaze Shift"
-run/main_scene="res://Scenes/UI/shop.tscn"
+run/main_scene="res://Scenes/UI/track_selection.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 globalVars="*res://Scripts/globalVars.gd"
+trackEnums="*res://Scripts/Tracks/trackEnums.gd"
 
 [display]
 
@@ -461,7 +462,12 @@ quit={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_2="terrain"
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

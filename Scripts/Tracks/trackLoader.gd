@@ -18,6 +18,8 @@ func _ready():
 	var track = testTrack.instantiate()
 	players['1'].viewport.add_child(track)
 	players['2'].viewport.world_2d = players['1'].viewport.world_2d
+	players['1'].player = $hSplitContainer/subViewportContainer/subViewport/RaceTrackTesting/ScreenPlayer1
+	players['2'].player = $hSplitContainer/subViewportContainer/subViewport/RaceTrackTesting/ScreenPlayer2
 	for node in players.values():
 		var remote_transform := RemoteTransform2D.new()
 		remote_transform.remote_path = node.camera.get_path()

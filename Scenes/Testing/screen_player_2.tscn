@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhp7lhyktygkm"]
+[gd_scene load_steps=4 format=3 uid="uid://7irsxce1ulrq"]
 
 [ext_resource type="Script" path="res://Scripts/Testing/screen_player_2.gd" id="1_3jfmt"]
 [ext_resource type="Texture2D" uid="uid://b82b74x642m1m" path="res://icon.svg" id="1_hpwfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj48t"]
+size = Vector2(403.292, 802.469)
 
 [node name="ScreenPlayer2" type="CharacterBody2D"]
 scale = Vector2(0.243, 0.243)
@@ -9,3 +12,7 @@ script = ExtResource("1_3jfmt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_hpwfe")
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="."]
+position = Vector2(4.16987e-06, -2.05761)
+shape = SubResource("RectangleShape2D_vj48t")

@@ -8,11 +8,13 @@ class_name trackSelection
 @onready var mapFive = $mapFive
 
 var maps: Array
+var tracks: Array
 
 var selected = 0
 
 func _ready() -> void:
 	maps = [mapOne, mapTwo, mapThree, mapFour, mapFive]
+	tracks = [preload("res://Scenes/Testing/testing_racetrack.tscn"),preload("res://Scenes/Testing/testDriveEnviornment.tscn")]
 	_updateMapSelected(maps[selected])
 
 func _process(delta: float) -> void:

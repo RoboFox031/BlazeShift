@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cumywcavpuxlb"]
+[gd_scene load_steps=6 format=3 uid="uid://cumywcavpuxlb"]
 
 [ext_resource type="Script" path="res://Scripts/Tracks/trackLoader.gd" id="1_txhea"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/pTwoBlazeHud.tscn" id="3_2qf2f"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/pOneCoinHud.tscn" id="3_go0ff"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/pOneBlazeHud.tscn" id="3_sw20d"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/pTwoCoinHud.tscn" id="5_5lhqp"]
 
 [node name="trackLoader" type="Node2D"]
 script = ExtResource("1_txhea")
@@ -19,6 +23,14 @@ render_target_update_mode = 4
 
 [node name="camera2d" type="Camera2D" parent="hSplitContainer/subViewportContainer/subViewport"]
 
+[node name="canvasLayer" type="CanvasLayer" parent="hSplitContainer/subViewportContainer"]
+
+[node name="pOneCoinHud" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("3_go0ff")]
+position = Vector2(2, 900)
+
+[node name="pOneBlazeHud" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("3_sw20d")]
+position = Vector2(20, 1000)
+
 [node name="subViewportContainer2" type="SubViewportContainer" parent="hSplitContainer"]
 layout_mode = 2
 
@@ -28,6 +40,14 @@ size = Vector2i(954, 1080)
 render_target_update_mode = 4
 
 [node name="camera2d" type="Camera2D" parent="hSplitContainer/subViewportContainer2/subViewport"]
+
+[node name="canvasLayer" type="CanvasLayer" parent="hSplitContainer/subViewportContainer2"]
+
+[node name="pTwoBlazeHud" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("3_2qf2f")]
+position = Vector2(20, 1000)
+
+[node name="pOneCoinHud" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("5_5lhqp")]
+position = Vector2(970, 900)
 
 [node name="colorRect" type="ColorRect" parent="."]
 offset_left = 954.0

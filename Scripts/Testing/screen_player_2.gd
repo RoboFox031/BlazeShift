@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -400.0
 var playerNum = null
 
 func _ready():
-	playerNum = 2
+	pass
 
 func _physics_process(delta):
 	# Add the gravity.dsad

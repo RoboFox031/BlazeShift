@@ -6,20 +6,22 @@ const testTrack = preload("res://Scenes/Testing/testing_racetrack.tscn")
 	"1": {
 	viewport = $hSplitContainer/subViewportContainer/subViewport, 
 	camera = $hSplitContainer/subViewportContainer/subViewport/camera2d, 
-	player = $hSplitContainer/subViewportContainer/subViewport/RaceTrackTesting/ScreenPlayer1
+	player = null
 	},
 	"2": {
 	viewport = $hSplitContainer/subViewportContainer2/subViewport, 
 	camera = $hSplitContainer/subViewportContainer2/subViewport/camera2d, 
-	player = $hSplitContainer/subViewportContainer/subViewport/RaceTrackTesting/ScreenPlayer2}
+	player = null}
 }
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var track = testTrack.instantiate()
 	players['1'].viewport.add_child(track)
 	players['2'].viewport.world_2d = players['1'].viewport.world_2d
-	players['1'].player = $hSplitContainer/subViewportContainer/subViewport/RaceTrackTesting/ScreenPlayer1
-	players['2'].player = $hSplitContainer/subViewportContainer/subViewport/RaceTrackTesting/ScreenPlayer2
+	players['1'].player = $hSplitContainer/subViewportContainer/subViewport/RaceTrackTesting/player1
+	print(players['1'].player)
+	players['2'].player = $hSplitContainer/subViewportContainer/subViewport/RaceTrackTesting/player2
+	print(players['2'].player)
 	for node in players.values():
 		var remote_transform := RemoteTransform2D.new()
 		remote_transform.remote_path = node.camera.get_path()

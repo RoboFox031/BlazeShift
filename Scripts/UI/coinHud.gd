@@ -1,15 +1,15 @@
 extends UI
 class_name coinHud
 
-var coins: int = 2
+var playerId = null
 
 @onready var label = $label
 
-func _ready() -> void:
+func _process(delta: float) -> void:
 	update()
 
 func update():
-	if coins == 1:
-		label.text = str(coins) + " coin"
-	else:
-		label.text = str(coins) + " coins"
+	if playerId == 1:
+		label.text = str(globalVars.p1Coin) + " coin"
+	elif playerId == 2:
+		label.text = str(globalVars.p2Coin) + " coin"

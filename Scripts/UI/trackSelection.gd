@@ -19,8 +19,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if selected == 0 and Input.is_action_just_pressed("p1_start"):
-		globalVars.playerOneCar = preload("res://Scenes/Testing/screen_player_1.tscn")
-		globalVars.playerTwoCar = preload("res://Scenes/Testing/screen_player_2.tscn")
+		globalVars.playerOneCar = preload("res://Scenes/Cars/parentCar.tscn")
+		globalVars.playerTwoCar = preload("res://Scenes/Cars/parentCar.tscn")
 		globalVars.track = preload("res://Scenes/Testing/testing_racetrack.tscn")
 		get_tree().change_scene_to_file("res://Scenes/Tracks/trackLoader.tscn")
 	if selected == 1 and Input.is_action_just_pressed('p1_start'):

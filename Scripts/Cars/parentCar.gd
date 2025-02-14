@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Car
 
-
+var playerId = "p1"
 ########
 #Important Car Stats:
 ########
@@ -37,7 +37,7 @@ var terrainDecelMult:float=1
 
 func _physics_process(delta):
 	#Gets the input, and converts it to positive or negitive 1
-	var linDirection = Input.get_axis("p1_down", "p1_up")
+	var linDirection = Input.get_axis(playerId+"_down", playerId+"_up")
 	#If you are clicking a button, accelerates based on the acceleration value
 	if linDirection:
 		currentLinSpeed = move_toward(currentLinSpeed, baseTopSpeed*linDirection*terrainLinMult, baseAcceleration*terrainLinMult)
@@ -46,7 +46,7 @@ func _physics_process(delta):
 		currentLinSpeed = move_toward(currentLinSpeed, 0, baseDecel*offRoadDecelMult)
 	
 	#Gets the input, and converts it to positive or negitive 1
-	var turnDirection = Input.get_axis("p1_left", "p1_right")
+	var turnDirection = Input.get_axis(playerId+"_left", playerId+"_right")
 	#If you are clicking a button, turns in that direction based on the acceleration value
 	#The /1000 at the end makes the number small, to prevent people from habing to deal with tiny decimals while playing with stats
 	if turnDirection and currentLinSpeed!=0:

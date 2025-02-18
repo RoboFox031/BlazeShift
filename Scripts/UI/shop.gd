@@ -58,6 +58,7 @@ var pOneCarsFinal: Array
 var pTwoCarsFinal: Array
 
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+var cars: Array = ["S13"]
 
 func _ready() -> void:
 	pOneColors = [pOneWhite, pOneBlack, pOneRed, pOneOrange, pOneYellow, pOneGreen, pOneBlue, pOnePurple]
@@ -154,6 +155,7 @@ func _process(delta: float) -> void:
 			else:
 				pTwoColorSelected = len(pTwoColors) - 1
 			_updateColorDisplay(pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
+	
 
 func _updateCarDisplay(pOneCar,pTwoCar):
 	for c in pOneCars:

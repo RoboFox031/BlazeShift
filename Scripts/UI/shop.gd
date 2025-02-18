@@ -58,7 +58,13 @@ var pOneCarsFinal: Array
 var pTwoCarsFinal: Array
 
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-var cars: Array = ["S13"]
+var cars: Array = ["LemkeCar","NSX","S13"]
+@onready var cars := {
+	"LemkeCar": {
+	carScene = $hSplitContainer/subViewportContainer/subViewport, 
+	colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	}
+}
 
 func _ready() -> void:
 	pOneColors = [pOneWhite, pOneBlack, pOneRed, pOneOrange, pOneYellow, pOneGreen, pOneBlue, pOnePurple]

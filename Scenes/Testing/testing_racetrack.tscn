@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp3aibcv01wc3"]
 
 [ext_resource type="PackedScene" uid="uid://dfu3xceea3ijv" path="res://Scenes/Testing/screen_player_1.tscn" id="1_8rmcp"]
-[ext_resource type="PackedScene" uid="uid://7irsxce1ulrq" path="res://Scenes/Testing/screen_player_2.tscn" id="2_7anu0"]
+[ext_resource type="PackedScene" uid="uid://dhp7lhyktygkm" path="res://Scenes/Testing/screen_player_2.tscn" id="2_7anu0"]
 [ext_resource type="PackedScene" uid="uid://8hdiadh8bmvx" path="res://Scenes/Pickups/blaze.tscn" id="3_g56i0"]
 
 [node name="RaceTrackTesting" type="Node2D"]

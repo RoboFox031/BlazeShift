@@ -1,0 +1,665 @@
+[gd_scene load_steps=32 format=3 uid="uid://j4taoq0kw7b1"]
+
+[ext_resource type="Script" path="res://Scripts/UI/shop.gd" id="1_6j5yt"]
+[ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="2_qad3o"]
+[ext_resource type="Texture2D" uid="uid://bv3prfv0yhkc" path="res://Assets/Sprites/UI/whiteCircle.png" id="3_sycxl"]
+[ext_resource type="Texture2D" uid="uid://cwie6jc02kiqw" path="res://Assets/Sprites/UI/blackRing.png" id="4_wo2en"]
+[ext_resource type="Texture2D" uid="uid://bubvui6wq7y2v" path="res://Assets/Sprites/Poweups/coin.png" id="4_wvvxd"]
+[ext_resource type="Texture2D" uid="uid://car7cfgit2wej" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View-1.png (1).png" id="5_42t1h"]
+[ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="5_bmb0r"]
+[ext_resource type="Texture2D" uid="uid://cvash2gud7v0y" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View-1.png.png" id="6_d54r6"]
+[ext_resource type="Texture2D" uid="uid://cdienlvw5alel" path="res://Assets/Sprites/UI/whiteArrow.png" id="7_bjm5q"]
+[ext_resource type="Texture2D" uid="uid://c224p2kh502n0" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View-1.png.png" id="7_dyvlg"]
+[ext_resource type="Texture2D" uid="uid://eod83ktvte4" path="res://Assets/Sprites/UI/blackOutlineArrow.png" id="8_o1agm"]
+[ext_resource type="Texture2D" uid="uid://d2hbjs68q0ugx" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Black-1.png.png" id="12_x1g26"]
+[ext_resource type="Texture2D" uid="uid://fpo273tufiul" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Blue-1.png.png" id="13_xctc8"]
+[ext_resource type="Texture2D" uid="uid://buwolsp750jos" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Green-1.png.png" id="14_txmes"]
+[ext_resource type="Texture2D" uid="uid://de205hu8i7omk" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Orange-1.png.png" id="15_mk7hm"]
+[ext_resource type="Texture2D" uid="uid://cc5owaxv7q7do" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Purple-1.png.png" id="16_0dwu0"]
+[ext_resource type="Texture2D" uid="uid://bo4u4cxkwef4t" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Red-1.png.png" id="17_rqlhg"]
+[ext_resource type="Texture2D" uid="uid://bstvmj4gb6qmf" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Yellow-1.png.png" id="18_a360l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feg0u"]
+atlas = ExtResource("5_42t1h")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14jb5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feg0u")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tw6vb"]
+atlas = ExtResource("6_d54r6")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kme1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tw6vb")
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxe8m"]
+atlas = ExtResource("12_x1g26")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkwit"]
+atlas = ExtResource("13_xctc8")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q62xc"]
+atlas = ExtResource("14_txmes")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha2lm"]
+atlas = ExtResource("15_mk7hm")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bl6t"]
+atlas = ExtResource("16_0dwu0")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq3e6"]
+atlas = ExtResource("17_rqlhg")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrosq"]
+atlas = ExtResource("7_dyvlg")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl0xu"]
+atlas = ExtResource("18_a360l")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58y0j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxe8m")
+}],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkwit")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q62xc")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ha2lm")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bl6t")
+}],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq3e6")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrosq")
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl0xu")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[node name="shop" type="Node2D"]
+script = ExtResource("1_6j5yt")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960.5, 540.25)
+scale = Vector2(3.20167, 2.884)
+texture = ExtResource("2_qad3o")
+metadata/_edit_lock_ = true
+
+[node name="divider" type="Line2D" parent="."]
+position = Vector2(960, 0)
+points = PackedVector2Array(0, 1080, 0, 0)
+width = 20.0
+default_color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="playerOneCarDisplay" type="Sprite2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="playerOneCarDisplay2" type="Sprite2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="pOneWhiteCircle" type="Sprite2D" parent="."]
+position = Vector2(79.5, 775)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneWhiteCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneBlackCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(185.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneBlackCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneRedCircle" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(291.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneRedCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneOrangeCircle" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.647059, 0, 1)
+position = Vector2(388.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneOrangeCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneYellowCircle" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(498.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneYellowCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneGreenCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0.592157, 0, 1)
+position = Vector2(609.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneGreenCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneBlueCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 1, 1)
+position = Vector2(715.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pOneBlueCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOnePurpleCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0.627451, 0.12549, 0.941176, 1)
+position = Vector2(821.5, 775)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pOnePurpleCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoWhiteCircle" type="Sprite2D" parent="."]
+position = Vector2(1039.53, 775.396)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoWhiteCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoBlackCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1145.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoBlackCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoRedCircle" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(1251.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoRedCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoOrangeCircle" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.647059, 0, 1)
+position = Vector2(1348.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoOrangeCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoYellowCircle" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(1458.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoYellowCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoGreenCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0.592157, 0, 1)
+position = Vector2(1569.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoGreenCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoBlueCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 1, 1)
+position = Vector2(1675.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoBlueCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pTwoPurpleCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0.627451, 0.12549, 0.941176, 1)
+position = Vector2(1781.53, 775.396)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_sycxl")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pTwoPurpleCircle"]
+visible = false
+position = Vector2(5.68121, -0.00146484)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_wo2en")
+
+[node name="pOneCarOne" type="Sprite2D" parent="."]
+position = Vector2(404, 972)
+rotation = 1.5708
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_42t1h")
+
+[node name="pOneCarTwo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(453, 977)
+rotation = 3.14159
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_d54r6")
+
+[node name="pOneCarThree" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(465, 924)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("7_dyvlg")
+
+[node name="pTwoCarOne" type="Sprite2D" parent="."]
+position = Vector2(1392, 971)
+rotation = 1.5708
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_42t1h")
+
+[node name="pTwoCarTwo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1443, 977)
+rotation = 3.14159
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_d54r6")
+
+[node name="pTwoCarThree" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1455, 924)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("7_dyvlg")
+
+[node name="pOneCoin" type="Sprite2D" parent="."]
+position = Vector2(90, 90)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_wvvxd")
+metadata/_edit_lock_ = true
+
+[node name="pOneCoinLabel" type="Label" parent="."]
+offset_left = 160.0
+offset_top = 48.0
+offset_right = 322.0
+offset_bottom = 139.0
+pivot_offset = Vector2(23, 44)
+theme_override_fonts/font = ExtResource("5_bmb0r")
+theme_override_font_sizes/font_size = 90
+text = "0"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="pTwoCoin" type="Sprite2D" parent="."]
+position = Vector2(1050, 90)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_wvvxd")
+metadata/_edit_lock_ = true
+
+[node name="pTwoCoinLabel" type="Label" parent="."]
+offset_left = 1120.0
+offset_top = 48.0
+offset_right = 1282.0
+offset_bottom = 139.0
+pivot_offset = Vector2(23, 44)
+theme_override_fonts/font = ExtResource("5_bmb0r")
+theme_override_font_sizes/font_size = 90
+text = "0"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="pOneRightArrow" type="Sprite2D" parent="."]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(783, 946)
+scale = Vector2(2, 2)
+texture = ExtResource("7_bjm5q")
+offset = Vector2(9, 28)
+metadata/_edit_lock_ = true
+
+[node name="pOneOutlineArrow" type="Sprite2D" parent="pOneRightArrow"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("8_o1agm")
+offset = Vector2(8, 28)
+
+[node name="pOneLeftArrow" type="Sprite2D" parent="."]
+modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(171, 946)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("7_bjm5q")
+offset = Vector2(9, 28)
+metadata/_edit_lock_ = true
+
+[node name="pOneOutlineArrow" type="Sprite2D" parent="pOneLeftArrow"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("8_o1agm")
+offset = Vector2(8, 28)
+
+[node name="pTwoRightArrow" type="Sprite2D" parent="."]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(1743, 946)
+scale = Vector2(2, 2)
+texture = ExtResource("7_bjm5q")
+offset = Vector2(9, 28)
+metadata/_edit_lock_ = true
+
+[node name="pOneOutlineArrow" type="Sprite2D" parent="pTwoRightArrow"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("8_o1agm")
+offset = Vector2(8, 28)
+
+[node name="pTwoLeftArrow" type="Sprite2D" parent="."]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(1158, 946)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("7_bjm5q")
+offset = Vector2(9, 28)
+metadata/_edit_lock_ = true
+
+[node name="pOneOutlineArrow" type="Sprite2D" parent="pTwoLeftArrow"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("8_o1agm")
+offset = Vector2(8, 28)
+
+[node name="pOneCarOneFinal" type="AnimatedSprite2D" parent="."]
+position = Vector2(353, 589)
+rotation = 1.5708
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_14jb5")
+animation = &"green"
+
+[node name="pOneCarTwoFinal" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(434, 605)
+rotation = 3.14159
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_kme1m")
+animation = &"black"
+
+[node name="pOneCarThreeFinal" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(466, 497)
+rotation = 3.14159
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_58y0j")
+animation = &"yellow"
+
+[node name="pTwoCarOneFinal" type="AnimatedSprite2D" parent="."]
+position = Vector2(1319, 589)
+rotation = 1.5708
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_14jb5")
+animation = &"white"
+
+[node name="pTwoCarTwoFinal" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(1400, 605)
+rotation = 3.14159
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_kme1m")
+animation = &"white"
+
+[node name="pTwoCarThreeFinal" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(1432, 497)
+rotation = 3.14159
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_58y0j")
+animation = &"red"

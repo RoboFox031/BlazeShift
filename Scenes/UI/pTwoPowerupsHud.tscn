@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqo3p1lii8gdh"]
+
+[ext_resource type="Script" path="res://Scripts/UI/pTwoPowerupsHud.gd" id="1_qsfov"]
+[ext_resource type="Texture2D" uid="uid://da1xc5ggm3prx" path="res://Assets/Sprites/Poweups/blaze.png" id="2_pdehg"]
+[ext_resource type="Texture2D" uid="uid://45pmnrmfttd" path="res://Assets/Sprites/UI/blackBoxOutline.png" id="3_0ttyy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekhb1"]
+atlas = ExtResource("2_pdehg")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jdknc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekhb1")
+}],
+"loop": true,
+"name": &"blaze",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}]
+
+[node name="pTwoPowerupsHud" type="Node2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_qsfov")
+
+[node name="colorRect" type="ColorRect" parent="."]
+self_modulate = Color(0.210507, 0.210507, 0.210507, 0.505882)
+offset_left = -246.0
+offset_top = -254.0
+offset_right = 254.0
+offset_bottom = 246.0
+pivot_offset = Vector2(125, 125)
+
+[node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jdknc")
+animation = &"none"
+
+[node name="blackBoxOutline" type="Sprite2D" parent="."]
+position = Vector2(-2, -1)
+texture = ExtResource("3_0ttyy")

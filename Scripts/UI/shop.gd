@@ -58,11 +58,19 @@ var pOneCarsFinal: Array
 var pTwoCarsFinal: Array
 
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-var cars: Array = ["LemkeCar","NSX","S13"]
+
 @onready var cars := {
 	"LemkeCar": {
-	carScene = $hSplitContainer/subViewportContainer/subViewport, 
-	colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	carScene = preload("res://Scenes/Cars/lemkeCar.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"NSX": {
+	carScene = preload("res://Scenes/Cars/NSX.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"S13": {
+	carScene = preload("res://Scenes/Cars/S13.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 	}
 }
 
@@ -77,6 +85,13 @@ func _ready() -> void:
 	_updateColorDisplay(pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
 	_updateFinalDisplay(pOneCarsFinal[pOneCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
 func _process(delta: float) -> void:
+	#sets the player's car and color
+	if pOneCarSelection <=2 and pTwoCarSelection<=2:
+		globalVars.playerOneCar = cars[pOneCarSelection].carScene
+		globalVars.playerOneColor = cars[pOneCarSelection].colors[pOneColorSelected]
+		globalVars.playerTwoCar = cars[pTwoCarSelection].carScene
+		globalVars.playerTwoColor = cars[pTwoCarSelection].colors[pTwoColorSelected]
+	
 	if Input.is_action_just_pressed("p1_down") or Input.is_action_just_pressed("p1_up"):
 		if pOneOptionSelected == "car":
 			pOneOptionSelected = "color"

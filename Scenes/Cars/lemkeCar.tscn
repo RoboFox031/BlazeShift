@@ -1,8 +1,58 @@
-[gd_scene load_steps=6 format=3 uid="uid://ux7l78ueiylt"]
+[gd_scene load_steps=8 format=3 uid="uid://dq06os4ufydb4"]
 
 [ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_n68py"]
-[ext_resource type="Texture2D" uid="uid://culs8qglxkg03" path="res://Assets/Sprites/Cars/Mustang Top View.png" id="2_rh4pd"]
+[ext_resource type="Texture2D" uid="uid://car7cfgit2wej" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View-1.png (1).png" id="2_kw76k"]
 [ext_resource type="Script" path="res://Scripts/Cars/terrain_detector.gd" id="3_qrt3x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cb72v"]
+atlas = ExtResource("2_kw76k")
+region = Rect2(62, 20, 47, 98)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trdwi"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cb72v")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y51"]
 size = Vector2(44, 98)
@@ -13,11 +63,10 @@ size = Vector2(8.99993, 13.9999)
 [node name="parentCar" type="CharacterBody2D"]
 script = ExtResource("1_n68py")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
-texture = ExtResource("2_rh4pd")
-region_enabled = true
-region_rect = Rect2(64, 20, 43, 98)
+sprite_frames = SubResource("SpriteFrames_trdwi")
+animation = &"blue"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

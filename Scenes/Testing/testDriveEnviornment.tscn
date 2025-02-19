@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cshvcso4t3s4r"]
+[gd_scene load_steps=4 format=3 uid="uid://btn8h1ucesygv"]
 
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="1_5antp"]
-[ext_resource type="PackedScene" path="res://Scenes/Cars/parentCar.tscn" id="2_6flfi"]
+[ext_resource type="PackedScene" uid="uid://bwu3f2og4hln5" path="res://Scenes/Cars/parentCar.tscn" id="2_6flfi"]
 [ext_resource type="Script" path="res://Scripts/Tracks/terrain.gd" id="3_qj48c"]
 
 [node name="TestDriveEnviornment" type="Node2D"]

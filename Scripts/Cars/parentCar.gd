@@ -9,7 +9,7 @@ class_name Car
 @export var baseTopSpeed=1000 ##controls top speed
 #controls how quickly you turn
 @export var baseTurnSpeed:float=80##controls how quickly you turn
-var trueTurnSpeed:float: #Converts the turn speed to radians
+var trueBaseTurnSpeed:float: #Converts the turn speed to radians
 	get:
 		return baseTurnSpeed*PI/180
 #controls how sharply you turn
@@ -22,7 +22,7 @@ var trueTurnPower:float: #Converts the turn power to radians
 #Stores the speed of the car
 var currentLinSpeed:float =0
 #Stores the turning speed of the car
-var currentTurnPower:float =0
+var currentTurnForce:float =0
 #Outputs the true linear movement of the car
 var linOutput:float=0
 #Outputs the true turning speed of the car
@@ -30,8 +30,13 @@ var turnOutput:float=0
 ###########################
 ############End of Important Car Stats
 ###########################
+#Stores the owner of the car
 enum playerChoices{p1,p2}
 @export var currentOwner:playerChoices
+#Allows the enum to be read as a string
+var currentOwnerStr:String:
+	get:
+		return playerChoices.find_key(currentOwner)
 
 #controls how the car reacts to offroading
 @export var offRoadSpeedMult:float=.6 ##Controls how offroading affects speed and acceleration
@@ -46,7 +51,6 @@ enum playerChoices{p1,p2}
 @export var iceTurnPowerMult:float=2 ##Controls how offroading affects turning power
 @export var iceDecelMult:float=0.5 ##Controls how offroading affects decleration
 
-
 #Stores what terrain the car is on
 var currentTerrain:trackEnums.terrainTypes
 #controls how diffrent aspects react to diffrent terrains
@@ -56,9 +60,30 @@ var terrainTurnSpeedMult:float=1
 var terrainTurnPowerMult:float=1
 var terrainDecelMult:float=1
 
+#Stores the current stats of the car(are the same as the base most of the time)
+#The variables that change based on cars
+var currentAcceleration=15 ##controls acceleration
+var currentTopSpeed=1000 ##controls top speed
+#controls how quickly you turn
+var currentTurnSpeed:float=80##controls how quickly you turn
+var trueCurrentTurnSpeed:float: #Converts the turn speed to radians
+	get:
+		return currentTurnSpeed*PI/180
+#controls how sharply you turn
+var currentTurnPower:float=180 ##controls how sharply you turn
+var trueCurrentTurnPower:float: #Converts the turn power to radians
+	get:
+		return currentTurnPower*PI/180
+#The current deceleration value
+var currentDecel=8; ##The base deceleration value
+
+
+
+
+
 func _physics_process(delta):
 	#Gets the input, and converts it to positive or negitive 1
-	var linDirection = Input.get_axis("p1_down", "p1_up")
+	var linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
 	#If you are clicking a button, accelerates based on the acceleration value
 	if linDirection:
 		currentLinSpeed = move_toward(currentLinSpeed, baseTopSpeed*linDirection*terrainSpeedMult, baseAcceleration*terrainAccelMult)
@@ -67,22 +92,37 @@ func _physics_process(delta):
 		currentLinSpeed = move_toward(currentLinSpeed, 0, baseDecel*terrainDecelMult)
 	
 	#Gets the input, and converts it to positive or negitive 1
-	var turnDirection = Input.get_axis("p1_left", "p1_right")
+	var turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right")
 	#If you are clicking a button, turns in that direction based on the acceleration value
 	#The /1000 at the end makes the number small, to prevent people from habing to deal with tiny decimals while playing with stats
 	if turnDirection and currentLinSpeed!=0:
-		currentTurnPower = move_toward(currentTurnPower, trueTurnPower*turnDirection*terrainTurnPowerMult, trueTurnSpeed*terrainTurnSpeedMult)
+		currentTurnForce = move_toward(currentTurnForce, trueTurnPower*turnDirection*terrainTurnPowerMult, trueBaseTurnSpeed*terrainTurnSpeedMult)
 	#If no button is being clicked, stops turning
 	else:
-		currentTurnPower = move_toward(currentTurnPower, 0,trueTurnSpeed*terrainTurnSpeedMult)
+		currentTurnForce = move_toward(currentTurnForce, 0,trueBaseTurnSpeed*terrainTurnSpeedMult)
 	
 	#Like a car, you can only turn while moving, and going backwards reverses your turn
-	turnOutput= (currentLinSpeed/baseTopSpeed)*currentTurnPower
+	turnOutput= (currentLinSpeed/baseTopSpeed)*currentTurnForce
 	rotation_degrees+=turnOutput
 	
 	#Sets the velocity to  the speed value, using sin and cos to account for rotation
 	velocity=Vector2(currentLinSpeed*cos(rotation),currentLinSpeed*sin(rotation))
 	move_and_slide()
+
+
+
+func _input(event):
+	#Controls boost
+	if event == currentOwnerStr+"_x":
+		pass
+
+
+
+
+
+
+
+
 
 
 #Updates the terrain and terrain multipliers

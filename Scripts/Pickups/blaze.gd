@@ -8,6 +8,3 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		entered(body)
 	elif body is playerTwoCar:
 		entered(body)
-		
-func useItem():
-	print("use")

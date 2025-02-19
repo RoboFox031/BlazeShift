@@ -12,7 +12,3 @@ func entered(player):
 		globalVars.pTwoPowerup = type
 		get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
 		queue_free()
-
-
-func useItem():
-	pass

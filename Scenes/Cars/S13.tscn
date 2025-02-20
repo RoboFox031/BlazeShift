@@ -1,44 +1,44 @@
 [gd_scene load_steps=20 format=3 uid="uid://d4bm6sysia1p5"]
 
 [ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_krq1h"]
-[ext_resource type="Texture2D" uid="uid://c67td8osonx1b" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Blue-1.png.png" id="2_2uvf3"]
+[ext_resource type="Texture2D" uid="uid://fpo273tufiul" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Blue-1.png.png" id="2_ubian"]
 [ext_resource type="Script" path="res://Scripts/Cars/terrain_detector.gd" id="3_1e6gh"]
-[ext_resource type="Texture2D" uid="uid://d37o5pocgyfqp" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Green-1.png.png" id="3_u7y3f"]
-[ext_resource type="Texture2D" uid="uid://c0k2j3nokbudw" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Orange-1.png.png" id="4_1b1c5"]
-[ext_resource type="Texture2D" uid="uid://eknxxd4n0vc5" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Purple-1.png.png" id="5_ydnep"]
-[ext_resource type="Texture2D" uid="uid://cx3nog7s534jo" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Red-1.png.png" id="6_ts7ca"]
-[ext_resource type="Texture2D" uid="uid://cvash2gud7v0y" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View-1.png.png" id="7_sngv8"]
-[ext_resource type="Texture2D" uid="uid://jytp767iol7y" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Yellow-1.png.png" id="8_m31f0"]
+[ext_resource type="Texture2D" uid="uid://buwolsp750jos" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Green-1.png.png" id="3_pl4yh"]
+[ext_resource type="Texture2D" uid="uid://de205hu8i7omk" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Orange-1.png.png" id="4_t8hxk"]
+[ext_resource type="Texture2D" uid="uid://cc5owaxv7q7do" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Purple-1.png.png" id="5_8hl66"]
+[ext_resource type="Texture2D" uid="uid://bo4u4cxkwef4t" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Red-1.png.png" id="6_po7ju"]
+[ext_resource type="Texture2D" uid="uid://c224p2kh502n0" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View-1.png.png" id="7_y2ooa"]
+[ext_resource type="Texture2D" uid="uid://bstvmj4gb6qmf" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Yellow-1.png.png" id="8_4sie7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_edq04"]
-atlas = ExtResource("2_2uvf3")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_b67ue"]
+atlas = ExtResource("2_ubian")
+region = Rect2(32, 55, 123, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_djfvy"]
-atlas = ExtResource("3_u7y3f")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qujr"]
+atlas = ExtResource("3_pl4yh")
+region = Rect2(32, 55, 123, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j2sgh"]
-atlas = ExtResource("4_1b1c5")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6avnb"]
+atlas = ExtResource("4_t8hxk")
+region = Rect2(32, 55, 123, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_svva1"]
-atlas = ExtResource("5_ydnep")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1imln"]
+atlas = ExtResource("5_8hl66")
+region = Rect2(32, 55, 123, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wognd"]
-atlas = ExtResource("6_ts7ca")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohqre"]
+atlas = ExtResource("6_po7ju")
+region = Rect2(32, 55, 123, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kcbhf"]
-atlas = ExtResource("7_sngv8")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_tldna"]
+atlas = ExtResource("7_y2ooa")
+region = Rect2(32, 55, 123, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7slbu"]
-atlas = ExtResource("8_m31f0")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxx20"]
+atlas = ExtResource("8_4sie7")
+region = Rect2(32, 55, 123, 58)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_trdwi"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gy3yo"]
 animations = [{
 "frames": [],
 "loop": true,
@@ -47,7 +47,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_edq04")
+"texture": SubResource("AtlasTexture_b67ue")
 }],
 "loop": true,
 "name": &"blue",
@@ -55,7 +55,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_djfvy")
+"texture": SubResource("AtlasTexture_0qujr")
 }],
 "loop": true,
 "name": &"green",
@@ -63,7 +63,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j2sgh")
+"texture": SubResource("AtlasTexture_6avnb")
 }],
 "loop": true,
 "name": &"orange",
@@ -71,7 +71,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_svva1")
+"texture": SubResource("AtlasTexture_1imln")
 }],
 "loop": true,
 "name": &"purple",
@@ -79,7 +79,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wognd")
+"texture": SubResource("AtlasTexture_ohqre")
 }],
 "loop": true,
 "name": &"red",
@@ -87,7 +87,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kcbhf")
+"texture": SubResource("AtlasTexture_tldna")
 }],
 "loop": true,
 "name": &"white",
@@ -95,7 +95,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7slbu")
+"texture": SubResource("AtlasTexture_yxx20")
 }],
 "loop": true,
 "name": &"yellow",
@@ -108,12 +108,13 @@ size = Vector2(44, 98)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
 size = Vector2(8.99993, 13.9999)
 
-[node name="parentCar" type="CharacterBody2D"]
+[node name="S13" type="CharacterBody2D"]
 script = ExtResource("1_krq1h")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_trdwi")
+rotation = -3.14159
+scale = Vector2(0.895, 0.895)
+sprite_frames = SubResource("SpriteFrames_gy3yo")
 animation = &"white"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]

@@ -59,7 +59,7 @@ var pTwoCarsFinal: Array
 
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 
-@onready var cars := {
+var cars := {
 	"LemkeCar": {
 	carScene = preload("res://Scenes/Cars/lemkeCar.tscn"), 
 	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
@@ -85,12 +85,16 @@ func _ready() -> void:
 	_updateColorDisplay(pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
 	_updateFinalDisplay(pOneCarsFinal[pOneCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
 func _process(delta: float) -> void:
+	
 	#sets the player's car and color
-	if pOneCarSelection <=2 and pTwoCarSelection<=2:
-		globalVars.playerOneCar = cars[pOneCarSelection].carScene
-		globalVars.playerOneColor = cars[pOneCarSelection].colors[pOneColorSelected]
-		globalVars.playerTwoCar = cars[pTwoCarSelection].carScene
-		globalVars.playerTwoColor = cars[pTwoCarSelection].colors[pTwoColorSelected]
+	var carNames = cars.keys()
+	globalVars.playerOneCar = cars[carNames[pOneCarSelection]].carScene
+	globalVars.playerOneColor = cars[carNames[pOneCarSelection]].colors[pOneColorSelected]
+	globalVars.playerTwoCar = cars[carNames[pTwoCarSelection]].carScene
+	globalVars.playerTwoColor = cars[carNames[pTwoCarSelection]].colors[pTwoColorSelected]
+	
+	if Input.is_action_just_pressed('p1_a'):
+		get_tree().change_scene_to_file("res://Scenes/UI/trackSelection.tscn")
 	
 	if Input.is_action_just_pressed("p1_down") or Input.is_action_just_pressed("p1_up"):
 		if pOneOptionSelected == "car":
@@ -221,7 +225,6 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 		if c == pOneCar:
 			c.visible = true
 			c.play(colors[pOneColorSelected])
-			print(colors[pOneColorSelected])
 		else:
 			c.visible = false
 	for c in pTwoCarsFinal:
@@ -230,3 +233,9 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 			c.play(colors[pTwoColorSelected])
 		else:
 			c.visible = false
+
+func test():
+	print(globalVars.playerOneCar)
+	print(globalVars.playerOneColor)
+	print(globalVars.playerTwoCar)
+	print(globalVars.playerTwoColor)

@@ -66,7 +66,8 @@ script = ExtResource("1_bubl4")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_trdwi")
-animation = &"blue"
+animation = &"white"
+autoplay = "blue"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

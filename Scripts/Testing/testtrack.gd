@@ -13,11 +13,13 @@ func _process(delta: float) -> void:
 
 func loadCars():
 	var player1 = globalVars.playerOneCar.instantiate()
+	player1.color = globalVars.playerOneColor
 	player1.position.x = -520
 	player1.position.y= -8
 	player1.name = 'player1'
 	player1.playerId = 'p1'
 	var player2 = globalVars.playerTwoCar.instantiate()
+	player2.color = globalVars.playerTwoColor
 	player2.position.x = -520
 	player2.position.y= -100
 	player2.name = 'player2'

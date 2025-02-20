@@ -60,7 +60,7 @@ size = Vector2(44, 98)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
 size = Vector2(8.99993, 13.9999)
 
-[node name="parentCar" type="CharacterBody2D"]
+[node name="lemkeCar" type="CharacterBody2D"]
 script = ExtResource("1_n68py")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

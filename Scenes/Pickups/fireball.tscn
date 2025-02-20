@@ -1,0 +1,74 @@
+[gd_scene load_steps=14 format=3 uid="uid://b7mr33nqxwsl0"]
+
+[ext_resource type="Script" path="res://Scripts/Pickups/fireball.gd" id="1_4u1og"]
+[ext_resource type="Texture2D" uid="uid://bvsqesqb1kkgo" path="res://Assets/Sprites/Poweups/fireball/FB500-1.png" id="2_eacxl"]
+[ext_resource type="Texture2D" uid="uid://ccu17583wgd12" path="res://Assets/Sprites/Poweups/fireball/FB500-2.png" id="3_2s3ao"]
+[ext_resource type="Texture2D" uid="uid://be11avld1gaco" path="res://Assets/Sprites/Poweups/fireball/FB500-3.png" id="4_ygwhq"]
+[ext_resource type="Texture2D" uid="uid://yf4mtxhouqqt" path="res://Assets/Sprites/Poweups/fireball/FB500-4.png" id="5_100md"]
+[ext_resource type="Texture2D" uid="uid://buo5fu1o3w7f6" path="res://Assets/Sprites/Poweups/fireball/FB500-5.png" id="6_hnc8w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea5pf"]
+atlas = ExtResource("2_eacxl")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb00u"]
+atlas = ExtResource("3_2s3ao")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4lw3"]
+atlas = ExtResource("4_ygwhq")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd3sh"]
+atlas = ExtResource("5_100md")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyy4r"]
+atlas = ExtResource("6_hnc8w")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uuudo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea5pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xb00u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4lw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pd3sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyy4r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qep3s"]
+radius = 159.154
+
+[node name="fireball" type="Node2D"]
+scale = Vector2(0.33, 0.33)
+script = ExtResource("1_4u1og")
+
+[node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uuudo")
+frame_progress = 0.270357
+
+[node name="characterBody2d" type="CharacterBody2D" parent="."]
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="characterBody2d"]
+position = Vector2(-14, 0)
+shape = SubResource("CircleShape2D_qep3s")
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

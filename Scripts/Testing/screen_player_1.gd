@@ -16,6 +16,12 @@ func _physics_process(delta):
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) 
 				else:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax
+			if globalVars.pOnePowerup == 'fireball':
+				globalVars.pOnePowerup = 'none'
+				var instance = fireball.instantiate()
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/RaceTrackTesting/ScreenPlayer1").add_child(instance)
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
+				
 	# Add the gravity.dsad
 
 	# Handle jump.

@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Car
 
+var fireball: PackedScene = preload("res://Scenes/Pickups/fireball.tscn")
+
 ########
 #Important Car Stats:
 ########

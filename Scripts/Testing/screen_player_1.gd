@@ -19,7 +19,7 @@ func _physics_process(delta):
 			if globalVars.pOnePowerup == 'fireball':
 				globalVars.pOnePowerup = 'none'
 				var instance = fireball.instantiate()
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/RaceTrackTesting/ScreenPlayer1").add_child(instance)
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track/ScreenPlayer1").add_child(instance)
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
 				
 	# Add the gravity.dsad

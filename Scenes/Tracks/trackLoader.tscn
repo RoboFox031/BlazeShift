@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" path="res://Scenes/UI/pTwoBlazeHud.tscn" id="3_2qf2f"]
 [ext_resource type="PackedScene" uid="uid://bhcaxmvifx6r1" path="res://Scenes/UI/pOneCoinHud.tscn" id="3_go0ff"]
 [ext_resource type="PackedScene" uid="uid://cue3utmcv6xtp" path="res://Scenes/UI/pOneBlazeHud.tscn" id="3_sw20d"]
-[ext_resource type="PackedScene" uid="uid://dxovib3ysvrcu" path="res://Scenes/UI/pOnePowerupsHud.tscn" id="4_n1ubl"]
+[ext_resource type="PackedScene" uid="uid://bwvjkcqhdw5e6" path="res://Scenes/UI/pOnePowerupsHud.tscn" id="4_n1ubl"]
 [ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="5_5lhqp"]
-[ext_resource type="PackedScene" uid="uid://b120p1mx4aei1" path="res://Scenes/UI/pTwoPowerupsHud.tscn" id="7_8we7n"]
+[ext_resource type="PackedScene" uid="uid://bbpaemnpu0ei8" path="res://Scenes/UI/pTwoPowerupsHud.tscn" id="7_8we7n"]
 
 [node name="trackLoader" type="Node2D"]
 script = ExtResource("1_txhea")

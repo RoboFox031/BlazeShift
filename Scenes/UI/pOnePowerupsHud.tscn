@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxovib3ysvrcu"]
+[gd_scene load_steps=8 format=3 uid="uid://bwvjkcqhdw5e6"]
 
 [ext_resource type="Script" path="res://Scripts/UI/pOnePowerupsHud.gd" id="1_ak3vq"]
 [ext_resource type="Texture2D" uid="uid://da1xc5ggm3prx" path="res://Assets/Sprites/Poweups/blaze.png" id="1_bhts4"]

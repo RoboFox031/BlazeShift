@@ -14,16 +14,16 @@ func _physics_process(delta):
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
 				if get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) 
-	
-				else: ####fix this later
+				else:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax
-				if globalVars.pTwoPowerup == 'fireball':
-					globalVars.pTwoPowerup = 'none'
-					#var instance = fireball.instantiate()
-					#get_node("/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/RaceTrackTesting/ScreenPlayer1").add_child(instance)
-					#get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
+		if globalVars.pTwoPowerup == 'fireball':
+			globalVars.pTwoPowerup = 'none'
+			var instance = fireball.instantiate()
+			get_node("/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track/ScreenPlayer2").add_child(instance)
+			get_node("/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track/ScreenPlayer2/fireball").scale *= 4.115
+			get_node("/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track/ScreenPlayer2/fireball").speed *= 4.115
+			get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
 	# Add the gravity.dsad
-
 	# Handle jump.
 
 

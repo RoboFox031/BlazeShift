@@ -62,15 +62,15 @@ var terrainDecelMult:float=1
 
 #Stores the current stats of the car(are the same as the base most of the time)
 #The variables that change based on cars
-var currentAcceleration=15 ##controls acceleration
-var currentTopSpeed=1000 ##controls top speed
+var currentAcceleration=baseAcceleration ##controls acceleration
+var currentTopSpeed=baseTopSpeed ##controls top speed
 #controls how quickly you turn
-var currentTurnSpeed:float=80##controls how quickly you turn
+var currentTurnSpeed:float=baseTurnSpeed##controls how quickly you turn
 var trueCurrentTurnSpeed:float: #Converts the turn speed to radians
 	get:
 		return currentTurnSpeed*PI/180
 #controls how sharply you turn
-var currentTurnPower:float=180 ##controls how sharply you turn
+var currentTurnPower:float=baseTurnPower ##controls how sharply you turn
 var trueCurrentTurnPower:float: #Converts the turn power to radians
 	get:
 		return currentTurnPower*PI/180
@@ -111,11 +111,9 @@ func _physics_process(delta):
 
 
 
-func _input(event):
-	#Controls boost
-	if event == currentOwnerStr+"_x":
-		pass
-
+# func _input(event):
+# 	#Controls boost
+# 	print(event)
 
 
 

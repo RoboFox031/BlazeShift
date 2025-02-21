@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://7ysc21hplbc2"]
 
 [ext_resource type="Script" path="res://Scripts/Tracks/trackLoader.gd" id="1_txhea"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/pTwoBlazeHud.tscn" id="3_2qf2f"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/pOneCoinHud.tscn" id="3_go0ff"]
-[ext_resource type="PackedScene" uid="uid://bwffy2tfu4rbe" path="res://Scenes/UI/pOneBlazeHud.tscn" id="3_sw20d"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/pOnePowerupsHud.tscn" id="4_n1ubl"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/pTwoCoinHud.tscn" id="5_5lhqp"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/pTwoPowerupsHud.tscn" id="7_8we7n"]
+[ext_resource type="PackedScene" uid="uid://btpagg2govh37" path="res://Scenes/UI/pTwoBlazeHud.tscn" id="3_2qf2f"]
+[ext_resource type="PackedScene" uid="uid://bhcaxmvifx6r1" path="res://Scenes/UI/pOneCoinHud.tscn" id="3_go0ff"]
+[ext_resource type="PackedScene" uid="uid://cue3utmcv6xtp" path="res://Scenes/UI/pOneBlazeHud.tscn" id="3_sw20d"]
+[ext_resource type="PackedScene" uid="uid://djvgkl7l00ukx" path="res://Scenes/UI/pOnePowerupsHud.tscn" id="4_n1ubl"]
+[ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="5_5lhqp"]
+[ext_resource type="PackedScene" uid="uid://cqo3p1lii8gdh" path="res://Scenes/UI/pTwoPowerupsHud.tscn" id="7_8we7n"]
 
 [node name="trackLoader" type="Node2D"]
 script = ExtResource("1_txhea")

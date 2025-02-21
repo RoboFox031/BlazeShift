@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://cjrkg3bo1otly"]
 
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Tracks/192 racetrack Divided.svg" id="1_m2org"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Tracks/grass_tileset_16x16.png" id="2_t0oks"]
+[ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://Assets/Sprites/Tracks/192 racetrack Divided.svg" id="1_m2org"]
+[ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://Assets/Sprites/Tracks/grass_tileset_16x16.png" id="2_t0oks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxr3h"]
 texture = ExtResource("1_m2org")

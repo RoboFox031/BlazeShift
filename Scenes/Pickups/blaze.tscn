@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmrvxs558s5pi"]
 
 [ext_resource type="Script" path="res://Scripts/Pickups/blaze.gd" id="1_oyg3b"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Poweups/blaze.png" id="1_sckl4"]
+[ext_resource type="Texture2D" uid="uid://da1xc5ggm3prx" path="res://Assets/Sprites/Poweups/blaze.png" id="1_sckl4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fcpsa"]
 radius = 118.0

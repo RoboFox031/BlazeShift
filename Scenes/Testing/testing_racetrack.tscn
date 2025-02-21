@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp3aibcv01wc3"]
+[gd_scene load_steps=5 format=3 uid="uid://dp3aibcv01wc3"]
 
 [ext_resource type="Script" path="res://Scripts/Testing/testtrack.gd" id="1_w8cw7"]
 [ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="3_d1ajc"]
-[ext_resource type="PackedScene" uid="uid://bmrvxs558s5pi" path="res://Scenes/Pickups/blaze.tscn" id="3_g56i0"]
+[ext_resource type="PackedScene" uid="uid://8hdiadh8bmvx" path="res://Scenes/Pickups/blaze.tscn" id="3_g56i0"]
+[ext_resource type="PackedScene" uid="uid://l2n52iwvlmd4" path="res://Scenes/Pickups/fireballPickup.tscn" id="4_7w8ok"]
 
 [node name="RaceTrackTesting" type="Node2D"]
 script = ExtResource("1_w8cw7")
@@ -23,3 +24,6 @@ position = Vector2(1400, 296)
 
 [node name="blaze" parent="." instance=ExtResource("3_g56i0")]
 position = Vector2(293, 228)
+
+[node name="fireballPickup" parent="." instance=ExtResource("4_7w8ok")]
+position = Vector2(426, 243)

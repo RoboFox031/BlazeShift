@@ -4,7 +4,6 @@ class_name playerTwoCar
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-var playerId = null
 
 func _ready():
 	pass

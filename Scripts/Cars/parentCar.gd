@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Car
 
+@export var fireball: PackedScene
+
 ########
 #Important Car Stats:
 ########

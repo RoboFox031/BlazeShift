@@ -17,12 +17,12 @@ func loadCars():
 	player1.position.x = -520
 	player1.position.y= -8
 	player1.name = 'player1'
-	player1.playerId = 'p1'
+	player1.currentOwner = player1.playerChoices.p1
 	var player2 = globalVars.playerTwoCar.instantiate()
 	player2.color = globalVars.playerTwoColor
 	player2.position.x = -520
 	player2.position.y= -100
 	player2.name = 'player2'
-	player2.playerId = 'p2'
+	player2.currentOwner = player2.playerChoices.p2
 	add_child(player1)
 	add_child(player2)

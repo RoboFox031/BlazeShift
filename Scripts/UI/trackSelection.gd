@@ -14,15 +14,12 @@ var selected = 0
 
 func _ready() -> void:
 	maps = [mapOne, mapTwo, mapThree, mapFour, mapFive]
-	tracks = [preload("res://Scenes/Testing/testing_racetrack.tscn"),preload("res://Scenes/Testing/testDriveEnviornment.tscn")]
+	tracks = [preload("res://Scenes/Testing/testing_racetrack.tscn"),preload("res://Scenes/Tracks/basicTrack.tscn")]
 	_updateMapSelected(maps[selected])
 
 func _process(delta: float) -> void:
-	if selected == 0 and Input.is_action_just_pressed("p1_start"):
-		globalVars.track = preload("res://Scenes/Testing/testing_racetrack.tscn")
-		get_tree().change_scene_to_file("res://Scenes/Tracks/trackLoader.tscn")
-	if selected == 1 and Input.is_action_just_pressed('p1_start'):
-		globalVars.track = preload("res://Scenes/Testing/testing_racetrack.tscn")
+	if selected >= 0 and Input.is_action_just_pressed("p1_start"):
+		globalVars.track = tracks[selected]
 		get_tree().change_scene_to_file("res://Scenes/Tracks/trackLoader.tscn")
 	if Input.is_action_just_pressed("p1_right"):
 		if selected + 1 < len(maps):

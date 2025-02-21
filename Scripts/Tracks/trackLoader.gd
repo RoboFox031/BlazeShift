@@ -1,6 +1,6 @@
 extends Node2D
 
-const testTrack = preload("res://Scenes/Testing/testing_racetrack.tscn")
+var track = globalVars.track
 
 @onready var players := {
 	"1": {
@@ -15,7 +15,7 @@ const testTrack = preload("res://Scenes/Testing/testing_racetrack.tscn")
 }
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var track = testTrack.instantiate()
+	var track = track.instantiate()
 	players['1'].viewport.add_child(track)
 	players['2'].viewport.world_2d = players['1'].viewport.world_2d
 	players['1'].player = $hSplitContainer/subViewportContainer/subViewport/RaceTrackTesting/player1

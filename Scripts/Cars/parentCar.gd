@@ -60,6 +60,9 @@ var terrainTurnSpeedMult:float=1
 var terrainTurnPowerMult:float=1
 var terrainDecelMult:float=1
 
+#Stores if the player is boosting
+var boosting:bool=false
+
 #Stores the current stats of the car(are the same as the base most of the time)
 #The variables that change based on cars
 var currentAcceleration=baseAcceleration ##controls acceleration
@@ -75,7 +78,7 @@ var trueCurrentTurnPower:float: #Converts the turn power to radians
 	get:
 		return currentTurnPower*PI/180
 #The current deceleration value
-var currentDecel=8; ##The base deceleration value
+var currentDecel=baseDecel ##The base deceleration value
 
 
 
@@ -86,39 +89,65 @@ func _physics_process(delta):
 	var linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
 	#If you are clicking a button, accelerates based on the acceleration value
 	if linDirection:
-		currentLinSpeed = move_toward(currentLinSpeed, baseTopSpeed*linDirection*terrainSpeedMult, baseAcceleration*terrainAccelMult)
+		currentLinSpeed = move_toward(currentLinSpeed, currentTopSpeed*linDirection*terrainSpeedMult, currentAcceleration*terrainAccelMult)
 	#If no button is being clicked, decelerates by the deceleration speed
 	else:
-		currentLinSpeed = move_toward(currentLinSpeed, 0, baseDecel*terrainDecelMult)
+		currentLinSpeed = move_toward(currentLinSpeed, 0, currentDecel*terrainDecelMult)
 	
 	#Gets the input, and converts it to positive or negitive 1
 	var turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right")
 	#If you are clicking a button, turns in that direction based on the acceleration value
 	#The /1000 at the end makes the number small, to prevent people from habing to deal with tiny decimals while playing with stats
 	if turnDirection and currentLinSpeed!=0:
-		currentTurnForce = move_toward(currentTurnForce, trueTurnPower*turnDirection*terrainTurnPowerMult, trueBaseTurnSpeed*terrainTurnSpeedMult)
+		currentTurnForce = move_toward(currentTurnForce, trueCurrentTurnPower*turnDirection*terrainTurnPowerMult, trueCurrentTurnSpeed*terrainTurnSpeedMult)
 	#If no button is being clicked, stops turning
 	else:
 		currentTurnForce = move_toward(currentTurnForce, 0,trueBaseTurnSpeed*terrainTurnSpeedMult)
 	
 	#Like a car, you can only turn while moving, and going backwards reverses your turn
-	turnOutput= (currentLinSpeed/baseTopSpeed)*currentTurnForce
+	turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
 	rotation_degrees+=turnOutput
 	
 	#Sets the velocity to  the speed value, using sin and cos to account for rotation
 	velocity=Vector2(currentLinSpeed*cos(rotation),currentLinSpeed*sin(rotation))
 	move_and_slide()
 
-
-
-# func _input(event):
-# 	#Controls boost
-# 	print(event)
-
-
+	#If you are boosting, stops you when you run out
+	if boosting==true:
+		if(globalVars.p1BlazeCurrent==0) or (globalVars.p2BlazeCurrent==0) :
+			resetMovement()
 
 
 
+func _input(event):
+	#Allows boost
+	if Input.is_action_just_pressed(currentOwnerStr+"_x"):
+		
+		startBoost()
+	if Input.is_action_just_released(currentOwnerStr+"_x"):
+		print(currentOwnerStr+" stopped boosting")
+		resetMovement()
+
+#Resets movement variables to their defult
+func resetMovement():
+	boosting=false
+	currentAcceleration=baseAcceleration
+	currentTopSpeed=baseTopSpeed
+	currentTurnSpeed=baseTurnSpeed
+	currentTurnPower=baseTurnPower 
+	currentDecel=baseDecel
+
+#Changes the movement varibles to the boosted state
+func startBoost():
+	if currentOwner==playerChoices.p1 and globalVars.p1BlazeCurrent>0:
+		currentAcceleration=baseAcceleration*3
+		currentTopSpeed=baseTopSpeed*2
+		boosting=true
+	elif currentOwner==playerChoices.p2 and globalVars.p1BlazeCurrent>0:
+		currentAcceleration=baseAcceleration*3
+		currentTopSpeed=baseTopSpeed*2
+		boosting=true
+	print(currentOwnerStr+" is boosing")
 
 
 

@@ -1,11 +1,19 @@
-extends CharacterBody2D
-
+extends Car
+class_name playerOneCar
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta):
+	
+	if Input.is_action_just_pressed("p1_r1"):###might change the input later
+		if globalVars.pOnePowerup != null:
+			if globalVars.pOnePowerup == "blaze":
+				globalVars.pOnePowerup = 'none'
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
+		
+		
 	# Add the gravity.dsad
 
 	# Handle jump.

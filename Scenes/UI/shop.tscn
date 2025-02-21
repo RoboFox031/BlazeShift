@@ -1,12 +1,10 @@
-[gd_scene load_steps=46 format=3 uid="uid://j4taoq0kw7b1"]
+[gd_scene load_steps=48 format=3 uid="uid://j4taoq0kw7b1"]
 
 [ext_resource type="Script" path="res://Scripts/UI/shop.gd" id="1_6j5yt"]
 [ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="2_qad3o"]
 [ext_resource type="Texture2D" uid="uid://bv3prfv0yhkc" path="res://Assets/Sprites/UI/whiteCircle.png" id="3_sycxl"]
 [ext_resource type="Texture2D" uid="uid://cwie6jc02kiqw" path="res://Assets/Sprites/UI/blackRing.png" id="4_wo2en"]
-[ext_resource type="Texture2D" uid="uid://bubvui6wq7y2v" path="res://Assets/Sprites/Poweups/coin.png" id="4_wvvxd"]
 [ext_resource type="Texture2D" uid="uid://car7cfgit2wej" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View-1.png (1).png" id="5_42t1h"]
-[ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="5_bmb0r"]
 [ext_resource type="Texture2D" uid="uid://cvash2gud7v0y" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View-1.png.png" id="6_d54r6"]
 [ext_resource type="Texture2D" uid="uid://cdienlvw5alel" path="res://Assets/Sprites/UI/whiteArrow.png" id="7_bjm5q"]
 [ext_resource type="Texture2D" uid="uid://c224p2kh502n0" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View-1.png.png" id="7_dyvlg"]
@@ -25,6 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://bo4u4cxkwef4t" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Red-1.png.png" id="17_rqlhg"]
 [ext_resource type="Texture2D" uid="uid://bstvmj4gb6qmf" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Yellow-1.png.png" id="18_a360l"]
 [ext_resource type="Texture2D" uid="uid://jytp767iol7y" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Yellow-1.png.png" id="18_npqgo"]
+[ext_resource type="PackedScene" uid="uid://bhcaxmvifx6r1" path="res://Scenes/UI/pOneCoinHud.tscn" id="24_snvey"]
+[ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="25_ippaq"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="26_ia2r8"]
+[ext_resource type="Texture2D" uid="uid://d32c1cq2y216v" path="res://Assets/Sprites/UI/lock.png" id="27_205h2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_feg0u"]
 atlas = ExtResource("5_42t1h")
@@ -563,42 +565,6 @@ rotation = 3.14159
 scale = Vector2(2, 2)
 texture = ExtResource("7_dyvlg")
 
-[node name="pOneCoin" type="Sprite2D" parent="."]
-position = Vector2(90, 90)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_wvvxd")
-metadata/_edit_lock_ = true
-
-[node name="pOneCoinLabel" type="Label" parent="."]
-offset_left = 160.0
-offset_top = 48.0
-offset_right = 322.0
-offset_bottom = 139.0
-pivot_offset = Vector2(23, 44)
-theme_override_fonts/font = ExtResource("5_bmb0r")
-theme_override_font_sizes/font_size = 90
-text = "0"
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
-[node name="pTwoCoin" type="Sprite2D" parent="."]
-position = Vector2(1050, 90)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_wvvxd")
-metadata/_edit_lock_ = true
-
-[node name="pTwoCoinLabel" type="Label" parent="."]
-offset_left = 1120.0
-offset_top = 48.0
-offset_right = 1282.0
-offset_bottom = 139.0
-pivot_offset = Vector2(23, 44)
-theme_override_fonts/font = ExtResource("5_bmb0r")
-theme_override_font_sizes/font_size = 90
-text = "0"
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
 [node name="pOneRightArrow" type="Sprite2D" parent="."]
 self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
 position = Vector2(783, 946)
@@ -681,7 +647,7 @@ position = Vector2(1319, 589)
 rotation = 1.5708
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_14jb5")
-animation = &"white"
+animation = &"blue"
 
 [node name="pTwoCarTwoFinal" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -698,3 +664,72 @@ rotation = 3.14159
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_58y0j")
 animation = &"red"
+
+[node name="pOneCoinHud" parent="." instance=ExtResource("24_snvey")]
+
+[node name="pOneCoinHud2" parent="." instance=ExtResource("25_ippaq")]
+position = Vector2(968, 0)
+
+[node name="pOneOwnedLabel" type="Label" parent="."]
+offset_left = 362.0
+offset_top = 314.0
+offset_right = 587.0
+offset_bottom = 415.0
+theme_override_colors/font_color = Color(0, 0.545098, 0, 1)
+theme_override_fonts/font = ExtResource("26_ia2r8")
+theme_override_font_sizes/font_size = 100
+text = "owned"
+
+[node name="pTwoOwnedLabel" type="Label" parent="."]
+offset_left = 1330.0
+offset_top = 314.0
+offset_right = 1555.0
+offset_bottom = 415.0
+theme_override_colors/font_color = Color(0, 0.545098, 0, 1)
+theme_override_fonts/font = ExtResource("26_ia2r8")
+theme_override_font_sizes/font_size = 100
+text = "owned"
+
+[node name="pOneCostLabel" type="Label" parent="."]
+offset_left = 406.0
+offset_top = 826.0
+offset_right = 532.0
+offset_bottom = 887.0
+theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("26_ia2r8")
+theme_override_font_sizes/font_size = 60
+text = "1 coin"
+
+[node name="pTwoCostLabel" type="Label" parent="."]
+offset_left = 1397.0
+offset_top = 826.0
+offset_right = 1523.0
+offset_bottom = 887.0
+theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("26_ia2r8")
+theme_override_font_sizes/font_size = 60
+text = "1 coin"
+
+[node name="locks" type="Node" parent="."]
+
+[node name="pTwoCarLock" type="Sprite2D" parent="locks"]
+position = Vector2(1465, 940)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("27_205h2")
+
+[node name="pOneCarLock" type="Sprite2D" parent="locks"]
+position = Vector2(473, 942)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("27_205h2")
+
+[node name="pTwoLockFinal" type="Sprite2D" parent="locks"]
+position = Vector2(1459, 536)
+texture = ExtResource("27_205h2")
+
+[node name="pOneLockFinal" type="Sprite2D" parent="locks"]
+position = Vector2(470, 535)
+texture = ExtResource("27_205h2")

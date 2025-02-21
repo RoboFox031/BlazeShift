@@ -4,7 +4,7 @@ func _ready():
 	type = "blaze"
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is playerOneCar:
+	if body.currentOwner == body.playerChoices.p1:
 		entered(body)
-	elif body is playerTwoCar:
+	elif body.currentOwner == body.playerChoices.p2:
 		entered(body)

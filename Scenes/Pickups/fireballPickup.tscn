@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bsq4ec087ni2f"]
+[gd_scene load_steps=12 format=3 uid="uid://l8mykqtanam0"]
 
 [ext_resource type="Script" path="res://Scripts/Pickups/fireballPickup.gd" id="1_x0pa4"]
 [ext_resource type="Texture2D" uid="uid://bvsqesqb1kkgo" path="res://Assets/Sprites/Poweups/fireball/FB500-1.png" id="2_1ppd3"]

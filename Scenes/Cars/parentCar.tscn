@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwu3f2og4hln5"]
+[gd_scene load_steps=7 format=3 uid="uid://bwu3f2og4hln5"]
 
 [ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_bubl4"]
 [ext_resource type="Texture2D" uid="uid://culs8qglxkg03" path="res://Assets/Sprites/Cars/Mustang Top View.png" id="2_6kyu6"]
+[ext_resource type="PackedScene" path="res://Scenes/Pickups/fireball.tscn" id="2_j4jhk"]
 [ext_resource type="Script" path="res://Scripts/Cars/terrain_detector.gd" id="3_mcchu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y51"]
@@ -12,6 +13,7 @@ size = Vector2(8.99993, 13.9999)
 
 [node name="parentCar" type="CharacterBody2D"]
 script = ExtResource("1_bubl4")
+fireball = ExtResource("2_j4jhk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708

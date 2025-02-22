@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_bubl4"]
 [ext_resource type="Texture2D" uid="uid://car7cfgit2wej" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View-1.png (1).png" id="2_l5kwy"]
-[ext_resource type="Script" path="res://Scripts/Cars/terrain_detector.gd" id="3_mcchu"]
+[ext_resource type="Script" path="res://Scripts/Cars/terrainDetector.gd" id="3_p1olo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cb72v"]
 atlas = ExtResource("2_l5kwy")
@@ -80,11 +80,11 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="terrainDetector" type="Node2D" parent="."]
-script = ExtResource("3_mcchu")
 
 [node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("3_p1olo")
 
 [node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorL"]
 position = Vector2(0, -17)
@@ -94,6 +94,7 @@ shape = SubResource("RectangleShape2D_mox8c")
 [node name="terrainDetectorR" type="Area2D" parent="terrainDetector"]
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("3_p1olo")
 
 [node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorR"]
 position = Vector2(0, 17)

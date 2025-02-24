@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="2_qad3o"]
 [ext_resource type="Texture2D" uid="uid://bv3prfv0yhkc" path="res://Assets/Sprites/UI/whiteCircle.png" id="3_sycxl"]
 [ext_resource type="Texture2D" uid="uid://cwie6jc02kiqw" path="res://Assets/Sprites/UI/blackRing.png" id="4_wo2en"]
-[ext_resource type="Texture2D" uid="uid://car7cfgit2wej" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View-1.png (1).png" id="5_42t1h"]
+[ext_resource type="Texture2D" uid="uid://co571yx0vbx3d" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View Blue.png" id="5_eabn0"]
 [ext_resource type="Texture2D" uid="uid://cvash2gud7v0y" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View-1.png.png" id="6_d54r6"]
 [ext_resource type="Texture2D" uid="uid://cdienlvw5alel" path="res://Assets/Sprites/UI/whiteArrow.png" id="7_bjm5q"]
 [ext_resource type="Texture2D" uid="uid://c224p2kh502n0" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View-1.png.png" id="7_dyvlg"]
@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://d32c1cq2y216v" path="res://Assets/Sprites/UI/lock.png" id="27_205h2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_feg0u"]
-atlas = ExtResource("5_42t1h")
 region = Rect2(0, 0, 192, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_14jb5"]
@@ -529,7 +528,7 @@ texture = ExtResource("4_wo2en")
 position = Vector2(404, 972)
 rotation = 1.5708
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_42t1h")
+texture = ExtResource("5_eabn0")
 
 [node name="pOneCarTwo" type="Sprite2D" parent="."]
 visible = false
@@ -549,7 +548,7 @@ texture = ExtResource("7_dyvlg")
 position = Vector2(1392, 971)
 rotation = 1.5708
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_42t1h")
+texture = ExtResource("5_eabn0")
 
 [node name="pTwoCarTwo" type="Sprite2D" parent="."]
 visible = false

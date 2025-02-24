@@ -7,5 +7,5 @@ var playerOneCar = preload("res://Scenes/Cars/lemkeCar.tscn")
 var playerTwoCar = preload("res://Scenes/Cars/lemkeCar.tscn")
 var playerOneColor = "blue"
 var playerTwoColor = "blue"
-var pOnePowerup = null
-var pTwoPowerup = null
+var pOnePowerup = 'none'
+var pTwoPowerup = 'none'

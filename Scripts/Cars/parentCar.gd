@@ -117,8 +117,8 @@ func _physics_process(delta):
 	velocity=Vector2(currentLinSpeed*cos(rotation),currentLinSpeed*sin(rotation))
 	move_and_slide()
 	
-	if Input.is_action_just_pressed("p1_r1"):###might change the input later
-		if globalVars.pOnePowerup != null:
+	if Input.is_action_just_pressed(currentOwnerStr+"_r1"):###might change the input later
+		if globalVars.pOnePowerup != 'none':
 			if globalVars.pOnePowerup == "blaze":
 				globalVars.pOnePowerup = 'none'
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
@@ -134,6 +134,22 @@ func _physics_process(delta):
 				if currentOwner == playerChoices.p2:
 					add_child(instance)
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
+		if globalVars.pTwoPowerup != 'none':
+			if globalVars.pTwoPowerup == "blaze":
+				globalVars.pTwoPowerup = 'none'
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
+				if get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) 
+				else:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax
+			if globalVars.pTwoPowerup == 'fireball':
+				globalVars.pTwoPowerup = 'none'
+				var instance = fireball.instantiate()
+				if currentOwner == playerChoices.p1:
+					add_child(instance)
+				if currentOwner == playerChoices.p2:
+					add_child(instance)
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
 
 
 # func _input(event):

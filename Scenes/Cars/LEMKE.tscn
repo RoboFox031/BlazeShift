@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwu3f2og4hln5"]
+[gd_scene load_steps=8 format=3 uid="uid://cmbwt4bx31iqq"]
 
-[ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_bubl4"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View-1.png (1).png" id="2_l5kwy"]
-[ext_resource type="Script" path="res://Scripts/Cars/terrainDetector.gd" id="3_p1olo"]
+[ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_tgbtb"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View-1.png (1).png" id="2_dujlw"]
+[ext_resource type="Script" path="res://Scripts/Cars/terrainDetector.gd" id="3_s48tj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cb72v"]
-atlas = ExtResource("2_l5kwy")
+atlas = ExtResource("2_dujlw")
 region = Rect2(62, 20, 47, 98)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_trdwi"]
@@ -60,14 +60,13 @@ size = Vector2(44, 98)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
 size = Vector2(8.99993, 13.9999)
 
-[node name="parentCar" type="CharacterBody2D"]
-script = ExtResource("1_bubl4")
+[node name="lemkeCar" type="CharacterBody2D"]
+script = ExtResource("1_tgbtb")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_trdwi")
-animation = &"white"
-autoplay = "blue"
+animation = &"blue"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -80,7 +79,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="terrainDetector" type="Node2D" parent="."]
-script = ExtResource("3_p1olo")
+script = ExtResource("3_s48tj")
 
 [node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]
 collision_layer = 0

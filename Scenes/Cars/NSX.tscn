@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://blk7aoy61604v"]
+[gd_scene load_steps=20 format=3 uid="uid://kbqwa4flu3wx"]
 
 [ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_gmmup"]
 [ext_resource type="Texture2D" uid="uid://c67td8osonx1b" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Blue-1.png.png" id="2_7a48j"]

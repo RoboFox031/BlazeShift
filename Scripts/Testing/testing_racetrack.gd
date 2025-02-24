@@ -1,1 +1,4 @@
-extends Node2D
+extends tracks
+
+func _ready() -> void:
+	loadCars()

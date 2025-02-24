@@ -1,5 +1,4 @@
 extends Car
-class_name playerTwoCar
 
 
 const SPEED = 300.0

@@ -3832,7 +3832,7 @@ texture = ExtResource("2_t0oks")
 [sub_resource type="TileSet" id="TileSet_htf8n"]
 sources/0 = SubResource("TileSetAtlasSource_anobo")
 
-[node name="Node2D" type="Node2D"]
+[node name="track" type="Node2D"]
 position = Vector2(-28, -27)
 
 [node name="Track" type="TileMapLayer" parent="."]

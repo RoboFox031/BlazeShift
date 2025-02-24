@@ -1,0 +1,163 @@
+[gd_scene load_steps=22 format=3 uid="uid://bcqpy4bglmjg2"]
+
+[ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_n68py"]
+[ext_resource type="Texture2D" uid="uid://6e1eqs8moqfg" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View Black.png" id="2_rng8r"]
+[ext_resource type="Texture2D" uid="uid://co571yx0vbx3d" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View Blue.png" id="3_28joc"]
+[ext_resource type="Script" path="res://Scripts/Cars/terrainDetector.gd" id="3_dulba"]
+[ext_resource type="Texture2D" uid="uid://ckiadmvcjadvc" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View Green.png" id="4_yviye"]
+[ext_resource type="Texture2D" uid="uid://dvhia6djj0ju" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View Orange.png" id="5_35u1f"]
+[ext_resource type="Texture2D" uid="uid://cx074k3j27yg" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View Purple.png" id="6_gvirv"]
+[ext_resource type="Texture2D" uid="uid://bc0nbehju53xk" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View Red.png" id="7_hl3yk"]
+[ext_resource type="Texture2D" uid="uid://cm7r3f5knmtg8" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View White.png" id="8_upx8t"]
+[ext_resource type="Texture2D" uid="uid://dj65b04lwhrmk" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View Yellow.png" id="9_erml1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btpvm"]
+atlas = ExtResource("2_rng8r")
+region = Rect2(62, 20, 47, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejdfw"]
+atlas = ExtResource("3_28joc")
+region = Rect2(62, 20, 47, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv5yn"]
+atlas = ExtResource("4_yviye")
+region = Rect2(62, 20, 47, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56c4e"]
+atlas = ExtResource("5_35u1f")
+region = Rect2(62, 20, 47, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yl4u"]
+atlas = ExtResource("6_gvirv")
+region = Rect2(62, 20, 47, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcdir"]
+atlas = ExtResource("7_hl3yk")
+region = Rect2(62, 20, 47, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a8vw"]
+atlas = ExtResource("8_upx8t")
+region = Rect2(62, 20, 47, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg1p7"]
+atlas = ExtResource("9_erml1")
+region = Rect2(62, 20, 47, 98)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wu7g6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btpvm")
+}],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejdfw")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv5yn")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56c4e")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yl4u")
+}],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcdir")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a8vw")
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg1p7")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y51"]
+size = Vector2(44, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
+size = Vector2(8.99993, 13.9999)
+
+[node name="lemkeCar" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_n68py")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_wu7g6")
+animation = &"yellow"
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_v4y51")
+debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)
+
+[node name="camera2d" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="terrainDetector" type="Node2D" parent="."]
+script = ExtResource("3_dulba")
+
+[node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorL"]
+position = Vector2(0, -17)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_mox8c")
+
+[node name="terrainDetectorR" type="Area2D" parent="terrainDetector"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorR"]
+position = Vector2(0, 17)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_mox8c")
+
+[connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
+[connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_exited"]
+[connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]

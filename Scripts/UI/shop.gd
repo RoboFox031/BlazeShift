@@ -67,6 +67,21 @@ var pTwoOwned: Array
 
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 
+var cars := {
+	"LemkeCar": {
+	carScene = preload("res://Scenes/Cars/lemkeCar.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"NSX": {
+	carScene = preload("res://Scenes/Cars/NSX.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"S13": {
+	carScene = preload("res://Scenes/Cars/S13.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	}
+}
+
 var carCosts: Array = [0,0,1] #the position in the array relates to the car
 
 func _ready() -> void:
@@ -83,6 +98,17 @@ func _ready() -> void:
 	_updateFinalDisplay(pOneCarsFinal[pOneCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
 	
 func _process(delta: float) -> void:
+	
+	#sets the player's car and color
+	var carNames = cars.keys()
+	globalVars.playerOneCar = cars[carNames[pOneCarSelection]].carScene
+	globalVars.playerOneColor = cars[carNames[pOneCarSelection]].colors[pOneColorSelected]
+	globalVars.playerTwoCar = cars[carNames[pTwoCarSelection]].carScene
+	globalVars.playerTwoColor = cars[carNames[pTwoCarSelection]].colors[pTwoColorSelected]
+	
+	if Input.is_action_just_pressed('p1_start'):
+		get_tree().change_scene_to_file("res://Scenes/UI/trackSelection.tscn")
+	
 	if Input.is_action_just_pressed("p1_down") or Input.is_action_just_pressed("p1_up"):
 		if pOneOptionSelected == "car":
 			pOneOptionSelected = "color"
@@ -235,7 +261,6 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 		if c == pOneCar:
 			c.visible = true
 			c.play(colors[pOneColorSelected])
-			print(colors[pOneColorSelected])
 		else:
 			c.visible = false
 	for c in pTwoCarsFinal:

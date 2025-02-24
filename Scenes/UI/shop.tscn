@@ -623,7 +623,7 @@ position = Vector2(353, 589)
 rotation = 1.5708
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_14jb5")
-animation = &"blue"
+animation = &"white"
 
 [node name="pOneCarTwoFinal" type="AnimatedSprite2D" parent="."]
 visible = false

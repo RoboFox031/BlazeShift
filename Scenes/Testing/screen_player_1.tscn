@@ -1,20 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfu3xceea3ijv"]
+[gd_scene load_steps=4 format=3 uid="uid://dfu3xceea3ijv"]
 
 [ext_resource type="Script" path="res://Scripts/Testing/screen_player_1.gd" id="1_a3rxo"]
 [ext_resource type="Texture2D" uid="uid://b82b74x642m1m" path="res://icon.svg" id="1_u3ova"]
-[ext_resource type="PackedScene" uid="uid://cf3n070ef1w2o" path="res://Scenes/Pickups/fireball.tscn" id="2_dwj3i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nj8m1"]
-size = Vector2(97, 196)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0bd3"]
+size = Vector2(105, 198.5)
 
-[node name="ScreenPlayer1" type="CharacterBody2D"]
+[node name="ScreenPlayer" type="CharacterBody2D"]
 script = ExtResource("1_a3rxo")
-fireball = ExtResource("2_dwj3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2425, 0.2425)
 texture = ExtResource("1_u3ova")
 
 [node name="collisionShape2d" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1)
-shape = SubResource("RectangleShape2D_nj8m1")
+position = Vector2(-0.5, 1.75)
+shape = SubResource("RectangleShape2D_l0bd3")

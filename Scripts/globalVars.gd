@@ -1,8 +1,12 @@
 extends Node
 
 var track = null
-var pOnePowerup = null
-var pTwoPowerup = null
-
+var playerOneCar = preload("res://Scenes/Cars/lemkeCar.tscn")
+var playerTwoCar = preload("res://Scenes/Cars/lemkeCar.tscn")
+var playerOneColor = "blue"
+var playerTwoColor = "blue"
+var pOnePowerup = 'none'
+var pTwoPowerup = 'none'
 var pOneCoins = 2
 var pTwoCoins = 3
+const NSX = preload("res://Scenes/Cars/NSX.tscn")

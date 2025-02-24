@@ -1,7 +1,9 @@
+
 extends Node2D
-signal terrainChanged
 
 var parentCar:Car
+
+signal updateTerrain(newTerrain)
 
 #enum for the diffrent types of terrain
 #Stores what type of terrain each is touching
@@ -12,25 +14,33 @@ func _ready() -> void:
 	#Sets the car's parent
 	parentCar=get_parent()
 
-func terrainCheck():
+func matchCheck():
 	#If both detectors are on the same terrain, set the car's terrain to that terrain
 	if currentRTerrain==currentLTerrain:
-		parentCar.updateTerrain(currentRTerrain)
-		
+		updateTerrain.emit(currentRTerrain)
+
+func terrainCheck(area,newTerrain):
+	#Sets the new terrain variable to whatever the terrain of the area is
+	newTerrain=area.myTerrain
+	#Return the newTerrain type
+	return newTerrain
+	
 
 func _on_terrain_detector_l_area_entered(area: Area2D) -> void:
-	#Sets the currentLTerrain varible to whatever terrain it is touching
-	if area.myTerrain==trackEnums.terrainTypes.offRoad:
-		currentLTerrain=trackEnums.terrainTypes.offRoad
+	#Makes sure it's touching a new terrain type
+	if area.myTerrain!=currentLTerrain:
+		#If it is, set the currentRTerrain varible to the return of the fuction
+		currentLTerrain=terrainCheck(area,currentLTerrain)
 	#Checks the car's overall terrain
-	terrainCheck()
+	matchCheck()
 
 func _on_terrain_detector_r_area_entered(area: Area2D) -> void:
-	#Sets the currentRTerrain varible to whatever terrain it is touching
-	if area.myTerrain==trackEnums.terrainTypes.offRoad:
-		currentRTerrain=trackEnums.terrainTypes.offRoad
+	#Makes sure it's touching a new terrain type
+	if area.myTerrain!=currentRTerrain:
+		#If it is, set the currentRTerrain varible to the return of the fuction
+		currentRTerrain=terrainCheck(area,currentRTerrain)
 	#Checks the car's overall terrain
-	terrainCheck()
+	matchCheck()
 
 func _on_terrain_detector_l_area_exited(area: Area2D) -> void:
 	#If the terrain that it just left was the same as the one it used to be touching
@@ -38,7 +48,7 @@ func _on_terrain_detector_l_area_exited(area: Area2D) -> void:
 	if area.myTerrain==currentLTerrain:
 		currentLTerrain=trackEnums.terrainTypes.track
 	#Checks the car's overall terrain
-	terrainCheck()
+	matchCheck()
 
 func _on_terrain_detector_r_area_exited(area: Area2D) -> void:
 	#If the terrain that it just left was the same as the one it used to be touching
@@ -46,4 +56,4 @@ func _on_terrain_detector_r_area_exited(area: Area2D) -> void:
 	if area.myTerrain==currentRTerrain:
 		currentRTerrain=trackEnums.terrainTypes.track
 	#Checks the car's overall terrain
-	terrainCheck()
+	matchCheck()

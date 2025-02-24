@@ -93,7 +93,7 @@ func _process(delta: float) -> void:
 	globalVars.playerTwoCar = cars[carNames[pTwoCarSelection]].carScene
 	globalVars.playerTwoColor = cars[carNames[pTwoCarSelection]].colors[pTwoColorSelected]
 	
-	if Input.is_action_just_pressed('p1_a'):
+	if Input.is_action_just_pressed('p1_start'):
 		get_tree().change_scene_to_file("res://Scenes/UI/trackSelection.tscn")
 	
 	if Input.is_action_just_pressed("p1_down") or Input.is_action_just_pressed("p1_up"):

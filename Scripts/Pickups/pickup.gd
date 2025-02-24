@@ -8,9 +8,7 @@ func entered(player):
 		globalVars.pOnePowerup = type
 		get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
 		queue_free()
-		print('player1 pickup')
 	elif player.currentOwner == player.playerChoices.p2 and globalVars.pTwoPowerup == 'none':
 		globalVars.pTwoPowerup = type
 		get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
 		queue_free()
-		print('player2 pickup')

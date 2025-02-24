@@ -1,7 +1,8 @@
 extends UI
 class_name coinHud
 
-var coins: int = 2
+var coins: int = 0
+var player
 
 @onready var label = $label
 
@@ -9,7 +10,13 @@ func _ready() -> void:
 	update()
 
 func update():
-	if coins == 1:
-		label.text = str(coins) + " coin"
-	else:
-		label.text = str(coins) + " coins"
+	if player == 1:
+		if coins == 1:
+			label.text = str(globalVars.pOneCoins) + " coin"
+		else:
+			label.text = str(globalVars.pOneCoins) + " coins"
+	if player == 2:
+		if coins == 1:
+			label.text = str(globalVars.pTwoCoins) + " coin"
+		else:
+			label.text = str(globalVars.pTwoCoins) + " coins"

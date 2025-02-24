@@ -109,6 +109,7 @@ size = Vector2(44, 98)
 size = Vector2(8.99993, 13.9999)
 
 [node name="NSX" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_gmmup")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

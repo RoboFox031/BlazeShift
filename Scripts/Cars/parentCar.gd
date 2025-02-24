@@ -84,7 +84,8 @@ var trueCurrentTurnPower:float: #Converts the turn power to radians
 var currentDecel=8; ##The base deceleration value
 
 
-
+func _ready() -> void:
+	z_index = 10
 
 
 func _physics_process(delta):

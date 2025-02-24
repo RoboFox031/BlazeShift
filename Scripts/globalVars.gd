@@ -7,7 +7,6 @@ var playerOneColor = "blue"
 var playerTwoColor = "blue"
 var pOnePowerup = 'none'
 var pTwoPowerup = 'none'
-
 var pOneCoins = 2
 var pTwoCoins = 3
 const NSX = preload("res://Scenes/Cars/NSX.tscn")

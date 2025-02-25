@@ -1,7 +1,7 @@
 extends Node
 class_name pickup
 
-var type
+var types = ['fireball',]
 
 func entered(player):
 	if player.currentOwner == player.playerChoices.p1 and globalVars.pOnePowerup == 'none':

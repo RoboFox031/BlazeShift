@@ -5,8 +5,7 @@ var blazeMax = 100
 var blazeCurrent = 100
 var blazeBurnSpeed = 25
 var blazePowerupFill: float = .5
-@onready var blazeBar = $blazeBar
+@onready var blazeBar: TextureProgressBar = $blazeBar
 
 func _ready() -> void:
-	blazeBar.max_value = blazeMax
-	blazeBar.value = blazeCurrent
+	pass

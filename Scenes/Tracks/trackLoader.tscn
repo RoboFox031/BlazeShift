@@ -31,7 +31,8 @@ render_target_update_mode = 4
 position = Vector2(2, 900)
 
 [node name="pOneBlazeHud" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("3_sw20d")]
-position = Vector2(20, 1000)
+position = Vector2(-173, 496)
+scale = Vector2(0.3, 0.3)
 
 [node name="pOnePowerupsHud" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("4_n1ubl")]
 position = Vector2(842, 977)
@@ -52,7 +53,8 @@ render_target_update_mode = 4
 position = Vector2(1808, 975)
 
 [node name="pTwoBlazeHud" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("3_2qf2f")]
-position = Vector2(20, 1000)
+position = Vector2(793, 496)
+scale = Vector2(0.3, 0.3)
 
 [node name="pOneCoinHud" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("5_5lhqp")]
 position = Vector2(970, 900)

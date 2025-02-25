@@ -8,7 +8,7 @@ class_name Car
 @export var baseAcceleration=15 ##controls acceleration
 @export var baseTopSpeed=1000 ##controls top speed
 #controls how quickly you turn
-@export var baseTurnSpeed:float=80##controls how quickly you turn
+@export var baseTurnSpeed:float=40##controls how quickly you turn
 var trueBaseTurnSpeed:float: #Converts the turn speed to radians
 	get:
 		return baseTurnSpeed*PI/180
@@ -114,7 +114,9 @@ func _physics_process(delta):
 
 	#If you are boosting, stops you when you run out
 	if boosting==true:
-		if(globalVars.p1BlazeCurrent==0) or (globalVars.p2BlazeCurrent==0) :
+		if(globalVars.p1BlazeCurrent==0) and (currentOwner==playerChoices.p1):
+			resetMovement()
+		elif(globalVars.p2BlazeCurrent==0) and (currentOwner==playerChoices.p2):
 			resetMovement()
 
 

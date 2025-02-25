@@ -155,7 +155,11 @@ func startBoost():
 
 	print(currentOwnerStr+" is boosing")
 
-
+#Changes the movement varibles to the drifing state
+func startDrift():
+	#Determine which direction the player is currently turning
+	if
+	pass
 
 
 #Updates the terrain and terrain multipliers

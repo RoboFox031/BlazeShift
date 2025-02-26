@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp3aibcv01wc3"]
+[gd_scene load_steps=6 format=3 uid="uid://dp3aibcv01wc3"]
 
 [ext_resource type="Script" path="res://Scripts/Testing/testtrack.gd" id="1_w8cw7"]
 [ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="3_d1ajc"]
 [ext_resource type="PackedScene" uid="uid://8hdiadh8bmvx" path="res://Scenes/Pickups/blaze.tscn" id="3_g56i0"]
 [ext_resource type="PackedScene" uid="uid://cqtcf0iskrr84" path="res://Scenes/Pickups/fireballPickup.tscn" id="4_7w8ok"]
+[ext_resource type="PackedScene" uid="uid://dlm55jtheq16k" path="res://Scenes/Pickups/powerupBox.tscn" id="5_u60ag"]
 
 [node name="RaceTrackTesting" type="Node2D"]
 script = ExtResource("1_w8cw7")
@@ -27,3 +28,15 @@ position = Vector2(293, 228)
 
 [node name="fireballPickup" parent="." instance=ExtResource("4_7w8ok")]
 position = Vector2(426, 243)
+
+[node name="powerupBox" parent="." instance=ExtResource("5_u60ag")]
+position = Vector2(358, 456)
+
+[node name="powerupBox2" parent="." instance=ExtResource("5_u60ag")]
+position = Vector2(175, 719)
+
+[node name="powerupBox3" parent="." instance=ExtResource("5_u60ag")]
+position = Vector2(747, 655)
+
+[node name="powerupBox4" parent="." instance=ExtResource("5_u60ag")]
+position = Vector2(915, 310)

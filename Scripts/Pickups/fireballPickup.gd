@@ -2,7 +2,8 @@ extends pickup
 class_name fireballPickup
 
 func _ready():
-	type = 'fireball'
+	#type = 'fireball'
+	pass
 
 
 

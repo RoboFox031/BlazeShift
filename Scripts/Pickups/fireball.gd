@@ -5,7 +5,7 @@ var speed = 750
 var direction
 
 func _ready():
-	type = 'fireball'
+	#type = 'fireball'
 	direction = Vector2.RIGHT.rotated(self.rotation)
 
 func _process(delta: float) -> void:

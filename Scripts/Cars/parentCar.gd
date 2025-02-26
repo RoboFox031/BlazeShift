@@ -7,6 +7,10 @@ class_name Car
 var color = "blue"
 var fireball: PackedScene = preload("res://Scenes/Pickups/fireball.tscn")
 
+
+@export var frontCar: Vector2 = Vector2(55,0)
+
+
 ########
 #Important Car Stats:
 ########
@@ -119,6 +123,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if Input.is_action_just_pressed(currentOwnerStr+"_r1"):###might change the input later
+		#player one powerups
 		if globalVars.pOnePowerup != 'none':
 			if globalVars.pOnePowerup == "blaze":
 				globalVars.pOnePowerup = 'none'
@@ -129,12 +134,12 @@ func _physics_process(delta):
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax
 			if globalVars.pOnePowerup == 'fireball':
 				globalVars.pOnePowerup = 'none'
-				var instance = fireball.instantiate()
-				if currentOwner == playerChoices.p1:
-					add_child(instance)
-				if currentOwner == playerChoices.p2:
-					add_child(instance)
+				var ball = fireball.instantiate()
+				ball.global_position = frontCar+global_position
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(ball)
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
+	
+		#player 2 powerups
 		if globalVars.pTwoPowerup != 'none':
 			if globalVars.pTwoPowerup == "blaze":
 				globalVars.pTwoPowerup = 'none'
@@ -145,11 +150,9 @@ func _physics_process(delta):
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax
 			if globalVars.pTwoPowerup == 'fireball':
 				globalVars.pTwoPowerup = 'none'
-				var instance = fireball.instantiate()
-				if currentOwner == playerChoices.p1:
-					add_child(instance)
-				if currentOwner == playerChoices.p2:
-					add_child(instance)
+				var ball = fireball.instantiate()
+				ball.global_position = frontCar+global_position
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(ball)
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
 
 

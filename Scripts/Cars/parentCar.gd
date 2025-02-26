@@ -80,6 +80,10 @@ var trueCurrentTurnPower:float: #Converts the turn power to radians
 #The current deceleration value
 var currentDecel=baseDecel ##The base deceleration value
 
+#Stores the direction you are drifing in
+enum driftDir{lDrift=-1,rDrift=1,none=0}
+var currentDrift:driftDir
+var isDrifting:bool=false
 
 
 
@@ -94,8 +98,12 @@ func _physics_process(delta):
 	else:
 		currentLinSpeed = move_toward(currentLinSpeed, 0, currentDecel*terrainDecelMult)
 	
-	#Gets the input, and converts it to positive or negitive 1
-	var turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right")
+	var turnDirection
+	if isDrifting==false:
+		#Gets the input, and converts it to positive or negitive 1
+		turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right")
+	if isDrifting==true:
+		turnDirection=currentDrift
 	#If you are clicking a button, turns in that direction based on the acceleration value
 	#The /1000 at the end makes the number small, to prevent people from habing to deal with tiny decimals while playing with stats
 	if turnDirection and currentLinSpeed!=0:
@@ -111,7 +119,6 @@ func _physics_process(delta):
 	#Sets the velocity to  the speed value, using sin and cos to account for rotation
 	velocity=Vector2(currentLinSpeed*cos(rotation),currentLinSpeed*sin(rotation))
 	move_and_slide()
-
 	#If you are boosting, stops you when you run out
 	if boosting==true:
 		if(globalVars.p1BlazeCurrent==0) and (currentOwner==playerChoices.p1):
@@ -129,10 +136,19 @@ func _input(event):
 	if Input.is_action_just_released(currentOwnerStr+"_x"):
 		print(currentOwnerStr+" stopped boosting")
 		resetMovement()
+	
+	#Allows drift
+	if Input.is_action_just_pressed(currentOwnerStr+"_l1"):
+		
+		startDrift()
+	if Input.is_action_just_released(currentOwnerStr+"_l1"):
+		print(currentOwnerStr+" stopped drifting")
+		resetMovement()
 
 #Resets movement variables to their defult
 func resetMovement():
 	boosting=false
+	isDrifting=false
 	currentAcceleration=baseAcceleration
 	currentTopSpeed=baseTopSpeed
 	currentTurnSpeed=baseTurnSpeed
@@ -157,9 +173,24 @@ func startBoost():
 
 #Changes the movement varibles to the drifing state
 func startDrift():
-	#Determine which direction the player is currently turning
-	if
-	pass
+	#Resets the drift varible
+	currentDrift=driftDir.none
+	#Determine which direction the player is currently turning and sets the driftDir accordingly
+	if currentTurnForce<0:
+		currentDrift=driftDir.lDrift
+		print(currentOwnerStr+" is drifting left")
+	elif currentTurnForce>0:
+		currentDrift=driftDir.rDrift
+		print(currentOwnerStr+" is drifting right")
+	#If you aren't drifing, stop the function
+	if currentDrift==driftDir.none:
+		return
+	#if you are drfiting, alter the variables accordingly
+	else:
+		isDrifting=true
+		currentTurnPower=baseTurnPower*2
+		
+	
 
 
 #Updates the terrain and terrain multipliers

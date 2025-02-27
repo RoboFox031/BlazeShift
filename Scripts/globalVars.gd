@@ -1,8 +1,10 @@
 extends Node
 
 var track = null
-var playerOneCar = preload("res://Scenes/Cars/lemkeCar.tscn")
-var playerTwoCar = preload("res://Scenes/Cars/lemkeCar.tscn")
+var playerOneCar = preload("res://Assets/Sprites/Cars/69'Charger/69'ChargerBlack.png")
+var playerTwoCar = preload("res://Assets/Sprites/Cars/69'Charger/69'ChargerBlack.png")
+var playerOneCarSprite = null
+var playerTwoCarSprite = null
 var playerOneColor = "blue"
 var playerTwoColor = "blue"
 var pOnePowerup = 'none'

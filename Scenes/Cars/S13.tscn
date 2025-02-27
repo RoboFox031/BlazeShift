@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://ckxdpqb536cq6"]
+[gd_scene load_steps=22 format=3 uid="uid://dnoj3j4pbv0xf"]
 
 [ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_krq1h"]
+[ext_resource type="Texture2D" uid="uid://d2hbjs68q0ugx" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Black-1.png.png" id="2_aqcn6"]
 [ext_resource type="Texture2D" uid="uid://fpo273tufiul" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Blue-1.png.png" id="2_ubian"]
 [ext_resource type="Texture2D" uid="uid://buwolsp750jos" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Green-1.png.png" id="3_pl4yh"]
 [ext_resource type="Texture2D" uid="uid://de205hu8i7omk" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Orange-1.png.png" id="4_t8hxk"]
@@ -9,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://c224p2kh502n0" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View-1.png.png" id="7_y2ooa"]
 [ext_resource type="Texture2D" uid="uid://bstvmj4gb6qmf" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Yellow-1.png.png" id="8_4sie7"]
 [ext_resource type="Script" path="res://Scripts/Cars/terrainDetector.gd" id="9_pyvhv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gve0h"]
+atlas = ExtResource("2_aqcn6")
+region = Rect2(0, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b67ue"]
 atlas = ExtResource("2_ubian")
@@ -40,7 +45,10 @@ region = Rect2(32, 55, 123, 58)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gy3yo"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gve0h")
+}],
 "loop": true,
 "name": &"black",
 "speed": 5.0
@@ -116,7 +124,7 @@ script = ExtResource("1_krq1h")
 rotation = -3.14159
 scale = Vector2(0.895, 0.895)
 sprite_frames = SubResource("SpriteFrames_gy3yo")
-animation = &"white"
+animation = &"black"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

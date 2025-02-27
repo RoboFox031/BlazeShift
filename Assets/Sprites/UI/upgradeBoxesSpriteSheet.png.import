@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbk1e6742xxw8"
-path="res://.godot/imported/Lemke's Mustang Jan2025.png-06f6da139bfb62df1930f605f071bbcd.ctex"
+uid="uid://dcn5bmbutohrv"
+path="res://.godot/imported/upgradeBoxesSpriteSheet.png-023c393cb9e55a18b115b3d38fb9cc5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/Mustang Top Views/Lemke's Mustang Jan2025.png"
-dest_files=["res://.godot/imported/Lemke's Mustang Jan2025.png-06f6da139bfb62df1930f605f071bbcd.ctex"]
+source_file="res://Assets/Sprites/UI/upgradeBoxesSpriteSheet.png"
+dest_files=["res://.godot/imported/upgradeBoxesSpriteSheet.png-023c393cb9e55a18b115b3d38fb9cc5b.ctex"]
 
 [params]
 

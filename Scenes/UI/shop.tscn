@@ -7,33 +7,33 @@
 [ext_resource type="Texture2D" uid="uid://ks7e4wgfjt7o" path="res://Assets/Sprites/Cars/Mustang/MustangBlack.png" id="5_i6uuj"]
 [ext_resource type="Texture2D" uid="uid://c4j141rwvqapi" path="res://Assets/Sprites/Cars/NSX/NSXBlack.png" id="6_76mq5"]
 [ext_resource type="Texture2D" uid="uid://cdienlvw5alel" path="res://Assets/Sprites/UI/whiteArrow.png" id="7_bjm5q"]
-[ext_resource type="Texture2D" uid="uid://c224p2kh502n0" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View-1.png.png" id="7_dyvlg"]
+[ext_resource type="Texture2D" uid="uid://cxho7kl4koftr" path="res://Assets/Sprites/Cars/S13/S13Black.png" id="7_s7cvf"]
 [ext_resource type="Texture2D" uid="uid://eod83ktvte4" path="res://Assets/Sprites/UI/blackOutlineArrow.png" id="8_o1agm"]
 [ext_resource type="Texture2D" uid="uid://befl2sg56r4h" path="res://Assets/Sprites/Cars/Mustang/MustangBlue.png" id="10_g83si"]
 [ext_resource type="Texture2D" uid="uid://cdtvtbhos3c8b" path="res://Assets/Sprites/Cars/Mustang/MustangGreen.png" id="11_xh48k"]
-[ext_resource type="Texture2D" uid="uid://d2hbjs68q0ugx" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Black-1.png.png" id="12_x1g26"]
 [ext_resource type="Texture2D" uid="uid://nc6g74bvbffw" path="res://Assets/Sprites/Cars/Mustang/MustangOrange.png" id="12_y3us0"]
 [ext_resource type="Texture2D" uid="uid://v3882tth70xu" path="res://Assets/Sprites/Cars/Mustang/MustangPurple.png" id="13_18nnq"]
-[ext_resource type="Texture2D" uid="uid://fpo273tufiul" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Blue-1.png.png" id="13_xctc8"]
 [ext_resource type="Texture2D" uid="uid://csukxh1aew7ks" path="res://Assets/Sprites/Cars/Mustang/MustangRed.png" id="14_gmytu"]
-[ext_resource type="Texture2D" uid="uid://buwolsp750jos" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Green-1.png.png" id="14_txmes"]
 [ext_resource type="Texture2D" uid="uid://4mmpom5mqd3r" path="res://Assets/Sprites/Cars/Mustang/MustangWhite.png" id="15_boyye"]
-[ext_resource type="Texture2D" uid="uid://de205hu8i7omk" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Orange-1.png.png" id="15_mk7hm"]
-[ext_resource type="Texture2D" uid="uid://cc5owaxv7q7do" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Purple-1.png.png" id="16_0dwu0"]
 [ext_resource type="Texture2D" uid="uid://ypmvk8doc3mr" path="res://Assets/Sprites/Cars/Mustang/MustangYellow.png" id="16_pd7v7"]
-[ext_resource type="Texture2D" uid="uid://bo4u4cxkwef4t" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Red-1.png.png" id="17_rqlhg"]
 [ext_resource type="Texture2D" uid="uid://c12coi1qc800a" path="res://Assets/Sprites/Cars/NSX/NSXBlue.png" id="17_s1aay"]
 [ext_resource type="Texture2D" uid="uid://dd6u861qw1dog" path="res://Assets/Sprites/Cars/NSX/NSXGreen.png" id="18_3sc6n"]
-[ext_resource type="Texture2D" uid="uid://bstvmj4gb6qmf" path="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Yellow-1.png.png" id="18_a360l"]
 [ext_resource type="Texture2D" uid="uid://bc7kjhhmc4t0" path="res://Assets/Sprites/Cars/NSX/NSXOrange.png" id="19_vhw0f"]
 [ext_resource type="Texture2D" uid="uid://bk32brwef7p6c" path="res://Assets/Sprites/Cars/NSX/NSXPurple.png" id="20_mbnqq"]
 [ext_resource type="Texture2D" uid="uid://dogd3hglgokrv" path="res://Assets/Sprites/Cars/NSX/NSXRed.png" id="21_fptdd"]
 [ext_resource type="Texture2D" uid="uid://ctmr7xx5ch6cs" path="res://Assets/Sprites/Cars/NSX/NSXWhite.png" id="22_xedec"]
 [ext_resource type="Texture2D" uid="uid://dlnp7itifebmb" path="res://Assets/Sprites/Cars/NSX/NSXYellow.png" id="23_sirx3"]
+[ext_resource type="Texture2D" uid="uid://d35u4aqrdst2f" path="res://Assets/Sprites/Cars/S13/S13Blue.png" id="24_8o0tv"]
 [ext_resource type="PackedScene" uid="uid://bhcaxmvifx6r1" path="res://Scenes/UI/pOneCoinHud.tscn" id="24_snvey"]
 [ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="25_ippaq"]
+[ext_resource type="Texture2D" uid="uid://coe4cu607er63" path="res://Assets/Sprites/Cars/S13/s13Green.png" id="25_t3awa"]
+[ext_resource type="Texture2D" uid="uid://bgwv5r2nvt8mj" path="res://Assets/Sprites/Cars/S13/S13Orange.png" id="26_62r6r"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="26_ia2r8"]
 [ext_resource type="Texture2D" uid="uid://d32c1cq2y216v" path="res://Assets/Sprites/UI/lock.png" id="27_205h2"]
+[ext_resource type="Texture2D" uid="uid://bwida2ckk8uaw" path="res://Assets/Sprites/Cars/S13/S13Purple.png" id="27_ip422"]
+[ext_resource type="Texture2D" uid="uid://bo4u4cxkwef4t" path="res://Assets/Sprites/Cars/S13/S13Red.png" id="28_oqj1u"]
+[ext_resource type="Texture2D" uid="uid://3a1wuvq3kodg" path="res://Assets/Sprites/Cars/S13/S13White.png" id="29_hxpeq"]
+[ext_resource type="Texture2D" uid="uid://07sdktfft6a8" path="res://Assets/Sprites/Cars/S13/S13Yellow.png" id="30_vk8vu"]
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="35_igcgd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjoi5"]
@@ -234,43 +234,43 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lxe8m"]
-atlas = ExtResource("12_x1g26")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfiwy"]
+atlas = ExtResource("7_s7cvf")
 region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mkwit"]
-atlas = ExtResource("13_xctc8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwsfd"]
+atlas = ExtResource("24_8o0tv")
 region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q62xc"]
-atlas = ExtResource("14_txmes")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r8pf"]
+atlas = ExtResource("25_t3awa")
 region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ha2lm"]
-atlas = ExtResource("15_mk7hm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vi7d"]
+atlas = ExtResource("26_62r6r")
 region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5bl6t"]
-atlas = ExtResource("16_0dwu0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj0fx"]
+atlas = ExtResource("27_ip422")
 region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qq3e6"]
-atlas = ExtResource("17_rqlhg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2ye4"]
+atlas = ExtResource("28_oqj1u")
 region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rrosq"]
-atlas = ExtResource("7_dyvlg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxb7v"]
+atlas = ExtResource("29_hxpeq")
 region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cl0xu"]
-atlas = ExtResource("18_a360l")
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8mh3"]
+atlas = ExtResource("30_vk8vu")
 region = Rect2(0, 0, 192, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_58y0j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lxe8m")
+"texture": SubResource("AtlasTexture_qfiwy")
 }],
 "loop": true,
 "name": &"black",
@@ -278,7 +278,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mkwit")
+"texture": SubResource("AtlasTexture_dwsfd")
 }],
 "loop": true,
 "name": &"blue",
@@ -286,7 +286,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q62xc")
+"texture": SubResource("AtlasTexture_0r8pf")
 }],
 "loop": true,
 "name": &"green",
@@ -294,7 +294,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ha2lm")
+"texture": SubResource("AtlasTexture_1vi7d")
 }],
 "loop": true,
 "name": &"orange",
@@ -302,7 +302,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5bl6t")
+"texture": SubResource("AtlasTexture_bj0fx")
 }],
 "loop": true,
 "name": &"purple",
@@ -310,7 +310,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qq3e6")
+"texture": SubResource("AtlasTexture_x2ye4")
 }],
 "loop": true,
 "name": &"red",
@@ -318,7 +318,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rrosq")
+"texture": SubResource("AtlasTexture_gxb7v")
 }],
 "loop": true,
 "name": &"white",
@@ -326,7 +326,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cl0xu")
+"texture": SubResource("AtlasTexture_j8mh3")
 }],
 "loop": true,
 "name": &"yellow",
@@ -579,7 +579,7 @@ visible = false
 position = Vector2(465, 924)
 rotation = 3.14159
 scale = Vector2(2, 2)
-texture = ExtResource("12_x1g26")
+texture = ExtResource("7_s7cvf")
 
 [node name="pTwoCarOne" type="Sprite2D" parent="."]
 position = Vector2(1390, 972)
@@ -599,7 +599,7 @@ visible = false
 position = Vector2(1463, 924)
 rotation = 3.14159
 scale = Vector2(2, 2)
-texture = ExtResource("12_x1g26")
+texture = ExtResource("7_s7cvf")
 
 [node name="pOneRightArrow" type="Sprite2D" parent="."]
 self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
@@ -678,7 +678,7 @@ position = Vector2(466, 497)
 rotation = 3.14159
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_58y0j")
-animation = &"yellow"
+animation = &"red"
 
 [node name="pTwoCarOneFinal" type="AnimatedSprite2D" parent="."]
 position = Vector2(1319, 589)

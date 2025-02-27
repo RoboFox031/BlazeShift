@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo4u4cxkwef4t"
-path="res://.godot/imported/S13 Top View Red-1.png.png-e14138dabbac1d42af679f2d95a1199b.ctex"
+uid="uid://bwida2ckk8uaw"
+path="res://.godot/imported/S13Purple.png-0f146aedfe7ace56cef53494cecfcac7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/S13 Top View/S13 Top View Red-1.png.png"
-dest_files=["res://.godot/imported/S13 Top View Red-1.png.png-e14138dabbac1d42af679f2d95a1199b.ctex"]
+source_file="res://Assets/Sprites/Cars/S13/S13Purple.png"
+dest_files=["res://.godot/imported/S13Purple.png-0f146aedfe7ace56cef53494cecfcac7.ctex"]
 
 [params]
 

@@ -1,42 +1,42 @@
-[gd_scene load_steps=20 format=3 uid="uid://kbqwa4flu3wx"]
+[gd_scene load_steps=20 format=3 uid="uid://bkjj8etk8gxx"]
 
 [ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_gmmup"]
-[ext_resource type="Texture2D" uid="uid://c67td8osonx1b" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Blue-1.png.png" id="2_7a48j"]
-[ext_resource type="Texture2D" uid="uid://d37o5pocgyfqp" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Green-1.png.png" id="3_b1xem"]
-[ext_resource type="Texture2D" uid="uid://c0k2j3nokbudw" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Orange-1.png.png" id="4_chfol"]
-[ext_resource type="Texture2D" uid="uid://eknxxd4n0vc5" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Purple-1.png.png" id="5_i4vis"]
-[ext_resource type="Texture2D" uid="uid://cx3nog7s534jo" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Red-1.png.png" id="6_bl8gx"]
-[ext_resource type="Texture2D" uid="uid://cvash2gud7v0y" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View-1.png.png" id="7_50dei"]
-[ext_resource type="Texture2D" uid="uid://jytp767iol7y" path="res://Assets/Sprites/Cars/NSX Top View/NSX Top View Yellow-1.png.png" id="8_0nn6c"]
+[ext_resource type="Texture2D" uid="uid://c12coi1qc800a" path="res://Assets/Sprites/Cars/NSX/NSXBlue.png" id="2_52j34"]
+[ext_resource type="Texture2D" uid="uid://dd6u861qw1dog" path="res://Assets/Sprites/Cars/NSX/NSXGreen.png" id="3_78ue1"]
+[ext_resource type="Texture2D" uid="uid://bc7kjhhmc4t0" path="res://Assets/Sprites/Cars/NSX/NSXOrange.png" id="4_m8pit"]
+[ext_resource type="Texture2D" uid="uid://bk32brwef7p6c" path="res://Assets/Sprites/Cars/NSX/NSXPurple.png" id="5_qqy1g"]
+[ext_resource type="Texture2D" uid="uid://dogd3hglgokrv" path="res://Assets/Sprites/Cars/NSX/NSXRed.png" id="6_4b5nt"]
+[ext_resource type="Texture2D" uid="uid://ctmr7xx5ch6cs" path="res://Assets/Sprites/Cars/NSX/NSXWhite.png" id="7_lphrb"]
+[ext_resource type="Texture2D" uid="uid://dlnp7itifebmb" path="res://Assets/Sprites/Cars/NSX/NSXYellow.png" id="8_dcu01"]
 [ext_resource type="Script" path="res://Scripts/Cars/terrainDetector.gd" id="9_axpak"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_edq04"]
-atlas = ExtResource("2_7a48j")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fstdq"]
+atlas = ExtResource("2_52j34")
+region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_djfvy"]
-atlas = ExtResource("3_b1xem")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wybpv"]
+atlas = ExtResource("3_78ue1")
+region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j2sgh"]
-atlas = ExtResource("4_chfol")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvy1g"]
+atlas = ExtResource("4_m8pit")
+region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_svva1"]
-atlas = ExtResource("5_i4vis")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_umxwo"]
+atlas = ExtResource("5_qqy1g")
+region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wognd"]
-atlas = ExtResource("6_bl8gx")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_krmf5"]
+atlas = ExtResource("6_4b5nt")
+region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kcbhf"]
-atlas = ExtResource("7_50dei")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_if426"]
+atlas = ExtResource("7_lphrb")
+region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7slbu"]
-atlas = ExtResource("8_0nn6c")
-region = Rect2(6, 85, 154, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pwj7"]
+atlas = ExtResource("8_dcu01")
+region = Rect2(0, 0, 192, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5pqir"]
 animations = [{
@@ -47,7 +47,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_edq04")
+"texture": SubResource("AtlasTexture_fstdq")
 }],
 "loop": true,
 "name": &"blue",
@@ -55,7 +55,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_djfvy")
+"texture": SubResource("AtlasTexture_wybpv")
 }],
 "loop": true,
 "name": &"green",
@@ -63,7 +63,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j2sgh")
+"texture": SubResource("AtlasTexture_vvy1g")
 }],
 "loop": true,
 "name": &"orange",
@@ -71,7 +71,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_svva1")
+"texture": SubResource("AtlasTexture_umxwo")
 }],
 "loop": true,
 "name": &"purple",
@@ -79,7 +79,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wognd")
+"texture": SubResource("AtlasTexture_krmf5")
 }],
 "loop": true,
 "name": &"red",
@@ -87,7 +87,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kcbhf")
+"texture": SubResource("AtlasTexture_if426")
 }],
 "loop": true,
 "name": &"white",
@@ -95,7 +95,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7slbu")
+"texture": SubResource("AtlasTexture_6pwj7")
 }],
 "loop": true,
 "name": &"yellow",
@@ -113,10 +113,11 @@ z_index = 1
 script = ExtResource("1_gmmup")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-10, 16)
 rotation = 3.14159
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_5pqir")
-animation = &"white"
+animation = &"yellow"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bwu3f2og4hln5"]
 
 [ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_bubl4"]
-[ext_resource type="Texture2D" uid="uid://co571yx0vbx3d" path="res://Assets/Sprites/Cars/Mustang Top Views/Mustang Top View Blue.png" id="2_ip2ur"]
+[ext_resource type="Texture2D" uid="uid://culs8qglxkg03" path="res://Assets/Sprites/Cars/Mustang Top View.png" id="2_ip2ur"]
 [ext_resource type="Script" path="res://Scripts/Cars/terrainDetector.gd" id="3_p1olo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ym1ia"]

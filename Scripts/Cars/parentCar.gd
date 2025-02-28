@@ -117,8 +117,14 @@ func _physics_process(delta):
 	rotation_degrees+=turnOutput
 	
 	#Sets the velocity to  the speed value, using sin and cos to account for rotation
-	velocity=Vector2(currentLinSpeed*cos(rotation),currentLinSpeed*sin(rotation))
+	if isDrifting==false:
+		velocity=Vector2(currentLinSpeed*cos(rotation),currentLinSpeed*sin(rotation))
+	
+	#If you are drifing, apply a direction in 90 degrees
+	elif isDrifting==true:
+		pass
 	move_and_slide()
+	print("Fwd:("+str(velocity.x)+","+str(velocity.y)+")")
 	#If you are boosting, stops you when you run out
 	if boosting==true:
 		if(globalVars.p1BlazeCurrent==0) and (currentOwner==playerChoices.p1):
@@ -188,7 +194,7 @@ func startDrift():
 	#if you are drfiting, alter the variables accordingly
 	else:
 		isDrifting=true
-		currentTurnPower=baseTurnPower*2
+		currentTurnPower=baseTurnPower*.5
 		
 	
 

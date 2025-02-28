@@ -17,22 +17,6 @@ texture = ExtResource("1_5antp")
 
 [node name="parentCar" parent="." instance=ExtResource("2_6flfi")]
 position = Vector2(-510, -4)
-baseAcceleration = 15
-baseTopSpeed = 1000
-baseTurnSpeed = 40.0
-baseTurnPower = 180.0
-baseDecel = 8
-currentOwner = 0
-offRoadSpeedMult = 0.6
-offRoadAccelMult = 0.8
-offRoadTurnSpeedMult = 0.8
-offRoadTurnPowerMult = 0.8
-offRoadDecelMult = 2.0
-iceSpeedMult = 1.0
-iceAccelMult = 0.5
-iceTurnSpeedMult = 0.1
-iceTurnPowerMult = 2.0
-iceDecelMult = 0.5
 
 [node name="Offroad" type="Area2D" parent="."]
 modulate = Color(0.0100784, 0.498925, 0, 1)

@@ -1,7 +1,11 @@
 extends CharacterBody2D
 class_name Car
 
-@export var fireball: PackedScene
+@onready var colorSprite: AnimatedSprite2D = $Sprite2D
+
+
+var color = "blue"
+var fireball: PackedScene = preload("res://Scenes/Pickups/fireball.tscn")
 
 ########
 #Important Car Stats:
@@ -80,10 +84,13 @@ var trueCurrentTurnPower:float: #Converts the turn power to radians
 var currentDecel=8; ##The base deceleration value
 
 
-
+func _ready() -> void:
+	z_index = 10
 
 
 func _physics_process(delta):
+	#Changes the color
+	colorSprite.play(color)
 	#Gets the input, and converts it to positive or negitive 1
 	var linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
 	#If you are clicking a button, accelerates based on the acceleration value
@@ -110,7 +117,40 @@ func _physics_process(delta):
 	#Sets the velocity to  the speed value, using sin and cos to account for rotation
 	velocity=Vector2(currentLinSpeed*cos(rotation),currentLinSpeed*sin(rotation))
 	move_and_slide()
-
+	
+	if Input.is_action_just_pressed(currentOwnerStr+"_r1"):###might change the input later
+		if globalVars.pOnePowerup != 'none':
+			if globalVars.pOnePowerup == "blaze":
+				globalVars.pOnePowerup = 'none'
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
+				if get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) 
+				else:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax
+			if globalVars.pOnePowerup == 'fireball':
+				globalVars.pOnePowerup = 'none'
+				var instance = fireball.instantiate()
+				if currentOwner == playerChoices.p1:
+					add_child(instance)
+				if currentOwner == playerChoices.p2:
+					add_child(instance)
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
+		if globalVars.pTwoPowerup != 'none':
+			if globalVars.pTwoPowerup == "blaze":
+				globalVars.pTwoPowerup = 'none'
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
+				if get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) 
+				else:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax
+			if globalVars.pTwoPowerup == 'fireball':
+				globalVars.pTwoPowerup = 'none'
+				var instance = fireball.instantiate()
+				if currentOwner == playerChoices.p1:
+					add_child(instance)
+				if currentOwner == playerChoices.p2:
+					add_child(instance)
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
 
 
 # func _input(event):

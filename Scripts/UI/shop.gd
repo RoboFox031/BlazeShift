@@ -1,6 +1,9 @@
 extends UI
 class_name shop
 
+var pOneReady = false
+var pTwoReady = false
+
 var pOneOptionSelected = "car"
 var pTwoOptionSelected = "car"
 
@@ -67,6 +70,23 @@ var pTwoOwned: Array
 
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 
+var carStringNames: Array = ['Mustang/Mustang','NSX/NSX','S13/S13']
+
+var cars := {
+	"LemkeCar": {
+	carScene = preload("res://Scenes/Cars/lemkeCar.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"NSX": {
+	carScene = preload("res://Scenes/Cars/NSX.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"S13": {
+	carScene = preload("res://Scenes/Cars/S13.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	}
+}
+
 var carCosts: Array = [0,0,1] #the position in the array relates to the car
 
 func _ready() -> void:
@@ -83,7 +103,21 @@ func _ready() -> void:
 	_updateFinalDisplay(pOneCarsFinal[pOneCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
 	
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed('p1_start'):
+		if pOneReady == false:
+			pOneReady = true
+		else:
+			pOneReady = false
+		_updateReadyScreen()
+	if Input.is_action_just_pressed("p2_start"):
+		if pTwoReady == false:
+			pTwoReady = true
+		else:
+			pTwoReady = false
+		_updateReadyScreen()
+		
 	if Input.is_action_just_pressed("p1_down") or Input.is_action_just_pressed("p1_up"):
+		
 		if pOneOptionSelected == "car":
 			pOneOptionSelected = "color"
 			for c in pOneColors:
@@ -235,7 +269,6 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 		if c == pOneCar:
 			c.visible = true
 			c.play(colors[pOneColorSelected])
-			print(colors[pOneColorSelected])
 		else:
 			c.visible = false
 	for c in pTwoCarsFinal:
@@ -264,6 +297,7 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 		pTwoOwnedLabel.position.x = 1245
 		pTwoOwnedLabel.add_theme_color_override("font_color", Color("9f0000"))
 		$locks/pTwoLockFinal.visible = true
+	_changeGlobalVars()
 
 func _buyCar(player):
 	if player == 1:
@@ -282,3 +316,24 @@ func _buyCar(player):
 				$pTwoCoinHud.update()
 				_updateFinalDisplay(pTwoCarsFinal[pTwoCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
 				_updateCarDisplay(pOneCars[pOneCarSelection],pTwoCars[pTwoCarSelection])
+
+func _changeGlobalVars():
+	var carNames = cars.keys()
+	globalVars.playerOneCar = cars[carNames[pOneCarSelection]].carScene
+	globalVars.playerOneColor = cars[carNames[pOneCarSelection]].colors[pOneColorSelected]
+	globalVars.playerTwoCar = cars[carNames[pTwoCarSelection]].carScene
+	globalVars.playerTwoColor = cars[carNames[pTwoCarSelection]].colors[pTwoColorSelected]
+	globalVars.playerOneCarSprite = carStringNames[pOneCarSelection] + colors[pOneColorSelected].capitalize()
+	globalVars.playerTwoCarSprite = carStringNames[pTwoCarSelection] + colors[pTwoColorSelected].capitalize()
+
+func _updateReadyScreen():
+	if pOneReady == true:
+		$pOneReadyScreen.visible = true
+	else:
+		$pOneReadyScreen.visible = false
+	if pTwoReady == true:
+		$pTwoReadyScreen.visible = true
+	else:
+		$pTwoReadyScreen.visible = false
+	if pOneReady == true and pTwoReady == true:
+		get_tree().change_scene_to_file("res://Scenes/UI/upgradeShop.tscn")

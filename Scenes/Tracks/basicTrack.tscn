@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bvkxdan0taadq"]
+[gd_scene load_steps=8 format=4 uid="uid://bcxjhlupe57xs"]
 
 [ext_resource type="Script" path="res://Scripts/Tracks/basicTrack.gd" id="1_ifg0j"]
 [ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://Assets/Sprites/Tracks/192 racetrack Divided.svg" id="1_m2org"]

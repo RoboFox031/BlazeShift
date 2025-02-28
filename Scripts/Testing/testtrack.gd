@@ -18,6 +18,7 @@ func loadCars():
 	player1.position.y= -8
 	player1.name = 'player1'
 	player1.currentOwner = player1.playerChoices.p1
+	#player1.scale = Vector2(.3,.3)
 	var player2 = globalVars.playerTwoCar.instantiate()
 	player2.color = globalVars.playerTwoColor
 	player2.position.x = -520

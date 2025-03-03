@@ -27,6 +27,9 @@ var currentTurnForce:float =0
 var linOutput:float=0
 #Outputs the true turning speed of the car
 var turnOutput:float=0
+
+#Stores the vector the car is going in
+var fwdVector:Vector2
 ###########################
 ############End of Important Car Stats
 ###########################
@@ -84,6 +87,7 @@ var currentDecel=baseDecel ##The base deceleration value
 enum driftDir{lDrift=-1,rDrift=1,none=0}
 var currentDrift:driftDir
 var isDrifting:bool=false
+var driftVector:Vector2
 
 
 
@@ -116,15 +120,14 @@ func _physics_process(delta):
 	turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
 	rotation_degrees+=turnOutput
 	
-	#Sets the velocity to  the speed value, using sin and cos to account for rotation
-	if isDrifting==false:
-		velocity=Vector2(currentLinSpeed*cos(rotation),currentLinSpeed*sin(rotation))
+	#Sets the velocity to fwd vector added to the drift vector
+	fwdVector=Vector2(currentLinSpeed*cos(rotation),currentLinSpeed*sin(rotation))
+	driftVector=Vector2(move_toward(driftVector.x,fwdVector.x,6),move_toward(driftVector.y,fwdVector.y,6))
+	velocity=(fwdVector+driftVector)/2
 	
-	#If you are drifing, apply a direction in 90 degrees
-	elif isDrifting==true:
-		pass
 	move_and_slide()
-	print("Fwd:("+str(velocity.x)+","+str(velocity.y)+")")
+	print("Fwd: "+str(fwdVector))
+	print("Drift: "+str(driftVector))
 	#If you are boosting, stops you when you run out
 	if boosting==true:
 		if(globalVars.p1BlazeCurrent==0) and (currentOwner==playerChoices.p1):
@@ -190,11 +193,13 @@ func startDrift():
 		print(currentOwnerStr+" is drifting right")
 	#If you aren't drifing, stop the function
 	if currentDrift==driftDir.none:
-		return
+		pass
 	#if you are drfiting, alter the variables accordingly
 	else:
 		isDrifting=true
 		currentTurnPower=baseTurnPower*.5
+		#Sets the drift vector to a snipit of the car's current velocity vector
+		driftVector=velocity
 		
 	
 

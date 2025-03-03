@@ -14,7 +14,7 @@ var selected = 0
 
 func _ready() -> void:
 	maps = [mapOne, mapTwo, mapThree, mapFour, mapFive]
-	tracks = [preload("res://Scenes/Testing/testing_racetrack.tscn"),preload("res://Scenes/Tracks/basicTrack.tscn"),preload("res://Scenes/Tracks/ruralTrack.tscn"),preload("res://Scenes/Tracks/iceTrack.tscn"),preload("res://Scenes/Tracks/volcanoTrack.tscn")]
+	tracks = [preload("res://Scenes/Tracks/basicTrack.tscn"),preload("res://Scenes/Tracks/ruralTrack.tscn"),preload("res://Scenes/Tracks/iceTrack.tscn"),preload("res://Scenes/Tracks/volcanoTrack.tscn"),preload("res://Scenes/Testing/testing_racetrack.tscn")]
 	_updateMapSelected(maps[selected])
 
 func _process(delta: float) -> void:

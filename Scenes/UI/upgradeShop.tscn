@@ -330,3 +330,23 @@ press start again to unready"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="label" type="Label" parent="."]
+offset_left = 334.0
+offset_top = 23.0
+offset_right = 1106.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_bpr6m")
+theme_override_font_sizes/font_size = 75
+text = "press start to ready"
+
+[node name="label2" type="Label" parent="."]
+offset_left = 1303.0
+offset_top = 23.0
+offset_right = 2075.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_bpr6m")
+theme_override_font_sizes/font_size = 75
+text = "press start to ready"

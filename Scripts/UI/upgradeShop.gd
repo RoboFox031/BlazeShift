@@ -46,25 +46,25 @@ func _process(delta: float) -> void:
 			pTwoReady = false
 		_updateReadyScreen()
 		
-	if Input.is_action_just_pressed('p1_down'):
+	if Input.is_action_just_pressed('p1_down') and pOneReady == false:
 		if pOneUpgradeSelected + 1 < len(pOneUpgrades):
 			pOneUpgradeSelected += 1
 		else: 
 			pOneUpgradeSelected = 0
 		_updateSelected()
-	if Input.is_action_just_pressed("p1_up"):
+	if Input.is_action_just_pressed("p1_up") and pOneReady == false:
 		if pOneUpgradeSelected - 1 >= 0:
 			pOneUpgradeSelected -= 1
 		else: 
 			pOneUpgradeSelected = 3
 		_updateSelected()
-	if Input.is_action_just_pressed('p2_down'):
+	if Input.is_action_just_pressed('p2_down') and pTwoReady == false:
 		if pTwoUpgradeSelected + 1 < len(pTwoUpgrades):
 			pTwoUpgradeSelected += 1
 		else: 
 			pTwoUpgradeSelected = 0
 		_updateSelected()
-	if Input.is_action_just_pressed("p2_up"):
+	if Input.is_action_just_pressed("p2_up") and pTwoReady == false:
 		if pTwoUpgradeSelected - 1 >= 0:
 			pTwoUpgradeSelected -= 1
 		else: 

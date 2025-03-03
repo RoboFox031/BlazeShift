@@ -1,10 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://hfq4nv7wb14f"]
+[gd_scene load_steps=16 format=3 uid="uid://b5p815vsi61v"]
 
 [ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="1_g3g0w"]
 [ext_resource type="Script" path="res://Scripts/UI/upgradeShop.gd" id="1_wh008"]
 [ext_resource type="PackedScene" uid="uid://bhcaxmvifx6r1" path="res://Scenes/UI/pOneCoinHud.tscn" id="3_sn825"]
 [ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="4_0i7vc"]
-[ext_resource type="Theme" path="res://Resources/shopTheme.tres" id="5_xr0vv"]
+[ext_resource type="Theme" uid="uid://4xjnl3438gl7" path="res://Resources/shopTheme.tres" id="5_xr0vv"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="6_bpr6m"]
 [ext_resource type="Texture2D" uid="uid://dcn5bmbutohrv" path="res://Assets/Sprites/UI/upgradeBoxesSpriteSheet.png" id="7_mffm5"]
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="8_h78wn"]

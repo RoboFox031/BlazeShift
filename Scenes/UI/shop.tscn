@@ -707,7 +707,7 @@ animation = &"red"
 
 [node name="pOneCoinHud" parent="." instance=ExtResource("24_snvey")]
 
-[node name="pOneCoinHud2" parent="." instance=ExtResource("25_ippaq")]
+[node name="pTwoCoinHud" parent="." instance=ExtResource("25_ippaq")]
 position = Vector2(968, 0)
 
 [node name="pOneOwnedLabel" type="Label" parent="."]
@@ -818,3 +818,86 @@ press start again to unready"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="label" type="Label" parent="."]
+offset_left = 334.0
+offset_top = 23.0
+offset_right = 1106.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("26_ia2r8")
+theme_override_font_sizes/font_size = 75
+text = "press start to ready"
+
+[node name="label2" type="Label" parent="."]
+offset_left = 1303.0
+offset_top = 23.0
+offset_right = 2075.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("26_ia2r8")
+theme_override_font_sizes/font_size = 75
+text = "press start to ready"
+
+[node name="pOneCarNameLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 324.0
+offset_top = 229.0
+offset_right = 622.0
+offset_bottom = 331.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(149, 51)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("26_ia2r8")
+theme_override_font_sizes/font_size = 100
+text = "mustang"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="pTwoCarNameLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1291.0
+offset_top = 226.0
+offset_right = 1589.0
+offset_bottom = 328.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(149, 51)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("26_ia2r8")
+theme_override_font_sizes/font_size = 100
+text = "mustang"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="pOneBuyButtonLabel" type="Label" parent="."]
+offset_left = 273.0
+offset_top = 653.0
+offset_right = 672.0
+offset_bottom = 729.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("26_ia2r8")
+theme_override_font_sizes/font_size = 75
+text = "press a to buy"
+
+[node name="pTwoBuyButtonLabel" type="Label" parent="."]
+offset_left = 1243.0
+offset_top = 653.0
+offset_right = 1642.0
+offset_bottom = 729.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("26_ia2r8")
+theme_override_font_sizes/font_size = 75
+text = "press a to buy"

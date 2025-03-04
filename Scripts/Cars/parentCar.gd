@@ -30,6 +30,11 @@ var turnOutput:float=0
 
 #Stores the vector the car is going in
 var fwdVector:Vector2
+
+#handles traction
+@export var baseTraction:float=100
+var traction=baseTraction
+var driftTractionMult=10
 ###########################
 ############End of Important Car Stats
 ###########################
@@ -120,14 +125,18 @@ func _physics_process(delta):
 	turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
 	rotation_degrees+=turnOutput
 	
+	#If your traction isn't at it's normal value, and you aren't on ice or drifting, slowly increase the traction
+	if(traction!=baseTraction)and(currentTerrain!=trackEnums.terrainTypes.ice) and (isDrifting==false):
+		traction=move_toward(traction,baseTraction,4)
 	#Sets the velocity to fwd vector added to the drift vector
 	fwdVector=Vector2(currentLinSpeed*cos(rotation),currentLinSpeed*sin(rotation))
-	driftVector=Vector2(move_toward(driftVector.x,fwdVector.x,6),move_toward(driftVector.y,fwdVector.y,6))
+	driftVector=Vector2(move_toward(driftVector.x,fwdVector.x,traction),move_toward(driftVector.y,fwdVector.y,traction))
 	velocity=(fwdVector+driftVector)/2
 	
 	move_and_slide()
-	print("Fwd: "+str(fwdVector))
-	print("Drift: "+str(driftVector))
+	# print("Fwd: "+str(fwdVector))
+	# print("Drift: "+str(driftVector))
+	#print("Traction: "+str(traction))
 	#If you are boosting, stops you when you run out
 	if boosting==true:
 		if(globalVars.p1BlazeCurrent==0) and (currentOwner==playerChoices.p1):
@@ -156,8 +165,11 @@ func _input(event):
 
 #Resets movement variables to their defult
 func resetMovement():
-	boosting=false
+	#Resets drifting
 	isDrifting=false
+	#Reset boost
+	boosting=false
+	#Resets basic car varibles
 	currentAcceleration=baseAcceleration
 	currentTopSpeed=baseTopSpeed
 	currentTurnSpeed=baseTurnSpeed
@@ -197,9 +209,9 @@ func startDrift():
 	#if you are drfiting, alter the variables accordingly
 	else:
 		isDrifting=true
-		currentTurnPower=baseTurnPower*.5
-		#Sets the drift vector to a snipit of the car's current velocity vector
-		driftVector=velocity
+		#currentTurnPower=baseTurnPower*.5
+		#Lowers traction while drifing
+		traction=traction/driftTractionMult
 		
 	
 
@@ -216,6 +228,12 @@ func updateTerrain(newTerrain):
 			terrainTurnSpeedMult=1
 			terrainTurnPowerMult=1
 			terrainDecelMult=1
+			#resets traction if you arent drifitng
+			if isDrifting==false:
+				traction=baseTraction
+			#if you are drifitng, improve traction to drift levels
+			else:
+				traction=traction/driftTractionMult
 		#If the car is going off road, set the terrain mults accordingly
 		elif newTerrain==trackEnums.terrainTypes.offRoad:
 			terrainSpeedMult=offRoadSpeedMult
@@ -228,3 +246,5 @@ func updateTerrain(newTerrain):
 			terrainAccelMult=iceAccelMult
 			terrainTurnSpeedMult=iceTurnSpeedMult
 			terrainDecelMult=iceDecelMult
+			#Lowers traction on ice
+			traction=traction/15

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d3d06t5586hh"]
+[gd_scene load_steps=22 format=3 uid="uid://ba81k30logwad"]
 
 [ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_n68py"]
 [ext_resource type="Texture2D" uid="uid://ks7e4wgfjt7o" path="res://Assets/Sprites/Cars/Mustang/MustangBlack.png" id="2_a4jnl"]

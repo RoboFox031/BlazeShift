@@ -12351,7 +12351,7 @@ position = Vector2(-28, -27)
 script = ExtResource("1_ftibf")
 
 [node name="icetrack" type="Node2D" parent="."]
-scale = Vector2(0.6, 0.6)
+scale = Vector2(2, 2)
 
 [node name="Track" type="TileMapLayer" parent="icetrack"]
 z_index = 1

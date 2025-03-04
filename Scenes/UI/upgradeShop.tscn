@@ -1,0 +1,332 @@
+[gd_scene load_steps=16 format=3 uid="uid://hfq4nv7wb14f"]
+
+[ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="1_g3g0w"]
+[ext_resource type="Script" path="res://Scripts/UI/upgradeShop.gd" id="1_wh008"]
+[ext_resource type="PackedScene" uid="uid://bhcaxmvifx6r1" path="res://Scenes/UI/pOneCoinHud.tscn" id="3_sn825"]
+[ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="4_0i7vc"]
+[ext_resource type="Theme" path="res://Resources/shopTheme.tres" id="5_xr0vv"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="6_bpr6m"]
+[ext_resource type="Texture2D" uid="uid://dcn5bmbutohrv" path="res://Assets/Sprites/UI/upgradeBoxesSpriteSheet.png" id="7_mffm5"]
+[ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="8_h78wn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r53p5"]
+atlas = ExtResource("7_mffm5")
+region = Rect2(0, 0, 37, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q2u3"]
+atlas = ExtResource("7_mffm5")
+region = Rect2(0, 13, 37, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1leg"]
+atlas = ExtResource("7_mffm5")
+region = Rect2(0, 26, 37, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_622j2"]
+atlas = ExtResource("7_mffm5")
+region = Rect2(0, 39, 37, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r5o0"]
+atlas = ExtResource("7_mffm5")
+region = Rect2(0, 52, 37, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdiru"]
+atlas = ExtResource("7_mffm5")
+region = Rect2(0, 65, 37, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_84gca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r53p5")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q2u3")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1leg")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_622j2")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r5o0")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdiru")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}]
+
+[node name="upgradeShop" type="Node2D"]
+script = ExtResource("1_wh008")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960, 539.75)
+scale = Vector2(3.2, 2.88133)
+texture = ExtResource("1_g3g0w")
+metadata/_edit_lock_ = true
+
+[node name="divider" type="Line2D" parent="."]
+position = Vector2(960, 0)
+points = PackedVector2Array(0, 1080, 0, 0)
+width = 20.0
+default_color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="pOneCoinHud" parent="." instance=ExtResource("3_sn825")]
+
+[node name="pOneCoinHud2" parent="." instance=ExtResource("4_0i7vc")]
+position = Vector2(969, 0)
+
+[node name="pOneLabels" type="Node" parent="."]
+
+[node name="topSpeedLabel" type="Label" parent="pOneLabels"]
+offset_left = 45.0
+offset_top = 402.0
+offset_right = 387.0
+offset_bottom = 503.0
+theme = ExtResource("5_xr0vv")
+theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
+text = "top speed"
+
+[node name="maxBlazeLabel" type="Label" parent="pOneLabels"]
+offset_left = 45.0
+offset_top = 502.0
+offset_right = 421.0
+offset_bottom = 603.0
+theme = ExtResource("5_xr0vv")
+theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
+text = "max blaze"
+
+[node name="blazeRefillLabel" type="Label" parent="pOneLabels"]
+offset_left = 45.0
+offset_top = 602.0
+offset_right = 714.0
+offset_bottom = 703.0
+theme = ExtResource("5_xr0vv")
+theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
+text = "blaze refill speed
+"
+
+[node name="accelerationLabel" type="Label" parent="pOneLabels"]
+offset_left = 45.0
+offset_top = 702.0
+offset_right = 509.0
+offset_bottom = 803.0
+theme = ExtResource("5_xr0vv")
+theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
+text = "acceleration
+"
+
+[node name="costLabel" type="Label" parent="pOneLabels"]
+offset_left = 38.0
+offset_top = 204.0
+offset_right = 917.0
+offset_bottom = 341.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("6_bpr6m")
+theme_override_font_sizes/font_size = 100
+text = "cost to upgrade: x coins"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pTwoLabels" type="Node" parent="."]
+
+[node name="topSpeedLabel" type="Label" parent="pTwoLabels"]
+offset_left = 1011.0
+offset_top = 402.0
+offset_right = 1353.0
+offset_bottom = 503.0
+theme = ExtResource("5_xr0vv")
+theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
+text = "top speed"
+
+[node name="maxBlazeLabel" type="Label" parent="pTwoLabels"]
+offset_left = 1011.0
+offset_top = 502.0
+offset_right = 1387.0
+offset_bottom = 603.0
+theme = ExtResource("5_xr0vv")
+theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
+text = "max blaze"
+
+[node name="blazeRefillLabel" type="Label" parent="pTwoLabels"]
+offset_left = 1011.0
+offset_top = 602.0
+offset_right = 1680.0
+offset_bottom = 703.0
+theme = ExtResource("5_xr0vv")
+theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
+text = "blaze refill speed
+"
+
+[node name="accelerationLabel" type="Label" parent="pTwoLabels"]
+offset_left = 1011.0
+offset_top = 702.0
+offset_right = 1475.0
+offset_bottom = 803.0
+theme = ExtResource("5_xr0vv")
+theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
+text = "acceleration
+"
+
+[node name="costLabel" type="Label" parent="pTwoLabels"]
+offset_left = 1004.0
+offset_top = 204.0
+offset_right = 1883.0
+offset_bottom = 341.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("6_bpr6m")
+theme_override_font_sizes/font_size = 100
+text = "cost to upgrade: x coins"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pOneUpgradeBoxes" type="Node" parent="."]
+
+[node name="topSpeedSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
+position = Vector2(540, 450)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_84gca")
+animation = &"5"
+
+[node name="maxBlazeSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
+position = Vector2(543, 553)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_84gca")
+animation = &"5"
+
+[node name="blazeRefillSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
+position = Vector2(832, 653)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_84gca")
+animation = &"5"
+
+[node name="accelerationSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
+position = Vector2(638, 753)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_84gca")
+animation = &"5"
+
+[node name="pTwoUpgradeBoxes" type="Node" parent="."]
+
+[node name="topSpeedSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
+position = Vector2(1506, 450)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_84gca")
+animation = &"5"
+
+[node name="maxBlazeSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
+position = Vector2(1509, 553)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_84gca")
+animation = &"5"
+
+[node name="blazeRefillSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
+position = Vector2(1798, 653)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_84gca")
+animation = &"5"
+
+[node name="accelerationSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
+position = Vector2(1602, 753)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_84gca")
+animation = &"5"
+
+[node name="upgradeButtonLabel" type="Label" parent="."]
+offset_left = 266.0
+offset_top = 323.0
+offset_right = 779.0
+offset_bottom = 399.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_bpr6m")
+theme_override_font_sizes/font_size = 75
+text = "press a to upgrade
+"
+
+[node name="upgradeButtonLabel2" type="Label" parent="."]
+offset_left = 1227.0
+offset_top = 318.0
+offset_right = 1740.0
+offset_bottom = 394.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_bpr6m")
+theme_override_font_sizes/font_size = 75
+text = "press a to upgrade
+"
+
+[node name="pOneReadyScreen" type="ColorRect" parent="."]
+visible = false
+z_index = 1
+offset_right = 950.0
+offset_bottom = 1080.0
+color = Color(0.145868, 0.145868, 0.145868, 0.701961)
+
+[node name="label" type="Label" parent="pOneReadyScreen"]
+layout_mode = 0
+offset_left = 54.0
+offset_right = 911.0
+offset_bottom = 1075.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_h78wn")
+theme_override_font_sizes/font_size = 100
+text = "waiting on player two
+
+press start again to unready"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="pTwoReadyScreen" type="ColorRect" parent="."]
+visible = false
+z_index = 1
+offset_left = 969.0
+offset_right = 1919.0
+offset_bottom = 1080.0
+color = Color(0.145868, 0.145868, 0.145868, 0.701961)
+
+[node name="label" type="Label" parent="pTwoReadyScreen"]
+layout_mode = 0
+offset_left = 54.0
+offset_right = 911.0
+offset_bottom = 1075.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_h78wn")
+theme_override_font_sizes/font_size = 100
+text = "waiting on player One
+
+press start again to unready"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

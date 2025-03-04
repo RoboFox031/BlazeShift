@@ -6,7 +6,7 @@ var direction
 
 func _ready():
 	type = 'fireball'
-	direction = Vector2.UP.rotated(self.rotation)
+	direction = Vector2.RIGHT.rotated(self.rotation)
 
 func _process(delta: float) -> void:
 	self.position += direction.normalized() * speed * delta

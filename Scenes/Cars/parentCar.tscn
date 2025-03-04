@@ -1,9 +1,58 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwu3f2og4hln5"]
+[gd_scene load_steps=8 format=3 uid="uid://bwu3f2og4hln5"]
 
 [ext_resource type="Script" path="res://Scripts/Cars/parentCar.gd" id="1_bubl4"]
-[ext_resource type="Texture2D" uid="uid://culs8qglxkg03" path="res://Assets/Sprites/Cars/Mustang Top View.png" id="2_6kyu6"]
-[ext_resource type="PackedScene" uid="uid://cf3n070ef1w2o" path="res://Scenes/Pickups/fireball.tscn" id="2_j4jhk"]
-[ext_resource type="Script" path="res://Scripts/Cars/terrainDetector.gd" id="3_mcchu"]
+[ext_resource type="Texture2D" uid="uid://culs8qglxkg03" path="res://Assets/Sprites/Cars/Mustang Top View.png" id="2_ip2ur"]
+[ext_resource type="Script" path="res://Scripts/Cars/terrainDetector.gd" id="3_p1olo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym1ia"]
+atlas = ExtResource("2_ip2ur")
+region = Rect2(62, 20, 47, 98)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trdwi"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym1ia")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y51"]
 size = Vector2(44, 98)
@@ -12,15 +61,14 @@ size = Vector2(44, 98)
 size = Vector2(8.99993, 13.9999)
 
 [node name="parentCar" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_bubl4")
-fireball = ExtResource("2_j4jhk")
-currentOwner = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
-texture = ExtResource("2_6kyu6")
-region_enabled = true
-region_rect = Rect2(64, 20, 43, 98)
+sprite_frames = SubResource("SpriteFrames_trdwi")
+animation = &"blue"
+autoplay = "blue"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -33,7 +81,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="terrainDetector" type="Node2D" parent="."]
-script = ExtResource("3_mcchu")
+script = ExtResource("3_p1olo")
 
 [node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]
 collision_layer = 0

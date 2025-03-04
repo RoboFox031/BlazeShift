@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://byyikp68io3a4"]
+[gd_scene load_steps=34 format=4 uid="uid://hrgokue7ocdc"]
 
 [ext_resource type="Script" path="res://Scripts/Tracks/ruralTrack.gd" id="1_4l54d"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="1_a08p6"]

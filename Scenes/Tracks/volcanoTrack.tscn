@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cix51hyjsxw6v"]
+[gd_scene load_steps=19 format=4 uid="uid://bwkvvktj256i0"]
 
 [ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://Assets/Sprites/Tracks/192 racetrack Divided.svg" id="1_md5c1"]
 [ext_resource type="Texture2D" uid="uid://b11whu5nqhr63" path="res://Assets/Sprites/Tracks/volcanoe_tileset_and_assets/volcanoe_assets.png" id="1_pnoux"]

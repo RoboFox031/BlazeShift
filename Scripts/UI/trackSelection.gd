@@ -9,12 +9,13 @@ class_name trackSelection
 
 var maps: Array
 var tracks: Array
+var trackNames: Array = ['basic', 'rural', 'ice', 'volcano', 'testing']
 
 var selected = 0
 
 func _ready() -> void:
 	maps = [mapOne, mapTwo, mapThree, mapFour, mapFive]
-	tracks = [preload("res://Scenes/Testing/testing_racetrack.tscn"),preload("res://Scenes/Tracks/basicTrack.tscn"),preload("res://Scenes/Tracks/ruralTrack.tscn"),preload("res://Scenes/Tracks/iceTrack.tscn"),preload("res://Scenes/Tracks/volcanoTrack.tscn")]
+	tracks = [preload("res://Scenes/Tracks/basicTrack.tscn"),preload("res://Scenes/Tracks/ruralTrack.tscn"),preload("res://Scenes/Tracks/iceTrack.tscn"),preload("res://Scenes/Tracks/volcanoTrack.tscn"),preload("res://Scenes/Testing/testing_racetrack.tscn")]
 	_updateMapSelected(maps[selected])
 
 func _process(delta: float) -> void:
@@ -34,13 +35,11 @@ func _process(delta: float) -> void:
 		else:
 			selected = len(maps) - 1
 		_updateMapSelected(maps[selected])
-		print(selected)
 
 func _updateMapSelected(map):
 	for m in maps:
 		if m == map: ###Change this later when I have map preveiw sprites
-			m.scale.x = 1.15
-			m.scale.y = 1.15
+			m.get_child(0).visible = true
+			$trackSelectionLabel.text = 'press start to play ' + trackNames[selected] + ' map'
 		else:
-			m.scale.x = 1
-			m.scale.y = 1
+			m.get_child(0).visible = false

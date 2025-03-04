@@ -12346,7 +12346,7 @@ texture = ExtResource("2_rqd63")
 [sub_resource type="TileSet" id="TileSet_xubuk"]
 sources/0 = SubResource("TileSetAtlasSource_umok1")
 
-[node name="track" type="Node2D"]
+[node name="track2" type="Node2D"]
 position = Vector2(-28, -27)
 script = ExtResource("1_ftibf")
 

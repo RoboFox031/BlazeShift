@@ -120,3 +120,15 @@ theme_override_font_sizes/font_size = 75
 text = "press start to play xxxxx map"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="label" type="Label" parent="."]
+offset_left = 803.0
+offset_top = 86.0
+offset_right = 1142.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_x4n2t")
+theme_override_font_sizes/font_size = 50
+text = "press b to go back"
+horizontal_alignment = 1
+vertical_alignment = 1

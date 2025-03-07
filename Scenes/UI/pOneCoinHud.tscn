@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhcaxmvifx6r1"]
 
-[ext_resource type="Script" path="res://Scripts/UI/pOneCoinHud.gd" id="1_gvu0c"]
+[ext_resource type="Script" uid="uid://14u2l0nov0l" path="res://Scripts/UI/pOneCoinHud.gd" id="1_gvu0c"]
 [ext_resource type="Texture2D" uid="uid://bubvui6wq7y2v" path="res://Assets/Sprites/Poweups/coin.png" id="2_1korn"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="3_wq3a1"]
 

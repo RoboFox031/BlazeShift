@@ -1,10 +1,11 @@
 extends Car
-class_name playerTwoCar
 
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+func _ready():
+	pass
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("p2_r1"):###might change the input later
@@ -12,8 +13,18 @@ func _physics_process(delta):
 			if globalVars.pTwoPowerup == "blaze":
 				globalVars.pTwoPowerup = 'none'
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
+				if get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) 
+				else:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax
+		if globalVars.pTwoPowerup == 'fireball':
+			globalVars.pTwoPowerup = 'none'
+			var instance = fireball.instantiate()
+			get_node("/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track/ScreenPlayer2").add_child(instance)
+			get_node("/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track/ScreenPlayer2/fireball").scale *= 4.115
+			get_node("/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track/ScreenPlayer2/fireball").speed *= 4.115
+			get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
 	# Add the gravity.dsad
-
 	# Handle jump.
 
 

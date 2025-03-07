@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0c88e53c28st"]
+[gd_scene load_steps=7 format=3 uid="uid://b1a1hg3wj7wg"]
 
 [ext_resource type="Script" path="res://Scripts/UI/trackSelection.gd" id="1_orx78"]
 [ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="2_cmn5v"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="3_x4n2t"]
+[ext_resource type="Texture2D" uid="uid://d23f07gjc1b01" path="res://Assets/Sprites/UI/ruralMapBackground.png" id="4_s22wx"]
+[ext_resource type="Texture2D" uid="uid://071ov745k868" path="res://Assets/Sprites/UI/basicTrackBackground.png" id="5_nbqvf"]
+[ext_resource type="Texture2D" uid="uid://babwu1hxlb0qj" path="res://Assets/Sprites/UI/iceTrackBackground.png" id="6_g3ra5"]
 
 [node name="trackSelection" type="Node2D"]
 script = ExtResource("1_orx78")
 
 [node name="background" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(960, 540)
 scale = Vector2(1.57895, 1.29808)
 texture = ExtResource("2_cmn5v")
@@ -29,26 +33,47 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="mapOne" type="ColorRect" parent="."]
-offset_left = 262.0
-offset_top = 374.0
-offset_right = 629.5
-offset_bottom = 649.0
-color = Color(0, 0, 0, 1)
+[node name="mapOne" type="Sprite2D" parent="."]
+position = Vector2(445, 510)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_nbqvf")
 
-[node name="mapTwo" type="ColorRect" parent="."]
-offset_left = 794.0
-offset_top = 374.0
-offset_right = 1161.5
-offset_bottom = 649.0
-color = Color(0, 0, 0, 1)
+[node name="colorRect" type="ColorRect" parent="mapOne"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+offset_left = -392.0
+offset_top = -295.0
+offset_right = 1064.0
+offset_bottom = 803.0
+scale = Vector2(0.537, 0.537)
 
-[node name="mapThree" type="ColorRect" parent="."]
-offset_left = 1291.0
-offset_top = 374.0
-offset_right = 1658.5
-offset_bottom = 649.0
-color = Color(0, 0, 0, 1)
+[node name="mapTwo" type="Sprite2D" parent="."]
+position = Vector2(978, 510)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_s22wx")
+
+[node name="colorRect" type="ColorRect" parent="mapTwo"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+offset_left = -392.0
+offset_top = -295.0
+offset_right = 1064.0
+offset_bottom = 803.0
+scale = Vector2(0.537, 0.537)
+
+[node name="mapThree" type="Sprite2D" parent="."]
+position = Vector2(1475, 510)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_g3ra5")
+
+[node name="colorRect" type="ColorRect" parent="mapThree"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+offset_left = -392.0
+offset_top = -295.0
+offset_right = 1064.0
+offset_bottom = 803.0
+scale = Vector2(0.537, 0.537)
 
 [node name="mapFour" type="ColorRect" parent="."]
 offset_left = 512.0
@@ -57,9 +82,41 @@ offset_right = 879.5
 offset_bottom = 951.0
 color = Color(0, 0, 0, 1)
 
+[node name="colorRect" type="ColorRect" parent="mapFour"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+layout_mode = 0
+offset_left = 160.0
+offset_top = 30.9999
+offset_right = 1616.0
+offset_bottom = 1129.0
+scale = Vector2(0.2, 0.2)
+
 [node name="mapFive" type="ColorRect" parent="."]
 offset_left = 1048.0
 offset_top = 676.0
 offset_right = 1415.5
 offset_bottom = 951.0
 color = Color(0, 0, 0, 1)
+
+[node name="colorRect" type="ColorRect" parent="mapFive"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+layout_mode = 0
+offset_left = 130.0
+offset_top = 27.9999
+offset_right = 1586.0
+offset_bottom = 1126.0
+scale = Vector2(0.2, 0.2)
+
+[node name="trackSelectionLabel" type="Label" parent="."]
+offset_left = 551.0
+offset_top = 974.0
+offset_right = 1430.0
+offset_bottom = 1050.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_x4n2t")
+theme_override_font_sizes/font_size = 75
+text = "press start to play xxxxx map"
+horizontal_alignment = 1
+vertical_alignment = 1

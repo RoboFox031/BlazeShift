@@ -12,3 +12,5 @@ var pTwoPowerup = 'none'
 var pOneCoins = 2
 var pTwoCoins = 3
 const NSX = preload("res://Scenes/Cars/NSX.tscn")
+var p1BlazeCurrent = 100
+var p2BlazeCurrent = 100

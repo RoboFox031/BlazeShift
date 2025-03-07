@@ -85,6 +85,7 @@ color = Color(0, 0, 0, 1)
 [node name="colorRect" type="ColorRect" parent="mapFour"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
+layout_mode = 0
 offset_left = 160.0
 offset_top = 30.9999
 offset_right = 1616.0
@@ -101,6 +102,7 @@ color = Color(0, 0, 0, 1)
 [node name="colorRect" type="ColorRect" parent="mapFive"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
+layout_mode = 0
 offset_left = 130.0
 offset_top = 27.9999
 offset_right = 1586.0

@@ -9,6 +9,7 @@ class_name trackSelection
 
 var maps: Array
 var tracks: Array
+var trackNames: Array = ['basic', 'rural', 'ice', 'volcano', 'testing']
 
 var selected = 0
 
@@ -34,13 +35,11 @@ func _process(delta: float) -> void:
 		else:
 			selected = len(maps) - 1
 		_updateMapSelected(maps[selected])
-		print(selected)
 
 func _updateMapSelected(map):
 	for m in maps:
 		if m == map: ###Change this later when I have map preveiw sprites
-			m.scale.x = 1.15
-			m.scale.y = 1.15
+			m.get_child(0).visible = true
+			$trackSelectionLabel.text = 'press start to play ' + trackNames[selected] + ' map'
 		else:
-			m.scale.x = 1
-			m.scale.y = 1
+			m.get_child(0).visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cyxuoqbq51aqy"]
+[gd_scene load_steps=16 format=4 uid="uid://vf0gatnhc5tu"]
 
 [ext_resource type="Script" path="res://Scripts/Tracks/iceTrack.gd" id="1_ftibf"]
 [ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://Assets/Sprites/Tracks/192 racetrack Divided.svg" id="1_vep5x"]
@@ -12346,7 +12346,7 @@ texture = ExtResource("2_rqd63")
 [sub_resource type="TileSet" id="TileSet_xubuk"]
 sources/0 = SubResource("TileSetAtlasSource_umok1")
 
-[node name="track" type="Node2D"]
+[node name="track2" type="Node2D"]
 position = Vector2(-28, -27)
 script = ExtResource("1_ftibf")
 

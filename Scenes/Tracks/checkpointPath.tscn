@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcmxtn86hb31x"]
+
+[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="1_dabp1"]
+
+[sub_resource type="Curve2D" id="Curve2D_xwdf3"]
+_data = {
+"points": PackedVector2Array(-68.6031, 6.72162, 68.6031, -6.72162, 13, 6, -145, -53, 145, 53, 429, -254, 202, -108, -202, 108, 461, 183, 134, -4, -134, 4, -248, 261, 98, 59, -98, -59, -516, 191, 41, 71, -41, -71, -624, 84, -1, 74, 1, -74, -664, -237, -72, 31, 72, -31, -446, -253, -118, 1, 118, -1, -243, -350, -89, -18, 89, 18, -68, -312, -15, -81, 15, 81, -83, -153, -53.5972, -4.58238, 53.5972, 4.58238, 13, 6)
+}
+point_count = 12
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xwdf3"]
+b = Vector2(0, 20)
+
+[node name="checkpointPath" type="Path2D"]
+curve = SubResource("Curve2D_xwdf3")
+script = ExtResource("1_dabp1")
+
+[node name="checkpointArea" type="Area2D" parent="."]
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="checkpointArea"]
+shape = SubResource("SegmentShape2D_xwdf3")
+debug_color = Color(0, 0.6, 0.701961, 0.686275)
+
+[connection signal="visibility_changed" from="." to="." method="updateCheckPoints"]

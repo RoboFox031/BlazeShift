@@ -28,13 +28,15 @@ func _process(delta: float) -> void:
 		else:
 			selected = 0
 		_updateMapSelected(maps[selected])
-		print(selected)
 	elif Input.is_action_just_pressed("p1_left"):
 		if selected - 1 >= 0:
 			selected -= 1
 		else:
 			selected = len(maps) - 1
 		_updateMapSelected(maps[selected])
+		
+	if Input.is_action_just_pressed("p1_b"):
+		get_tree().change_scene_to_file("res://Scenes/UI/upgradeShop.tscn")
 
 func _updateMapSelected(map):
 	for m in maps:

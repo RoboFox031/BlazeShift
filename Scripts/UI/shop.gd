@@ -105,13 +105,13 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('p1_start'):
-		if pOneReady == false:
+		if pOneReady == false and pOneCars[pOneCarSelection] in pOneOwned:
 			pOneReady = true
 		else:
 			pOneReady = false
 		_updateReadyScreen()
 	if Input.is_action_just_pressed("p2_start"):
-		if pTwoReady == false:
+		if pTwoReady == false and pTwoCars[pTwoCarSelection] in pTwoOwned:
 			pTwoReady = true
 		else:
 			pTwoReady = false

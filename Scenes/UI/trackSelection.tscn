@@ -85,6 +85,7 @@ color = Color(0, 0, 0, 1)
 [node name="colorRect" type="ColorRect" parent="mapFour"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
+layout_mode = 0
 offset_left = 160.0
 offset_top = 30.9999
 offset_right = 1616.0
@@ -101,6 +102,7 @@ color = Color(0, 0, 0, 1)
 [node name="colorRect" type="ColorRect" parent="mapFive"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
+layout_mode = 0
 offset_left = 130.0
 offset_top = 27.9999
 offset_right = 1586.0
@@ -116,5 +118,17 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_x4n2t")
 theme_override_font_sizes/font_size = 75
 text = "press start to play xxxxx map"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label" type="Label" parent="."]
+offset_left = 803.0
+offset_top = 86.0
+offset_right = 1142.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_x4n2t")
+theme_override_font_sizes/font_size = 50
+text = "press b to go back"
 horizontal_alignment = 1
 vertical_alignment = 1

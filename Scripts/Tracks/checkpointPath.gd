@@ -58,5 +58,7 @@ func updateCheckPoints():
 		instance.position=curve.sample_baked(curveDistance)
 		instance.transform=curve.sample_baked_with_rotation(curveDistance)
 		
+		#Sets the progress of the instance
+		instance.progress=i
 		#prints number of checkpoints
 		#print(i)

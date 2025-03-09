@@ -292,5 +292,7 @@ func updateTerrain(newTerrain):
 			#Lowers traction on ice
 			traction=traction/15
 
-func updatePosition():
+func updatePosition(area:Area2D):
+	#Prints the position
+	print(currentOwnerStr+" progress: "+str(area.progress))
 	pass

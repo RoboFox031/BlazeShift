@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dmiiqlo4ckddy" path="res://Scripts/Tracks/checkpointArea.gd" id="1_6ek0n"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6ek0n"]
-b = Vector2(0, 500)
+b = Vector2(0, 600)
 
 [node name="checkpointArea" type="Area2D"]
 collision_layer = 4

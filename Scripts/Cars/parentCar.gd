@@ -291,3 +291,6 @@ func updateTerrain(newTerrain):
 			terrainDecelMult=iceDecelMult
 			#Lowers traction on ice
 			traction=traction/15
+
+func updatePosition():
+	pass

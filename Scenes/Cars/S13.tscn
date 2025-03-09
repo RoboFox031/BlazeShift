@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dnoj3j4pbv0xf"]
+[gd_scene load_steps=23 format=3 uid="uid://dnoj3j4pbv0xf"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_krq1h"]
 [ext_resource type="Texture2D" uid="uid://cxho7kl4koftr" path="res://Assets/Sprites/Cars/S13/S13Black.png" id="2_e0f06"]
@@ -116,6 +116,9 @@ size = Vector2(44, 98)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
 size = Vector2(8.99993, 13.9999)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tr4uc"]
+size = Vector2(109.5, 50)
+
 [node name="S13" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_krq1h")
@@ -157,6 +160,15 @@ collision_mask = 2
 position = Vector2(0, 17)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_mox8c")
+
+[node name="progressChecker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="progressChecker"]
+position = Vector2(5.25, 0)
+shape = SubResource("RectangleShape2D_tr4uc")
+debug_color = Color(0.991716, 0, 0.261882, 0.42)
 
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bkjj8etk8gxx"]
+[gd_scene load_steps=21 format=3 uid="uid://bkjj8etk8gxx"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_gmmup"]
 [ext_resource type="Texture2D" uid="uid://c12coi1qc800a" path="res://Assets/Sprites/Cars/NSX/NSXBlue.png" id="2_52j34"]
@@ -108,6 +108,9 @@ size = Vector2(44, 98)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
 size = Vector2(8.99993, 13.9999)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni7tt"]
+size = Vector2(109, 48)
+
 [node name="NSX" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_gmmup")
@@ -120,6 +123,7 @@ sprite_frames = SubResource("SpriteFrames_5pqir")
 animation = &"yellow"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_v4y51")
 debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)
@@ -148,6 +152,14 @@ collision_mask = 2
 position = Vector2(0, 17)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_mox8c")
+
+[node name="progressChecker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="progressChecker"]
+shape = SubResource("RectangleShape2D_ni7tt")
+debug_color = Color(0.991716, 0, 0.261882, 0.42)
 
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]

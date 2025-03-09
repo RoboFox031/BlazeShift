@@ -1,6 +1,6 @@
 @tool
 extends Path2D
-
+class_name checkpointPath
 #Allows spacing changes
 @export var spacing:float=100
 #Controls the length of the checkpoints
@@ -8,8 +8,6 @@ extends Path2D
 
 #refrece of what we are copying
 @onready var checkPoint=preload("res://Scenes/Tracks/checkpointArea.tscn")
-#refrece of old children node
-@onready var oldChildren=$oldChildren
 
 #lets you run the function in the editor
 @export var run=false
@@ -24,16 +22,24 @@ func _process(delta):
 	if Engine.is_editor_hint():
 		#Allows the function to be ran once in the editor
 		if run==false:
-			updateCheckPoints()
+			#Make sure a path exsists
+			if curve.point_count>0:
+				updateCheckPoints()
 
 func updateCheckPoints():
 	#disables the fucntion from running again
 	run=true
-	
-	#Deltes the pre-exsiting children
-	for child in oldChildren.get_child_count():
-			oldChildren.get_child(child).queue_free()
-	
+	#if the path isn't complete, generate a warning
+	if curve.get_point_position(0)!=curve.get_point_position(curve.point_count-1):
+		push_warning("Path not complete!")
+
+	#Deltes the pre-exsiting children(if they exsist)
+	if get_child_count()>0:
+		for child in get_child_count():
+				get_child(child).queue_free()
+	#Creates a node to store children in
+	var childrenFolder=Node2D.new()
+	add_child(childrenFolder)
 	#Stores the lenght of the path
 	var pathLength:float=curve.get_baked_length()
 	#calculates how many checkpoints the path has room for
@@ -46,7 +52,7 @@ func updateCheckPoints():
 		#Makes the checkpoints
 		var instance=checkPoint.instantiate()
 		#Adds checkpoints to old children so they can be deleted
-		oldChildren.add_child(instance)
+		childrenFolder.add_child(instance)
 		
 		#Sets postion of checkpoints
 		instance.position=curve.sample_baked(curveDistance)
@@ -54,7 +60,3 @@ func updateCheckPoints():
 		
 		#prints number of checkpoints
 		#print(i)
-
-func _on_property_list_changed() -> void:
-	print("now")
-	pass # Replace with function body.

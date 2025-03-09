@@ -3,6 +3,8 @@ extends Path2D
 
 #Allows spacing changes
 @export var spacing:float=100
+#Controls the length of the checkpoints
+@export var checkpointLength:float=100
 
 #refrece of what we are copying
 @onready var checkPoint=preload("res://Scenes/Tracks/checkpointArea.tscn")
@@ -45,12 +47,13 @@ func updateCheckPoints():
 		var instance=checkPoint.instantiate()
 		#Adds checkpoints to old children so they can be deleted
 		oldChildren.add_child(instance)
+		
 		#Sets postion of checkpoints
 		instance.position=curve.sample_baked(curveDistance)
 		instance.transform=curve.sample_baked_with_rotation(curveDistance)
 		
 		#prints number of checkpoints
-		print(i)
+		#print(i)
 
 func _on_property_list_changed() -> void:
 	print("now")

@@ -100,6 +100,23 @@ var currentDrift:driftDir
 var isDrifting:bool=false
 var driftVector:Vector2
 
+#Stores progress and related variables
+#Stores what lap you are on
+var laps=0
+#Stores your current progress
+var currentProgress=0
+#Stores your last recorded progress
+var lastProgress=0
+#Stores the position of the last (valid) checkpoint you went through
+var progressPoint:Vector2=Vector2.ZERO
+#how far you can skip
+var skipTolerance=20
+#Stores how long you've reversed for
+var reverseCount=0
+#Stores how long you can reverse(before it gets mad)
+var reverseTolerance=30
+
+
 func _ready() -> void:
 	z_index = 10
 
@@ -294,6 +311,29 @@ func updateTerrain(newTerrain):
 			traction=traction/15
 
 func updatePosition(area:Area2D):
-	#Prints the position
-	print(currentOwnerStr+" progress: "+str(area.progress))
+	
+	#Stores the progress that we are checking
+	var checkProgress=area.progress
+	#Checks if you are going backwards
+	if checkProgress<currentProgress:
+		print("reverse")
+		#Updates how far you've reversed
+		reverseCount=currentProgress-checkProgress
+	else:
+		#Resets reverse count once you stop reversing
+		reverseCount=0
+
+	#Informs/ pentializes the player for reversing too much
+	if reverseCount>reverseTolerance:
+		print("illegal reverse")
+
+	#Makes sure it's within the skip tolerance
+	if checkProgress-currentProgress>skipTolerance:
+		print("Illegal")
+	#If you didn't skip, then update the progress
+	else:
+		lastProgress=currentProgress
+		currentProgress=checkProgress
+		#Prints the position
+		print(currentOwnerStr+" progress: "+str(currentProgress))
 	pass

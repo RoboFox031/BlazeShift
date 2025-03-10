@@ -153,7 +153,26 @@ func _physics_process(delta):
 		elif(globalVars.p2BlazeCurrent==0) and (currentOwner==playerChoices.p2):
 			resetMovement()
 
+
+
+func _input(event):
+	#Allows boost
+	if Input.is_action_just_pressed(currentOwnerStr+"_x"):
+		
+		startBoost()
+	if Input.is_action_just_released(currentOwnerStr+"_x"):
+		print(currentOwnerStr+" stopped boosting")
+		resetMovement()
 	
+	#Allows drift
+	if Input.is_action_just_pressed(currentOwnerStr+"_l1"):
+		
+		startDrift()
+	if Input.is_action_just_released(currentOwnerStr+"_l1"):
+		print(currentOwnerStr+" stopped drifting")
+		resetMovement()
+
+	#Control powerups
 	if Input.is_action_just_pressed(currentOwnerStr+"_r1"):###might change the input later
 		if globalVars.pOnePowerup != 'none':
 			if globalVars.pOnePowerup == "blaze":
@@ -187,24 +206,6 @@ func _physics_process(delta):
 				if currentOwner == playerChoices.p2:
 					add_child(instance)
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
-
-
-func _input(event):
-	#Allows boost
-	if Input.is_action_just_pressed(currentOwnerStr+"_x"):
-		
-		startBoost()
-	if Input.is_action_just_released(currentOwnerStr+"_x"):
-		print(currentOwnerStr+" stopped boosting")
-		resetMovement()
-	
-	#Allows drift
-	if Input.is_action_just_pressed(currentOwnerStr+"_l1"):
-		
-		startDrift()
-	if Input.is_action_just_released(currentOwnerStr+"_l1"):
-		print(currentOwnerStr+" stopped drifting")
-		resetMovement()
 
 #Resets movement variables to their defult
 func resetMovement():

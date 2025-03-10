@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bbpaemnpu0ei8"]
 
-[ext_resource type="Script" path="res://Scripts/UI/pTwoPowerupsHud.gd" id="1_qsfov"]
+[ext_resource type="Script" uid="uid://qmtn7e323dsm" path="res://Scripts/UI/pTwoPowerupsHud.gd" id="1_qsfov"]
 [ext_resource type="Texture2D" uid="uid://da1xc5ggm3prx" path="res://Assets/Sprites/Poweups/blaze.png" id="2_pdehg"]
 [ext_resource type="Texture2D" uid="uid://45pmnrmfttd" path="res://Assets/Sprites/UI/blackBoxOutline.png" id="3_0ttyy"]
 [ext_resource type="Texture2D" uid="uid://bvsqesqb1kkgo" path="res://Assets/Sprites/Poweups/fireball/FB500-1.png" id="3_dumsl"]

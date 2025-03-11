@@ -11,6 +11,5 @@ point_count = 7
 [node name="checkpointPath" type="Path2D"]
 curve = SubResource("Curve2D_xwdf3")
 script = ExtResource("1_dabp1")
-spacing = 50.0
-checkpointLength = 200.0
+checkpointLength = 100.0
 run = true

@@ -1,10 +1,10 @@
 @tool
 extends Path2D
 class_name checkpointPath
-#Allows spacing changes
-@export var spacing:float=100
+#Allows totalChecpoint changes
+var checkpointCount:float=600
 #Controls the length of the checkpoints
-@export var checkpointLength:float=100
+@export var checkpointLength:float=600
 
 #refrece of what we are copying
 @onready var checkPoint=preload("res://Scenes/Tracks/checkpointArea.tscn")
@@ -43,7 +43,8 @@ func updateCheckPoints():
 	#Stores the lenght of the path
 	var pathLength:float=curve.get_baked_length()
 	#calculates how many checkpoints the path has room for
-	var checkpointCount =floor(pathLength/spacing)
+	var spacing =pathLength/checkpointCount
+	#print(spacing)
 	
 	#Creates a number of checkpoints
 	for i in range(0,checkpointCount):

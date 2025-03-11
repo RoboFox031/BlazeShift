@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://gdyc002hat4w"]
 
-[ext_resource type="Script" path="res://Scripts/UI/pauseScreen.gd" id="1_e0kag"]
+[ext_resource type="Script" uid="uid://c0mm05lkl687a" path="res://Scripts/UI/pauseScreen.gd" id="1_e0kag"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_o611i"]
 
 [node name="pauseScreen" type="Node2D"]
@@ -24,6 +24,8 @@ offset_right = 187.0
 offset_bottom = -82.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_o611i")
 theme_override_font_sizes/font_size = 150
 text = "resume"
@@ -43,13 +45,15 @@ offset_right = 20.0
 offset_bottom = 75.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_o611i")
 theme_override_font_sizes/font_size = 150
 text = "options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="returnToMenuLabel" type="Label" parent="colorRect"]
+[node name="restartLabel" type="Label" parent="colorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -62,8 +66,80 @@ offset_right = 443.0
 offset_bottom = 233.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_o611i")
 theme_override_font_sizes/font_size = 150
-text = "return to menus"
+text = "restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pOneConfirmLabel" type="Label" parent="."]
+visible = false
+offset_left = 42.0
+offset_top = 337.0
+offset_right = 749.0
+offset_bottom = 413.0
+pivot_offset = Vector2(353.5, 38)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o611i")
+theme_override_font_sizes/font_size = 75
+text = "press start again to undo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label" type="Label" parent="pOneConfirmLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 54.5
+offset_right = 88.0
+offset_bottom = 105.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o611i")
+theme_override_font_sizes/font_size = 75
+text = "confirmed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pTwoConfirmLabel" type="Label" parent="."]
+visible = false
+offset_left = 1181.0
+offset_top = 337.0
+offset_right = 1888.0
+offset_bottom = 413.0
+pivot_offset = Vector2(353.5, 38)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o611i")
+theme_override_font_sizes/font_size = 75
+text = "press start to confirm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label" type="Label" parent="pTwoConfirmLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 54.5
+offset_right = 88.0
+offset_bottom = 105.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o611i")
+theme_override_font_sizes/font_size = 75
+text = "confirmed"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,5 +1,6 @@
 @tool
 extends Area2D
+class_name checkpoint
 #Acesses the parent
 @onready var parentPath=$"../../"
 #Stores the length

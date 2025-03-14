@@ -112,7 +112,7 @@ var lastProgress=0
 #Stores the position of the last (valid) checkpoint you went through
 var progressPoint:Vector2=Vector2.ZERO
 #how far you can skip
-var skipTolerance=20
+var skipTolerance=40
 #Stores how long you've reversed for
 var reverseCount=0
 #Stores how long you can reverse(before it gets mad)
@@ -313,41 +313,42 @@ func updateTerrain(newTerrain):
 			traction=traction/15
 
 func updatePosition(area:Area2D):
-	#Adds the area to the array
-	touchingProgress.append(area)
-	#prints all currently touching progresses
-	#print(touchingProgress)
-	#Stores the progress that we are checking
-	var checkProgress=area.progress
-	#Checks if you are going backwards
-	
-	#Stores if any of the progress movements are legal
-	var anyLegalMove=false
-	#Stores the largest legal move you can make and the progress
-	var farthestLegalMove:Area2D
-	var largestLegalProgress=0
-	#Makes sure at least one checkpoint the player is touching is within the skip tolerance
-	for checkpoint in touchingProgress:
-		if checkpoint.progress-currentProgress<skipTolerance:
-			anyLegalMove=true
-			if farthestLegalMove!=null:
-				#Sees if this legal move is larger than any other legal move in the loop, and stores it if it is
-				if checkpoint.progress<farthestLegalMove.progress:
-					farthestLegalMove=checkpoint
-					largestLegalProgress=farthestLegalMove.progress
-			else:
-				farthestLegalMove=checkpoint
-				largestLegalProgress=checkpoint.progress
-	#If none of the progress point you are touching result in legal moves, respawn
-	if anyLegalMove==false:
-		print("Illegal")
-	#If you didn't skip, then update the progress
-	else:
-		lastProgress=currentProgress
-		currentProgress=largestLegalProgress
-		#Prints the position
-		print(currentOwnerStr+" progress: "+str(currentProgress))
+	if area is checkpoint:
+		#Adds the area to the array
+		touchingProgress.append(area)
+		#prints all currently touching progresses
+		#print(touchingProgress)
+		#Stores the progress that we are checking
+		var checkProgress=area.progress
+		
+		#Stores if any of the progress movements are legal
+		var anyLegalMove=false
+		#Stores the largest legal move you can make and the progress
+		var farthestLegalMove:Area2D
+		var largestLegalProgress=0
+		#Makes sure at least one checkpoint the player is touching is within the skip tolerance
+		for checkpoints in touchingProgress:
+			if checkpoints.progress-currentProgress<skipTolerance:
+				anyLegalMove=true
+				if farthestLegalMove!=null:
+					#Sees if this legal move is larger than any other legal move in the loop, and stores it if it is
+					if checkpoints.progress<farthestLegalMove.progress:
+						farthestLegalMove=checkpoints
+						largestLegalProgress=farthestLegalMove.progress
+				else:
+					farthestLegalMove=checkpoints
+					largestLegalProgress=checkpoints.progress
+		#If none of the progress point you are touching result in legal moves, respawn
+		if anyLegalMove==false:
+			print("Illegal")
+		#If you didn't skip, then update the progress
+		else:
+			lastProgress=currentProgress
+			currentProgress=largestLegalProgress
+			#Prints the position
+			print(currentOwnerStr+" progress: "+str(currentProgress))
 
 #This function removes progress points you are touching from the array they are in
 func leavePosition(area:Area2D):
-	touchingProgress.erase(area)
+	if area is checkpoint:
+		touchingProgress.erase(area)

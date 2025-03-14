@@ -7,12 +7,6 @@ var pTwoReady = false
 var pOneOptionSelected = "car"
 var pTwoOptionSelected = "car"
 
-var pOneColorSelected = 0
-var pTwoColorSelected = 0
-
-var pOneCarSelection = 0
-var pTwoCarSelection = 0
-
 @onready var pOneRightArrow = $pOneRightArrow
 @onready var pOneLeftArrow = $pOneLeftArrow
 
@@ -99,19 +93,21 @@ func _ready() -> void:
 	pTwoCarsFinal = [pTwoCarOneFinal, pTwoCarTwoFinal, pTwoCarThreeFinal]
 	pOneOwned = [pOneCarOne,pOneCarTwo]
 	pTwoOwned = [pTwoCarOne,pTwoCarTwo]
-	_updateCarDisplay(pOneCars[pOneCarSelection],pTwoCars[pTwoCarSelection])
-	_updateColorDisplay(pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
-	_updateFinalDisplay(pOneCarsFinal[pOneCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
+	
+	
+	_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
+	_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
+	_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('p1_start'):
-		if pOneReady == false and pOneCars[pOneCarSelection] in pOneOwned:
+		if pOneReady == false and pOneCars[globalVars.pOneCarSelected] in pOneOwned:
 			pOneReady = true
 		else:
 			pOneReady = false
 		_updateReadyScreen()
 	if Input.is_action_just_pressed("p2_start"):
-		if pTwoReady == false and pTwoCars[pTwoCarSelection] in pTwoOwned:
+		if pTwoReady == false and pTwoCars[globalVars.pTwoCarSelected] in pTwoOwned:
 			pTwoReady = true
 		else:
 			pTwoReady = false
@@ -122,7 +118,7 @@ func _process(delta: float) -> void:
 		if pOneOptionSelected == "car":
 			pOneOptionSelected = "color"
 			for c in pOneColors:
-				if c == pOneColors[pOneColorSelected]:
+				if c == pOneColors[globalVars.pOneColorSelected]:
 					c.get_child(0).visible = true
 				else:
 					c.get_child(0).visible = false
@@ -138,7 +134,7 @@ func _process(delta: float) -> void:
 		if pTwoOptionSelected == "car":
 			pTwoOptionSelected = "color"
 			for c in pTwoColors:
-				if c == pTwoColors[pTwoColorSelected]:
+				if c == pTwoColors[globalVars.pTwoColorSelected]:
 					c.get_child(0).visible = true
 				else:
 					c.get_child(0).visible = false
@@ -152,56 +148,56 @@ func _process(delta: float) -> void:
 			pTwoRightArrow.get_child(0).visible = true
 	if Input.is_action_just_pressed("p1_right") and pOneReady == false:
 		if pOneOptionSelected == "car":
-			if pOneCarSelection + 1 < len(pOneCars):
-				pOneCarSelection += 1
+			if globalVars.pOneCarSelected + 1 < len(pOneCars):
+				globalVars.pOneCarSelected += 1
 			else:
-				pOneCarSelection = 0
-			_updateCarDisplay(pOneCars[pOneCarSelection],pTwoCars[pTwoCarSelection])
+				globalVars.pOneCarSelected = 0
+			_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 		elif pOneOptionSelected == "color":
-			if pOneColorSelected + 1 < len(pOneColors):
-				pOneColorSelected += 1
+			if globalVars.pOneColorSelected + 1 < len(pOneColors):
+				globalVars.pOneColorSelected += 1
 			else:
-				pOneColorSelected = 0
-			_updateColorDisplay(pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
+				globalVars.pOneColorSelected = 0
+			_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 	if Input.is_action_just_pressed("p1_left") and pOneReady == false:
 		if pOneOptionSelected == "car":
-			if pOneCarSelection - 1 >= 0:
-				pOneCarSelection -= 1
+			if globalVars.pOneCarSelected - 1 >= 0:
+				globalVars.pOneCarSelected -= 1
 			else:
-				pOneCarSelection = len(pOneCars) - 1
-			_updateCarDisplay(pOneCars[pOneCarSelection],pTwoCars[pTwoCarSelection])
+				globalVars.pOneCarSelected = len(pOneCars) - 1
+			_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 		elif pOneOptionSelected == "color":
-			if pOneColorSelected - 1 >= 0:
-				pOneColorSelected -= 1
+			if globalVars.pOneColorSelected - 1 >= 0:
+				globalVars.pOneColorSelected -= 1
 			else:
-				pOneColorSelected = len(pOneColors) - 1
-			_updateColorDisplay(pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
+				globalVars.pOneColorSelected = len(pOneColors) - 1
+			_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 	if Input.is_action_just_pressed("p2_right") and pTwoReady == false:
 		if pTwoOptionSelected == "car":
-			if pTwoCarSelection + 1 < len(pTwoCars):
-				pTwoCarSelection += 1
+			if globalVars.pTwoCarSelected + 1 < len(pTwoCars):
+				globalVars.pTwoCarSelected += 1
 			else:
-				pTwoCarSelection = 0
+				globalVars.pTwoCarSelected = 0
 		elif pTwoOptionSelected == "color":
-			if pTwoColorSelected + 1 < len(pTwoColors):
-				pTwoColorSelected += 1
+			if globalVars.pTwoColorSelected + 1 < len(pTwoColors):
+				globalVars.pTwoColorSelected += 1
 			else:
-				pTwoColorSelected = 0
-			_updateColorDisplay(pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
-		_updateCarDisplay(pOneCars[pOneCarSelection],pTwoCars[pTwoCarSelection])
+				globalVars.pTwoColorSelected = 0
+			_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
+		_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 	if Input.is_action_just_pressed("p2_left") and pTwoReady == false:
 		if pTwoOptionSelected == "car":
-			if pTwoCarSelection - 1 >= 0:
-				pTwoCarSelection -= 1
+			if globalVars.pTwoCarSelected - 1 >= 0:
+				globalVars.pTwoCarSelected -= 1
 			else:
-				pTwoCarSelection = len(pTwoCars) - 1
-			_updateCarDisplay(pOneCars[pOneCarSelection],pTwoCars[pTwoCarSelection])
+				globalVars.pTwoCarSelected = len(pTwoCars) - 1
+			_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 		elif pTwoOptionSelected == "color":
-			if pTwoColorSelected - 1 >= 0:
-				pTwoColorSelected -= 1
+			if globalVars.pTwoColorSelected - 1 >= 0:
+				globalVars.pTwoColorSelected -= 1
 			else:
-				pTwoColorSelected = len(pTwoColors) - 1
-			_updateColorDisplay(pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
+				globalVars.pTwoColorSelected = len(pTwoColors) - 1
+			_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 	if Input.is_action_just_pressed("p1_a") and pOneReady == false:
 		_buyCar(1)
 	if Input.is_action_just_pressed("p2_a") and pTwoReady == false:
@@ -218,27 +214,27 @@ func _updateCarDisplay(pOneCar,pTwoCar):
 			c.visible = true
 		else:
 			c.visible = false
-	if pOneCars[pOneCarSelection] in pOneOwned:
+	if pOneCars[globalVars.pOneCarSelected] in pOneOwned:
 		pOneCostLabel.visible = false
 		$locks/pOneCarLock.visible = false
 	else:
 		pOneCostLabel.visible = true
-		if carCosts[pOneCarSelection] == 1:
-			pOneCostLabel.text = str(carCosts[pOneCarSelection]) + " coin"
+		if carCosts[globalVars.pOneCarSelected] == 1:
+			pOneCostLabel.text = str(carCosts[globalVars.pOneCarSelected]) + " coin"
 		else:
-			pOneCostLabel.text = str(carCosts[pOneCarSelection]) + " coins"
+			pOneCostLabel.text = str(carCosts[globalVars.pOneCarSelected]) + " coins"
 		$locks/pOneCarLock.visible = true
-	if pTwoCars[pTwoCarSelection] in pTwoOwned:
+	if pTwoCars[globalVars.pTwoCarSelected] in pTwoOwned:
 		pTwoCostLabel.visible = false
 		$locks/pTwoCarLock.visible = false
 	else:
 		pTwoCostLabel.visible = true
-		if carCosts[pTwoCarSelection] == 1:
-			pTwoCostLabel.text = str(carCosts[pTwoCarSelection]) + " coin"
+		if carCosts[globalVars.pTwoCarSelected] == 1:
+			pTwoCostLabel.text = str(carCosts[globalVars.pTwoCarSelected]) + " coin"
 		else:
-			pOneCostLabel.text = str(carCosts[pOneCarSelection]) + " coins"
+			pOneCostLabel.text = str(carCosts[globalVars.pOneCarSelected]) + " coins"
 		$locks/pTwoCarLock.visible = true
-	_updateFinalDisplay(pOneCarsFinal[pOneCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
+	_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 	_updateCarNameLabels()
 	_updateBuyButtonLabels()
 
@@ -263,23 +259,23 @@ func _updateColorDisplay(pOneColor,pTwoColor):
 				c.scale.x = .088
 				c.scale.y = .088
 				c.get_child(0).visible = false
-	_updateFinalDisplay(pOneCarsFinal[pOneCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
+	_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 
 
 func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 	for c in pOneCarsFinal:
 		if c == pOneCar:
 			c.visible = true
-			c.play(colors[pOneColorSelected])
+			c.play(colors[globalVars.pOneColorSelected])
 		else:
 			c.visible = false
 	for c in pTwoCarsFinal:
 		if c == pTwoCar:
 			c.visible = true
-			c.play(colors[pTwoColorSelected])
+			c.play(colors[globalVars.pTwoColorSelected])
 		else:
 			c.visible = false
-	if pOneCars[pOneCarSelection] in pOneOwned:
+	if pOneCars[globalVars.pOneCarSelected] in pOneOwned:
 		pOneOwnedLabel.text = "owned"
 		pOneOwnedLabel.position.x = 362
 		pOneOwnedLabel.add_theme_color_override("font_color", Color("008b00"))
@@ -289,7 +285,7 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 		pOneOwnedLabel.position.x = 280
 		pOneOwnedLabel.add_theme_color_override("font_color", Color("9f0000"))
 		$locks/pOneLockFinal.visible = true
-	if pTwoCars[pTwoCarSelection] in pTwoOwned:
+	if pTwoCars[globalVars.pTwoCarSelected] in pTwoOwned:
 		pTwoOwnedLabel.text = "owned"
 		pTwoOwnedLabel.position.x = 1330
 		pTwoOwnedLabel.add_theme_color_override("font_color", Color("008b00"))
@@ -303,30 +299,30 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 
 func _buyCar(player):
 	if player == 1:
-		if pOneCars[pOneCarSelection] not in pOneOwned:
-			if globalVars.pOneCoins - carCosts[pOneCarSelection] >= 0:
-				pOneOwned.append(pOneCars[pOneCarSelection])
-				globalVars.pOneCoins -= carCosts[pOneCarSelection]
+		if pOneCars[globalVars.pOneCarSelected] not in pOneOwned:
+			if globalVars.pOneCoins - carCosts[globalVars.pOneCarSelected] >= 0:
+				pOneOwned.append(pOneCars[globalVars.pOneCarSelected])
+				globalVars.pOneCoins -= carCosts[globalVars.pOneCarSelected]
 				$pOneCoinHud.update()
-				_updateFinalDisplay(pOneCarsFinal[pOneCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
-				_updateCarDisplay(pOneCars[pOneCarSelection],pTwoCars[pTwoCarSelection])
+				_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
+				_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 	if player == 2:
-		if pTwoCars[pTwoCarSelection] not in pTwoOwned:
-			if globalVars.pTwoCoins - carCosts[pTwoCarSelection] >= 0:
-				pTwoOwned.append(pTwoCars[pTwoCarSelection])
-				globalVars.pTwoCoins -= carCosts[pTwoCarSelection]
+		if pTwoCars[globalVars.pTwoCarSelected] not in pTwoOwned:
+			if globalVars.pTwoCoins - carCosts[globalVars.pTwoCarSelected] >= 0:
+				pTwoOwned.append(pTwoCars[globalVars.pTwoCarSelected])
+				globalVars.pTwoCoins -= carCosts[globalVars.pTwoCarSelected]
 				$pTwoCoinHud.update()
-				_updateFinalDisplay(pTwoCarsFinal[pTwoCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
-				_updateCarDisplay(pOneCars[pOneCarSelection],pTwoCars[pTwoCarSelection])
+				_updateFinalDisplay(pTwoCarsFinal[globalVars.pTwoCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
+				_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 
 func _changeGlobalVars():
 	var carNames = cars.keys()
-	globalVars.playerOneCar = cars[carNames[pOneCarSelection]].carScene
-	globalVars.playerOneColor = cars[carNames[pOneCarSelection]].colors[pOneColorSelected]
-	globalVars.playerTwoCar = cars[carNames[pTwoCarSelection]].carScene
-	globalVars.playerTwoColor = cars[carNames[pTwoCarSelection]].colors[pTwoColorSelected]
-	globalVars.playerOneCarSprite = carStringNames[pOneCarSelection] + colors[pOneColorSelected].capitalize()
-	globalVars.playerTwoCarSprite = carStringNames[pTwoCarSelection] + colors[pTwoColorSelected].capitalize()
+	globalVars.playerOneCar = cars[carNames[globalVars.pOneCarSelected]].carScene
+	globalVars.playerOneColor = cars[carNames[globalVars.pOneCarSelected]].colors[globalVars.pOneColorSelected]
+	globalVars.playerTwoCar = cars[carNames[globalVars.pTwoCarSelected]].carScene
+	globalVars.playerTwoColor = cars[carNames[globalVars.pTwoCarSelected]].colors[globalVars.pTwoColorSelected]
+	globalVars.playerOneCarSprite = carStringNames[globalVars.pOneCarSelected] + colors[globalVars.pOneColorSelected].capitalize()
+	globalVars.playerTwoCarSprite = carStringNames[globalVars.pTwoCarSelected] + colors[globalVars.pTwoColorSelected].capitalize()
 
 func _updateReadyScreen():
 	if pOneReady == true:
@@ -341,15 +337,19 @@ func _updateReadyScreen():
 		get_tree().change_scene_to_file("res://Scenes/UI/upgradeShop.tscn")
 
 func _updateCarNameLabels():
-	$pOneCarNameLabel.text = carNames[pOneCarSelection]
-	$pTwoCarNameLabel.text = carNames[pTwoCarSelection]
+	$pOneCarNameLabel.text = carNames[globalVars.pOneCarSelected]
+	$pTwoCarNameLabel.text = carNames[globalVars.pTwoCarSelected]
 
 func _updateBuyButtonLabels():
-	if pOneCars[pOneCarSelection] not in pOneOwned:
+	if pOneCars[globalVars.pOneCarSelected] not in pOneOwned:
 		$pOneBuyButtonLabel.visible = true
 	else:
 		$pOneBuyButtonLabel.visible = false
-	if pTwoCars[pTwoCarSelection] not in pTwoOwned:
+	if pTwoCars[globalVars.pTwoCarSelected] not in pTwoOwned:
 		$pTwoBuyButtonLabel.visible = true
 	else:
 		$pTwoBuyButtonLabel.visible = false
+
+
+func _on_timer_timeout() -> void:
+	_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])

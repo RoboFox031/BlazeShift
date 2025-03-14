@@ -1,0 +1,156 @@
+[gd_scene load_steps=20 format=3 uid="uid://bkjj8etk8gxx"]
+
+[ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_gmmup"]
+[ext_resource type="Texture2D" uid="uid://c12coi1qc800a" path="res://Assets/Sprites/Cars/NSX/NSXBlue.png" id="2_52j34"]
+[ext_resource type="Texture2D" uid="uid://dd6u861qw1dog" path="res://Assets/Sprites/Cars/NSX/NSXGreen.png" id="3_78ue1"]
+[ext_resource type="Texture2D" uid="uid://bc7kjhhmc4t0" path="res://Assets/Sprites/Cars/NSX/NSXOrange.png" id="4_m8pit"]
+[ext_resource type="Texture2D" uid="uid://bk32brwef7p6c" path="res://Assets/Sprites/Cars/NSX/NSXPurple.png" id="5_qqy1g"]
+[ext_resource type="Texture2D" uid="uid://dogd3hglgokrv" path="res://Assets/Sprites/Cars/NSX/NSXRed.png" id="6_4b5nt"]
+[ext_resource type="Texture2D" uid="uid://ctmr7xx5ch6cs" path="res://Assets/Sprites/Cars/NSX/NSXWhite.png" id="7_lphrb"]
+[ext_resource type="Texture2D" uid="uid://dlnp7itifebmb" path="res://Assets/Sprites/Cars/NSX/NSXYellow.png" id="8_dcu01"]
+[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="9_axpak"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fstdq"]
+atlas = ExtResource("2_52j34")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wybpv"]
+atlas = ExtResource("3_78ue1")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvy1g"]
+atlas = ExtResource("4_m8pit")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umxwo"]
+atlas = ExtResource("5_qqy1g")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krmf5"]
+atlas = ExtResource("6_4b5nt")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if426"]
+atlas = ExtResource("7_lphrb")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pwj7"]
+atlas = ExtResource("8_dcu01")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5pqir"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fstdq")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wybpv")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvy1g")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umxwo")
+}],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krmf5")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if426")
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pwj7")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y51"]
+size = Vector2(44, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
+size = Vector2(8.99993, 13.9999)
+
+[node name="NSX" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_gmmup")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-10, 16)
+rotation = 3.14159
+scale = Vector2(0.705, 0.705)
+sprite_frames = SubResource("SpriteFrames_5pqir")
+animation = &"yellow"
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_v4y51")
+debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)
+
+[node name="camera2d" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="terrainDetector" type="Node2D" parent="."]
+script = ExtResource("9_axpak")
+
+[node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorL"]
+position = Vector2(0, -17)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_mox8c")
+
+[node name="terrainDetectorR" type="Area2D" parent="terrainDetector"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorR"]
+position = Vector2(0, 17)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_mox8c")
+
+[connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
+[connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_exited"]
+[connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]

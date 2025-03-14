@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqo3p1lii8gdh"]
+[gd_scene load_steps=8 format=3 uid="uid://bbpaemnpu0ei8"]
 
-[ext_resource type="Script" path="res://Scripts/UI/pTwoPowerupsHud.gd" id="1_qsfov"]
+[ext_resource type="Script" uid="uid://qmtn7e323dsm" path="res://Scripts/UI/pTwoPowerupsHud.gd" id="1_qsfov"]
 [ext_resource type="Texture2D" uid="uid://da1xc5ggm3prx" path="res://Assets/Sprites/Poweups/blaze.png" id="2_pdehg"]
 [ext_resource type="Texture2D" uid="uid://45pmnrmfttd" path="res://Assets/Sprites/UI/blackBoxOutline.png" id="3_0ttyy"]
+[ext_resource type="Texture2D" uid="uid://bvsqesqb1kkgo" path="res://Assets/Sprites/Poweups/fireball/FB500-1.png" id="3_dumsl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekhb1"]
 atlas = ExtResource("2_pdehg")
 region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7g24"]
+atlas = ExtResource("3_dumsl")
+region = Rect2(0, 0, 512, 512)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jdknc"]
 animations = [{
@@ -16,6 +21,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"blaze",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7g24")
+}],
+"loop": true,
+"name": &"fireball",
 "speed": 5.0
 }, {
 "frames": [{
@@ -42,6 +55,7 @@ pivot_offset = Vector2(125, 125)
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jdknc")
 animation = &"none"
+autoplay = "none"
 
 [node name="blackBoxOutline" type="Sprite2D" parent="."]
 position = Vector2(-2, -1)

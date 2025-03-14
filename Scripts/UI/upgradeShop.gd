@@ -4,6 +4,9 @@ class_name upgradeShop
 var pOneReady = false
 var pTwoReady = false
 
+var pOneBack = false
+var pTwoBack = false
+
 var pOneUpgradeSelected: int = 0
 var pTwoUpgradeSelected: int = 0
 
@@ -34,37 +37,50 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('p1_start'):
-		if pOneReady == false:
+		if pOneReady == false and pOneBack == false:
 			pOneReady = true
 		else:
 			pOneReady = false
 		_updateReadyScreen()
 	if Input.is_action_just_pressed("p2_start"):
-		if pTwoReady == false:
+		if pTwoReady == false and pTwoBack == false:
 			pTwoReady = true
 		else:
 			pTwoReady = false
 		_updateReadyScreen()
 		
-	if Input.is_action_just_pressed('p1_down'):
+	if Input.is_action_just_pressed("p1_b"):
+		if pOneBack == false and pOneReady == false:
+			pOneBack = true
+		else:
+			pOneBack = false
+		_updateReadyScreen()
+	if Input.is_action_just_pressed("p2_b"):
+		if pTwoBack == false and pTwoReady == false:
+			pTwoBack = true
+		else:
+			pTwoBack = false
+		_updateReadyScreen()
+		
+	if Input.is_action_just_pressed('p1_down') and pOneReady == false:
 		if pOneUpgradeSelected + 1 < len(pOneUpgrades):
 			pOneUpgradeSelected += 1
 		else: 
 			pOneUpgradeSelected = 0
 		_updateSelected()
-	if Input.is_action_just_pressed("p1_up"):
+	if Input.is_action_just_pressed("p1_up") and pOneReady == false:
 		if pOneUpgradeSelected - 1 >= 0:
 			pOneUpgradeSelected -= 1
 		else: 
 			pOneUpgradeSelected = 3
 		_updateSelected()
-	if Input.is_action_just_pressed('p2_down'):
+	if Input.is_action_just_pressed('p2_down') and pTwoReady == false:
 		if pTwoUpgradeSelected + 1 < len(pTwoUpgrades):
 			pTwoUpgradeSelected += 1
 		else: 
 			pTwoUpgradeSelected = 0
 		_updateSelected()
-	if Input.is_action_just_pressed("p2_up"):
+	if Input.is_action_just_pressed("p2_up") and pTwoReady == false:
 		if pTwoUpgradeSelected - 1 >= 0:
 			pTwoUpgradeSelected -= 1
 		else: 
@@ -137,3 +153,14 @@ func _updateReadyScreen():
 		$pTwoReadyScreen.visible = false
 	if pOneReady == true and pTwoReady == true:
 		get_tree().change_scene_to_file("res://Scenes/UI/trackSelection.tscn")
+	if pOneBack == true:
+		$pOneBackScreen.visible = true
+	else:
+		$pOneBackScreen.visible = false
+	if pTwoBack == true:
+		$pTwoBackScreen.visible = true
+	else:
+		$pTwoBackScreen.visible = false
+	if pOneBack == true and pTwoBack == true:
+		get_tree().change_scene_to_file("res://Scenes/UI/shop.tscn")
+		

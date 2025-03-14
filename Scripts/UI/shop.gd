@@ -71,6 +71,7 @@ var pTwoOwned: Array
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 
 var carStringNames: Array = ['Mustang/Mustang','NSX/NSX','S13/S13']
+var carNames: Array = ['Mustang', "NSX", "S13"]
 
 var cars := {
 	"LemkeCar": {
@@ -104,19 +105,19 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('p1_start'):
-		if pOneReady == false:
+		if pOneReady == false and pOneCars[pOneCarSelection] in pOneOwned:
 			pOneReady = true
 		else:
 			pOneReady = false
 		_updateReadyScreen()
 	if Input.is_action_just_pressed("p2_start"):
-		if pTwoReady == false:
+		if pTwoReady == false and pTwoCars[pTwoCarSelection] in pTwoOwned:
 			pTwoReady = true
 		else:
 			pTwoReady = false
 		_updateReadyScreen()
 		
-	if Input.is_action_just_pressed("p1_down") or Input.is_action_just_pressed("p1_up"):
+	if (Input.is_action_just_pressed("p1_down") or Input.is_action_just_pressed("p1_up")) and pOneReady == false:
 		
 		if pOneOptionSelected == "car":
 			pOneOptionSelected = "color"
@@ -133,7 +134,7 @@ func _process(delta: float) -> void:
 				c.get_child(0).visible = false
 			pOneLeftArrow.get_child(0).visible = true
 			pOneRightArrow.get_child(0).visible = true
-	if Input.is_action_just_pressed("p2_down") or Input.is_action_just_pressed("p2_up"):
+	if (Input.is_action_just_pressed("p2_down") or Input.is_action_just_pressed("p2_up"))  and pTwoReady == false:
 		if pTwoOptionSelected == "car":
 			pTwoOptionSelected = "color"
 			for c in pTwoColors:
@@ -149,7 +150,7 @@ func _process(delta: float) -> void:
 				c.get_child(0).visible = false
 			pTwoLeftArrow.get_child(0).visible = true
 			pTwoRightArrow.get_child(0).visible = true
-	if Input.is_action_just_pressed("p1_right"):
+	if Input.is_action_just_pressed("p1_right") and pOneReady == false:
 		if pOneOptionSelected == "car":
 			if pOneCarSelection + 1 < len(pOneCars):
 				pOneCarSelection += 1
@@ -162,7 +163,7 @@ func _process(delta: float) -> void:
 			else:
 				pOneColorSelected = 0
 			_updateColorDisplay(pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
-	if Input.is_action_just_pressed("p1_left"):
+	if Input.is_action_just_pressed("p1_left") and pOneReady == false:
 		if pOneOptionSelected == "car":
 			if pOneCarSelection - 1 >= 0:
 				pOneCarSelection -= 1
@@ -175,7 +176,7 @@ func _process(delta: float) -> void:
 			else:
 				pOneColorSelected = len(pOneColors) - 1
 			_updateColorDisplay(pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
-	if Input.is_action_just_pressed("p2_right"):
+	if Input.is_action_just_pressed("p2_right") and pTwoReady == false:
 		if pTwoOptionSelected == "car":
 			if pTwoCarSelection + 1 < len(pTwoCars):
 				pTwoCarSelection += 1
@@ -188,7 +189,7 @@ func _process(delta: float) -> void:
 				pTwoColorSelected = 0
 			_updateColorDisplay(pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
 		_updateCarDisplay(pOneCars[pOneCarSelection],pTwoCars[pTwoCarSelection])
-	if Input.is_action_just_pressed("p2_left"):
+	if Input.is_action_just_pressed("p2_left") and pTwoReady == false:
 		if pTwoOptionSelected == "car":
 			if pTwoCarSelection - 1 >= 0:
 				pTwoCarSelection -= 1
@@ -201,9 +202,9 @@ func _process(delta: float) -> void:
 			else:
 				pTwoColorSelected = len(pTwoColors) - 1
 			_updateColorDisplay(pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
-	if Input.is_action_just_pressed("p1_a"):
+	if Input.is_action_just_pressed("p1_a") and pOneReady == false:
 		_buyCar(1)
-	if Input.is_action_just_pressed("p2_a"):
+	if Input.is_action_just_pressed("p2_a") and pTwoReady == false:
 		_buyCar(2)
 
 func _updateCarDisplay(pOneCar,pTwoCar):
@@ -238,7 +239,8 @@ func _updateCarDisplay(pOneCar,pTwoCar):
 			pOneCostLabel.text = str(carCosts[pOneCarSelection]) + " coins"
 		$locks/pTwoCarLock.visible = true
 	_updateFinalDisplay(pOneCarsFinal[pOneCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
-
+	_updateCarNameLabels()
+	_updateBuyButtonLabels()
 
 func _updateColorDisplay(pOneColor,pTwoColor):
 	if pOneOptionSelected == "color":
@@ -284,12 +286,12 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 		$locks/pOneLockFinal.visible = false
 	else:
 		pOneOwnedLabel.text = "not owned"
-		pOneOwnedLabel.position.x = 286
+		pOneOwnedLabel.position.x = 280
 		pOneOwnedLabel.add_theme_color_override("font_color", Color("9f0000"))
 		$locks/pOneLockFinal.visible = true
 	if pTwoCars[pTwoCarSelection] in pTwoOwned:
 		pTwoOwnedLabel.text = "owned"
-		pTwoOwnedLabel.position.x = 1321
+		pTwoOwnedLabel.position.x = 1330
 		pTwoOwnedLabel.add_theme_color_override("font_color", Color("008b00"))
 		$locks/pTwoLockFinal.visible = false
 	else:
@@ -337,3 +339,17 @@ func _updateReadyScreen():
 		$pTwoReadyScreen.visible = false
 	if pOneReady == true and pTwoReady == true:
 		get_tree().change_scene_to_file("res://Scenes/UI/upgradeShop.tscn")
+
+func _updateCarNameLabels():
+	$pOneCarNameLabel.text = carNames[pOneCarSelection]
+	$pTwoCarNameLabel.text = carNames[pTwoCarSelection]
+
+func _updateBuyButtonLabels():
+	if pOneCars[pOneCarSelection] not in pOneOwned:
+		$pOneBuyButtonLabel.visible = true
+	else:
+		$pOneBuyButtonLabel.visible = false
+	if pTwoCars[pTwoCarSelection] not in pTwoOwned:
+		$pTwoBuyButtonLabel.visible = true
+	else:
+		$pTwoBuyButtonLabel.visible = false

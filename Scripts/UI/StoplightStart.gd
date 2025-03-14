@@ -1,4 +1,15 @@
-extends Node2D
+extends UI
+class_name stoplight
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+var state: int = 3
+@onready var timer = $timer
+
+func _on_timer_timeout() -> void:
+	if state == 0:
+		_startRace()
+	state -= 1
+	timer.start()
+	
+	
+func _startRace():
+	print("started")

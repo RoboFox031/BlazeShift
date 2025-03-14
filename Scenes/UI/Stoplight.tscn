@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://vaa3ruuygwlf"]
+[gd_scene load_steps=3 format=3 uid="uid://vaa3ruuygwlf"]
 
 [ext_resource type="Script" path="res://Scripts/UI/StoplightStart.gd" id="1_3lnu3"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2lti"]
+
 [node name="Stoplight" type="Node2D"]
 script = ExtResource("1_3lnu3")
+
+[node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c2lti")
+
+[node name="timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

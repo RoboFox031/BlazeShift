@@ -321,6 +321,16 @@ func updatePosition(area:Area2D):
 		#Stores the progress that we are checking
 		var checkProgress=area.progress
 		
+		#Stores if the player is reversing
+		var isReverse:bool=false
+		for checkpoints in touchingProgress:
+			#Only runs anything else if it hasn't found a reverse yet
+			if isReverse==false:
+				#Checks if all checkpoints are reversing, if not, ignore the reverse
+				if checkpoints.progress<currentProgress:
+					isReverse=true
+					print("reverse "+str(currentProgress))
+		
 		#Stores if any of the progress movements are legal
 		var anyLegalMove=false
 		#Stores the largest legal move you can make and the progress
@@ -341,8 +351,8 @@ func updatePosition(area:Area2D):
 		#If none of the progress point you are touching result in legal moves, respawn
 		if anyLegalMove==false:
 			print("Illegal")
-		#If you didn't skip, then update the progress
-		else:
+		#If you didn't skip and aren't reversing, then update the progress
+		elif isReverse==false:
 			lastProgress=currentProgress
 			currentProgress=largestLegalProgress
 			#Prints the position

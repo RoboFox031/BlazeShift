@@ -103,6 +103,8 @@ var driftVector:Vector2
 #Stores progress and related variables
 #Stores what lap you are on
 var laps=0
+#Stores all the diffrent progress values your car is touching
+var touchingProgress=[]
 #Stores your current progress
 var currentProgress=0
 #Stores your last recorded progress
@@ -311,29 +313,41 @@ func updateTerrain(newTerrain):
 			traction=traction/15
 
 func updatePosition(area:Area2D):
-	
+	#Adds the area to the array
+	touchingProgress.append(area)
+	#prints all currently touching progresses
+	#print(touchingProgress)
 	#Stores the progress that we are checking
 	var checkProgress=area.progress
 	#Checks if you are going backwards
-	if checkProgress<currentProgress:
-		print("reverse")
-		#Updates how far you've reversed
-		reverseCount=currentProgress-checkProgress
-	else:
-		#Resets reverse count once you stop reversing
-		reverseCount=0
-
-	#Informs/ pentializes the player for reversing too much
-	if reverseCount>reverseTolerance:
-		print("illegal reverse")
-
-	#Makes sure it's within the skip tolerance
-	if checkProgress-currentProgress>skipTolerance:
+	
+	#Stores if any of the progress movements are legal
+	var anyLegalMove=false
+	#Stores the largest legal move you can make and the progress
+	var farthestLegalMove:Area2D
+	var largestLegalProgress=0
+	#Makes sure at least one checkpoint the player is touching is within the skip tolerance
+	for checkpoint in touchingProgress:
+		if checkpoint.progress-currentProgress<skipTolerance:
+			anyLegalMove=true
+			if farthestLegalMove!=null:
+				#Sees if this legal move is larger than any other legal move in the loop, and stores it if it is
+				if checkpoint.progress<farthestLegalMove.progress:
+					farthestLegalMove=checkpoint
+					largestLegalProgress=farthestLegalMove.progress
+			else:
+				farthestLegalMove=checkpoint
+				largestLegalProgress=checkpoint.progress
+	#If none of the progress point you are touching result in legal moves, respawn
+	if anyLegalMove==false:
 		print("Illegal")
 	#If you didn't skip, then update the progress
 	else:
 		lastProgress=currentProgress
-		currentProgress=checkProgress
+		currentProgress=largestLegalProgress
 		#Prints the position
 		print(currentOwnerStr+" progress: "+str(currentProgress))
-	pass
+
+#This function removes progress points you are touching from the array they are in
+func leavePosition(area:Area2D):
+	touchingProgress.erase(area)

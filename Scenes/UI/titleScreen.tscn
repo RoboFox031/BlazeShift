@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbfmgub402k83"]
 
-[ext_resource type="Script" uid="uid://cgebhrxc0y83y" path="res://Scripts/UI/titleScreen.gd" id="1_iq0ie"]
+[ext_resource type="Script" uid="uid://cmoso3ckf2ln3" path="res://Scripts/UI/titleScreen.gd" id="1_iq0ie"]
 [ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="1_jy4yn"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_pkee8"]
 

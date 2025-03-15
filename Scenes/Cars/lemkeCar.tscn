@@ -124,7 +124,8 @@ script = ExtResource("1_n68py")
 position = Vector2(-24, 11)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_wu7g6")
-animation = &"yellow"
+animation = &"blue"
+autoplay = "blue"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

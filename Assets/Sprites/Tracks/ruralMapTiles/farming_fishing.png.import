@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y7bw6h35v06o"
-path="res://.godot/imported/sand.png-2d290032b180430b9911a0931bf3664b.ctex"
+uid="uid://gksdwrb0dr70"
+path="res://.godot/imported/farming_fishing.png-0fdd051c517ec560d5f7e4bf2b9a419e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/submission_daneeklu/tilesets/sand.png"
-dest_files=["res://.godot/imported/sand.png-2d290032b180430b9911a0931bf3664b.ctex"]
+source_file="res://Assets/Sprites/Tracks/ruralMapTiles/farming_fishing.png"
+dest_files=["res://.godot/imported/farming_fishing.png-0fdd051c517ec560d5f7e4bf2b9a419e.ctex"]
 
 [params]
 

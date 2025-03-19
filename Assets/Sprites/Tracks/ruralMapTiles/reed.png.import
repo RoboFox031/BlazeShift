@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c13mxbp6tgng6"
-path="res://.godot/imported/reed.png-2b7b42b5f5cc8b8ce6f395e97ebe3956.ctex"
+path="res://.godot/imported/reed.png-54dcaffcde4e3c382b3e8a2106534d7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/submission_daneeklu/tilesets/reed.png"
-dest_files=["res://.godot/imported/reed.png-2b7b42b5f5cc8b8ce6f395e97ebe3956.ctex"]
+source_file="res://Assets/Sprites/Tracks/ruralMapTiles/reed.png"
+dest_files=["res://.godot/imported/reed.png-54dcaffcde4e3c382b3e8a2106534d7c.ctex"]
 
 [params]
 

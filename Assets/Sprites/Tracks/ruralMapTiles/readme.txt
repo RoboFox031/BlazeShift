@@ -23,6 +23,3 @@ Please include a link to opengameart.org as well (preferably to the submission f
 Some of the art in this archive are based on base assets for the LPC competition. At the time of writing
 those base assets can be found at:
 http://lpc.opengameart.org/static/lpc-style-guide/assets.html
-
-
-

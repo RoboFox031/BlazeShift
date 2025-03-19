@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x6enk3imd1hx"
-path="res://.godot/imported/fence.png-b25c6791b3afcb8e88c1b36b01a942d2.ctex"
+uid="uid://sxw8cd8gjpee"
+path="res://.godot/imported/tallgrass.png-50426bc863f7ef28b888ce8c76dcaea1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/submission_daneeklu/tilesets/fence.png"
-dest_files=["res://.godot/imported/fence.png-b25c6791b3afcb8e88c1b36b01a942d2.ctex"]
+source_file="res://Assets/Sprites/Tracks/ruralMapTiles/tallgrass.png"
+dest_files=["res://.godot/imported/tallgrass.png-50426bc863f7ef28b888ce8c76dcaea1.ctex"]
 
 [params]
 

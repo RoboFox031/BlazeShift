@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqbipgfj0xhtq"
-path="res://.godot/imported/youngwheat.png-5d99d9de57afcc819046a544a17d2134.ctex"
+uid="uid://40t87gimc800"
+path="res://.godot/imported/sandwater.png-250446d62fcebd420479fa56b023152c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/submission_daneeklu/tilesets/youngwheat.png"
-dest_files=["res://.godot/imported/youngwheat.png-5d99d9de57afcc819046a544a17d2134.ctex"]
+source_file="res://Assets/Sprites/Tracks/ruralMapTiles/sandwater.png"
+dest_files=["res://.godot/imported/sandwater.png-250446d62fcebd420479fa56b023152c.ctex"]
 
 [params]
 

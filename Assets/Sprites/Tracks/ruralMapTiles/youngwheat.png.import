@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kyoytdg3218h"
-path="res://.godot/imported/fence_alt.png-7cc77b5d853db46cbc1fa146764917e2.ctex"
+uid="uid://bqbipgfj0xhtq"
+path="res://.godot/imported/youngwheat.png-f65099189f3b19876d28e6a4e49504e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/submission_daneeklu/tilesets/fence_alt.png"
-dest_files=["res://.godot/imported/fence_alt.png-7cc77b5d853db46cbc1fa146764917e2.ctex"]
+source_file="res://Assets/Sprites/Tracks/ruralMapTiles/youngwheat.png"
+dest_files=["res://.godot/imported/youngwheat.png-f65099189f3b19876d28e6a4e49504e8.ctex"]
 
 [params]
 

@@ -99,6 +99,7 @@ enum driftDir{lDrift=-1,rDrift=1,none=0}
 var currentDrift:driftDir
 var isDrifting:bool=false
 var driftVector:Vector2
+var driftNoInput:bool=false
 
 func _ready() -> void:
 	z_index = 10
@@ -205,6 +206,14 @@ func _input(event):
 	if Input.is_action_just_released(currentOwnerStr+"_l1"):
 		print(currentOwnerStr+" stopped drifting")
 		resetMovement()
+		#stop listening for a directional input
+		driftNoInput=false
+	#If you tried to drift but wern't turning, listen for a turning action
+	if driftNoInput==true:
+		#Rerun the drift action when a turn is started
+		if Input.is_action_just_pressed(currentOwnerStr+"_left") or Input.is_action_just_pressed(currentOwnerStr+"_right")  :
+			startDrift()
+		
 
 #Resets movement variables to their defult
 func resetMovement():
@@ -240,15 +249,16 @@ func startDrift():
 	#Resets the drift varible
 	currentDrift=driftDir.none
 	#Determine which direction the player is currently turning and sets the driftDir accordingly
-	if currentTurnForce<0:
+	if Input.is_action_pressed(currentOwnerStr+"_left"):
 		currentDrift=driftDir.lDrift
 		print(currentOwnerStr+" is drifting left")
-	elif currentTurnForce>0:
+	elif Input.is_action_pressed(currentOwnerStr+"_right"):
 		currentDrift=driftDir.rDrift
 		print(currentOwnerStr+" is drifting right")
-	#If you aren't drifing, stop the function
+	#If you aren't turning, change the variable to match
 	if currentDrift==driftDir.none:
-		pass
+		driftNoInput=true
+		print(currentOwnerStr+" tried to drift")
 	#if you are drfiting, alter the variables accordingly
 	else:
 		isDrifting=true

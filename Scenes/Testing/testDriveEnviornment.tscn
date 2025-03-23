@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://co6q4klcpljhi" path="res://Scenes/UI/pTwoBlazeHud.tscn" id="5_ex8ib"]
 
 [node name="TestDriveEnviornment" type="Node2D"]
-position = Vector2(-1, -8)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.439049, 0.439049, 0.439049, 1)

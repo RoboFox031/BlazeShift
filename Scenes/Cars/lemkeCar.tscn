@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://ba81k30logwad"]
+[gd_scene load_steps=23 format=3 uid="uid://ba81k30logwad"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_n68py"]
 [ext_resource type="Texture2D" uid="uid://ks7e4wgfjt7o" path="res://Assets/Sprites/Cars/Mustang/MustangBlack.png" id="2_a4jnl"]
+[ext_resource type="Resource" uid="uid://nogcafh0k4qb" path="res://Resources/carStats/basicCarStats.tres" id="2_bvbms"]
 [ext_resource type="Texture2D" uid="uid://befl2sg56r4h" path="res://Assets/Sprites/Cars/Mustang/MustangBlue.png" id="3_43b8t"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_dulba"]
 [ext_resource type="Texture2D" uid="uid://cdtvtbhos3c8b" path="res://Assets/Sprites/Cars/Mustang/MustangGreen.png" id="4_aoyom"]
@@ -119,6 +120,7 @@ size = Vector2(8.99993, 13.9999)
 [node name="lemkeCar" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_n68py")
+stats = ExtResource("2_bvbms")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-24, 11)
@@ -127,7 +129,7 @@ sprite_frames = SubResource("SpriteFrames_wu7g6")
 animation = &"yellow"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2(3, 0)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_v4y51")
 debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)

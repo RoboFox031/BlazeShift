@@ -39,6 +39,9 @@ var turnOutput:float=0
 #Stores the vector the car is going in
 var fwdVector:Vector2
 
+#Stores direction the car is traveling in
+var turnDirection
+
 #handles traction
 var baseTraction:float=1
 var traction=baseTraction
@@ -123,14 +126,19 @@ func _physics_process(delta):
 	else:
 		currentLinSpeed = move_toward(currentLinSpeed, 0, currentDecel*terrainDecelMult)
 	
-	var turnDirection
+	
 	if isDrifting==false:
 		#Gets the input, and converts it to positive or negitive 1
 		turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right")
 	if isDrifting==true:
-		turnDirection=currentDrift
+		#if you are drifting, locks your turning in the drifing direction, and only allows for small adjustments
+		#turnDirection=currentDrift
+		if currentDrift<0:
+			turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),currentDrift,0)
+		elif currentDrift>0:
+			turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),-0,currentDrift)
+		print(turnDirection)
 	#If you are clicking a button, turns in that direction based on the acceleration value
-	#The /1000 at the end makes the number small, to prevent people from habing to deal with tiny decimals while playing with stats
 	if turnDirection and currentLinSpeed!=0:
 		currentTurnForce = move_toward(currentTurnForce, trueCurrentTurnPower*turnDirection*terrainTurnPowerMult, trueCurrentTurnSpeed*terrainTurnSpeedMult)
 	#If no button is being clicked, stops turning

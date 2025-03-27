@@ -1,9 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwu3f2og4hln5"]
+[gd_scene load_steps=11 format=3 uid="uid://bwu3f2og4hln5"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_bubl4"]
 [ext_resource type="Resource" uid="uid://nogcafh0k4qb" path="res://Resources/carStats/basicCarStats.tres" id="2_fiv63"]
 [ext_resource type="Texture2D" uid="uid://culs8qglxkg03" path="res://Assets/Sprites/Cars/Mustang Top View.png" id="2_ip2ur"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_p1olo"]
+[ext_resource type="Shader" uid="uid://b0ijw40aod2u8" path="res://Shaders/carShader.gdshader" id="3_qk11l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o0n8p"]
+shader = ExtResource("3_qk11l")
+shader_parameter/replaceColor = Color(0.0901961, 0.439216, 0.792157, 1)
+shader_parameter/newColor = Color(0.252934, 0.400663, 0.504586, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ym1ia"]
 atlas = ExtResource("2_ip2ur")
@@ -67,6 +73,7 @@ script = ExtResource("1_bubl4")
 stats = ExtResource("2_fiv63")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_o0n8p")
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_trdwi")
 animation = &"blue"

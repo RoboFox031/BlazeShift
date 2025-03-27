@@ -115,8 +115,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
-	#Changes the color
-	colorSprite.play(color)
+	if colorSprite:
+		#Changes the color
+		colorSprite.play(color)
 	#Gets the input, and converts it to positive or negitive 1
 	var linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
 	#If you are clicking a button, accelerates based on the acceleration value

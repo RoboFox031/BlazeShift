@@ -1,173 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://bwu3f2og4hln5"]
+[gd_scene load_steps=14 format=3 uid="uid://bwu3f2og4hln5"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_bubl4"]
 [ext_resource type="Resource" uid="uid://nogcafh0k4qb" path="res://Resources/carStats/basicCarStats.tres" id="2_fiv63"]
-[ext_resource type="Texture2D" uid="uid://culs8qglxkg03" path="res://Assets/Sprites/Cars/Mustang Top View.png" id="2_ip2ur"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_p1olo"]
-[ext_resource type="Shader" uid="uid://b0ijw40aod2u8" path="res://shadersAndMaterials/carShader.gdshader" id="3_qk11l"]
 [ext_resource type="Material" uid="uid://c0d1ogp2ifqly" path="res://shadersAndMaterials/carMaterial.tres" id="5_t6ktb"]
-[ext_resource type="Texture2D" uid="uid://ks7e4wgfjt7o" path="res://Assets/Sprites/Cars/Mustang/MustangBlack.png" id="6_bq0o1"]
-[ext_resource type="Texture2D" uid="uid://befl2sg56r4h" path="res://Assets/Sprites/Cars/Mustang/MustangBlue.png" id="7_gfu5p"]
-[ext_resource type="Texture2D" uid="uid://cdtvtbhos3c8b" path="res://Assets/Sprites/Cars/Mustang/MustangGreen.png" id="8_1x63f"]
-[ext_resource type="Texture2D" uid="uid://nc6g74bvbffw" path="res://Assets/Sprites/Cars/Mustang/MustangOrange.png" id="9_glqgw"]
-[ext_resource type="Texture2D" uid="uid://v3882tth70xu" path="res://Assets/Sprites/Cars/Mustang/MustangPurple.png" id="10_tiyyg"]
-[ext_resource type="Texture2D" uid="uid://csukxh1aew7ks" path="res://Assets/Sprites/Cars/Mustang/MustangRed.png" id="11_vua7h"]
-[ext_resource type="Texture2D" uid="uid://4mmpom5mqd3r" path="res://Assets/Sprites/Cars/Mustang/MustangWhite.png" id="12_3vhfb"]
 [ext_resource type="Texture2D" uid="uid://ypmvk8doc3mr" path="res://Assets/Sprites/Cars/Mustang/MustangYellow.png" id="13_ypl1a"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o0n8p"]
-shader = ExtResource("3_qk11l")
-shader_parameter/replaceColor = Color(0.0901961, 0.439216, 0.792157, 1)
-shader_parameter/newColor = Color(0.252934, 0.400663, 0.504586, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ym1ia"]
-atlas = ExtResource("2_ip2ur")
-region = Rect2(62, 20, 47, 98)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_trdwi"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"black",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ym1ia")
-}],
-"loop": true,
-"name": &"blue",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"green",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"orange",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"purple",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"red",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"white",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"yellow",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uk60q"]
-atlas = ExtResource("6_bq0o1")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ng3g1"]
-atlas = ExtResource("7_gfu5p")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2of4x"]
-atlas = ExtResource("8_1x63f")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f8nrq"]
-atlas = ExtResource("9_glqgw")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n34f8"]
-atlas = ExtResource("10_tiyyg")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7sq1b"]
-atlas = ExtResource("11_vua7h")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sgw6t"]
-atlas = ExtResource("12_3vhfb")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tlcqx"]
-atlas = ExtResource("13_ypl1a")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_hpefp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uk60q")
-}],
-"loop": true,
-"name": &"black",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ng3g1")
-}],
-"loop": true,
-"name": &"blue",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2of4x")
-}],
-"loop": true,
-"name": &"green",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f8nrq")
-}],
-"loop": true,
-"name": &"orange",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n34f8")
-}],
-"loop": true,
-"name": &"purple",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7sq1b")
-}],
-"loop": true,
-"name": &"red",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sgw6t")
-}],
-"loop": true,
-"name": &"white",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tlcqx")
-}],
-"loop": true,
-"name": &"yellow",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y51"]
 size = Vector2(44, 98)
@@ -175,56 +12,88 @@ size = Vector2(44, 98)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
 size = Vector2(8.99993, 13.9999)
 
-[sub_resource type="Animation" id="Animation_t6ktb"]
-resource_name = "redCar"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../sprite2d:material:shader_parameter/newColor")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.636549, 0.105535, 0.195207, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_bq0o1"]
 resource_name = "blueCar"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../sprite2d:material:shader_parameter/newColor")
+tracks/0/path = NodePath("carSprite:material:shader_parameter/newColor")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.249129, 0.293106, 1, 1)]
+"values": [Color(0.224767, 0.300804, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_gfu5p"]
+[sub_resource type="Animation" id="Animation_qk11l"]
+resource_name = "redCar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("carSprite:material:shader_parameter/newColor")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.822633, 0, 0.270619, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o0n8p"]
 resource_name = "greenCar"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../sprite2d:material:shader_parameter/newColor")
+tracks/0/path = NodePath("carSprite:material:shader_parameter/newColor")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.169898, 0.50968, 0, 1)]
+"values": [Color(0, 0.574851, 0.165661, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ernon"]
+resource_name = "orangeCar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("carSprite:material:shader_parameter/newColor")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.970453, 0.278235, 0.111557, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_k7tj6"]
+resource_name = "purpleCar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("carSprite:material:shader_parameter/newColor")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.617361, 0.177047, 0.830055, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_parbr"]
 _data = {
 &"blueCar": SubResource("Animation_bq0o1"),
-&"greenCar": SubResource("Animation_gfu5p"),
-&"redCar": SubResource("Animation_t6ktb")
+&"greenCar": SubResource("Animation_o0n8p"),
+&"orangeCar": SubResource("Animation_ernon"),
+&"purpleCar": SubResource("Animation_k7tj6"),
+&"redCar": SubResource("Animation_qk11l")
 }
 
 [node name="parentCar" type="CharacterBody2D"]
@@ -232,23 +101,7 @@ z_index = 1
 script = ExtResource("1_bubl4")
 stats = ExtResource("2_fiv63")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_o0n8p")
-rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_trdwi")
-animation = &"blue"
-autoplay = "blue"
-
-[node name="Sprite2D2" type="AnimatedSprite2D" parent="."]
-visible = false
-material = ExtResource("5_t6ktb")
-position = Vector2(-27, 10)
-rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_hpefp")
-animation = &"yellow"
-
-[node name="sprite2d" type="Sprite2D" parent="."]
+[node name="carSprite" type="Sprite2D" parent="."]
 material = ExtResource("5_t6ktb")
 rotation = 1.5708
 texture = ExtResource("13_ypl1a")
@@ -287,7 +140,6 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_mox8c")
 
 [node name="animationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Sprite2D2")
 libraries = {
 &"": SubResource("AnimationLibrary_parbr")
 }

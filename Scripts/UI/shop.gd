@@ -104,6 +104,7 @@ func _ready() -> void:
 	_updateFinalDisplay(pOneCarsFinal[pOneCarSelection],pTwoCarsFinal[pTwoCarSelection],pOneColors[pOneColorSelected],pTwoColors[pTwoColorSelected])
 	
 func _process(delta: float) -> void:
+	print(carNames[pOneCarSelection])
 	if Input.is_action_just_pressed('p1_start'):
 		if pOneReady == false and pOneCars[pOneCarSelection] in pOneOwned:
 			pOneReady = true
@@ -323,8 +324,10 @@ func _changeGlobalVars():
 	var carNames = cars.keys()
 	globalVars.playerOneCar = cars[carNames[pOneCarSelection]].carScene
 	globalVars.playerOneColor = cars[carNames[pOneCarSelection]].colors[pOneColorSelected]
+	globalVars.carNames["p1"]=str(carNames[pOneCarSelection])
 	globalVars.playerTwoCar = cars[carNames[pTwoCarSelection]].carScene
 	globalVars.playerTwoColor = cars[carNames[pTwoCarSelection]].colors[pTwoColorSelected]
+	globalVars.carNames["p2"]=str(carNames[pTwoCarSelection])
 	globalVars.playerOneCarSprite = carStringNames[pOneCarSelection] + colors[pOneColorSelected].capitalize()
 	globalVars.playerTwoCarSprite = carStringNames[pTwoCarSelection] + colors[pTwoColorSelected].capitalize()
 

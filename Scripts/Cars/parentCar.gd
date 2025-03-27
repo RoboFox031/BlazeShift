@@ -115,9 +115,10 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
+	#prevents errors from an animated sprite not exsisting
 	if colorSprite:
 		#Changes the color
-		colorSprite.play(color)
+		colorSprite.play(color) #Why is it this running constantly?
 	#Gets the input, and converts it to positive or negitive 1
 	var linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
 	#If you are clicking a button, accelerates based on the acceleration value
@@ -324,12 +325,16 @@ func updateTerrain(newTerrain):
 
 #Sets the stats of the car based on the resource and upgrades
 func applyStats():
-	baseAcceleration=stats.acceleration
-	baseTopSpeed=stats.topSpeed
+	baseAcceleration=stats.acceleration+globalUpgrades.upgradesDict[currentOwnerStr][globalVars.carNames[currentOwnerStr]]["Acceleration"]
+	baseTopSpeed=stats.topSpeed+globalUpgrades.upgradesDict[currentOwnerStr][globalVars.carNames[currentOwnerStr]]["topSpeed"]
 	baseTurnSpeed=stats.turnSpeed
 	baseTurnPower=stats.turnPower
 	baseDecel=stats.deceleration
 	baseTraction=stats.traction
+	
+	#Print the upgraded stats
+	print("accel: "+str(baseAcceleration))
+	print("top speed: "+str(baseTopSpeed))
 	
 	#Resets movement to apply changes
 	resetMovement()

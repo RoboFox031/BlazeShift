@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 globalVars="*res://Scripts/globalVars.gd"
 trackEnums="*res://Scripts/Tracks/trackEnums.gd"
+globalUpgrades="*res://Scripts/Cars/globalUpgrades.gd"
 
 [display]
 

@@ -107,6 +107,10 @@ var driftVector:Vector2
 var driftNoInput:bool=false
 
 func _ready() -> void:
+	#for testing upgrades
+	#for i in 5:
+		#globalUpgrades.upgradeStat(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"acceleration")
+		#globalUpgrades.upgradeStat(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"topSpeed")
 	#Setup car stats
 	applyStats()
 	
@@ -325,8 +329,8 @@ func updateTerrain(newTerrain):
 
 #Sets the stats of the car based on the resource and upgrades
 func applyStats():
-	baseAcceleration=stats.acceleration+globalUpgrades.upgradesDict[currentOwnerStr][globalVars.carNames[currentOwnerStr]]["Acceleration"]
-	baseTopSpeed=stats.topSpeed+globalUpgrades.upgradesDict[currentOwnerStr][globalVars.carNames[currentOwnerStr]]["topSpeed"]
+	baseAcceleration=stats.acceleration+globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"acceleration")
+	baseTopSpeed=stats.topSpeed+globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"topSpeed")
 	baseTurnSpeed=stats.turnSpeed
 	baseTurnPower=stats.turnPower
 	baseDecel=stats.deceleration

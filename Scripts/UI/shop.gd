@@ -324,10 +324,10 @@ func _changeGlobalVars():
 	var carNames = cars.keys()
 	globalVars.playerOneCar = cars[carNames[pOneCarSelection]].carScene
 	globalVars.playerOneColor = cars[carNames[pOneCarSelection]].colors[pOneColorSelected]
-	globalVars.carNames["p1"]=str(carNames[pOneCarSelection])
+	globalVars.currentCarNames["p1"]=str(carNames[pOneCarSelection])
 	globalVars.playerTwoCar = cars[carNames[pTwoCarSelection]].carScene
 	globalVars.playerTwoColor = cars[carNames[pTwoCarSelection]].colors[pTwoColorSelected]
-	globalVars.carNames["p2"]=str(carNames[pTwoCarSelection])
+	globalVars.currentCarNames["p2"]=str(carNames[pTwoCarSelection])
 	globalVars.playerOneCarSprite = carStringNames[pOneCarSelection] + colors[pOneColorSelected].capitalize()
 	globalVars.playerTwoCarSprite = carStringNames[pTwoCarSelection] + colors[pTwoColorSelected].capitalize()
 

@@ -110,7 +110,8 @@ var currentProgress=0
 #Stores your last recorded progress
 var lastProgress=0
 #Stores the position of the last (valid) checkpoint you went through
-var progressPoint:Vector2=Vector2.ZERO
+var progressPoint:Vector2
+var progressRot=0
 #how far you can skip
 var skipTolerance=40
 #Stores how long you've reversed for
@@ -329,7 +330,7 @@ func updatePosition(area:Area2D):
 				#Checks if all checkpoints are reversing, if not, ignore the reverse
 				if checkpoints.progress<currentProgress:
 					isReverse=true
-					print("reverse "+str(currentProgress))
+					print(currentOwnerStr+" reverse "+str(currentProgress))
 		
 		#Stores if any of the progress movements are legal
 		var anyLegalMove=false
@@ -351,14 +352,27 @@ func updatePosition(area:Area2D):
 		#If none of the progress point you are touching result in legal moves, respawn
 		if anyLegalMove==false:
 			print("Illegal")
+			respawn()
 		#If you didn't skip and aren't reversing, then update the progress
 		elif isReverse==false:
 			lastProgress=currentProgress
 			currentProgress=largestLegalProgress
-			#Prints the position
-			print(currentOwnerStr+" progress: "+str(currentProgress))
+			#Stores the position and rotation of the legal point
+			progressPoint=area.global_position
+			progressRot=area.global_rotation
+			#Prints info about the player's position
+			print(currentOwnerStr+" progress: "+str(currentProgress))#+", point: " +str(progressPoint))
 
 #This function removes progress points you are touching from the array they are in
 func leavePosition(area:Area2D):
 	if area is checkpoint:
 		touchingProgress.erase(area)
+
+#This function respawns the car at the last legal location
+func respawn():
+	#Resets the player's speed
+	currentLinSpeed=0
+	#Teleports the player
+	global_position=progressPoint
+	global_rotation=progressRot
+	pass

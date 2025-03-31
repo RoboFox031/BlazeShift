@@ -1,6 +1,7 @@
 extends Node2D
 
 var track = globalVars.track
+signal _startRace
 
 @onready var players := {
 	"1": {
@@ -13,6 +14,7 @@ var track = globalVars.track
 	camera = $hSplitContainer/subViewportContainer2/subViewport/camera2d, 
 	player = null}
 }
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var track = track.instantiate()
@@ -27,4 +29,4 @@ func _ready():
 		var remote_transform := RemoteTransform2D.new()
 		remote_transform.remote_path = node.camera.get_path()
 		node.player.add_child(remote_transform)
-	pass # Replace with function body.
+	_startRace.emit()

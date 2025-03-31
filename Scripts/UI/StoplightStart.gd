@@ -1,15 +1,11 @@
 extends UI
 class_name stoplight
 
-var state: int = 3
 @onready var timer = $timer
+@onready var animatedSprite = $animatedSprite2d
 
-func _on_timer_timeout() -> void:
-	if state == 0:
-		_startRace()
-	state -= 1
+func _on_track_loader__start_race() -> void:
 	timer.start()
-	
-	
-func _startRace():
-	print("started")
+	animatedSprite.play("Stoplight")
+func _on_timer_timeout() -> void:
+	self.visible = false

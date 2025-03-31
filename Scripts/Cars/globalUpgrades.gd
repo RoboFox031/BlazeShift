@@ -4,13 +4,13 @@ var upgrades=[
 	"topSpeed",
 	"acceleration",
 	"maxBlaze",
-	"blazeRefil"
+	"handling"
 ]
 #List of cars
 var cars=[
 	"NSX",
 	"S13",
-	"Mustang"
+	"Mustang",
 ]
 #The dictionnary that stores all the upgrades
 ##When acessing a specific upgrade the format is as folows: globalUpgrades.upgradesDict[player][car][upgrade]
@@ -24,7 +24,7 @@ var upgradesDict={
 const topSpeedPerLevel=160 #Max 800
 const accelPerLevel=14 #Max 70
 const maxBlazePerLevel=10 #Max 100
-const blazeRefilPerLevel=5 #Max 50
+const handlingPerLevel=5 #Max 50
 
 
 
@@ -37,7 +37,7 @@ func _ready() -> void:
 			for j in upgrades:
 				#Creates the upgrades for each car and defults them to 0
 				upgradesDict[players][i][j]=0
-	#print(upgradesDict)
+	# print(upgradesDict)
 
 #Function called by other scripts that upgrades a spefic stat, by a fixed amount
 func upgradeStat(player:String,car:String,upgradeName:String):
@@ -55,5 +55,5 @@ func statValue(player:String,car:String,upgradeName:String):
 			return level*accelPerLevel
 		"maxBlaze":
 			return level*maxBlazePerLevel
-		"blazeRefil":
-			return level*blazeRefilPerLevel
+		"handling":
+			return level*handlingPerLevel

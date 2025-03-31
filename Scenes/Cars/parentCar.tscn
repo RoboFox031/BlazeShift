@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_bubl4"]
 [ext_resource type="Resource" uid="uid://nogcafh0k4qb" path="res://Resources/carStats/basicCarStats.tres" id="2_fiv63"]
-[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_p1olo"]
+[ext_resource type="Script" uid="uid://d0itn8p060dcc" path="res://Scripts/Cars/terrainDetector.gd" id="3_p1olo"]
 [ext_resource type="Material" uid="uid://c0d1ogp2ifqly" path="res://shadersAndMaterials/carMaterial.tres" id="5_t6ktb"]
 [ext_resource type="Texture2D" uid="uid://ypmvk8doc3mr" path="res://Assets/Sprites/Cars/Mustang/MustangYellow.png" id="13_ypl1a"]
 
@@ -39,7 +39,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0.574851, 0.165661, 1)]
+"values": [Color(7.21961e-08, 0.570207, 0.164035, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ernon"]

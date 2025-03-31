@@ -339,6 +339,7 @@ func applyStats():
 	#Print the upgraded stats
 	print("accel: "+str(baseAcceleration))
 	print("top speed: "+str(baseTopSpeed))
+	print("handling: "+str(baseAcceleration))
 	
 	#Resets movement to apply changes
 	resetMovement()

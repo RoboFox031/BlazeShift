@@ -9,6 +9,11 @@ extends UI
 var buttons
 var selected: int = 0
 
+var basicBoard = ConfigFile.new()
+var ruralBoard = ConfigFile.new()
+var iceBoard = ConfigFile.new()
+var volcanoBoard = ConfigFile.new()
+
 func _ready():
 	buttons = [playButton, optionsButton, tutorialButton, quitButton]
 	changeSelectedButton(buttons[selected])

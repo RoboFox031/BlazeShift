@@ -2,6 +2,9 @@ extends Node2D
 
 var track = globalVars.track
 
+
+
+
 @onready var players := {
 	"1": {
 	viewport = $hSplitContainer/subViewportContainer/subViewport, 

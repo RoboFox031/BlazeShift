@@ -1,0 +1,313 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn7utn160k75c"]
+
+[ext_resource type="Script" path="res://Scripts/UI/raceFinishScreen.gd" id="1_0f0jv"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/UI/finishLine.png" id="1_1q7vm"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_nr2hj"]
+
+[node name="raceFinishScreen" type="Node2D"]
+script = ExtResource("1_0f0jv")
+
+[node name="backGroundStuff" type="Node2D" parent="."]
+
+[node name="colorRect" type="ColorRect" parent="backGroundStuff"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.407569, 0.385846, 0.402562, 1)
+
+[node name="finishLine" type="Sprite2D" parent="backGroundStuff"]
+position = Vector2(960, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_1q7vm")
+offset = Vector2(0, 64)
+
+[node name="finishLine2" type="Sprite2D" parent="backGroundStuff/finishLine"]
+position = Vector2(0, 128)
+texture = ExtResource("1_1q7vm")
+offset = Vector2(0, 64)
+
+[node name="finishLine3" type="Sprite2D" parent="backGroundStuff/finishLine/finishLine2"]
+position = Vector2(0, 128)
+texture = ExtResource("1_1q7vm")
+offset = Vector2(0, 64)
+
+[node name="finishLine4" type="Sprite2D" parent="backGroundStuff/finishLine/finishLine2/finishLine3"]
+position = Vector2(0, 128)
+texture = ExtResource("1_1q7vm")
+offset = Vector2(0, 64)
+
+[node name="finishLine5" type="Sprite2D" parent="backGroundStuff/finishLine/finishLine2/finishLine3/finishLine4"]
+position = Vector2(0, 128)
+texture = ExtResource("1_1q7vm")
+offset = Vector2(0, 64)
+
+[node name="finishLine6" type="Sprite2D" parent="backGroundStuff/finishLine/finishLine2/finishLine3/finishLine4/finishLine5"]
+position = Vector2(0, 128)
+texture = ExtResource("1_1q7vm")
+offset = Vector2(0, 64)
+
+[node name="colorRect2" type="ColorRect" parent="backGroundStuff"]
+offset_right = 1920.0
+offset_bottom = 116.0
+color = Color(0.913725, 0.466667, 0.0470588, 1)
+
+[node name="label" type="Label" parent="backGroundStuff"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 644.5
+offset_top = 20.0
+offset_right = 1275.5
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(315.5, 38)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 75
+text = "player x won the race"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line2d" type="Line2D" parent="backGroundStuff"]
+points = PackedVector2Array(0, 116, 1920, 116)
+default_color = Color(0, 0, 0, 1)
+
+[node name="label2" type="Label" parent="backGroundStuff"]
+offset_left = 62.0
+offset_top = 814.0
+offset_right = 911.0
+offset_bottom = 915.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 75
+text = "press start to move on"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label3" type="Label" parent="backGroundStuff"]
+offset_left = 1042.0
+offset_top = 814.0
+offset_right = 1891.0
+offset_bottom = 915.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 75
+text = "press start to move on"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playerOneLabels" type="Label" parent="."]
+offset_left = 275.0
+offset_top = 272.0
+offset_right = 723.0
+offset_bottom = 373.0
+theme_override_colors/font_color = Color(0.913725, 0.466667, 0.0470588, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 100
+text = "player one"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="raceTime" type="Label" parent="playerOneLabels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -313.0
+offset_top = 75.5
+offset_right = 313.0
+offset_bottom = 151.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 75
+text = "completion time: xx:xx"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="coinsCollected" type="Label" parent="playerOneLabels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = 175.5
+offset_right = 233.0
+offset_bottom = 251.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 75
+text = "coins colected: x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="racePlacement" type="Label" parent="playerOneLabels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -278.5
+offset_top = 275.5
+offset_right = 278.5
+offset_bottom = 351.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 75
+text = "race placement: xth"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="overallPlacement" type="Label" parent="playerOneLabels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.0
+offset_top = 375.5
+offset_right = 324.0
+offset_bottom = 451.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 75
+text = "overall placement: xth"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playerTwoLabels" type="Label" parent="."]
+offset_left = 1235.0
+offset_top = 272.0
+offset_right = 1683.0
+offset_bottom = 373.0
+theme_override_colors/font_color = Color(0.913725, 0.466667, 0.0470588, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 100
+text = "player two"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="raceTime" type="Label" parent="playerTwoLabels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -313.0
+offset_top = 75.5
+offset_right = 313.0
+offset_bottom = 151.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 75
+text = "completion time: xx:xx"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="coinsCollected" type="Label" parent="playerTwoLabels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = 175.5
+offset_right = 233.0
+offset_bottom = 251.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 75
+text = "coins colected: x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="racePlacement" type="Label" parent="playerTwoLabels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -278.5
+offset_top = 275.5
+offset_right = 278.5
+offset_bottom = 351.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 75
+text = "race placement: xth"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="overallPlacement" type="Label" parent="playerTwoLabels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.0
+offset_top = 375.5
+offset_right = 324.0
+offset_bottom = 451.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 75
+text = "overall placement: xth"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pOneReadyLabel" type="Label" parent="."]
+offset_left = 172.0
+offset_top = 895.0
+offset_right = 794.0
+offset_bottom = 1050.0
+theme_override_colors/font_color = Color(0, 0.631373, 0, 1)
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 50
+text = "player one confirmed
+waiting on player two"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pTwoReadyLabel" type="Label" parent="."]
+offset_left = 1128.0
+offset_top = 895.0
+offset_right = 1750.0
+offset_bottom = 1050.0
+theme_override_colors/font_color = Color(0, 0.631373, 0, 1)
+theme_override_fonts/font = ExtResource("2_nr2hj")
+theme_override_font_sizes/font_size = 50
+text = "player two confirmed
+waiting on player one"
+horizontal_alignment = 1
+vertical_alignment = 1

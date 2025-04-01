@@ -14,3 +14,13 @@ var pTwoCoins = 3
 const NSX = preload("res://Scenes/Cars/NSX.tscn")
 var p1BlazeCurrent = 100
 var p2BlazeCurrent = 100
+
+#Stores the placement value and the lap value for each player
+var placement={
+    "p1":0,
+    "p2":0,
+}
+var laps={
+    "p1":0,
+    "p2":0,
+}

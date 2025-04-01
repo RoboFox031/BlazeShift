@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://t8idlpta6nkc"]
+
+[node name="placementTracker" type="Node2D"]

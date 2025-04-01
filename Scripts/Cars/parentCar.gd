@@ -102,7 +102,7 @@ var driftVector:Vector2
 
 #Stores progress and related variables
 #Stores what lap you are on
-var laps=0
+var currentLap=0
 #Stores all the diffrent progress values your car is touching
 var touchingProgress=[]
 #Stores your current progress
@@ -329,8 +329,16 @@ func updatePosition(area:Area2D):
 			if isReverse==false:
 				#Checks if all checkpoints are reversing, if not, ignore the reverse
 				if checkpoints.progress<currentProgress:
-					isReverse=true
-					print(currentOwnerStr+" reverse "+str(currentProgress))
+					#Calculates how far you reversed
+					var reverseAmount=currentProgress-checkpoints.progress
+					#If you reversed enough, assume that the player has completed a lap
+					if (reverseAmount>590):
+						nextLap()
+						return
+					#if you didn't reverse enough, then mark the current checkpoint as a reverse
+					else:
+						isReverse=true
+						print(currentOwnerStr+" reverse "+str(reverseAmount))
 		
 		#Stores if any of the progress movements are legal
 		var anyLegalMove=false
@@ -375,4 +383,21 @@ func respawn():
 	#Teleports the player
 	global_position=progressPoint
 	global_rotation=progressRot
+	pass
+
+#Makes the player be on the next lap
+func nextLap():
+	#If you are on lap 3, end the race
+	if currentLap==3:
+		finishRace()
+	#If you aren't on lap 3, add one to the lap and reset the position
+	else:
+		currentLap+=1
+		currentProgress=0
+		lastProgress=0
+		touchingProgress=[]
+		print("lap"+str(currentLap))
+
+#finishes the race
+func finishRace():
 	pass

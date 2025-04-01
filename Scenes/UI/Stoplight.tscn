@@ -107,6 +107,5 @@ animation = &"Stoplight"
 
 [node name="timer" type="Timer" parent="."]
 wait_time = 4.33
-autostart = true
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

@@ -131,8 +131,9 @@ func _physics_process(delta):
 		currentTurnForce = move_toward(currentTurnForce, 0,trueBaseTurnSpeed*terrainTurnSpeedMult)
 	
 	#Like a car, you can only turn while moving, and going backwards reverses your turn
-	turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
-	rotation_degrees+=turnOutput
+	if globalVars.canMove == true:
+		turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
+		rotation_degrees+=turnOutput
 	
 	#If your traction isn't at it's normal value, and you aren't on ice or drifting, slowly increase the traction
 	if(traction!=baseTraction)and(currentTerrain!=trackEnums.terrainTypes.ice) and (isDrifting==false):
@@ -142,7 +143,8 @@ func _physics_process(delta):
 	driftVector=Vector2(move_toward(driftVector.x,fwdVector.x,traction),move_toward(driftVector.y,fwdVector.y,traction))
 	velocity=(fwdVector+driftVector)/2
 	
-	move_and_slide()
+	if globalVars.canMove == true:
+		move_and_slide()
 	# print("Fwd: "+str(fwdVector))
 	# print("Drift: "+str(driftVector))
 	#print("Traction: "+str(traction))

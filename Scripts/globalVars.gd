@@ -33,3 +33,26 @@ var pOneCarSelected = 1
 var pTwoCarSelected = 2
 var pOneColorSelected = 6
 var pTwoColorSelected = 4
+
+
+var timeScore = ConfigFile.new()
+#name,score,track
+func saveScores(trackName,name,time):
+	if trackName == 'basicTrack':
+		timeScore.set_value(name,'time',time)
+		timeScore.save('res://basicScores.cfg')
+	elif trackName == 'ruralTrack':
+		timeScore.set_value(name,'time',time)
+		timeScore.save('res://ruralScores.cfg')
+	elif trackName == 'iceTrack':
+		timeScore.set_value(name,'time',time)
+		timeScore.save('res://iceScores.cfg')
+	elif trackName == 'volcanoTrack':
+		timeScore.set_value(name,'time',time)
+		timeScore.save('res://volcanoScores.cfg')
+		pass
+func loadScores():
+	var err = timeScore.load("res://basicScores.cfg")
+	if err == OK:
+		var score = timeScore.get_value("Hugo","time")
+		print(score)

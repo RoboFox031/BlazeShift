@@ -63,7 +63,7 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("100"):
-		save_game()
+		globalVars.saveScores('basicTrack','HIC',str(4))
 	if Input.is_action_just_pressed("200"):
 		load_game()
 	if Input.is_action_just_pressed("p1_down"):

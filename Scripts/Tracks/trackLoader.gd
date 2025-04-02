@@ -2,6 +2,8 @@ extends Node2D
 
 var track = globalVars.track
 signal _startRace
+signal _startRaceTimer
+
 
 @onready var players := {
 	"1": {

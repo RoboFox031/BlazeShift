@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8y2taotrov67"]
+
+[ext_resource type="Script" uid="uid://cxh0u6bafahka" path="res://Scripts/Pickups/powerup_box.gd" id="1_waxfh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8if87"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="powerupBox" type="Node2D"]
+script = ExtResource("1_waxfh")
+
+[node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8if87")
+animation = &"Idle"
+
+[node name="area2d" type="Area2D" parent="."]
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="area2d"]
+
+[connection signal="body_entered" from="area2d" to="." method="_on_area_2d_body_entered"]

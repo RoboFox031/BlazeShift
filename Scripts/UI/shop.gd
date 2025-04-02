@@ -1,6 +1,8 @@
 extends UI
 class_name shop
 
+####order in the shop for the cars goes as follows Mustang, NSX, S13, CRX
+
 var pOneReady = false
 var pTwoReady = false
 
@@ -12,14 +14,6 @@ var pTwoOptionSelected = "car"
 
 @onready var pTwoRightArrow = $pTwoRightArrow
 @onready var pTwoLeftArrow = $pTwoLeftArrow
-
-@onready var pOneCarOne = $pOneCarOne
-@onready var pOneCarTwo = $pOneCarTwo
-@onready var pOneCarThree = $pOneCarThree
-
-@onready var pTwoCarOne = $pTwoCarOne
-@onready var pTwoCarTwo = $pTwoCarTwo
-@onready var pTwoCarThree = $pTwoCarThree
 
 @onready var pOneWhite = $pOneWhiteCircle
 @onready var pOneBlack = $pOneBlackCircle
@@ -39,33 +33,26 @@ var pTwoOptionSelected = "car"
 @onready var pTwoBlue = $pTwoBlueCircle
 @onready var pTwoPurple = $pTwoPurpleCircle
 
-@onready var pOneCarOneFinal = $pOneCarOneFinal
-@onready var pOneCarTwoFinal = $pOneCarTwoFinal
-@onready var pOneCarThreeFinal = $pOneCarThreeFinal
-
-@onready var pTwoCarOneFinal = $pTwoCarOneFinal
-@onready var pTwoCarTwoFinal = $pTwoCarTwoFinal
-@onready var pTwoCarThreeFinal = $pTwoCarThreeFinal
-
 @onready var pOneOwnedLabel = $pOneOwnedLabel
 @onready var pTwoOwnedLabel = $pTwoOwnedLabel
 
 @onready var pOneCostLabel = $pOneCostLabel
 @onready var pTwoCostLabel = $pTwoCostLabel
 
+
 var pOneColors: Array
 var pTwoColors: Array
-var pOneCars: Array
-var pTwoCars: Array
-var pOneCarsFinal: Array
-var pTwoCarsFinal: Array
+var pOneCars: Array = []
+var pTwoCars: Array = []
+var pOneCarsFinal: Array = []
+var pTwoCarsFinal: Array = []
 var pOneOwned: Array
 var pTwoOwned: Array
 
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 
-var carStringNames: Array = ['Mustang/Mustang','NSX/NSX','S13/S13']
-var carNames: Array = ['Mustang', "NSX", "S13"]
+var carStringNames: Array = ['Mustang/Mustang','NSX/NSX','S13/S13',"CRX/CRX"]
+var carNames: Array = ['Mustang', "NSX", "S13","CRX"]
 
 var cars := {
 	"LemkeCar": {
@@ -79,21 +66,33 @@ var cars := {
 	"S13": {
 	carScene = preload("res://Scenes/Cars/S13.tscn"), 
 	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"CRX": {
+		carScene = preload("res://Scenes/Cars/CRX.tscn"),
+		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+
 	}
 }
 
-var carCosts: Array = [0,0,1] #the position in the array relates to the car
+var carCosts: Array = [0,0,1,2] #the position in the array relates to the car
 
 func _ready() -> void:
 	pOneColors = [pOneWhite, pOneBlack, pOneRed, pOneOrange, pOneYellow, pOneGreen, pOneBlue, pOnePurple]
 	pTwoColors = [pTwoWhite, pTwoBlack, pTwoRed, pTwoOrange, pTwoYellow, pTwoGreen, pTwoBlue, pTwoPurple]
-	pOneCars = [pOneCarOne, pOneCarTwo, pOneCarThree]
-	pTwoCars = [pTwoCarOne, pTwoCarTwo, pTwoCarThree]
-	pOneCarsFinal = [pOneCarOneFinal, pOneCarTwoFinal, pOneCarThreeFinal]
-	pTwoCarsFinal = [pTwoCarOneFinal, pTwoCarTwoFinal, pTwoCarThreeFinal]
-	pOneOwned = [pOneCarOne,pOneCarTwo]
-	pTwoOwned = [pTwoCarOne,pTwoCarTwo]
-	
+	for car in $pOneCars.get_children():
+		pOneCars.append(car)
+	for car in $pTwoCars.get_children():
+		pTwoCars.append(car)
+	for car in $pOneCarsFinal.get_children():
+		pOneCarsFinal.append(car)
+	for car in $pTwoCarsFinal.get_children():
+		pTwoCarsFinal.append(car)
+	pOneOwned = [pOneCars[0],pOneCars[1]]
+	pTwoOwned = [pTwoCars[0],pTwoCars[1]]
+	print(pOneCars)
+	print(pTwoCars)
+	print(pOneCarsFinal)
+	print(pTwoCarsFinal)
 	
 	_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 	_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])

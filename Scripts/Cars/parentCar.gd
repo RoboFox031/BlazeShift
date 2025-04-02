@@ -365,6 +365,8 @@ func updatePosition(area:Area2D):
 		elif isReverse==false:
 			lastProgress=currentProgress
 			currentProgress=largestLegalProgress
+			#Updates the global
+			globalVars.progress[currentOwnerStr]=currentProgress
 			#Stores the position and rotation of the legal point
 			progressPoint=area.global_position
 			progressRot=area.global_rotation
@@ -396,8 +398,10 @@ func nextLap():
 		currentProgress=0
 		lastProgress=0
 		touchingProgress=[]
-		print("lap"+str(currentLap))
+		#Update globals
+		globalVars.laps[currentOwnerStr]=currentLap
+		print("lap "+str(currentLap))
 
 #finishes the race
 func finishRace():
-	pass
+	print("ur done!")

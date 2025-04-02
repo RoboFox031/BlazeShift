@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://t8idlpta6nkc"]
+[gd_scene load_steps=2 format=3 uid="uid://t8idlpta6nkc"]
 
-[node name="placementTracker" type="Node2D"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="1_mneam"]
+
+[node name="placementTracker" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="p1Label" type="Label" parent="."]
+offset_left = 80.0
+offset_right = 564.0
+offset_bottom = 205.0
+theme_override_fonts/font = ExtResource("1_mneam")
+theme_override_font_sizes/font_size = 100
+text = "Player 1
+Player 2"
+
+[node name="placePlaceholder" type="Label" parent="."]
+offset_right = 59.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0.915639, 0.675783, 0, 1)
+theme_override_fonts/font = ExtResource("1_mneam")
+theme_override_font_sizes/font_size = 100
+text = "1-
+2-"

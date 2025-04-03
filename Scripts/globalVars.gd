@@ -65,7 +65,7 @@ func loadScores(trackName):
 			var players = timeScore.get_sections() 
 			for x in players:
 				var score = timeScore.get_value(x,'time')
-				basicScores[x] = int(score)
+				basicScores[x] = score
 			return sortScores(basicScores)
 			
 	elif trackName == 'ruralTrack':
@@ -122,10 +122,21 @@ func _process(delta: float) -> void:
 #sorts scores for the loadScores() function
 func sortScores(dict):
 	var scoresSorted = dict.keys()
-	scoresSorted.sort_custom(func(a,b): return dict[a] < dict[b]) # <- lambda function.
+	scoresSorted.sort_custom(func(int(a),int(b)): return dict[a] < dict[b]) # <- lambda function.
 	
 	var sortedScores = {}
 	for key in scoresSorted:
 		sortedScores[key] = dict[key]
 		
 	return sortedScores
+
+func convertSec(sec):
+	print(sec)
+	var minutes = floor(int(int(sec)/60))
+	if minutes == 0:
+		minutes = '00'
+	var seconds = fmod(float(sec),60)
+	if int(seconds) == 0:
+		seconds = '0'+str(seconds)
+	return str(minutes)+':'+str(seconds)
+	pass

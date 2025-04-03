@@ -69,13 +69,12 @@ func _updateLeaderboard():
 
 func _updateTime(trackName):
 	var scores = globalVars.loadScores(trackName)
-	print(scores)
 	var loops = 5
 	time1.text = ''
 	if scores:
 		for key in scores:
 			if loops > 0:
-				time1.text +=  key+': ' + str(scores[key]) + '\n'
+				time1.text +=  key+': ' + str(globalVars.convertSec(scores[key])) + '\n'
 				loops -= 1
 				continue
 	while loops > 0:

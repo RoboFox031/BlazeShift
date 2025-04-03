@@ -36,6 +36,12 @@ var pTwoColorSelected = 4
 
 
 var timeScore = ConfigFile.new()
+
+#global score list for each track
+var basicScores := {}
+var ruralScores := {}
+var iceScores := {}
+var volcanoScores := {}
 #name,score,track
 func saveScores(trackName,name,time):
 	if trackName == 'basicTrack':
@@ -51,8 +57,75 @@ func saveScores(trackName,name,time):
 		timeScore.set_value(name,'time',time)
 		timeScore.save('res://volcanoScores.cfg')
 		pass
-func loadScores():
-	var err = timeScore.load("res://basicScores.cfg")
-	if err == OK:
-		var score = timeScore.get_value("Hugo","time")
-		print(score)
+		
+func loadScores(trackName):
+	if trackName == 'basicTrack':
+		var list = timeScore.load("res://basicScores.cfg")
+		if list == OK:
+			var players = timeScore.get_sections() 
+			for x in players:
+				var score = timeScore.get_value(x,'time')
+				basicScores[x] = int(score)
+			var a = sortScores(basicScores)
+			print(a)
+	elif trackName == 'ruralTrack':
+		var list = timeScore.load("res://ruralScores.cfg")
+		if list == OK:
+			var players = timeScore.get_sections() 
+			for x in players:
+				var score = timeScore.get_value(x,'time')
+				ruralScores[x] = int(score)
+			var a = sortScores(ruralScores)
+			print(a)
+	elif trackName == 'iceTrack':
+		var list = timeScore.load("res://iceScores.cfg")
+		if list == OK:
+			var players = timeScore.get_sections() 
+			for x in players:
+				var score = timeScore.get_value(x,'time')
+				iceScores[x] = int(score)
+			var a = sortScores(iceScores)
+			print(a)
+	elif trackName == 'volcanoTrack':
+		var list = timeScore.load("res://volcanoScores.cfg")
+		if list == OK:
+			var players = timeScore.get_sections() 
+			for x in players:
+				var score = timeScore.get_value(x,'time')
+				volcanoScores[x] = int(score)
+			var a = sortScores(volcanoScores)
+			print(a)
+	elif trackName == 'testingTrack':
+		var list = timeScore.load("res://basicScores.cfg")
+		if list == OK:
+			var players = timeScore.get_sections() 
+			for x in players:
+				var score = timeScore.get_value(x,'time')
+				print(score)
+	elif trackName == 'overall':
+		var list = timeScore.load("res://basicScores.cfg")
+		if list == OK:
+			var players = timeScore.get_sections() 
+			for x in players:
+				var score = timeScore.get_value(x,'time')
+				print(score)
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed('300'):
+		var list = timeScore.load("res://basicScores.cfg")
+		if list == OK:
+			var players = timeScore.get_sections() 
+			for x in players:
+				var score = timeScore.get_value(x,'time')
+				loadScores('basicTrack')
+				
+#sorts scores for the loadScores() function
+func sortScores(dict):
+	var scoresSorted = dict.keys()
+	scoresSorted.sort_custom(func(a,b): return dict[a] < dict[b]) # <- lambda function.
+	
+	var sortedScores = {}
+	for key in scoresSorted:
+		sortedScores[key] = dict[key]
+		
+	return sortedScores

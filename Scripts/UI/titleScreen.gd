@@ -41,7 +41,7 @@ func changeSelectedButton(button):
 
 func buttonPressed(button):
 	if button == playButton:
-		get_tree().change_scene_to_file("res://Scenes/UI/shop.tscn")
+		get_tree().change_scene_to_file("res://Scenes/UI/nameSelection.tscn")
 	elif button == optionsButton:
 		pass #put function to go to options menu here
 	elif button == tutorialButton:

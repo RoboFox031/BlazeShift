@@ -43,18 +43,18 @@ var ruralScores := {}
 var iceScores := {}
 var volcanoScores := {}
 #name,score,track
-func saveScores(trackName,name,time):
+func saveScores(trackName,playerName,time):
 	if trackName == 'basicTrack':
-		timeScore.set_value(name,'time',time)
+		timeScore.set_value(playerName,'time',time)
 		timeScore.save('res://basicScores.cfg')
 	elif trackName == 'ruralTrack':
-		timeScore.set_value(name,'time',time)
+		timeScore.set_value(playerName,'time',time)
 		timeScore.save('res://ruralScores.cfg')
 	elif trackName == 'iceTrack':
-		timeScore.set_value(name,'time',time)
+		timeScore.set_value(playerName,'time',time)
 		timeScore.save('res://iceScores.cfg')
 	elif trackName == 'volcanoTrack':
-		timeScore.set_value(name,'time',time)
+		timeScore.set_value(playerName,'time',time)
 		timeScore.save('res://volcanoScores.cfg')
 		pass
 		
@@ -66,8 +66,8 @@ func loadScores(trackName):
 			for x in players:
 				var score = timeScore.get_value(x,'time')
 				basicScores[x] = int(score)
-			var a = sortScores(basicScores)
-			print(a)
+			return sortScores(basicScores)
+			
 	elif trackName == 'ruralTrack':
 		var list = timeScore.load("res://ruralScores.cfg")
 		if list == OK:

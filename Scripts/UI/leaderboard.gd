@@ -5,6 +5,8 @@ var arrowSelected = 'right'
 var leaderboardOptions = ['basic track','rural track','ice track','volcano track','testing track','overall']
 var leaderboardSelected = 0
 
+@onready var time1 = $times/time1
+
 func _ready():
 	_updateArrows()
 	_updateLabel()
@@ -47,17 +49,15 @@ func _updateLabel():
 	
 func _updateLeaderboard():
 	if leaderboardSelected == 0:
-		print(globalVars.basicScores)
-		print('basicTrack')
-		pass	
+		_updateTime('basicTrack')
 	elif leaderboardSelected == 1:
-		print('ruralTrack')
+		_updateTime('ruralTrack')
 		pass
 	elif leaderboardSelected == 2:
-		print('iceTrack')
+		_updateTime('iceTrack')
 		pass
 	elif leaderboardSelected == 3:
-		print('volcanoTrack')
+		_updateTime('volcanoTrack')
 		pass
 	elif leaderboardSelected == 4:
 		print('testingTrack')
@@ -66,3 +66,19 @@ func _updateLeaderboard():
 		print('overall')
 		pass
 	pass
+
+func _updateTime(trackName):
+	var scores = globalVars.loadScores(trackName)
+	print(scores)
+	var loops = 5
+	time1.text = ''
+	if scores:
+		for key in scores:
+			if loops > 0:
+				time1.text +=  key+': ' + str(scores[key]) + '\n'
+				loops -= 1
+				continue
+	while loops > 0:
+		time1.text += 'XXX: 00:00.000\n'
+		loops -= 1
+	pass	

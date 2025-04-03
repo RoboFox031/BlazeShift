@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://behlcwwaxfw7f"]
+[gd_scene load_steps=5 format=3 uid="uid://cnrbiswvsbqt3"]
 
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="1_7f0wt"]
 [ext_resource type="Script" uid="uid://csnvj8kdiiior" path="res://Scripts/UI/leaderboard.gd" id="1_trr20"]
@@ -39,11 +39,11 @@ pivot_offset = Vector2(227, 0)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_7f0wt")
 theme_override_font_sizes/font_size = 100
-text = "name: 00:00.00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="time2" type="Label" parent="times"]
+visible = false
 layout_mode = 0
 offset_left = 708.5
 offset_top = 449.4
@@ -58,6 +58,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="time3" type="Label" parent="times"]
+visible = false
 layout_mode = 0
 offset_left = 708.5
 offset_top = 552.8
@@ -72,6 +73,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="time4" type="Label" parent="times"]
+visible = false
 layout_mode = 0
 offset_left = 708.5
 offset_top = 656.2
@@ -86,6 +88,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="time5" type="Label" parent="times"]
+visible = false
 layout_mode = 0
 offset_left = 708.5
 offset_top = 759.6

@@ -1,6 +1,6 @@
 extends Node
 
-var track = preload("res://Scenes/Tracks/basicTrack.tscn")
+var track = preload("res://Scenes/Tracks/iceTrack.tscn")
 var playerOneCar = preload("res://Scenes/Cars/lemkeCar.tscn")
 var playerTwoCar = preload("res://Scenes/Cars/lemkeCar.tscn")
 var playerOneCarSprite = null
@@ -39,7 +39,6 @@ var pOneName = 'aaa'
 var pTwoName = 'aaa'
 
 
-
 var timeScore = ConfigFile.new()
 
 #global score list for each track
@@ -49,19 +48,52 @@ var iceScores := {}
 var volcanoScores := {}
 var organizedScores := {}
 #name,score,track
+
+#func saveScores(trackName, playerName, time):
+
+
 func saveScores(trackName,playerName,time):
+	var timeScore = ConfigFile.new()
 	if trackName == 'basicTrack':
-		timeScore.set_value(playerName,'time',time)
-		timeScore.save('res://basicScores.cfg')
+		var error = timeScore.load('res://basicScores.cfg')
+		if timeScore.has_section(playerName):
+			if timeScore.get_value(playerName,'time') >= time:
+				timeScore.set_value(playerName, 'time', time)
+			else:
+				pass
+		else:
+			timeScore.set_value(playerName, 'time', time)
+		var save_error = timeScore.save('res://basicScores.cfg')
 	elif trackName == 'ruralTrack':
-		timeScore.set_value(playerName,'time',time)
-		timeScore.save('res://ruralScores.cfg')
+		var error = timeScore.load('res://ruralScores.cfg')
+		if timeScore.has_section(playerName):
+			if timeScore.get_value(playerName,'time') >= time:
+				timeScore.set_value(playerName, 'time', time)
+			else:
+				pass
+		else:
+			timeScore.set_value(playerName, 'time', time)
+		var save_error = timeScore.save('res://ruralScores.cfg')
 	elif trackName == 'iceTrack':
-		timeScore.set_value(playerName,'time',time)
-		timeScore.save('res://iceScores.cfg')
+		var error = timeScore.load('res://iceScores.cfg')
+		if timeScore.has_section(playerName):
+			if timeScore.get_value(playerName,'time') >= time:
+				timeScore.set_value(playerName, 'time', time)
+			else:
+				pass
+		else:
+			timeScore.set_value(playerName, 'time', time)
+		var save_error = timeScore.save('res://iceScores.cfg')
 	elif trackName == 'volcanoTrack':
-		timeScore.set_value(playerName,'time',time)
-		timeScore.save('res://volcanoScores.cfg')
+		var error = timeScore.load('res://volcanoScores.cfg')
+		if timeScore.has_section(playerName):
+			if timeScore.get_value(playerName,'time') >= time:
+				timeScore.set_value(playerName, 'time', time)
+			else:
+				pass
+		else:
+			timeScore.set_value(playerName, 'time', time)
+		var save_error = timeScore.save('res://volcanoScores.cfg')
 		pass
 		
 func loadScores(trackName):
@@ -118,18 +150,10 @@ func loadScores(trackName):
 				var score = timeScore.get_value(x,'time')
 				basicScores[x] = float(score)
 			return sortScores(basicScores)
-					
 
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed('300'):
-		var list = timeScore.load("res://basicScores.cfg")
-		if list == OK:
-			var players = timeScore.get_sections() 
-			for x in players:
-				var score = timeScore.get_value(x,'time')
-				loadScores('basicTrack')
-				
+
+
 #sorts scores for the loadScores() function
 func sortScores(dict):
 	var scoresSorted = dict.keys()
@@ -141,16 +165,40 @@ func sortScores(dict):
 	print(sortedScores)
 	return sortedScores
 
+
+
 func convertSec(sec):
 	sec = str(sec)
+	
+	#checks how many minutes
 	var minutes = floor(int(int(sec)/60))
 	if minutes == 0:
 		minutes = '00'
 	elif minutes <= 10:
 		minutes = '0'+str(minutes)
+		
+	#checks how many seconds
 	var seconds = fmod(float(sec),60)
 	if int(seconds) == 0:
 		seconds = '0'+str(seconds)
+	elif seconds <= 10:
+		seconds = '0'+str(seconds)
+		
+	#fixes 0's for milliseconds
+	var miliseconds = checkDecimals(seconds)
+	if miliseconds == 1:
+		seconds = str(seconds) + '00'
+	elif miliseconds == 2:
+		seconds = str(seconds) + '0'
+		
+		
 	return str(minutes)+':'+str(seconds)
 	pass
 
+func checkDecimals(number):
+	var number_str = str(number)
+	if number_str.find('.') != -1:
+		var decimal_part = number_str.split('.')[1]
+		return decimal_part.length()
+	else:
+		return 0

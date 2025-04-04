@@ -11604,7 +11604,7 @@ texture = ExtResource("5_m4j1f")
 [sub_resource type="TileSet" id="TileSet_pipxo"]
 sources/0 = SubResource("TileSetAtlasSource_i02fc")
 
-[node name="track2" type="Node2D"]
+[node name="iceTrack" type="Node2D"]
 position = Vector2(-28, -27)
 script = ExtResource("1_ftibf")
 

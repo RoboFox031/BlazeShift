@@ -42,6 +42,7 @@ var basicScores := {}
 var ruralScores := {}
 var iceScores := {}
 var volcanoScores := {}
+var organizedScores := {}
 #name,score,track
 func saveScores(trackName,playerName,time):
 	if trackName == 'basicTrack':
@@ -65,7 +66,7 @@ func loadScores(trackName):
 			var players = timeScore.get_sections() 
 			for x in players:
 				var score = timeScore.get_value(x,'time')
-				basicScores[x] = score
+				basicScores[x] = float(score)
 			return sortScores(basicScores)
 			
 	elif trackName == 'ruralTrack':
@@ -74,41 +75,46 @@ func loadScores(trackName):
 			var players = timeScore.get_sections() 
 			for x in players:
 				var score = timeScore.get_value(x,'time')
-				ruralScores[x] = int(score)
-			var a = sortScores(ruralScores)
-			print(a)
+				ruralScores[x] = float(score)
+			return sortScores(ruralScores)
+			
 	elif trackName == 'iceTrack':
 		var list = timeScore.load("res://iceScores.cfg")
 		if list == OK:
 			var players = timeScore.get_sections() 
 			for x in players:
 				var score = timeScore.get_value(x,'time')
-				iceScores[x] = int(score)
-			var a = sortScores(iceScores)
-			print(a)
+				iceScores[x] = float(score)
+			return sortScores(iceScores)
+			
 	elif trackName == 'volcanoTrack':
 		var list = timeScore.load("res://volcanoScores.cfg")
 		if list == OK:
 			var players = timeScore.get_sections() 
 			for x in players:
 				var score = timeScore.get_value(x,'time')
-				volcanoScores[x] = int(score)
-			var a = sortScores(volcanoScores)
-			print(a)
+				volcanoScores[x] = float(score)
+			return sortScores(volcanoScores)
+			
 	elif trackName == 'testingTrack':
 		var list = timeScore.load("res://basicScores.cfg")
 		if list == OK:
 			var players = timeScore.get_sections() 
 			for x in players:
 				var score = timeScore.get_value(x,'time')
-				print(score)
+				basicScores[x] = float(score)
+			return sortScores(basicScores)
+			
 	elif trackName == 'overall':
 		var list = timeScore.load("res://basicScores.cfg")
 		if list == OK:
 			var players = timeScore.get_sections() 
 			for x in players:
 				var score = timeScore.get_value(x,'time')
-				print(score)
+				basicScores[x] = float(score)
+			return sortScores(basicScores)
+					
+
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('300'):
@@ -122,19 +128,21 @@ func _process(delta: float) -> void:
 #sorts scores for the loadScores() function
 func sortScores(dict):
 	var scoresSorted = dict.keys()
-	scoresSorted.sort_custom(func(int(a),int(b)): return dict[a] < dict[b]) # <- lambda function.
-	
+	scoresSorted.sort_custom(func(a,b): return dict[a] < dict[b]) # <- lambda function.
+	print(scoresSorted)
 	var sortedScores = {}
 	for key in scoresSorted:
 		sortedScores[key] = dict[key]
-		
+	print(sortedScores)
 	return sortedScores
 
 func convertSec(sec):
-	print(sec)
+	sec = str(sec)
 	var minutes = floor(int(int(sec)/60))
 	if minutes == 0:
 		minutes = '00'
+	elif minutes <= 10:
+		minutes = '0'+str(minutes)
 	var seconds = fmod(float(sec),60)
 	if int(seconds) == 0:
 		seconds = '0'+str(seconds)

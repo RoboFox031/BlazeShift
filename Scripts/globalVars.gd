@@ -34,6 +34,11 @@ var pTwoCarSelected = 2
 var pOneColorSelected = 6
 var pTwoColorSelected = 4
 
+#name variables
+var pOneName = 'aaa'
+var pTwoName = 'aaa'
+
+
 
 var timeScore = ConfigFile.new()
 
@@ -148,3 +153,4 @@ func convertSec(sec):
 		seconds = '0'+str(seconds)
 	return str(minutes)+':'+str(seconds)
 	pass
+

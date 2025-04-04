@@ -6,7 +6,8 @@ signal _startRaceTimer
 var trackName = track.instantiate().name
 var timer = 'on'
 
-@onready var testTimer = $hSplitContainer/subViewportContainer2/canvasLayer/label
+@onready var pTwoTimer = $hSplitContainer/subViewportContainer2/canvasLayer/pTwoTimer
+@onready var pOneTimer = $hSplitContainer/subViewportContainer/canvasLayer/pOneTimer
 
 
 
@@ -43,8 +44,9 @@ func _ready():
 	
 func _physics_process(delta):
 	print(trackName)
-	if timer == 'on':
-		testTimer.text = str(snapped((float(testTimer.text) + delta),.001))
-	if Input.is_action_just_pressed('p1_a'):
-		timer = 'off'
-		globalVars.saveScores(trackName,str(globalVars.pOneName),testTimer.text)
+	if globalVars.canMove == true:
+		pTwoTimer.text = str(snapped((float(pTwoTimer.text) + delta),.001))
+	if globalVars.canMove == true:
+		pOneTimer.text = str(snapped((float(pOneTimer.text) + delta),.001))
+		
+	

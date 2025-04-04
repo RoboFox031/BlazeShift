@@ -3,7 +3,7 @@ class_name Car
 
 @onready var colorSprite: AnimatedSprite2D = $Sprite2D
 
-
+signal finishRace
 var color = "blue"
 var fireball: PackedScene = preload("res://Scenes/Pickups/fireball.tscn")
 
@@ -293,3 +293,6 @@ func updateTerrain(newTerrain):
 			terrainDecelMult=iceDecelMult
 			#Lowers traction on ice
 			traction=traction/15
+
+func finish_race():
+	finishRace.emit()

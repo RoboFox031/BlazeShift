@@ -98,30 +98,18 @@ func saveScores(trackName,playerName,time):
 func loadScores(trackName):
 	var timeScore = ConfigFile.new()
 	if trackName == 'basicTrack':
-		print(trackName)
-		print('loading basic scores')
 		var list = timeScore.load("res://basicScores.cfg")
-		print(timeScore)
-		print(list)
 		if list == OK:
 			var players = timeScore.get_sections()
-			print(players)
 			for x in players:
 				var score = timeScore.get_value(x,'time')
 				basicScores[x] = float(score)
 			return sortScores(basicScores)
 			
 	elif trackName == 'ruralTrack':
-		print(trackName)
-		print('loading rural scores')
 		var list = timeScore.load("res://ruralScores.cfg")
-		print(list)
-		print(timeScore)
 		if list == OK:
 			var players = timeScore.get_sections()
-			print(timeScore)
-			print(list)
-			print(players) 
 			for x in players:
 				var score = timeScore.get_value(x,'time')
 				ruralScores[x] = float(score)

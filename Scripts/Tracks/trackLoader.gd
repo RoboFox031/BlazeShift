@@ -3,6 +3,12 @@ extends Node2D
 var track = globalVars.track
 signal _startRace
 signal _startRaceTimer
+var trackName = track.instantiate().name
+var timer = 'on'
+
+@onready var testTimer = $hSplitContainer/subViewportContainer2/canvasLayer/label
+
+
 
 
 @onready var players := {
@@ -21,6 +27,7 @@ signal _startRaceTimer
 func _ready():
 	var track = track.instantiate()
 	track.name = 'track'
+	print(track.name)
 	players['1'].viewport.add_child(track)
 	players['2'].viewport.world_2d = players['1'].viewport.world_2d
 	players['1'].player = $hSplitContainer/subViewportContainer/subViewport/track/player1
@@ -32,3 +39,12 @@ func _ready():
 		remote_transform.remote_path = node.camera.get_path()
 		node.player.add_child(remote_transform)
 	_startRace.emit()
+	pass # Replace with function body.
+	
+func _physics_process(delta):
+	print(trackName)
+	if timer == 'on':
+		testTimer.text = str(snapped((float(testTimer.text) + delta),.001))
+	if Input.is_action_just_pressed('p1_a'):
+		timer = 'off'
+		globalVars.saveScores(trackName,str(globalVars.pOneName),testTimer.text)

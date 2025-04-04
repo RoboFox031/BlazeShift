@@ -1,0 +1,166 @@
+[gd_scene load_steps=22 format=3 uid="uid://bc8p8ge8obiqe"]
+
+[ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_ter08"]
+[ext_resource type="Texture2D" uid="uid://dttuw3nxohr0y" path="res://Assets/Sprites/Cars/CRX/CRXBlack.png" id="2_4cbh4"]
+[ext_resource type="Texture2D" uid="uid://cwskv64hh3g5c" path="res://Assets/Sprites/Cars/CRX/CRXBlue.png" id="3_2ru7u"]
+[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_gb3ma"]
+[ext_resource type="Texture2D" uid="uid://cme7v1045t4bk" path="res://Assets/Sprites/Cars/CRX/CRXGreen.png" id="4_xscoo"]
+[ext_resource type="Texture2D" uid="uid://cdqjs5pftp2s6" path="res://Assets/Sprites/Cars/CRX/CRXOrange.png" id="5_tyoli"]
+[ext_resource type="Texture2D" uid="uid://dnedia3iycj7p" path="res://Assets/Sprites/Cars/CRX/CRXPurple.png" id="6_j2pin"]
+[ext_resource type="Texture2D" uid="uid://dlcvvmo3dfm2s" path="res://Assets/Sprites/Cars/CRX/CRXRed.png" id="7_a5712"]
+[ext_resource type="Texture2D" uid="uid://dcfuvby2swjml" path="res://Assets/Sprites/Cars/CRX/CRXWhite.png" id="8_0c0ur"]
+[ext_resource type="Texture2D" uid="uid://tv0i0bpyf4ld" path="res://Assets/Sprites/Cars/CRX/CRXYellow.png" id="9_m6hh6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7utfb"]
+atlas = ExtResource("2_4cbh4")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lonrn"]
+atlas = ExtResource("3_2ru7u")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s60vy"]
+atlas = ExtResource("4_xscoo")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqvm5"]
+atlas = ExtResource("5_tyoli")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlgcf"]
+atlas = ExtResource("6_j2pin")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74ihj"]
+atlas = ExtResource("7_a5712")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tl6l"]
+atlas = ExtResource("8_0c0ur")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y12h"]
+atlas = ExtResource("9_m6hh6")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trdwi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7utfb")
+}],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lonrn")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s60vy")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqvm5")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlgcf")
+}],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74ihj")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tl6l")
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y12h")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y51"]
+size = Vector2(47, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
+size = Vector2(8.99993, 13.9999)
+
+[node name="CRX" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_ter08")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, 2)
+rotation = 3.14159
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_trdwi")
+animation = &"yellow"
+autoplay = "blue"
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_v4y51")
+debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)
+
+[node name="camera2d" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="terrainDetector" type="Node2D" parent="."]
+script = ExtResource("3_gb3ma")
+
+[node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorL"]
+position = Vector2(0, -17)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_mox8c")
+
+[node name="terrainDetectorR" type="Area2D" parent="terrainDetector"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorR"]
+position = Vector2(0, 17)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_mox8c")
+
+[connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
+[connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_exited"]
+[connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]

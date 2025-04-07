@@ -116,3 +116,5 @@ visible = false
 
 [connection signal="_startRace" from="." to="hSplitContainer/subViewportContainer/canvasLayer/pTwoStoplight" method="_on_track_loader__start_race"]
 [connection signal="_startRace" from="." to="hSplitContainer/subViewportContainer2/canvasLayer/pOneStoplight" method="_on_track_loader__start_race"]
+[connection signal="p_pause" from="canvasLayer/pauseScreen" to="." method="_on_pause_screen_p_pause"]
+[connection signal="p_resume" from="canvasLayer/pauseScreen" to="." method="_on_pause_screen_p_resume"]

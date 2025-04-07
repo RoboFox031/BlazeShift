@@ -17,3 +17,4 @@ func _on_track_loader__start_race() -> void:
 func _on_timer_timeout() -> void:
 	self.visible = false
 	globalVars.canMove = true
+	globalVars.canPause = true

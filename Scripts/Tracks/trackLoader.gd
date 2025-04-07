@@ -48,5 +48,7 @@ func _physics_process(delta):
 		pTwoTimer.text = str(snapped((float(pTwoTimer.text) + delta),.001))
 	if globalVars.canMove == true:
 		pOneTimer.text = str(snapped((float(pOneTimer.text) + delta),.001))
-		
-	
+func _on_pause_screen_p_pause():
+	globalVars.canMove = false
+func _on_pause_screen_p_resume() -> void:
+	globalVars.canMove = true

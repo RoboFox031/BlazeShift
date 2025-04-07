@@ -35,6 +35,7 @@ var pOneColorSelected = 6
 var pTwoColorSelected = 4
 
 var canMove
+var canPause
 #name variables
 var pOneName = 'aaa'
 var pTwoName = 'aaa'

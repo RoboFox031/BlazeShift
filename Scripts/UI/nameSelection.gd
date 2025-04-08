@@ -180,7 +180,8 @@ func _updateArrows():
 func _updateNameStrings():
 	pOneName = pOneLabels[0].text + pOneLabels[1].text + pOneLabels[2].text
 	pTwoName = pTwoLabels[0].text + pTwoLabels[1].text + pTwoLabels[2].text
-
+	globalVars.pOneName = pOneName
+	globalVars.pTwoName = pTwoName
 func _loadBadWords():
 	var file = FileAccess.open("res://badWords.txt", FileAccess.READ)
 	if file:
@@ -191,11 +192,12 @@ func _loadBadWords():
 		file.close()
 		
 func _checkCleanName(name):
-	for word in bannedWords:
-		if word in name:
+	if globalVars.pOneName == name:
+		if name in bannedWords:
 			return false
 		else:
 			return true
+
 
 func _updateReadyScreen():
 	if playerOneReady == true:

@@ -5942,7 +5942,7 @@ texture = ExtResource("10_h0h4c")
 sources/0 = SubResource("TileSetAtlasSource_d180l")
 sources/1 = SubResource("TileSetAtlasSource_r6xhk")
 
-[node name="track" type="Node2D"]
+[node name="ruralTrack" type="Node2D"]
 script = ExtResource("1_4l54d")
 
 [node name="Track" type="TileMapLayer" parent="."]

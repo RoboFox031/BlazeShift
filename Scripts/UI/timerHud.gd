@@ -1,0 +1,11 @@
+extends UI
+class_name timerHud
+
+@onready var sprite = $animatedSprite2d
+var time = int
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+

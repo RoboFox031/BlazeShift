@@ -1,7 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://gdyc002hat4w"]
+[gd_scene load_steps=7 format=3 uid="uid://gdyc002hat4w"]
 
 [ext_resource type="Script" uid="uid://c0mm05lkl687a" path="res://Scripts/UI/pauseScreen.gd" id="1_e0kag"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_o611i"]
+[ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="3_prih7"]
+
+[sub_resource type="Animation" id="Animation_prih7"]
+resource_name = "blink"
+length = 2.0
+loop_mode = 1
+step = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pauseLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_si8yw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pauseLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_si8yw"]
+_data = {
+&"RESET": SubResource("Animation_si8yw"),
+&"blink": SubResource("Animation_prih7")
+}
 
 [node name="pauseScreen" type="Node2D"]
 script = ExtResource("1_e0kag")
@@ -143,3 +183,22 @@ theme_override_font_sizes/font_size = 75
 text = "confirmed"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="pauseLabel" type="Label" parent="."]
+offset_left = 607.5
+offset_top = 28.0
+offset_right = 1312.5
+offset_bottom = 301.0
+pivot_offset = Vector2(352.5, 0)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_prih7")
+theme_override_font_sizes/font_size = 200
+text = "paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="animationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_si8yw")
+}
+autoplay = "blink"

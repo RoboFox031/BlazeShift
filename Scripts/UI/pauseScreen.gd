@@ -1,5 +1,8 @@
 extends Node2D
  
+@onready var pauseLabel = $pauseLabel
+@onready var timer = $timer
+
 var inControl: int = 0
 
 var selected: int = 0
@@ -115,3 +118,7 @@ func _useButton(option):
 func _restart():
 	get_tree().change_scene_to_file("res://Scenes/UI/titleScreen.tscn")
 		
+
+
+func _on_timer_timeout() -> void:
+	timer.start()

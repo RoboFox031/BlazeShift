@@ -39,10 +39,12 @@ position = Vector2(20, 1000)
 position = Vector2(842, 977)
 
 [node name="placementTracker" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("5_kxt15")]
-offset_left = 783.0
-offset_top = 74.0
-offset_right = 783.0
-offset_bottom = 74.0
+offset_left = 812.0
+offset_top = 461.0
+offset_right = 812.0
+offset_bottom = 461.0
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 0
 
 [node name="subViewportContainer2" type="SubViewportContainer" parent="hSplitContainer"]
 layout_mode = 2

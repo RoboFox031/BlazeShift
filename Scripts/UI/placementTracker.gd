@@ -12,6 +12,15 @@ var p2Lap=0
 var p1Progress=0
 var p2Progress=0
 
+enum placements{first,last,tie}
+var p1Placement=placements.tie
+var p2Placement=placements.tie
+
+func _ready():
+	#Switch the strings for the player names once they get added 
+	$p1Label.text="Player 1"
+	$p2Label.text="Player 2"
+
 func _process(delta):
 	#Updates the variables
 	p1Lap=globalVars.laps["p1"]
@@ -20,14 +29,16 @@ func _process(delta):
 	p2Progress=globalVars.progress["p2"]
 
 	#Prints all the varibles (for debuging)
-	print("p1 Lap "+str(p1Lap)+" p2 Lap "+str(p2Lap))
-	print("p1 progress "+str(p1Progress)+" p2 progress "+str(p2Progress))
+	# print("p1 Lap "+str(p1Lap)+" p2 Lap "+str(p2Lap))
+	# print("p1 progress "+str(p1Progress)+" p2 progress "+str(p2Progress))
+	#print("p1 placement "+str(placements.find_key(p1Placement))+" p2 placement "+str(placements.find_key(p2Placement)))
 	
 	
 	########################################################## Add an if statement that only lets this all run if no one has finished the race
 	
 	#Only runs the other things when the animation is finished
-	await(animationPlayer.animation_finished)
+	#await(animationPlayer.animation_finished)
+	print("check")
 	#If there's a tie, run the correct function
 	if(p1Lap==p2Lap and p1Progress==p2Progress):
 		tie()
@@ -52,18 +63,40 @@ func _process(delta):
 
 #The function that runs when there is a tie
 func tie():
-	animationPlayer.play("tie")
+	print("tie")
+	#only runs if the players aren't tied
+	if(p1Placement!=placements.tie and p2Placement!=placements.tie):
+		animationPlayer.play("tie")
+		p1Placement=placements.tie
+		p2Placement=placements.tie
+		print("tie")
 
 #The function that runs when there is not a tie
 func noTie():
-	animationPlayer.play("noTie")
+	#only runs when there is a tie	
+	if(p1Placement==placements.tie and p2Placement==placements.tie):
+		animationPlayer.play("noTie")
 
 #displays p2 as in the lead
 func p2Lead():
-	noTie()
-	animationPlayer.play("p2Lead")
+	print("p2Lead")
+	#only updates the placement if the player 2 isn't winning
+	if(p2Placement!=placements.first):
+		noTie()
+		await(animationPlayer.animation_finished)
+		animationPlayer.play("p2Lead")
+		p1Placement=placements.last
+		p2Placement=placements.first
+		print("p2Lead")
 
 #displays p1 as in the lead
 func p1Lead():
-	noTie()
-	animationPlayer.play("p1Lead")
+	print("p1Lead")
+	#only updates the placement if the player 1 isn't winning
+	if(p1Placement!=placements.first):
+		noTie()
+		await(animationPlayer.animation_finished)
+		animationPlayer.play("p1Lead")
+		p1Placement=placements.first
+		p2Placement=placements.last
+		print("p1Lead")

@@ -197,6 +197,11 @@ func _checkCleanName(name):
 			return false
 		else:
 			return true
+	if globalVars.pTwoName == name:
+		if name in bannedWords:
+			return false
+		else:
+			return true
 
 
 func _updateReadyScreen():

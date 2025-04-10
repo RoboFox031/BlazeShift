@@ -202,3 +202,15 @@ libraries = {
 &"": SubResource("AnimationLibrary_si8yw")
 }
 autoplay = "blink"
+
+[node name="infoLabel" type="Label" parent="."]
+offset_left = 713.0
+offset_top = 795.0
+offset_right = 1207.0
+offset_bottom = 846.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_o611i")
+theme_override_font_sizes/font_size = 50
+text = "press start to select"
+horizontal_alignment = 1
+vertical_alignment = 1

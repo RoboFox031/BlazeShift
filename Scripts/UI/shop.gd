@@ -9,6 +9,12 @@ var pTwoReady = false
 var pOneOptionSelected = "car"
 var pTwoOptionSelected = "car"
 
+var pOneCarSelection = 0
+var pTwoCarSelection = 0
+
+var pOneColorSelected = 0
+var pTwoColorSelected = 0
+
 @onready var pOneRightArrow = $pOneRightArrow
 @onready var pOneLeftArrow = $pOneLeftArrow
 
@@ -99,7 +105,7 @@ func _ready() -> void:
 	_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 	
 func _process(delta: float) -> void:
-	print(carNames[pOneCarSelection])
+	# print(carNames[pOneCarSelection])
 	if Input.is_action_just_pressed('p1_start'):
 		if pOneReady == false and pOneCars[globalVars.pOneCarSelected] in pOneOwned:
 			pOneReady = true

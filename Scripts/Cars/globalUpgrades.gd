@@ -11,6 +11,7 @@ var cars=[
 	"NSX",
 	"S13",
 	"Mustang",
+	"LemkeCar",
 ]
 #The dictionnary that stores all the upgrades
 ##When acessing a specific upgrade the format is as folows: globalUpgrades.upgradesDict[player][car][upgrade]
@@ -36,7 +37,7 @@ func _ready() -> void:
 			upgradesDict[players][i]={}
 			for j in upgrades:
 				#Creates the upgrades for each car and defults them to 0
-				upgradesDict[players][i][j]=2
+				upgradesDict[players][i][j]=0
 	# print(upgradesDict)
 	# var levelTest=getStatLevel("p1","NSX","topSpeed")
 	# print("current: "+str(getStatLevel("p1","NSX","topSpeed")))

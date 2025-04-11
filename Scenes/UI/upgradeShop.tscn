@@ -218,7 +218,7 @@ vertical_alignment = 1
 position = Vector2(540, 450)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
-animation = &"5"
+animation = &"0"
 
 [node name="maxBlazeSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
 position = Vector2(543, 553)

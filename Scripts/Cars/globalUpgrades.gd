@@ -36,8 +36,10 @@ func _ready() -> void:
 			upgradesDict[players][i]={}
 			for j in upgrades:
 				#Creates the upgrades for each car and defults them to 0
-				upgradesDict[players][i][j]=0
+				upgradesDict[players][i][j]=2
 	# print(upgradesDict)
+	# var levelTest=getStatLevel("p1","NSX","topSpeed")
+	# print("current: "+str(getStatLevel("p1","NSX","topSpeed")))
 
 #Function called by other scripts that upgrades a spefic stat, by a fixed amount
 func upgradeStat(player:String,car:String,upgradeName:String):
@@ -57,3 +59,9 @@ func statValue(player:String,car:String,upgradeName:String):
 			return level*maxBlazePerLevel
 		"handling":
 			return level*handlingPerLevel
+
+#Gets the level of a stat
+func getStatLevel(player:String,car:String,upgradeName:String):
+	#Returns the level of the chosen upgrade
+	var level=upgradesDict[player][car][upgradeName]
+	return level

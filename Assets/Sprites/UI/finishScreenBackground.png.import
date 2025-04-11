@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c530hqwk3u3uc"
-path="res://.godot/imported/Starting Light.png-f71e75d0b659c327a4e7338f612a3a82.ctex"
+uid="uid://bckkvqmp6hfi6"
+path="res://.godot/imported/finishScreenBackground.png-cfde4c535c86a87dc4a3d4f84dce0320.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/Race Assets/Starting Light.png"
-dest_files=["res://.godot/imported/Starting Light.png-f71e75d0b659c327a4e7338f612a3a82.ctex"]
+source_file="res://Assets/Sprites/UI/finishScreenBackground.png"
+dest_files=["res://.godot/imported/finishScreenBackground.png-cfde4c535c86a87dc4a3d4f84dce0320.ctex"]
 
 [params]
 

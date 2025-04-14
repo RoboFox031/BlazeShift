@@ -338,7 +338,12 @@ func updatePosition(area:Area2D):
 					#if you didn't reverse enough, then mark the current checkpoint as a reverse
 					else:
 						isReverse=true
-						print(currentOwnerStr+" reverse "+str(reverseAmount))
+						print(currentOwnerStr+" reverse "+str(reverseCount))
+						#increase the reverse count 
+						reverseCount+=1
+						if(reverseCount>reverseTolerance):
+							respawn()
+						
 		
 		#Stores if any of the progress movements are legal
 		var anyLegalMove=false
@@ -370,8 +375,10 @@ func updatePosition(area:Area2D):
 			#Stores the position and rotation of the legal point
 			progressPoint=area.global_position
 			progressRot=area.global_rotation
+			#resets reverse
+			reverseCount=0
 			#Prints info about the player's position
-			print(currentOwnerStr+" progress: "+str(currentProgress))#+", point: " +str(progressPoint))
+			# print(currentOwnerStr+" progress: "+str(currentProgress))#+", point: " +str(progressPoint))
 
 #This function removes progress points you are touching from the array they are in
 func leavePosition(area:Area2D):
@@ -382,9 +389,12 @@ func leavePosition(area:Area2D):
 func respawn():
 	#Resets the player's speed
 	currentLinSpeed=0
+	resetMovement()
 	#Teleports the player
 	global_position=progressPoint
 	global_rotation=progressRot
+	#resets reverse count
+	reverseCount=0
 	pass
 
 #Makes the player be on the next lap
@@ -396,11 +406,14 @@ func nextLap():
 	else:
 		currentLap+=1
 		currentProgress=0
+		globalVars.progress[currentOwnerStr]=0
 		lastProgress=0
 		touchingProgress=[]
 		#Update globals
 		globalVars.laps[currentOwnerStr]=currentLap
-		print("lap "+str(currentLap))
+		# print(str(currentOwnerStr)+" lap "+str(globalVars.laps[currentOwnerStr]))
+		# print(str(currentOwnerStr)+" progress "+str(globalVars.progress[currentOwnerStr]))
+		
 
 #finishes the race
 func finishRace():

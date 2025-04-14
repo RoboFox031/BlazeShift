@@ -9,6 +9,12 @@ var pTwoReady = false
 var pOneOptionSelected = "car"
 var pTwoOptionSelected = "car"
 
+var pOneCarSelection = 0
+var pTwoCarSelection = 0
+
+var pOneColorSelected = 0
+var pTwoColorSelected = 0
+
 @onready var pOneRightArrow = $pOneRightArrow
 @onready var pOneLeftArrow = $pOneLeftArrow
 
@@ -99,6 +105,7 @@ func _ready() -> void:
 	_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 	
 func _process(delta: float) -> void:
+	# print(carNames[pOneCarSelection])
 	if Input.is_action_just_pressed('p1_start'):
 		if pOneReady == false and pOneCars[globalVars.pOneCarSelected] in pOneOwned:
 			pOneReady = true
@@ -316,12 +323,14 @@ func _buyCar(player):
 
 func _changeGlobalVars():
 	var carNames = cars.keys()
-	globalVars.playerOneCar = cars[carNames[globalVars.pOneCarSelected]].carScene
-	globalVars.playerOneColor = cars[carNames[globalVars.pOneCarSelected]].colors[globalVars.pOneColorSelected]
-	globalVars.playerTwoCar = cars[carNames[globalVars.pTwoCarSelected]].carScene
-	globalVars.playerTwoColor = cars[carNames[globalVars.pTwoCarSelected]].colors[globalVars.pTwoColorSelected]
-	globalVars.playerOneCarSprite = carStringNames[globalVars.pOneCarSelected] + colors[globalVars.pOneColorSelected].capitalize()
-	globalVars.playerTwoCarSprite = carStringNames[globalVars.pTwoCarSelected] + colors[globalVars.pTwoColorSelected].capitalize()
+	globalVars.playerOneCar = cars[carNames[pOneCarSelection]].carScene
+	globalVars.playerOneColor = cars[carNames[pOneCarSelection]].colors[pOneColorSelected]
+	globalVars.currentCarNames["p1"]=str(carNames[pOneCarSelection])
+	globalVars.playerTwoCar = cars[carNames[pTwoCarSelection]].carScene
+	globalVars.playerTwoColor = cars[carNames[pTwoCarSelection]].colors[pTwoColorSelected]
+	globalVars.currentCarNames["p2"]=str(carNames[pTwoCarSelection])
+	globalVars.playerOneCarSprite = carStringNames[pOneCarSelection] + colors[pOneColorSelected].capitalize()
+	globalVars.playerTwoCarSprite = carStringNames[pTwoCarSelection] + colors[pTwoColorSelected].capitalize()
 
 func _updateReadyScreen():
 	if pOneReady == true:

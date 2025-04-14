@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://bianlysxo3bi6"]
+[gd_scene load_steps=20 format=4 uid="uid://bianlysxo3bi6"]
 
 [ext_resource type="Script" uid="uid://bhvtu8dlnub0a" path="res://Scripts/Tracks/iceTrack.gd" id="1_ftibf"]
 [ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://Assets/Sprites/Tracks/192 racetrack Divided.svg" id="1_vep5x"]
 [ext_resource type="Texture2D" uid="uid://bwb2oalo6c030" path="res://Assets/Sprites/Tracks/spritesheet.png" id="2_rqd63"]
 [ext_resource type="Texture2D" uid="uid://bpq3btiokvybu" path="res://Assets/Sprites/Tracks/Crystals for decoration.png" id="3_1wctq"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="5_m4j1f"]
+[ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://Scenes/Pickups/powerupBox.tscn" id="6_tqusy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxr3h"]
 texture = ExtResource("1_vep5x")
@@ -11644,3 +11645,45 @@ tile_set = SubResource("TileSet_xubuk")
 z_index = 2
 tile_map_data = PackedByteArray("AAADAJ//AAAiAAAAAAADAKD/AAAiAAEAAAADAKH/AAAiAAIAAAADAKL/AAAiAAMAAAADAKP/AAAiAAQAAAADAKT/AAAiAAUAAAADAKX/AAAiAAYAAAADAKb/AAAiAAcAAAADAKf/AAAiAAgAAAADAKj/AAAiAAkAAAADAKn/AAAiAAoAAAADAKr/AAAiAAsAAAADAKv/AAAiAAwAAAAEAJ//AAAjAAAAAAAEAKD/AAAjAAEAAAAEAKH/AAAjAAIAAAAEAKL/AAAjAAMAAAAEAKP/AAAjAAQAAAAEAKT/AAAjAAUAAAAEAKX/AAAjAAYAAAAEAKb/AAAjAAcAAAAEAKf/AAAjAAgAAAAEAKj/AAAjAAkAAAAEAKn/AAAjAAoAAAAEAKr/AAAjAAsAAAAEAKv/AAAjAAwAAAAFAJ//AAAkAAAAAAAFAKD/AAAkAAEAAAAFAKH/AAAkAAIAAAAFAKL/AAAkAAMAAAAFAKP/AAAkAAQAAAAFAKT/AAAkAAUAAAAFAKX/AAAkAAYAAAAFAKb/AAAkAAcAAAAFAKf/AAAkAAgAAAAFAKj/AAAkAAkAAAAFAKn/AAAkAAoAAAAFAKr/AAAkAAsAAAAFAKv/AAAkAAwAAAAGAJ//AAAlAAAAAAAGAKD/AAAlAAEAAAAGAKH/AAAlAAIAAAAGAKL/AAAlAAMAAAAGAKP/AAAlAAQAAAAGAKT/AAAlAAUAAAAGAKX/AAAlAAYAAAAGAKb/AAAlAAcAAAAGAKf/AAAlAAgAAAAGAKj/AAAlAAkAAAAGAKn/AAAlAAoAAAAGAKr/AAAlAAsAAAAGAKv/AAAlAAwAAAAHAJ//AAAmAAAAAAAHAKD/AAAmAAEAAAAHAKH/AAAmAAIAAAAHAKL/AAAmAAMAAAAHAKP/AAAmAAQAAAAHAKT/AAAmAAUAAAAHAKX/AAAmAAYAAAAHAKb/AAAmAAcAAAAHAKf/AAAmAAgAAAAHAKj/AAAmAAkAAAAHAKn/AAAmAAoAAAAHAKr/AAAmAAsAAAAHAKv/AAAmAAwAAAAIAJ//AAAnAAAAAAAIAKD/AAAnAAEAAAAIAKH/AAAnAAIAAAAIAKL/AAAnAAMAAAAIAKP/AAAnAAQAAAAIAKT/AAAnAAUAAAAIAKX/AAAnAAYAAAAIAKb/AAAnAAcAAAAIAKf/AAAnAAgAAAAIAKj/AAAnAAkAAAAIAKn/AAAnAAoAAAAIAKr/AAAnAAsAAAAIAKv/AAAnAAwAAAA=")
 tile_set = SubResource("TileSet_pipxo")
+
+[node name="Powerup Boxes" type="Node" parent="icetrack"]
+
+[node name="powerupBox" parent="icetrack/Powerup Boxes" instance=ExtResource("6_tqusy")]
+z_index = 1
+position = Vector2(-1356, -3333)
+scale = Vector2(2, 2)
+
+[node name="powerupBox2" parent="icetrack/Powerup Boxes" instance=ExtResource("6_tqusy")]
+z_index = 1
+position = Vector2(-1356, -3498)
+scale = Vector2(2, 2)
+
+[node name="powerupBox3" parent="icetrack/Powerup Boxes" instance=ExtResource("6_tqusy")]
+z_index = 1
+position = Vector2(-1213, -734)
+scale = Vector2(2, 2)
+
+[node name="powerupBox4" parent="icetrack/Powerup Boxes" instance=ExtResource("6_tqusy")]
+z_index = 1
+position = Vector2(-1213, -899)
+scale = Vector2(2, 2)
+
+[node name="powerupBox5" parent="icetrack/Powerup Boxes" instance=ExtResource("6_tqusy")]
+z_index = 1
+position = Vector2(-1509, 359)
+scale = Vector2(2, 2)
+
+[node name="powerupBox6" parent="icetrack/Powerup Boxes" instance=ExtResource("6_tqusy")]
+z_index = 1
+position = Vector2(-1509, 194)
+scale = Vector2(2, 2)
+
+[node name="powerupBox7" parent="icetrack/Powerup Boxes" instance=ExtResource("6_tqusy")]
+z_index = 1
+position = Vector2(1002, -839)
+scale = Vector2(2, 2)
+
+[node name="powerupBox8" parent="icetrack/Powerup Boxes" instance=ExtResource("6_tqusy")]
+z_index = 1
+position = Vector2(1002, -1004)
+scale = Vector2(2, 2)

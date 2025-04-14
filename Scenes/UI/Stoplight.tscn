@@ -1,0 +1,112 @@
+[gd_scene load_steps=16 format=3 uid="uid://vaa3ruuygwlf"]
+
+[ext_resource type="Script" uid="uid://bfedtaufw1qwx" path="res://Scripts/UI/StoplightStart.gd" id="1_3lnu3"]
+[ext_resource type="Texture2D" uid="uid://c530hqwk3u3uc" path="res://Assets/Sprites/Cars/Race Assets/Starting Light.png" id="2_pwuvw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxko1"]
+atlas = ExtResource("2_pwuvw")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jd8r"]
+atlas = ExtResource("2_pwuvw")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwd2u"]
+atlas = ExtResource("2_pwuvw")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ckhs"]
+atlas = ExtResource("2_pwuvw")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wljk"]
+atlas = ExtResource("2_pwuvw")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcajd"]
+atlas = ExtResource("2_pwuvw")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj3rs"]
+atlas = ExtResource("2_pwuvw")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uws13"]
+atlas = ExtResource("2_pwuvw")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiebg"]
+atlas = ExtResource("2_pwuvw")
+region = Rect2(384, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nddgi"]
+atlas = ExtResource("2_pwuvw")
+region = Rect2(0, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm12d"]
+atlas = ExtResource("2_pwuvw")
+region = Rect2(192, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvfr5"]
+atlas = ExtResource("2_pwuvw")
+region = Rect2(384, 576, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2lti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxko1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jd8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwd2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ckhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wljk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcajd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj3rs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uws13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kiebg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nddgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm12d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvfr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nddgi")
+}],
+"loop": false,
+"name": &"Stoplight",
+"speed": 3.0
+}]
+
+[node name="Stoplight" type="Node2D"]
+script = ExtResource("1_3lnu3")
+
+[node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c2lti")
+animation = &"Stoplight"
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 4.33
+one_shot = true
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

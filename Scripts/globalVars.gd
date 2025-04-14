@@ -7,6 +7,8 @@ var playerOneCarSprite = null
 var playerTwoCarSprite = null
 var playerOneColor = "blue"
 var playerTwoColor = "blue"
+#Defults to mustang
+var currentCarNames={"p1":"Mustang","p2":"Mustang"}
 var pOnePowerup = 'none'
 var pTwoPowerup = 'none'
 var pOneCoins = 2
@@ -34,6 +36,8 @@ var pTwoCarSelected = 2
 var pOneColorSelected = 6
 var pTwoColorSelected = 4
 
+var canMove
+var canPause
 #name variables
 var pOneName = 'aaa'
 var pTwoName = 'aaa'

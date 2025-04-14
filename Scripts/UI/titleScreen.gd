@@ -86,9 +86,12 @@ func changeSelectedButton(button):
 		if b == button:
 			b.scale.x = 1.15
 			b.scale.y = 1.15
+			b.get_child(0).add_theme_color_override('font_outline_color', Color(0,0,0))
+			b.get_child(0).add_theme_constant_override('outline_size', 20)
 		else:
 			b.scale.x = 1
 			b.scale.y = 1
+			b.get_child(0).add_theme_constant_override('outline_size', 0)
 
 func buttonPressed(button):
 	if button == playButton:

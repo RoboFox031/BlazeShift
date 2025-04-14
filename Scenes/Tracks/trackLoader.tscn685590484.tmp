@@ -1,29 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://7ysc21hplbc2"]
+[gd_scene load_steps=10 format=3 uid="uid://7ysc21hplbc2"]
 
-[ext_resource type="Script" uid="uid://c7bxg8bjgyrhq" path="res://Scripts/Tracks/trackLoader.gd" id="1_txhea"]
+[ext_resource type="Script" uid="uid://0hyyoerby0kf" path="res://Scripts/Tracks/trackLoader.gd" id="1_txhea"]
 [ext_resource type="PackedScene" uid="uid://co6q4klcpljhi" path="res://Scenes/UI/pTwoBlazeHud.tscn" id="3_2qf2f"]
 [ext_resource type="PackedScene" uid="uid://bhcaxmvifx6r1" path="res://Scenes/UI/pOneCoinHud.tscn" id="3_go0ff"]
 [ext_resource type="PackedScene" uid="uid://bwffy2tfu4rbe" path="res://Scenes/UI/pOneBlazeHud.tscn" id="3_sw20d"]
 [ext_resource type="PackedScene" uid="uid://bwvjkcqhdw5e6" path="res://Scenes/UI/pOnePowerupsHud.tscn" id="4_n1ubl"]
 [ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="5_5lhqp"]
 [ext_resource type="PackedScene" uid="uid://vaa3ruuygwlf" path="res://Scenes/UI/Stoplight.tscn" id="5_t261b"]
-[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="6_m4tpg"]
 [ext_resource type="PackedScene" uid="uid://bbpaemnpu0ei8" path="res://Scenes/UI/pTwoPowerupsHud.tscn" id="7_8we7n"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/pauseScreen.tscn" id="8_ig87d"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_3v6t4"]
-font = ExtResource("6_m4tpg")
-font_size = 120
-font_color = Color(0.784314, 0, 0.12549, 1)
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_xym10"]
-font = ExtResource("6_m4tpg")
-font_size = 120
-font_color = Color(0.78427, 0, 0.124484, 1)
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://gdyc002hat4w" path="res://Scenes/UI/pauseScreen.tscn" id="8_ig87d"]
 
 [node name="trackLoader" type="Node2D"]
 script = ExtResource("1_txhea")
@@ -58,15 +43,6 @@ position = Vector2(842, 977)
 position = Vector2(1470, 536)
 scale = Vector2(4, 4)
 
-[node name="pOneTimer" type="Label" parent="hSplitContainer/subViewportContainer/canvasLayer"]
-offset_left = 20.0
-offset_top = 16.0
-offset_right = 583.0
-offset_bottom = 170.0
-theme_override_font_sizes/font_size = 100
-text = "0"
-label_settings = SubResource("LabelSettings_3v6t4")
-
 [node name="subViewportContainer2" type="SubViewportContainer" parent="hSplitContainer"]
 layout_mode = 2
 
@@ -93,16 +69,6 @@ position = Vector2(970, 900)
 position = Vector2(480, 536)
 scale = Vector2(4, 4)
 
-[node name="pTwoTimer" type="Label" parent="hSplitContainer/subViewportContainer2/canvasLayer"]
-offset_left = 1664.0
-offset_right = 2227.0
-offset_bottom = 154.0
-theme_override_font_sizes/font_size = 100
-text = "0"
-label_settings = SubResource("LabelSettings_xym10")
-horizontal_alignment = 3
-vertical_alignment = 1
-
 [node name="colorRect" type="ColorRect" parent="."]
 offset_left = 954.0
 offset_right = 966.0
@@ -115,5 +81,3 @@ visible = false
 
 [connection signal="_startRace" from="." to="hSplitContainer/subViewportContainer/canvasLayer/pTwoStoplight" method="_on_track_loader__start_race"]
 [connection signal="_startRace" from="." to="hSplitContainer/subViewportContainer2/canvasLayer/pOneStoplight" method="_on_track_loader__start_race"]
-[connection signal="p_pause" from="canvasLayer/pauseScreen" to="." method="_on_pause_screen_p_pause"]
-[connection signal="p_resume" from="canvasLayer/pauseScreen" to="." method="_on_pause_screen_p_resume"]

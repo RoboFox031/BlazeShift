@@ -3,28 +3,30 @@ class_name Car
 
 @onready var colorSprite: AnimatedSprite2D = $Sprite2D
 
-
+signal finishRace
 var color = "blue"
 var fireball: PackedScene = preload("res://Scenes/Pickups/fireball.tscn")
 
 ########
 #Important Car Stats:
 ########
+#Holds the resource that controls car stats
+@export var stats:carStats
 #The variables that change based on cars
-@export var baseAcceleration=15 ##controls acceleration
-@export var baseTopSpeed=1000 ##controls top speed
+var baseAcceleration=1 ##controls acceleration
+var baseTopSpeed=1 ##controls top speed
 #controls how quickly you turn
-@export var baseTurnSpeed:float=40##controls how quickly you turn
+var baseTurnSpeed:float=1##controls how quickly you turn
 var trueBaseTurnSpeed:float: #Converts the turn speed to radians
 	get:
 		return baseTurnSpeed*PI/180
 #controls how sharply you turn
-@export var baseTurnPower:float=180 ##controls how sharply you turn
+var baseTurnPower:float=1 ##controls how sharply you turn
 var trueTurnPower:float: #Converts the turn power to radians
 	get:
 		return baseTurnPower*PI/180
 #The base deceleration value
-@export var baseDecel=8; ##The base deceleration value
+var baseDecel=1; ##The base deceleration value
 #Stores the speed of the car
 var currentLinSpeed:float =0
 #Stores the turning speed of the car
@@ -37,8 +39,11 @@ var turnOutput:float=0
 #Stores the vector the car is going in
 var fwdVector:Vector2
 
+#Stores direction the car is traveling in
+var turnDirection
+
 #handles traction
-@export var baseTraction:float=100
+var baseTraction:float=1
 var traction=baseTraction
 var driftTractionMult=10
 ###########################
@@ -53,17 +58,17 @@ var currentOwnerStr:String:
 		return playerChoices.find_key(currentOwner)
 
 #controls how the car reacts to offroading
-@export var offRoadSpeedMult:float=.6 ##Controls how offroading affects speed and acceleration
-@export var offRoadAccelMult:float=.8 ##Controls how offroading affects turning
-@export var offRoadTurnSpeedMult:float=.8 ##Controls how offroading affects turning speed
-@export var offRoadTurnPowerMult:float=.8 ##Controls how offroading affects turning power
-@export var offRoadDecelMult:float=2 ##Controls how offroading affects decleration 
+var offRoadSpeedMult:float=.6 ##Controls how offroading affects speed and acceleration
+var offRoadAccelMult:float=.8 ##Controls how offroading affects turning
+var offRoadTurnSpeedMult:float=.8 ##Controls how offroading affects turning speed
+var offRoadTurnPowerMult:float=.8 ##Controls how offroading affects turning power
+var offRoadDecelMult:float=2 ##Controls how offroading affects decleration 
 #controls how the car reacts to ice
-@export var iceSpeedMult:float=1 ##Controls how offroading affects speed and acceleration
-@export var iceAccelMult:float=0.5 ##Controls how offroading affects speed and acceleration
-@export var iceTurnSpeedMult:float=0.1 ##Controls how offroading affects turning speed
-@export var iceTurnPowerMult:float=2 ##Controls how offroading affects turning power
-@export var iceDecelMult:float=0.5 ##Controls how offroading affects decleration
+var iceSpeedMult:float=1 ##Controls how offroading affects speed and acceleration
+var iceAccelMult:float=0.5 ##Controls how offroading affects speed and acceleration
+var iceTurnSpeedMult:float=0.1 ##Controls how offroading affects turning speed
+var iceTurnPowerMult:float=2 ##Controls how offroading affects turning power
+var iceDecelMult:float=0.5 ##Controls how offroading affects decleration
 
 #Stores what terrain the car is on
 var currentTerrain:trackEnums.terrainTypes
@@ -87,7 +92,7 @@ var trueCurrentTurnSpeed:float: #Converts the turn speed to radians
 	get:
 		return currentTurnSpeed*PI/180
 #controls how sharply you turn
-var currentTurnPower:float=baseTurnPower ##controls how sharply you turn
+var currentTurnPower:float ##controls how sharply you turn
 var trueCurrentTurnPower:float: #Converts the turn power to radians
 	get:
 		return currentTurnPower*PI/180
@@ -99,14 +104,25 @@ enum driftDir{lDrift=-1,rDrift=1,none=0}
 var currentDrift:driftDir
 var isDrifting:bool=false
 var driftVector:Vector2
+var driftNoInput:bool=false
 
 func _ready() -> void:
+	#for testing upgrades
+	#for i in 5:
+		#globalUpgrades.upgradeStat(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"acceleration")
+		#globalUpgrades.upgradeStat(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"topSpeed")
+	#Setup car stats
+	applyStats()
+	
 	z_index = 10
+	
 
 
 func _physics_process(delta):
-	#Changes the color
-	colorSprite.play(color)
+	#prevents errors from an animated sprite not exsisting
+	if colorSprite:
+		#Changes the color
+		colorSprite.play(color) #Why is it this running constantly?
 	#Gets the input, and converts it to positive or negitive 1
 	var linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
 	#If you are clicking a button, accelerates based on the acceleration value
@@ -116,14 +132,19 @@ func _physics_process(delta):
 	else:
 		currentLinSpeed = move_toward(currentLinSpeed, 0, currentDecel*terrainDecelMult)
 	
-	var turnDirection
+	
 	if isDrifting==false:
 		#Gets the input, and converts it to positive or negitive 1
 		turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right")
 	if isDrifting==true:
-		turnDirection=currentDrift
+		#if you are drifting, locks your turning in the drifing direction, and only allows for small adjustments
+		#turnDirection=currentDrift
+		if currentDrift<0:
+			turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),currentDrift,0)
+		elif currentDrift>0:
+			turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),-0,currentDrift)
+		print(turnDirection)
 	#If you are clicking a button, turns in that direction based on the acceleration value
-	#The /1000 at the end makes the number small, to prevent people from habing to deal with tiny decimals while playing with stats
 	if turnDirection and currentLinSpeed!=0:
 		currentTurnForce = move_toward(currentTurnForce, trueCurrentTurnPower*turnDirection*terrainTurnPowerMult, trueCurrentTurnSpeed*terrainTurnSpeedMult)
 	#If no button is being clicked, stops turning
@@ -131,8 +152,9 @@ func _physics_process(delta):
 		currentTurnForce = move_toward(currentTurnForce, 0,trueBaseTurnSpeed*terrainTurnSpeedMult)
 	
 	#Like a car, you can only turn while moving, and going backwards reverses your turn
-	turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
-	rotation_degrees+=turnOutput
+	if globalVars.canMove == true:
+		turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
+		rotation_degrees+=turnOutput
 	
 	#If your traction isn't at it's normal value, and you aren't on ice or drifting, slowly increase the traction
 	if(traction!=baseTraction)and(currentTerrain!=trackEnums.terrainTypes.ice) and (isDrifting==false):
@@ -142,7 +164,8 @@ func _physics_process(delta):
 	driftVector=Vector2(move_toward(driftVector.x,fwdVector.x,traction),move_toward(driftVector.y,fwdVector.y,traction))
 	velocity=(fwdVector+driftVector)/2
 	
-	move_and_slide()
+	if globalVars.canMove == true:
+		move_and_slide()
 	# print("Fwd: "+str(fwdVector))
 	# print("Drift: "+str(driftVector))
 	#print("Traction: "+str(traction))
@@ -205,6 +228,14 @@ func _input(event):
 	if Input.is_action_just_released(currentOwnerStr+"_l1"):
 		print(currentOwnerStr+" stopped drifting")
 		resetMovement()
+		#stop listening for a directional input
+		driftNoInput=false
+	#If you tried to drift but wern't turning, listen for a turning action
+	if driftNoInput==true:
+		#Rerun the drift action when a turn is started
+		if Input.is_action_just_pressed(currentOwnerStr+"_left") or Input.is_action_just_pressed(currentOwnerStr+"_right")  :
+			startDrift()
+		
 
 #Resets movement variables to their defult
 func resetMovement():
@@ -218,6 +249,7 @@ func resetMovement():
 	currentTurnSpeed=baseTurnSpeed
 	currentTurnPower=baseTurnPower 
 	currentDecel=baseDecel
+	traction=baseTraction
 
 #Changes the movement varibles to the boosted state
 func startBoost():
@@ -240,15 +272,20 @@ func startDrift():
 	#Resets the drift varible
 	currentDrift=driftDir.none
 	#Determine which direction the player is currently turning and sets the driftDir accordingly
-	if currentTurnForce<0:
+	if Input.is_action_pressed(currentOwnerStr+"_left"):
 		currentDrift=driftDir.lDrift
+		#Locks drifitng direction
+		driftNoInput=false
 		print(currentOwnerStr+" is drifting left")
-	elif currentTurnForce>0:
+	elif Input.is_action_pressed(currentOwnerStr+"_right"):
 		currentDrift=driftDir.rDrift
+		#Locks drifitng direction
+		driftNoInput=false
 		print(currentOwnerStr+" is drifting right")
-	#If you aren't drifing, stop the function
+	#If you aren't turning, change the variable to match
 	if currentDrift==driftDir.none:
-		pass
+		driftNoInput=true
+		print(currentOwnerStr+" tried to drift")
 	#if you are drfiting, alter the variables accordingly
 	else:
 		isDrifting=true
@@ -291,3 +328,22 @@ func updateTerrain(newTerrain):
 			terrainDecelMult=iceDecelMult
 			#Lowers traction on ice
 			traction=traction/15
+
+func finish_race():
+	finishRace.emit()
+#Sets the stats of the car based on the resource and upgrades
+func applyStats():
+	baseAcceleration=stats.acceleration+globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"acceleration")
+	baseTopSpeed=stats.topSpeed+globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"topSpeed")
+	baseTurnSpeed=stats.turnSpeed
+	baseTurnPower=stats.turnPower
+	baseDecel=stats.deceleration
+	baseTraction=stats.traction
+	
+	#Print the upgraded stats
+	print("accel: "+str(baseAcceleration))
+	print("top speed: "+str(baseTopSpeed))
+	print("handling: "+str(baseAcceleration))
+	
+	#Resets movement to apply changes
+	resetMovement()

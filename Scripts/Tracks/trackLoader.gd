@@ -43,7 +43,6 @@ func _ready():
 	pass # Replace with function body.
 	
 func _physics_process(delta):
-	print(trackName)
 	if globalVars.canMove == true:
 		pTwoTimer.text = str(snapped((float(pTwoTimer.text) + delta),.001))
 	if globalVars.canMove == true:

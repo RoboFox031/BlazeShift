@@ -8,10 +8,13 @@ var selection = randi_range(1,2)
 
 func ready():
 	animatedSprite.play('Idle')
-
+	
+func _process(delta: float) -> void:
+	print(timer.time_left)
+	
 func _on_area_2d_body_entered(Car):
 	self.visible = false
-	timer.start()
+	$timer.start()
 	if selection == 1:
 		type = 'fireballPickup'
 		entered(Car)
@@ -19,7 +22,8 @@ func _on_area_2d_body_entered(Car):
 		type = 'blazePickup'
 		entered(Car)
 	
-
-
-func _on_timer_timeout() -> void:
+func _on_timer_timeout():
+	print("I should be visible!")
 	self.visible = true
+	
+	

@@ -20,7 +20,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ekhb1")
 }],
 "loop": true,
-"name": &"blaze",
+"name": &"blazePickup",
 "speed": 5.0
 }, {
 "frames": [{
@@ -28,7 +28,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_k7g24")
 }],
 "loop": true,
-"name": &"fireball",
+"name": &"fireballPickup",
 "speed": 5.0
 }, {
 "frames": [{
@@ -54,7 +54,7 @@ pivot_offset = Vector2(125, 125)
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jdknc")
-animation = &"none"
+animation = &"fireballPickup"
 autoplay = "none"
 
 [node name="blackBoxOutline" type="Sprite2D" parent="."]

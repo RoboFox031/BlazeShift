@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwu3f2og4hln5"]
+[gd_scene load_steps=9 format=3 uid="uid://bwu3f2og4hln5"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_bubl4"]
 [ext_resource type="Texture2D" uid="uid://culs8qglxkg03" path="res://Assets/Sprites/Cars/Mustang Top View.png" id="2_ip2ur"]
 [ext_resource type="Script" uid="uid://d0itn8p060dcc" path="res://Scripts/Cars/terrainDetector.gd" id="3_p1olo"]
-[ext_resource type="FontFile" uid="uid://b8eclx05wa18f" path="res://Assets/Fonts/college/colleges.ttf" id="4_fiv63"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ym1ia"]
 atlas = ExtResource("2_ip2ur")
@@ -113,15 +112,6 @@ collision_mask = 4
 [node name="collisionShape2d" type="CollisionShape2D" parent="progressChecker"]
 shape = SubResource("RectangleShape2D_l6cco")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
-
-[node name="label" type="Label" parent="."]
-offset_left = -232.0
-offset_top = -214.0
-offset_right = 232.0
-offset_bottom = -113.0
-theme_override_fonts/font = ExtResource("4_fiv63")
-theme_override_font_sizes/font_size = 100
-text = "Wrong Way"
 
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]

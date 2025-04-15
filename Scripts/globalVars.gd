@@ -43,7 +43,6 @@ var pOneName = 'aaa'
 var pTwoName = 'aaa'
 
 
-var timeScore = ConfigFile.new()
 
 #global score list for each track
 var basicScores := {}
@@ -101,10 +100,11 @@ func saveScores(trackName,playerName,time):
 		pass
 		
 func loadScores(trackName):
+	var timeScore = ConfigFile.new()
 	if trackName == 'basicTrack':
 		var list = timeScore.load("res://basicScores.cfg")
 		if list == OK:
-			var players = timeScore.get_sections() 
+			var players = timeScore.get_sections()
 			for x in players:
 				var score = timeScore.get_value(x,'time')
 				basicScores[x] = float(score)
@@ -113,7 +113,7 @@ func loadScores(trackName):
 	elif trackName == 'ruralTrack':
 		var list = timeScore.load("res://ruralScores.cfg")
 		if list == OK:
-			var players = timeScore.get_sections() 
+			var players = timeScore.get_sections()
 			for x in players:
 				var score = timeScore.get_value(x,'time')
 				ruralScores[x] = float(score)
@@ -162,11 +162,9 @@ func loadScores(trackName):
 func sortScores(dict):
 	var scoresSorted = dict.keys()
 	scoresSorted.sort_custom(func(a,b): return dict[a] < dict[b]) # <- lambda function.
-	print(scoresSorted)
 	var sortedScores = {}
 	for key in scoresSorted:
 		sortedScores[key] = dict[key]
-	print(sortedScores)
 	return sortedScores
 
 

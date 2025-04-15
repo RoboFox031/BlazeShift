@@ -1,17 +1,17 @@
 ass
-	fuc
-	fuk
-	fuq
-	fux
-	fck
-	coc
-	cok
-	coq
-	kox
-	koc
-	kok
-	koq	
-	cac
+fuc
+fuk
+fuq
+fux
+fck
+coc
+cok
+coq
+kox
+koc
+kok
+koq	
+cac
 	cak
 	caq
 	kac

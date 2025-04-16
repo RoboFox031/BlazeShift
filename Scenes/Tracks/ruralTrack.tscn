@@ -3249,7 +3249,7 @@ sources/0 = SubResource("TileSetAtlasSource_5wr7v")
 sources/1 = SubResource("TileSetAtlasSource_4dcja")
 sources/2 = SubResource("TileSetAtlasSource_fcydm")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dlj2k"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jn0hv"]
 texture = ExtResource("1_a08p6")
 texture_region_size = Vector2i(25, 25)
 0:0/0 = 0
@@ -4409,7 +4409,7 @@ texture_region_size = Vector2i(25, 25)
 32:33/0 = 0
 33:33/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wbmns"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_adp1f"]
 texture = ExtResource("2_mm6qy")
 texture_region_size = Vector2i(25, 25)
 0:0/size_in_atlas = Vector2i(8, 8)
@@ -4513,7 +4513,7 @@ texture_region_size = Vector2i(25, 25)
 13:45/0 = 0
 13:45/0/texture_origin = Vector2i(63, -62)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_adp1f"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrn2o"]
 texture = ExtResource("3_jn0hv")
 texture_region_size = Vector2i(50, 50)
 0:32/size_in_atlas = Vector2i(13, 13)
@@ -4541,9 +4541,9 @@ texture_region_size = Vector2i(50, 50)
 
 [sub_resource type="TileSet" id="TileSet_vtcmj"]
 tile_size = Vector2i(25, 25)
-sources/1 = SubResource("TileSetAtlasSource_wbmns")
-sources/0 = SubResource("TileSetAtlasSource_dlj2k")
-sources/5 = SubResource("TileSetAtlasSource_adp1f")
+sources/1 = SubResource("TileSetAtlasSource_adp1f")
+sources/0 = SubResource("TileSetAtlasSource_jn0hv")
+sources/5 = SubResource("TileSetAtlasSource_mrn2o")
 
 [node name="track" type="Node2D"]
 script = ExtResource("1_4l54d")

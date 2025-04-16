@@ -118,13 +118,19 @@ var skipTolerance=40
 var reverseCount=0
 #Stores how long you can reverse(before it gets mad)
 var reverseTolerance=30
+#Stores the max distance the player can be from the track
+var trackMaxDist=700
 
 
 func _ready() -> void:
 	z_index = 10
+	#makes you resoawn at the start if you respawn before reaching a valid checkpoint
+	progressPoint=global_position
 
 
 func _physics_process(delta):
+	#Checks if the player is too far from the track
+	checkTrackDistance()
 	#Changes the color
 	colorSprite.play(color)
 	#Gets the input, and converts it to positive or negitive 1
@@ -342,6 +348,7 @@ func updatePosition(area:Area2D):
 						#increase the reverse count 
 						reverseCount+=1
 						if(reverseCount>reverseTolerance):
+							#replace respawning with the wrong way animation
 							respawn()
 						
 		
@@ -413,7 +420,15 @@ func nextLap():
 		globalVars.laps[currentOwnerStr]=currentLap
 		# print(str(currentOwnerStr)+" lap "+str(globalVars.laps[currentOwnerStr]))
 		# print(str(currentOwnerStr)+" progress "+str(globalVars.progress[currentOwnerStr]))
-		
+
+#Checks if you are close enough to the track	
+func checkTrackDistance():
+	#updates how far away the player is from the track
+	var currentDistance=global_position.distance_to(progressPoint)
+	#if the player is too far away, respawn
+	if (currentDistance>trackMaxDist):
+		respawn()
+
 
 #finishes the race
 func finishRace():

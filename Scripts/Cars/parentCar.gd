@@ -177,7 +177,7 @@ func _physics_process(delta):
 			resetMovement()
 
 	
-	if Input.is_action_just_pressed(currentOwnerStr+"_r1"):###might change the input later
+	if Input.is_action_pressed(currentOwnerStr+"_r1"):###might change the input later
 		if globalVars.pOnePowerup != 'none':
 			if globalVars.pOnePowerup == "blaze":
 				globalVars.pOnePowerup = 'none'

@@ -61,7 +61,7 @@ size = Vector2(44, 98)
 size = Vector2(8.99993, 13.9999)
 
 [node name="parentCar" type="CharacterBody2D"]
-z_index = 1
+z_index = 10
 script = ExtResource("1_bubl4")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

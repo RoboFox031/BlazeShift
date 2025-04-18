@@ -102,11 +102,11 @@ var driftVector:Vector2
 
 #Stores progress and related variables
 #Stores what lap you are on
-var currentLap=0
+var currentLap=-1
 #Stores all the diffrent progress values your car is touching
 var touchingProgress=[]
 #Stores your current progress
-var currentProgress=0
+var currentProgress=590
 #Stores your last recorded progress
 var lastProgress=0
 #Stores the position of the last (valid) checkpoint you went through
@@ -126,6 +126,7 @@ func _ready() -> void:
 	z_index = 10
 	#makes you resoawn at the start if you respawn before reaching a valid checkpoint
 	progressPoint=global_position
+	progressRot=global_rotation
 
 
 func _physics_process(delta):
@@ -418,7 +419,7 @@ func nextLap():
 		touchingProgress=[]
 		#Update globals
 		globalVars.laps[currentOwnerStr]=currentLap
-		# print(str(currentOwnerStr)+" lap "+str(globalVars.laps[currentOwnerStr]))
+		print(str(currentOwnerStr)+" lap "+str(globalVars.laps[currentOwnerStr]))
 		# print(str(currentOwnerStr)+" progress "+str(globalVars.progress[currentOwnerStr]))
 
 #Checks if you are close enough to the track	

@@ -102,7 +102,7 @@ metadata/_edit_lock_ = true
 
 [node name="pOneCoinHud" parent="." instance=ExtResource("3_sn825")]
 
-[node name="pOneCoinHud2" parent="." instance=ExtResource("4_0i7vc")]
+[node name="pTwoCoinHud" parent="." instance=ExtResource("4_0i7vc")]
 position = Vector2(969, 0)
 
 [node name="pOneLabels" type="Node" parent="."]

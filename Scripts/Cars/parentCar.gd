@@ -119,7 +119,7 @@ var reverseCount=0
 #Stores how long you can reverse(before it gets mad)
 var reverseTolerance=30
 #Stores the max distance the player can be from the track
-var trackMaxDist=700
+var trackMaxDist=1200
 
 
 func _ready() -> void:
@@ -419,7 +419,9 @@ func nextLap():
 		touchingProgress=[]
 		#Update globals
 		globalVars.laps[currentOwnerStr]=currentLap
-		print(str(currentOwnerStr)+" lap "+str(globalVars.laps[currentOwnerStr]))
+		# print(str(currentOwnerStr)+" lap "+str(globalVars.laps[currentOwnerStr]]))
+		print(str("p1")+" lap "+str(globalVars.laps["p1"]))
+		print(str("p2")+" lap "+str(globalVars.laps["p2"]))
 		# print(str(currentOwnerStr)+" progress "+str(globalVars.progress[currentOwnerStr]))
 
 #Checks if you are close enough to the track	

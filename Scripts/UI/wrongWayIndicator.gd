@@ -1,5 +1,5 @@
 extends Control
-
+@onready var animationPlayer:AnimationPlayer=$animationPlayer
 #Stores the which player it belongs to
 enum playerChoices{p1,p2}
 @export var playerFor:playerChoices
@@ -10,6 +10,6 @@ var playerForStr:String:
 
 func _ready():
     if playerForStr=="p1":
-        pass
+        animationPlayer.play("flash")
     elif playerForStr=="p2":
         pass

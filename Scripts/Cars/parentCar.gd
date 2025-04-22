@@ -345,6 +345,12 @@ func updatePosition(area:Area2D):
 					#if you didn't reverse enough, then mark the current checkpoint as a reverse
 					else:
 						isReverse=true
+						currentProgress=area.progress
+						#Updates the global
+						globalVars.progress[currentOwnerStr]=currentProgress
+						#Stores the position and rotation of the legal point
+						progressPoint=area.global_position
+						progressRot=area.global_rotation
 						print(currentOwnerStr+" reverse "+str(reverseCount))
 						#increase the reverse count 
 						reverseCount+=1

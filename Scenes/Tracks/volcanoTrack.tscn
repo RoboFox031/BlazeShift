@@ -1,10 +1,10 @@
-[gd_scene load_steps=26 format=4 uid="uid://bsv7hccft4sf2"]
+[gd_scene load_steps=24 format=4 uid="uid://bsv7hccft4sf2"]
 
 [ext_resource type="Script" uid="uid://cga3dxrepqccb" path="res://Scripts/Tracks/volcanoTrack.gd" id="1_ejygx"]
-[ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://Assets/Sprites/Tracks/192 racetrack Divided.svg" id="1_md5c1"]
 [ext_resource type="Texture2D" uid="uid://b11whu5nqhr63" path="res://Assets/Sprites/Tracks/volcanoe_tileset_and_assets/volcanoe_assets.png" id="1_pnoux"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="2_b7uh5"]
 [ext_resource type="Texture2D" uid="uid://diftod1f83vx" path="res://Assets/Sprites/Tracks/volcanoe_tileset_and_assets/volcanoe_tiles.png" id="2_fmrw8"]
+[ext_resource type="TileSet" uid="uid://dqdcbt7l7acll" path="res://Scenes/Tracks/track.tres" id="5_3fxna"]
 [ext_resource type="Texture2D" uid="uid://dwjqmh1hsl74v" path="res://Assets/Sprites/Tracks/lava_tileset_orake.png" id="5_bg106"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8v1l5"]
@@ -6026,114 +6026,6 @@ texture = ExtResource("2_b7uh5")
 sources/0 = SubResource("TileSetAtlasSource_hwodx")
 sources/1 = SubResource("TileSetAtlasSource_168cb")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxr3h"]
-texture = ExtResource("1_md5c1")
-texture_region_size = Vector2i(25, 25)
-0:0/size_in_atlas = Vector2i(8, 8)
-0:0/0 = 0
-8:0/size_in_atlas = Vector2i(8, 8)
-8:0/0 = 0
-16:0/size_in_atlas = Vector2i(8, 8)
-16:0/0 = 0
-24:0/size_in_atlas = Vector2i(8, 8)
-24:0/0 = 0
-32:0/size_in_atlas = Vector2i(8, 8)
-32:0/0 = 0
-0:8/size_in_atlas = Vector2i(8, 8)
-0:8/0 = 0
-8:8/size_in_atlas = Vector2i(8, 8)
-8:8/0 = 0
-16:8/size_in_atlas = Vector2i(8, 8)
-16:8/0 = 0
-24:8/size_in_atlas = Vector2i(8, 8)
-24:8/0 = 0
-32:8/size_in_atlas = Vector2i(8, 8)
-32:8/0 = 0
-40:8/size_in_atlas = Vector2i(10, 10)
-40:8/0 = 0
-50:8/size_in_atlas = Vector2i(8, 8)
-50:8/0 = 0
-58:8/size_in_atlas = Vector2i(8, 8)
-58:8/0 = 0
-50:16/size_in_atlas = Vector2i(8, 8)
-50:16/0 = 0
-58:16/size_in_atlas = Vector2i(8, 8)
-58:16/0 = 0
-50:24/size_in_atlas = Vector2i(8, 8)
-50:24/0 = 0
-58:24/size_in_atlas = Vector2i(8, 8)
-58:24/0 = 0
-50:32/size_in_atlas = Vector2i(8, 8)
-50:32/0 = 0
-58:32/size_in_atlas = Vector2i(8, 8)
-58:32/0 = 0
-32:16/size_in_atlas = Vector2i(8, 8)
-32:16/0 = 0
-24:16/size_in_atlas = Vector2i(8, 8)
-24:16/0 = 0
-16:16/size_in_atlas = Vector2i(8, 8)
-16:16/0 = 0
-8:16/size_in_atlas = Vector2i(8, 8)
-8:16/0 = 0
-0:16/size_in_atlas = Vector2i(8, 8)
-0:16/0 = 0
-0:24/size_in_atlas = Vector2i(8, 8)
-0:24/0 = 0
-8:24/size_in_atlas = Vector2i(8, 8)
-8:24/0 = 0
-16:24/size_in_atlas = Vector2i(8, 8)
-16:24/0 = 0
-24:24/size_in_atlas = Vector2i(8, 8)
-24:24/0 = 0
-32:24/size_in_atlas = Vector2i(8, 8)
-32:24/0 = 0
-32:32/size_in_atlas = Vector2i(8, 16)
-32:32/0 = 0
-32:48/size_in_atlas = Vector2i(9, 9)
-32:48/0 = 0
-32:48/0/texture_origin = Vector2i(-37, 37)
-41:48/size_in_atlas = Vector2i(9, 9)
-41:48/0 = 0
-41:48/0/texture_origin = Vector2i(37, 37)
-41:57/size_in_atlas = Vector2i(9, 9)
-41:57/0 = 0
-41:57/0/texture_origin = Vector2i(37, -37)
-40:38/size_in_atlas = Vector2i(10, 10)
-40:38/0 = 0
-40:28/size_in_atlas = Vector2i(10, 10)
-40:28/0 = 0
-40:18/size_in_atlas = Vector2i(10, 10)
-40:18/0 = 0
-0:64/size_in_atlas = Vector2i(16, 8)
-0:64/0 = 0
-16:64/size_in_atlas = Vector2i(16, 8)
-16:64/0 = 0
-32:57/size_in_atlas = Vector2i(9, 9)
-32:57/0 = 0
-32:57/0/texture_origin = Vector2i(-37, -37)
-50:40/size_in_atlas = Vector2i(8, 16)
-50:40/0 = 0
-58:40/size_in_atlas = Vector2i(8, 16)
-58:40/0 = 0
-62:56/size_in_atlas = Vector2i(16, 8)
-62:56/0 = 0
-0:32/size_in_atlas = Vector2i(13, 13)
-0:32/0 = 0
-0:32/0/texture_origin = Vector2i(-62, 63)
-0:45/size_in_atlas = Vector2i(13, 13)
-0:45/0 = 0
-0:45/0/texture_origin = Vector2i(-62, -62)
-13:32/size_in_atlas = Vector2i(13, 13)
-13:32/0 = 0
-13:32/0/texture_origin = Vector2i(63, 63)
-13:45/size_in_atlas = Vector2i(13, 13)
-13:45/0 = 0
-13:45/0/texture_origin = Vector2i(63, -62)
-
-[sub_resource type="TileSet" id="TileSet_wsjs5"]
-tile_size = Vector2i(25, 25)
-sources/1 = SubResource("TileSetAtlasSource_uxr3h")
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pq3ou"]
 texture = ExtResource("2_fmrw8")
 0:0/0 = 0
@@ -10181,9 +10073,8 @@ tile_set = SubResource("TileSet_fywsn")
 [node name="Track" type="TileMapLayer" parent="."]
 z_index = 5
 position = Vector2(178, 136)
-scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAAAP3/AQAgACAAAAAAAO3/AQAgACAAAAAAAOH/AQAAACAAAAARANz/AQA+ADgAAAAhANz/AQA+ADgAAAAyANf/AQANAC0AAAAyAMv/AQAgACAAAAAyALv/AQAgACAAAAAzALD/AQApADAAAAAlAK7/AQA+ADgAAAAUAKn/AQAAAC0AAAAUAJ3/AQAgACAAAAAUAJH/AQANACAAAAADAIz/AQA+ADgAAAD1/47/AQAgADAAAAD2/5X/AQANAC0AAADl/5r/AQA+ADgAAADV/5r/AQA+ADgAAADE/5//AQAAACAAAADF/6b/AQApADkAAAC5/6b/AQAgADkAAAC6/5//AQANACAAAACr/5z/AQAgADAAAACs/6f/AQAgACAAAACs/7f/AQAgACAAAACs/8P/AQAAAC0AAAC+/83/AQANACAAAAC+/9n/AQAgACAAAAC+/+X/AQANAC0AAACt/+r/AQA+ADgAAACg/+H/AQANACAAAACO/+H/AQAAACAAAACN/+j/AQAgADkAAAC5/wQAAQAgADkAAADH/wYAAQA+ADgAAADY/wsAAQANACAAAADX/xIAAQAgADkAAADl/xQAAQA+ADgAAADz/xYAAQApADAAAADy/x0AAQAAAC0AAAABACAAAQApADkAAAAAAA0AAQAgACAAAAAAABUAAQAgACAAAACg/+r/AQAoABwAAACX/+r/AQAYAAAAAACg//T/AQAoABIAAACg//7/AQAoABwAAACg/wgAAQAoACYAAACr/wAAAQApADAAAACr/wYAAQApADkAAACh/xAAAQApADkAAACV/xAAAQAgADkAAACV/woAAQAgADAAAACV//z/AQAgADkAAACV//b/AQAgADAAAACt//T/AQA+ADgAAAC7//b/AQApADAAAAC6//3/AQAgAAAAAAA=")
-tile_set = SubResource("TileSet_wsjs5")
+tile_map_data = PackedByteArray("AADD/ykABQAYAAAAAADT/ykABQAYAAAAAADk/yoABQApADAAAADq/0AABQAAAC0AAAAAAEQABQApADkAAAABADMABQAgAAAAAAABACMABQAgAAAAAAABABMABQAgAAAAAAABAAMABQAgAAAAAAABAPP/BQAgAAAAAAABAOP/BQAgAAAAAAABANP/BQAgAAAAAAAGAL7/BQAAACAAAAAbALn/BQAYAAAAAAArALn/BQAYAAAAAAA7ALn/BQAYAAAAAABLALn/BQAYAAAAAABgALT/BQANAC0AAABlAJ//BQAgAAAAAABlAI//BQAgAAAAAABlAH//BQAgAAAAAABlAG//BQAgAAAAAABkAF7/BQApADAAAABTAF3/BQAYAAAAAABDAF3/BQAYAAAAAAAuAFj/BQAAAC0AAAApAEP/BQAgAAAAAAApADP/BQAgAAAAAAAkAB7/BQANACAAAAAPABn/BQAYAAAAAAD//xn/BQAYAAAAAADu/xr/BQAgADAAAADo/zD/BQANAC0AAADT/zX/BQAYAAAAAADD/zX/BQAYAAAAAACz/zX/BQAYAAAAAACj/zX/BQAYAAAAAACO/zr/BQAAACAAAACI/1D/BQApADkAAAB2/1D/BQAgADkAAABw/zr/BQANACAAAABa/zb/BQAgADAAAABZ/0f/BQAgAAAAAABZ/1f/BQAgAAAAAABZ/2f/BQAgAAAAAABZ/3f/BQAgAAAAAABe/4z/BQAAAC0AAAB4/5b/BQANACAAAAB9/6v/BQAgAAAAAAB9/7v/BQAgAAAAAAB4/9D/BQANAC0AAABj/9X/BQAYAAAAAABT/9X/BQAYAAAAAABC/9T/BQAgADkAAAA8/77/BQANACAAAAAi/77/BQAAACAAAAAc/9T/BQApADkAAAAK/9T/BQAgADkAAAAE/77/BQANACAAAADu/rr/BQAgADAAAACy/ygABQAgADkAAACs/xIABQANACAAAACX/w0ABQAYAAAAAACH/w0ABQAYAAAAAAB2/wwABQAgADkAAAB1//v/BQAgAAAAAAB0/+r/BQApADAAAABj/+n/BQAYAAAAAABT/+n/BQAYAAAAAABD/+n/BQAYAAAAAAAz/+n/BQAYAAAAAAAj/+n/BQAYAAAAAAAT/+n/BQAYAAAAAAAD/+n/BQAYAAAAAADt/sv/BQAgAAAAAADt/tv/BQAgAAAAAADu/uj/BQAgADkAAAD//un/BQAYAAAAAAA=")
+tile_set = ExtResource("5_3fxna")
 
 [node name="Mountains" type="TileMapLayer" parent="."]
 z_index = 4

@@ -51,6 +51,7 @@ func buttonPressed(button):
 	elif button == optionsButton:
 		pass #put function to go to options menu here
 	elif button == tutorialButton:
+		get_tree().change_scene_to_file("res://Scenes/UI/leaderboard.tscn")
 		pass #put function to go to tutotial level here
 	else:
 		get_tree().quit()

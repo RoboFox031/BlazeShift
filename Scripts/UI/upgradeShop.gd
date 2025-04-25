@@ -32,8 +32,10 @@ func _ready() -> void:
 		pTwoUpgradeSprites.append(sprite)
 	#updating screens at the start
 	_updateSelected()
-	_instantiatePlayerCars()
-	print(globalVars.currentCarNames)
+	#_instantiatePlayerCars()
+	##update car names at the start
+	$pOneCarLabel.text = 'currently upgrading: ' + globalVars.currentCarNames['p1']
+	$pTwoCarLabel.text = 'currently upgrading: ' + globalVars.currentCarNames['p2']
 	
 func _process(delta: float) -> void:
 	#ready screen inputs
@@ -94,16 +96,17 @@ func _process(delta: float) -> void:
 		_checkCanBuy('p2')
 #update based on which upgrade is selected
 func _updateSelected():
+	$uiSFX.playCursorMoveSound()
 	for label in pOneUpgrades:
 		if label == pOneUpgrades[pOneUpgradeSelected]:
 			label.add_theme_color_override("font_outline_color", Color(0,0,0)) 
-			label.add_theme_constant_override("outline_size", 15)
+			label.add_theme_constant_override("outline_size", 25)
 		else:
 			label.add_theme_constant_override("outline_size", 0)
 	for label in pTwoUpgrades:
 		if label == pTwoUpgrades[pTwoUpgradeSelected]:
 			label.add_theme_color_override("font_outline_color", Color(0,0,0)) 
-			label.add_theme_constant_override("outline_size", 15)
+			label.add_theme_constant_override("outline_size", 25)
 		else:
 			label.add_theme_constant_override("outline_size", 0)
 	_updateCostLabel()
@@ -132,7 +135,7 @@ func _updateUpgradeSprites():
 		sprite.play(str(globalUpgrades.getStatLevel('p2',globalVars.currentCarNames['p2'],upgradeNames[y])))
 		y += 1
 #loads the player car to be displayed at the bottom
-func _instantiatePlayerCars():
+'''func _instantiatePlayerCars():
 	var playerCarSpriteOne = Sprite2D.new()
 	playerCarSpriteOne.texture = load("res://Assets/Sprites/Cars/" + str(globalVars.playerOneCarSprite) + ".png")
 	playerCarSpriteOne.position.x = 475
@@ -146,9 +149,12 @@ func _instantiatePlayerCars():
 	playerCarSpriteTwo.position.y = 940
 	playerCarSpriteTwo.scale.x = 2.5
 	playerCarSpriteTwo.scale.y = 2.5
-	add_child(playerCarSpriteTwo)
+	add_child(playerCarSpriteTwo)'''
+	
 #updates the ready screen
 func _updateReadyScreen():
+	$uiSFX.playSelectSound()
+	await get_tree().create_timer(0.5).timeout 
 	if pOneReady == true:
 		$pOneReadyScreen.visible = true
 	else:
@@ -192,6 +198,7 @@ func _checkCanBuy(player):
 			_updateUpgradeSprites()
 #updates the cost array when an upgrade gets upgraded
 func _changeUpgradeCost(player,cost):
+	$uiSFX.playBuySound()
 	#changes the cost based on a set system 1-2-4-6-8
 	if cost == 1:
 		cost = 2

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhesx5x4bna1d"
-path="res://.godot/imported/Mystery Box.png-f24967ccea3dfe74bafb837a9c971445.ctex"
+uid="uid://d31sy2thgde5u"
+path="res://.godot/imported/volvanoMapBackground.png-0cde8e35e266ae46894a0c7eed710f21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Poweups/Mystery Box.png"
-dest_files=["res://.godot/imported/Mystery Box.png-f24967ccea3dfe74bafb837a9c971445.ctex"]
+source_file="res://Assets/Sprites/UI/volvanoMapBackground.png"
+dest_files=["res://.godot/imported/volvanoMapBackground.png-0cde8e35e266ae46894a0c7eed710f21.ctex"]
 
 [params]
 

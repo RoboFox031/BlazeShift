@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=4 uid="uid://bsv7hccft4sf2"]
 
-[ext_resource type="Script" uid="uid://c7jfteqswb40t" path="res://Scripts/Tracks/volcanoTrack.gd" id="1_ejygx"]
+[ext_resource type="Script" uid="uid://cga3dxrepqccb" path="res://Scripts/Tracks/volcanoTrack.gd" id="1_ejygx"]
 [ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://Assets/Sprites/Tracks/192 racetrack Divided.svg" id="1_md5c1"]
 [ext_resource type="Texture2D" uid="uid://b11whu5nqhr63" path="res://Assets/Sprites/Tracks/volcanoe_tileset_and_assets/volcanoe_assets.png" id="1_pnoux"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="2_b7uh5"]
@@ -10162,7 +10162,7 @@ texture = ExtResource("2_fmrw8")
 [sub_resource type="TileSet" id="TileSet_htf8n"]
 sources/1 = SubResource("TileSetAtlasSource_xlcya")
 
-[node name="volcanoTrack" type="Node2D"]
+[node name="track" type="Node2D"]
 position = Vector2(-28, -27)
 script = ExtResource("1_ejygx")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://j4taoq0kw7b1"]
+[gd_scene load_steps=74 format=3 uid="uid://j4taoq0kw7b1"]
 
 [ext_resource type="Script" uid="uid://dkswl6q5y0c8d" path="res://Scripts/UI/shop.gd" id="1_6j5yt"]
 [ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="2_qad3o"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://dcfuvby2swjml" path="res://Assets/Sprites/Cars/CRX/CRXWhite.png" id="30_lscmc"]
 [ext_resource type="Texture2D" uid="uid://tv0i0bpyf4ld" path="res://Assets/Sprites/Cars/CRX/CRXYellow.png" id="31_u0yci"]
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="35_igcgd"]
+[ext_resource type="PackedScene" uid="uid://bmtbwlc4rj8uy" path="res://Scenes/UI/uiSFX.tscn" id="37_iod5g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjoi5"]
 atlas = ExtResource("5_i6uuj")
@@ -1044,5 +1045,7 @@ rotation = -3.14159
 scale = Vector2(2.7, 2.7)
 sprite_frames = SubResource("SpriteFrames_li7xm")
 animation = &"yellow"
+
+[node name="uiSFX" parent="." instance=ExtResource("37_iod5g")]
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

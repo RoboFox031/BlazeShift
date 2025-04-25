@@ -1,13 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://b5p815vsi61v"]
+[gd_scene load_steps=17 format=3 uid="uid://d144gcklqd7rl"]
 
 [ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="1_g3g0w"]
 [ext_resource type="Script" uid="uid://bjgnpwkhw08v7" path="res://Scripts/UI/upgradeShop.gd" id="1_wh008"]
 [ext_resource type="PackedScene" uid="uid://bhcaxmvifx6r1" path="res://Scenes/UI/pOneCoinHud.tscn" id="3_sn825"]
 [ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="4_0i7vc"]
-[ext_resource type="Theme" uid="uid://4xjnl3438gl7" path="res://Resources/shopTheme.tres" id="5_xr0vv"]
+[ext_resource type="Theme" uid="uid://xmhincb25u0y" path="res://Resources/shopTheme.tres" id="5_xr0vv"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="6_bpr6m"]
 [ext_resource type="Texture2D" uid="uid://dcn5bmbutohrv" path="res://Assets/Sprites/UI/upgradeBoxesSpriteSheet.png" id="7_mffm5"]
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="8_h78wn"]
+[ext_resource type="PackedScene" uid="uid://bmtbwlc4rj8uy" path="res://Scenes/UI/uiSFX.tscn" id="9_8a2bt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r53p5"]
 atlas = ExtResource("7_mffm5")
@@ -87,6 +88,8 @@ animations = [{
 [node name="upgradeShop" type="Node2D"]
 script = ExtResource("1_wh008")
 
+[node name="uiSFX" parent="." instance=ExtResource("9_8a2bt")]
+
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(960, 539.75)
 scale = Vector2(3.2, 2.88133)
@@ -109,27 +112,27 @@ position = Vector2(969, 0)
 
 [node name="topSpeedLabel" type="Label" parent="pOneLabels"]
 offset_left = 45.0
-offset_top = 402.0
+offset_top = 482.0
 offset_right = 387.0
-offset_bottom = 503.0
+offset_bottom = 583.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "top speed"
 
 [node name="maxBlazeLabel" type="Label" parent="pOneLabels"]
 offset_left = 45.0
-offset_top = 502.0
-offset_right = 421.0
-offset_bottom = 603.0
+offset_top = 581.0
+offset_right = 422.0
+offset_bottom = 682.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "max blaze"
 
 [node name="blazeRefillLabel" type="Label" parent="pOneLabels"]
 offset_left = 45.0
-offset_top = 602.0
+offset_top = 681.0
 offset_right = 714.0
-offset_bottom = 703.0
+offset_bottom = 886.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "blaze refill speed
@@ -137,9 +140,9 @@ text = "blaze refill speed
 
 [node name="accelerationLabel" type="Label" parent="pOneLabels"]
 offset_left = 45.0
-offset_top = 702.0
+offset_top = 774.0
 offset_right = 509.0
-offset_bottom = 803.0
+offset_bottom = 979.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "acceleration
@@ -163,27 +166,27 @@ vertical_alignment = 1
 
 [node name="topSpeedLabel" type="Label" parent="pTwoLabels"]
 offset_left = 1011.0
-offset_top = 402.0
+offset_top = 482.0
 offset_right = 1353.0
-offset_bottom = 503.0
+offset_bottom = 583.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "top speed"
 
 [node name="maxBlazeLabel" type="Label" parent="pTwoLabels"]
 offset_left = 1011.0
-offset_top = 502.0
-offset_right = 1387.0
-offset_bottom = 603.0
+offset_top = 581.0
+offset_right = 1388.0
+offset_bottom = 682.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "max blaze"
 
 [node name="blazeRefillLabel" type="Label" parent="pTwoLabels"]
 offset_left = 1011.0
-offset_top = 602.0
+offset_top = 681.0
 offset_right = 1680.0
-offset_bottom = 703.0
+offset_bottom = 886.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "blaze refill speed
@@ -191,9 +194,9 @@ text = "blaze refill speed
 
 [node name="accelerationLabel" type="Label" parent="pTwoLabels"]
 offset_left = 1011.0
-offset_top = 702.0
+offset_top = 774.0
 offset_right = 1475.0
-offset_bottom = 803.0
+offset_bottom = 979.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "acceleration
@@ -215,25 +218,25 @@ vertical_alignment = 1
 [node name="pOneUpgradeBoxes" type="Node" parent="."]
 
 [node name="topSpeedSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
-position = Vector2(540, 450)
+position = Vector2(540, 529)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"0"
 
 [node name="maxBlazeSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
-position = Vector2(543, 553)
+position = Vector2(543, 632)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
 
 [node name="blazeRefillSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
-position = Vector2(832, 653)
+position = Vector2(832, 732)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
 
 [node name="accelerationSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
-position = Vector2(638, 753)
+position = Vector2(638, 832)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
@@ -241,25 +244,25 @@ animation = &"5"
 [node name="pTwoUpgradeBoxes" type="Node" parent="."]
 
 [node name="topSpeedSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
-position = Vector2(1506, 450)
+position = Vector2(1506, 529)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
 
 [node name="maxBlazeSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
-position = Vector2(1509, 553)
+position = Vector2(1509, 632)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
 
 [node name="blazeRefillSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
-position = Vector2(1798, 653)
+position = Vector2(1798, 732)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
 
 [node name="accelerationSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
-position = Vector2(1602, 753)
+position = Vector2(1602, 832)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
@@ -417,5 +420,31 @@ offset_bottom = 128.0
 theme_override_fonts/font = ExtResource("6_bpr6m")
 theme_override_font_sizes/font_size = 50
 text = "press b to go back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pOneCarLabel" type="Label" parent="."]
+offset_left = -47.0
+offset_top = 934.0
+offset_right = 989.0
+offset_bottom = 1015.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_bpr6m")
+theme_override_font_sizes/font_size = 80
+text = "currently upgrading: xxxxx"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pTwoCarLabel" type="Label" parent="."]
+offset_left = 912.0
+offset_top = 933.0
+offset_right = 1977.0
+offset_bottom = 1014.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_bpr6m")
+theme_override_font_sizes/font_size = 80
+text = "currently upgrading: xxxxx"
 horizontal_alignment = 1
 vertical_alignment = 1

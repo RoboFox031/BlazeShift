@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Blaze Shift"
-run/main_scene="uid://btn8h1ucesygv"
+run/main_scene="uid://cbfmgub402k83"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

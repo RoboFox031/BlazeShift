@@ -84,7 +84,7 @@ func _process(delta: float) -> void:
 			_updateCharacterDisplays()
 			_updateArrows()
 	#checks to see if ready
-	if Input.is_action_just_pressed('p1_a'):
+	if Input.is_action_just_pressed('p1_start'):
 		if _checkCleanName(pOneName) == true:
 			if playerOneReady == false:
 				playerOneReady = true
@@ -126,7 +126,7 @@ func _process(delta: float) -> void:
 			_updateCharacterDisplays()
 			_updateArrows()
 	#updates ready screen
-	if Input.is_action_just_pressed('p2_a'):
+	if Input.is_action_just_pressed('p2_start'):
 		if _checkCleanName(pTwoName) == true:
 			if playerTwoReady == false:
 				playerTwoReady = true
@@ -136,7 +136,9 @@ func _process(delta: float) -> void:
 			playerTwoReady = false
 		_updateCleanNameLabels('two')
 		_updateReadyScreen()
+		
 func _updateCharacterDisplays():
+	$uiSFX.playCursorMoveSound()
 	for label in pOneLabels:
 		if label == pOneLabels[pOneSlotSelected]:
 			label.add_theme_color_override("font_outline_color", Color.BLACK)
@@ -156,6 +158,7 @@ func _updateCharacterDisplays():
 		pTwoLabels[pTwoSlotSelected].text = letters[pTwoSelected]
 		
 func _updateArrows():
+	$uiSFX.playCursorMoveSound()
 	for arrow in pOneUpArrows:
 		if arrow == pOneUpArrows[pOneSlotSelected]:
 			arrow.visible = true
@@ -206,19 +209,21 @@ func _checkCleanName(name):
 
 func _updateReadyScreen():
 	if playerOneReady == true:
-		$playerOneReadyLabel.text = 'confirmed press a again to undo'
+		$playerOneReadyLabel.text = 'confirmed press start again to undo'
 		$playerOneReadyLabel.add_theme_color_override("font_color",Color.GREEN)
 	else:
-		$playerOneReadyLabel.text = 'press a to confirm'
+		$playerOneReadyLabel.text = 'press start to confirm'
 		$playerOneReadyLabel.add_theme_color_override("font_color",Color.WHITE)
 	if playerTwoReady == true:
-		$playerTwoReadyLabel.text = 'confirmed press a again to undo'
+		$playerTwoReadyLabel.text = 'confirmed press start again to undo'
 		$playerTwoReadyLabel.add_theme_color_override("font_color", Color.GREEN)
 	else:
-		$playerTwoReadyLabel.text = 'press a to confirm'
+		$playerTwoReadyLabel.text = 'press start to confirm'
 		$playerTwoReadyLabel.add_theme_color_override("font_color",Color.WHITE)
 		
 	if playerOneReady == true and playerTwoReady == true:
+		$uiSFX.playSelectSound()
+		await get_tree().create_timer(0.5).timeout 
 		globalVars.pOneName = pOneName
 		globalVars.pTwoName = pTwoName
 		get_tree().change_scene_to_file("res://Scenes/UI/shop.tscn")

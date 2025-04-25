@@ -260,6 +260,7 @@ func _updateColorDisplay(pOneColor,pTwoColor):
 
 #updates the middle display based on the type of car and color
 func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
+	$uiSFX.playCursorMoveSound()
 	for c in pOneCarsFinal:
 		if c == pOneCar:
 			c.visible = true
@@ -301,6 +302,7 @@ func _buyCar(player):
 				pOneOwned.append(pOneCars[globalVars.pOneCarSelected])
 				globalVars.pOneCoins -= carCosts[globalVars.pOneCarSelected]
 				$pOneCoinHud.update()
+				$uiSFX.playBuySound()
 				_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 				_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 	if player == 2:
@@ -309,6 +311,7 @@ func _buyCar(player):
 				pTwoOwned.append(pTwoCars[globalVars.pTwoCarSelected])
 				globalVars.pTwoCoins -= carCosts[globalVars.pTwoCarSelected]
 				$pTwoCoinHud.update()
+				$uiSFX.playBuySound()
 				_updateFinalDisplay(pTwoCarsFinal[globalVars.pTwoCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 				_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 
@@ -326,6 +329,8 @@ func _changeGlobalVars():
 
 #updates ready screen
 func _updateReadyScreen():
+	$uiSFX.playSelectSound()
+	await get_tree().create_timer(0.5).timeout 
 	if pOneReady == true:
 		$pOneReadyScreen.visible = true
 	else:
@@ -354,6 +359,5 @@ func _updateBuyButtonLabels():
 	else:
 		$pTwoBuyButtonLabel.visible = false
 
-#fix for color display bug
 func _on_timer_timeout() -> void:
 	_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])

@@ -7,6 +7,8 @@ class_name trackSelection
 @onready var mapFour = $mapFour
 @onready var mapFive = $mapFive
 
+@onready var sfx = $uiSFX
+
 var maps: Array
 var tracks: Array
 var trackNames: Array = ['basic', 'rural', 'ice', 'volcano', 'testing']
@@ -20,6 +22,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if selected >= 0 and Input.is_action_just_pressed("p1_start"):
+		$uiSFX.playSelectSound()
+		await get_tree().create_timer(0.5).timeout 
 		globalVars.track = tracks[selected]
 		get_tree().change_scene_to_file("res://Scenes/Tracks/trackLoader.tscn")
 	if Input.is_action_just_pressed("p1_right"):
@@ -36,9 +40,12 @@ func _process(delta: float) -> void:
 		_updateMapSelected(maps[selected])
 		
 	if Input.is_action_just_pressed("p1_b"):
+		$selectSound.play()
+		await get_tree().create_timer(0.5).timeout 
 		get_tree().change_scene_to_file("res://Scenes/UI/upgradeShop.tscn")
 
 func _updateMapSelected(map):
+	sfx.playCursorMoveSound()
 	for m in maps:
 		if m == map: ###Change this later when I have map preveiw sprites
 			m.get_child(0).visible = true

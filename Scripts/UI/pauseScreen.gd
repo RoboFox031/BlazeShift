@@ -9,8 +9,7 @@ var selected: int = 0
 var options = ["resume", "options", "restart"]
 
 var labels
-signal p_pause
-signal p_resume
+
 var pOneConfirm = false
 var pTwoConfirm = false
 
@@ -19,36 +18,26 @@ func _ready():
 	_updateMenu()
 
 func _physics_process(delta: float) -> void:
-	if globalVars.canPause == true:
-		if Input.is_action_just_pressed("p1_start"):
-			p_pause.emit()
-			if inControl == 0:
-				inControl = 1 
-			elif inControl == 1:
-				_useButton(options[selected])
-			elif inControl == 3:
-				if pOneConfirm == false:
-					pOneConfirm = true
-				else:
-					pOneConfirm = false
-			_updateMenu()
-				
-		elif Input.is_action_just_pressed("p2_start"):
-			p_pause.emit()
-			if inControl == 0:
-				inControl = 2
-			elif inControl == 2:
-				_useButton(options[selected])
-			elif inControl == 3:
-				if pTwoConfirm == false:
-					pTwoConfirm = true
-				else:
-					pTwoConfirm = false
-			_updateMenu()
+	if Input.is_action_just_pressed("p1_start"):
+		if inControl == 0:
+			inControl = 1 
+		elif inControl == 1:
+			_useButton(options[selected])
+		elif inControl == 3:
+			if pOneConfirm == false:
+				pOneConfirm = true
+			else:
+				pOneConfirm = false
+		_updateMenu()
 			
-		if Input.is_action_just_pressed("p1_up") and inControl == 1:
-			if selected - 1 >= 0:
-				selected -= 1
+	elif Input.is_action_just_pressed("p2_start"):
+		if inControl == 0:
+			inControl = 2
+		elif inControl == 2:
+			_useButton(options[selected])
+		elif inControl == 3:
+			if pTwoConfirm == false:
+				pTwoConfirm = true
 			else:
 				pTwoConfirm = false
 		_updateMenu()
@@ -132,7 +121,6 @@ func _useButton(option):
 	if option == 'resume' and inControl != 0:
 		inControl = 0
 		self.visible = false
-		p_resume.emit()
 		print('hit')
 	if option == 'options':
 		self.visible == false

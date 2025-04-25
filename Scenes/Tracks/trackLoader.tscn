@@ -52,6 +52,14 @@ offset_left = -712.0
 offset_top = -340.0
 offset_right = -712.0
 offset_bottom = -340.0
+playerFor = 0
+
+[node name="pTwoWrongWayIndicator" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("6_rcrto")]
+offset_left = 232.0
+offset_top = -340.0
+offset_right = 232.0
+offset_bottom = -340.0
+playerFor = 1
 
 [node name="subViewportContainer2" type="SubViewportContainer" parent="hSplitContainer"]
 layout_mode = 2
@@ -74,13 +82,6 @@ position = Vector2(20, 1000)
 
 [node name="pOneCoinHud" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("5_5lhqp")]
 position = Vector2(970, 900)
-
-[node name="pTwoWrongWayIndicator" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("6_rcrto")]
-offset_left = 232.0
-offset_top = -340.0
-offset_right = 232.0
-offset_bottom = -340.0
-playerFor = 1
 
 [node name="colorRect" type="ColorRect" parent="."]
 offset_left = 954.0

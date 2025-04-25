@@ -113,7 +113,7 @@ var lastProgress=0
 var progressPoint:Vector2
 var progressRot=0
 #how far you can skip
-var skipTolerance=40
+var skipTolerance=20
 #Stores how long you've reversed for
 var reverseCount=0
 #Stores how long you can reverse(before it gets mad)
@@ -121,6 +121,9 @@ var reverseTolerance=30
 #Stores the max distance the player can be from the track
 var trackMaxDist=1200
 
+#The signal that is called when you are reversing
+signal startReversing
+signal stopReversing
 
 func _ready() -> void:
 	z_index = 10
@@ -355,8 +358,7 @@ func updatePosition(area:Area2D):
 						#increase the reverse count 
 						reverseCount+=1
 						if(reverseCount>reverseTolerance):
-							#replace respawning with the wrong way animation
-							respawn()
+							startReversing.emit()
 						
 		
 		#Stores if any of the progress movements are legal
@@ -391,6 +393,7 @@ func updatePosition(area:Area2D):
 			progressRot=area.global_rotation
 			#resets reverse
 			reverseCount=0
+			stopReversing.emit()
 			#Prints info about the player's position
 			# print(currentOwnerStr+" progress: "+str(currentProgress))#+", point: " +str(progressPoint))
 

@@ -5,6 +5,8 @@ var arrowSelected = 'right'
 var leaderboardOptions = ['basic track','rural track','ice track','volcano track','testing track','overall']
 var leaderboardSelected = 0
 
+var placeStart = 0
+
 func _ready():
 	_updateArrows()
 	_updateLabel()
@@ -33,6 +35,8 @@ func _process(delta: float) -> void:
 				leaderboardSelected -= 1
 		_updateLabel()
 		_updateLeaderboard()
+	if Input.is_action_just_pressed('p1_down') or Input.is_action_just_pressed('p2_down'):
+		_scroll()
 				
 func _updateArrows():
 	if arrowSelected == 'right':
@@ -46,4 +50,7 @@ func _updateLabel():
 	$trackLabel.text = leaderboardOptions[leaderboardSelected]
 	
 func _updateLeaderboard():
+	pass
+	
+func _scroll():
 	pass

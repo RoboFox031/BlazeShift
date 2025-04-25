@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bprrfv755425b"]
+[gd_scene load_steps=5 format=3 uid="uid://bqqmp3pcykrkw"]
 
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="1_7f0wt"]
 [ext_resource type="Script" uid="uid://csnvj8kdiiior" path="res://Scripts/UI/leaderboard.gd" id="1_trr20"]
@@ -90,6 +90,18 @@ scale = Vector2(1.03, 1.03)
 texture = ExtResource("4_7ajj7")
 offset = Vector2(8, 28)
 
+[node name="leftArrow2" type="Sprite2D" parent="arrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(968, 956)
+rotation = 1.5708
+texture = ExtResource("3_bl5mr")
+offset = Vector2(9, 28)
+
+[node name="leftArrowOutline" type="Sprite2D" parent="arrows/leftArrow2"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_7ajj7")
+offset = Vector2(8, 28)
+
 [node name="trackLabel" type="Label" parent="."]
 offset_left = 561.0
 offset_top = 167.0
@@ -105,13 +117,26 @@ vertical_alignment = 1
 
 [node name="label2" type="Label" parent="."]
 offset_left = 561.0
-offset_top = 867.0
+offset_top = 805.0
 offset_right = 1359.0
-offset_bottom = 1018.0
+offset_bottom = 956.0
 pivot_offset = Vector2(399, 50.5)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_7f0wt")
 theme_override_font_sizes/font_size = 50
 text = "press a to switch leader board"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label3" type="Label" parent="."]
+offset_left = 561.0
+offset_top = 944.0
+offset_right = 1359.0
+offset_bottom = 1095.0
+pivot_offset = Vector2(399, 50.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_7f0wt")
+theme_override_font_sizes/font_size = 50
+text = "press down to scroll"
 horizontal_alignment = 1
 vertical_alignment = 1

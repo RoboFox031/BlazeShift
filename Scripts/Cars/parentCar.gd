@@ -102,7 +102,7 @@ var driftVector:Vector2
 
 #Stores progress and related variables
 #Stores what lap you are on
-var currentLap=-1
+var currentLap=0
 #Stores all the diffrent progress values your car is touching
 var touchingProgress=[]
 #Stores your current progress
@@ -119,7 +119,7 @@ var reverseCount=0
 #Stores how long you can reverse(before it gets mad)
 var reverseTolerance=15
 #Stores the max distance the player can be from the track
-var trackMaxDist=1200
+var trackMaxDist=1000
 
 #The signal that is called when you are reversing
 signal startReversing

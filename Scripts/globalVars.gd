@@ -17,6 +17,15 @@ const NSX = preload("res://Scenes/Cars/NSX.tscn")
 var p1BlazeCurrent = 100
 var p2BlazeCurrent = 100
 
+#Stores the progress value and the lap value for each player
+var progress={
+	"p1":0,
+	"p2":0,
+}
+var laps={
+	"p1":0,
+	"p2":0,
+}
 #racing variables
 var pOneLastRaceTime = '00:00'
 var pOneTotalTime = '00:00'

@@ -106,6 +106,31 @@ var isDrifting:bool=false
 var driftVector:Vector2
 var driftNoInput:bool=false
 
+#Stores progress and related variables
+#Stores what lap you are on
+var currentLap=0
+#Stores all the diffrent progress values your car is touching
+var touchingProgress=[]
+#Stores your current progress
+var currentProgress=590
+#Stores your last recorded progress
+var lastProgress=0
+#Stores the position of the last (valid) checkpoint you went through
+var progressPoint:Vector2
+var progressRot=0
+#how far you can skip
+var skipTolerance=20
+#Stores how long you've reversed for
+var reverseCount=0
+#Stores how long you can reverse(before it gets mad)
+var reverseTolerance=15
+#Stores the max distance the player can be from the track
+var trackMaxDist=1000
+
+#The signal that is called when you are reversing
+signal startReversing
+signal stopReversing
+
 func _ready() -> void:
 	#for testing upgrades
 	#for i in 5:
@@ -115,14 +140,16 @@ func _ready() -> void:
 	applyStats()
 	
 	z_index = 10
-	
+	#makes you resoawn at the start if you respawn before reaching a valid checkpoint
+	progressPoint=global_position
+	progressRot=global_rotation
 
 
 func _physics_process(delta):
-	#prevents errors from an animated sprite not exsisting
-	if colorSprite:
-		#Changes the color
-		colorSprite.play(color) #Why is it this running constantly?
+	#Checks if the player is too far from the track
+	checkTrackDistance()
+	#Changes the color
+	colorSprite.play(color)
 	#Gets the input, and converts it to positive or negitive 1
 	var linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
 	#If you are clicking a button, accelerates based on the acceleration value
@@ -174,7 +201,33 @@ func _physics_process(delta):
 		elif(globalVars.p2BlazeCurrent==0) and (currentOwner==playerChoices.p2):
 			resetMovement()
 
+
+
+func _input(event):
+	#Allows boost
+	if Input.is_action_just_pressed(currentOwnerStr+"_x"):
+		
+		startBoost()
+	if Input.is_action_just_released(currentOwnerStr+"_x"):
+		print(currentOwnerStr+" stopped boosting")
+		resetMovement()
 	
+	#Allows drift
+	if Input.is_action_just_pressed(currentOwnerStr+"_l1"):
+		
+		startDrift()
+	if Input.is_action_just_released(currentOwnerStr+"_l1"):
+		print(currentOwnerStr+" stopped drifting")
+		resetMovement()
+		#stop listening for a directional input
+		driftNoInput=false
+	#If you tried to drift but wern't turning, listen for a turning action
+	if driftNoInput==true:
+		#Rerun the drift action when a turn is started
+		if Input.is_action_just_pressed(currentOwnerStr+"_left") or Input.is_action_just_pressed(currentOwnerStr+"_right")  :
+			startDrift()
+
+	#Control powerups
 	if Input.is_action_just_pressed(currentOwnerStr+"_r1"):###might change the input later
 		if globalVars.pOnePowerup != 'none':
 			if globalVars.pOnePowerup == "blaze":
@@ -208,32 +261,6 @@ func _physics_process(delta):
 				if currentOwner == playerChoices.p2:
 					add_child(instance)
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
-
-
-func _input(event):
-	#Allows boost
-	if Input.is_action_just_pressed(currentOwnerStr+"_x"):
-		
-		startBoost()
-	if Input.is_action_just_released(currentOwnerStr+"_x"):
-		print(currentOwnerStr+" stopped boosting")
-		resetMovement()
-	
-	#Allows drift
-	if Input.is_action_just_pressed(currentOwnerStr+"_l1"):
-		
-		startDrift()
-	if Input.is_action_just_released(currentOwnerStr+"_l1"):
-		print(currentOwnerStr+" stopped drifting")
-		resetMovement()
-		#stop listening for a directional input
-		driftNoInput=false
-	#If you tried to drift but wern't turning, listen for a turning action
-	if driftNoInput==true:
-		#Rerun the drift action when a turn is started
-		if Input.is_action_just_pressed(currentOwnerStr+"_left") or Input.is_action_just_pressed(currentOwnerStr+"_right")  :
-			startDrift()
-		
 
 #Resets movement variables to their defult
 func resetMovement():
@@ -327,6 +354,128 @@ func updateTerrain(newTerrain):
 			#Lowers traction on ice
 			traction=traction/15
 
+func updatePosition(area:Area2D):
+	if area is checkpoint:
+		#Adds the area to the array
+		touchingProgress.append(area)
+		#prints all currently touching progresses
+		#print(touchingProgress)
+		#Stores the progress that we are checking
+		var checkProgress=area.progress
+		
+		#Stores if the player is reversing
+		var isReverse:bool=false
+		for checkpoints in touchingProgress:
+			#Only runs anything else if it hasn't found a reverse yet
+			if isReverse==false:
+				#Checks if all checkpoints are reversing, if not, ignore the reverse
+				if checkpoints.progress<currentProgress:
+					#Calculates how far you reversed
+					var reverseAmount=currentProgress-checkpoints.progress
+					#If you reversed enough, assume that the player has completed a lap
+					if (reverseAmount>590):
+						nextLap()
+						return
+					#if you didn't reverse enough, then mark the current checkpoint as a reverse
+					else:
+						isReverse=true
+						currentProgress=area.progress
+						#Updates the global
+						globalVars.progress[currentOwnerStr]=currentProgress
+						#Stores the position and rotation of the legal point
+						progressPoint=area.global_position
+						progressRot=area.global_rotation
+						print(currentOwnerStr+" reverse "+str(reverseCount))
+						#increase the reverse count 
+						reverseCount+=1
+						if(reverseCount>reverseTolerance):
+							startReversing.emit()
+						
+		
+		#Stores if any of the progress movements are legal
+		var anyLegalMove=false
+		#Stores the largest legal move you can make and the progress
+		var farthestLegalMove:Area2D
+		var largestLegalProgress=0
+		#Makes sure at least one checkpoint the player is touching is within the skip tolerance
+		for checkpoints in touchingProgress:
+			if checkpoints.progress-currentProgress<skipTolerance:
+				anyLegalMove=true
+				if farthestLegalMove!=null:
+					#Sees if this legal move is larger than any other legal move in the loop, and stores it if it is
+					if checkpoints.progress<farthestLegalMove.progress:
+						farthestLegalMove=checkpoints
+						largestLegalProgress=farthestLegalMove.progress
+				else:
+					farthestLegalMove=checkpoints
+					largestLegalProgress=checkpoints.progress
+		#If none of the progress point you are touching result in legal moves, respawn
+		if anyLegalMove==false:
+			print("Illegal")
+			respawn()
+		#If you didn't skip and aren't reversing, then update the progress
+		elif isReverse==false:
+			lastProgress=currentProgress
+			currentProgress=largestLegalProgress
+			#Updates the global
+			globalVars.progress[currentOwnerStr]=currentProgress
+			#Stores the position and rotation of the legal point
+			progressPoint=area.global_position
+			progressRot=area.global_rotation
+			#resets reverse
+			reverseCount=0
+			stopReversing.emit()
+			#Prints info about the player's position
+			# print(currentOwnerStr+" progress: "+str(currentProgress))#+", point: " +str(progressPoint))
+
+#This function removes progress points you are touching from the array they are in
+func leavePosition(area:Area2D):
+	if area is checkpoint:
+		touchingProgress.erase(area)
+
+#This function respawns the car at the last legal location
+func respawn():
+	#Resets the player's speed
+	currentLinSpeed=0
+	resetMovement()
+	#Teleports the player
+	global_position=progressPoint
+	global_rotation=progressRot
+	#resets reverse count
+	reverseCount=0
+	pass
+
+#Makes the player be on the next lap
+func nextLap():
+	#If you are on lap 3, end the race
+	if currentLap==3:
+		finishRace()
+	#If you aren't on lap 3, add one to the lap and reset the position
+	else:
+		currentLap+=1
+		currentProgress=0
+		globalVars.progress[currentOwnerStr]=0
+		lastProgress=0
+		touchingProgress=[]
+		#Update globals
+		globalVars.laps[currentOwnerStr]=currentLap
+		# print(str(currentOwnerStr)+" lap "+str(globalVars.laps[currentOwnerStr]]))
+		print(str("p1")+" lap "+str(globalVars.laps["p1"]))
+		print(str("p2")+" lap "+str(globalVars.laps["p2"]))
+		# print(str(currentOwnerStr)+" progress "+str(globalVars.progress[currentOwnerStr]))
+
+#Checks if you are close enough to the track	
+func checkTrackDistance():
+	#updates how far away the player is from the track
+	var currentDistance=global_position.distance_to(progressPoint)
+	#if the player is too far away, respawn
+	if (currentDistance>trackMaxDist):
+		respawn()
+
+
+#finishes the race
+func finishRace():
+	print("ur done!")
 #Sets the stats of the car based on the resource and upgrades
 func applyStats():
 	baseAcceleration=stats.acceleration+globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"acceleration")

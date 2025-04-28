@@ -1,11 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://7ysc21hplbc2"]
 
-[ext_resource type="Script" uid="uid://0hyyoerby0kf" path="res://Scripts/Tracks/trackLoader.gd" id="1_txhea"]
+[ext_resource type="Script" uid="uid://c7bxg8bjgyrhq" path="res://Scripts/Tracks/trackLoader.gd" id="1_txhea"]
 [ext_resource type="PackedScene" uid="uid://co6q4klcpljhi" path="res://Scenes/UI/pTwoBlazeHud.tscn" id="3_2qf2f"]
 [ext_resource type="PackedScene" uid="uid://bhcaxmvifx6r1" path="res://Scenes/UI/pOneCoinHud.tscn" id="3_go0ff"]
 [ext_resource type="PackedScene" uid="uid://bwffy2tfu4rbe" path="res://Scenes/UI/pOneBlazeHud.tscn" id="3_sw20d"]
 [ext_resource type="PackedScene" uid="uid://bwvjkcqhdw5e6" path="res://Scenes/UI/pOnePowerupsHud.tscn" id="4_n1ubl"]
 [ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="5_5lhqp"]
+[ext_resource type="PackedScene" uid="uid://t8idlpta6nkc" path="res://Scenes/UI/placementTracker.tscn" id="5_kxt15"]
+[ext_resource type="PackedScene" uid="uid://duambc5sqs45o" path="res://Scenes/UI/wrongWayIndicator.tscn" id="6_rcrto"]
 [ext_resource type="PackedScene" uid="uid://bbpaemnpu0ei8" path="res://Scenes/UI/pTwoPowerupsHud.tscn" id="7_8we7n"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/pauseScreen.tscn" id="8_ig87d"]
 
@@ -37,6 +39,27 @@ position = Vector2(20, 1000)
 
 [node name="pOnePowerupsHud" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("4_n1ubl")]
 position = Vector2(842, 977)
+
+[node name="placementTracker" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("5_kxt15")]
+offset_left = 812.0
+offset_top = 461.0
+offset_right = 812.0
+offset_bottom = 461.0
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 0
+
+[node name="pOneWrongWayIndicator" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("6_rcrto")]
+offset_left = -712.0
+offset_top = -340.0
+offset_right = -712.0
+offset_bottom = -340.0
+
+[node name="pTwoWrongWayIndicator" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("6_rcrto")]
+offset_left = 232.0
+offset_top = -340.0
+offset_right = 232.0
+offset_bottom = -340.0
+playerFor = 1
 
 [node name="subViewportContainer2" type="SubViewportContainer" parent="hSplitContainer"]
 layout_mode = 2

@@ -117,7 +117,7 @@ var skipTolerance=20
 #Stores how long you've reversed for
 var reverseCount=0
 #Stores how long you can reverse(before it gets mad)
-var reverseTolerance=30
+var reverseTolerance=15
 #Stores the max distance the player can be from the track
 var trackMaxDist=1200
 

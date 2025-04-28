@@ -52,7 +52,6 @@ offset_left = -712.0
 offset_top = -340.0
 offset_right = -712.0
 offset_bottom = -340.0
-playerFor = 0
 
 [node name="pTwoWrongWayIndicator" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("6_rcrto")]
 offset_left = 232.0

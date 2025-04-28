@@ -31,20 +31,27 @@ func _process(delta: float) -> void:
 		buttonPressed(buttons[selected])
 
 func changeSelectedButton(button):
+	$uiSFX.playCursorMoveSound()
 	for b in buttons:
 		if b == button:
 			b.scale.x = 1.15
 			b.scale.y = 1.15
+			b.get_child(0).add_theme_color_override('font_outline_color', Color(0,0,0))
+			b.get_child(0).add_theme_constant_override('outline_size', 20)
 		else:
 			b.scale.x = 1
 			b.scale.y = 1
+			b.get_child(0).add_theme_constant_override('outline_size', 0)
 
 func buttonPressed(button):
+	$uiSFX.playSelectSound()
+	await get_tree().create_timer(0.5).timeout 
 	if button == playButton:
-		get_tree().change_scene_to_file("res://Scenes/UI/shop.tscn")
+		get_tree().change_scene_to_file("res://Scenes/UI/nameSelection.tscn")
 	elif button == optionsButton:
 		pass #put function to go to options menu here
 	elif button == tutorialButton:
+		get_tree().change_scene_to_file("res://Scenes/UI/leaderboard.tscn")
 		pass #put function to go to tutotial level here
 	else:
 		get_tree().quit()

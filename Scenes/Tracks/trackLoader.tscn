@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://7ysc21hplbc2"]
+[gd_scene load_steps=9 format=3 uid="uid://7ysc21hplbc2"]
 
 [ext_resource type="Script" uid="uid://c7bxg8bjgyrhq" path="res://Scripts/Tracks/trackLoader.gd" id="1_txhea"]
 [ext_resource type="PackedScene" uid="uid://co6q4klcpljhi" path="res://Scenes/UI/pTwoBlazeHud.tscn" id="3_2qf2f"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://t8idlpta6nkc" path="res://Scenes/UI/placementTracker.tscn" id="5_kxt15"]
 [ext_resource type="PackedScene" uid="uid://duambc5sqs45o" path="res://Scenes/UI/wrongWayIndicator.tscn" id="6_rcrto"]
 [ext_resource type="PackedScene" uid="uid://bbpaemnpu0ei8" path="res://Scenes/UI/pTwoPowerupsHud.tscn" id="7_8we7n"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/pauseScreen.tscn" id="8_ig87d"]
 
 [node name="trackLoader" type="Node2D"]
 script = ExtResource("1_txhea")
@@ -86,3 +87,7 @@ position = Vector2(970, 900)
 offset_left = 954.0
 offset_right = 966.0
 offset_bottom = 1080.0
+
+[node name="canvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pauseScreen" parent="canvasLayer" instance=ExtResource("8_ig87d")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://t8idlpta6nkc"]
+[gd_scene load_steps=9 format=3 uid="uid://baobk4ste77hq"]
 
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="1_mneam"]
 [ext_resource type="Script" uid="uid://cc8bm6koy50po" path="res://Scripts/UI/placementTracker.gd" id="1_ok0i3"]

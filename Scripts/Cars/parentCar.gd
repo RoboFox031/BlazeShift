@@ -189,8 +189,8 @@ func _physics_process(delta):
 	fwdVector=Vector2(currentLinSpeed*cos(rotation),currentLinSpeed*sin(rotation))
 	driftVector=Vector2(move_toward(driftVector.x,fwdVector.x,traction),move_toward(driftVector.y,fwdVector.y,traction))
 	velocity=(fwdVector+driftVector)/2
-	
-	move_and_slide()
+	if globalVars.canMove == true:
+		move_and_slide()
 	# print("Fwd: "+str(fwdVector))
 	# print("Drift: "+str(driftVector))
 	#print("Traction: "+str(traction))
@@ -205,62 +205,65 @@ func _physics_process(delta):
 
 func _input(event):
 	#Allows boost
-	if Input.is_action_just_pressed(currentOwnerStr+"_x"):
+	if Input.is_action_just_pressed('test'):
+		nextLap()
+	if globalVars.canMove == true:
+		if Input.is_action_just_pressed(currentOwnerStr+"_x"):
+			
+			startBoost()
+		if Input.is_action_just_released(currentOwnerStr+"_x"):
+			print(currentOwnerStr+" stopped boosting")
+			resetMovement()
 		
-		startBoost()
-	if Input.is_action_just_released(currentOwnerStr+"_x"):
-		print(currentOwnerStr+" stopped boosting")
-		resetMovement()
-	
-	#Allows drift
-	if Input.is_action_just_pressed(currentOwnerStr+"_l1"):
-		
-		startDrift()
-	if Input.is_action_just_released(currentOwnerStr+"_l1"):
-		print(currentOwnerStr+" stopped drifting")
-		resetMovement()
-		#stop listening for a directional input
-		driftNoInput=false
-	#If you tried to drift but wern't turning, listen for a turning action
-	if driftNoInput==true:
-		#Rerun the drift action when a turn is started
-		if Input.is_action_just_pressed(currentOwnerStr+"_left") or Input.is_action_just_pressed(currentOwnerStr+"_right")  :
+		#Allows drift
+		if Input.is_action_just_pressed(currentOwnerStr+"_l1"):
+			
 			startDrift()
+		if Input.is_action_just_released(currentOwnerStr+"_l1"):
+			print(currentOwnerStr+" stopped drifting")
+			resetMovement()
+			#stop listening for a directional input
+			driftNoInput=false
+		#If you tried to drift but wern't turning, listen for a turning action
+		if driftNoInput==true:
+			#Rerun the drift action when a turn is started
+			if Input.is_action_just_pressed(currentOwnerStr+"_left") or Input.is_action_just_pressed(currentOwnerStr+"_right")  :
+				startDrift()
 
-	#Control powerups
-	if Input.is_action_just_pressed(currentOwnerStr+"_r1"):###might change the input later
-		if globalVars.pOnePowerup != 'none':
-			if globalVars.pOnePowerup == "blaze":
-				globalVars.pOnePowerup = 'none'
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
-				if get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax:
-					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) 
-				else:
-					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax
-			if globalVars.pOnePowerup == 'fireball':
-				globalVars.pOnePowerup = 'none'
-				var instance = fireball.instantiate()
-				if currentOwner == playerChoices.p1:
-					add_child(instance)
-				if currentOwner == playerChoices.p2:
-					add_child(instance)
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
-		if globalVars.pTwoPowerup != 'none':
-			if globalVars.pTwoPowerup == "blaze":
-				globalVars.pTwoPowerup = 'none'
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
-				if get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax:
-					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) 
-				else:
-					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax
-			if globalVars.pTwoPowerup == 'fireball':
-				globalVars.pTwoPowerup = 'none'
-				var instance = fireball.instantiate()
-				if currentOwner == playerChoices.p1:
-					add_child(instance)
-				if currentOwner == playerChoices.p2:
-					add_child(instance)
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
+		#Control powerups
+		if Input.is_action_just_pressed(currentOwnerStr+"_r1"):###might change the input later
+			if globalVars.pOnePowerup != 'none':
+				if globalVars.pOnePowerup == "blaze":
+					globalVars.pOnePowerup = 'none'
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
+					if get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax:
+						get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) 
+					else:
+						get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax
+				if globalVars.pOnePowerup == 'fireball':
+					globalVars.pOnePowerup = 'none'
+					var instance = fireball.instantiate()
+					if currentOwner == playerChoices.p1:
+						add_child(instance)
+					if currentOwner == playerChoices.p2:
+						add_child(instance)
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
+			if globalVars.pTwoPowerup != 'none':
+				if globalVars.pTwoPowerup == "blaze":
+					globalVars.pTwoPowerup = 'none'
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
+					if get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax:
+						get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) 
+					else:
+						get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax
+				if globalVars.pTwoPowerup == 'fireball':
+					globalVars.pTwoPowerup = 'none'
+					var instance = fireball.instantiate()
+					if currentOwner == playerChoices.p1:
+						add_child(instance)
+					if currentOwner == playerChoices.p2:
+						add_child(instance)
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
 
 #Resets movement variables to their defult
 func resetMovement():
@@ -475,6 +478,12 @@ func checkTrackDistance():
 
 #finishes the race
 func finishRace():
+	var trackName = globalVars.track.instantiate().name
+	if currentOwnerStr == 'p1':
+		globalVars.saveScores(trackName,globalVars.pOneName,globalVars.pOneLastRaceTime)
+	if currentOwnerStr == 'p1':
+		globalVars.saveScores(trackName,globalVars.pTwoName,globalVars.pTwoLastRaceTime)
+	get_tree().change_scene_to_file("res://Scenes/UI/raceFinishScreen.tscn")
 	print("ur done!")
 #Sets the stats of the car based on the resource and upgrades
 func applyStats():

@@ -5,6 +5,9 @@ signal _startRace
 signal _startRaceTimer
 var trackName = track.instantiate().name
 var timer = 'on'
+@onready var pTwoTimer = $hSplitContainer/subViewportContainer2/canvasLayer/pTwoTimer
+@onready var pOneTimer = $hSplitContainer/subViewportContainer/canvasLayer/pOneTimer
+
 
 @onready var players := {
 	"1": {
@@ -31,13 +34,16 @@ func _ready():
 		var remote_transform := RemoteTransform2D.new()
 		remote_transform.remote_path = node.camera.get_path()
 		node.player.add_child(remote_transform)
+	_startRace.emit()
 	pass # Replace with function body.
 	
 func _physics_process(delta):
 	if globalVars.canMove == true:
 		pTwoTimer.text = str(snapped((float(pTwoTimer.text) + delta),.001))
+		globalVars.pTwoLastRaceTime = globalVars.convertSec(float(pTwoTimer.text))
 	if globalVars.canMove == true:
 		pOneTimer.text = str(snapped((float(pOneTimer.text) + delta),.001))
+		globalVars.pOneLastRaceTime = globalVars.convertSec(float(pOneTimer.text))
 func _on_pause_screen_p_pause():
 	globalVars.canMove = false
 func _on_pause_screen_p_resume() -> void:

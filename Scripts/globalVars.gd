@@ -49,7 +49,8 @@ var pTwoColorSelected = 0
 var pOneName = 'aaa'
 var pTwoName = 'aaa'
 
-
+var canMove = false
+var canPause = false
 
 #global score list for each track
 var basicScores := {}

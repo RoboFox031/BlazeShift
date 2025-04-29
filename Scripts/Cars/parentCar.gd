@@ -57,7 +57,7 @@ var currentOwnerStr:String:
 	get:
 		return playerChoices.find_key(currentOwner)
 
-#controls how the car reacts to offroading
+#controls how the car reacts to offroadingsa
 var offRoadSpeedMult:float=.6 ##Controls how offroading affects speed and acceleration
 var offRoadAccelMult:float=.8 ##Controls how offroading affects turning
 var offRoadTurnSpeedMult:float=.8 ##Controls how offroading affects turning speed
@@ -176,40 +176,38 @@ func _physics_process(delta):
 		elif(globalVars.p2BlazeCurrent==0) and (currentOwner==playerChoices.p2):
 			resetMovement()
 
-	
-	if Input.is_action_pressed(currentOwnerStr+"_r1"):###might change the input later
-		if globalVars.pOnePowerup != 'none':
-			if globalVars.pOnePowerup == "blaze":
-				globalVars.pOnePowerup = 'none'
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
-				if get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax:
-					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) 
-				else:
-					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax
-			if globalVars.pOnePowerup == 'fireball':
-				globalVars.pOnePowerup = 'none'
-				var instance = fireball.instantiate()
-				if currentOwner == playerChoices.p1:
-					add_child(instance)
-				if currentOwner == playerChoices.p2:
-					add_child(instance)
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
-		if globalVars.pTwoPowerup != 'none':
-			if globalVars.pTwoPowerup == "blaze":
-				globalVars.pTwoPowerup = 'none'
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
-				if get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax:
-					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) 
-				else:
-					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax
-			if globalVars.pTwoPowerup == 'fireball':
-				globalVars.pTwoPowerup = 'none'
-				var instance = fireball.instantiate()
-				if currentOwner == playerChoices.p1:
-					add_child(instance)
-				if currentOwner == playerChoices.p2:
-					add_child(instance)
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
+func usePowerup():
+	if globalVars.pOnePowerup != 'none':
+		if globalVars.pOnePowerup == "blazePickup":
+			globalVars.pOnePowerup = 'none'
+			get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+			print()
+			if globalVars.p1BlazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax:
+				globalVars.p1BlazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) 
+			else:
+				globalVars.p1BlazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax
+		if globalVars.pOnePowerup == 'fireballPickup':
+			globalVars.pOnePowerup = 'none'
+			var instance = fireball.instantiate()
+			instance.spawnPosition = global_position
+			instance.direction = rotation 
+			get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+			if currentOwner == playerChoices.p1:
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+	if globalVars.pTwoPowerup != 'none':
+		if globalVars.pTwoPowerup == "blazePickup":
+			globalVars.pTwoPowerup = 'none'
+			get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+			if globalVars.p2BlazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax:
+				globalVars.p2BlazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) 
+			else:
+				globalVars.p2BlazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax
+		if globalVars.pTwoPowerup == 'fireballPickup':
+			globalVars.pTwoPowerup = 'none'
+			var instance = fireball.instantiate()
+			if currentOwner == playerChoices.p2:
+				add_child(instance)
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
 
 
 func _input(event):
@@ -221,6 +219,8 @@ func _input(event):
 		print(currentOwnerStr+" stopped boosting")
 		resetMovement()
 	
+	if Input.is_action_just_pressed(currentOwnerStr+"_r1"):###might change the input later
+		usePowerup()
 	#Allows drift
 	if Input.is_action_just_pressed(currentOwnerStr+"_l1"):
 		

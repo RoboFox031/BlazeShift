@@ -6,7 +6,7 @@
 script = ExtResource("1_3rymv")
 acceleration = 15.0
 topSpeed = 1000.0
-brakes = 1000.0
+brakes = 30.0
 turnSpeed = 40.0
 turnPower = 180.0
 deceleration = 8.0

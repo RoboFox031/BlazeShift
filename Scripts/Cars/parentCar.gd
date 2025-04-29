@@ -44,6 +44,7 @@ var fwdVector:Vector2
 
 #Stores direction the car is traveling in
 var turnDirection
+var linDirection
 
 #handles traction
 var baseTraction:float=1
@@ -153,21 +154,23 @@ func _physics_process(delta):
 	checkTrackDistance()
 	#Changes the color
 	colorSprite.play(color)
-	#Gets the input, and converts it to positive or negitive 1
-	var linDirection = Input.get_action_strength(currentOwnerStr+"_up")
-	#var linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
-	#If you are click forwards, accelerate based on the acceleration value
-	print("lin speed ", str(currentLinSpeed))
-	if linDirection>0:
-		print("acceleration")
+	#if you are boosting, you must go forwards
+	if boosting==true:
+		linDirection=1
+	else:
+		#Gets the input, and converts it to positive or negitive 1
+		linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
+	#If you click forwards and are stopped or driving forwards, accelerate based on the acceleration value
+	if linDirection>0 and currentLinSpeed>=0:
 		currentLinSpeed = move_toward(currentLinSpeed, currentTopSpeed*linDirection*terrainSpeedMult, currentAcceleration*terrainAccelMult)
 	#if you click reverse and are driving forward, brake
 	elif linDirection<0 and currentLinSpeed>0:
-		print("breaking")
+		currentLinSpeed = move_toward(currentLinSpeed, 0, baseBrakes*terrainDecelMult)
+	#if you click forward and are driving reverse, brake
+	elif linDirection>0 and currentLinSpeed<0:
 		currentLinSpeed = move_toward(currentLinSpeed, 0, baseBrakes*terrainDecelMult)
 	#if you go reverse and are stopped, reverse
-	elif linDirection<0 and currentLinSpeed==0:
-		print("reversing")
+	elif linDirection<0 and currentLinSpeed<=0:
 		currentLinSpeed = move_toward(currentLinSpeed, currentTopSpeed*linDirection*terrainSpeedMult, currentAcceleration*terrainAccelMult)
 	#If no button is being clicked, decelerates by the deceleration speed
 	else:
@@ -208,6 +211,7 @@ func _physics_process(delta):
 	# print("Fwd: "+str(fwdVector))
 	# print("Drift: "+str(driftVector))
 	#print("Traction: "+str(traction))
+	
 	#If you are boosting, stops you when you run out
 	if boosting==true:
 		if(globalVars.p1BlazeCurrent==0) and (currentOwner==playerChoices.p1):
@@ -308,29 +312,31 @@ func startBoost():
 
 #Changes the movement varibles to the drifing state
 func startDrift():
-	#Resets the drift varible
-	currentDrift=driftDir.none
-	#Determine which direction the player is currently turning and sets the driftDir accordingly
-	if Input.is_action_pressed(currentOwnerStr+"_left"):
-		currentDrift=driftDir.lDrift
-		#Locks drifitng direction
-		driftNoInput=false
-		print(currentOwnerStr+" is drifting left")
-	elif Input.is_action_pressed(currentOwnerStr+"_right"):
-		currentDrift=driftDir.rDrift
-		#Locks drifitng direction
-		driftNoInput=false
-		print(currentOwnerStr+" is drifting right")
-	#If you aren't turning, change the variable to match
-	if currentDrift==driftDir.none:
-		driftNoInput=true
-		print(currentOwnerStr+" tried to drift")
-	#if you are drfiting, alter the variables accordingly
-	else:
-		isDrifting=true
-		#currentTurnPower=baseTurnPower*.5
-		#Lowers traction while drifing
-		traction=traction/driftTractionMult
+	#Only allows you to drift if going forwards
+	if linDirection>0:
+		#Resets the drift varible
+		currentDrift=driftDir.none
+		#Determine which direction the player is currently turning and sets the driftDir accordingly
+		if Input.is_action_pressed(currentOwnerStr+"_left"):
+			currentDrift=driftDir.lDrift
+			#Locks drifitng direction
+			driftNoInput=false
+			print(currentOwnerStr+" is drifting left")
+		elif Input.is_action_pressed(currentOwnerStr+"_right"):
+			currentDrift=driftDir.rDrift
+			#Locks drifitng direction
+			driftNoInput=false
+			print(currentOwnerStr+" is drifting right")
+		#If you aren't turning, change the variable to match
+		if currentDrift==driftDir.none:
+			driftNoInput=true
+			print(currentOwnerStr+" tried to drift")
+		#if you are drfiting, alter the variables accordingly
+		else:
+			isDrifting=true
+			#currentTurnPower=baseTurnPower*.5
+			#Lowers traction while drifing
+			traction=traction/driftTractionMult
 		
 	
 

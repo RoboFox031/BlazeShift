@@ -59,7 +59,8 @@ script = ExtResource("1_4u1og")
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uuudo")
-frame_progress = 0.270357
+autoplay = "default"
+frame_progress = 0.800649
 
 [node name="timer" type="Timer" parent="."]
 wait_time = 3.0

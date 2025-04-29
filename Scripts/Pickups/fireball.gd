@@ -1,16 +1,18 @@
 extends pickup
 class_name fireball
 
+var spawnPosition
 var speed = 750
-var direction
-
+var direction 
+@onready var sprite = $animatedSprite2d
 func _ready():
 	type = 'fireball'
-	direction = Vector2.RIGHT.rotated(self.rotation)
-
-func _process(delta: float) -> void:
-	self.position += direction.normalized() * speed * delta
-
+	self.position=spawnPosition
+	self.z_index = 10
+	sprite.rotation = direction
+func _process(delta):
+	self.position += Vector2(speed * delta*cos(direction),speed*delta*sin(direction))
+	print(direction)
 
 func _on_timer_timeout() -> void:
 	queue_free()

@@ -4,9 +4,9 @@ class_name powerupsHud
 @onready var sprite = $animatedSprite2d
 
 
-func changeItem(player):
-	if player.currentOwnerStr == 'p1':
+func changeItem(playerStr):
+	if playerStr == 'p1':
 		sprite.play(globalVars.pOnePowerup)
-	elif player.currentOwnerStr == 'p2':
+	elif playerStr == 'p2':
 		sprite.play(globalVars.pTwoPowerup)
-		pass
+		

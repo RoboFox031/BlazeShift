@@ -12,14 +12,17 @@ func ready():
 
 func _on_area_2d_body_entered(Car):
 	powerupTimer.start()
+	self.visible = false
 	if type == 'none' or type == "" or type == null:
-		self.visible = false
 		if selection == 1:
 			type = 'fireballPickup'
 			entered(Car)
 		if selection == 2:
 			type = 'blazePickup'
 			entered(Car)
+	type = 'none'
+	selection = randi_range(1,2)
 	
+		
 func _on_timer_timeout():
 	self.visible = true

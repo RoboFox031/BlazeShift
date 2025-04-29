@@ -4,6 +4,7 @@ class_name carStats
 #The variables that change based on cars
 @export var acceleration:float ##controls acceleration
 @export var topSpeed:float ##controls top speed
+@export var brakes:float ##brake power
 #controls how quickly you turn
 @export var turnSpeed:float##controls how quickly you turn
 #controls how sharply you turn

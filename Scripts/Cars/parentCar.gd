@@ -36,6 +36,9 @@ var linOutput:float=0
 #Outputs the true turning speed of the car
 var turnOutput:float=0
 
+#Controls how the car brakes
+var baseBrakes:float
+
 #Stores the vector the car is going in
 var fwdVector:Vector2
 
@@ -151,9 +154,20 @@ func _physics_process(delta):
 	#Changes the color
 	colorSprite.play(color)
 	#Gets the input, and converts it to positive or negitive 1
-	var linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
-	#If you are clicking a button, accelerates based on the acceleration value
-	if linDirection:
+	var linDirection = Input.get_action_strength(currentOwnerStr+"_up")
+	#var linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
+	#If you are click forwards, accelerate based on the acceleration value
+	print("lin speed ", str(currentLinSpeed))
+	if linDirection>0:
+		print("acceleration")
+		currentLinSpeed = move_toward(currentLinSpeed, currentTopSpeed*linDirection*terrainSpeedMult, currentAcceleration*terrainAccelMult)
+	#if you click reverse and are driving forward, brake
+	elif linDirection<0 and currentLinSpeed>0:
+		print("breaking")
+		currentLinSpeed = move_toward(currentLinSpeed, 0, baseBrakes*terrainDecelMult)
+	#if you go reverse and are stopped, reverse
+	elif linDirection<0 and currentLinSpeed==0:
+		print("reversing")
 		currentLinSpeed = move_toward(currentLinSpeed, currentTopSpeed*linDirection*terrainSpeedMult, currentAcceleration*terrainAccelMult)
 	#If no button is being clicked, decelerates by the deceleration speed
 	else:
@@ -480,6 +494,7 @@ func finishRace():
 func applyStats():
 	baseAcceleration=stats.acceleration+globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"acceleration")
 	baseTopSpeed=stats.topSpeed+globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"topSpeed")
+	baseBrakes=stats.brakes
 	baseTurnSpeed=stats.turnSpeed
 	baseTurnPower=stats.turnPower
 	baseDecel=stats.deceleration

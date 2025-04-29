@@ -35,6 +35,7 @@ func _ready():
 		var remote_transform := RemoteTransform2D.new()
 		remote_transform.remote_path = node.camera.get_path()
 		node.player.add_child(remote_transform)
+	emit_signal('_startRace')
 	pass # Replace with function body.
 	
 func _physics_process(delta):

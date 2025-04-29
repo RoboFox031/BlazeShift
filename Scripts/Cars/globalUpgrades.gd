@@ -19,7 +19,19 @@ var upgradesDict={
 	"p1":{},
 	"p2":{}
 	}
-
+#used to determine the cost of an upgrade
+var upgradesCost = {
+	'p1':{'topSpeed':1,
+		'maxBlaze':1,
+		'handling':1,
+		'acceleration':1
+	},
+	'p2':{'topSpeed':1,
+		'maxBlaze':1,
+		'handling':1,
+		'acceleration':1
+		}
+	}
 #Stores how much of each varible is gained per level
 #The max increase of each of these is the amount bellow *5
 const topSpeedPerLevel=160 #Max 800

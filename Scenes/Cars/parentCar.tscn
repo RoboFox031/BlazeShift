@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bwu3f2og4hln5"]
+[gd_scene load_steps=15 format=3 uid="uid://bwu3f2og4hln5"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_bubl4"]
 [ext_resource type="Resource" uid="uid://nogcafh0k4qb" path="res://Resources/carStats/basicCarStats.tres" id="2_fiv63"]
@@ -11,6 +11,9 @@ size = Vector2(44, 98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
 size = Vector2(8.99993, 13.9999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6cco"]
+size = Vector2(99, 43)
 
 [sub_resource type="Animation" id="Animation_bq0o1"]
 resource_name = "blue"
@@ -119,6 +122,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="terrainDetector" type="Node2D" parent="."]
+visible = false
 script = ExtResource("3_p1olo")
 
 [node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]
@@ -139,6 +143,14 @@ position = Vector2(0, 17)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_mox8c")
 
+[node name="progressChecker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="progressChecker"]
+shape = SubResource("RectangleShape2D_l6cco")
+debug_color = Color(0.991716, 0, 0.261882, 0.42)
+
 [node name="animationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_parbr")
@@ -149,3 +161,4 @@ libraries = {
 [connection signal="area_exited" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_exited"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
 [connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]
+[connection signal="area_entered" from="progressChecker" to="." method="updatePosition"]

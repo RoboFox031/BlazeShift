@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn7utn160k75c"]
+[gd_scene load_steps=4 format=3 uid="uid://b0h76sfpstvvf"]
 
 [ext_resource type="Script" uid="uid://6hsxt2722qam" path="res://Scripts/UI/raceFinishScreen.gd" id="1_0f0jv"]
 [ext_resource type="Texture2D" uid="uid://dv7ryu32wteg3" path="res://Assets/Sprites/UI/finishLine.png" id="1_1q7vm"]

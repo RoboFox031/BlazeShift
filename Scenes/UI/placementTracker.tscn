@@ -1,0 +1,193 @@
+[gd_scene load_steps=9 format=3 uid="uid://t8idlpta6nkc"]
+
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="1_mneam"]
+[ext_resource type="Script" uid="uid://cc8bm6koy50po" path="res://Scripts/UI/placementTracker.gd" id="1_ok0i3"]
+
+[sub_resource type="Animation" id="Animation_qntos"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("p1Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("p2Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 104)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("placePlaceholder:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["1-
+2-"]
+}
+
+[sub_resource type="Animation" id="Animation_es4ro"]
+resource_name = "noTie"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("placePlaceholder:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["1-
+2-"]
+}
+
+[sub_resource type="Animation" id="Animation_3qm12"]
+resource_name = "p1Lead"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("p1Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(80, 104), Vector2(80, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("p2Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(80, 0), Vector2(80, 104)]
+}
+
+[sub_resource type="Animation" id="Animation_j4e12"]
+resource_name = "p2Lead"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("p1Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(80, 0), Vector2(80, 104)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("p2Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(80, 104), Vector2(80, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yqxmj"]
+resource_name = "tie"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("placePlaceholder:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["1-
+1-"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_03ecg"]
+_data = {
+&"RESET": SubResource("Animation_qntos"),
+&"noTie": SubResource("Animation_es4ro"),
+&"p1Lead": SubResource("Animation_3qm12"),
+&"p2Lead": SubResource("Animation_j4e12"),
+&"tie": SubResource("Animation_yqxmj")
+}
+
+[node name="placementTracker" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ok0i3")
+
+[node name="colorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.478431)
+layout_mode = 0
+offset_right = 402.0
+offset_bottom = 204.0
+color = Color(0, 0, 0, 1)
+
+[node name="p1Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 402.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("1_mneam")
+theme_override_font_sizes/font_size = 100
+text = "Player 1"
+
+[node name="p2Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 104.0
+offset_right = 402.0
+offset_bottom = 205.0
+theme_override_fonts/font = ExtResource("1_mneam")
+theme_override_font_sizes/font_size = 100
+text = "Player 2"
+
+[node name="placePlaceholder" type="Label" parent="."]
+layout_mode = 0
+offset_right = 59.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0.915639, 0.675783, 0, 1)
+theme_override_fonts/font = ExtResource("1_mneam")
+theme_override_font_sizes/font_size = 100
+text = "1-
+2-"
+
+[node name="animationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_03ecg")
+}
+autoplay = "RESET"
+
+[connection signal="animation_finished" from="animationPlayer" to="." method="animationFinished"]
+[connection signal="animation_started" from="animationPlayer" to="." method="animationStarted"]

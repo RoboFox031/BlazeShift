@@ -6,11 +6,9 @@ signal _startRaceTimer
 var trackName = track.instantiate().name
 var timer = 'on'
 
+
 @onready var pTwoTimer = $hSplitContainer/subViewportContainer2/canvasLayer/pTwoTimer
 @onready var pOneTimer = $hSplitContainer/subViewportContainer/canvasLayer/pOneTimer
-
-
-
 
 @onready var players := {
 	"1": {
@@ -23,12 +21,10 @@ var timer = 'on'
 	camera = $hSplitContainer/subViewportContainer2/subViewport/camera2d, 
 	player = null}
 }
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var track = track.instantiate()
 	track.name = 'track'
-	print(track.name)
 	players['1'].viewport.add_child(track)
 	players['2'].viewport.world_2d = players['1'].viewport.world_2d
 	players['1'].player = $hSplitContainer/subViewportContainer/subViewport/track/player1
@@ -39,7 +35,6 @@ func _ready():
 		var remote_transform := RemoteTransform2D.new()
 		remote_transform.remote_path = node.camera.get_path()
 		node.player.add_child(remote_transform)
-	_startRace.emit()
 	pass # Replace with function body.
 	
 func _physics_process(delta):

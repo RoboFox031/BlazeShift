@@ -46,4 +46,13 @@ func _updateLabel():
 	$trackLabel.text = leaderboardOptions[leaderboardSelected]
 	
 func _updateLeaderboard():
+	if leaderboardSelected == 0:
+		globalVars.loadScores('basicTrack')
+	if leaderboardSelected == 1:
+		globalVars.loadScores('ruralTrack')
+	if leaderboardSelected == 2:
+		globalVars.loadScores('iceTrack')
+	if leaderboardSelected == 3:
+		globalVars.loadScores('volcanoTrack')
+
 	pass

@@ -28,7 +28,8 @@ func _ready():
 	pTwoInfo[2] = globalVars.pTwoLastRacePlacement
 	pTwoInfo[3] = globalVars.pTwoOverallPlacement
 	
-	
+	globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pOneName,globalVars.pOneLastRaceTime)
+	globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pTwoName,globalVars.pTwoLastRaceTime)
 	_updateLabels()
 	_updateReady()
 

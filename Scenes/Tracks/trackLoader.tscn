@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bwffy2tfu4rbe" path="res://Scenes/UI/pOneBlazeHud.tscn" id="3_sw20d"]
 [ext_resource type="PackedScene" uid="uid://bwvjkcqhdw5e6" path="res://Scenes/UI/pOnePowerupsHud.tscn" id="4_n1ubl"]
 [ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="5_5lhqp"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/placementTracker.tscn" id="5_kxt15"]
+[ext_resource type="PackedScene" uid="uid://baobk4ste77hq" path="res://Scenes/UI/placementTracker.tscn" id="5_kxt15"]
 [ext_resource type="PackedScene" uid="uid://n3sg0thh08rh" path="res://Scenes/UI/Stoplight.tscn" id="5_t261b"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="6_m4tpg"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/wrongWayIndicator.tscn" id="6_rcrto"]
+[ext_resource type="PackedScene" uid="uid://duambc5sqs45o" path="res://Scenes/UI/wrongWayIndicator.tscn" id="6_rcrto"]
 [ext_resource type="PackedScene" uid="uid://bbpaemnpu0ei8" path="res://Scenes/UI/pTwoPowerupsHud.tscn" id="7_8we7n"]
 [ext_resource type="PackedScene" uid="uid://gdyc002hat4w" path="res://Scenes/UI/pauseScreen.tscn" id="8_ig87d"]
 
@@ -46,10 +46,6 @@ render_target_update_mode = 4
 zoom = Vector2(0.5, 0.5)
 
 [node name="canvasLayer" type="CanvasLayer" parent="hSplitContainer/subViewportContainer"]
-
-[node name="pOneStoplight" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("5_t261b")]
-position = Vector2(1450, 445)
-scale = Vector2(5, 5)
 
 [node name="pOneCoinHud" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("3_go0ff")]
 position = Vector2(2, 900)

@@ -14,6 +14,8 @@ func _ready():
 	_updateLeaderboard()
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed('p1_b') or Input.is_action_just_pressed('p2_b'):
+		get_tree().change_scene_to_file("res://Scenes/UI/titleScreen.tscn")
 	if (Input.is_action_pressed('p1_up')) or (Input.is_action_pressed('p2_up')):
 		scroll.scroll_vertical -= 5
 		pass
@@ -42,8 +44,6 @@ func _process(delta: float) -> void:
 				leaderboardSelected -= 1
 		_updateLabel()
 		_updateLeaderboard()
-	if Input.is_action_just_pressed('p1_down') or Input.is_action_just_pressed('p2_down'):
-		_scroll()
 				
 func _updateArrows():
 	if arrowSelected == 'right':

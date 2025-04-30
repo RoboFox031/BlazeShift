@@ -17,7 +17,23 @@ func _ready():
 		pOneLabels.append(label)
 	for label in $playerTwoLabels.get_children():
 		pTwoLabels.append(label)
+	
+	if globalVars.laps["p1"] > globalVars.laps['p2']:
+		globalVars.pOneLastRacePlacement = '1st'
+		globalVars.pTwoLastRacePlacement = '2nd'
+	elif globalVars.laps["p2"] > globalVars.laps['p1']:
+		globalVars.pOneLastRacePlacement = '2nd'
+		globalVars.pTwoLastRacePlacement = '1st'
+	elif globalVars.laps["p2"] == globalVars.laps['p1']:
+		if globalVars.progress['p1'] > globalVars.progress['p2']:
+			globalVars.pOneLastRacePlacement = '1st'
+			globalVars.pTwoLastRacePlacement = '2nd'
+		else:
+			globalVars.pOneLastRacePlacement = '2nd'
+			globalVars.pTwoLastRacePlacement = '1st'
+		pass
 		
+	
 	pOneInfo[0] = globalVars.convertSec(globalVars.pOneLastRaceTime)
 	pOneInfo[1] = globalVars.pOneLastRaceCoinsCollected
 	pOneInfo[2] = globalVars.pOneLastRacePlacement
@@ -28,8 +44,6 @@ func _ready():
 	pTwoInfo[2] = globalVars.pTwoLastRacePlacement
 	pTwoInfo[3] = globalVars.pTwoOverallPlacement
 	
-	globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pOneName,float(globalVars.pOneLastRaceTime))
-	globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pTwoName,float(globalVars.pTwoLastRaceTime))
 	_updateLabels()
 	_updateReady()
 

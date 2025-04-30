@@ -502,12 +502,25 @@ func respawn():
 #Makes the player be on the next lap
 func nextLap():
 	#If you are on lap 3, end the race
-	if currentLap==1:
-		if globalVars.totalDone==0:
+	if currentLap==3:
+		if currentOwnerStr == 'p1':
+			globalVars.pOneDone = true
+		elif currentOwnerStr == 'p2':
+			globalVars.pTwoDone = true
+		if globalVars.pOneDone == true and globalVars.pTwoDone == true:
+			if currentOwnerStr == 'p1':
+				globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pOneName,float(globalVars.pOneLastRaceTime))
+				finishRace()
+			if currentOwnerStr == 'p2':
+				globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pTwoName,float(globalVars.pTwoLastRaceTime))
+				finishRace()
+		elif globalVars.pOneDone == true or globalVars.pTwoDone == true:
 			paused = true
-			globalVars.totalDone+=1
-		elif globalVars.totalDone==1:
-			finishRace()
+			if currentOwnerStr == 'p1':
+				globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pOneName,float(globalVars.pOneLastRaceTime))
+			if currentOwnerStr == 'p2':
+				globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pTwoName,float(globalVars.pTwoLastRaceTime))
+		
 	
 	#If you aren't on lap 3, add one to the lap and reset the position
 	else:

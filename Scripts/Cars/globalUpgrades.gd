@@ -11,7 +11,7 @@ var cars=[
 	"NSX",
 	"S13",
 	"Mustang",
-	"LemkeCar",
+	"CRX",
 ]
 #The dictionnary that stores all the upgrades
 ##When acessing a specific upgrade the format is as folows: globalUpgrades.upgradesDict[player][car][upgrade]

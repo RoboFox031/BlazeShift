@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="carStats" load_steps=2 format=3 uid="uid://bsjbnxh3bx3my"]
+
+[ext_resource type="Script" uid="uid://cx6j3t45xeg12" path="res://Resources/carStats/carStatBase.gd" id="1_3mhqe"]
+
+[resource]
+script = ExtResource("1_3mhqe")
+acceleration = 18.0
+topSpeed = 1200.0
+brakes = 30.0
+turnSpeed = 64.0
+turnPower = 144.0
+deceleration = 9.6
+traction = 98.0
+metadata/_custom_type_script = "uid://cx6j3t45xeg12"

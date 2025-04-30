@@ -17,6 +17,15 @@ const NSX = preload("res://Scenes/Cars/NSX.tscn")
 var p1BlazeCurrent = 100
 var p2BlazeCurrent = 100
 
+#Stores the progress value and the lap value for each player
+var progress={
+	"p1":0,
+	"p2":0,
+}
+var laps={
+	"p1":0,
+	"p2":0,
+}
 #racing variables
 var pOneLastRaceTime = '00:00'
 var pOneTotalTime = '00:00'
@@ -40,7 +49,8 @@ var pTwoColorSelected = 0
 var pOneName = 'aaa'
 var pTwoName = 'aaa'
 
-
+var canMove = false
+var canPause = false
 
 #global score list for each track
 var basicScores := {}
@@ -100,6 +110,7 @@ func saveScores(trackName,playerName,time):
 func loadScores(trackName):
 	var timeScore = ConfigFile.new()
 	if trackName == 'basicTrack':
+		print('loadScores')
 		var list = timeScore.load("res://basicScores.cfg")
 		if list == OK:
 			var players = timeScore.get_sections()
@@ -109,6 +120,7 @@ func loadScores(trackName):
 			return sortScores(basicScores)
 			
 	elif trackName == 'ruralTrack':
+		print('loadScores')
 		var list = timeScore.load("res://ruralScores.cfg")
 		if list == OK:
 			var players = timeScore.get_sections()

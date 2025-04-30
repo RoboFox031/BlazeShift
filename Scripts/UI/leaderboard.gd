@@ -5,7 +5,8 @@ var arrowSelected = 'right'
 var leaderboardOptions = ['basic track','rural track','ice track','volcano track','testing track','overall']
 var leaderboardSelected = 0
 
-var placeStart = 0
+@onready var scroll = $scrollContainer
+@onready var time1 = $scrollContainer/vBoxContainer/leaderboardLabel
 
 func _ready():
 	_updateArrows()
@@ -13,6 +14,12 @@ func _ready():
 	_updateLeaderboard()
 
 func _process(delta: float) -> void:
+	if (Input.is_action_pressed('p1_up')) or (Input.is_action_pressed('p2_up')):
+		scroll.scroll_vertical -= 5
+		pass
+	if (Input.is_action_pressed('p1_down')) or (Input.is_action_pressed('p2_down')) and scroll.scroll_vertical < 520:
+		scroll.scroll_vertical += 5
+	
 	if (Input.is_action_just_pressed('p1_right')) or (Input.is_action_just_pressed('p2_right')):
 		if arrowSelected != 'right':
 			arrowSelected = 'right'
@@ -50,7 +57,37 @@ func _updateLabel():
 	$trackLabel.text = leaderboardOptions[leaderboardSelected]
 	
 func _updateLeaderboard():
+	if leaderboardSelected == 0:
+		_updateTime('basicTrack')
+	elif leaderboardSelected == 1:
+		_updateTime('ruralTrack')
+		pass
+	elif leaderboardSelected == 2:
+		_updateTime('iceTrack')
+		pass
+	elif leaderboardSelected == 3:
+		_updateTime('volcanoTrack')
+		pass
+	elif leaderboardSelected == 4:
+		print('testingTrack')
+		pass
+	elif leaderboardSelected == 5:
+		print('overall')
+		pass
 	pass
-	
-func _scroll():
-	pass
+
+func _updateTime(trackName):
+	var scores = globalVars.loadScores(trackName)
+	print(scores)
+	var loops = 10
+	time1.text = ''
+	if scores:
+		for key in scores:
+			if loops > 0:
+				time1.text +=  key+': ' + str(globalVars.convertSec(scores[key])) + '\n'
+				loops -= 1
+				continue
+	while loops > 0:
+		time1.text += 'XXX: 00:00.000\n'
+		loops -= 1
+	pass	

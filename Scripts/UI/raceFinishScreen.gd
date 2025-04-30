@@ -18,17 +18,18 @@ func _ready():
 	for label in $playerTwoLabels.get_children():
 		pTwoLabels.append(label)
 		
-	pOneInfo[0] = globalVars.pOneLastRaceTime
+	pOneInfo[0] = globalVars.convertSec(globalVars.pOneLastRaceTime)
 	pOneInfo[1] = globalVars.pOneLastRaceCoinsCollected
 	pOneInfo[2] = globalVars.pOneLastRacePlacement
 	pOneInfo[3] = globalVars.pOneOverallPlacement
 	
-	pTwoInfo[0] = globalVars.pTwoLastRaceTime
+	pTwoInfo[0] = globalVars.convertSec(globalVars.pTwoLastRaceTime)
 	pTwoInfo[1] = globalVars.pTwoLastRaceCoinsCollected
 	pTwoInfo[2] = globalVars.pTwoLastRacePlacement
 	pTwoInfo[3] = globalVars.pTwoOverallPlacement
 	
-	
+	globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pOneName,float(globalVars.pOneLastRaceTime))
+	globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pTwoName,float(globalVars.pTwoLastRaceTime))
 	_updateLabels()
 	_updateReady()
 

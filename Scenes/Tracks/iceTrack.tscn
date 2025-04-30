@@ -11605,7 +11605,6 @@ texture = ExtResource("5_m4j1f")
 sources/0 = SubResource("TileSetAtlasSource_i02fc")
 
 [node name="iceTrack" type="Node2D"]
-position = Vector2(-28, -27)
 script = ExtResource("1_ftibf")
 
 [node name="icetrack" type="Node2D" parent="."]

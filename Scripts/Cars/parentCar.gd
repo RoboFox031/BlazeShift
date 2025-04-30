@@ -6,7 +6,7 @@ class_name Car
 
 var color = "blue"
 var fireball: PackedScene = preload("res://Scenes/Pickups/fireball.tscn")
-
+var paused = false
 ########
 #Important Car Stats:
 ########
@@ -179,7 +179,7 @@ func _physics_process(delta):
 		currentTurnForce = move_toward(currentTurnForce, 0,trueBaseTurnSpeed*terrainTurnSpeedMult)
 	
 	#Like a car, you can only turn while moving, and going backwards reverses your turn
-	if globalVars.canMove == true:
+	if globalVars.canMove == true and paused == false:
 		turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
 		rotation_degrees+=turnOutput
 	
@@ -191,7 +191,7 @@ func _physics_process(delta):
 	driftVector=Vector2(move_toward(driftVector.x,fwdVector.x,traction),move_toward(driftVector.y,fwdVector.y,traction))
 	velocity=(fwdVector+driftVector)/2
 	
-	if globalVars.canMove == true:
+	if globalVars.canMove == true and paused == false:
 		move_and_slide()
 	# print("Fwd: "+str(fwdVector))
 	# print("Drift: "+str(driftVector))
@@ -244,8 +244,9 @@ func usePowerup():
 func _input(event):
 	#Allows boost
 	if Input.is_action_just_pressed('test'):
+		print('next lap')
 		nextLap()
-	if globalVars.canMove == true:
+	if globalVars.canMove == true and paused == false:
 		if Input.is_action_just_pressed(currentOwnerStr+"_x"):
 			
 			startBoost()
@@ -501,8 +502,13 @@ func respawn():
 #Makes the player be on the next lap
 func nextLap():
 	#If you are on lap 3, end the race
-	if currentLap==3:
-		finishRace()
+	if currentLap==1:
+		if globalVars.totalDone==0:
+			paused = true
+			globalVars.totalDone+=1
+		elif globalVars.totalDone==1:
+			finishRace()
+	
 	#If you aren't on lap 3, add one to the lap and reset the position
 	else:
 		currentLap+=1

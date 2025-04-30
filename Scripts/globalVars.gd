@@ -16,7 +16,7 @@ var pTwoCoins = 3
 const NSX = preload("res://Scenes/Cars/NSX.tscn")
 var p1BlazeCurrent = 100
 var p2BlazeCurrent = 100
-
+var totalDone = 0
 #Stores the progress value and the lap value for each player
 var progress={
 	"p1":0,

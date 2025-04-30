@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://vaa3ruuygwlf"]
+[gd_scene load_steps=16 format=3 uid="uid://d1tuyvw08emo"]
 
-[ext_resource type="Script" uid="uid://dutg1bhga3hnn" path="res://Scripts/UI/StoplightStart.gd" id="1_u138q"]
+[ext_resource type="Script" uid="uid://csevk25te31by" path="res://Scripts/UI/StoplightStart.gd" id="1_u138q"]
 [ext_resource type="Texture2D" uid="uid://c530hqwk3u3uc" path="res://Assets/Sprites/Cars/Race Assets/Starting Light.png" id="2_olog8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oxko1"]
@@ -104,6 +104,8 @@ script = ExtResource("1_u138q")
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c2lti")
 animation = &"Stoplight"
+frame = 12
+frame_progress = 1.0
 
 [node name="timer" type="Timer" parent="."]
 wait_time = 4.33

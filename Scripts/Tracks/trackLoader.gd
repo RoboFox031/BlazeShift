@@ -5,9 +5,10 @@ signal _startRace
 signal _startRaceTimer
 var trackName = track.instantiate().name
 var timer = 'on'
+
+
 @onready var pTwoTimer = $hSplitContainer/subViewportContainer2/canvasLayer/pTwoTimer
 @onready var pOneTimer = $hSplitContainer/subViewportContainer/canvasLayer/pOneTimer
-
 
 @onready var players := {
 	"1": {
@@ -35,6 +36,7 @@ func _ready():
 		remote_transform.remote_path = node.camera.get_path()
 		node.player.add_child(remote_transform)
 	_startRace.emit()
+	print(globalVars.track.instantiate().name)
 	pass # Replace with function body.
 	
 func _physics_process(delta):

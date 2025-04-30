@@ -42,10 +42,10 @@ func _ready():
 func _physics_process(delta):
 	if globalVars.canMove == true:
 		pTwoTimer.text = str(snapped((float(pTwoTimer.text) + delta),.001))
-		globalVars.pTwoLastRaceTime = globalVars.convertSec(float(pTwoTimer.text))
+		globalVars.pTwoLastRaceTime = float(pTwoTimer.text)
 	if globalVars.canMove == true:
 		pOneTimer.text = str(snapped((float(pOneTimer.text) + delta),.001))
-		globalVars.pOneLastRaceTime = globalVars.convertSec(float(pOneTimer.text))
+		globalVars.pOneLastRaceTime = float(pOneTimer.text)
 func _on_pause_screen_p_pause():
 	globalVars.canMove = false
 func _on_pause_screen_p_resume() -> void:

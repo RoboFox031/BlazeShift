@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://Assets/Sprites/Tracks/submission_daneeklu/tilesets/sandwater.png" id="10_h0h4c"]
 [ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://Assets/Sprites/Tracks/submission_daneeklu/tilesets/sand.png" id="11_te1ji"]
 [ext_resource type="Texture2D" uid="uid://c13mxbp6tgng6" path="res://Assets/Sprites/Tracks/submission_daneeklu/tilesets/reed.png" id="12_yuax4"]
-[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="14_adp1f"]
+[ext_resource type="Script" path="res://Scripts/Tracks/checkpointPath.gd" id="14_adp1f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dlj2k"]
 texture = ExtResource("1_a08p6")

@@ -12,6 +12,8 @@ var pTwoInfo = [0,0,0,0]
 var pOneReady = false
 var pTwoReady = false
 
+@onready var winner = $backGroundStuff/label
+
 func _ready():
 	for label in $playerOneLabels.get_children():
 		pOneLabels.append(label)
@@ -21,16 +23,20 @@ func _ready():
 	if globalVars.laps["p1"] > globalVars.laps['p2']:
 		globalVars.pOneLastRacePlacement = '1st'
 		globalVars.pTwoLastRacePlacement = '2nd'
+		winner.text = 'player '+str(globalVars.pOneName)+'won the race'
 	elif globalVars.laps["p2"] > globalVars.laps['p1']:
 		globalVars.pOneLastRacePlacement = '2nd'
 		globalVars.pTwoLastRacePlacement = '1st'
+		winner.text = 'player '+str(globalVars.pTwoName)+'won the race'
 	elif globalVars.laps["p2"] == globalVars.laps['p1']:
 		if globalVars.progress['p1'] > globalVars.progress['p2']:
 			globalVars.pOneLastRacePlacement = '1st'
 			globalVars.pTwoLastRacePlacement = '2nd'
+			winner.text = 'player '+str(globalVars.pOneName)+'won the race'
 		else:
 			globalVars.pOneLastRacePlacement = '2nd'
 			globalVars.pTwoLastRacePlacement = '1st'
+			winner.text = 'player '+str(globalVars.pTwoName)+'won the race'
 		pass
 		
 	

@@ -243,12 +243,17 @@ func usePowerup():
 
 func _input(event):
 	#Allows boost
-	if Input.is_action_just_pressed(currentOwnerStr+"_x"):
+	if Input.is_action_just_pressed('test'):
+		nextLap()
+	if globalVars.canMove == true:
+		if Input.is_action_just_pressed(currentOwnerStr+"_x"):
+			
+			startBoost()
+		if Input.is_action_just_released(currentOwnerStr+"_x"):
+			print(currentOwnerStr+" stopped boosting")
+			resetMovement()
 		
-		startBoost()
-	if Input.is_action_just_released(currentOwnerStr+"_x"):
-		print(currentOwnerStr+" stopped boosting")
-		resetMovement()
+
 	
 	#Allows drift
 	if Input.is_action_just_pressed(currentOwnerStr+"_l1"):
@@ -264,6 +269,16 @@ func _input(event):
 		#Rerun the drift action when a turn is started
 		if Input.is_action_just_pressed(currentOwnerStr+"_left") or Input.is_action_just_pressed(currentOwnerStr+"_right")  :
 			startDrift()
+		if Input.is_action_just_released(currentOwnerStr+"_l1"):
+			print(currentOwnerStr+" stopped drifting")
+			resetMovement()
+			#stop listening for a directional input
+			driftNoInput=false
+		#If you tried to drift but wern't turning, listen for a turning action
+		if driftNoInput==true:
+			#Rerun the drift action when a turn is started
+			if Input.is_action_just_pressed(currentOwnerStr+"_left") or Input.is_action_just_pressed(currentOwnerStr+"_right")  :
+				startDrift()
 
 	#Control powerups
 	if Input.is_action_just_pressed(currentOwnerStr+"_r1"):###might change the input later
@@ -513,6 +528,12 @@ func checkTrackDistance():
 
 #finishes the race
 func finishRace():
+	var trackName = globalVars.track.instantiate().name
+	if currentOwnerStr == 'p1':
+		globalVars.saveScores(trackName,globalVars.pOneName,globalVars.pOneLastRaceTime)
+	if currentOwnerStr == 'p1':
+		globalVars.saveScores(trackName,globalVars.pTwoName,globalVars.pTwoLastRaceTime)
+	get_tree().change_scene_to_file("res://Scenes/UI/raceFinishScreen.tscn")
 	print("ur done!")
 #Sets the stats of the car based on the resource and upgrades
 func applyStats():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=36 format=4 uid="uid://3o4xe5gkyt04"]
 
-[ext_resource type="Script" uid="uid://dqqsy7s8o1y0x" path="res://Scripts/Tracks/ruralTrack.gd" id="1_4l54d"]
+[ext_resource type="Script" uid="uid://clrhe6giqrbwi" path="res://Scripts/Tracks/ruralTrack.gd" id="1_4l54d"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="1_a08p6"]
 [ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://Assets/Sprites/Tracks/192 racetrack Divided.svg" id="2_mm6qy"]
 [ext_resource type="Texture2D" uid="uid://6xmdt8xqccid" path="res://Assets/Sprites/Tracks/submission_daneeklu/tilesets/plowed_soil.png" id="3_7cshe"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://Assets/Sprites/Tracks/submission_daneeklu/tilesets/sandwater.png" id="10_h0h4c"]
 [ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://Assets/Sprites/Tracks/submission_daneeklu/tilesets/sand.png" id="11_te1ji"]
 [ext_resource type="Texture2D" uid="uid://c13mxbp6tgng6" path="res://Assets/Sprites/Tracks/submission_daneeklu/tilesets/reed.png" id="12_yuax4"]
-[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="14_adp1f"]
+[ext_resource type="Script" path="res://Scripts/Tracks/checkpointPath.gd" id="14_adp1f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dlj2k"]
 texture = ExtResource("1_a08p6")
@@ -5949,7 +5949,7 @@ _data = {
 }
 point_count = 44
 
-[node name="track" type="Node2D"]
+[node name="ruralTrack" type="Node2D"]
 script = ExtResource("1_4l54d")
 
 [node name="tiles" type="Node2D" parent="."]

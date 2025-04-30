@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxqbltyyptvm5"]
+
+[ext_resource type="Script" uid="uid://blfqhbj2ireb4" path="res://Scripts/Pickups/road_spikes_pickup.gd" id="1_emi22"]
+[ext_resource type="Texture2D" uid="uid://b7pu883n8gtrf" path="res://Assets/Sprites/Poweups/Spike Strip (1).png" id="2_ri3ff"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juef6"]
+atlas = ExtResource("2_ri3ff")
+region = Rect2(0, 0, 1536, 1536)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2706e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juef6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="roadSpikesPickup" type="Node2D"]
+script = ExtResource("1_emi22")
+
+[node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2706e")
+autoplay = "default"

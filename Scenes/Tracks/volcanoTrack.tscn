@@ -10163,7 +10163,6 @@ texture = ExtResource("2_fmrw8")
 sources/1 = SubResource("TileSetAtlasSource_xlcya")
 
 [node name="volcanoTrack" type="Node2D"]
-position = Vector2(-28, -27)
 script = ExtResource("1_ejygx")
 
 [node name="Finish_start line" type="TileMapLayer" parent="."]

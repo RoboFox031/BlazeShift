@@ -11,8 +11,8 @@ var playerTwoColor = "blue"
 var currentCarNames={"p1":"Mustang","p2":"Mustang"}
 var pOnePowerup = 'none'
 var pTwoPowerup = 'none'
-var pOneCoins = 2
-var pTwoCoins = 3
+var pOneCoins = 0
+var pTwoCoins = 0
 const NSX = preload("res://Scenes/Cars/NSX.tscn")
 var p1BlazeCurrent = 100
 var p2BlazeCurrent = 100
@@ -217,3 +217,77 @@ func checkDecimals(number):
 		return decimal_part.length()
 	else:
 		return 0
+
+func resetRaceVars():
+	pOnePowerup = 'none'
+	pTwoPowerup = 'none'
+	p1BlazeCurrent = 100
+	p2BlazeCurrent = 100
+	pOneDone = false
+	pTwoDone = false
+	progress={
+		"p1":0,
+		"p2":0,
+	}
+	laps={
+		"p1":0,
+		"p2":0,
+	}
+	pOneLastRaceTime = '00:00'
+	pOneTotalTime = '00:00'
+	pOneLastRacePlacement = null
+	pOneOverallPlacement = null
+	pOneLastRaceCoinsCollected = 0
+	pTwoLastRaceTime = '00:00'
+	pTwoTotalTime = '00:00'
+	pTwoLastRacePlacement = null
+	pTwoOverallPlacement = null
+	pTwoLastRaceCoinsCollected = 0
+	canMove = false
+	canPause = false
+	
+func gameReset():
+	track = preload("res://Scenes/Tracks/basicTrack.tscn")
+	playerOneCar = preload("res://Scenes/Cars/Mustang.tscn")
+	playerTwoCar = preload("res://Scenes/Cars/Mustang.tscn")
+	playerOneCarSprite = null
+	playerTwoCarSprite = null
+	playerOneColor = "blue"
+	playerTwoColor = "blue"
+	currentCarNames={"p1":"Mustang","p2":"Mustang"}
+	pOnePowerup = 'none'
+	pTwoPowerup = 'none'
+	pOneCoins = 0
+	pTwoCoins = 0
+	p1BlazeCurrent = 100
+	p2BlazeCurrent = 100
+	pOneDone = false
+	pTwoDone = false
+	progress={
+		"p1":0,
+		"p2":0,
+	}
+	laps={
+		"p1":0,
+		"p2":0,
+	}
+	pOneLastRaceTime = '00:00'
+	pOneTotalTime = '00:00'
+	pOneLastRacePlacement = null
+	pOneOverallPlacement = null
+	pOneLastRaceCoinsCollected = 0
+	pOneTotalWins = 0
+	pTwoLastRaceTime = '00:00'
+	pTwoTotalTime = '00:00'
+	pTwoLastRacePlacement = null
+	pTwoOverallPlacement = null
+	pTwoLastRaceCoinsCollected = 0
+	pTwoTotalWins = 0
+	pOneCarSelected = 0
+	pTwoCarSelected = 0
+	pOneColorSelected = 0
+	pTwoColorSelected = 0
+	pOneName = 'AAA'
+	pTwoName = 'BBB'
+	canMove = false
+	canPause = false

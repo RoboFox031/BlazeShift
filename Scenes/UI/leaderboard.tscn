@@ -38,6 +38,19 @@ offset_bottom = 116.0
 color = Color(0.913725, 0.466667, 0.0470588, 1)
 metadata/_edit_lock_ = true
 
+[node name="trackLabel" type="Label" parent="."]
+offset_left = 561.0
+offset_top = 167.0
+offset_right = 1359.0
+offset_bottom = 318.0
+pivot_offset = Vector2(399, 50.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_7f0wt")
+theme_override_font_sizes/font_size = 150
+text = "track"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="line2d" type="Line2D" parent="."]
 points = PackedVector2Array(0, 116, 1920, 116)
 default_color = Color(0, 0, 0, 1)
@@ -123,28 +136,53 @@ scale = Vector2(1.03, 1.03)
 texture = ExtResource("4_7ajj7")
 offset = Vector2(8, 28)
 
-[node name="trackLabel" type="Label" parent="."]
-offset_left = 561.0
-offset_top = 167.0
-offset_right = 1359.0
-offset_bottom = 268.0
-pivot_offset = Vector2(399, 50.5)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_7f0wt")
-theme_override_font_sizes/font_size = 150
-text = "track"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="leftArrow2" type="Sprite2D" parent="arrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(948, 985)
+rotation = 1.5708
+texture = ExtResource("3_bl5mr")
+offset = Vector2(9, 28)
+
+[node name="leftArrowOutline" type="Sprite2D" parent="arrows/leftArrow2"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_7ajj7")
+offset = Vector2(8, 28)
 
 [node name="label2" type="Label" parent="."]
-offset_left = 561.0
-offset_top = 867.0
-offset_right = 1359.0
-offset_bottom = 1018.0
+offset_left = 563.0
+offset_top = 834.0
+offset_right = 1361.0
+offset_bottom = 985.0
 pivot_offset = Vector2(399, 50.5)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_7f0wt")
 theme_override_font_sizes/font_size = 50
 text = "press a to switch leader board"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label4" type="Label" parent="."]
+offset_left = 563.0
+offset_top = 76.0
+offset_right = 1361.0
+offset_bottom = 227.0
+pivot_offset = Vector2(399, 50.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_7f0wt")
+theme_override_font_sizes/font_size = 50
+text = "press b to go back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label3" type="Label" parent="."]
+offset_left = 563.0
+offset_top = 973.0
+offset_right = 1361.0
+offset_bottom = 1124.0
+pivot_offset = Vector2(399, 50.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_7f0wt")
+theme_override_font_sizes/font_size = 50
+text = "press down to scroll"
 horizontal_alignment = 1
 vertical_alignment = 1

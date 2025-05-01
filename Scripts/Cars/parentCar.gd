@@ -6,7 +6,7 @@ class_name Car
 
 var color = "blue"
 var fireball: PackedScene = preload("res://Scenes/Pickups/fireball.tscn")
-
+var paused = false
 ########
 #Important Car Stats:
 ########
@@ -179,7 +179,7 @@ func _physics_process(delta):
 		currentTurnForce = move_toward(currentTurnForce, 0,trueBaseTurnSpeed*terrainTurnSpeedMult)
 	
 	#Like a car, you can only turn while moving, and going backwards reverses your turn
-	if globalVars.canMove == true:
+	if globalVars.canMove == true and paused == false:
 		turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
 		rotation_degrees+=turnOutput
 	
@@ -191,7 +191,7 @@ func _physics_process(delta):
 	driftVector=Vector2(move_toward(driftVector.x,fwdVector.x,traction),move_toward(driftVector.y,fwdVector.y,traction))
 	velocity=(fwdVector+driftVector)/2
 	
-	if globalVars.canMove == true:
+	if globalVars.canMove == true and paused == false:
 		move_and_slide()
 	# print("Fwd: "+str(fwdVector))
 	# print("Drift: "+str(driftVector))
@@ -244,8 +244,9 @@ func usePowerup():
 func _input(event):
 	#Allows boost
 	if Input.is_action_just_pressed('test'):
+		print('next lap')
 		nextLap()
-	if globalVars.canMove == true:
+	if globalVars.canMove == true and paused == false:
 		if Input.is_action_just_pressed(currentOwnerStr+"_x"):
 			
 			startBoost()
@@ -502,7 +503,38 @@ func respawn():
 func nextLap():
 	#If you are on lap 3, end the race
 	if currentLap==3:
-		finishRace()
+		if currentOwnerStr == 'p1':
+			globalVars.pOneDone = true
+			if globalVars.pTwoLastRacePlacement == null:
+				globalVars.pOneLastRacePlacement = '1st'
+				playerWin(globalVars.pOneName)
+			elif globalVars.pTwoLastRacePlacement == '1st':
+				globalVars.pOneLastRacePlacement = '2nd'
+				print('p1 2nd')
+		elif currentOwnerStr == 'p2':
+			globalVars.pTwoDone = true
+			if globalVars.pOneLastRacePlacement == null:
+				globalVars.pTwoLastRacePlacement = '1st'
+				playerWin(globalVars.pTwoName)
+				print('p2 first')
+			elif globalVars.pOneLastRacePlacement == '1st':
+				globalVars.pTwoLastRacePlacement = '2nd'
+				print('p2 second')
+		if globalVars.pOneDone == true and globalVars.pTwoDone == true:
+			if currentOwnerStr == 'p1':
+				globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pOneName,float(globalVars.pOneLastRaceTime))
+				finishRace()
+			if currentOwnerStr == 'p2':
+				globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pTwoName,float(globalVars.pTwoLastRaceTime))
+				finishRace()
+		elif globalVars.pOneDone == true or globalVars.pTwoDone == true:
+			paused = true
+			if currentOwnerStr == 'p1':
+				globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pOneName,float(globalVars.pOneLastRaceTime))
+			if currentOwnerStr == 'p2':
+				globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pTwoName,float(globalVars.pTwoLastRaceTime))
+		
+	
 	#If you aren't on lap 3, add one to the lap and reset the position
 	else:
 		currentLap+=1
@@ -551,3 +583,20 @@ func applyStats():
 	
 	#Resets movement to apply changes
 	resetMovement()
+	
+func playerWin(winner):
+	if winner == globalVars.pOneName:
+		globalVars.pOneTotalWins += 1
+		pass
+	elif winner == globalVars.pTwoName:
+		globalVars.pTwoTotalWins += 1
+	if globalVars.pOneTotalWins > globalVars.pTwoTotalWins:
+		globalVars.pOneOverallPlacement = '1st'
+		globalVars.pTwoOverallPlacement = '2nd'
+	if globalVars.pOneTotalWins < globalVars.pTwoTotalWins:
+		globalVars.pOneOverallPlacement = '2nd'
+		globalVars.pTwoOverallPlacement = '1st'
+	if globalVars.pOneTotalWins == globalVars.pTwoTotalWins:
+		globalVars.pOneOverallPlacement = 'Tie'
+		globalVars.pTwoOverallPlacement = 'Tie'
+	pass

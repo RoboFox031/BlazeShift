@@ -502,11 +502,24 @@ func respawn():
 #Makes the player be on the next lap
 func nextLap():
 	#If you are on lap 3, end the race
-	if currentLap==3:
+	if currentLap==1:
 		if currentOwnerStr == 'p1':
 			globalVars.pOneDone = true
+			if globalVars.pTwoLastRacePlacement == null:
+				globalVars.pOneLastRacePlacement = '1st'
+				playerWin(globalVars.pOneName)
+			elif globalVars.pTwoLastRacePlacement == '1st':
+				globalVars.pOneLastRacePlacement = '2nd'
+				print('p1 2nd')
 		elif currentOwnerStr == 'p2':
 			globalVars.pTwoDone = true
+			if globalVars.pOneLastRacePlacement == null:
+				globalVars.pTwoLastRacePlacement = '1st'
+				playerWin(globalVars.pTwoName)
+				print('p2 first')
+			elif globalVars.pOneLastRacePlacement == '1st':
+				globalVars.pTwoLastRacePlacement = '2nd'
+				print('p2 second')
 		if globalVars.pOneDone == true and globalVars.pTwoDone == true:
 			if currentOwnerStr == 'p1':
 				globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pOneName,float(globalVars.pOneLastRaceTime))
@@ -570,3 +583,20 @@ func applyStats():
 	
 	#Resets movement to apply changes
 	resetMovement()
+	
+func playerWin(winner):
+	if winner == globalVars.pOneName:
+		globalVars.pOneTotalWins += 1
+		pass
+	elif winner == globalVars.pTwoName:
+		globalVars.pTwoTotalWins += 1
+	if globalVars.pOneTotalWins > globalVars.pTwoTotalWins:
+		globalVars.pOneOverallPlacement = '1st'
+		globalVars.pTwoOverallPlacement = '2nd'
+	if globalVars.pOneTotalWins < globalVars.pTwoTotalWins:
+		globalVars.pOneOverallPlacement = '2nd'
+		globalVars.pTwoOverallPlacement = '1st'
+	if globalVars.pOneTotalWins == globalVars.pTwoTotalWins:
+		globalVars.pOneOverallPlacement = 'Tie'
+		globalVars.pTwoOverallPlacement = 'Tie'
+	pass

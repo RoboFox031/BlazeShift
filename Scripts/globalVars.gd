@@ -30,15 +30,17 @@ var laps={
 #racing variables
 var pOneLastRaceTime = '00:00'
 var pOneTotalTime = '00:00'
-var pOneLastRacePlacement = '1st'
-var pOneOverallPlacement = '1st'
+var pOneLastRacePlacement = null
+var pOneOverallPlacement = null
 var pOneLastRaceCoinsCollected = 0
+var pOneTotalWins = 0
 
 var pTwoLastRaceTime = '00:00'
 var pTwoTotalTime = '00:00'
-var pTwoLastRacePlacement = '1st'
-var pTwoOverallPlacement = '1st'
+var pTwoLastRacePlacement = null
+var pTwoOverallPlacement = null
 var pTwoLastRaceCoinsCollected = 0
+var pTwoTotalWins = 1
 
 #shop variables
 var pOneCarSelected = 0
@@ -47,8 +49,8 @@ var pOneColorSelected = 0
 var pTwoColorSelected = 0
 
 #name variables
-var pOneName = 'aaa'
-var pTwoName = 'aaa'
+var pOneName = 'AAA'
+var pTwoName = 'BBB'
 
 var canMove = false
 var canPause = false

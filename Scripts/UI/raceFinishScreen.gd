@@ -20,8 +20,11 @@ func _ready():
 	for label in $playerTwoLabels.get_children():
 		pTwoLabels.append(label)
 	
-	
-	
+	if globalVars.pOneLastRacePlacement == '1st':
+		winner.text = 'player '+globalVars.pOneName+' won the race'
+	else:
+		winner.text = 'player '+globalVars.pTwoName+' won the race'
+		
 	pOneInfo[0] = globalVars.convertSec(globalVars.pOneLastRaceTime)
 	pOneInfo[1] = globalVars.pOneLastRaceCoinsCollected
 	pOneInfo[2] = globalVars.pOneLastRacePlacement
@@ -34,6 +37,7 @@ func _ready():
 	
 	_updateLabels()
 	_updateReady()
+	_updateCoins()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("p1_start"):
@@ -70,3 +74,9 @@ func _updateReady():
 		$pTwoReadyLabel.visible = false
 	if pOneReady == true and pTwoReady == true:
 		get_tree().change_scene_to_file('res://Scenes/UI/shop.tscn')
+		
+func _updateCoins():
+	globalVars.pOneCoins += globalVars.pOneLastRaceCoinsCollected
+	globalVars.pTwoCoins += globalVars.pTwoLastRaceCoinsCollected
+	print(globalVars.pOneCoins)
+	print(globalVars.pTwoCoins)

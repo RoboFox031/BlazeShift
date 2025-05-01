@@ -70,7 +70,7 @@ offset_top = 346.0
 offset_right = 1215.0
 offset_bottom = 872.0
 theme = SubResource("Theme_lqqoe")
-scroll_vertical = 520
+scroll_vertical = 100
 
 [node name="vBoxContainer" type="VBoxContainer" parent="scrollContainer"]
 layout_mode = 2

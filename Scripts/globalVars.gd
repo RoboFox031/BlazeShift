@@ -40,7 +40,7 @@ var pTwoTotalTime = '00:00'
 var pTwoLastRacePlacement = null
 var pTwoOverallPlacement = null
 var pTwoLastRaceCoinsCollected = 0
-var pTwoTotalWins = 1
+var pTwoTotalWins = 0
 
 #shop variables
 var pOneCarSelected = 0

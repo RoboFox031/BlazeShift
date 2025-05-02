@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cp8s66wtoqjxv"
+path="res://.godot/imported/Flint - Its All the Same - Instrumental Version.mp3-3b9ea2bbb8a6bbd28b446a530eb58bfd.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Songs/Flint - Its All the Same - Instrumental Version.mp3"
+dest_files=["res://.godot/imported/Flint - Its All the Same - Instrumental Version.mp3-3b9ea2bbb8a6bbd28b446a530eb58bfd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

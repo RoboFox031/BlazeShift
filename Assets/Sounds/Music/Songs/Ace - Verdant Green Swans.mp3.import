@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ckofayc6essr0"
+path="res://.godot/imported/Ace - Verdant Green Swans.mp3-4f483b7a1bb6f57faf57567b2cbb37e6.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Songs/Ace - Verdant Green Swans.mp3"
+dest_files=["res://.godot/imported/Ace - Verdant Green Swans.mp3-4f483b7a1bb6f57faf57567b2cbb37e6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

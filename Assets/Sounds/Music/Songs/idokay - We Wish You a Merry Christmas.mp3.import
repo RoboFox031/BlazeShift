@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cmvy23ogth503"
+path="res://.godot/imported/idokay - We Wish You a Merry Christmas.mp3-0587fe77cdf7c7309da820ac624dc617.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Songs/idokay - We Wish You a Merry Christmas.mp3"
+dest_files=["res://.godot/imported/idokay - We Wish You a Merry Christmas.mp3-0587fe77cdf7c7309da820ac624dc617.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

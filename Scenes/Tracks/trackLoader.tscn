@@ -1,19 +1,24 @@
-[gd_scene load_steps=17 format=3 uid="uid://7ysc21hplbc2"]
+[gd_scene load_steps=22 format=3 uid="uid://7ysc21hplbc2"]
 
 [ext_resource type="Script" uid="uid://0hyyoerby0kf" path="res://Scripts/Tracks/trackLoader.gd" id="1_txhea"]
 [ext_resource type="PackedScene" uid="uid://co6q4klcpljhi" path="res://Scenes/UI/pTwoBlazeHud.tscn" id="3_2qf2f"]
-[ext_resource type="Script" uid="uid://bkwsi75gj8ueq" path="res://Scenes/UI/pOneTrackCoinHud.gd" id="3_158u3"]
+[ext_resource type="Script" path="res://Scenes/UI/pOneTrackCoinHud.gd" id="3_158u3"]
 [ext_resource type="PackedScene" uid="uid://bhcaxmvifx6r1" path="res://Scenes/UI/pOneCoinHud.tscn" id="3_go0ff"]
 [ext_resource type="PackedScene" uid="uid://bwffy2tfu4rbe" path="res://Scenes/UI/pOneBlazeHud.tscn" id="3_sw20d"]
 [ext_resource type="PackedScene" uid="uid://bwvjkcqhdw5e6" path="res://Scenes/UI/pOnePowerupsHud.tscn" id="4_n1ubl"]
 [ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="5_5lhqp"]
-[ext_resource type="PackedScene" uid="uid://t3gxkm51xemw" path="res://Scenes/UI/placementTracker.tscn" id="5_kxt15"]
+[ext_resource type="PackedScene" uid="uid://bv6secx1ql0dq" path="res://Scenes/UI/placementTracker.tscn" id="5_kxt15"]
 [ext_resource type="PackedScene" uid="uid://n3sg0thh08rh" path="res://Scenes/UI/Stoplight.tscn" id="5_t261b"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="6_m4tpg"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/wrongWayIndicator.tscn" id="6_rcrto"]
 [ext_resource type="PackedScene" uid="uid://bbpaemnpu0ei8" path="res://Scenes/UI/pTwoPowerupsHud.tscn" id="7_8we7n"]
 [ext_resource type="PackedScene" uid="uid://gdyc002hat4w" path="res://Scenes/UI/pauseScreen.tscn" id="8_ig87d"]
-[ext_resource type="Script" uid="uid://hbqc4g53s3qa" path="res://Scenes/UI/pTwoTrackCoinHud.gd" id="13_46sa2"]
+[ext_resource type="Script" path="res://Scenes/UI/pTwoTrackCoinHud.gd" id="13_46sa2"]
+[ext_resource type="AudioStream" uid="uid://7lnr23nws6xb" path="res://Assets/Sounds/Music/Royalty/Ace - Verdant Green Swans.mp3" id="15_c8num"]
+[ext_resource type="AudioStream" uid="uid://bxv3k6hhf4rhe" path="res://Assets/Sounds/Music/Royalty/Ofer Koren - Lap Time Run.mp3" id="16_yxfa4"]
+[ext_resource type="AudioStream" uid="uid://cen2yy2dvid6" path="res://Assets/Sounds/Music/Royalty/idokay - We Wish You a Merry Christmas.mp3" id="17_w1631"]
+[ext_resource type="AudioStream" uid="uid://cfmovcmbdtdc5" path="res://Assets/Sounds/Music/Royalty/Flint - Its All the Same - Instrumental Version.mp3" id="18_b8exv"]
+[ext_resource type="AudioStream" uid="uid://dcv7amvcx7bvk" path="res://Assets/Sounds/Music/Royalty/Jakub Pietras - Bank Robbery Escape.mp3" id="19_w1631"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3v6t4"]
 font = ExtResource("6_m4tpg")
@@ -138,6 +143,23 @@ offset_bottom = 1080.0
 [node name="canvasLayer" type="CanvasLayer" parent="."]
 
 [node name="pauseScreen" parent="canvasLayer" instance=ExtResource("8_ig87d")]
+
+[node name="royalty" type="Node2D" parent="."]
+
+[node name="basicMusic" type="AudioStreamPlayer" parent="royalty"]
+stream = ExtResource("15_c8num")
+
+[node name="ruralMusic" type="AudioStreamPlayer" parent="royalty"]
+stream = ExtResource("16_yxfa4")
+
+[node name="iceTrack" type="AudioStreamPlayer" parent="royalty"]
+stream = ExtResource("17_w1631")
+
+[node name="volcanoMusic" type="AudioStreamPlayer" parent="royalty"]
+stream = ExtResource("18_b8exv")
+
+[node name="cityMusic" type="AudioStreamPlayer" parent="royalty"]
+stream = ExtResource("19_w1631")
 
 [connection signal="_startRace" from="." to="hSplitContainer/subViewportContainer/canvasLayer/pTwoStoplight" method="_on_track_loader__start_race"]
 [connection signal="_startRace" from="." to="hSplitContainer/subViewportContainer2/canvasLayer/pOneStoplight" method="_on_track_loader__start_race"]

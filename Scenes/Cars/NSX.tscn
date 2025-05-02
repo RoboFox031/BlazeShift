@@ -1,16 +1,17 @@
-[gd_scene load_steps=24 format=3 uid="uid://bkjj8etk8gxx"]
+[gd_scene load_steps=25 format=3 uid="uid://bkjj8etk8gxx"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_gmmup"]
 [ext_resource type="Texture2D" uid="uid://c12coi1qc800a" path="res://Assets/Sprites/Cars/NSX/NSXBlue.png" id="2_52j34"]
 [ext_resource type="Resource" uid="uid://4ga0pbwn683g" path="res://Resources/carStats/nsxStats.tres" id="2_ij5hg"]
 [ext_resource type="Texture2D" uid="uid://dd6u861qw1dog" path="res://Assets/Sprites/Cars/NSX/NSXGreen.png" id="3_78ue1"]
 [ext_resource type="Shader" uid="uid://b0ijw40aod2u8" path="res://shadersAndMaterials/carShader.gdshader" id="3_ij5hg"]
+[ext_resource type="Texture2D" uid="uid://c4j141rwvqapi" path="res://Assets/Sprites/Cars/NSX/NSXBlack.png" id="4_a4i0b"]
 [ext_resource type="Texture2D" uid="uid://bc7kjhhmc4t0" path="res://Assets/Sprites/Cars/NSX/NSXOrange.png" id="4_m8pit"]
 [ext_resource type="Texture2D" uid="uid://bk32brwef7p6c" path="res://Assets/Sprites/Cars/NSX/NSXPurple.png" id="5_qqy1g"]
 [ext_resource type="Texture2D" uid="uid://dogd3hglgokrv" path="res://Assets/Sprites/Cars/NSX/NSXRed.png" id="6_4b5nt"]
 [ext_resource type="Texture2D" uid="uid://ctmr7xx5ch6cs" path="res://Assets/Sprites/Cars/NSX/NSXWhite.png" id="7_lphrb"]
 [ext_resource type="Texture2D" uid="uid://dlnp7itifebmb" path="res://Assets/Sprites/Cars/NSX/NSXYellow.png" id="8_dcu01"]
-[ext_resource type="Script" uid="uid://d0itn8p060dcc" path="res://Scripts/Cars/terrainDetector.gd" id="9_axpak"]
+[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="9_axpak"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a4i0b"]
 shader = ExtResource("3_ij5hg")
@@ -47,7 +48,10 @@ region = Rect2(0, 0, 192, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5pqir"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_a4i0b")
+}],
 "loop": true,
 "name": &"black",
 "speed": 5.0
@@ -129,7 +133,7 @@ position = Vector2(-10, 16)
 rotation = 3.14159
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_5pqir")
-animation = &"yellow"
+animation = &"black"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

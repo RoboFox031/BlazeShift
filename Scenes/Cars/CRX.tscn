@@ -178,3 +178,5 @@ debug_color = Color(0.991716, 0, 0.261882, 0.42)
 [connection signal="area_exited" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_exited"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
 [connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]
+[connection signal="area_entered" from="progressChecker" to="." method="updatePosition"]
+[connection signal="area_exited" from="progressChecker" to="." method="leavePosition"]

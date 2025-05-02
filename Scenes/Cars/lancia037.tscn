@@ -142,7 +142,10 @@ position = Vector2(1.5, 0.5)
 shape = SubResource("RectangleShape2D_3t6ot")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
 
+[connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]
 [connection signal="area_exited" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_exited"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
 [connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]
+[connection signal="area_entered" from="progressChecker" to="." method="updatePosition"]
+[connection signal="area_exited" from="progressChecker" to="." method="leavePosition"]

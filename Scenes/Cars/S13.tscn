@@ -137,7 +137,7 @@ position = Vector2(3, -11)
 rotation = -3.14159
 scale = Vector2(0.895, 0.895)
 sprite_frames = SubResource("SpriteFrames_gy3yo")
-animation = &"yellow"
+animation = &"red"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

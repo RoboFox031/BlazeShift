@@ -18,3 +18,4 @@ func _on_timer_timeout() -> void:
 	self.visible = false
 	globalVars.canMove = true
 	globalVars.canPause = true
+	globalVars.playMusic = true

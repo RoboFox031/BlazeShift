@@ -9,7 +9,7 @@ func _ready():
 	type = 'roadSpikes'
 	self.position = spawnPosition
 	self.z_index = 10
-	sprite.rotation = direction
+	self.sprite.rotation = direction
 func _on_area_2d_body_entered(Car):
 	pass
 	

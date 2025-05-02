@@ -14,6 +14,7 @@ func _on_area_2d_body_entered(Car):
 	powerupTimer.start()
 	self.visible = false
 	if type == 'none' or type == "" or type == null:
+		print(type)
 		if selection == 1:
 			type = 'fireballPickup'
 			entered(Car)

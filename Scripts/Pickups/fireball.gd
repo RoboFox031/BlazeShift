@@ -12,8 +12,6 @@ func _ready():
 	sprite.rotation = direction
 func _process(delta):
 	self.position += Vector2(speed * delta*cos(direction),speed*delta*sin(direction))
-	print(direction)
-
 func _on_timer_timeout() -> void:
 	queue_free()
 

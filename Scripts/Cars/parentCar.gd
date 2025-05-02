@@ -222,14 +222,13 @@ func usePowerup():
 			get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 			if currentOwner == playerChoices.p1:
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
-		if globalVars.pOnePowerup == 'roadSPikesPickup':
+		if globalVars.pOnePowerup == 'roadSpikesPickup':
 			globalVars.pOnePowerup = 'none'
 			var instance = roadSpikes.instantiate()
 			instance.spawnPosition = global_position
 			instance.direction = rotation
 			get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
-			if currentOwner == playerChoices.p1:
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p1')
+			get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p1')
 	if globalVars.pTwoPowerup != 'none':
 		if globalVars.pTwoPowerup == "blazePickup":
 			globalVars.pTwoPowerup = 'none'
@@ -246,7 +245,7 @@ func usePowerup():
 			get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 			if currentOwner == playerChoices.p2:
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p2')
-		if globalVars.pTwoPowerup == 'roadSPikesPickup':
+		if globalVars.pTwoPowerup == 'roadSpikesPickup':
 			globalVars.pTwoPowerup = 'none'
 			var instance = roadSpikes.instantiate()
 			instance.spawnPosition = global_position
@@ -410,7 +409,6 @@ func updatePosition(area:Area2D):
 						#Stores the position and rotation of the legal point
 						progressPoint=area.global_position
 						progressRot=area.global_rotation
-						print(currentOwnerStr+" reverse "+str(reverseCount))
 						#increase the reverse count 
 						reverseCount+=1
 						if(reverseCount>reverseTolerance):
@@ -436,7 +434,6 @@ func updatePosition(area:Area2D):
 					largestLegalProgress=checkpoints.progress
 		#If none of the progress point you are touching result in legal moves, respawn
 		if anyLegalMove==false:
-			print("Illegal")
 			respawn()
 		#If you didn't skip and aren't reversing, then update the progress
 		elif isReverse==false:

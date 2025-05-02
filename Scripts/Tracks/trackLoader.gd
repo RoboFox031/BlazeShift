@@ -61,19 +61,6 @@ func _on_pause_screen_p_resume() -> void:
 	globalVars.canMove = true
 
 func playMusic(track):
-	if globalVars.musicType == 'royalty':
-		if track == 'basicTrack':
-			if basicMusic.playing == false:
-				basicMusic.play()
-		elif track == 'ruralTrack':
-			if ruralMusic.playing == false:
-				ruralMusic.play()
-		elif track == 'iceTrack':
-			if iceMusic.playing == false:
-				iceMusic.play()
-		elif track == 'volcanoTrack':
-			if volcanoMusic.playing == false:
-				volcanoMusic.play()
-		elif track == 'cityTrack':
-			if cityMusic.playing == false:
-				cityMusic.play()
+	if get_node(globalVars.musicType+"/"+trackName).playing != true:
+		get_node(globalVars.musicType+"/"+trackName).play()
+#globalVars.musicType+"/"+trackName

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://covhuufiu01qg"]
+[gd_scene load_steps=5 format=3 uid="uid://cd4tg6xllfeij"]
 
 [ext_resource type="AudioStream" uid="uid://7lnr23nws6xb" path="res://Assets/Sounds/Music/Royalty/Ace - Verdant Green Swans.mp3" id="1_nevde"]
 [ext_resource type="AudioStream" uid="uid://bxv3k6hhf4rhe" path="res://Assets/Sounds/Music/Royalty/Ofer Koren - Lap Time Run.mp3" id="2_povtx"]
@@ -7,18 +7,18 @@
 
 [node name="royaltyMusic" type="Node2D"]
 
-[node name="basicMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="basicTrack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_nevde")
 bus = &"music"
 
-[node name="ruralMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="ruralTrack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_povtx")
 bus = &"music"
 
-[node name="iceMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="iceTrack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_b36in")
 bus = &"music"
 
-[node name="volcanoMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="volcanoTrack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_otvvu")
 bus = &"music"

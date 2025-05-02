@@ -164,6 +164,7 @@ wait_time = 4.33
 one_shot = true
 
 [node name="audioStreamPlayer2d" type="AudioStreamPlayer2D" parent="."]
+bus = &"sounds"
 
 [node name="animationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

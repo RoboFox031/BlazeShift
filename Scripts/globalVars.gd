@@ -7,7 +7,7 @@ var playerOneCarSprite = null
 var playerTwoCarSprite = null
 var playerOneColor = "blue"
 var playerTwoColor = "blue"
-var musicType = 'royalty'
+var musicType = 'spotifyMusic'
 #Defults to mustang
 var currentCarNames={"p1":"Mustang","p2":"Mustang"}
 var pOnePowerup = 'none'

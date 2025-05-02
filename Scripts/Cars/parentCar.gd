@@ -245,7 +245,7 @@ func _input(event):
 	#Allows boost
 	if Input.is_action_just_pressed('test'):
 		print('next lap')
-		nextLap()
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index('music'),-100)
 	if globalVars.canMove == true and paused == false:
 		if Input.is_action_just_pressed(currentOwnerStr+"_x"):
 			

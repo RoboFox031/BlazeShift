@@ -1,0 +1,152 @@
+[gd_scene load_steps=18 format=3 uid="uid://b6j1ri7e2eu3q"]
+
+[ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_mm3dk"]
+[ext_resource type="Shader" uid="uid://b0ijw40aod2u8" path="res://shadersAndMaterials/carShader.gdshader" id="2_emdmu"]
+[ext_resource type="Resource" uid="uid://bdfyic0hpxvpy" path="res://Resources/carStats/96ChargerStats.tres" id="2_wshfl"]
+[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_45npj"]
+[ext_resource type="Texture2D" uid="uid://vyu03tdxjntf" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerBlack.png" id="4_s5wax"]
+[ext_resource type="Texture2D" uid="uid://7bbalg5f57tj" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerBlue.png" id="5_m0ncg"]
+[ext_resource type="Texture2D" uid="uid://csnqmhnpqeoaw" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerGreen.png" id="6_5h7hp"]
+[ext_resource type="Texture2D" uid="uid://b2l4048ef34bs" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerOrange.png" id="7_cdjga"]
+[ext_resource type="Texture2D" uid="uid://b0uf4er14r24q" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerPurple.png" id="8_hmh80"]
+[ext_resource type="Texture2D" uid="uid://dne6nffid3101" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerRed.png" id="9_nb7d6"]
+[ext_resource type="Texture2D" uid="uid://doiysamrwtd0x" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerWhite.png" id="10_ej5ic"]
+[ext_resource type="Texture2D" uid="uid://ck4xxg6l0cu26" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerYellow.png" id="11_gfykb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_710ok"]
+shader = ExtResource("2_emdmu")
+shader_parameter/replaceColor = Color(0.964706, 1, 0.00392157, 1)
+shader_parameter/newColor = Color(0.60921, 0.599859, 0.461508, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jnx1k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_s5wax")
+}],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_m0ncg")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5h7hp")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_cdjga")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hmh80")
+}],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_nb7d6")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ej5ic")
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_gfykb")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yl1ot"]
+size = Vector2(54, 165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8khqs"]
+size = Vector2(8.99993, 13.9999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbeql"]
+size = Vector2(165, 52)
+
+[node name="96Charger" type="CharacterBody2D"]
+script = ExtResource("1_mm3dk")
+stats = ExtResource("2_wshfl")
+metadata/_custom_type_script = "uid://pdxcl38fqf8b"
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_710ok")
+position = Vector2(1, -7.5)
+rotation = 3.14159
+sprite_frames = SubResource("SpriteFrames_jnx1k")
+animation = &"yellow"
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.499996, 7.15256e-07)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_yl1ot")
+debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)
+
+[node name="camera2d" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="terrainDetector" type="Node2D" parent="."]
+script = ExtResource("3_45npj")
+
+[node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorL"]
+position = Vector2(0, -22)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_8khqs")
+
+[node name="terrainDetectorR" type="Area2D" parent="terrainDetector"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorR"]
+position = Vector2(0, 21)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_8khqs")
+
+[node name="progressChecker" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="progressChecker"]
+shape = SubResource("RectangleShape2D_nbeql")
+debug_color = Color(0.991716, 0, 0.261882, 0.42)
+
+[connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_exited"]
+[connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]

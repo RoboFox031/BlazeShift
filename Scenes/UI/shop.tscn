@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=3 uid="uid://j4taoq0kw7b1"]
+[gd_scene load_steps=147 format=3 uid="uid://j4taoq0kw7b1"]
 
 [ext_resource type="Script" uid="uid://dkswl6q5y0c8d" path="res://Scripts/UI/shop.gd" id="1_6j5yt"]
 [ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="2_qad3o"]
@@ -82,10 +82,18 @@
 [ext_resource type="Texture2D" uid="uid://d3yebe0uc0axl" path="res://Assets/Sprites/Cars/Lotus Esprit/LotusEspritGreen.png" id="64_0nxv7"]
 [ext_resource type="Texture2D" uid="uid://cnh5ouj3j3bmy" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Yellow.png.png" id="64_efjfu"]
 [ext_resource type="Texture2D" uid="uid://c6ilgqqqbbb1t" path="res://Assets/Sprites/Cars/Lotus Esprit/LotusEspritOrange.png" id="65_3i8uv"]
+[ext_resource type="Texture2D" uid="uid://1odq181hkxa4" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Black-1.png.png" id="65_odqji"]
+[ext_resource type="Texture2D" uid="uid://c4ak48n1ye76y" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Blue-1.png.png" id="66_c0yic"]
 [ext_resource type="Texture2D" uid="uid://teanhk2sxwgl" path="res://Assets/Sprites/Cars/Lotus Esprit/LotusEspritPurplepng.png" id="66_kwf6m"]
 [ext_resource type="Texture2D" uid="uid://c8qqn8gm58ipi" path="res://Assets/Sprites/Cars/Lotus Esprit/LotusEspritRed.png" id="67_cuh5r"]
+[ext_resource type="Texture2D" uid="uid://csilbdhoxi15k" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Green-1.png.png" id="67_it6ig"]
 [ext_resource type="Texture2D" uid="uid://dh2kti5ls1x0a" path="res://Assets/Sprites/Cars/Lotus Esprit/LotusEspritWhite.png" id="68_1ju0o"]
+[ext_resource type="Texture2D" uid="uid://buikxjqurlrgs" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Orange-1.png.png" id="68_2ly1b"]
+[ext_resource type="Texture2D" uid="uid://bbejaffrcmy1l" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Purple-1.png.png" id="69_kusnf"]
 [ext_resource type="Texture2D" uid="uid://b8f1umvnc63j4" path="res://Assets/Sprites/Cars/Lotus Esprit/LotusEspritYellow.png" id="69_ntabf"]
+[ext_resource type="Texture2D" uid="uid://dvubdxkc2h7xb" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Red-1.png.png" id="70_caekk"]
+[ext_resource type="Texture2D" uid="uid://bapji1uvoibvh" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS White-1.png.png" id="71_p06cn"]
+[ext_resource type="Texture2D" uid="uid://b57a22jewcty" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Yellow-1.png.png" id="72_f1g0e"]
 [ext_resource type="Texture2D" uid="uid://d35u4aqrdst2f" path="res://Assets/Sprites/Cars/S13/S13Blue.png" id="79_efjfu"]
 [ext_resource type="Texture2D" uid="uid://coe4cu607er63" path="res://Assets/Sprites/Cars/S13/s13Green.png" id="80_w51kr"]
 [ext_resource type="Texture2D" uid="uid://bgwv5r2nvt8mj" path="res://Assets/Sprites/Cars/S13/S13Orange.png" id="81_0641g"]
@@ -500,6 +508,73 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("64_efjfu")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y51na"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_odqji")
+}],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_c0yic")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("67_it6ig")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("68_2ly1b")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("69_kusnf")
+}],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("70_caekk")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("71_p06cn")
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("72_f1g0e")
 }],
 "loop": true,
 "name": &"yellow",
@@ -1468,6 +1543,14 @@ sprite_frames = SubResource("SpriteFrames_w51kr")
 animation = &"black"
 autoplay = "black"
 
+[node name="pOneCarEleven" type="AnimatedSprite2D" parent="pOneCars"]
+position = Vector2(468, 932)
+rotation = -3.14159
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_y51na")
+animation = &"black"
+autoplay = "black"
+
 [node name="pTwoCars" type="Node2D" parent="."]
 
 [node name="pTwoCarOne" type="Sprite2D" parent="pTwoCars"]
@@ -1554,6 +1637,14 @@ sprite_frames = SubResource("SpriteFrames_w51kr")
 animation = &"black"
 autoplay = "black"
 
+[node name="pTwoCarEleven" type="AnimatedSprite2D" parent="pTwoCars"]
+position = Vector2(1449, 936)
+rotation = -3.14159
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_y51na")
+animation = &"black"
+autoplay = "black"
+
 [node name="pOneCarsFinal" type="Node2D" parent="."]
 
 [node name="pOneCarOneFinal" type="AnimatedSprite2D" parent="pOneCarsFinal"]
@@ -1566,6 +1657,7 @@ animation = &"white"
 autoplay = "white"
 
 [node name="pOneCarTwoFinal" type="AnimatedSprite2D" parent="pOneCarsFinal"]
+visible = false
 position = Vector2(434, 605)
 rotation = 3.14159
 scale = Vector2(3, 3)
@@ -1574,6 +1666,7 @@ animation = &"white"
 autoplay = "white"
 
 [node name="pOneCarThreeFinal" type="AnimatedSprite2D" parent="pOneCarsFinal"]
+visible = false
 position = Vector2(457, 497)
 rotation = -3.14159
 scale = Vector2(3.8, 3.8)
@@ -1632,7 +1725,7 @@ scale = Vector2(2.8, 2.8)
 sprite_frames = SubResource("SpriteFrames_qq1sq")
 animation = &"white"
 autoplay = "blue"
-frame_progress = 0.863401
+frame_progress = 0.329231
 
 [node name="pOneCarTenFinal" type="AnimatedSprite2D" parent="pOneCarsFinal"]
 visible = false
@@ -1643,9 +1736,18 @@ sprite_frames = SubResource("SpriteFrames_w51kr")
 animation = &"yellow"
 autoplay = "blue"
 
+[node name="pOneCarElevenFinal" type="AnimatedSprite2D" parent="pOneCarsFinal"]
+position = Vector2(470, 542)
+rotation = -3.14159
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_y51na")
+animation = &"white"
+autoplay = "blue"
+
 [node name="pTwoCarsFinal" type="Node2D" parent="."]
 
 [node name="pTwoCarOneFinal" type="AnimatedSprite2D" parent="pTwoCarsFinal"]
+visible = false
 position = Vector2(1319, 597)
 rotation = 1.5708
 scale = Vector2(4.5, 4.5)
@@ -1663,6 +1765,7 @@ animation = &"white"
 autoplay = "white"
 
 [node name="pOneCarThreeFinal" type="AnimatedSprite2D" parent="pTwoCarsFinal"]
+visible = false
 position = Vector2(1428, 502)
 rotation = -3.14159
 scale = Vector2(3.8, 3.8)
@@ -1729,6 +1832,14 @@ rotation = 3.14159
 scale = Vector2(2.8, 2.8)
 sprite_frames = SubResource("SpriteFrames_w51kr")
 animation = &"yellow"
+autoplay = "blue"
+
+[node name="pTwoCarElevenFinal" type="AnimatedSprite2D" parent="pTwoCarsFinal"]
+position = Vector2(1425, 538)
+rotation = -3.14159
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_y51na")
+animation = &"white"
 autoplay = "blue"
 
 [node name="uiSFX" parent="." instance=ExtResource("37_iod5g")]

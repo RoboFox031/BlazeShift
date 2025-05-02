@@ -41,6 +41,8 @@ var baseBrakes:float
 
 #Stores the vector the car is going in
 var fwdVector:Vector2
+#Stores the impact of the loss of speed when turning
+var turningSpeedLoss=0
 
 #Stores direction the car is traveling in
 var turnDirection
@@ -195,6 +197,12 @@ func _physics_process(delta):
 	else:
 		currentTurnForce = move_toward(currentTurnForce, 0,trueBaseTurnSpeed*terrainTurnSpeedMult)
 	
+	#slows you down when you are turning
+	if currentTurnForce!=0:
+		turningSpeedLoss=(currentTopSpeed*.35)*abs(currentTurnForce/(trueCurrentTurnPower*terrainTurnPowerMult))
+		print(turningSpeedLoss)
+		
+		
 	#Like a car, you can only turn while moving, and going backwards reverses your turn
 	turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
 	rotation_degrees+=turnOutput
@@ -203,7 +211,9 @@ func _physics_process(delta):
 	if(traction!=baseTraction)and(currentTerrain!=trackEnums.terrainTypes.ice) and (isDrifting==false):
 		traction=move_toward(traction,baseTraction,4)
 	#Sets the velocity to fwd vector added to the drift vector
-	fwdVector=Vector2(currentLinSpeed*cos(rotation),currentLinSpeed*sin(rotation))
+	
+	#fwdVector=Vector2((currentLinSpeed-turningSpeedLoss)*cos(rotation),(currentLinSpeed-turningSpeedLoss)*sin(rotation))
+	fwdVector=Vector2((currentLinSpeed)*cos(rotation),(currentLinSpeed)*sin(rotation))
 	driftVector=Vector2(move_toward(driftVector.x,fwdVector.x,traction),move_toward(driftVector.y,fwdVector.y,traction))
 	velocity=(fwdVector+driftVector)/2
 	

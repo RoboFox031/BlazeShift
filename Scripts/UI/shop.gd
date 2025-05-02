@@ -1,7 +1,7 @@
 extends UI
 class_name shop
 
-####order in the shop for the cars goes as follows Mustang, NSX, S13, CRX,FC RX7, 69 Charger, Lancia 037, Lotus Esprit, RUF CTR, 300ZX 
+####order in the shop for the cars goes as follows Mustang, NSX, S13, CRX,FC RX7, 69 Charger, Lancia 037, Lotus Esprit, RUF CTR, 300ZX, Camaro
 
 var pOneReady = false
 var pTwoReady = false
@@ -51,8 +51,8 @@ var pTwoOwned: Array
 
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 
-var carStringNames: Array = ['Mustang/Mustang','NSX/NSX','S13/S13',"CRX/CRX","FC RX7/FC RX7","69 Charger/69 Charger","Lancia 037/Lancia 037","Lotus Esprit/Lotus Esprit","RUF CTR/RUF CTR","300ZX/300ZX"]
-var carNames: Array = ['Mustang', "NSX", "S13","CRX","FC RX7","69 Charger","Lancia 037","Lotus Esprit","RUF CTR","300ZX"]
+var carStringNames: Array = ['Mustang/Mustang','NSX/NSX','S13/S13',"CRX/CRX","FC RX7/FC RX7","69 Charger/69 Charger","Lancia 037/Lancia 037","Lotus Esprit/Lotus Esprit","RUF CTR/RUF CTR","300ZX/300ZX","Camaro/Camaro"]
+var carNames: Array = ['Mustang', "NSX", "S13","CRX","FC RX7","69 Charger","Lancia 037","Lotus Esprit","RUF CTR","300ZX","Camaro"]
 
 var cars := {
 	"Mustang": {
@@ -95,9 +95,14 @@ var cars := {
 		carScene = preload("res://Scenes/Cars/300ZX.tscn"),
 		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 	},
+	"Camaro": {
+		carScene = preload("res://Scenes/Cars/camaro.tscn"),
+		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	
 }
 
-var carCosts: Array = [0,0,1,2,1,1,1,1,1,1] #the position in the array relates to the car
+var carCosts: Array = [0,0,1,2,1,1,1,1,1,1,1] #the position in the array relates to the car
 
 func _ready() -> void:
 	pOneColors = [pOneWhite, pOneBlack, pOneRed, pOneOrange, pOneYellow, pOneGreen, pOneBlue, pOnePurple]

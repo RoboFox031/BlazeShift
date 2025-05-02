@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://b11sws0dvlkk3" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View Orange.png.png" id="5_1g24k"]
 [ext_resource type="Texture2D" uid="uid://ce8pf0hmtxvtt" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View Purple.png.png" id="6_l0csv"]
 [ext_resource type="Texture2D" uid="uid://m0vmjt4ewo72" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View Red.png.png" id="7_l2kyo"]
-[ext_resource type="Texture2D" uid="uid://bgk6380j47n66" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View White.png.png" id="8_7kwwu"]
+[ext_resource type="Texture2D" uid="uid://b73aunv3hevr6" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View White-1.png.png" id="9_gr7s5"]
 [ext_resource type="Texture2D" uid="uid://bfgdlghpscyna" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View Yellow.png.png" id="9_hqymu"]
-[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="10_cfm7k"]
+[ext_resource type="Script" uid="uid://d0itn8p060dcc" path="res://Scripts/Cars/terrainDetector.gd" id="10_cfm7k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bg2l6"]
 animations = [{
@@ -64,7 +64,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_7kwwu")
+"texture": ExtResource("9_gr7s5")
 }],
 "loop": true,
 "name": &"white",
@@ -98,7 +98,7 @@ position = Vector2(-5, -6)
 rotation = 3.14159
 scale = Vector2(0.62, 0.62)
 sprite_frames = SubResource("SpriteFrames_bg2l6")
-animation = &"yellow"
+animation = &"white"
 autoplay = "blue"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]

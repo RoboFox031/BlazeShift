@@ -1,0 +1,134 @@
+[gd_scene load_steps=12 format=3 uid="uid://i5nwyy0hbhyp"]
+
+[ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_3d4sf"]
+[ext_resource type="Texture2D" uid="uid://csilbdhoxi15k" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Green-1.png.png" id="2_qmw8s"]
+[ext_resource type="Texture2D" uid="uid://buikxjqurlrgs" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Orange-1.png.png" id="3_7wl7p"]
+[ext_resource type="Texture2D" uid="uid://dvubdxkc2h7xb" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Red-1.png.png" id="4_xc4ib"]
+[ext_resource type="Texture2D" uid="uid://bapji1uvoibvh" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS White-1.png.png" id="5_xpnhk"]
+[ext_resource type="Texture2D" uid="uid://b57a22jewcty" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Yellow-1.png.png" id="6_cf8li"]
+[ext_resource type="Script" uid="uid://d0itn8p060dcc" path="res://Scripts/Cars/terrainDetector.gd" id="7_7vb7t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhb33"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qmw8s")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7wl7p")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xc4ib")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xpnhk")
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_cf8li")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fk6e"]
+size = Vector2(53, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iaedy"]
+size = Vector2(8.99993, 13.9999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_is8f3"]
+size = Vector2(120, 50)
+
+[node name="camero" type="CharacterBody2D"]
+script = ExtResource("1_3d4sf")
+metadata/_custom_type_script = "uid://pdxcl38fqf8b"
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.19209e-07, -5)
+rotation = -3.14159
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_dhb33")
+animation = &"yellow"
+autoplay = "blue"
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 0.499999)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_6fk6e")
+debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)
+
+[node name="camera2d" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="terrainDetector" type="Node2D" parent="."]
+script = ExtResource("7_7vb7t")
+
+[node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorL"]
+position = Vector2(0, -17)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_iaedy")
+
+[node name="terrainDetectorR" type="Area2D" parent="terrainDetector"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorR"]
+position = Vector2(0, 17)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_iaedy")
+
+[node name="progressChecker" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="progressChecker"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_is8f3")
+debug_color = Color(0.991716, 0, 0.261882, 0.42)
+
+[connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_exited"]
+[connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]

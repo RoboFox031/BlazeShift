@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://j4taoq0kw7b1"]
+[gd_scene load_steps=138 format=3 uid="uid://j4taoq0kw7b1"]
 
 [ext_resource type="Script" uid="uid://dkswl6q5y0c8d" path="res://Scripts/UI/shop.gd" id="1_6j5yt"]
 [ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="2_qad3o"]
@@ -68,7 +68,7 @@
 [ext_resource type="Texture2D" uid="uid://b11sws0dvlkk3" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View Orange.png.png" id="52_evn6e"]
 [ext_resource type="Texture2D" uid="uid://ce8pf0hmtxvtt" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View Purple.png.png" id="53_3wish"]
 [ext_resource type="Texture2D" uid="uid://m0vmjt4ewo72" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View Red.png.png" id="54_3kumv"]
-[ext_resource type="Texture2D" uid="uid://bgk6380j47n66" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View White.png.png" id="55_2efbv"]
+[ext_resource type="Texture2D" uid="uid://b73aunv3hevr6" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View White-1.png.png" id="55_efjfu"]
 [ext_resource type="Texture2D" uid="uid://bfgdlghpscyna" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View Yellow.png.png" id="56_muq0a"]
 [ext_resource type="Texture2D" uid="uid://ofm4ucfy12ix" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Black.png.png" id="57_qq1sq"]
 [ext_resource type="Texture2D" uid="uid://l3hl4wyojnqn" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Blue.png.png" id="58_ulc3w"]
@@ -424,7 +424,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("55_2efbv")
+"texture": ExtResource("55_efjfu")
 }],
 "loop": true,
 "name": &"white",
@@ -703,11 +703,6 @@ animations = [{
 "name": &"yellow",
 "speed": 5.0
 }]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ikahn"]
-shader = ExtResource("16_tiod0")
-shader_parameter/replaceColor = Color(0.917647, 1, 0.00392157, 1)
-shader_parameter/newColor = Color(1, 0.343394, 0.390133, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2lkgh"]
 atlas = ExtResource("7_s7cvf")
@@ -1457,7 +1452,6 @@ animation = &"black"
 autoplay = "black"
 
 [node name="pOneCarNine" type="AnimatedSprite2D" parent="pOneCars"]
-visible = false
 position = Vector2(469, 928)
 rotation = 3.14159
 scale = Vector2(1.6, 1.6)
@@ -1580,7 +1574,6 @@ animation = &"white"
 autoplay = "white"
 
 [node name="pOneCarThreeFinal" type="AnimatedSprite2D" parent="pOneCarsFinal"]
-material = SubResource("ShaderMaterial_ikahn")
 position = Vector2(457, 497)
 rotation = -3.14159
 scale = Vector2(3.8, 3.8)
@@ -1639,6 +1632,7 @@ scale = Vector2(2.8, 2.8)
 sprite_frames = SubResource("SpriteFrames_qq1sq")
 animation = &"white"
 autoplay = "blue"
+frame_progress = 0.863401
 
 [node name="pOneCarTenFinal" type="AnimatedSprite2D" parent="pOneCarsFinal"]
 visible = false
@@ -1669,7 +1663,6 @@ animation = &"white"
 autoplay = "white"
 
 [node name="pOneCarThreeFinal" type="AnimatedSprite2D" parent="pTwoCarsFinal"]
-material = SubResource("ShaderMaterial_ikahn")
 position = Vector2(1428, 502)
 rotation = -3.14159
 scale = Vector2(3.8, 3.8)
@@ -1682,7 +1675,7 @@ position = Vector2(1418, 555)
 rotation = -3.14159
 scale = Vector2(2.7, 2.7)
 sprite_frames = SubResource("SpriteFrames_li7xm")
-animation = &"yellow"
+animation = &"green"
 
 [node name="pTwoCarFiveFinal" type="AnimatedSprite2D" parent="pTwoCarsFinal"]
 visible = false
@@ -1726,7 +1719,7 @@ position = Vector2(1442, 528)
 rotation = 3.14159
 scale = Vector2(2.8, 2.8)
 sprite_frames = SubResource("SpriteFrames_qq1sq")
-animation = &"yellow"
+animation = &"white"
 autoplay = "blue"
 
 [node name="pTwoCarTenFinal" type="AnimatedSprite2D" parent="pTwoCarsFinal"]

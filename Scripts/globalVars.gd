@@ -8,6 +8,8 @@ var playerTwoCarSprite = null
 var playerOneColor = "blue"
 var playerTwoColor = "blue"
 var musicType = 'spotifyMusic'
+var musicDB = 50
+var sfxDB = 50
 #Defults to mustang
 var currentCarNames={"p1":"Mustang","p2":"Mustang"}
 var pOnePowerup = 'none'

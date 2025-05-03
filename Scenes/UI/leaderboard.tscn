@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdo2pr6gigps"]
+[gd_scene load_steps=12 format=3 uid="uid://cdo2pr6gigps"]
 
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="1_7f0wt"]
 [ext_resource type="Script" uid="uid://csnvj8kdiiior" path="res://Scripts/UI/leaderboard.gd" id="1_trr20"]
 [ext_resource type="Texture2D" uid="uid://cdienlvw5alel" path="res://Assets/Sprites/UI/whiteArrow.png" id="3_bl5mr"]
 [ext_resource type="Texture2D" uid="uid://eod83ktvte4" path="res://Assets/Sprites/UI/blackOutlineArrow.png" id="4_7ajj7"]
+[ext_resource type="PackedScene" uid="uid://bsuve3f4320fo" path="res://Scenes/UI/sliderTemplate.tscn" id="5_bl5mr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trr20"]
 
@@ -186,3 +187,9 @@ theme_override_font_sizes/font_size = 50
 text = "press down to scroll"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="sliderTemplate" parent="." instance=ExtResource("5_bl5mr")]
+offset_left = 589.0
+offset_top = 887.0
+offset_right = 1689.0
+offset_bottom = 927.0

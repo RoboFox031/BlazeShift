@@ -5990,4 +5990,3 @@ scale = Vector2(1.01323, 0.994366)
 curve = SubResource("Curve2D_mrn2o")
 script = ExtResource("14_adp1f")
 run = true
-metadata/_custom_type_script = "uid://c2yn3wll1ek5v"

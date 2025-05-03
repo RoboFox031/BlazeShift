@@ -164,8 +164,8 @@ func _updateReadyScreen():
 	else:
 		$pTwoReadyScreen.visible = false
 	if pOneReady == true and pTwoReady == true:
-		globalVars.nextScene = "res://Scenes/UI/trackSelection.tscn"
-		get_tree().change_scene_to_file("res://Scenes/Tracks/loadingScreen.tscn")
+		globalVars.nextScene = "res://Scenes/Tracks/trackDisplayer.tscn"
+		get_tree().change_scene_to_file("res://Scenes/UI/loadingScreen.tscn")
 	if pOneBack == true:
 		$pOneBackScreen.visible = true
 	else:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3p5vtrb3nrk6"]
 
 [ext_resource type="Texture2D" uid="uid://dhwxw8yrxp306" path="res://Assets/Sprites/Cars/dot2023_1024_1750_25.png" id="1_mok8i"]
-[ext_resource type="Script" uid="uid://b75wdqaqfn1es" path="res://Scripts/UI/loading_screen.gd" id="1_tjrs3"]
+[ext_resource type="Script" path="res://Scripts/UI/loading_screen.gd" id="1_tjrs3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tjrs3"]
 bg_color = Color(0.650128, 0.650128, 0.650128, 1)
@@ -12,6 +12,7 @@ anchors_preset = 0
 script = ExtResource("1_tjrs3")
 
 [node name="colorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)

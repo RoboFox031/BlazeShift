@@ -7,6 +7,9 @@ var playerOneCarSprite = null
 var playerTwoCarSprite = null
 var playerOneColor = "blue"
 var playerTwoColor = "blue"
+var musicType = 'spotifyMusic'
+var musicDB = 50
+var sfxDB = 50
 #Defults to mustang
 var currentCarNames={"p1":"Mustang","p2":"Mustang"}
 var pOnePowerup = 'none'
@@ -18,6 +21,7 @@ var p1BlazeCurrent = 100
 var p2BlazeCurrent = 100
 var pOneDone = false
 var pTwoDone = false
+var playMusic
 #Stores the progress value and the lap value for each player
 var progress={
 	"p1":0,

@@ -25,7 +25,8 @@ func _process(delta: float) -> void:
 		$uiSFX.playSelectSound()
 		await get_tree().create_timer(0.5).timeout 
 		globalVars.track = tracks[selected]
-		get_tree().change_scene_to_file("res://Scenes/Tracks/trackLoader.tscn")
+		globalVars.nextScene = "res://Scenes/Tracks/trackLoader.tscn"
+		get_tree().change_scene_to_file("res://Scenes/UI/loadingScreen.tscn")
 	if Input.is_action_just_pressed("p1_right"):
 		if selected + 1 < len(maps):
 			selected += 1

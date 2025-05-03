@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://csnvj8kdiiior" path="res://Scripts/UI/leaderboard.gd" id="1_trr20"]
 [ext_resource type="Texture2D" uid="uid://cdienlvw5alel" path="res://Assets/Sprites/UI/whiteArrow.png" id="3_bl5mr"]
 [ext_resource type="Texture2D" uid="uid://eod83ktvte4" path="res://Assets/Sprites/UI/blackOutlineArrow.png" id="4_7ajj7"]
-[ext_resource type="PackedScene" uid="uid://bsuve3f4320fo" path="res://Scenes/UI/sliderTemplate.tscn" id="5_bl5mr"]
+[ext_resource type="PackedScene" uid="uid://dy2g1x62lf0vy" path="res://Scenes/UI/sliderTemplate.tscn" id="5_bl5mr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trr20"]
 

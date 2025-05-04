@@ -8,7 +8,7 @@
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="6_bpr6m"]
 [ext_resource type="Texture2D" uid="uid://dcn5bmbutohrv" path="res://Assets/Sprites/UI/upgradeBoxesSpriteSheet.png" id="7_mffm5"]
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="8_h78wn"]
-[ext_resource type="PackedScene" uid="uid://icevwd4ir3d2" path="res://Scenes/UI/uiSFX.tscn" id="9_8a2bt"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/uiSFX.tscn" id="9_8a2bt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r53p5"]
 atlas = ExtResource("7_mffm5")

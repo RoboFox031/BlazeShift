@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_ygrno")
 acceleration = 15.0
-topSpeed = 1100.0
+topSpeed = 1350.0
+turnSpeed = 25.0
+turnPower = 132.0
+deceleration = 15.0
+traction = 90.0
 brakes = 26.0
-turnSpeed = 48.0
-turnPower = 208.0
-deceleration = 12.8
-traction = 96.0
 metadata/_custom_type_script = "uid://cx6j3t45xeg12"

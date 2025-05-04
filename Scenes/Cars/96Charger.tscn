@@ -86,13 +86,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yl1ot"]
-size = Vector2(54, 165)
+size = Vector2(42, 132)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8khqs"]
 size = Vector2(8.99993, 13.9999)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbeql"]
-size = Vector2(165, 52)
+size = Vector2(133, 42)
 
 [node name="96Charger" type="CharacterBody2D"]
 script = ExtResource("1_mm3dk")
@@ -101,13 +101,13 @@ metadata/_custom_type_script = "uid://pdxcl38fqf8b"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_710ok")
-position = Vector2(1, -7.5)
+position = Vector2(1, -6)
 rotation = 3.14159
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_jnx1k")
 animation = &"yellow"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.499996, 7.15256e-07)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_yl1ot")
 debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)
@@ -124,7 +124,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorL"]
-position = Vector2(0, -22)
+position = Vector2(0, -16)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_8khqs")
 
@@ -133,12 +133,11 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorR"]
-position = Vector2(0, 21)
+position = Vector2(0, 15)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_8khqs")
 
 [node name="progressChecker" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 4
 

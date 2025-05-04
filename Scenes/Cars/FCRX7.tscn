@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cl5kbm6rw3gmr" path="res://Assets/Sprites/Cars/FC RX7/FC RX7 Top View Red.png.png" id="8_bfoei"]
 [ext_resource type="Texture2D" uid="uid://cnkbmllctp53q" path="res://Assets/Sprites/Cars/FC RX7/FC RX7 Top View White.png.png" id="9_hqrmv"]
 [ext_resource type="Texture2D" uid="uid://c6kotnhvexpfj" path="res://Assets/Sprites/Cars/FC RX7/FC RX7 Top View Yellow.png.png" id="10_m2tfr"]
-[ext_resource type="Script" uid="uid://d0itn8p060dcc" path="res://Scripts/Cars/terrainDetector.gd" id="11_iqiwo"]
+[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="11_iqiwo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_43wmt"]
 shader = ExtResource("2_57hb0")
@@ -101,23 +101,25 @@ metadata/_custom_type_script = "uid://pdxcl38fqf8b"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_43wmt")
-position = Vector2(5, -11)
+position = Vector2(5, -12)
 rotation = -3.14159
 scale = Vector2(0.63, 0.63)
 sprite_frames = SubResource("SpriteFrames_n5gw5")
 animation = &"white"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5.49999, 1.5)
+position = Vector2(5.49999, 0.5)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_w4tap")
 debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)
 
 [node name="camera2d" type="Camera2D" parent="."]
+position = Vector2(0, -1)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="terrainDetector" type="Node2D" parent="."]
+position = Vector2(0, -1)
 script = ExtResource("11_iqiwo")
 
 [node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]

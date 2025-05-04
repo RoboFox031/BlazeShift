@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ks7e4wgfjt7o" path="res://Assets/Sprites/Cars/Mustang/MustangBlack.png" id="2_a4jnl"]
 [ext_resource type="Resource" uid="uid://bsjbnxh3bx3my" path="res://Resources/carStats/mustangStats.tres" id="2_ikhpy"]
 [ext_resource type="Texture2D" uid="uid://befl2sg56r4h" path="res://Assets/Sprites/Cars/Mustang/MustangBlue.png" id="3_43b8t"]
-[ext_resource type="Script" uid="uid://d0itn8p060dcc" path="res://Scripts/Cars/terrainDetector.gd" id="3_dulba"]
+[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_dulba"]
 [ext_resource type="Shader" uid="uid://b0ijw40aod2u8" path="res://shadersAndMaterials/carShader.gdshader" id="3_e1slv"]
 [ext_resource type="Texture2D" uid="uid://cdtvtbhos3c8b" path="res://Assets/Sprites/Cars/Mustang/MustangGreen.png" id="4_aoyom"]
 [ext_resource type="Texture2D" uid="uid://nc6g74bvbffw" path="res://Assets/Sprites/Cars/Mustang/MustangOrange.png" id="5_aketd"]
@@ -119,13 +119,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y51"]
-size = Vector2(44, 98)
+size = Vector2(50, 113)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
 size = Vector2(8.99993, 13.9999)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qbmm"]
-size = Vector2(99, 44.625)
+size = Vector2(112, 49)
 
 [node name="lemkeCar" type="CharacterBody2D"]
 z_index = 1
@@ -134,23 +134,25 @@ stats = ExtResource("2_ikhpy")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_iquv0")
-position = Vector2(-24, 11)
+position = Vector2(-24, 12)
 rotation = 1.5708
+scale = Vector2(1.15, 1.15)
 sprite_frames = SubResource("SpriteFrames_wu7g6")
 animation = &"yellow"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(3, 0)
+position = Vector2(7.49995, -0.000205994)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_v4y51")
 debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)
 
 [node name="camera2d" type="Camera2D" parent="."]
+position = Vector2(0, 1)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="terrainDetector" type="Node2D" parent="."]
+position = Vector2(0, 1)
 script = ExtResource("3_dulba")
 
 [node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]
@@ -158,7 +160,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorL"]
-position = Vector2(0, -17)
+position = Vector2(0, -21)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_mox8c")
 
@@ -167,17 +169,17 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorR"]
-position = Vector2(0, 17)
+position = Vector2(0, 19)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_mox8c")
 
 [node name="progressChecker" type="Area2D" parent="."]
-visible = false
+position = Vector2(0, 1)
 collision_layer = 0
 collision_mask = 4
 
 [node name="collisionShape2d" type="CollisionShape2D" parent="progressChecker"]
-position = Vector2(3.5, 0.6875)
+position = Vector2(7, -1.5)
 shape = SubResource("RectangleShape2D_2qbmm")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
 

@@ -152,6 +152,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
+	applyStats()
 	#Checks if the player is too far from the track
 	checkTrackDistance()
 	#Changes the color
@@ -198,9 +199,14 @@ func _physics_process(delta):
 		currentTurnForce = move_toward(currentTurnForce, 0,trueBaseTurnSpeed*terrainTurnSpeedMult)
 	
 	#slows you down when you are turning
+	
 	if currentTurnForce!=0:
-		turningSpeedLoss=(currentTopSpeed*.35)*abs(currentTurnForce/(trueCurrentTurnPower*terrainTurnPowerMult))
-		print(turningSpeedLoss)
+		turningSpeedLoss=(currentLinSpeed*.1)*abs(currentTurnForce/(trueCurrentTurnPower*terrainTurnPowerMult))
+		#print(str(currentOwnerStr)+" "+str(turningSpeedLoss))
+	#If you aren't turning, don't lose speed
+	else:
+		turningSpeedLoss=0
+		
 		
 		
 	#Like a car, you can only turn while moving, and going backwards reverses your turn
@@ -212,7 +218,7 @@ func _physics_process(delta):
 		traction=move_toward(traction,baseTraction,4)
 	#Sets the velocity to fwd vector added to the drift vector
 	
-	#fwdVector=Vector2((currentLinSpeed-turningSpeedLoss)*cos(rotation),(currentLinSpeed-turningSpeedLoss)*sin(rotation))
+	#fwdVector=Vector2((currentLinSpeoed-turningSpeedLoss)*cos(rotation),(currentLinSpeed-turningSpeedLoss)*sin(rotation))
 	fwdVector=Vector2((currentLinSpeed)*cos(rotation),(currentLinSpeed)*sin(rotation))
 	driftVector=Vector2(move_toward(driftVector.x,fwdVector.x,traction),move_toward(driftVector.y,fwdVector.y,traction))
 	velocity=(fwdVector+driftVector)/2
@@ -517,9 +523,9 @@ func applyStats():
 	baseTraction=stats.traction
 	
 	#Print the upgraded stats
-	print("accel: "+str(baseAcceleration))
-	print("top speed: "+str(baseTopSpeed))
-	print("handling: "+str(baseAcceleration))
+	#print("accel: "+str(baseAcceleration))
+	#print("top speed: "+str(baseTopSpeed))
+	#print("handling: "+str(baseAcceleration))
 	
 	#Resets movement to apply changes
 	resetMovement()

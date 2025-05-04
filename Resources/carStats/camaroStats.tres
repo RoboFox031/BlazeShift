@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_2eim1")
 acceleration = 18.0
-topSpeed = 1100.0
-brakes = 30.0
-turnSpeed = 64.0
-turnPower = 190.0
+topSpeed = 1300.0
+turnSpeed = 20.0
+turnPower = 140.0
 deceleration = 8.0
-traction = 98.0
+traction = 90.0
+brakes = 30.0
 metadata/_custom_type_script = "uid://cx6j3t45xeg12"

@@ -1,4 +1,13 @@
 extends Node
+
+#Stores how much of each varible is gained per level
+#The max increase of each of these is the amount bellow *5
+const topSpeedPerLevel=30 #Max 150
+const accelPerLevel=3.5 #Max 17.5
+const maxBlazePerLevel=25 #Max 125
+const handlingPerLevel=7 #Max 35
+
+
 #List of upgrades
 var upgrades=[
 	"topSpeed",
@@ -39,12 +48,7 @@ var upgradesCost = {
 		'acceleration':1
 		}
 	}
-#Stores how much of each varible is gained per level
-#The max increase of each of these is the amount bellow *5
-const topSpeedPerLevel=160 #Max 800
-const accelPerLevel=14 #Max 70
-const maxBlazePerLevel=10 #Max 100
-const handlingPerLevel=5 #Max 50
+
 
 
 

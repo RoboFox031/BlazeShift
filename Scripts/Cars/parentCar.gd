@@ -517,9 +517,10 @@ func applyStats():
 	baseAcceleration=stats.acceleration+globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"acceleration")
 	baseTopSpeed=stats.topSpeed+globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"topSpeed")
 	baseBrakes=stats.brakes
-	#Turn speed can't exceed 200
-	baseTurnSpeed=clamp(stats.turnSpeed +(globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"handling")*.2),0,200)
-	baseTurnPower=stats.turnPower +globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"handling")
+	#Turn speed can't exceed 100
+	baseTurnSpeed=clamp(stats.turnSpeed +(globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"handling")*.2),0,100)
+	#Turn power can't exceed 220
+	baseTurnPower=clamp(stats.turnPower +globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"handling"),0,220)
 	baseDecel=stats.deceleration
 	baseTraction=stats.traction
 	

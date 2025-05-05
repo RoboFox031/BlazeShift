@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dogd3hglgokrv" path="res://Assets/Sprites/Cars/NSX/NSXRed.png" id="6_4b5nt"]
 [ext_resource type="Texture2D" uid="uid://ctmr7xx5ch6cs" path="res://Assets/Sprites/Cars/NSX/NSXWhite.png" id="7_lphrb"]
 [ext_resource type="Texture2D" uid="uid://dlnp7itifebmb" path="res://Assets/Sprites/Cars/NSX/NSXYellow.png" id="8_dcu01"]
-[ext_resource type="Script" uid="uid://d0itn8p060dcc" path="res://Scripts/Cars/terrainDetector.gd" id="9_axpak"]
+[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="9_axpak"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a4i0b"]
 shader = ExtResource("3_ij5hg")

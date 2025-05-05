@@ -141,6 +141,7 @@ sprite_frames = SubResource("SpriteFrames_wu7g6")
 animation = &"yellow"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(7.49995, -0.000205994)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_v4y51")
@@ -174,6 +175,7 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_mox8c")
 
 [node name="progressChecker" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, 1)
 collision_layer = 0
 collision_mask = 4
@@ -185,15 +187,17 @@ debug_color = Color(0.991716, 0, 0.261882, 0.42)
 
 [node name="tires" type="Node2D" parent="."]
 visible = false
+z_index = -1
+position = Vector2(13, 0)
 
-[node name="tireL" parent="tires" instance=ExtResource("13_j3mk2")]
-position = Vector2(25, 19)
+[node name="tireR" parent="tires" instance=ExtResource("13_j3mk2")]
+position = Vector2(25, 22)
 rotation = 1.5708
 scale = Vector2(0.25, 0.25)
 frame_progress = 0.247693
 
-[node name="tireR" parent="tires" instance=ExtResource("13_j3mk2")]
-position = Vector2(25, -18)
+[node name="tireL" parent="tires" instance=ExtResource("13_j3mk2")]
+position = Vector2(25, -22)
 rotation = 1.5708
 scale = Vector2(0.25, 0.25)
 

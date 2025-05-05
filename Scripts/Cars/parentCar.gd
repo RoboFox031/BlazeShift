@@ -192,7 +192,7 @@ func _physics_process(delta):
 			turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),-0,currentDrift)
 		print(turnDirection)
 	#If you are clicking a button, turns in that direction based on the acceleration value
-	if turnDirection and currentLinSpeed!=0:
+	if turnDirection:# and currentLinSpeed!=0:
 		currentTurnForce = move_toward(currentTurnForce, trueCurrentTurnPower*turnDirection*terrainTurnPowerMult, trueCurrentTurnSpeed*terrainTurnSpeedMult)
 	#If no button is being clicked, stops turning
 	else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6j1ri7e2eu3q"]
+[gd_scene load_steps=19 format=3 uid="uid://b6j1ri7e2eu3q"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_mm3dk"]
 [ext_resource type="Shader" uid="uid://b0ijw40aod2u8" path="res://shadersAndMaterials/carShader.gdshader" id="2_emdmu"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dne6nffid3101" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerRed.png" id="9_nb7d6"]
 [ext_resource type="Texture2D" uid="uid://doiysamrwtd0x" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerWhite.png" id="10_ej5ic"]
 [ext_resource type="Texture2D" uid="uid://ck4xxg6l0cu26" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerYellow.png" id="11_gfykb"]
+[ext_resource type="PackedScene" uid="uid://bydf7awxku2av" path="res://Scenes/Cars/tire.tscn" id="13_s5wax"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_710ok"]
 shader = ExtResource("2_emdmu")
@@ -144,6 +145,24 @@ collision_mask = 4
 [node name="collisionShape2d" type="CollisionShape2D" parent="progressChecker"]
 shape = SubResource("RectangleShape2D_nbeql")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
+
+[node name="tires" type="Node2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(13, 0)
+
+[node name="tireL" parent="tires" instance=ExtResource("13_s5wax")]
+position = Vector2(25, -18.2)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+frame_progress = 0.247693
+
+[node name="tireR" parent="tires" instance=ExtResource("13_s5wax")]
+position = Vector2(25, 18.2)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+autoplay = "default"
+frame_progress = 0.882887
 
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]

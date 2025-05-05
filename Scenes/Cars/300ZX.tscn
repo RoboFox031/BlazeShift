@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://blsisj56bwqpa"]
+[gd_scene load_steps=17 format=3 uid="uid://blsisj56bwqpa"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_qgdms"]
 [ext_resource type="Resource" uid="uid://bmegibr67mtqr" path="res://Resources/carStats/300ZXStats.tres" id="2_5qdwp"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dcvfow1t081ty" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32White.png.png" id="8_oe5e7"]
 [ext_resource type="Texture2D" uid="uid://cnh5ouj3j3bmy" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Yellow.png.png" id="9_mmeq6"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="10_5ib7d"]
+[ext_resource type="PackedScene" uid="uid://bydf7awxku2av" path="res://Scenes/Cars/tire.tscn" id="12_5qdwp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_da6k4"]
 animations = [{
@@ -143,6 +144,22 @@ collision_mask = 4
 position = Vector2(1.5, 2)
 shape = SubResource("RectangleShape2D_nsabg")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
+
+[node name="tires" type="Node2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(13, 0)
+
+[node name="tireR" parent="tires" instance=ExtResource("12_5qdwp")]
+position = Vector2(21, 23.5)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+frame_progress = 0.247693
+
+[node name="tireL" parent="tires" instance=ExtResource("12_5qdwp")]
+position = Vector2(21, -23.9)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
 
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]

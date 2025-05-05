@@ -16,4 +16,4 @@ func _physics_process(delta: float) -> void:
 	#rotation_degrees=startingRot+playerOwner.turnDirection
 	#rotation_degrees=move_toward(rotation_degrees,startingRot+(maxTurn*playerOwner.turnDirection),1)
 	rotation_degrees=startingRot+(5*playerOwner.currentTurnForce)
-	print(rotation_degrees)
+	#print(rotation_degrees)

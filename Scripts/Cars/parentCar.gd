@@ -471,14 +471,14 @@ func leavePosition(area:Area2D):
 
 #This function respawns the car at the last legal location
 func respawn():
-	#Resets the player's speed
-	currentLinSpeed=0
-	resetMovement()
-	#Teleports the player
-	global_position=progressPoint
-	global_rotation=progressRot
-	#resets reverse count
-	reverseCount=0
+	##Resets the player's speed
+	#currentLinSpeed=0
+	#resetMovement()
+	##Teleports the player
+	#global_position=progressPoint
+	#global_rotation=progressRot
+	##resets reverse count
+	#reverseCount=0
 	pass
 
 #Makes the player be on the next lap
@@ -517,8 +517,9 @@ func applyStats():
 	baseAcceleration=stats.acceleration+globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"acceleration")
 	baseTopSpeed=stats.topSpeed+globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"topSpeed")
 	baseBrakes=stats.brakes
-	baseTurnSpeed=stats.turnSpeed
-	baseTurnPower=stats.turnPower
+	#Turn speed can't exceed 200
+	baseTurnSpeed=clamp(stats.turnSpeed +(globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"handling")*.2),0,200)
+	baseTurnPower=stats.turnPower +globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"handling")
 	baseDecel=stats.deceleration
 	baseTraction=stats.traction
 	

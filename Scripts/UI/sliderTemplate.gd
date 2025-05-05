@@ -2,14 +2,15 @@ extends ProgressBar
 class_name sliderTemplate
 @onready var tick = $tick
 
+var selected: bool = false
+
 func _ready():
 	tick.position.x = value*10.84
 
 func _input(event):
-	if Input.is_action_just_pressed('p1_left') or Input.is_action_just_pressed('p2_left'):
+	if (Input.is_action_just_pressed('p1_left') or Input.is_action_just_pressed('p2_left')) and selected == true:
 		value -= 10
-		print(value)
 		tick.position.x = value*10.84
-	elif Input.is_action_just_pressed('p1_right') or Input.is_action_just_pressed('p2_right'):
+	elif (Input.is_action_just_pressed('p1_right') or Input.is_action_just_pressed('p2_right')) and selected == true:
 		value += 10
 		tick.position.x = value*10.84

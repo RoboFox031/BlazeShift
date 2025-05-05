@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://Assets/Sprites/Tracks/192 racetrack Divided.svg" id="1_vep5x"]
 [ext_resource type="Texture2D" uid="uid://bwb2oalo6c030" path="res://Assets/Sprites/Tracks/spritesheet.png" id="2_rqd63"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="5_m4j1f"]
-[ext_resource type="TileSet" uid="uid://bfcsj0gjkntbq" path="res://Scenes/Tracks/trees.tres" id="6_5bqh8"]
+[ext_resource type="TileSet" uid="uid://box1dqqlxurje" path="res://Scenes/Tracks/trees.tres" id="6_5bqh8"]
 [ext_resource type="Texture2D" uid="uid://brf21x30oasly" path="res://Assets/Sprites/Tracks/christmas-village-asset-pack/house2.png" id="6_aawjx"]
 [ext_resource type="Texture2D" uid="uid://dwiyha8k28rle" path="res://Assets/Sprites/Tracks/update v3 192 racetrack.png" id="6_tqusy"]
 [ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://Scripts/Tracks/terrain.gd" id="7_i2deg"]

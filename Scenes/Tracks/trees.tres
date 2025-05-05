@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://bfcsj0gjkntbq"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://box1dqqlxurje"]
 
 [ext_resource type="Texture2D" uid="uid://bwb2oalo6c030" path="res://Assets/Sprites/Tracks/spritesheet.png" id="1_20y77"]
 [ext_resource type="Texture2D" uid="uid://brf21x30oasly" path="res://Assets/Sprites/Tracks/christmas-village-asset-pack/house2.png" id="2_as814"]

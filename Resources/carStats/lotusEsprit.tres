@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_oy1bj")
 acceleration = 24.0
-topSpeed = 1480.0
+topSpeed = 1450.0
 turnSpeed = 30.0
-turnPower = 152.0
+turnPower = 149.0
 deceleration = 8.0
 traction = 100.0
 brakes = 30.0

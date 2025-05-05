@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ks7e4wgfjt7o" path="res://Assets/Sprites/Cars/Mustang/MustangBlack.png" id="2_a4jnl"]
 [ext_resource type="Resource" uid="uid://bsjbnxh3bx3my" path="res://Resources/carStats/mustangStats.tres" id="2_ikhpy"]
 [ext_resource type="Texture2D" uid="uid://befl2sg56r4h" path="res://Assets/Sprites/Cars/Mustang/MustangBlue.png" id="3_43b8t"]
-[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_dulba"]
+[ext_resource type="Script" uid="uid://d0itn8p060dcc" path="res://Scripts/Cars/terrainDetector.gd" id="3_dulba"]
 [ext_resource type="Shader" uid="uid://b0ijw40aod2u8" path="res://shadersAndMaterials/carShader.gdshader" id="3_e1slv"]
 [ext_resource type="Texture2D" uid="uid://cdtvtbhos3c8b" path="res://Assets/Sprites/Cars/Mustang/MustangGreen.png" id="4_aoyom"]
 [ext_resource type="Texture2D" uid="uid://nc6g74bvbffw" path="res://Assets/Sprites/Cars/Mustang/MustangOrange.png" id="5_aketd"]

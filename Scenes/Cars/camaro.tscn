@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dvubdxkc2h7xb" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Red-1.png.png" id="8_wttb3"]
 [ext_resource type="Texture2D" uid="uid://bapji1uvoibvh" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS White-1.png.png" id="9_cfmtj"]
 [ext_resource type="Texture2D" uid="uid://b57a22jewcty" path="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Yellow-1.png.png" id="10_ljed4"]
-[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="11_okloq"]
+[ext_resource type="Script" uid="uid://d0itn8p060dcc" path="res://Scripts/Cars/terrainDetector.gd" id="11_okloq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dhb33"]
 animations = [{

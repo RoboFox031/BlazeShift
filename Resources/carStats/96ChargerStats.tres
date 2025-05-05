@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ygrno")
 acceleration = 15.0
-topSpeed = 1350.0
+topSpeed = 1300.0
 turnSpeed = 25.0
 turnPower = 132.0
 deceleration = 15.0

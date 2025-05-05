@@ -152,7 +152,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
-	applyStats()
+	#applyStats()
 	#Checks if the player is too far from the track
 	checkTrackDistance()
 	#Changes the color

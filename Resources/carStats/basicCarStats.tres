@@ -6,9 +6,9 @@
 script = ExtResource("1_3rymv")
 acceleration = 15.0
 topSpeed = 1000.0
-brakes = 30.0
 turnSpeed = 40.0
 turnPower = 180.0
 deceleration = 8.0
 traction = 100.0
+brakes = 30.0
 metadata/_custom_type_script = "uid://cx6j3t45xeg12"

@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cl5kbm6rw3gmr" path="res://Assets/Sprites/Cars/FC RX7/FC RX7 Top View Red.png.png" id="8_bfoei"]
 [ext_resource type="Texture2D" uid="uid://cnkbmllctp53q" path="res://Assets/Sprites/Cars/FC RX7/FC RX7 Top View White.png.png" id="9_hqrmv"]
 [ext_resource type="Texture2D" uid="uid://c6kotnhvexpfj" path="res://Assets/Sprites/Cars/FC RX7/FC RX7 Top View Yellow.png.png" id="10_m2tfr"]
-[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="11_iqiwo"]
+[ext_resource type="Script" uid="uid://d0itn8p060dcc" path="res://Scripts/Cars/terrainDetector.gd" id="11_iqiwo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_43wmt"]
 shader = ExtResource("2_57hb0")

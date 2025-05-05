@@ -101,7 +101,7 @@ var isDrifting:bool=false
 var driftVector:Vector2
 
 func _ready() -> void:
-	z_index = 3
+	z_index = 6
 
 
 func _physics_process(delta):

@@ -1,6 +1,6 @@
 extends Node
 
-var track = preload("res://Scenes/Tracks/iceTrack.tscn")
+var track = preload("res://Scenes/Tracks/volcanoTrack.tscn")
 var playerOneCar = preload("res://Scenes/Cars/lemkeCar.tscn")
 var playerTwoCar = preload("res://Scenes/Cars/lemkeCar.tscn")
 var playerOneCarSprite = null

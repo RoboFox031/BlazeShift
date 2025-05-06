@@ -163,6 +163,7 @@ func _updateReadyScreen():
 		$pTwoReadyScreen.visible = true
 	else:
 		$pTwoReadyScreen.visible = false
+	#if both players ready move onto the next screen
 	if pOneReady == true and pTwoReady == true:
 		get_tree().change_scene_to_file("res://Scenes/UI/trackSelection.tscn")
 	if pOneBack == true:

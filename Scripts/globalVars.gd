@@ -69,6 +69,8 @@ var organizedScores := {}
 
 #func saveScores(trackName, playerName, time):
 
+var mapsPlayed = ['basic']
+var nextMapSelector = 1
 
 func saveScores(trackName,playerName,time):
 	var timeScore = ConfigFile.new()

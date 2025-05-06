@@ -55,7 +55,6 @@
 [ext_resource type="Texture2D" uid="uid://cfilf58ps6uif" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Black-1.png (1).png" id="33_wjn4u"]
 [ext_resource type="Texture2D" uid="uid://tejkgrt3nxrd" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Blue-1.png.png" id="34_i10kn"]
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="35_igcgd"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/uiSFX.tscn" id="37_iod5g"]
 [ext_resource type="Texture2D" uid="uid://bllvbf8rfsljc" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Green-1.png.png" id="35_q2fg0"]
 [ext_resource type="Texture2D" uid="uid://c3f28alyl07oe" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Orange-1.png (1).png" id="36_vnvai"]
 [ext_resource type="PackedScene" uid="uid://bmtbwlc4rj8uy" path="res://Scenes/UI/uiSFX.tscn" id="37_iod5g"]
@@ -1267,9 +1266,9 @@ position = Vector2(968, 0)
 
 [node name="pOneOwnedLabel" type="Label" parent="."]
 offset_left = 362.0
-offset_top = 314.0
+offset_top = 284.0
 offset_right = 587.0
-offset_bottom = 415.0
+offset_bottom = 385.0
 theme_override_colors/font_color = Color(0, 0.545098, 0, 1)
 theme_override_fonts/font = ExtResource("26_ia2r8")
 theme_override_font_sizes/font_size = 100
@@ -1277,9 +1276,9 @@ text = "owned"
 
 [node name="pTwoOwnedLabel" type="Label" parent="."]
 offset_left = 1330.0
-offset_top = 314.0
+offset_top = 284.0
 offset_right = 1555.0
-offset_bottom = 415.0
+offset_bottom = 385.0
 theme_override_colors/font_color = Color(0, 0.545098, 0, 1)
 theme_override_fonts/font = ExtResource("26_ia2r8")
 theme_override_font_sizes/font_size = 100
@@ -1401,9 +1400,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 324.0
-offset_top = 229.0
+offset_top = 200.0
 offset_right = 622.0
-offset_bottom = 331.0
+offset_bottom = 302.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(149, 51)
@@ -1421,9 +1420,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 1291.0
-offset_top = 226.0
+offset_top = 197.0
 offset_right = 1589.0
-offset_bottom = 328.0
+offset_bottom = 299.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(149, 51)
@@ -1844,5 +1843,28 @@ animation = &"white"
 autoplay = "blue"
 
 [node name="uiSFX" parent="." instance=ExtResource("37_iod5g")]
+
+[node name="pOneTierLabel" type="Label" parent="."]
+offset_left = 327.0
+offset_top = 371.0
+offset_right = 609.0
+offset_bottom = 442.0
+theme_override_colors/font_color = Color(1.11182e-05, 0.798343, 1.54018e-06, 1)
+theme_override_fonts/font = ExtResource("26_ia2r8")
+theme_override_font_sizes/font_size = 70
+text = "tier"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pTwoTierLabel" type="Label" parent="."]
+offset_left = 1390.0
+offset_top = 371.0
+offset_right = 1486.0
+offset_bottom = 442.0
+theme_override_fonts/font = ExtResource("26_ia2r8")
+theme_override_font_sizes/font_size = 70
+text = "tier"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

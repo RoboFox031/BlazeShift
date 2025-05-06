@@ -3,6 +3,53 @@ class_name shop
 
 ####order in the shop for the cars goes as follows Mustang, NSX, S13, CRX,FC RX7, 69 Charger, Lancia 037, Lotus Esprit, RUF CTR, 300ZX, Camaro
 
+var carTiers = {
+	'mustang': {
+		"tier": 'good',
+		"color": '00cc00'
+	},
+	'nsx': {
+		"tier": 'elite',
+		"color": 'ffe50d'
+	},
+	's13': {
+		"tier": 'mid',
+		"color": 'ff0000'
+	},
+	'crx': {
+		"tier": 'mid',
+		"color": 'ff0000'
+	},
+	'fc rx7': {
+		"tier": 'mid',
+		"color": 'ff0000'
+	},
+	'69 charger': {
+		"tier": 'good',
+		"color": '00cc00'
+	},
+	'lancia 037': {
+		"tier": 'elite',
+		"color": 'ffe50d'
+	},
+	'lotus esprit': {
+		"tier": 'god',
+		"color": 'd70dff'
+	},
+	'ruf ctr': {
+		"tier": 'god',
+		"color": 'd70dff'
+	},
+	'300zx': {
+		"tier": 'good',
+		"color": '00cc00'
+	},
+	'camaro': {
+		"tier": 'elite',
+		"color": 'ffe50d'
+	}
+}
+
 var pOneReady = false
 var pTwoReady = false
 
@@ -115,8 +162,8 @@ func _ready() -> void:
 		pOneCarsFinal.append(car)
 	for car in $pTwoCarsFinal.get_children():
 		pTwoCarsFinal.append(car)
-	pOneOwned = [pOneCars[0],pOneCars[1]]
-	pTwoOwned = [pTwoCars[0],pTwoCars[1]]
+	pOneOwned = [pOneCars[2],pOneCars[3],pOneCars[4]]
+	pTwoOwned = [pTwoCars[2],pTwoCars[3],pTwoCars[4]]
 	
 	_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 	_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
@@ -321,6 +368,7 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 		pTwoOwnedLabel.position.x = 1245
 		pTwoOwnedLabel.add_theme_color_override("font_color", Color("9f0000"))
 		$locks/pTwoLockFinal.visible = true
+	_updateTierDisplays()
 
 #function to allow the player to buy a car######this might be broken helpppp
 func _buyCar(player):
@@ -389,3 +437,9 @@ func _updateBuyButtonLabels():
 
 func _on_timer_timeout() -> void:
 	_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
+
+func _updateTierDisplays():
+	$pOneTierLabel.text = carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['tier']
+	$pTwoTierLabel.text = carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['tier']
+	$pOneTierLabel.add_theme_color_override("font_color", Color(carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['color']))
+	$pTwoTierLabel.add_theme_color_override("font_color", Color(carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['color']))

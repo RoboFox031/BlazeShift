@@ -514,8 +514,11 @@ test={
 
 [layer_names]
 
+2d_physics/layer_1="objects"
 2d_physics/layer_2="terrain"
 2d_physics/layer_3="checkpoints"
+2d_physics/layer_4="cars"
+2d_physics/layer_10="Layer Detectors"
 
 [rendering]
 

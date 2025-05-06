@@ -1,7 +1,7 @@
 extends UI
 class_name shop
 
-####order in the shop for the cars goes as follows Mustang, NSX, S13, CRX
+####order in the shop for the cars goes as follows Mustang, NSX, S13, CRX,FC RX7, 69 Charger, Lancia 037, Lotus Esprit, RUF CTR, 300ZX, Camaro
 
 var pOneReady = false
 var pTwoReady = false
@@ -51,8 +51,8 @@ var pTwoOwned: Array
 
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 
-var carStringNames: Array = ['Mustang/Mustang','NSX/NSX','S13/S13',"CRX/CRX"]
-var carNames: Array = ['Mustang', "NSX", "S13","CRX"]
+var carStringNames: Array = ['Mustang/Mustang','NSX/NSX','S13/S13',"CRX/CRX","FC RX7/FC RX7","69 Charger/69 Charger","Lancia 037/Lancia 037","Lotus Esprit/Lotus Esprit","RUF CTR/RUF CTR","300ZX/300ZX","Camaro/Camaro"]
+var carNames: Array = ['Mustang', "NSX", "S13","CRX","FC RX7","69 Charger","Lancia 037","Lotus Esprit","RUF CTR","300ZX","Camaro"]
 
 var cars := {
 	"Mustang": {
@@ -70,11 +70,39 @@ var cars := {
 	"CRX": {
 		carScene = preload("res://Scenes/Cars/CRX.tscn"),
 		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-
-	}
+	},
+	"FC RX7": {
+		carScene = preload("res://Scenes/Cars/FCRX7.tscn"),
+		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"69 Charger": {
+		carScene = preload("res://Scenes/Cars/96Charger.tscn"),
+		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"Lancia 037": {
+		carScene = preload("res://Scenes/Cars/lancia037.tscn"),
+		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"Lotus Esprit": {
+		carScene = preload("res://Scenes/Cars/lotusEsprit.tscn"),
+		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"RUF CTR": {
+		carScene = preload("res://Scenes/Cars/rufCTR.tscn"),
+		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"300ZX": {
+		carScene = preload("res://Scenes/Cars/300ZX.tscn"),
+		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"Camaro": {
+		carScene = preload("res://Scenes/Cars/camaro.tscn"),
+		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	
 }
 
-var carCosts: Array = [0,0,1,2] #the position in the array relates to the car
+var carCosts: Array = [0,0,1,2,1,1,1,1,1,1,1] #the position in the array relates to the car
 
 func _ready() -> void:
 	pOneColors = [pOneWhite, pOneBlack, pOneRed, pOneOrange, pOneYellow, pOneGreen, pOneBlue, pOnePurple]

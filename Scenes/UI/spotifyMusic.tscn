@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d05oihsshblo7"]
+[gd_scene load_steps=6 format=3 uid="uid://d05oihsshblo7"]
 
 [ext_resource type="AudioStream" uid="uid://7uowwytxe3qv" path="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Hot Saturn - Sungazer.mp3" id="1_e5ka5"]
 [ext_resource type="AudioStream" uid="uid://dqxone87maspu" path="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Cool 7 - Sungazer.mp3" id="2_ke7ur"]
 [ext_resource type="AudioStream" uid="uid://bshvofaad75od" path="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Electric Sunrise - Plini.mp3" id="3_5117x"]
 [ext_resource type="AudioStream" uid="uid://ctj7iyf1nkt4t" path="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Away - Plini.mp3" id="4_ydh4t"]
+[ext_resource type="AudioStream" uid="uid://d4iwnhhm1f6yw" path="res://Assets/Sounds/Music/Royalty/Tokyo Drift.mp3" id="5_ke7ur"]
 
 [node name="spotifyMusic" type="Node2D"]
 
@@ -21,4 +22,9 @@ bus = &"music"
 
 [node name="volcanoTrack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_ydh4t")
+bus = &"music"
+
+[node name="cityTrack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ke7ur")
+volume_db = 21.65
 bus = &"music"

@@ -2988,7 +2988,6 @@ texture = ExtResource("4_ikrvl")
 sources/0 = SubResource("TileSetAtlasSource_s70l0")
 
 [node name="basicTrack" type="Node2D"]
-position = Vector2(-28, -27)
 script = ExtResource("1_ifg0j")
 
 [node name="Grass" type="TileMapLayer" parent="."]

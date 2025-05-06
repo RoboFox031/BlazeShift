@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1a1hg3wj7wg"]
+[gd_scene load_steps=9 format=3 uid="uid://b1a1hg3wj7wg"]
 
 [ext_resource type="Script" uid="uid://bfs6y3o88ea24" path="res://Scripts/UI/trackSelection.gd" id="1_orx78"]
 [ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="2_cmn5v"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="3_x4n2t"]
 [ext_resource type="Texture2D" uid="uid://d23f07gjc1b01" path="res://Assets/Sprites/UI/ruralMapBackground.png" id="4_s22wx"]
 [ext_resource type="Texture2D" uid="uid://071ov745k868" path="res://Assets/Sprites/UI/basicTrackBackground.png" id="5_nbqvf"]
-[ext_resource type="Texture2D" uid="uid://d32c1cq2y216v" path="res://Assets/Sprites/UI/lock.png" id="5_spuve"]
 [ext_resource type="Texture2D" uid="uid://babwu1hxlb0qj" path="res://Assets/Sprites/UI/iceTrackBackground.png" id="6_g3ra5"]
 [ext_resource type="PackedScene" uid="uid://bmtbwlc4rj8uy" path="res://Scenes/UI/uiSFX.tscn" id="7_sw51p"]
 [ext_resource type="Texture2D" uid="uid://d31sy2thgde5u" path="res://Assets/Sprites/UI/volvanoMapBackground.png" id="7_y4fag"]
@@ -50,11 +49,6 @@ offset_right = 1064.0
 offset_bottom = 803.0
 scale = Vector2(0.537, 0.537)
 
-[node name="lock" type="Sprite2D" parent="mapOne"]
-position = Vector2(-6, -16)
-scale = Vector2(2, 2)
-texture = ExtResource("5_spuve")
-
 [node name="mapTwo" type="Sprite2D" parent="."]
 position = Vector2(978, 510)
 scale = Vector2(0.5, 0.5)
@@ -68,11 +62,6 @@ offset_top = -295.0
 offset_right = 1064.0
 offset_bottom = 803.0
 scale = Vector2(0.537, 0.537)
-
-[node name="lock" type="Sprite2D" parent="mapTwo"]
-position = Vector2(-6, -16)
-scale = Vector2(2, 2)
-texture = ExtResource("5_spuve")
 
 [node name="mapThree" type="Sprite2D" parent="."]
 position = Vector2(1475, 510)
@@ -88,11 +77,6 @@ offset_right = 1064.0
 offset_bottom = 803.0
 scale = Vector2(0.537, 0.537)
 
-[node name="lock" type="Sprite2D" parent="mapThree"]
-position = Vector2(-6, -16)
-scale = Vector2(2, 2)
-texture = ExtResource("5_spuve")
-
 [node name="mapFour" type="Sprite2D" parent="."]
 position = Vector2(705, 811)
 scale = Vector2(0.5, 0.604444)
@@ -105,11 +89,6 @@ offset_top = -247.0
 offset_right = 396.0
 offset_bottom = 250.0
 color = Color(0, 0, 0, 1)
-
-[node name="lock" type="Sprite2D" parent="mapFour"]
-position = Vector2(-6, -16)
-scale = Vector2(2, 2)
-texture = ExtResource("5_spuve")
 
 [node name="mapFive" type="ColorRect" parent="."]
 offset_left = 1048.0
@@ -127,10 +106,6 @@ offset_top = 27.9999
 offset_right = 1586.0
 offset_bottom = 1126.0
 scale = Vector2(0.2, 0.2)
-
-[node name="lock" type="Sprite2D" parent="mapFive"]
-position = Vector2(197, 126)
-texture = ExtResource("5_spuve")
 
 [node name="trackSelectionLabel" type="Label" parent="."]
 offset_left = 551.0

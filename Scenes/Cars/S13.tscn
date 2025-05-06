@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dnoj3j4pbv0xf"]
+[gd_scene load_steps=26 format=3 uid="uid://dnoj3j4pbv0xf"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_krq1h"]
 [ext_resource type="Texture2D" uid="uid://cxho7kl4koftr" path="res://Assets/Sprites/Cars/S13/S13Black.png" id="2_e0f06"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bo4u4cxkwef4t" path="res://Assets/Sprites/Cars/S13/S13Red.png" id="7_l5x1q"]
 [ext_resource type="Texture2D" uid="uid://3a1wuvq3kodg" path="res://Assets/Sprites/Cars/S13/S13White.png" id="8_lrxqk"]
 [ext_resource type="Texture2D" uid="uid://07sdktfft6a8" path="res://Assets/Sprites/Cars/S13/S13Yellow.png" id="9_n8slv"]
-[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="9_pyvhv"]
+[ext_resource type="Script" uid="uid://d0itn8p060dcc" path="res://Scripts/Cars/terrainDetector.gd" id="9_pyvhv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sb6u4"]
 shader = ExtResource("3_c87eh")

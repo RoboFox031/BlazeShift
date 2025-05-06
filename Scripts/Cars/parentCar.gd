@@ -219,6 +219,7 @@ func usePowerup():
 			var instance = fireball.instantiate()
 			instance.spawnPosition = global_position
 			instance.direction = rotation 
+			instance.ignore = self
 			get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 			if currentOwner == playerChoices.p1:
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
@@ -227,8 +228,10 @@ func usePowerup():
 			var instance = roadSpikes.instantiate()
 			instance.spawnPosition = global_position
 			instance.direction = rotation
+			instance.ignore = self
 			get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
-			get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p1')
+			if currentOwner == playerChoices.p1:
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
 	if globalVars.pTwoPowerup != 'none':
 		if globalVars.pTwoPowerup == "blazePickup":
 			globalVars.pTwoPowerup = 'none'
@@ -241,15 +244,17 @@ func usePowerup():
 			globalVars.pTwoPowerup = 'none'
 			var instance = fireball.instantiate()
 			instance.spawnPosition = global_position
-			instance.direction = rotation 
+			instance.direction = rotation
+			instance.ignore = self
 			get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 			if currentOwner == playerChoices.p2:
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p2')
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
 		if globalVars.pTwoPowerup == 'roadSpikesPickup':
 			globalVars.pTwoPowerup = 'none'
 			var instance = roadSpikes.instantiate()
 			instance.spawnPosition = global_position
 			instance.direction = rotation
+			instance.ignore = self
 			get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 			if currentOwner == playerChoices.p2:
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')

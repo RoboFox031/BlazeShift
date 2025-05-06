@@ -75,6 +75,10 @@ func _updateReady():
 	if pOneReady == true and pTwoReady == true:
 		if (globalVars.pOneTotalWins + globalVars.pTwoTotalWins) >= 5:
 			get_tree().change_scene_to_file('res://Scenes/UI/titleScreen.tscn')
+			if globalVars.pOneLastRacePlacement == '1st':
+				globalVars.nextRaceSelector = 1
+			else:
+				globalVars.nextRaceSelector = 2
 			globalVars.gameReset()
 		else:
 			get_tree().change_scene_to_file('res://Scenes/UI/shop.tscn')

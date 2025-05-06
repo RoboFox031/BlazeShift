@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://duambc5sqs45o"]
+
+[ext_resource type="Script" uid="uid://r3s00d74whq5" path="res://Scripts/UI/wrongWayIndicator.gd" id="1_a78tw"]
+[ext_resource type="FontFile" uid="uid://b8eclx05wa18f" path="res://Assets/Fonts/college/colleges.ttf" id="2_plwo2"]
+
+[sub_resource type="Animation" id="Animation_6bol8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7jlxx"]
+resource_name = "flash"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.8, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghgp6"]
+_data = {
+&"RESET": SubResource("Animation_6bol8"),
+&"flash": SubResource("Animation_7jlxx")
+}
+
+[node name="wrongWayIndicator" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -960.0
+offset_bottom = -540.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(232, 50.5)
+script = ExtResource("1_a78tw")
+
+[node name="label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 464.0
+offset_bottom = 101.0
+pivot_offset = Vector2(232, 50.5)
+theme_override_colors/font_color = Color(0.854902, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_plwo2")
+theme_override_font_sizes/font_size = 100
+text = "Wrong Way"
+
+[node name="animationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ghgp6")
+}
+autoplay = "RESET"

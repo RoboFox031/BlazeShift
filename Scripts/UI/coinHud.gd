@@ -9,6 +9,9 @@ var player
 func _ready() -> void:
 	update()
 
+func _process(delta):
+	update()
+
 func update():
 	if player == 1:
 		if coins == 1:

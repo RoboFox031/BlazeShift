@@ -1,7 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://dnoj3j4pbv0xf"]
+[gd_scene load_steps=25 format=3 uid="uid://dnoj3j4pbv0xf"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_krq1h"]
 [ext_resource type="Texture2D" uid="uid://cxho7kl4koftr" path="res://Assets/Sprites/Cars/S13/S13Black.png" id="2_e0f06"]
+[ext_resource type="Resource" uid="uid://nogcafh0k4qb" path="res://Resources/carStats/basicCarStats.tres" id="2_f8427"]
+[ext_resource type="Shader" uid="uid://b0ijw40aod2u8" path="res://shadersAndMaterials/carShader.gdshader" id="3_c87eh"]
 [ext_resource type="Texture2D" uid="uid://d35u4aqrdst2f" path="res://Assets/Sprites/Cars/S13/S13Blue.png" id="3_ofhaw"]
 [ext_resource type="Texture2D" uid="uid://coe4cu607er63" path="res://Assets/Sprites/Cars/S13/s13Green.png" id="4_piebd"]
 [ext_resource type="Texture2D" uid="uid://bgwv5r2nvt8mj" path="res://Assets/Sprites/Cars/S13/S13Orange.png" id="5_dxsxu"]
@@ -10,6 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://3a1wuvq3kodg" path="res://Assets/Sprites/Cars/S13/S13White.png" id="8_lrxqk"]
 [ext_resource type="Texture2D" uid="uid://07sdktfft6a8" path="res://Assets/Sprites/Cars/S13/S13Yellow.png" id="9_n8slv"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="9_pyvhv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sb6u4"]
+shader = ExtResource("3_c87eh")
+shader_parameter/replaceColor = Color(0.917647, 1, 0.00392157, 1)
+shader_parameter/newColor = Color(1, 0.343394, 0.390133, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2lkgh"]
 atlas = ExtResource("2_e0f06")
@@ -111,16 +118,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y51"]
-size = Vector2(44, 98)
+size = Vector2(50, 109)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
 size = Vector2(8.99993, 13.9999)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tr4uc"]
+size = Vector2(109.5, 50)
+
 [node name="S13" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_krq1h")
+stats = ExtResource("2_f8427")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_sb6u4")
 position = Vector2(3, -11)
 rotation = -3.14159
 scale = Vector2(0.895, 0.895)
@@ -129,6 +141,7 @@ animation = &"yellow"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
+position = Vector2(5.5, -2.02656e-06)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_v4y51")
 debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)
@@ -158,8 +171,18 @@ position = Vector2(0, 17)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_mox8c")
 
+[node name="progressChecker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="progressChecker"]
+position = Vector2(5.25, 0)
+shape = SubResource("RectangleShape2D_tr4uc")
+debug_color = Color(0.991716, 0, 0.261882, 0.42)
+
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]
 [connection signal="area_exited" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_exited"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
 [connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]
+[connection signal="area_entered" from="progressChecker" to="." method="updatePosition"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://3o4xe5gkyt04"]
+[gd_scene load_steps=22 format=4 uid="uid://dyf87mpu2bksc"]
 
 [ext_resource type="Script" uid="uid://clrhe6giqrbwi" path="res://Scripts/Tracks/ruralTrack.gd" id="1_4l54d"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="1_a08p6"]
@@ -9,7 +9,7 @@
 [ext_resource type="TileSet" uid="uid://dqdcbt7l7acll" path="res://Scenes/Tracks/track.tres" id="9_0u2nk"]
 [ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://Assets/Sprites/Tracks/ruralMapTiles/sandwater.png" id="10_h0h4c"]
 [ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://Assets/Sprites/Tracks/ruralMapTiles/sand.png" id="11_te1ji"]
-[ext_resource type="PackedScene" uid="uid://ba81k30logwad" path="res://Scenes/Cars/lemkeCar.tscn" id="15_mrn2o"]
+[ext_resource type="PackedScene" path="res://Scenes/Cars/lemkeCar.tscn" id="15_mrn2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f8xj"]
 texture = ExtResource("1_a08p6")

@@ -30,6 +30,7 @@ var pOneDownArrows = []
 var pTwoDownArrows = []
 
 func _ready() -> void:
+	globalVars.musicType = 'royaltyMusic'
 	for a in $nameSelection/pOneNameSelection.get_children():
 		pOneLabels.append(a)
 		_updateCharacterDisplays()

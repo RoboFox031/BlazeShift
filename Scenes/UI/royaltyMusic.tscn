@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd4tg6xllfeij"]
+
+[ext_resource type="AudioStream" uid="uid://7lnr23nws6xb" path="res://Assets/Sounds/Music/Royalty/Ace - Verdant Green Swans.mp3" id="1_nevde"]
+[ext_resource type="AudioStream" uid="uid://bxv3k6hhf4rhe" path="res://Assets/Sounds/Music/Royalty/Ofer Koren - Lap Time Run.mp3" id="2_povtx"]
+[ext_resource type="AudioStream" uid="uid://cen2yy2dvid6" path="res://Assets/Sounds/Music/Royalty/idokay - We Wish You a Merry Christmas.mp3" id="3_b36in"]
+[ext_resource type="AudioStream" uid="uid://cfmovcmbdtdc5" path="res://Assets/Sounds/Music/Royalty/Flint - Its All the Same - Instrumental Version.mp3" id="4_otvvu"]
+[ext_resource type="AudioStream" uid="uid://d4iwnhhm1f6yw" path="res://Assets/Sounds/Music/Royalty/Tokyo Drift.mp3" id="5_povtx"]
+
+[node name="royaltyMusic" type="Node2D"]
+
+[node name="basicTrack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_nevde")
+bus = &"music"
+
+[node name="ruralTrack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_povtx")
+bus = &"music"
+
+[node name="iceTrack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_b36in")
+bus = &"music"
+
+[node name="volcanoTrack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_otvvu")
+bus = &"music"
+
+[node name="cityTrack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_povtx")
+volume_db = 21.79
+bus = &"music"

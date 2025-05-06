@@ -1,22 +1,27 @@
 extends Node
 
-var track = preload("res://Scenes/Tracks/basicTrack.tscn")
+var track = preload("res://Scenes/Tracks/cityTrack.tscn")
 var playerOneCar = preload("res://Scenes/Cars/Mustang.tscn")
 var playerTwoCar = preload("res://Scenes/Cars/Mustang.tscn")
 var playerOneCarSprite = null
 var playerTwoCarSprite = null
 var playerOneColor = "blue"
 var playerTwoColor = "blue"
+var musicType = 'spotifyMusic'
+var musicDB = 50
+var sfxDB = 50
 #Defults to mustang
 var currentCarNames={"p1":"Mustang","p2":"Mustang"}
 var pOnePowerup = 'none'
 var pTwoPowerup = 'none'
-var pOneCoins = 2
-var pTwoCoins = 3
+var pOneCoins = 0
+var pTwoCoins = 0
 const NSX = preload("res://Scenes/Cars/NSX.tscn")
 var p1BlazeCurrent = 100
 var p2BlazeCurrent = 100
-
+var pOneDone = false
+var pTwoDone = false
+var playMusic
 #Stores the progress value and the lap value for each player
 var progress={
 	"p1":0,
@@ -29,15 +34,17 @@ var laps={
 #racing variables
 var pOneLastRaceTime = '00:00'
 var pOneTotalTime = '00:00'
-var pOneLastRacePlacement = '1st'
-var pOneOverallPlacement = '1st'
+var pOneLastRacePlacement = null
+var pOneOverallPlacement = null
 var pOneLastRaceCoinsCollected = 0
+var pOneTotalWins = 0
 
 var pTwoLastRaceTime = '00:00'
 var pTwoTotalTime = '00:00'
-var pTwoLastRacePlacement = '1st'
-var pTwoOverallPlacement = '1st'
+var pTwoLastRacePlacement = null
+var pTwoOverallPlacement = null
 var pTwoLastRaceCoinsCollected = 0
+var pTwoTotalWins = 0
 
 #shop variables
 var pOneCarSelected = 0
@@ -46,8 +53,8 @@ var pOneColorSelected = 0
 var pTwoColorSelected = 0
 
 #name variables
-var pOneName = 'aaa'
-var pTwoName = 'aaa'
+var pOneName = 'AAA'
+var pTwoName = 'BBB'
 
 var canMove = false
 var canPause = false
@@ -110,6 +117,7 @@ func saveScores(trackName,playerName,time):
 func loadScores(trackName):
 	var timeScore = ConfigFile.new()
 	if trackName == 'basicTrack':
+		print('loadScores')
 		var list = timeScore.load("res://basicScores.cfg")
 		if list == OK:
 			var players = timeScore.get_sections()
@@ -119,6 +127,7 @@ func loadScores(trackName):
 			return sortScores(basicScores)
 			
 	elif trackName == 'ruralTrack':
+		print('loadScores')
 		var list = timeScore.load("res://ruralScores.cfg")
 		if list == OK:
 			var players = timeScore.get_sections()
@@ -212,3 +221,77 @@ func checkDecimals(number):
 		return decimal_part.length()
 	else:
 		return 0
+
+func resetRaceVars():
+	pOnePowerup = 'none'
+	pTwoPowerup = 'none'
+	p1BlazeCurrent = 100
+	p2BlazeCurrent = 100
+	pOneDone = false
+	pTwoDone = false
+	progress={
+		"p1":0,
+		"p2":0,
+	}
+	laps={
+		"p1":0,
+		"p2":0,
+	}
+	pOneLastRaceTime = '00:00'
+	pOneTotalTime = '00:00'
+	pOneLastRacePlacement = null
+	pOneOverallPlacement = null
+	pOneLastRaceCoinsCollected = 0
+	pTwoLastRaceTime = '00:00'
+	pTwoTotalTime = '00:00'
+	pTwoLastRacePlacement = null
+	pTwoOverallPlacement = null
+	pTwoLastRaceCoinsCollected = 0
+	canMove = false
+	canPause = false
+	
+func gameReset():
+	track = preload("res://Scenes/Tracks/basicTrack.tscn")
+	playerOneCar = preload("res://Scenes/Cars/Mustang.tscn")
+	playerTwoCar = preload("res://Scenes/Cars/Mustang.tscn")
+	playerOneCarSprite = null
+	playerTwoCarSprite = null
+	playerOneColor = "blue"
+	playerTwoColor = "blue"
+	currentCarNames={"p1":"Mustang","p2":"Mustang"}
+	pOnePowerup = 'none'
+	pTwoPowerup = 'none'
+	pOneCoins = 0
+	pTwoCoins = 0
+	p1BlazeCurrent = 100
+	p2BlazeCurrent = 100
+	pOneDone = false
+	pTwoDone = false
+	progress={
+		"p1":0,
+		"p2":0,
+	}
+	laps={
+		"p1":0,
+		"p2":0,
+	}
+	pOneLastRaceTime = '00:00'
+	pOneTotalTime = '00:00'
+	pOneLastRacePlacement = null
+	pOneOverallPlacement = null
+	pOneLastRaceCoinsCollected = 0
+	pOneTotalWins = 0
+	pTwoLastRaceTime = '00:00'
+	pTwoTotalTime = '00:00'
+	pTwoLastRacePlacement = null
+	pTwoOverallPlacement = null
+	pTwoLastRaceCoinsCollected = 0
+	pTwoTotalWins = 0
+	pOneCarSelected = 0
+	pTwoCarSelected = 0
+	pOneColorSelected = 0
+	pTwoColorSelected = 0
+	pOneName = 'AAA'
+	pTwoName = 'BBB'
+	canMove = false
+	canPause = false

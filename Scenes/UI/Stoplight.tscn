@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://d1tuyvw08emo"]
+[gd_scene load_steps=20 format=3 uid="uid://n3sg0thh08rh"]
 
 [ext_resource type="Script" uid="uid://csevk25te31by" path="res://Scripts/UI/StoplightStart.gd" id="1_u138q"]
 [ext_resource type="Texture2D" uid="uid://c530hqwk3u3uc" path="res://Assets/Sprites/Cars/Race Assets/Starting Light.png" id="2_olog8"]
+[ext_resource type="AudioStream" uid="uid://rxh701q0yjt3" path="res://Assets/Sounds/uiSFX/stoplightSounds.mp3" id="3_ipva3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oxko1"]
 atlas = ExtResource("2_olog8")
@@ -98,17 +99,76 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="Animation" id="Animation_md5n7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animatedSprite2d:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_ipva3"]
+resource_name = "stoplightSoundStart"
+length = 4.5
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("audioStreamPlayer2d")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ipva3")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animatedSprite2d:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.38, 1.1053, 1.4582, 2.01025, 2.4577, 3.0248, 3.35786),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 5, 0, 7, 0, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gxdli"]
+_data = {
+&"RESET": SubResource("Animation_md5n7"),
+&"stoplightSoundStart": SubResource("Animation_ipva3")
+}
+
 [node name="Stoplight" type="Node2D"]
 script = ExtResource("1_u138q")
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c2lti")
 animation = &"Stoplight"
-frame = 12
-frame_progress = 1.0
+frame = 6
 
 [node name="timer" type="Timer" parent="."]
 wait_time = 4.33
 one_shot = true
+
+[node name="audioStreamPlayer2d" type="AudioStreamPlayer2D" parent="."]
+bus = &"sounds"
+
+[node name="animationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gxdli")
+}
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

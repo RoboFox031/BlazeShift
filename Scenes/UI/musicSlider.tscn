@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsjdwaiuqwsip"]
+
+[ext_resource type="Script" uid="uid://c4r7saxm0wagq" path="res://Scripts/UI/musicSlider.gd" id="1_kbu55"]
+[ext_resource type="AudioStream" uid="uid://dqxone87maspu" path="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Cool 7 - Sungazer.mp3" id="2_3p0wp"]
+
+[node name="musicSlider" type="ProgressBar"]
+offset_right = 1100.0
+offset_bottom = 30.0
+scale = Vector2(2, 2)
+value = 50.0
+script = ExtResource("1_kbu55")
+
+[node name="tick" type="ColorRect" parent="."]
+offset_left = 1084.0
+offset_top = -10.0
+offset_right = 1100.0
+offset_bottom = 40.0
+
+[node name="audioStreamPlayer2d" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3p0wp")
+bus = &"music"

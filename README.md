@@ -9,8 +9,8 @@ car and upgrades when bettering their chance to win. There will also be weapons 
 Our Team:
 	Robert May - Project Manager
 		Robert was the decision maker and overseer the project, he made sure that time was being used efficiently. He 
-		worked on many of the games sprites 
-		
+		worked on many of the games sprites and worked with the team to make sure they approve of the theme and the 
+		tone of the cars choosen. 
 	Zane Grismore - Project Arcitect
 		Zane was the head designer for the game on the programming side. He was able to tackle complicated tasks and help
 		everyone in the group with their coding questions. He was the head programmer for all of the physics related program
@@ -27,4 +27,17 @@ Our Team:
 		Kyle was our other expert programmer that displayed his skills through the map making and the weapons/powerups.
 		He managed to tackle a lot of the extras of the game on his own and made sure that the gaming enviroment in the 
 		racing scenes were enjoyable and working well. 
+
+OOP Concepts and Godot Features:
+	Abstraction-
+	Encapsulation-
+	Inheritance-
+	Polymorphism-
+	Shaders-
+	Resources-
+	Custom Signals-
+	
+How to Test the Features:
+	
+Google Drive Link - https://drive.google.com/drive/folders/1arGuTiuY2FGWtugc4u6j2uv68d83V1i-?usp=drive_link
 	

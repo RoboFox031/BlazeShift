@@ -6703,7 +6703,7 @@ physics_layer_0/collision_mask = 8
 sources/0 = SubResource("TileSetAtlasSource_hwodx")
 sources/1 = SubResource("TileSetAtlasSource_168cb")
 
-[node name="track" type="Node2D"]
+[node name="volcanoTrack" type="Node2D"]
 script = ExtResource("1_ejygx")
 
 [node name="Lava Base" type="TileMapLayer" parent="."]

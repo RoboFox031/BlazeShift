@@ -4905,7 +4905,7 @@ sources/2 = SubResource("TileSetAtlasSource_w1qy7")
 sources/3 = SubResource("TileSetAtlasSource_hsf2f")
 sources/4 = SubResource("TileSetAtlasSource_4x274")
 
-[node name="track" type="Node2D"]
+[node name="iceTrack" type="Node2D"]
 script = ExtResource("1_ftibf")
 
 [node name="Snow" type="TileMapLayer" parent="."]

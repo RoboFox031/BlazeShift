@@ -1,0 +1,378 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8ab6ji4x7543"]
+
+[ext_resource type="Script" uid="uid://caunhbnokh8hd" path="res://Scripts/UI/nameSelection.gd" id="1_eks6l"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="1_pxn6u"]
+[ext_resource type="Texture2D" uid="uid://cdienlvw5alel" path="res://Assets/Sprites/UI/whiteArrow.png" id="3_u8rjj"]
+[ext_resource type="Texture2D" uid="uid://eod83ktvte4" path="res://Assets/Sprites/UI/blackOutlineArrow.png" id="4_c2r7b"]
+[ext_resource type="PackedScene" uid="uid://icevwd4ir3d2" path="res://Scenes/UI/uiSFX.tscn" id="5_c2r7b"]
+
+[node name="nameSelection" type="Node2D"]
+script = ExtResource("1_eks6l")
+
+[node name="uiSFX" parent="." instance=ExtResource("5_c2r7b")]
+
+[node name="colorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.407569, 0.385846, 0.402562, 1)
+metadata/_edit_lock_ = true
+
+[node name="colorRect2" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 116.0
+color = Color(0.913725, 0.466667, 0.0470588, 1)
+metadata/_edit_lock_ = true
+
+[node name="line2d" type="Line2D" parent="."]
+points = PackedVector2Array(0, 116, 1920, 116)
+default_color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 644.5
+offset_top = 20.0
+offset_right = 1275.5
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(315.5, 38)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pxn6u")
+theme_override_font_sizes/font_size = 75
+text = "name selection"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="nameSelection" type="Node" parent="."]
+
+[node name="pOneNameSelection" type="Node" parent="nameSelection"]
+
+[node name="one" type="Label" parent="nameSelection/pOneNameSelection"]
+offset_left = 264.0
+offset_top = 484.5
+offset_right = 362.0
+offset_bottom = 685.5
+pivot_offset = Vector2(49, 100.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pxn6u")
+theme_override_font_sizes/font_size = 200
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="two" type="Label" parent="nameSelection/pOneNameSelection"]
+offset_left = 412.0
+offset_top = 484.5
+offset_right = 510.0
+offset_bottom = 685.5
+pivot_offset = Vector2(49, 100.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pxn6u")
+theme_override_font_sizes/font_size = 200
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="three" type="Label" parent="nameSelection/pOneNameSelection"]
+offset_left = 560.0
+offset_top = 484.5
+offset_right = 658.0
+offset_bottom = 685.5
+pivot_offset = Vector2(49, 100.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pxn6u")
+theme_override_font_sizes/font_size = 200
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pTwoNameSelection" type="Node" parent="nameSelection"]
+
+[node name="one" type="Label" parent="nameSelection/pTwoNameSelection"]
+offset_left = 1241.0
+offset_top = 472.5
+offset_right = 1339.0
+offset_bottom = 673.5
+pivot_offset = Vector2(49, 100.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pxn6u")
+theme_override_font_sizes/font_size = 200
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="two" type="Label" parent="nameSelection/pTwoNameSelection"]
+offset_left = 1389.0
+offset_top = 472.5
+offset_right = 1487.0
+offset_bottom = 673.5
+pivot_offset = Vector2(49, 100.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pxn6u")
+theme_override_font_sizes/font_size = 200
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="three" type="Label" parent="nameSelection/pTwoNameSelection"]
+offset_left = 1537.0
+offset_top = 472.5
+offset_right = 1635.0
+offset_bottom = 673.5
+pivot_offset = Vector2(49, 100.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pxn6u")
+theme_override_font_sizes/font_size = 200
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="arrows" type="Node" parent="."]
+
+[node name="pOneArrows" type="Node" parent="arrows"]
+
+[node name="upArrows" type="Node" parent="arrows/pOneArrows"]
+
+[node name="upArrowOne" type="Sprite2D" parent="arrows/pOneArrows/upArrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(308, 408.5)
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_u8rjj")
+offset = Vector2(9, 28)
+
+[node name="arrow" type="Sprite2D" parent="arrows/pOneArrows/upArrows/upArrowOne"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_c2r7b")
+offset = Vector2(8, 28)
+
+[node name="upArrowTwo" type="Sprite2D" parent="arrows/pOneArrows/upArrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(455, 408.5)
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_u8rjj")
+offset = Vector2(9, 28)
+
+[node name="arrow" type="Sprite2D" parent="arrows/pOneArrows/upArrows/upArrowTwo"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_c2r7b")
+offset = Vector2(8, 28)
+
+[node name="upArrowThree" type="Sprite2D" parent="arrows/pOneArrows/upArrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(608, 408.5)
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_u8rjj")
+offset = Vector2(9, 28)
+
+[node name="arrow" type="Sprite2D" parent="arrows/pOneArrows/upArrows/upArrowThree"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_c2r7b")
+offset = Vector2(8, 28)
+
+[node name="downArrows" type="Node" parent="arrows/pOneArrows"]
+
+[node name="downArrowOne" type="Sprite2D" parent="arrows/pOneArrows/downArrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(314, 756.5)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_u8rjj")
+offset = Vector2(9, 28)
+
+[node name="arrow" type="Sprite2D" parent="arrows/pOneArrows/downArrows/downArrowOne"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_c2r7b")
+offset = Vector2(8, 28)
+
+[node name="downArrowTwo" type="Sprite2D" parent="arrows/pOneArrows/downArrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(460, 756.5)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_u8rjj")
+offset = Vector2(9, 28)
+
+[node name="arrow" type="Sprite2D" parent="arrows/pOneArrows/downArrows/downArrowTwo"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_c2r7b")
+offset = Vector2(8, 28)
+
+[node name="downArrowThree" type="Sprite2D" parent="arrows/pOneArrows/downArrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(611, 756.5)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_u8rjj")
+offset = Vector2(9, 28)
+
+[node name="arrow" type="Sprite2D" parent="arrows/pOneArrows/downArrows/downArrowThree"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_c2r7b")
+offset = Vector2(8, 28)
+
+[node name="pTwoArrows" type="Node" parent="arrows"]
+
+[node name="upArrows" type="Node" parent="arrows/pTwoArrows"]
+
+[node name="upArrowOne" type="Sprite2D" parent="arrows/pTwoArrows/upArrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(1284, 396.5)
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_u8rjj")
+offset = Vector2(9, 28)
+
+[node name="arrow" type="Sprite2D" parent="arrows/pTwoArrows/upArrows/upArrowOne"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_c2r7b")
+offset = Vector2(8, 28)
+
+[node name="upArrowTwo" type="Sprite2D" parent="arrows/pTwoArrows/upArrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(1431, 396.5)
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_u8rjj")
+offset = Vector2(9, 28)
+
+[node name="arrow" type="Sprite2D" parent="arrows/pTwoArrows/upArrows/upArrowTwo"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_c2r7b")
+offset = Vector2(8, 28)
+
+[node name="upArrowThree" type="Sprite2D" parent="arrows/pTwoArrows/upArrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(1584, 396.5)
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_u8rjj")
+offset = Vector2(9, 28)
+
+[node name="arrow" type="Sprite2D" parent="arrows/pTwoArrows/upArrows/upArrowThree"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_c2r7b")
+offset = Vector2(8, 28)
+
+[node name="downArrows" type="Node" parent="arrows/pTwoArrows"]
+
+[node name="downArrowOne" type="Sprite2D" parent="arrows/pTwoArrows/downArrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(1290, 744.5)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_u8rjj")
+offset = Vector2(9, 28)
+
+[node name="arrow" type="Sprite2D" parent="arrows/pTwoArrows/downArrows/downArrowOne"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_c2r7b")
+offset = Vector2(8, 28)
+
+[node name="downArrowTwo" type="Sprite2D" parent="arrows/pTwoArrows/downArrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(1436, 744.5)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_u8rjj")
+offset = Vector2(9, 28)
+
+[node name="arrow" type="Sprite2D" parent="arrows/pTwoArrows/downArrows/downArrowTwo"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_c2r7b")
+offset = Vector2(8, 28)
+
+[node name="downArrowThree" type="Sprite2D" parent="arrows/pTwoArrows/downArrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(1587, 744.5)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_u8rjj")
+offset = Vector2(9, 28)
+
+[node name="arrow" type="Sprite2D" parent="arrows/pTwoArrows/downArrows/downArrowThree"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_c2r7b")
+offset = Vector2(8, 28)
+
+[node name="label2" type="Label" parent="."]
+offset_left = 66.0
+offset_top = 164.0
+offset_right = 867.0
+offset_bottom = 365.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pxn6u")
+theme_override_font_sizes/font_size = 150
+text = "player one"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label5" type="Label" parent="."]
+offset_left = 1042.0
+offset_top = 164.0
+offset_right = 1843.0
+offset_bottom = 365.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pxn6u")
+theme_override_font_sizes/font_size = 150
+text = "player two"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playerOneReadyLabel" type="Label" parent="."]
+offset_left = -42.0
+offset_top = 754.0
+offset_right = 958.0
+offset_bottom = 955.0
+pivot_offset = Vector2(500, 0)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pxn6u")
+theme_override_font_sizes/font_size = 60
+text = "perss start to confirm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playerOneCleanNameLabel" type="Label" parent="."]
+offset_left = 58.0
+offset_top = 817.0
+offset_right = 859.0
+offset_bottom = 1018.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_pxn6u")
+theme_override_font_sizes/font_size = 50
+text = "banned name try again"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playerTwoReadyLabel" type="Label" parent="."]
+offset_left = 942.0
+offset_top = 752.0
+offset_right = 1942.0
+offset_bottom = 953.0
+pivot_offset = Vector2(500, 0)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pxn6u")
+theme_override_font_sizes/font_size = 60
+text = "press start to confirm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playerTwoCleanNameLabel" type="Label" parent="."]
+offset_left = 1042.0
+offset_top = 817.0
+offset_right = 1843.0
+offset_bottom = 1018.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_pxn6u")
+theme_override_font_sizes/font_size = 50
+text = "banned name try again"
+horizontal_alignment = 1
+vertical_alignment = 1

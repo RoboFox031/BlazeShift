@@ -13,12 +13,10 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.currentOwner == body.playerChoices.p1:
-		globalVars.pOneCoins += 1
-		print('player1: '+str(globalVars.p1Coin))
+		globalVars.pOneLastRaceCoinsCollected += 1
 		queue_free()
 	if body.currentOwner == body.playerChoices.p2:
-		globalVars.pTwoCoins += 1
-		print('player2: '+str(globalVars.p2Coin))
+		globalVars.pTwoLastRaceCoinsCollected += 1
 		queue_free()
 	#globalVars.p1Coin
 	pass # Replace with function body.

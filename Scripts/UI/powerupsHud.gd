@@ -2,11 +2,11 @@ extends UI
 class_name powerupsHud
 
 @onready var sprite = $animatedSprite2d
-var player: int
 
-func changeItem():
-	if player == 1:
+
+func changeItem(playerStr):
+	if playerStr == 'p1':
 		sprite.play(globalVars.pOnePowerup)
-	elif player == 2:
+	elif playerStr == 'p2':
 		sprite.play(globalVars.pTwoPowerup)
-		pass
+		

@@ -9,7 +9,7 @@
 [ext_resource type="TileSet" uid="uid://dqdcbt7l7acll" path="res://Scenes/Tracks/track.tres" id="9_0u2nk"]
 [ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://Assets/Sprites/Tracks/ruralMapTiles/sandwater.png" id="10_h0h4c"]
 [ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://Assets/Sprites/Tracks/ruralMapTiles/sand.png" id="11_te1ji"]
-[ext_resource type="PackedScene" uid="uid://ba81k30logwad" path="res://Scenes/Cars/lemkeCar.tscn" id="15_mrn2o"]
+[ext_resource type="PackedScene" uid="uid://ba81k30logwad" path="res://Scenes/Cars/Mustang.tscn" id="15_mrn2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f8xj"]
 texture = ExtResource("1_a08p6")
@@ -3248,7 +3248,7 @@ sources/0 = SubResource("TileSetAtlasSource_5wr7v")
 sources/1 = SubResource("TileSetAtlasSource_4dcja")
 sources/2 = SubResource("TileSetAtlasSource_fcydm")
 
-[node name="track" type="Node2D"]
+[node name="ruralTrack" type="Node2D"]
 script = ExtResource("1_4l54d")
 
 [node name="Start_finish" type="TileMapLayer" parent="."]

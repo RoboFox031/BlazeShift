@@ -471,14 +471,14 @@ func leavePosition(area:Area2D):
 
 #This function respawns the car at the last legal location
 func respawn():
-	##Resets the player's speed
-	#currentLinSpeed=0
-	#resetMovement()
-	##Teleports the player
-	#global_position=progressPoint
-	#global_rotation=progressRot
-	##resets reverse count
-	#reverseCount=0
+	#Resets the player's speed
+	currentLinSpeed=0
+	resetMovement()
+	#Teleports the player
+	global_position=progressPoint
+	global_rotation=progressRot
+	#resets reverse count
+	reverseCount=0
 	pass
 
 #Makes the player be on the next lap

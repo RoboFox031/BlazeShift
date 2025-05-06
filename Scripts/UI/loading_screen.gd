@@ -1,16 +1,16 @@
 extends Control
 
 var load = false
+@onready var animation = $animatedSprite2d
 
-@onready var tire: Sprite2D = $dot20231024175025
 
 func _ready() -> void:
 	ResourceLoader.load_threaded_request(globalVars.nextScene)
-	$timer.start(5)
+	animation.play('default')
+	#$timer.start(12)
 	pass
 
 func _process(delta: float) -> void:
-	tire.rotation += .01
 	if load == true:
 		var progress = []
 		ResourceLoader.load_threaded_get_status(globalVars.nextScene, progress)
@@ -24,5 +24,10 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
+	load = true
+	pass # Replace with function body.
+
+
+func _on_animated_sprite_2d_animation_finished():
 	load = true
 	pass # Replace with function body.

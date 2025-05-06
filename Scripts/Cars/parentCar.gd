@@ -139,7 +139,7 @@ func _ready() -> void:
 	#Setup car stats
 	applyStats()
 	
-	z_index = 10
+	z_index = 6
 	#makes you resoawn at the start if you respawn before reaching a valid checkpoint
 	progressPoint=global_position
 	progressRot=global_rotation
@@ -466,7 +466,8 @@ func updatePosition(area:Area2D):
 		#If none of the progress point you are touching result in legal moves, respawn
 		if anyLegalMove==false:
 			print("Illegal")
-			respawn()
+			#respawn()
+			pass
 		#If you didn't skip and aren't reversing, then update the progress
 		elif isReverse==false:
 			lastProgress=currentProgress
@@ -555,8 +556,8 @@ func checkTrackDistance():
 	var currentDistance=global_position.distance_to(progressPoint)
 	#if the player is too far away, respawn
 	if (currentDistance>trackMaxDist):
-		respawn()
-
+		#respawn()
+		pass
 
 #finishes the race
 func finishRace():

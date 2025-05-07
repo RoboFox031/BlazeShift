@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://df2jo16hr1fj3"]
+[gd_scene load_steps=9 format=3 uid="uid://eu1i7ue0qsdq"]
 
 [ext_resource type="Script" path="res://Scenes/UI/snowballSplatter.gd" id="1_73vx2"]
 [ext_resource type="Texture2D" uid="uid://bhesx5x4bna1d" path="res://Assets/Sprites/Poweups/Mystery Box.png" id="2_73vx2"]
 [ext_resource type="Texture2D" uid="uid://cl5p6op5xfams" path="res://Assets/Sprites/Poweups/snowball-removebg-preview.png" id="3_23a8q"]
+[ext_resource type="Texture2D" uid="uid://mxqclthghmo4" path="res://Assets/Sprites/Poweups/snowball.png" id="4_23a8q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_23a8q"]
 atlas = ExtResource("2_73vx2")
@@ -31,6 +32,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve" id="Curve_ph503"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.857955, 0.775281), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="snowballSplatter" type="Node2D"]
 script = ExtResource("1_73vx2")
 
@@ -43,8 +48,20 @@ autoplay = "none"
 [node name="timer" type="Timer" parent="."]
 
 [node name="cpuParticles2d" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 100
+texture = ExtResource("4_23a8q")
+lifetime = 6.0
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.0
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_max = 282.83
+initial_velocity_min = 50.0
+initial_velocity_max = 200.0
+linear_accel_min = -100.0
+linear_accel_max = -100.0
+scale_amount_curve = SubResource("Curve_ph503")
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

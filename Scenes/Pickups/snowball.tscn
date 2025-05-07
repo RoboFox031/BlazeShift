@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqw030b84hdsu"]
+
+[ext_resource type="Script" uid="uid://o3je8x1dnvh3" path="res://Scripts/Pickups/fireball.gd" id="1_qmv1h"]
+[ext_resource type="Texture2D" uid="uid://mxqclthghmo4" path="res://Assets/Sprites/Poweups/snowball.png" id="2_vmcom"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3tsn"]
+atlas = ExtResource("2_vmcom")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uuudo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3tsn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kys01"]
+radius = 157.605
+
+[node name="snowball" type="Node2D"]
+scale = Vector2(0.33, 0.33)
+script = ExtResource("1_qmv1h")
+
+[node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
+z_index = 1
+scale = Vector2(11, 11)
+sprite_frames = SubResource("SpriteFrames_uuudo")
+autoplay = "default"
+frame_progress = 0.800649
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="area2d" type="Area2D" parent="."]
+visible = false
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="area2d"]
+position = Vector2(-6.0606, -6.06061)
+shape = SubResource("CircleShape2D_kys01")
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="area2d" to="." method="_on_area_2d_body_entered"]

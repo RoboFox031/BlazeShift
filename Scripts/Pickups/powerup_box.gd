@@ -24,6 +24,9 @@ func _on_area_2d_body_entered(body):
 		if selection == 3:
 			type = 'roadSpikesPickup'
 			entered(body)
+		if selection == 4:
+			type = 'snowballPickup'
+			entered(body)
 	if self.visible == false and globalVars.pOnePowerup != 'none' or globalVars.pTwoPowerup != 'none':
 		entered(body)
 	type = 'none'

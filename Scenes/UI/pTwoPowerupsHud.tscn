@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbpaemnpu0ei8"]
+[gd_scene load_steps=11 format=3 uid="uid://bbpaemnpu0ei8"]
 
 [ext_resource type="Script" uid="uid://qmtn7e323dsm" path="res://Scripts/UI/pTwoPowerupsHud.gd" id="1_qsfov"]
 [ext_resource type="Texture2D" uid="uid://da1xc5ggm3prx" path="res://Assets/Sprites/Poweups/blaze.png" id="2_pdehg"]
 [ext_resource type="Texture2D" uid="uid://45pmnrmfttd" path="res://Assets/Sprites/UI/blackBoxOutline.png" id="3_0ttyy"]
 [ext_resource type="Texture2D" uid="uid://bvsqesqb1kkgo" path="res://Assets/Sprites/Poweups/fireball/FB500-1.png" id="3_dumsl"]
 [ext_resource type="Texture2D" uid="uid://chu50x54x7gnw" path="res://Assets/Sprites/Poweups/road Spike Icon.png" id="4_ej6s3"]
+[ext_resource type="Texture2D" uid="uid://mxqclthghmo4" path="res://Assets/Sprites/Poweups/snowball.png" id="5_7huh2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekhb1"]
 atlas = ExtResource("2_pdehg")
@@ -13,6 +14,10 @@ region = Rect2(0, 0, 400, 400)
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7g24"]
 atlas = ExtResource("3_dumsl")
 region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41hup"]
+atlas = ExtResource("5_7huh2")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jdknc"]
 animations = [{
@@ -47,6 +52,14 @@ animations = [{
 "loop": true,
 "name": &"roadSpikesPickup",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41hup")
+}],
+"loop": true,
+"name": &"snowballPickup",
+"speed": 5.0
 }]
 
 [node name="pTwoPowerupsHud" type="Node2D"]
@@ -63,7 +76,7 @@ pivot_offset = Vector2(125, 125)
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jdknc")
-animation = &"none"
+animation = &"snowballPickup"
 
 [node name="blackBoxOutline" type="Sprite2D" parent="."]
 position = Vector2(-2, -1)

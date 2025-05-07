@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqw030b84hdsu"]
+[gd_scene load_steps=6 format=3 uid="uid://bseikap2mpwvq"]
 
-[ext_resource type="Script" uid="uid://o3je8x1dnvh3" path="res://Scripts/Pickups/fireball.gd" id="1_qmv1h"]
+[ext_resource type="Script" uid="uid://cde8lfdkn1h5i" path="res://Scripts/Pickups/snowball.gd" id="1_vmcom"]
 [ext_resource type="Texture2D" uid="uid://mxqclthghmo4" path="res://Assets/Sprites/Poweups/snowball.png" id="2_vmcom"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3tsn"]
@@ -23,7 +23,7 @@ radius = 157.605
 
 [node name="snowball" type="Node2D"]
 scale = Vector2(0.33, 0.33)
-script = ExtResource("1_qmv1h")
+script = ExtResource("1_vmcom")
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
 z_index = 1

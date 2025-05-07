@@ -76,7 +76,7 @@ pivot_offset = Vector2(125, 125)
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jdknc")
-animation = &"snowballPickup"
+animation = &"none"
 
 [node name="blackBoxOutline" type="Sprite2D" parent="."]
 position = Vector2(-2, -1)

@@ -3011,4 +3011,4 @@ tile_set = SubResource("TileSet_ryjmn")
 
 [node name="powerupBox" parent="." instance=ExtResource("5_s70l0")]
 z_index = 10
-position = Vector2(-2001, 2248)
+position = Vector2(-2002, 2198)

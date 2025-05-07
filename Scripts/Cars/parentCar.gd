@@ -6,6 +6,7 @@ class_name Car
 
 var color = "blue"
 var fireball: PackedScene = preload("res://Scenes/Pickups/fireball.tscn")
+var snowball: PackedScene = preload('res://Scenes/Pickups/snowball.tscn')
 var roadSpikes: PackedScene = preload("res://Scenes/Pickups/roadSpikes.tscn")
 var paused = false
 
@@ -227,6 +228,17 @@ func usePowerup():
 				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 				if currentOwner == playerChoices.p1:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+			#snowball
+			if globalVars.pOnePowerup == 'snowballPickup':
+				globalVars.pOnePowerup = 'none'
+				var instance = snowball.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation 
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p1:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+					
 			if globalVars.pOnePowerup == 'roadSpikesPickup':
 				globalVars.pOnePowerup = 'none'
 				var instance = roadSpikes.instantiate()
@@ -255,6 +267,17 @@ func usePowerup():
 				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 				if currentOwner == playerChoices.p2:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+			#snowball
+			if globalVars.pTwoPowerup == 'snowballPickup':
+				globalVars.pTwoPowerup = 'none'
+				var instance = snowball.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation 
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p2:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+					
 			if globalVars.pTwoPowerup == 'roadSpikesPickup':
 				globalVars.pTwoPowerup = 'none'
 				var instance = roadSpikes.instantiate()

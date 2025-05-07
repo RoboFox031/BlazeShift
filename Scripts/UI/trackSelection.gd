@@ -11,13 +11,13 @@ class_name trackSelection
 
 var maps: Array
 var tracks: Array
-var trackNames: Array = ['basic', 'rural', 'ice', 'volcano', 'testing']
+var trackNames: Array = ['basic', 'rural', 'ice', 'volcano', 'city']
 
 var selected = 0
 
 func _ready() -> void:
 	maps = [mapOne, mapTwo, mapThree, mapFour, mapFive]
-	tracks = [preload("res://Scenes/Tracks/basicTrack.tscn"),preload("res://Scenes/Tracks/ruralTrack.tscn"),preload("res://Scenes/Tracks/iceTrack.tscn"),preload("res://Scenes/Tracks/volcanoTrack.tscn"),preload("res://Scenes/Testing/testing_racetrack.tscn")]
+	tracks = [preload("res://Scenes/Tracks/basicTrack.tscn"),preload("res://Scenes/Tracks/ruralTrack.tscn"),preload("res://Scenes/Tracks/iceTrack.tscn"),preload("res://Scenes/Tracks/volcanoTrack.tscn"),preload("res://Scenes/Tracks/cityTrack.tscn")]
 	_updateMapSelected(maps[selected])
 
 func _process(delta: float) -> void:

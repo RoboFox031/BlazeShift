@@ -243,7 +243,7 @@ scale = Vector2(1.25, 1.25)
 script = ExtResource("1_waxfh")
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
-position = Vector2(9, -15)
+position = Vector2(15, -28)
 sprite_frames = SubResource("SpriteFrames_8if87")
 animation = &"Idle"
 autoplay = "Idle"
@@ -252,7 +252,7 @@ frame_progress = 0.165969
 [node name="area2d" type="Area2D" parent="."]
 
 [node name="collisionShape2d" type="CollisionShape2D" parent="area2d"]
-position = Vector2(1, -2)
+position = Vector2(7, -15)
 shape = SubResource("RectangleShape2D_usrwc")
 
 [node name="timer" type="Timer" parent="."]

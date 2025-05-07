@@ -11,13 +11,13 @@ class_name trackSelection
 
 var maps: Array
 var tracks: Array
-var trackNames: Array = ['basic', 'rural', 'ice', 'volcano', 'testing']
+var trackNames: Array = ['basic', 'rural', 'ice', 'volcano', 'city']
 
 var selected = 0
 
 func _ready() -> void:
 	maps = [mapOne, mapTwo, mapThree, mapFour, mapFive]
-	tracks = [preload("res://Scenes/Tracks/basicTrack.tscn"),preload("res://Scenes/Tracks/ruralTrack.tscn"),preload("res://Scenes/Tracks/iceTrack.tscn"),preload("res://Scenes/Tracks/volcanoTrack.tscn"),preload("res://Scenes/Testing/testing_racetrack.tscn")]
+	tracks = [preload("res://Scenes/Tracks/basicTrack.tscn"),preload("res://Scenes/Tracks/ruralTrack.tscn"),preload("res://Scenes/Tracks/iceTrack.tscn"),preload("res://Scenes/Tracks/volcanoTrack.tscn"),preload("res://Scenes/Tracks/cityTrack.tscn")]
 	_updateMapSelected(maps[selected])
 
 func _process(delta: float) -> void:
@@ -25,7 +25,8 @@ func _process(delta: float) -> void:
 		$uiSFX.playSelectSound()
 		await get_tree().create_timer(0.5).timeout 
 		globalVars.track = tracks[selected]
-		get_tree().change_scene_to_file("res://Scenes/Tracks/trackLoader.tscn")
+		globalVars.nextScene = "res://Scenes/Tracks/trackDisplayer.tscn"
+		get_tree().change_scene_to_file("res://Scenes/UI/loadingScreen.tscn")
 	if Input.is_action_just_pressed("p1_right"):
 		if selected + 1 < len(maps):
 			selected += 1

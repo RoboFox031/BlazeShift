@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://Assets/Sprites/Tracks/192 racetrack Divided.svg" id="1_vep5x"]
 [ext_resource type="Texture2D" uid="uid://bwb2oalo6c030" path="res://Assets/Sprites/Tracks/spritesheet.png" id="2_rqd63"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="5_m4j1f"]
-[ext_resource type="TileSet" uid="uid://vwess0gtpmmh" path="res://Scenes/Tracks/trees.tres" id="6_5bqh8"]
+[ext_resource type="TileSet" uid="uid://ctx3pnqurnm2e" path="res://Scenes/Tracks/trees.tres" id="6_5bqh8"]
 [ext_resource type="Texture2D" uid="uid://brf21x30oasly" path="res://Assets/Sprites/Tracks/christmas-village-asset-pack/house2.png" id="6_aawjx"]
 [ext_resource type="Texture2D" uid="uid://dwiyha8k28rle" path="res://Assets/Sprites/Tracks/update v3 192 racetrack.png" id="6_tqusy"]
 [ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://Scripts/Tracks/terrain.gd" id="7_i2deg"]
@@ -1850,7 +1850,7 @@ sources/1 = SubResource("TileSetAtlasSource_wi8cr")
 sources/0 = SubResource("TileSetAtlasSource_i2deg")
 sources/5 = SubResource("TileSetAtlasSource_40cjm")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i02fc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aawjx"]
 texture = ExtResource("5_m4j1f")
 0:0/0 = 0
 1:0/0 = 0
@@ -4770,7 +4770,7 @@ texture = ExtResource("5_m4j1f")
 53:53/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_pipxo"]
-sources/0 = SubResource("TileSetAtlasSource_i02fc")
+sources/0 = SubResource("TileSetAtlasSource_aawjx")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbywk"]
 texture = ExtResource("6_aawjx")

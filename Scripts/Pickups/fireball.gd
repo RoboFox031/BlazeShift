@@ -5,6 +5,7 @@ var spawnPosition
 var speed = 750
 var direction 
 @onready var sprite = $animatedSprite2d
+var ignore
 func _ready():
 	type = 'fireball'
 	self.position=spawnPosition
@@ -12,12 +13,10 @@ func _ready():
 	sprite.rotation = direction
 func _process(delta):
 	self.position += Vector2(speed * delta*cos(direction),speed*delta*sin(direction))
-	print(direction)
-
 func _on_timer_timeout() -> void:
 	queue_free()
 
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body != get_parent() and body is Car:
-		pass ####add damaging or negative effect function here
+func _on_area_2d_body_entered(body: Car):
+	if body != ignore and body is Car:
+		body.respawn()
+		queue_free()

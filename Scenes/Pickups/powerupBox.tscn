@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://b8y2taotrov67"]
 
-[ext_resource type="Script" uid="uid://cxh0u6bafahka" path="res://Scripts/Pickups/powerup_box.gd" id="1_waxfh"]
-[ext_resource type="Texture2D" uid="uid://deq5fsn00p4ih" path="res://Assets/Sprites/Poweups/Mystery Box.png" id="2_8if87"]
+[ext_resource type="Script" uid="uid://d0tecbd580w4t" path="res://Scripts/Pickups/powerup_box.gd" id="1_waxfh"]
+[ext_resource type="Texture2D" uid="uid://bhesx5x4bna1d" path="res://Assets/Sprites/Poweups/Mystery Box.png" id="2_8if87"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ay43o"]
 atlas = ExtResource("2_8if87")
@@ -242,7 +242,7 @@ size = Vector2(60, 60)
 script = ExtResource("1_waxfh")
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
-position = Vector2(9, -15)
+position = Vector2(15, -28)
 sprite_frames = SubResource("SpriteFrames_8if87")
 animation = &"Idle"
 autoplay = "Idle"
@@ -251,7 +251,7 @@ frame_progress = 0.165969
 [node name="area2d" type="Area2D" parent="."]
 
 [node name="collisionShape2d" type="CollisionShape2D" parent="area2d"]
-position = Vector2(1, -2)
+position = Vector2(7, -15)
 shape = SubResource("RectangleShape2D_usrwc")
 
 [node name="timer" type="Timer" parent="."]

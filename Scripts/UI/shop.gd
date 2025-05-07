@@ -6,11 +6,13 @@ class_name shop
 var carTiers = {
 	'mustang': {
 		"tier": 'good',
-		"color": '00cc00'
+		"color": '00cc00',
+		'cost': 10
 	},
 	'nsx': {
 		"tier": 'elite',
-		"color": 'ffe50d'
+		"color": 'ffe50d',
+		'cost': 20
 	},
 	's13': {
 		"tier": 'mid',
@@ -26,27 +28,33 @@ var carTiers = {
 	},
 	'69 charger': {
 		"tier": 'good',
-		"color": '00cc00'
+		"color": '00cc00',
+		'cost': 10
 	},
 	'lancia 037': {
 		"tier": 'elite',
-		"color": 'ffe50d'
+		"color": 'ffe50d',
+		'cost': 20
 	},
 	'lotus esprit': {
 		"tier": 'god',
-		"color": 'd70dff'
+		"color": 'd70dff',
+		'cost': 30
 	},
 	'ruf ctr': {
 		"tier": 'god',
-		"color": 'd70dff'
+		"color": 'd70dff',
+		'cost': 30
 	},
 	'300zx': {
 		"tier": 'good',
-		"color": '00cc00'
+		"color": '00cc00',
+		'cost': 10
 	},
 	'camaro': {
 		"tier": 'elite',
-		"color": 'ffe50d'
+		"color": 'ffe50d',
+		'cost': 20
 	}
 }
 
@@ -370,22 +378,21 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 		$locks/pTwoLockFinal.visible = true
 	_updateTierDisplays()
 
-#function to allow the player to buy a car######this might be broken helpppp
 func _buyCar(player):
 	if player == 1:
 		if pOneCars[globalVars.pOneCarSelected] not in pOneOwned:
-			if globalVars.pOneCoins - carCosts[globalVars.pOneCarSelected] >= 0:
+			if globalVars.pOneCoins - carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['cost'] >= 0:
 				pOneOwned.append(pOneCars[globalVars.pOneCarSelected])
-				globalVars.pOneCoins -= carCosts[globalVars.pOneCarSelected]
+				globalVars.pOneCoins -= carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['cost']
 				$pOneCoinHud.update()
 				$uiSFX.playBuySound()
 				_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 				_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 	if player == 2:
 		if pTwoCars[globalVars.pTwoCarSelected] not in pTwoOwned:
-			if globalVars.pTwoCoins - carCosts[globalVars.pTwoCarSelected] >= 0:
+			if globalVars.pTwoCoins - carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost'] >= 0:
 				pTwoOwned.append(pTwoCars[globalVars.pTwoCarSelected])
-				globalVars.pTwoCoins -= carCosts[globalVars.pTwoCarSelected]
+				globalVars.pTwoCoins -= carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost']
 				$pTwoCoinHud.update()
 				$uiSFX.playBuySound()
 				_updateFinalDisplay(pTwoCarsFinal[globalVars.pTwoCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])

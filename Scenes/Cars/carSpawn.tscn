@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cej22tp7ejihv"]
+
+[ext_resource type="Script" uid="uid://iq3aipo73nn5" path="res://Scripts/Cars/carSpawn.gd" id="1_oykp5"]
+
+[node name="carSpawn" type="Node2D"]
+z_index = 10
+script = ExtResource("1_oykp5")
+
+[node name="colorRect" type="ColorRect" parent="."]
+offset_left = -48.0
+offset_top = -25.0
+offset_right = 52.0
+offset_bottom = 25.0
+color = Color(3.04427e-05, 0.600783, 0.0454686, 0.788235)
+
+[node name="colorRect2" type="ColorRect" parent="."]
+offset_left = 42.0
+offset_right = 52.0
+offset_bottom = 30.0
+rotation = 0.905826
+color = Color(0.67451, 0, 0.109804, 0.623529)
+
+[node name="colorRect3" type="ColorRect" parent="."]
+offset_left = 48.0
+offset_top = -7.0
+offset_right = 58.0
+offset_bottom = 23.0
+rotation = 2.23577
+color = Color(0.67451, 0, 0.109804, 0.623529)

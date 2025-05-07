@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://71egy5gs0lbp" path="res://Scripts/Tracks/basicTrack.gd" id="1_ifg0j"]
 [ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://Assets/Sprites/Tracks/grass_tileset_16x16.png" id="2_t0oks"]
-[ext_resource type="TileSet" uid="uid://dqdcbt7l7acll" path="res://Scenes/Tracks/track.tres" id="3_ikrvl"]
+[ext_resource type="TileSet" uid="uid://bjrgtgiklvksp" path="res://Scenes/Tracks/track.tres" id="3_ikrvl"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="4_ikrvl"]
 [ext_resource type="PackedScene" path="res://Scenes/Pickups/powerupBox.tscn" id="5_s70l0"]
 
@@ -66,7 +66,7 @@ texture = ExtResource("2_t0oks")
 [sub_resource type="TileSet" id="TileSet_htf8n"]
 sources/0 = SubResource("TileSetAtlasSource_anobo")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s70l0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikrvl"]
 texture = ExtResource("4_ikrvl")
 0:0/0 = 0
 1:0/0 = 0
@@ -2986,7 +2986,7 @@ texture = ExtResource("4_ikrvl")
 53:53/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ryjmn"]
-sources/0 = SubResource("TileSetAtlasSource_s70l0")
+sources/0 = SubResource("TileSetAtlasSource_ikrvl")
 
 [node name="basicTrack" type="Node2D"]
 script = ExtResource("1_ifg0j")

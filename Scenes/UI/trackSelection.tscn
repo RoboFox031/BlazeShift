@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d23f07gjc1b01" path="res://Assets/Sprites/UI/ruralMapBackground.png" id="4_s22wx"]
 [ext_resource type="Texture2D" uid="uid://071ov745k868" path="res://Assets/Sprites/UI/basicTrackBackground.png" id="5_nbqvf"]
 [ext_resource type="Texture2D" uid="uid://babwu1hxlb0qj" path="res://Assets/Sprites/UI/iceTrackBackground.png" id="6_g3ra5"]
-[ext_resource type="PackedScene" uid="uid://bmtbwlc4rj8uy" path="res://Scenes/UI/uiSFX.tscn" id="7_sw51p"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/uiSFX.tscn" id="7_sw51p"]
 [ext_resource type="Texture2D" uid="uid://d31sy2thgde5u" path="res://Assets/Sprites/UI/volvanoMapBackground.png" id="7_y4fag"]
 
 [node name="trackSelection" type="Node2D"]

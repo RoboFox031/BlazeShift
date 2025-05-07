@@ -1,6 +1,6 @@
 extends Node
 
-var track = preload("res://Scenes/Tracks/volcanoTrack.tscn")
+var track = preload("res://Scenes/Tracks/basicTrack.tscn")
 var playerOneCar = preload("res://Scenes/Cars/Mustang.tscn")
 var playerTwoCar = preload("res://Scenes/Cars/Mustang.tscn")
 var playerOneCarSprite = null
@@ -69,8 +69,6 @@ var organizedScores := {}
 
 #func saveScores(trackName, playerName, time):
 
-var mapsPlayed = ['basic']
-var nextMapSelector = 1
 
 func saveScores(trackName,playerName,time):
 	var timeScore = ConfigFile.new()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://djbb2ffhj2n2h"]
+[gd_scene load_steps=10 format=4 uid="uid://djbb2ffhj2n2h"]
 
 [ext_resource type="Script" uid="uid://71egy5gs0lbp" path="res://Scripts/Tracks/basicTrack.gd" id="1_ifg0j"]
 [ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://Assets/Sprites/Tracks/grass_tileset_16x16.png" id="2_t0oks"]
 [ext_resource type="TileSet" uid="uid://dqdcbt7l7acll" path="res://Scenes/Tracks/track.tres" id="3_ikrvl"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="4_ikrvl"]
+[ext_resource type="PackedScene" path="res://Scenes/Pickups/powerupBox.tscn" id="5_s70l0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_anobo"]
 texture = ExtResource("2_t0oks")
@@ -2988,7 +2989,6 @@ texture = ExtResource("4_ikrvl")
 sources/0 = SubResource("TileSetAtlasSource_s70l0")
 
 [node name="basicTrack" type="Node2D"]
-position = Vector2(-28, -27)
 script = ExtResource("1_ifg0j")
 
 [node name="Grass" type="TileMapLayer" parent="."]
@@ -3008,3 +3008,7 @@ position = Vector2(-1000, 1932)
 scale = Vector2(1.92, 1.92)
 tile_map_data = PackedByteArray("AADz/wMAAAAiAAAAAADz/wQAAAAiAAEAAADz/wUAAAAiAAIAAADz/wYAAAAiAAMAAADz/wcAAAAiAAQAAADz/wgAAAAiAAUAAADz/wkAAAAiAAYAAADz/woAAAAiAAcAAADz/wsAAAAiAAgAAADz/wwAAAAiAAkAAADz/w0AAAAiAAoAAADz/w4AAAAiAAsAAAD0/wMAAAAjAAAAAAD0/wQAAAAjAAEAAAD0/wUAAAAjAAIAAAD0/wYAAAAjAAMAAAD0/wcAAAAjAAQAAAD0/wgAAAAjAAUAAAD0/wkAAAAjAAYAAAD0/woAAAAjAAcAAAD0/wsAAAAjAAgAAAD0/wwAAAAjAAkAAAD0/w0AAAAjAAoAAAD0/w4AAAAjAAsAAAD1/wMAAAAkAAAAAAD1/wQAAAAkAAEAAAD1/wUAAAAkAAIAAAD1/wYAAAAkAAMAAAD1/wcAAAAkAAQAAAD1/wgAAAAkAAUAAAD1/wkAAAAkAAYAAAD1/woAAAAkAAcAAAD1/wsAAAAkAAgAAAD1/wwAAAAkAAkAAAD1/w0AAAAkAAoAAAD1/w4AAAAkAAsAAAD2/wMAAAAlAAAAAAD2/wQAAAAlAAEAAAD2/wUAAAAlAAIAAAD2/wYAAAAlAAMAAAD2/wcAAAAlAAQAAAD2/wgAAAAlAAUAAAD2/wkAAAAlAAYAAAD2/woAAAAlAAcAAAD2/wsAAAAlAAgAAAD2/wwAAAAlAAkAAAD2/w0AAAAlAAoAAAD2/w4AAAAlAAsAAAD3/wMAAAAmAAAAAAD3/wQAAAAmAAEAAAD3/wUAAAAmAAIAAAD3/wYAAAAmAAMAAAD3/wcAAAAmAAQAAAD3/wgAAAAmAAUAAAD3/wkAAAAmAAYAAAD3/woAAAAmAAcAAAD3/wsAAAAmAAgAAAD3/wwAAAAmAAkAAAD3/w0AAAAmAAoAAAD3/w4AAAAmAAsAAAD4/wMAAAAnAAAAAAD4/wQAAAAnAAEAAAD4/wUAAAAnAAIAAAD4/wYAAAAnAAMAAAD4/wcAAAAnAAQAAAD4/wgAAAAnAAUAAAD4/wkAAAAnAAYAAAD4/woAAAAnAAcAAAD4/wsAAAAnAAgAAAD4/wwAAAAnAAkAAAD4/w0AAAAnAAoAAAD4/w4AAAAnAAsAAADz/w8AAAAiAAwAAAD0/w8AAAAjAAwAAAD1/w8AAAAkAAwAAAD2/w8AAAAlAAwAAAD3/w8AAAAmAAwAAAD4/w8AAAAnAAwAAAA=")
 tile_set = SubResource("TileSet_ryjmn")
+
+[node name="powerupBox" parent="." instance=ExtResource("5_s70l0")]
+z_index = 10
+position = Vector2(-2001, 2248)

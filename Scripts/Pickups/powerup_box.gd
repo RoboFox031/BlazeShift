@@ -4,7 +4,7 @@ class_name pickupBox
 @onready var animatedSprite = $animatedSprite2d
 @onready var collision = $area2d/collisionShape2d
 @onready var powerupTimer = $timer
-var selection = randi_range(1,3)
+var selection = 2 #randi_range(1,3)
 
 func ready():
 	animatedSprite.play('Idle')

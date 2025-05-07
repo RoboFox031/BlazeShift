@@ -206,59 +206,64 @@ func _physics_process(delta):
 			resetMovement()
 
 func usePowerup():
-	if globalVars.pOnePowerup != 'none':
-		if globalVars.pOnePowerup == "blazePickup":
-			globalVars.pOnePowerup = 'none'
-			get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
-			print()
-			if globalVars.p1BlazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax:
-				globalVars.p1BlazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) 
-			else:
-				globalVars.p1BlazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax
-		if globalVars.pOnePowerup == 'fireballPickup':
-			globalVars.pOnePowerup = 'none'
-			var instance = fireball.instantiate()
-			instance.spawnPosition = global_position
-			instance.direction = rotation 
-			instance.ignore = self
-			get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
-			if currentOwner == playerChoices.p1:
+	if currentOwnerStr == 'p1':
+		if globalVars.pOnePowerup != 'none':
+			#player 1 blaze powerup
+			if globalVars.pOnePowerup == "blazePickup":
+				globalVars.pOnePowerup = 'none'
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
-		if globalVars.pOnePowerup == 'roadSpikesPickup':
-			globalVars.pOnePowerup = 'none'
-			var instance = roadSpikes.instantiate()
-			instance.spawnPosition = global_position
-			instance.direction = rotation
-			instance.ignore = self
-			get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
-			if currentOwner == playerChoices.p1:
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
-	if globalVars.pTwoPowerup != 'none':
-		if globalVars.pTwoPowerup == "blazePickup":
-			globalVars.pTwoPowerup = 'none'
-			get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
-			if globalVars.p2BlazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax:
-				globalVars.p2BlazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) 
-			else:
-				globalVars.p2BlazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax
-		if globalVars.pTwoPowerup == 'fireballPickup':
-			globalVars.pTwoPowerup = 'none'
-			var instance = fireball.instantiate()
-			instance.spawnPosition = global_position
-			instance.direction = rotation
-			instance.ignore = self
-			get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
-			if currentOwner == playerChoices.p2:
+				print()
+				if globalVars.p1BlazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax:
+					globalVars.p1BlazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) 
+				else:
+					globalVars.p1BlazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax
+			#player 1 fireball powerup
+			if globalVars.pOnePowerup == 'fireballPickup':
+				globalVars.pOnePowerup = 'none'
+				var instance = fireball.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation 
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p1:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+			if globalVars.pOnePowerup == 'roadSpikesPickup':
+				globalVars.pOnePowerup = 'none'
+				var instance = roadSpikes.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p1:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+	if currentOwnerStr == 'p2':			
+		if globalVars.pTwoPowerup != 'none':
+			#player 2 blaze pickup
+			if globalVars.pTwoPowerup == "blazePickup":
+				globalVars.pTwoPowerup = 'none'
 				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
-		if globalVars.pTwoPowerup == 'roadSpikesPickup':
-			globalVars.pTwoPowerup = 'none'
-			var instance = roadSpikes.instantiate()
-			instance.spawnPosition = global_position
-			instance.direction = rotation
-			instance.ignore = self
-			get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
-			if currentOwner == playerChoices.p2:
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+				if globalVars.p2BlazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax:
+					globalVars.p2BlazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) 
+				else:
+					globalVars.p2BlazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax
+			if globalVars.pTwoPowerup == 'fireballPickup':
+				globalVars.pTwoPowerup = 'none'
+				var instance = fireball.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p2:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+			if globalVars.pTwoPowerup == 'roadSpikesPickup':
+				globalVars.pTwoPowerup = 'none'
+				var instance = roadSpikes.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p2:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
 				
 			
 		
@@ -457,6 +462,7 @@ func updatePosition(area:Area2D):
 		#If none of the progress point you are touching result in legal moves, respawn
 		if anyLegalMove==false:
 			#respawn()
+			pass
 		#If you didn't skip and aren't reversing, then update the progress
 		elif isReverse==false:
 			lastProgress=currentProgress

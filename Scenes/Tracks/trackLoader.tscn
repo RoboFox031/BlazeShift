@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bwvjkcqhdw5e6" path="res://Scenes/UI/pOnePowerupsHud.tscn" id="4_n1ubl"]
 [ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="5_5lhqp"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/placementTracker.tscn" id="5_kxt15"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/Stoplight.tscn" id="5_t261b"]
+[ext_resource type="PackedScene" uid="uid://n3sg0thh08rh" path="res://Scenes/UI/Stoplight.tscn" id="5_t261b"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="6_m4tpg"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/wrongWayIndicator.tscn" id="6_rcrto"]
 [ext_resource type="PackedScene" uid="uid://bbpaemnpu0ei8" path="res://Scenes/UI/pTwoPowerupsHud.tscn" id="7_8we7n"]

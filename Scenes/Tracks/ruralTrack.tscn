@@ -9,7 +9,7 @@
 [ext_resource type="TileSet" uid="uid://dqdcbt7l7acll" path="res://Scenes/Tracks/track.tres" id="9_0u2nk"]
 [ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://Assets/Sprites/Tracks/ruralMapTiles/sandwater.png" id="10_h0h4c"]
 [ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://Assets/Sprites/Tracks/ruralMapTiles/sand.png" id="11_te1ji"]
-[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="11_v8d64"]
+[ext_resource type="Script" path="res://Scripts/Tracks/checkpointPath.gd" id="11_v8d64"]
 [ext_resource type="PackedScene" uid="uid://cej22tp7ejihv" path="res://Scenes/Cars/carSpawn.tscn" id="12_oyt2e"]
 [ext_resource type="PackedScene" uid="uid://ba81k30logwad" path="res://Scenes/Cars/Mustang.tscn" id="15_mrn2o"]
 
@@ -5063,7 +5063,6 @@ curve = SubResource("Curve2D_oyt2e")
 script = ExtResource("11_v8d64")
 checkpointLength = 400.0
 run = true
-metadata/_custom_type_script = "uid://c2yn3wll1ek5v"
 
 [node name="spawns" type="Node2D" parent="."]
 

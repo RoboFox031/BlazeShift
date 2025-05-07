@@ -8,9 +8,9 @@ func _ready():
 	#p1Start=Vector2(-1714,2100)
 	#p2Start=Vector2(-1714,2300)
 	#playerRotation=0
-	p1Start=p1Spawn.position
-	p2Start=p2Spawn.position
-	playerRotation=p1Spawn.rotation
+	p1Start=p1Spawn.global_position
+	p2Start=p2Spawn.global_position
+	playerRotation=p1Spawn.global_rotation
 	loadCars()
 	pass # Replace with function body.
 

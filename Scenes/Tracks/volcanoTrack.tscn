@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://diftod1f83vx" path="res://Assets/Sprites/Tracks/volcanoe_tileset_and_assets/volcanoe_tiles.png" id="2_fmrw8"]
 [ext_resource type="TileSet" uid="uid://bs0pqokyeb1y0" path="res://Scenes/Tracks/volcanoMountains.tres" id="3_3fxna"]
 [ext_resource type="TileSet" uid="uid://dqdcbt7l7acll" path="res://Scenes/Tracks/track.tres" id="5_3fxna"]
-[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="7_3fxna"]
+[ext_resource type="Script" path="res://Scripts/Tracks/checkpointPath.gd" id="7_3fxna"]
 [ext_resource type="PackedScene" uid="uid://cej22tp7ejihv" path="res://Scenes/Cars/carSpawn.tscn" id="8_apncx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xlcya"]
@@ -6767,7 +6767,6 @@ curve = SubResource("Curve2D_apncx")
 script = ExtResource("7_3fxna")
 checkpointLength = 400.0
 run = true
-metadata/_custom_type_script = "uid://c2yn3wll1ek5v"
 
 [node name="spawns" type="Node2D" parent="."]
 

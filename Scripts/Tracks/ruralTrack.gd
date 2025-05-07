@@ -5,9 +5,9 @@ extends tracks
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	p1Start=p1Spawn.position
-	p2Start=p2Spawn.position
-	playerRotation=p1Spawn.rotation
+	p1Start=p1Spawn.global_position
+	p2Start=p2Spawn.global_position
+	playerRotation=p1Spawn.global_rotation
 	loadCars()
 
 	#spawns in cars

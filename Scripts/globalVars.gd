@@ -35,15 +35,17 @@ var laps={
 var pOneLastRaceTime = '00:00'
 var pOneTotalTime = '00:00'
 var pOneLastRacePlacement = null
-var pOneOverallPlacement = null
+var pOneOverallPlacement = '1st'
 var pOneLastRaceCoinsCollected = 0
+var pOneTotalCoinsCollected = 0
 var pOneTotalWins = 0
 
 var pTwoLastRaceTime = '00:00'
 var pTwoTotalTime = '00:00'
 var pTwoLastRacePlacement = null
-var pTwoOverallPlacement = null
+var pTwoOverallPlacement = '1st'
 var pTwoLastRaceCoinsCollected = 0
+var pTwoTotalCoinsCollected = 0
 var pTwoTotalWins = 0
 
 #shop variables

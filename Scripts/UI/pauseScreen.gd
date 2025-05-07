@@ -123,7 +123,8 @@ func _useButton(option):
 		self.visible = false
 		print('hit')
 	if option == 'options':
-		self.visible == false
+		$pauseOptionsScreen.pausedToMenu = true
+		$pauseOptionsScreen.visible = true
 	if option == 'restart':
 		inControl = 3
 		$pOneConfirmLabel.visible = true

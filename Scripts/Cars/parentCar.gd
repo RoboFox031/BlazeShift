@@ -407,6 +407,10 @@ func updateTerrain(newTerrain):
 			terrainDecelMult=iceDecelMult
 			#Lowers traction on ice
 			traction=traction/15
+			
+		#If you drive on a hazard, respawn
+		elif newTerrain==trackEnums.terrainTypes.hazzard:
+			respawn()
 
 func updatePosition(area:Area2D):
 	if area is checkpoint:

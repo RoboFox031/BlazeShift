@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://djbb2ffhj2n2h"]
+[gd_scene load_steps=11 format=4 uid="uid://djbb2ffhj2n2h"]
 
 [ext_resource type="Script" uid="uid://71egy5gs0lbp" path="res://Scripts/Tracks/basicTrack.gd" id="1_ifg0j"]
 [ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://Assets/Sprites/Tracks/grass_tileset_16x16.png" id="2_t0oks"]
 [ext_resource type="TileSet" uid="uid://dqdcbt7l7acll" path="res://Scenes/Tracks/track.tres" id="3_ikrvl"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="4_ikrvl"]
+[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="5_s70l0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_anobo"]
 texture = ExtResource("2_t0oks")
@@ -2987,8 +2988,13 @@ texture = ExtResource("4_ikrvl")
 [sub_resource type="TileSet" id="TileSet_ryjmn"]
 sources/0 = SubResource("TileSetAtlasSource_s70l0")
 
+[sub_resource type="Curve2D" id="Curve2D_ryjmn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1401, 2218, 0, 0, 0, 0, -1086.23, 2218, -222.603, 8.28963, 222.603, -8.28963, -47.3115, 2200.86, -22.4097, -590.221, 22.4097, 590.221, 373.664, 3032.34, -420.555, 13.2634, 420.555, -13.2634, 822.641, 4129.55, 8.96387, 225.478, -8.96387, -225.478, 1261, 3518.8, 90.3857, 366.401, -90.3857, -366.401, 1258.1, 396.454, 210.651, -16.5793, 0, 0, 840.021, -315.021, 73.532, 155.818, -73.532, -155.818, 616.981, -510.033, 2.98796, 411.165, -2.98796, -411.165, 391.044, -1204.36, -13.8684, 569.44, 13.8684, -569.44, 367.871, -3975.26, -306.26, 35.9106, 306.26, -35.9106, 813.951, -4740.31, 3.4671, 607.916, -3.4671, -607.916, 1270.65, -5730.37, 283.146, -10.2602, -283.146, 10.2602, 911.471, -6726.86, 6.93419, 600.221, -6.93419, -600.221, 403.596, -7669.78, 327.063, 7.69513, -327.063, -7.69513, -46.346, -8743.42, 0, 0, 0, 0, -1060.16, -8734.85, 247.319, -20.5204, -247.319, 20.5204, -1341.14, -8726.28, 7.91516, 619.882, -7.91516, -619.882, -1633.7, -9791.34, 279.292, -22.5868, -279.292, 22.5868, -2039.22, -10635.7, -41.8373, -559.65, 41.8373, 559.65, -2505.58, -9727.05, 218.232, -238.416, -218.232, 238.416, -2804.9, -8756.28, 253.285, -117.953, -253.285, 117.953, -3425.74, -8700.56, 4.52295, -506.948, -4.52295, 506.948, -3756.92, -7757.64, -184.31, -15.0579, 184.31, 15.0579, -3380.36, -6752.58, -246.501, 15.0579, 246.501, -15.0579, -2161.85, -6752.58, 3.39221, -537.064, -3.39221, 537.064, -1718.66, -5963.96, 238.585, -27.6061, -238.585, 27.6061, -1910.81, -5276.05, 248.762, -17.5675, -248.762, 17.5675, -3519.4, -5237.48, 7.91516, -489.38, -7.91516, 489.38, -3781.06, -4635.3, -203.533, -40.1543, 203.533, 40.1543, -3411.26, -3797.39, -258.939, 10.0386, 258.939, -10.0386, -2492.06, -3778.1, -5.65368, -213.32, 5.65368, 213.32, -2116.47, -3145.92, -2.26147, -306.176, 2.26147, 306.176, -2107.78, -1770.11, -163.957, -7.52893, 163.957, 7.52893, -1884.74, -1459.38, -238.585, 0, 238.585, 0, -1449.28, -1414.38, -7.91516, -582.237, 7.91516, 582.237, -1066.92, -572.18, 239.716, -25.0964, -239.716, 25.0964, -1403.9, 525.034, 231.801, 2.50964, -231.801, -2.50964, -2992.21, 548.607, 6.78442, 436.678, -6.78442, -436.678, -3278.01, 47.1458, 4.52295, 431.659, -4.52295, -431.659, -3284.77, -972.92, 194.487, -7.52893, -194.487, 7.52893, -3700.92, -1860.12, -1.13074, -381.466, 1.13074, 381.466, -4183.69, -1035.07, -12.4381, -424.13, 12.4381, 424.13, -4151.83, 1470.09, -237.455, 0, 237.455, 0, -3798.44, 2241.57, 0, 0, 0, 0, -1642.39, 2218, 0, 0, 0, 0, -1401, 2218)
+}
+point_count = 47
+
 [node name="basicTrack" type="Node2D"]
-position = Vector2(-28, -27)
 script = ExtResource("1_ifg0j")
 
 [node name="Grass" type="TileMapLayer" parent="."]
@@ -3008,3 +3014,13 @@ position = Vector2(-1000, 1932)
 scale = Vector2(1.92, 1.92)
 tile_map_data = PackedByteArray("AADz/wMAAAAiAAAAAADz/wQAAAAiAAEAAADz/wUAAAAiAAIAAADz/wYAAAAiAAMAAADz/wcAAAAiAAQAAADz/wgAAAAiAAUAAADz/wkAAAAiAAYAAADz/woAAAAiAAcAAADz/wsAAAAiAAgAAADz/wwAAAAiAAkAAADz/w0AAAAiAAoAAADz/w4AAAAiAAsAAAD0/wMAAAAjAAAAAAD0/wQAAAAjAAEAAAD0/wUAAAAjAAIAAAD0/wYAAAAjAAMAAAD0/wcAAAAjAAQAAAD0/wgAAAAjAAUAAAD0/wkAAAAjAAYAAAD0/woAAAAjAAcAAAD0/wsAAAAjAAgAAAD0/wwAAAAjAAkAAAD0/w0AAAAjAAoAAAD0/w4AAAAjAAsAAAD1/wMAAAAkAAAAAAD1/wQAAAAkAAEAAAD1/wUAAAAkAAIAAAD1/wYAAAAkAAMAAAD1/wcAAAAkAAQAAAD1/wgAAAAkAAUAAAD1/wkAAAAkAAYAAAD1/woAAAAkAAcAAAD1/wsAAAAkAAgAAAD1/wwAAAAkAAkAAAD1/w0AAAAkAAoAAAD1/w4AAAAkAAsAAAD2/wMAAAAlAAAAAAD2/wQAAAAlAAEAAAD2/wUAAAAlAAIAAAD2/wYAAAAlAAMAAAD2/wcAAAAlAAQAAAD2/wgAAAAlAAUAAAD2/wkAAAAlAAYAAAD2/woAAAAlAAcAAAD2/wsAAAAlAAgAAAD2/wwAAAAlAAkAAAD2/w0AAAAlAAoAAAD2/w4AAAAlAAsAAAD3/wMAAAAmAAAAAAD3/wQAAAAmAAEAAAD3/wUAAAAmAAIAAAD3/wYAAAAmAAMAAAD3/wcAAAAmAAQAAAD3/wgAAAAmAAUAAAD3/wkAAAAmAAYAAAD3/woAAAAmAAcAAAD3/wsAAAAmAAgAAAD3/wwAAAAmAAkAAAD3/w0AAAAmAAoAAAD3/w4AAAAmAAsAAAD4/wMAAAAnAAAAAAD4/wQAAAAnAAEAAAD4/wUAAAAnAAIAAAD4/wYAAAAnAAMAAAD4/wcAAAAnAAQAAAD4/wgAAAAnAAUAAAD4/wkAAAAnAAYAAAD4/woAAAAnAAcAAAD4/wsAAAAnAAgAAAD4/wwAAAAnAAkAAAD4/w0AAAAnAAoAAAD4/w4AAAAnAAsAAADz/w8AAAAiAAwAAAD0/w8AAAAjAAwAAAD1/w8AAAAkAAwAAAD2/w8AAAAlAAwAAAD3/w8AAAAmAAwAAAD4/w8AAAAnAAwAAAA=")
 tile_set = SubResource("TileSet_ryjmn")
+
+[node name="checkpointPath" type="Path2D" parent="."]
+z_index = 2
+position = Vector2(50, 1183)
+scale = Vector2(1.03569, 0.466637)
+curve = SubResource("Curve2D_ryjmn")
+script = ExtResource("5_s70l0")
+checkpointLength = 700.0
+run = true
+metadata/_custom_type_script = "uid://c2yn3wll1ek5v"

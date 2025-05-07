@@ -4968,6 +4968,7 @@ tile_set = ExtResource("6_5bqh8")
 z_index = 3
 curve = SubResource("Curve2D_2idqy")
 script = ExtResource("12_5bqh8")
+checkpointLength = 500.0
 run = true
 
 [node name="offroad" type="Area2D" parent="."]

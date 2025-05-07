@@ -3022,6 +3022,7 @@ position = Vector2(50, 1183)
 scale = Vector2(1.03569, 0.466637)
 curve = SubResource("Curve2D_ryjmn")
 script = ExtResource("5_s70l0")
+checkpointLength = 750.0
 run = true
 metadata/_custom_type_script = "uid://c2yn3wll1ek5v"
 

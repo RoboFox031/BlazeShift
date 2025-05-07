@@ -3013,110 +3013,110 @@ tile_set = SubResource("TileSet_ryjmn")
 [node name="Coins" type="Node" parent="."]
 
 [node name="coins" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-754, 2129)
+position = Vector2(-754, 2158)
 
 [node name="coins2" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-753, 2270)
+position = Vector2(-753, 2299)
 
 [node name="coins3" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(1271, 1928)
+position = Vector2(1291, 1925)
 
 [node name="coins4" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(1272, 2056)
+position = Vector2(1292, 2053)
 
 [node name="coins5" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(1409, 1927)
+position = Vector2(1429, 1924)
 
 [node name="coins6" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(1410, 2055)
+position = Vector2(1430, 2052)
 
 [node name="coins7" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(343, -29)
+position = Vector2(372, -29)
 
 [node name="coins8" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(344, 99)
+position = Vector2(373, 99)
 
 [node name="coins9" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(515, -29)
+position = Vector2(544, -29)
 
 [node name="coins10" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(516, 99)
+position = Vector2(545, 99)
 
 [node name="coins11" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-277, -2973)
+position = Vector2(-286, -2939)
 
 [node name="coins12" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-276, -2845)
+position = Vector2(-285, -2811)
 
 [node name="coins13" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-430, -2973)
+position = Vector2(-439, -2939)
 
 [node name="coins14" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-429, -2845)
+position = Vector2(-438, -2811)
 
 [node name="coins15" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-586, -2973)
+position = Vector2(-595, -2939)
 
 [node name="coins16" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-585, -2845)
+position = Vector2(-594, -2811)
 
 [node name="coins17" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-2920, -2073)
+position = Vector2(-2920, -2047)
 
 [node name="coins18" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-2919, -1945)
+position = Vector2(-2919, -1919)
 
 [node name="coins19" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-2644, -1373)
+position = Vector2(-2644, -1339)
 
 [node name="coins20" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-2643, -1245)
+position = Vector2(-2643, -1211)
 
 [node name="coins21" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-3021, -663)
+position = Vector2(-3012, -640)
 
 [node name="coins22" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-3020, -535)
+position = Vector2(-3011, -512)
 
 [node name="coins23" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-1874, 1340)
+position = Vector2(-1874, 1360)
 
 [node name="coins24" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-1873, 1468)
+position = Vector2(-1873, 1488)
 
 [node name="coins25" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-2037, 1342)
+position = Vector2(-2037, 1362)
 
 [node name="coins26" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-2036, 1470)
+position = Vector2(-2036, 1490)
 
 [node name="coins27" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-2207, 1338)
+position = Vector2(-2207, 1358)
 
 [node name="coins28" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-2206, 1466)
+position = Vector2(-2206, 1486)
 
 [node name="coins29" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-4256, 1122)
+position = Vector2(-4245, 1122)
 
 [node name="coins30" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-4255, 1250)
+position = Vector2(-4242, 1250)
 
 [node name="coins31" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-4256, 1375)
+position = Vector2(-4243, 1373)
 
 [node name="coins32" parent="Coins" instance=ExtResource("5_s70l0")]
-position = Vector2(-4255, 1503)
+position = Vector2(-4242, 1501)
 
 [node name="Powerup Boxes" type="Node" parent="."]
 
 [node name="powerupBox" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
 z_index = 17
-position = Vector2(334, -468)
+position = Vector2(383, -474)
 
 [node name="powerupBox2" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
 z_index = 17
-position = Vector2(497, -471)
+position = Vector2(546, -474)
 
 [node name="powerupBox3" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
 z_index = 17
@@ -3144,11 +3144,11 @@ position = Vector2(-1695, 440)
 
 [node name="powerupBox9" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
 z_index = 17
-position = Vector2(-4369, 1315)
+position = Vector2(-4358, 1315)
 
 [node name="powerupBox10" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
 z_index = 17
-position = Vector2(-4138, 1312)
+position = Vector2(-4121, 1312)
 
 [node name="powerupBox11" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
 z_index = 17

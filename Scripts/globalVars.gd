@@ -10,6 +10,7 @@ var playerTwoColor = "blue"
 var musicType = 'spotifyMusic'
 var musicDB = 50
 var sfxDB = 50
+var nextScene
 #Defults to mustang
 var currentCarNames={"p1":"Mustang","p2":"Mustang"}
 var pOnePowerup = 'none'

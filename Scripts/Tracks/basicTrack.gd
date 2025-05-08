@@ -7,6 +7,7 @@ func _ready():
 	p2Start=Vector2(-1714,2300)
 	playerRotation=0
 	loadCars()
+	print($player1/camera2d.global_position)
 	pass # Replace with function body.
 
 

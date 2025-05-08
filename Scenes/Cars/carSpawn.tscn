@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://db35m7igq2e5h"]
+
+[ext_resource type="Script" path="res://Scripts/Cars/carSpawn.gd" id="1_oykp5"]
+
+[node name="carSpawn" type="Node2D"]
+z_index = 10
+script = ExtResource("1_oykp5")
+
+[node name="colorRect" type="ColorRect" parent="."]
+offset_left = -48.0
+offset_top = -25.0
+offset_right = 52.0
+offset_bottom = 25.0
+color = Color(3.04427e-05, 0.600783, 0.0454686, 0.788235)
+
+[node name="polygon2d" type="Polygon2D" parent="."]
+position = Vector2(57, 0)
+polygon = PackedVector2Array(-5, 0, -29, 13, -29, -13)
+uv = PackedVector2Array(135.5, 4.75, 103, -21.75, 103, 33.25)

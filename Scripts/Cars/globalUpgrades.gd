@@ -37,16 +37,10 @@ var upgradesDict={
 	}
 #used to determine the cost of an upgrade
 var upgradesCost = {
-	'p1':{'topSpeed':1,
-		'maxBlaze':1,
-		'handling':1,
-		'acceleration':1
-	},
-	'p2':{'topSpeed':1,
-		'maxBlaze':1,
-		'handling':1,
-		'acceleration':1
-		}
+	'topSpeed':{1:2,2:5,3:8,4:10,5:15},
+		'maxBlaze':{1:2,2:5,3:8,4:10,5:15},
+		'handling':{1:2,2:5,3:8,4:10,5:15},
+		'acceleration':{1:2,2:5,3:8,4:10,5:15}
 	}
 
 

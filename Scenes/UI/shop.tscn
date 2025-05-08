@@ -57,7 +57,7 @@
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="35_igcgd"]
 [ext_resource type="Texture2D" uid="uid://bllvbf8rfsljc" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Green-1.png.png" id="35_q2fg0"]
 [ext_resource type="Texture2D" uid="uid://c3f28alyl07oe" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Orange-1.png (1).png" id="36_vnvai"]
-[ext_resource type="PackedScene" uid="uid://bmtbwlc4rj8uy" path="res://Scenes/UI/uiSFX.tscn" id="37_iod5g"]
+[ext_resource type="PackedScene" uid="uid://icevwd4ir3d2" path="res://Scenes/UI/uiSFX.tscn" id="37_iod5g"]
 [ext_resource type="Texture2D" uid="uid://dosjykeyw5g0" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Purple-1.png.png" id="37_y4ufb"]
 [ext_resource type="Texture2D" uid="uid://ka6oiijs51ka" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Red-1.png (1).png" id="38_xvdhy"]
 [ext_resource type="Texture2D" uid="uid://dmvn3n8werno" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View White-1.png (1).png" id="39_sv8oo"]

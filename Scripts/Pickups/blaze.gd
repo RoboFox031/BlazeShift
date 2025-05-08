@@ -1,4 +1,4 @@
-extends pickup
+extends powerUp
 
 func _ready():
 	type = "blaze"

@@ -6,8 +6,11 @@ class_name Car
 
 var color = "blue"
 var fireball: PackedScene = preload("res://Scenes/Pickups/fireball.tscn")
+var snowball: PackedScene = preload('res://Scenes/Pickups/snowball.tscn')
 var roadSpikes: PackedScene = preload("res://Scenes/Pickups/roadSpikes.tscn")
+var fireCyclone: PackedScene = preload('res://Scenes/Pickups/fireCyclone.tscn')
 var paused = false
+var inCyclone = false
 
 ########
 #Important Car Stats:
@@ -184,14 +187,23 @@ func _physics_process(delta):
 	
 	if isDrifting==false:
 		#Gets the input, and converts it to positive or negitive 1
-		turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right")
+		if not inCyclone:
+			turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right")
+		if inCyclone:
+			turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right") * -1
 	if isDrifting==true:
 		#if you are drifting, locks your turning in the drifing direction, and only allows for small adjustments
 		#turnDirection=currentDrift
 		if currentDrift<0:
-			turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),currentDrift,0)
+			if not inCyclone:
+				turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),currentDrift,0)
+			if inCyclone:
+				turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),currentDrift,0) * -1
 		elif currentDrift>0:
-			turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),-0,currentDrift)
+			if not inCyclone:
+				turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),-0,currentDrift)
+			if inCyclone:
+				turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),-0,currentDrift) * -1
 		print(turnDirection)
 	#If you are clicking a button, turns in that direction based on the acceleration value
 	if turnDirection:# and currentLinSpeed!=0:
@@ -261,12 +273,30 @@ func usePowerup():
 				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 				if currentOwner == playerChoices.p1:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+			#snowball
+			if globalVars.pOnePowerup == 'snowballPickup':
+				globalVars.pOnePowerup = 'none'
+				var instance = snowball.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation 
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p1:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+					
 			if globalVars.pOnePowerup == 'roadSpikesPickup':
 				globalVars.pOnePowerup = 'none'
 				var instance = roadSpikes.instantiate()
 				instance.spawnPosition = global_position
 				instance.direction = rotation
 				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p1:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+			if globalVars.pOnePowerup == 'fireCyclonePickup':
+				globalVars.pOnePowerup = 'none'
+				var instance = fireCyclone.instantiate()
+				instance.playerNum = 'p1'
 				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 				if currentOwner == playerChoices.p1:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
@@ -289,6 +319,17 @@ func usePowerup():
 				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 				if currentOwner == playerChoices.p2:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+			#snowball
+			if globalVars.pTwoPowerup == 'snowballPickup':
+				globalVars.pTwoPowerup = 'none'
+				var instance = snowball.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation 
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p2:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+					
 			if globalVars.pTwoPowerup == 'roadSpikesPickup':
 				globalVars.pTwoPowerup = 'none'
 				var instance = roadSpikes.instantiate()
@@ -298,7 +339,14 @@ func usePowerup():
 				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 				if currentOwner == playerChoices.p2:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
-				
+			
+			if globalVars.pTwoPowerup == 'fireCyclonePickup':
+				globalVars.pTwoPowerup = 'none'
+				var instance = fireCyclone.instantiate()
+				instance.playerNum = 'p2'
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p2:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
 			
 		
 
@@ -306,9 +354,6 @@ func usePowerup():
 
 func _input(event):
 	#Allows boost
-	if Input.is_action_just_pressed('test'):
-		print('next lap')
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index('music'),-100)
 	if globalVars.canMove == true and paused == false:
 		if Input.is_action_just_pressed(currentOwnerStr+"_x"):
 			

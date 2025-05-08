@@ -23,6 +23,7 @@ var p2BlazeCurrent = 100
 var pOneDone = false
 var pTwoDone = false
 var playMusic
+var inCyclone = false
 #Stores the progress value and the lap value for each player
 var progress={
 	"p1":0,

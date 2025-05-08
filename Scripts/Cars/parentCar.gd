@@ -396,6 +396,7 @@ func updateTerrain(newTerrain):
 			terrainTurnSpeedMult=offRoadTurnSpeedMult
 			terrainTurnPowerMult=offRoadTurnPowerMult
 			terrainDecelMult=offRoadDecelMult
+			traction=baseTraction*29
 		#If the car is going onto ice, set the terrain mults accordingly
 		elif newTerrain==trackEnums.terrainTypes.ice:
 			terrainSpeedMult=iceSpeedMult

@@ -1,16 +1,17 @@
-[gd_scene load_steps=23 format=3 uid="uid://bkjj8etk8gxx"]
+[gd_scene load_steps=25 format=3 uid="uid://bkjj8etk8gxx"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_gmmup"]
-[ext_resource type="Resource" uid="uid://nogcafh0k4qb" path="res://Resources/carStats/basicCarStats.tres" id="2_1giec"]
 [ext_resource type="Texture2D" uid="uid://c12coi1qc800a" path="res://Assets/Sprites/Cars/NSX/NSXBlue.png" id="2_52j34"]
+[ext_resource type="Resource" uid="uid://4ga0pbwn683g" path="res://Resources/carStats/nsxStats.tres" id="2_ij5hg"]
 [ext_resource type="Texture2D" uid="uid://dd6u861qw1dog" path="res://Assets/Sprites/Cars/NSX/NSXGreen.png" id="3_78ue1"]
 [ext_resource type="Shader" uid="uid://b0ijw40aod2u8" path="res://shadersAndMaterials/carShader.gdshader" id="3_ij5hg"]
+[ext_resource type="Texture2D" uid="uid://c4j141rwvqapi" path="res://Assets/Sprites/Cars/NSX/NSXBlack.png" id="4_a4i0b"]
 [ext_resource type="Texture2D" uid="uid://bc7kjhhmc4t0" path="res://Assets/Sprites/Cars/NSX/NSXOrange.png" id="4_m8pit"]
 [ext_resource type="Texture2D" uid="uid://bk32brwef7p6c" path="res://Assets/Sprites/Cars/NSX/NSXPurple.png" id="5_qqy1g"]
 [ext_resource type="Texture2D" uid="uid://dogd3hglgokrv" path="res://Assets/Sprites/Cars/NSX/NSXRed.png" id="6_4b5nt"]
 [ext_resource type="Texture2D" uid="uid://ctmr7xx5ch6cs" path="res://Assets/Sprites/Cars/NSX/NSXWhite.png" id="7_lphrb"]
 [ext_resource type="Texture2D" uid="uid://dlnp7itifebmb" path="res://Assets/Sprites/Cars/NSX/NSXYellow.png" id="8_dcu01"]
-[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="9_axpak"]
+[ext_resource type="Script" uid="uid://d0itn8p060dcc" path="res://Scripts/Cars/terrainDetector.gd" id="9_axpak"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a4i0b"]
 shader = ExtResource("3_ij5hg")
@@ -47,7 +48,10 @@ region = Rect2(0, 0, 192, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5pqir"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_a4i0b")
+}],
 "loop": true,
 "name": &"black",
 "speed": 5.0
@@ -110,39 +114,40 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y51"]
-size = Vector2(44, 110)
+size = Vector2(46, 116)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
 size = Vector2(8.99993, 13.9999)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ni7tt"]
-size = Vector2(109, 48)
+size = Vector2(116, 48)
 
 [node name="NSX" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_gmmup")
-stats = ExtResource("2_1giec")
+stats = ExtResource("2_ij5hg")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_a4i0b")
-position = Vector2(-10, 16)
+position = Vector2(-9.99982, 17.0002)
 rotation = 3.14159
-scale = Vector2(0.705, 0.705)
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_5pqir")
-animation = &"yellow"
+animation = &"black"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-1, -3.61999e-06)
+position = Vector2(0.000183105, 0.000190735)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_v4y51")
 debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)
 
 [node name="camera2d" type="Camera2D" parent="."]
+position = Vector2(0.000183105, 1.00018)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="terrainDetector" type="Node2D" parent="."]
+position = Vector2(0.000183105, 1.00018)
 script = ExtResource("9_axpak")
 
 [node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]
@@ -150,7 +155,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorL"]
-position = Vector2(0, -17)
+position = Vector2(0, -19)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_mox8c")
 
@@ -164,6 +169,7 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_mox8c")
 
 [node name="progressChecker" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 4
 

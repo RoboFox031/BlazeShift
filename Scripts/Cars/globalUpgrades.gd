@@ -35,12 +35,30 @@ var upgradesDict={
 	"p1":{},
 	"p2":{}
 	}
+
+	#Stores price of cheap upgrades
+var cheapUpgradeCost={
+	1:1,
+	2:2,
+	3:4,
+	4:8,
+	5:10
+}
+#Stores price of cheap upgrades
+var normalUpgradeCost={
+	1:2,
+	2:5,
+	3:8,
+	4:10,
+	5:15
+}
+
 #used to determine the cost of an upgrade
 var upgradesCost = {
-	'topSpeed':{1:2,2:5,3:8,4:10,5:15},
-	'maxBlaze':{1:1,2:2,3:4,4:8,5:10},
-	'handling':{1:2,2:5,3:8,4:10,5:15},
-	'acceleration':{1:1,2:2,3:4,4:8,5:10}
+	'topSpeed':normalUpgradeCost,
+	'maxBlaze':cheapUpgradeCost,
+	'handling':normalUpgradeCost,
+	'acceleration':cheapUpgradeCost
 	}
 
 

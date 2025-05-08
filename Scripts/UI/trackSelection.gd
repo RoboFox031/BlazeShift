@@ -12,32 +12,42 @@ class_name trackSelection
 var maps: Array
 var tracks: Array
 var trackNames: Array = ['basic', 'rural', 'ice', 'volcano', 'city']
-
+var completed = false
 var selected = 0
 
 func _ready() -> void:
 	maps = [mapOne, mapTwo, mapThree, mapFour, mapFive]
 	tracks = [preload("res://Scenes/Tracks/basicTrack.tscn"),preload("res://Scenes/Tracks/ruralTrack.tscn"),preload("res://Scenes/Tracks/iceTrack.tscn"),preload("res://Scenes/Tracks/volcanoTrack.tscn"),preload("res://Scenes/Tracks/cityTrack.tscn")]
 	_updateMapSelected(maps[selected])
+	print(maps)
+	for x in globalVars.tracksCompleted:
+		print(x)
+		maps[x].modulate = Color('3d3d3d')
 
 func _process(delta: float) -> void:
-	if selected >= 0 and Input.is_action_just_pressed("p1_start"):
+	
+	if selected >= 0 and Input.is_action_just_pressed("p1_start") and completed == false:
 		$uiSFX.playSelectSound()
 		await get_tree().create_timer(0.5).timeout 
 		globalVars.track = tracks[selected]
+		globalVars.tracksCompleted.append(selected)
 		globalVars.nextScene = "res://Scenes/Tracks/trackDisplayer.tscn"
 		get_tree().change_scene_to_file("res://Scenes/UI/loadingScreen.tscn")
 	if Input.is_action_just_pressed("p1_right"):
 		if selected + 1 < len(maps):
 			selected += 1
+			checkCompletion()
 		else:
 			selected = 0
+			checkCompletion()
 		_updateMapSelected(maps[selected])
 	elif Input.is_action_just_pressed("p1_left"):
 		if selected - 1 >= 0:
 			selected -= 1
+			checkCompletion()
 		else:
 			selected = len(maps) - 1
+			checkCompletion()
 		_updateMapSelected(maps[selected])
 		
 	if Input.is_action_just_pressed("p1_b"):
@@ -53,3 +63,16 @@ func _updateMapSelected(map):
 			$trackSelectionLabel.text = 'press start to play ' + trackNames[selected] + ' map'
 		else:
 			m.get_child(0).visible = false
+
+func checkCompletion():
+	for x in globalVars.tracksCompleted:
+		print(x)
+		print(selected)
+		if x == selected:
+			completed = true
+			print(completed)
+			break
+		else: 
+			completed = false
+			print(completed)
+	pass

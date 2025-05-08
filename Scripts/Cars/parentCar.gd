@@ -547,7 +547,7 @@ func updatePosition(area:Area2D):
 					largestLegalProgress=checkpoints.progress
 		#If none of the progress point you are touching result in legal moves, respawn
 		if anyLegalMove==false:
-			#respawn()
+			respawn()
 			pass
 		#If you didn't skip and aren't reversing, then update the progress
 		elif isReverse==false:
@@ -637,7 +637,7 @@ func checkTrackDistance():
 	var currentDistance=global_position.distance_to(progressPoint)
 	#if the player is too far away, respawn
 	if (currentDistance>trackMaxDist):
-		#respawn()
+		respawn()
 		pass
 
 #finishes the race

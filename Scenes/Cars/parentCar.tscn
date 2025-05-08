@@ -101,6 +101,7 @@ _data = {
 
 [node name="parentCar" type="CharacterBody2D"]
 z_index = 6
+collision_layer = 8
 script = ExtResource("1_bubl4")
 stats = ExtResource("2_fiv63")
 
@@ -112,7 +113,6 @@ region_enabled = true
 region_rect = Rect2(64, 20, 43, 98)
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
-visibility_layer = 8
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_v4y51")
 debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)

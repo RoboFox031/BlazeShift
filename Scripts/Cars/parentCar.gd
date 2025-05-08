@@ -8,6 +8,7 @@ var color = "blue"
 var fireball: PackedScene = preload("res://Scenes/Pickups/fireball.tscn")
 var snowball: PackedScene = preload('res://Scenes/Pickups/snowball.tscn')
 var roadSpikes: PackedScene = preload("res://Scenes/Pickups/roadSpikes.tscn")
+var fireCyclone: PackedScene = preload('res://Scenes/Pickups/fireCyclone.tscn')
 var paused = false
 
 ########
@@ -248,6 +249,15 @@ func usePowerup():
 				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 				if currentOwner == playerChoices.p1:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+			if globalVars.pOnePowerup == 'fireCyclonePickup':
+				globalVars.pOnePowerup = 'none'
+				var instance = fireCyclone.instantiate()
+				instance.spawnPosition = position
+				instance.direction = rotation
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track/player1').add_child(instance)
+				if currentOwner == playerChoices.p1:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
 	if currentOwnerStr == 'p2':			
 		if globalVars.pTwoPowerup != 'none':
 			#player 2 blaze pickup
@@ -287,7 +297,16 @@ func usePowerup():
 				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 				if currentOwner == playerChoices.p2:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
-				
+			
+			if globalVars.pTwoPowerup == 'fireCyclonePickup':
+				globalVars.pTwoPowerup = 'none'
+				var instance = fireCyclone.instantiate()
+				instance.spawnPosition = position
+				instance.direction = rotation
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track/player2').add_child(instance)
+				if currentOwner == playerChoices.p2:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
 			
 		
 

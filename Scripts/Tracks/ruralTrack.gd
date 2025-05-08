@@ -7,9 +7,6 @@ extends tracks
 func _ready():
 	p1Start=p1Spawn.global_position
 	p2Start=p2Spawn.global_position
-	playerRotation=p1Spawn.global_rotation
-	loadCars()
-
-	#spawns in cars
+	playerRotation=p1Spawn.global_rotation_degrees
 	loadCars()
 	pass # Replace with function body.

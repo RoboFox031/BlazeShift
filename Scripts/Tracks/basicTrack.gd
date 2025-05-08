@@ -10,7 +10,7 @@ func _ready():
 	#playerRotation=0
 	p1Start=p1Spawn.global_position
 	p2Start=p2Spawn.global_position
-	playerRotation=p1Spawn.global_rotation
+	playerRotation=p1Spawn.global_rotation_degrees
 	loadCars()
 	pass # Replace with function body.
 

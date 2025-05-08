@@ -60,10 +60,10 @@ var currentOwnerStr:String:
 		return playerChoices.find_key(currentOwner)
 
 #controls how the car reacts to offroadingsa
-var offRoadSpeedMult:float=.6 ##Controls how offroading affects speed and acceleration
-var offRoadAccelMult:float=.8 ##Controls how offroading affects turning
-var offRoadTurnSpeedMult:float=.8 ##Controls how offroading affects turning speed
-var offRoadTurnPowerMult:float=.8 ##Controls how offroading affects turning power
+var offRoadSpeedMult:float=.5 ##Controls how offroading affects speed and acceleration
+var offRoadAccelMult:float=1000 ##Controls how offroading affects turning
+var offRoadTurnSpeedMult:float=.9 ##Controls how offroading affects turning speed
+var offRoadTurnPowerMult:float=.9 ##Controls how offroading affects turning power
 var offRoadDecelMult:float=2 ##Controls how offroading affects decleration 
 #controls how the car reacts to ice
 var iceSpeedMult:float=1 ##Controls how offroading affects speed and acceleration

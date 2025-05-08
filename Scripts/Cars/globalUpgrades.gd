@@ -38,9 +38,9 @@ var upgradesDict={
 #used to determine the cost of an upgrade
 var upgradesCost = {
 	'topSpeed':{1:2,2:5,3:8,4:10,5:15},
-		'maxBlaze':{1:2,2:5,3:8,4:10,5:15},
-		'handling':{1:2,2:5,3:8,4:10,5:15},
-		'acceleration':{1:2,2:5,3:8,4:10,5:15}
+	'maxBlaze':{1:1,2:2,3:4,4:8,5:10},
+	'handling':{1:2,2:5,3:8,4:10,5:15},
+	'acceleration':{1:1,2:2,3:4,4:8,5:10}
 	}
 
 
@@ -82,4 +82,13 @@ func statValue(player:String,car:String,upgradeName:String):
 func getStatLevel(player:String,car:String,upgradeName:String):
 	#Returns the level of the chosen upgrade
 	var level=upgradesDict[player][car][upgradeName]
+	#print(upgradeName+" "+str(level))
 	return level
+	
+
+
+#Gets the level of a stat
+func getUpgradeCost(player:String,upgradeName:String):
+	#Returns the level of the chosen upgrade
+	var cost=globalUpgrades.upgradesCost[upgradeName][1+globalUpgrades.getStatLevel(player,globalVars.currentCarNames[player],upgradeName)]
+	return cost

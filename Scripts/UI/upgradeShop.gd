@@ -113,12 +113,22 @@ func _updateSelected():
 	_updateUpgradeSprites()
 #updates cost label
 func _updateCostLabel():
-	pOneCostLabel.text = "cost to upgrade: " + str(_findCost('p1', upgradeNames[pOneUpgradeSelected])) + " " + str(_ifCoinsPlural(_findCost('p1', upgradeNames[pOneUpgradeSelected])))
-	pTwoCostLabel.text = "cost to upgrade: " + str(_findCost('p2', upgradeNames[pTwoUpgradeSelected])) + " " + str(_ifCoinsPlural(_findCost('p2', upgradeNames[pTwoUpgradeSelected])))
-#finds the cost of an upgrade using the global upgrades dict. use p1 and p2 then the name of the upgrade
-func _findCost(player,upgrade):
-	return globalUpgrades.upgradesCost[player][upgrade]
-#used for if the coin number is singular or plural
+	#Checks if the current level is under 5
+	if globalUpgrades.getStatLevel('p1',globalVars.currentCarNames['p1'],upgradeNames[pOneUpgradeSelected])==5:
+		#If the selected upgrde is level 5, don't print a cost
+		pOneCostLabel.text='Upgrade Maxed'
+	else:
+		#if the selected upgrade is not level 5, print its cost
+		pOneCostLabel.text = "cost to upgrade: " + str(globalUpgrades.getUpgradeCost('p1',upgradeNames[pOneUpgradeSelected])) + " " + str(_ifCoinsPlural(globalUpgrades.getUpgradeCost('p1',upgradeNames[pOneUpgradeSelected])))
+	
+	#Same as above, but for player 2
+	if globalUpgrades.getStatLevel('p2',globalVars.currentCarNames['p2'],upgradeNames[pTwoUpgradeSelected])==5:
+		#If the selected upgrde is level 5, don't print a cost
+		pTwoCostLabel.text='Upgrade Maxed'
+	else:
+		#if the selected upgrade is not level 5, print its cost
+		pTwoCostLabel.text = "cost to upgrade: " + str(globalUpgrades.getUpgradeCost('p2',upgradeNames[pTwoUpgradeSelected])) + " " + str(_ifCoinsPlural(globalUpgrades.getUpgradeCost('p2',upgradeNames[pTwoUpgradeSelected])))
+
 func _ifCoinsPlural(cost):
 	if cost == 1:
 		return "coin"
@@ -178,24 +188,30 @@ func _updateReadyScreen():
 		
 #refrences the global upgrades script to upgrade the players car stat based on player, car, stat if the player has enough coins
 func _checkCanBuy(player):
+	#Prints the level of the current upgrade
+	#print(upgradeNames[pOneUpgradeSelected]+" "+str(globalUpgrades.getStatLevel(player,globalVars.currentCarNames[player],upgradeNames[pOneUpgradeSelected])))
 	if player == 'p1':
-		if globalVars.pOneCoins - globalUpgrades.upgradesCost['p1'][upgradeNames[pOneUpgradeSelected]] >= 0:
-			globalUpgrades.upgradeStat('p1',globalVars.currentCarNames['p1'],upgradeNames[pOneUpgradeSelected])
-			globalVars.pOneCoins -= globalUpgrades.upgradesCost['p1'][upgradeNames[pOneUpgradeSelected]]
-			$pOneCoinHud.update()
-			_changeUpgradeCost('p1',globalUpgrades.upgradesCost['p1'][upgradeNames[pOneUpgradeSelected]])
-			_updateCostLabel()
-			_updateSelected()
-			_updateUpgradeSprites()
+		#Makes sure the upgrade isn't level 5 already
+		if globalUpgrades.getStatLevel(player,globalVars.currentCarNames[player],upgradeNames[pOneUpgradeSelected])!=5:
+			if globalVars.pOneCoins - globalUpgrades.getUpgradeCost(player,upgradeNames[pOneUpgradeSelected]) >= 0:
+				globalVars.pOneCoins -= globalUpgrades.getUpgradeCost(player,upgradeNames[pOneUpgradeSelected])
+				globalUpgrades.upgradeStat('p1',globalVars.currentCarNames['p1'],upgradeNames[pOneUpgradeSelected])
+				$pOneCoinHud.update()
+				#_changeUpgradeCost('p1',globalUpgrades.upgradesCost['p1'][upgradeNames[pOneUpgradeSelected]])
+				_updateCostLabel()
+				_updateSelected()
+				_updateUpgradeSprites()
 	elif player == 'p2':
-		if globalVars.pTwoCoins - globalUpgrades.upgradesCost['p2'][upgradeNames[pTwoUpgradeSelected]] >= 0:
-			globalUpgrades.upgradeStat('p2',globalVars.currentCarNames['p2'],upgradeNames[pTwoUpgradeSelected])
-			globalVars.pTwoCoins -= globalUpgrades.upgradesCost['p2'][upgradeNames[pTwoUpgradeSelected]]
-			$pTwoCoinHud.update()
-			_changeUpgradeCost('p2',globalUpgrades.upgradesCost['p2'][upgradeNames[pTwoUpgradeSelected]])
-			_updateCostLabel()
-			_updateSelected()
-			_updateUpgradeSprites()
+		#Makes sure the upgrade isn't level 5 already
+		if globalUpgrades.getStatLevel(player,globalVars.currentCarNames[player],upgradeNames[pOneUpgradeSelected])!=5:
+			if globalVars.pTwoCoins - globalUpgrades.getUpgradeCost(player,upgradeNames[pOneUpgradeSelected]) >= 0:
+				globalVars.pOneCoins -= globalUpgrades.getUpgradeCost(player,upgradeNames[pOneUpgradeSelected])
+				globalUpgrades.upgradeStat('p1',globalVars.currentCarNames['p1'],upgradeNames[pOneUpgradeSelected])
+				$pOneCoinHud.update()
+				#_changeUpgradeCost('p1',globalUpgrades.upgradesCost['p1'][upgradeNames[pOneUpgradeSelected]])
+				_updateCostLabel()
+				_updateSelected()
+				_updateUpgradeSprites()
 #updates the cost array when an upgrade gets upgraded
 func _changeUpgradeCost(player,cost):
 	$uiSFX.playBuySound()

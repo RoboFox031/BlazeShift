@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dn5sw0bq4y0ad"]
+[gd_scene load_steps=10 format=3 uid="uid://dn5sw0bq4y0ad"]
 
 [ext_resource type="Script" uid="uid://c0mm05lkl687a" path="res://Scripts/UI/pauseScreen.gd" id="1_e0kag"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_o611i"]
 [ext_resource type="Script" uid="uid://0bfxv81mvhip" path="res://Scripts/UI/flash.gd" id="3_odqo6"]
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="3_prih7"]
 [ext_resource type="PackedScene" uid="uid://281f6a2pilei" path="res://Scenes/UI/pauseOptionsScreen.tscn" id="4_si8yw"]
+[ext_resource type="PackedScene" uid="uid://bqmsr24em1p25" path="res://Scenes/UI/controlScreen.tscn" id="6_hycrd"]
 
 [sub_resource type="Animation" id="Animation_si8yw"]
 length = 0.001
@@ -61,9 +62,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -187.0
-offset_top = -233.5
+offset_top = -329.5
 offset_right = 187.0
-offset_bottom = -82.5
+offset_bottom = -178.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -82,10 +83,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -75.5
-offset_right = 20.0
-offset_bottom = 75.5
+offset_left = -194.0
+offset_top = -171.5
+offset_right = 194.0
+offset_bottom = -20.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -93,6 +94,28 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_o611i")
 theme_override_font_sizes/font_size = 150
 text = "options"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_odqo6")
+
+[node name="controls" type="Label" parent="colorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -27.5
+offset_right = 194.0
+offset_bottom = 123.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o611i")
+theme_override_font_sizes/font_size = 150
+text = "controls"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_odqo6")
@@ -105,9 +128,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -443.0
-offset_top = 82.5
+offset_top = 114.5
 offset_right = 443.0
-offset_bottom = 233.5
+offset_bottom = 265.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -191,9 +214,9 @@ vertical_alignment = 1
 
 [node name="pauseLabel" type="Label" parent="."]
 offset_left = 607.5
-offset_top = 28.0
+offset_top = -20.0
 offset_right = 1312.5
-offset_bottom = 301.0
+offset_bottom = 253.0
 pivot_offset = Vector2(352.5, 0)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_prih7")
@@ -210,9 +233,9 @@ autoplay = "blink"
 
 [node name="infoLabel" type="Label" parent="."]
 offset_left = 713.0
-offset_top = 795.0
+offset_top = 811.0
 offset_right = 1207.0
-offset_bottom = 846.0
+offset_bottom = 862.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_o611i")
 theme_override_font_sizes/font_size = 50
@@ -222,3 +245,7 @@ vertical_alignment = 1
 
 [node name="pauseOptionsScreen" parent="." instance=ExtResource("4_si8yw")]
 visible = false
+
+[node name="controlScreen" parent="." instance=ExtResource("6_hycrd")]
+visible = false
+inPauseMenu = true

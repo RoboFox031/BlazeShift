@@ -5,18 +5,19 @@ extends UI
 @onready var optionsButton = $optionsButton
 @onready var tutorialButton = $tutorialButton
 @onready var quitButton = $quitButton
+@onready var controlsButton = $controlsButton
 
 var buttons
 var selected: int = 0
 
 func _ready():
-	buttons = [playButton, optionsButton, tutorialButton, quitButton]
+	buttons = [playButton, optionsButton, tutorialButton, controlsButton, quitButton]
 	changeSelectedButton(buttons[selected])
 	
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("p1_down"):
-		if selected < 3:
+		if selected < 4:
 			selected += 1
 		else:
 			selected = 0
@@ -25,7 +26,7 @@ func _process(delta: float) -> void:
 		if selected-1 >= 0:
 			selected -= 1
 		else:
-			selected = 3
+			selected = 4
 		changeSelectedButton(buttons[selected])
 	if Input.is_action_just_pressed("p1_start"):
 		buttonPressed(buttons[selected])
@@ -54,5 +55,7 @@ func buttonPressed(button):
 		get_tree().change_scene_to_file("res://Scenes/UI/optionsScreen.tscn")
 	elif button == tutorialButton:
 		get_tree().change_scene_to_file("res://Scenes/UI/leaderboard.tscn")
+	elif button == controlsButton:
+		get_tree().change_scene_to_file("res://Scenes/UI/controlScreen.tscn")
 	else:
 		get_tree().quit()

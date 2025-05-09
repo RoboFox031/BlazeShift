@@ -5,7 +5,6 @@ signal _startRace
 signal _startRaceTimer
 var trackName = track.instantiate().name
 var timer = 'on'
-@onready var camera = $hSplitContainer/subViewportContainer/subViewport/camera2d
 
 @onready var basicMusic = $royaltyMusic/basicMusic
 @onready var ruralMusic = $royaltyMusic/ruralMusic

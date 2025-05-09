@@ -2,12 +2,7 @@ extends Control
 
 #Allows acess of the animation player
 @onready var animationPlayer: AnimationPlayer = $animationPlayer
-#Ads color rect
-@onready var box:ColorRect=$colorRect
 
-#adds labels
-@onready var p1Label:Label=$p1Label
-@onready var p2Label:Label=$p2Label
 
 
 #Stores the lap for each player
@@ -24,24 +19,9 @@ var p2Placement=placements.last
 var animationPlaying:bool =false
 
 func _ready():
-	#if the players have diffrent names, display their names
-	if globalVars.pOneName!=globalVars.pTwoName:
-		$p1Label.text=globalVars.pOneName
-		$p2Label.text=globalVars.pTwoName
-		
-		#Size and place the color rect appropriately
-		box.size.x=226
-		global_position.x=870
-		
-	#If both players have the same name, display player one and player 2
-	else:
-		$p1Label.text="Player 1"
-		$p2Label.text="Player 2"
-		#Size and place the color rect appropriately
-		box.size.x=402
-		global_position.x=812
-
-	
+	#Switch the strings for the player names once they get added 
+	$p1Label.text="Player 1"
+	$p2Label.text="Player 2"
 
 func _process(delta):
 	#Updates the variables

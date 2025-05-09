@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2ed3gfuvmfdt"]
+[gd_scene load_steps=6 format=3 uid="uid://cd4tg6xllfeij"]
 
 [ext_resource type="AudioStream" uid="uid://7lnr23nws6xb" path="res://Assets/Sounds/Music/Royalty/Ace - Verdant Green Swans.mp3" id="1_nevde"]
 [ext_resource type="AudioStream" uid="uid://bxv3k6hhf4rhe" path="res://Assets/Sounds/Music/Royalty/Ofer Koren - Lap Time Run.mp3" id="2_povtx"]

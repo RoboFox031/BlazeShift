@@ -24,8 +24,8 @@ var upgradeNames: Array = ['topSpeed','maxBlaze','handling','acceleration']
 
 func _ready() -> void:
 	#adding nodes to arrays to be used in for loops
-	pOneUpgrades = [$pOneLabels/topSpeedLabel,$pOneLabels/maxBlazeLabel,$pOneLabels/handlingLabel,$pOneLabels/accelerationLabel]
-	pTwoUpgrades = [$pTwoLabels/topSpeedLabel,$pTwoLabels/maxBlazeLabel,$pTwoLabels/handlingLabel,$pTwoLabels/accelerationLabel]
+	pOneUpgrades = [$pOneLabels/topSpeedLabel,$pOneLabels/maxBlazeLabel,$pOneLabels/blazeRefillLabel,$pOneLabels/accelerationLabel]
+	pTwoUpgrades = [$pTwoLabels/topSpeedLabel,$pTwoLabels/maxBlazeLabel,$pTwoLabels/blazeRefillLabel,$pTwoLabels/accelerationLabel]
 	for sprite in $pOneUpgradeBoxes.get_children():
 		pOneUpgradeSprites.append(sprite)
 	for sprite in $pTwoUpgradeBoxes.get_children():

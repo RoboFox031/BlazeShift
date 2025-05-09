@@ -128,14 +128,15 @@ theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "max blaze"
 
-[node name="handlingLabel" type="Label" parent="pOneLabels"]
+[node name="blazeRefillLabel" type="Label" parent="pOneLabels"]
 offset_left = 45.0
 offset_top = 681.0
 offset_right = 714.0
 offset_bottom = 886.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
-text = "handling"
+text = "blaze refill speed
+"
 
 [node name="accelerationLabel" type="Label" parent="pOneLabels"]
 offset_left = 45.0
@@ -181,14 +182,15 @@ theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "max blaze"
 
-[node name="handlingLabel" type="Label" parent="pTwoLabels"]
+[node name="blazeRefillLabel" type="Label" parent="pTwoLabels"]
 offset_left = 1011.0
 offset_top = 681.0
 offset_right = 1680.0
 offset_bottom = 886.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
-text = "handling"
+text = "blaze refill speed
+"
 
 [node name="accelerationLabel" type="Label" parent="pTwoLabels"]
 offset_left = 1011.0
@@ -227,14 +229,14 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
 
-[node name="handlingSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
-position = Vector2(543, 732)
+[node name="blazeRefillSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
+position = Vector2(832, 732)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
 
 [node name="accelerationSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
-position = Vector2(638, 827)
+position = Vector2(638, 832)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
@@ -253,14 +255,14 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
 
-[node name="handlingSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
-position = Vector2(1509, 732)
+[node name="blazeRefillSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
+position = Vector2(1798, 732)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
 
 [node name="accelerationSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
-position = Vector2(1602, 827)
+position = Vector2(1602, 832)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"

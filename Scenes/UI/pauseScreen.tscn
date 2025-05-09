@@ -1,24 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn5sw0bq4y0ad"]
+[gd_scene load_steps=7 format=3 uid="uid://gdyc002hat4w"]
 
 [ext_resource type="Script" uid="uid://c0mm05lkl687a" path="res://Scripts/UI/pauseScreen.gd" id="1_e0kag"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_o611i"]
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="3_prih7"]
-[ext_resource type="PackedScene" uid="uid://281f6a2pilei" path="res://Scenes/UI/pauseOptionsScreen.tscn" id="4_si8yw"]
-
-[sub_resource type="Animation" id="Animation_si8yw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("pauseLabel:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_prih7"]
 resource_name = "blink"
@@ -36,6 +20,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_si8yw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pauseLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_si8yw"]
@@ -215,6 +214,3 @@ theme_override_font_sizes/font_size = 50
 text = "press start to select"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="pauseOptionsScreen" parent="." instance=ExtResource("4_si8yw")]
-visible = false

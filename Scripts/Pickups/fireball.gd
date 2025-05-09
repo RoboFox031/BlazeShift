@@ -1,8 +1,13 @@
-extends powerUp
+extends pickup
+class_name fireball
 
+var spawnPosition
 var speed = 750
+var direction 
+@onready var sprite = $animatedSprite2d
+var ignore
 func _ready():
-	#type = 'snowball'
+	type = 'fireball'
 	self.position=spawnPosition
 	self.z_index = 10
 	sprite.rotation = direction

@@ -1,28 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwvjkcqhdw5e6"]
+[gd_scene load_steps=9 format=3 uid="uid://bwvjkcqhdw5e6"]
 
 [ext_resource type="Script" uid="uid://o6qymwybpwqn" path="res://Scripts/UI/pOnePowerupsHud.gd" id="1_ak3vq"]
 [ext_resource type="Texture2D" uid="uid://da1xc5ggm3prx" path="res://Assets/Sprites/Poweups/blaze.png" id="1_bhts4"]
 [ext_resource type="Texture2D" uid="uid://45pmnrmfttd" path="res://Assets/Sprites/UI/blackBoxOutline.png" id="2_ik3pl"]
-[ext_resource type="Texture2D" uid="uid://bhpcdtwe1fjfm" path="res://Assets/Sprites/Poweups/Spritesheets/Gravity-Sheet.png" id="3_h4jvw"]
 [ext_resource type="Texture2D" uid="uid://bvsqesqb1kkgo" path="res://Assets/Sprites/Poweups/fireball/FB500-1.png" id="3_twdgi"]
 [ext_resource type="Texture2D" uid="uid://chu50x54x7gnw" path="res://Assets/Sprites/Poweups/road Spike Icon.png" id="4_gt2p8"]
-[ext_resource type="Texture2D" uid="uid://mxqclthghmo4" path="res://Assets/Sprites/Poweups/snowball.png" id="5_fpsgs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekhb1"]
 atlas = ExtResource("1_bhts4")
 region = Rect2(0, 0, 400, 400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7yfkt"]
-atlas = ExtResource("3_h4jvw")
-region = Rect2(0, 0, 96, 80)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ofj1h"]
 atlas = ExtResource("3_twdgi")
 region = Rect2(0, 0, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h4jvw"]
-atlas = ExtResource("5_fpsgs")
-region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jdknc"]
 animations = [{
@@ -32,14 +22,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"blazePickup",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7yfkt")
-}],
-"loop": true,
-"name": &"fireCyclonePickup",
 "speed": 5.0
 }, {
 "frames": [{
@@ -65,14 +47,6 @@ animations = [{
 "loop": true,
 "name": &"roadSpikesPickup",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h4jvw")
-}],
-"loop": true,
-"name": &"snowballPickup",
-"speed": 5.0
 }]
 
 [node name="pOnePowerupsHud" type="Node2D"]
@@ -89,8 +63,7 @@ pivot_offset = Vector2(125, 125)
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jdknc")
-animation = &"fireballPickup"
-autoplay = "none"
+animation = &"none"
 
 [node name="blackBoxOutline" type="Sprite2D" parent="."]
 position = Vector2(-2, -1)

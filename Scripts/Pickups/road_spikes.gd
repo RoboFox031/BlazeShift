@@ -1,5 +1,5 @@
-extends CharacterBody2D
-class_name powerUp
+extends pickup
+class_name roadSpikes
 
 var spawnPosition
 var direction
@@ -7,6 +7,7 @@ var direction
 var ignore
 
 func _ready():
+	type = 'roadSpikes'
 	self.position = spawnPosition
 	self.z_index = 10
 	self.sprite.rotation = direction

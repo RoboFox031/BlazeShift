@@ -98,9 +98,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_whpak"]
 size = Vector2(208, 720)
 
-[node name="roadSpikes" type="CharacterBody2D"]
-collision_layer = 0
-collision_mask = 0
+[node name="roadSpikes" type="Node2D"]
 script = ExtResource("1_r7n71")
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
@@ -115,11 +113,6 @@ position = Vector2(-4, -8)
 
 [node name="collisionShape2d" type="CollisionShape2D" parent="area2d"]
 position = Vector2(-24, 0)
-scale = Vector2(0.25, 0.25)
-shape = SubResource("RectangleShape2D_whpak")
-
-[node name="collisionShape2d" type="CollisionShape2D" parent="."]
-position = Vector2(-28, -8)
 scale = Vector2(0.25, 0.25)
 shape = SubResource("RectangleShape2D_whpak")
 

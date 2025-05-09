@@ -23,7 +23,6 @@ var p2BlazeCurrent = 100
 var pOneDone = false
 var pTwoDone = false
 var playMusic
-var inCyclone = false
 #Stores the progress value and the lap value for each player
 var progress={
 	"p1":0,
@@ -37,17 +36,15 @@ var laps={
 var pOneLastRaceTime = '00:00'
 var pOneTotalTime = '00:00'
 var pOneLastRacePlacement = null
-var pOneOverallPlacement = '1st'
+var pOneOverallPlacement = null
 var pOneLastRaceCoinsCollected = 0
-var pOneTotalCoinsCollected = 0
 var pOneTotalWins = 0
 
 var pTwoLastRaceTime = '00:00'
 var pTwoTotalTime = '00:00'
 var pTwoLastRacePlacement = null
-var pTwoOverallPlacement = '1st'
+var pTwoOverallPlacement = null
 var pTwoLastRaceCoinsCollected = 0
-var pTwoTotalCoinsCollected = 0
 var pTwoTotalWins = 0
 
 #shop variables

@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://fkgxn3lnkki"]
+[gd_scene load_steps=6 format=3 uid="uid://chealetm8g001"]
 
 [ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="1_4qqhy"]
-[ext_resource type="Script" path="res://Scripts/UI/optionsScreen.gd" id="1_laix0"]
+[ext_resource type="Script" uid="uid://b4i3c0yk0ggwe" path="res://Scripts/UI/optionsScreen.gd" id="1_laix0"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_pgymt"]
 [ext_resource type="PackedScene" uid="uid://cpwf36cljl8vm" path="res://Scenes/UI/musicSlider.tscn" id="3_pgymt"]
 [ext_resource type="PackedScene" uid="uid://chaw7kly572j4" path="res://Scenes/UI/sfxSlider.tscn" id="4_nmkow"]

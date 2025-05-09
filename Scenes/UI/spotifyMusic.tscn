@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d05oihsshblo7"]
+[gd_scene load_steps=6 format=3 uid="uid://bwshtasy0qb2a"]
 
 [ext_resource type="AudioStream" uid="uid://7uowwytxe3qv" path="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Hot Saturn - Sungazer.mp3" id="1_e5ka5"]
 [ext_resource type="AudioStream" uid="uid://dqxone87maspu" path="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Cool 7 - Sungazer.mp3" id="2_ke7ur"]

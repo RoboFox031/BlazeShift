@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b11whu5nqhr63" path="res://Assets/Sprites/Tracks/volcanoe_tileset_and_assets/volcanoe_assets.png" id="1_pnoux"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="2_b7uh5"]
 [ext_resource type="Texture2D" uid="uid://diftod1f83vx" path="res://Assets/Sprites/Tracks/volcanoe_tileset_and_assets/volcanoe_tiles.png" id="2_fmrw8"]
-[ext_resource type="TileSet" uid="uid://c0k81eielwsa8" path="res://Scenes/Tracks/volcanoMountains.tres" id="3_3fxna"]
-[ext_resource type="TileSet" uid="uid://bjrgtgiklvksp" path="res://Scenes/Tracks/track.tres" id="5_3fxna"]
+[ext_resource type="TileSet" uid="uid://bth44gyob6c8w" path="res://Scenes/Tracks/volcanoMountains.tres" id="3_3fxna"]
+[ext_resource type="TileSet" uid="uid://shirjmw44fyk" path="res://Scenes/Tracks/track.tres" id="5_3fxna"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xlcya"]
 texture = ExtResource("2_fmrw8")

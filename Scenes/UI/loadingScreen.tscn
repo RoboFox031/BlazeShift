@@ -1,6 +1,6 @@
-[gd_scene load_steps=230 format=3 uid="uid://dl1ynwru15loe"]
+[gd_scene load_steps=230 format=3 uid="uid://rfvj8urfjugo"]
 
-[ext_resource type="Script" uid="uid://b75wdqaqfn1es" path="res://Scripts/UI/loading_screen.gd" id="1_tjrs3"]
+[ext_resource type="Script" path="res://Scripts/UI/loading_screen.gd" id="1_tjrs3"]
 [ext_resource type="Texture2D" uid="uid://baompkj7fnmcw" path="res://Assets/Sprites/loadingScreens/Matrix Blue Driving Animation.png" id="2_tjrs3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tjrs3"]

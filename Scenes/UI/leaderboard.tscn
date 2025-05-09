@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cdo2pr6gigps"]
+[gd_scene load_steps=12 format=3 uid="uid://bprrfv755425b"]
 
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="1_7f0wt"]
 [ext_resource type="Script" uid="uid://csnvj8kdiiior" path="res://Scripts/UI/leaderboard.gd" id="1_trr20"]

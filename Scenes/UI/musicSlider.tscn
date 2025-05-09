@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dsjdwaiuqwsip"]
 
-[ext_resource type="Script" path="res://Scripts/UI/musicSlider.gd" id="1_kbu55"]
+[ext_resource type="Script" uid="uid://c4r7saxm0wagq" path="res://Scripts/UI/musicSlider.gd" id="1_kbu55"]
 [ext_resource type="AudioStream" uid="uid://dqxone87maspu" path="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Cool 7 - Sungazer.mp3" id="2_3p0wp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3p0wp"]

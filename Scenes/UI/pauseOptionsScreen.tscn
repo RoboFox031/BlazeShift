@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://281f6a2pilei"]
+
+[ext_resource type="Script" uid="uid://cis5be7dcnrey" path="res://Scripts/UI/pauseOptionsScreen.gd" id="1_xvi3v"]
+[ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="2_8t5jp"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="3_07gfd"]
+[ext_resource type="PackedScene" uid="uid://chaw7kly572j4" path="res://Scenes/UI/sfxSlider.tscn" id="4_1t56e"]
+[ext_resource type="PackedScene" uid="uid://cpwf36cljl8vm" path="res://Scenes/UI/musicSlider.tscn" id="5_xdth3"]
+
+[node name="pauseOptionsScreen" type="Node2D"]
+script = ExtResource("1_xvi3v")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.57895, 1.29808)
+texture = ExtResource("2_8t5jp")
+metadata/_edit_lock_ = true
+
+[node name="titleLabel" type="Label" parent="."]
+offset_right = 1920.0
+offset_bottom = 529.0
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.765026, 0.384565, 0.0148376, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 11
+theme_override_fonts/font = ExtResource("3_07gfd")
+theme_override_font_sizes/font_size = 200
+text = "BLAZESHIFT
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfxSlider" parent="." instance=ExtResource("4_1t56e")]
+offset_left = 442.0
+offset_top = 523.0
+offset_right = 1542.0
+offset_bottom = 553.0
+scale = Vector2(1, 1)
+
+[node name="musicSlider" parent="." instance=ExtResource("5_xdth3")]
+offset_left = 445.0
+offset_top = 652.0
+offset_right = 1545.0
+offset_bottom = 682.0
+scale = Vector2(1, 1)
+
+[node name="backLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 787.0
+offset_top = 735.0
+offset_right = 1161.0
+offset_bottom = 886.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_07gfd")
+theme_override_font_sizes/font_size = 70
+text = "press b to go back"
+horizontal_alignment = 1
+vertical_alignment = 1

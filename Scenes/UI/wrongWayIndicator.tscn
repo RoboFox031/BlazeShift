@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b63fvkfxt726t"]
+[gd_scene load_steps=7 format=3 uid="uid://duambc5sqs45o"]
 
-[ext_resource type="Script" path="res://Scripts/UI/wrongWayIndicator.gd" id="1_a78tw"]
+[ext_resource type="Script" uid="uid://r3s00d74whq5" path="res://Scripts/UI/wrongWayIndicator.gd" id="1_a78tw"]
 [ext_resource type="FontFile" uid="uid://b8eclx05wa18f" path="res://Assets/Fonts/college/colleges.ttf" id="2_plwo2"]
 
 [sub_resource type="Animation" id="Animation_6bol8"]

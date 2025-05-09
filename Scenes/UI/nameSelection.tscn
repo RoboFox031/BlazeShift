@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bprxdakxg5ib3"]
+[gd_scene load_steps=7 format=3 uid="uid://c8ab6ji4x7543"]
 
 [ext_resource type="Script" uid="uid://caunhbnokh8hd" path="res://Scripts/UI/nameSelection.gd" id="1_eks6l"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="1_pxn6u"]

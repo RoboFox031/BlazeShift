@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://q7r0qogbo4a2"]
 
-[ext_resource type="Script" path="res://Scripts/Pickups/fireCyclone.gd" id="1_lgebe"]
+[ext_resource type="Script" uid="uid://ck4cut3ovhibv" path="res://Scripts/Pickups/fireCyclone.gd" id="1_lgebe"]
 [ext_resource type="Texture2D" uid="uid://bhpcdtwe1fjfm" path="res://Assets/Sprites/Poweups/Spritesheets/Gravity-Sheet.png" id="2_h3o6k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufhab"]

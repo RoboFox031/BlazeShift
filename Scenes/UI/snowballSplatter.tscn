@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://r4ngxct8a74y"]
+[gd_scene load_steps=9 format=3 uid="uid://eu1i7ue0qsdq"]
 
-[ext_resource type="Script" path="res://Scenes/UI/snowballSplatter.gd" id="1_73vx2"]
+[ext_resource type="Script" uid="uid://d1kp0i7xvyv2y" path="res://Scenes/UI/snowballSplatter.gd" id="1_73vx2"]
 [ext_resource type="Texture2D" uid="uid://bhesx5x4bna1d" path="res://Assets/Sprites/Poweups/Mystery Box.png" id="2_73vx2"]
 [ext_resource type="Texture2D" uid="uid://cl5p6op5xfams" path="res://Assets/Sprites/Poweups/snowball-removebg-preview.png" id="3_23a8q"]
 [ext_resource type="Texture2D" uid="uid://mxqclthghmo4" path="res://Assets/Sprites/Poweups/snowball.png" id="4_23a8q"]

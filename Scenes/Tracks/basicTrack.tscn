@@ -3152,8 +3152,8 @@ position = Vector2(-4121, 1312)
 
 [node name="powerupBox11" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
 z_index = 17
-position = Vector2(-1713, 2276)
+position = Vector2(-2336, 2322)
 
 [node name="powerupBox12" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
 z_index = 17
-position = Vector2(-1715, 2125)
+position = Vector2(-2334, 2167)

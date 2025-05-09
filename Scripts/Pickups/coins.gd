@@ -19,6 +19,8 @@ func _on_area_2d_body_entered(body):
 	if body.currentOwner == body.playerChoices.p2:
 		globalVars.pTwoLastRaceCoinsCollected += 1
 		self.visible = false
+	if self.visible == false:
+		pass
 	#globalVars.p1Coin
 	pass # Replace with function body.
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=74 format=3 uid="uid://j4taoq0kw7b1"]
+[gd_scene load_steps=148 format=3 uid="uid://j4taoq0kw7b1"]
 
 [ext_resource type="Script" uid="uid://dkswl6q5y0c8d" path="res://Scripts/UI/shop.gd" id="1_6j5yt"]
 [ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="2_qad3o"]
 [ext_resource type="Texture2D" uid="uid://bv3prfv0yhkc" path="res://Assets/Sprites/UI/whiteCircle.png" id="3_sycxl"]
+[ext_resource type="Script" uid="uid://0bfxv81mvhip" path="res://Scripts/UI/flash.gd" id="4_c0yic"]
 [ext_resource type="Texture2D" uid="uid://cwie6jc02kiqw" path="res://Assets/Sprites/UI/blackRing.png" id="4_wo2en"]
 [ext_resource type="Texture2D" uid="uid://ks7e4wgfjt7o" path="res://Assets/Sprites/Cars/Mustang/MustangBlack.png" id="5_i6uuj"]
 [ext_resource type="Texture2D" uid="uid://c4j141rwvqapi" path="res://Assets/Sprites/Cars/NSX/NSXBlack.png" id="6_76mq5"]
@@ -460,6 +461,7 @@ metadata/_edit_lock_ = true
 position = Vector2(79.5, 775)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pOneWhiteCircle"]
@@ -473,6 +475,7 @@ self_modulate = Color(0, 0, 0, 1)
 position = Vector2(185.5, 775)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pOneBlackCircle"]
@@ -486,6 +489,7 @@ self_modulate = Color(1, 0, 0, 1)
 position = Vector2(291.5, 775)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pOneRedCircle"]
@@ -499,6 +503,7 @@ self_modulate = Color(1, 0.647059, 0, 1)
 position = Vector2(388.5, 775)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pOneOrangeCircle"]
@@ -512,6 +517,7 @@ self_modulate = Color(1, 1, 0, 1)
 position = Vector2(498.5, 775)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pOneYellowCircle"]
@@ -525,6 +531,7 @@ self_modulate = Color(0, 0.592157, 0, 1)
 position = Vector2(609.5, 775)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pOneGreenCircle"]
@@ -538,6 +545,7 @@ self_modulate = Color(0, 0, 1, 1)
 position = Vector2(715.5, 775)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pOneBlueCircle"]
@@ -551,6 +559,7 @@ self_modulate = Color(0.627451, 0.12549, 0.941176, 1)
 position = Vector2(821.5, 775)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pOnePurpleCircle"]
@@ -563,6 +572,7 @@ texture = ExtResource("4_wo2en")
 position = Vector2(1039.53, 775.396)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pTwoWhiteCircle"]
@@ -576,6 +586,7 @@ self_modulate = Color(0, 0, 0, 1)
 position = Vector2(1145.53, 775.396)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pTwoBlackCircle"]
@@ -589,6 +600,7 @@ self_modulate = Color(1, 0, 0, 1)
 position = Vector2(1251.53, 775.396)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pTwoRedCircle"]
@@ -602,6 +614,7 @@ self_modulate = Color(1, 0.647059, 0, 1)
 position = Vector2(1348.53, 775.396)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pTwoOrangeCircle"]
@@ -615,6 +628,7 @@ self_modulate = Color(1, 1, 0, 1)
 position = Vector2(1458.53, 775.396)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pTwoYellowCircle"]
@@ -628,6 +642,7 @@ self_modulate = Color(0, 0.592157, 0, 1)
 position = Vector2(1569.53, 775.396)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pTwoGreenCircle"]
@@ -641,6 +656,7 @@ self_modulate = Color(0, 0, 1, 1)
 position = Vector2(1675.53, 775.396)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pTwoBlueCircle"]
@@ -654,6 +670,7 @@ self_modulate = Color(0.627451, 0.12549, 0.941176, 1)
 position = Vector2(1781.53, 775.396)
 scale = Vector2(0.088, 0.088)
 texture = ExtResource("3_sycxl")
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pTwoPurpleCircle"]
@@ -668,6 +685,7 @@ position = Vector2(783, 946)
 scale = Vector2(2, 2)
 texture = ExtResource("7_bjm5q")
 offset = Vector2(9, 28)
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="pOneOutlineArrow" type="Sprite2D" parent="pOneRightArrow"]
@@ -682,6 +700,7 @@ rotation = 3.14159
 scale = Vector2(2, 2)
 texture = ExtResource("7_bjm5q")
 offset = Vector2(9, 28)
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="pOneOutlineArrow" type="Sprite2D" parent="pOneLeftArrow"]
@@ -695,6 +714,7 @@ position = Vector2(1743, 946)
 scale = Vector2(2, 2)
 texture = ExtResource("7_bjm5q")
 offset = Vector2(9, 28)
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="pOneOutlineArrow" type="Sprite2D" parent="pTwoRightArrow"]
@@ -709,6 +729,7 @@ rotation = 3.14159
 scale = Vector2(2, 2)
 texture = ExtResource("7_bjm5q")
 offset = Vector2(9, 28)
+script = ExtResource("4_c0yic")
 metadata/_edit_lock_ = true
 
 [node name="pOneOutlineArrow" type="Sprite2D" parent="pTwoLeftArrow"]

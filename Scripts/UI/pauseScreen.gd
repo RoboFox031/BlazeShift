@@ -108,12 +108,14 @@ func _updateMenu():
 	
 	if pOneConfirm == true and pTwoConfirm == true:
 		_restart()
-			
 		
+	for label in labels:
+		label.stopFlashing()
 	for label in labels:
 		if label == labels[selected]:
 			label.add_theme_color_override("font_outline_color", Color(0,0,0)) 
 			label.add_theme_constant_override("outline_size", 30)
+			label.startFlashing()
 		else:
 			label.add_theme_constant_override("outline_size", 0)
 

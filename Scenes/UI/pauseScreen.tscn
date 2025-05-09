@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn5sw0bq4y0ad"]
+[gd_scene load_steps=9 format=3 uid="uid://dn5sw0bq4y0ad"]
 
 [ext_resource type="Script" uid="uid://c0mm05lkl687a" path="res://Scripts/UI/pauseScreen.gd" id="1_e0kag"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_o611i"]
+[ext_resource type="Script" uid="uid://0bfxv81mvhip" path="res://Scripts/UI/flash.gd" id="3_odqo6"]
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="3_prih7"]
 [ext_resource type="PackedScene" uid="uid://281f6a2pilei" path="res://Scenes/UI/pauseOptionsScreen.tscn" id="4_si8yw"]
 
@@ -72,6 +73,7 @@ theme_override_font_sizes/font_size = 150
 text = "resume"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_odqo6")
 
 [node name="optionsLabel" type="Label" parent="colorRect"]
 layout_mode = 1
@@ -93,6 +95,7 @@ theme_override_font_sizes/font_size = 150
 text = "options"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_odqo6")
 
 [node name="restartLabel" type="Label" parent="colorRect"]
 layout_mode = 1
@@ -114,6 +117,7 @@ theme_override_font_sizes/font_size = 150
 text = "restart"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_odqo6")
 
 [node name="pOneConfirmLabel" type="Label" parent="."]
 visible = false

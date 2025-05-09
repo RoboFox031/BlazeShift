@@ -38,10 +38,12 @@ func changeSelectedButton(button):
 			b.scale.y = 1.15
 			b.get_child(0).add_theme_color_override('font_outline_color', Color(0,0,0))
 			b.get_child(0).add_theme_constant_override('outline_size', 20)
+			b.startFlashing()
 		else:
 			b.scale.x = 1
 			b.scale.y = 1
 			b.get_child(0).add_theme_constant_override('outline_size', 0)
+			b.stopFlashing()
 
 func buttonPressed(button):
 	$uiSFX.playSelectSound()

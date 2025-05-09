@@ -172,6 +172,10 @@ func _ready() -> void:
 		pTwoCarsFinal.append(car)
 	pOneOwned = [pOneCars[2],pOneCars[3],pOneCars[4]]
 	pTwoOwned = [pTwoCars[2],pTwoCars[3],pTwoCars[4]]
+	pOneRightArrow.startFlashing()
+	pOneLeftArrow.startFlashing()
+	pTwoRightArrow.startFlashing()
+	pTwoLeftArrow.startFlashing()
 	
 	_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 	_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
@@ -202,12 +206,20 @@ func _process(delta: float) -> void:
 					c.get_child(0).visible = false
 				pOneLeftArrow.get_child(0).visible = false
 				pOneRightArrow.get_child(0).visible = false
+				pOneLeftArrow.stopFlashing()
+				pOneRightArrow.stopFlashing()
+			_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
+				
 		else:
 			pOneOptionSelected = "car"
 			for c in pOneColors:
 				c.get_child(0).visible = false
 			pOneLeftArrow.get_child(0).visible = true
 			pOneRightArrow.get_child(0).visible = true
+			pOneLeftArrow.startFlashing()
+			pOneRightArrow.startFlashing()
+			for color in pOneColors:
+				color.stopFlashing()
 	if (Input.is_action_just_pressed("p2_down") or Input.is_action_just_pressed("p2_up"))  and pTwoReady == false:
 		if pTwoOptionSelected == "car":
 			pTwoOptionSelected = "color"
@@ -218,12 +230,21 @@ func _process(delta: float) -> void:
 					c.get_child(0).visible = false
 				pTwoLeftArrow.get_child(0).visible = false
 				pTwoRightArrow.get_child(0).visible = false
+				pTwoLeftArrow.stopFlashing()
+				pTwoRightArrow.stopFlashing()
+			_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
+		
+
 		else:
 			pTwoOptionSelected = "car"
 			for c in pTwoColors:
 				c.get_child(0).visible = false
 			pTwoLeftArrow.get_child(0).visible = true
 			pTwoRightArrow.get_child(0).visible = true
+			pTwoLeftArrow.startFlashing()
+			pTwoRightArrow.startFlashing()
+			for color in pTwoColors:
+				color.stopFlashing()
 	if Input.is_action_just_pressed("p1_right") and pOneReady == false:
 		if pOneOptionSelected == "car":
 			if globalVars.pOneCarSelected + 1 < len(pOneCars):
@@ -283,6 +304,12 @@ func _process(delta: float) -> void:
 
 #updates the car display
 func _updateCarDisplay(pOneCar,pTwoCar):
+	if pOneOptionSelected == 'car':
+		for color in pOneColors:
+			color.stopFlashing()
+	if pTwoOptionSelected == 'car':
+		for color in pTwoColors:
+			color.stopFlashing()
 	for c in pOneCars:
 		if c == pOneCar:
 			c.visible = true
@@ -325,20 +352,24 @@ func _updateColorDisplay(pOneColor,pTwoColor):
 				c.scale.x = .15
 				c.scale.y = .15
 				c.get_child(0).visible = true
+				c.startFlashing()
 			else:
 				c.scale.x = .088
 				c.scale.y = .088
 				c.get_child(0).visible = false
+				c.stopFlashing()
 	if pTwoOptionSelected == "color":
 		for c in pTwoColors:
 			if c == pTwoColor:
 				c.scale.x = .15
 				c.scale.y = .15
 				c.get_child(0).visible = true
+				c.startFlashing()
 			else:
 				c.scale.x = .088
 				c.scale.y = .088
 				c.get_child(0).visible = false
+				c.stopFlashing()
 	_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 
 #updates the middle display based on the type of car and color

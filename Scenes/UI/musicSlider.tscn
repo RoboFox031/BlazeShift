@@ -1,13 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsjdwaiuqwsip"]
+[gd_scene load_steps=4 format=3 uid="uid://dsjdwaiuqwsip"]
 
-[ext_resource type="Script" uid="uid://c4r7saxm0wagq" path="res://Scripts/UI/musicSlider.gd" id="1_kbu55"]
+[ext_resource type="Script" path="res://Scripts/UI/musicSlider.gd" id="1_kbu55"]
 [ext_resource type="AudioStream" uid="uid://dqxone87maspu" path="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Cool 7 - Sungazer.mp3" id="2_3p0wp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3p0wp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="musicSlider" type="ProgressBar"]
 offset_right = 1100.0
 offset_bottom = 30.0
 scale = Vector2(2, 2)
 value = 50.0
+show_percentage = false
 script = ExtResource("1_kbu55")
 
 [node name="panel" type="Panel" parent="."]
@@ -17,6 +30,7 @@ offset_bottom = 30.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3p0wp")
 
 [node name="tick" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 1084.0
 offset_top = -10.0
 offset_right = 1100.0
@@ -24,4 +38,3 @@ offset_bottom = 40.0
 
 [node name="audioStreamPlayer2d" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_3p0wp")
-bus = &"music"

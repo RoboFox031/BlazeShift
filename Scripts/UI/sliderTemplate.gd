@@ -1,7 +1,7 @@
 extends ProgressBar
 class_name sliderTemplate
 @onready var tick = $tick
-var selected
+
 func _ready():
 	tick.position.x = value*10.84
 

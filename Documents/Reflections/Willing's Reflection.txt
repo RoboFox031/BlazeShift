@@ -1,8 +1,23 @@
 Thoughts throughout the Project:
-	
+	I think that throughout this project we did better than I expected. At the start I origonally thought
+	that we overpromised on our project proposal, but as we started working it went smoother than expected.
+	Overall there was no major merge conlifcts which was a big problem for me on the other project. I felt that I contributed
+	alot during the project mainly in the UI section. I also created the base for the coin and powerup system that my teammates later
+	worked to add onto. I think that my group was near perfect. We had good communication through the project and all did our individual roles well.
 Difficulties:
-	
+	There wasn't too many difficulties except for that I was still in the process of thouroghly understanding godot. I mainly worked on the UI branch
+	which I found enjoyable but it also meant that I had to create systems for using the joystick controls. I had previosuly been familiary with arrays and for loops,
+	but this project made me understand them even better. I struggled using them for the select and menu's in my UI screens but I eventually got around it. Finally
+	the last difficulty was understanding code I had written when working on it at a later date. When I started I didn't add many comments, so when me or my teammates would
+	go back to work on it my code was difficult to understand.
 Surprises:
-	
+	In this project there was only one major surprise for me, which was how much code UI actually required. When I started the making the UI branches the first couple of screens
+	that I made didn't require that much code, but when I started working in the shop that's when the scale of it really shocked me. It ended up being over 350 line of code which was difficult
+	to manage at first.
 Lessons:
-	
+	The biggest thing that I learned was how to make UI systems. I underestamated how much work it actually took, but I ended up figuring it out. Another major thing I learned was
+	how to use for loops, arrays, and dictionaries. I learned that these are all useful tools and have their own uses to acsess data and manage iterations. I also learned that global variables are one
+	of the most useful things to have in a game that can be acsessed anywhere. During this project I also became very comfortable with github and wasn't worrying about casuing a merge conflict everytime
+	I did something. Besides the coding part I also learned that working in a team is very valuable. The commonication between my teammates and me was very valuable. For example if I had a question about
+	the code they had written or an error that I couldn't firgure out they would always be able to help. Along with just the help with coding having teammates to work on the same project made creating the
+	game more efficient and helped to keep the code clean and well managed.

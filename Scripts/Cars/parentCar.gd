@@ -408,6 +408,7 @@ func updateTerrain(newTerrain):
 			
 		#If you drive on a hazard, respawn
 		elif newTerrain==trackEnums.terrainTypes.hazzard:
+			print("hazard")
 			respawn()
 
 func updatePosition(area:Area2D):

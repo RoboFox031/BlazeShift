@@ -10,6 +10,12 @@ scale = Vector2(2, 2)
 value = 50.0
 script = ExtResource("1_kbu55")
 
+[node name="panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1100.0
+offset_bottom = 30.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3p0wp")
+
 [node name="tick" type="ColorRect" parent="."]
 offset_left = 1084.0
 offset_top = -10.0

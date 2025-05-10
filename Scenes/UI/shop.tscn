@@ -1760,7 +1760,7 @@ animation = &"yellow"
 autoplay = "blue"
 
 [node name="pOneCarElevenFinal" type="AnimatedSprite2D" parent="pOneCarsFinal"]
-position = Vector2(470, 542)
+position = Vector2(472, 531)
 rotation = -3.14159
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_y51na")

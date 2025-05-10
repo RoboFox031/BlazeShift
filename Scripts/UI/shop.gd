@@ -179,16 +179,16 @@ func _ready() -> void:
 	for car in $pTwoCarsFinal.get_children():
 		pTwoCarsFinal.append(car)
 		
-	for car in carTiers:
-		if carTiers[car]['cost']==0:
-			pOneOwned.append(car)
-			pTwoOwned.append(car)
+	#for car in carTiers:
+		#if carTiers[car]['cost']==0:
+			#pOneOwned.append(car)
+			#pTwoOwned.append(car)
 			#print("owned "+str(car))
-			print("cars "+str(pOneCars))
-			print("owned "+str(pOneOwned))
-			pass
-	#pOneOwned = [pOneCars[0],pOneCars[1]]
-	#pTwoOwned = [pTwoCars[0],pTwoCars[1]]
+			#print("cars "+str(pOneCars))
+			#print("owned "+str(pOneOwned))
+			#pass
+	pOneOwned = [pOneCars[0],pOneCars[1]]
+	pTwoOwned = [pTwoCars[0],pTwoCars[1]]
 	pOneRightArrow.startFlashing()
 	pOneLeftArrow.startFlashing()
 	pTwoRightArrow.startFlashing()
@@ -352,10 +352,12 @@ func _updateCarDisplay(pOneCar,pTwoCar):
 		$locks/pTwoCarLock.visible = false
 	else:
 		pTwoCostLabel.visible = true
+		print("p2 cost: "+str(carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost']))
 		if carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost'] == 1:
 			pTwoCostLabel.text = str(carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost']) + " coin"
+			print("p2 1 coin")
 		else:
-			pOneCostLabel.text = str(carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost']) + " coins"
+			pTwoCostLabel.text = str(carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost']) + " coins"
 		$locks/pTwoCarLock.visible = true
 	_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 	_updateCarNameLabels()

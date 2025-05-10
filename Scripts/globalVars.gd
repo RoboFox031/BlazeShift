@@ -15,8 +15,8 @@ var nextScene
 var currentCarNames={"p1":"Mustang","p2":"Mustang"}
 var pOnePowerup = 'none'
 var pTwoPowerup = 'none'
-var pOneCoins = 0
-var pTwoCoins = 0
+var pOneCoins = 90
+var pTwoCoins = 90
 const NSX = preload("res://Scenes/Cars/NSX.tscn")
 var p1BlazeCurrent = 100
 var p2BlazeCurrent = 100

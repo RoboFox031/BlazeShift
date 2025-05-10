@@ -104,6 +104,11 @@ var pTwoCarsFinal: Array = []
 var pOneOwned: Array
 var pTwoOwned: Array
 
+#Costs of each rarity
+var bCost=20
+var aCost=60
+var sCost=100
+
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 
 var carStringNames: Array = ['Mustang/Mustang','NSX/NSX','S13/S13',"CRX/CRX","FC RX7/FC RX7","69 Charger/69 Charger","Lancia 037/Lancia 037","Lotus Esprit/Lotus Esprit","RUF CTR/RUF CTR","300ZX/300ZX","Camaro/Camaro"]
@@ -157,7 +162,8 @@ var cars := {
 	
 }
 
-var carCosts: Array = [0,0,1,2,1,1,1,1,1,1,1] #the position in the array relates to the car
+####order in the shop for the cars goes as follows Mustang, NSX, S13, CRX,FC RX7, 69 Charger, Lancia 037, Lotus Esprit, RUF CTR, 300ZX, Camaro
+var carCosts: Array = [aCost,bCost,0,0,0,bCost,aCost,sCost,sCost,bCost,aCost] #the position in the array relates to the car
 
 func _ready() -> void:
 	pOneColors = [pOneWhite, pOneBlack, pOneRed, pOneOrange, pOneYellow, pOneGreen, pOneBlue, pOnePurple]
@@ -170,8 +176,13 @@ func _ready() -> void:
 		pOneCarsFinal.append(car)
 	for car in $pTwoCarsFinal.get_children():
 		pTwoCarsFinal.append(car)
-	pOneOwned = [pOneCars[2],pOneCars[3],pOneCars[4]]
-	pTwoOwned = [pTwoCars[2],pTwoCars[3],pTwoCars[4]]
+		
+	for car in pOneCars.size():
+		if carCosts[car]==0:
+			pOneOwned.append(pOneCars[car])
+			pTwoOwned.append(pTwoCars[car])
+	#pOneOwned = [pOneCars[0],pOneCars[1]]
+	#pTwoOwned = [pTwoCars[0],pTwoCars[1]]
 	pOneRightArrow.startFlashing()
 	pOneLeftArrow.startFlashing()
 	pTwoRightArrow.startFlashing()

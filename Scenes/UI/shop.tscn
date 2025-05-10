@@ -1281,9 +1281,11 @@ texture = ExtResource("8_o1agm")
 offset = Vector2(8, 28)
 
 [node name="pOneCoinHud" parent="." instance=ExtResource("24_snvey")]
+mode = 0
 
 [node name="pTwoCoinHud" parent="." instance=ExtResource("25_ippaq")]
 position = Vector2(968, 0)
+mode = 0
 
 [node name="pOneOwnedLabel" type="Label" parent="."]
 offset_left = 362.0
@@ -1758,7 +1760,7 @@ animation = &"yellow"
 autoplay = "blue"
 
 [node name="pOneCarElevenFinal" type="AnimatedSprite2D" parent="pOneCarsFinal"]
-position = Vector2(470, 542)
+position = Vector2(472, 531)
 rotation = -3.14159
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_y51na")

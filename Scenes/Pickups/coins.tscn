@@ -4,24 +4,23 @@
 [ext_resource type="Script" uid="uid://b7ko3jqoxux3k" path="res://Scripts/Pickups/coins.gd" id="1_ad2tf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dib6k"]
-radius = 177.071
+radius = 45.0
 
-[node name="coins" type="Node2D"]
+[node name="coins" type="Area2D"]
 z_index = 17
-scale = Vector2(0.25, 0.25)
+monitorable = false
 script = ExtResource("1_ad2tf")
 
 [node name="sprite2d" type="Sprite2D" parent="."]
-scale = Vector2(0.376667, 0.376667)
+scale = Vector2(0.094, 0.094)
 texture = ExtResource("1_0kqqy")
 
-[node name="area2d" type="Area2D" parent="."]
-
-[node name="collisionShape2d" type="CollisionShape2D" parent="area2d"]
+[node name="collisionShape2d" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dib6k")
 
 [node name="timer" type="Timer" parent="."]
 wait_time = 30.0
+one_shot = true
 
-[connection signal="body_entered" from="area2d" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

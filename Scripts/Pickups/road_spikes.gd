@@ -9,7 +9,7 @@ var ignore
 func _ready():
 	self.position = spawnPosition
 	self.z_index = 10
-	self.sprite.rotation = direction
+	rotation = direction
 func _on_area_2d_body_entered(body):
 	if body != ignore and body is Car:
 		body.respawn()

@@ -557,8 +557,8 @@ func checkTrackDistance():
 	var currentDistance=global_position.distance_to(progressPoint)
 	#if the player is too far away, respawn
 	if (currentDistance>trackMaxDist):
-		#respawn()
-		pass
+		respawn()
+		
 
 #finishes the race
 func finishRace():

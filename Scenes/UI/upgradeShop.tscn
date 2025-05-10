@@ -105,9 +105,11 @@ default_color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
 [node name="pOneCoinHud" parent="." instance=ExtResource("3_sn825")]
+mode = 0
 
 [node name="pTwoCoinHud" parent="." instance=ExtResource("4_0i7vc")]
 position = Vector2(969, 0)
+mode = 0
 
 [node name="pOneLabels" type="Node" parent="."]
 

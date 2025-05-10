@@ -3,58 +3,66 @@ class_name shop
 
 ####order in the shop for the cars goes as follows Mustang, NSX, S13, CRX,FC RX7, 69 Charger, Lancia 037, Lotus Esprit, RUF CTR, 300ZX, Camaro
 
+#Costs of each rarity
+var bCost=20
+var aCost=60
+var sCost=100
+
 var carTiers = {
 	'mustang': {
 		"tier": 'good',
 		"color": '00cc00',
-		'cost': 10
+		'cost': bCost
 	},
 	'nsx': {
 		"tier": 'elite',
 		"color": 'ffe50d',
-		'cost': 20
+		'cost': aCost
 	},
 	's13': {
 		"tier": 'mid',
-		"color": 'ff0000'
+		"color": 'ff0000',
+		"cost":0
 	},
 	'crx': {
 		"tier": 'mid',
-		"color": 'ff0000'
+		"color": 'ff0000',
+		"cost":0
 	},
 	'fc rx7': {
 		"tier": 'mid',
-		"color": 'ff0000'
+		"color": 'ff0000',
+		"cost":0
 	},
 	'69 charger': {
 		"tier": 'good',
 		"color": '00cc00',
-		'cost': 10
+		'cost': bCost
 	},
 	'lancia 037': {
 		"tier": 'elite',
 		"color": 'ffe50d',
-		'cost': 20
+		'cost': aCost
 	},
 	'lotus esprit': {
 		"tier": 'god',
 		"color": 'd70dff',
-		'cost': 30
+		'cost': sCost
 	},
 	'ruf ctr': {
 		"tier": 'god',
 		"color": 'd70dff',
-		'cost': 30
+		'cost': sCost
 	},
 	'300zx': {
 		"tier": 'good',
 		"color": '00cc00',
-		'cost': 10
+		'cost': bCost
 	},
 	'camaro': {
 		"tier": 'elite',
 		"color": 'ffe50d',
-		'cost': 20
+		'cost': aCost
 	}
 }
 
@@ -104,10 +112,6 @@ var pTwoCarsFinal: Array = []
 var pOneOwned: Array
 var pTwoOwned: Array
 
-#Costs of each rarity
-var bCost=20
-var aCost=60
-var sCost=100
 
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 
@@ -162,8 +166,6 @@ var cars := {
 	
 }
 
-####order in the shop for the cars goes as follows Mustang, NSX, S13, CRX,FC RX7, 69 Charger, Lancia 037, Lotus Esprit, RUF CTR, 300ZX, Camaro
-var carCosts: Array = [aCost,bCost,0,0,0,bCost,aCost,sCost,sCost,bCost,aCost] #the position in the array relates to the car
 
 func _ready() -> void:
 	pOneColors = [pOneWhite, pOneBlack, pOneRed, pOneOrange, pOneYellow, pOneGreen, pOneBlue, pOnePurple]
@@ -177,10 +179,14 @@ func _ready() -> void:
 	for car in $pTwoCarsFinal.get_children():
 		pTwoCarsFinal.append(car)
 		
-	for car in pOneCars.size():
-		if carCosts[car]==0:
-			pOneOwned.append(pOneCars[car])
-			pTwoOwned.append(pTwoCars[car])
+	for car in carTiers:
+		if carTiers[car]['cost']==0:
+			pOneOwned.append(car)
+			pTwoOwned.append(car)
+			#print("owned "+str(car))
+			print("cars "+str(pOneCars))
+			print("owned "+str(pOneOwned))
+			pass
 	#pOneOwned = [pOneCars[0],pOneCars[1]]
 	#pTwoOwned = [pTwoCars[0],pTwoCars[1]]
 	pOneRightArrow.startFlashing()
@@ -336,20 +342,20 @@ func _updateCarDisplay(pOneCar,pTwoCar):
 		$locks/pOneCarLock.visible = false
 	else:
 		pOneCostLabel.visible = true
-		if carCosts[globalVars.pOneCarSelected] == 1:
-			pOneCostLabel.text = str(carCosts[globalVars.pOneCarSelected]) + " coin"
+		if carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['cost'] == 1:
+			pOneCostLabel.text = str(carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['cost']) + " coin"
 		else:
-			pOneCostLabel.text = str(carCosts[globalVars.pOneCarSelected]) + " coins"
+			pOneCostLabel.text = str(carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['cost']) + " coins"
 		$locks/pOneCarLock.visible = true
 	if pTwoCars[globalVars.pTwoCarSelected] in pTwoOwned:
 		pTwoCostLabel.visible = false
 		$locks/pTwoCarLock.visible = false
 	else:
 		pTwoCostLabel.visible = true
-		if carCosts[globalVars.pTwoCarSelected] == 1:
-			pTwoCostLabel.text = str(carCosts[globalVars.pTwoCarSelected]) + " coin"
+		if carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost'] == 1:
+			pTwoCostLabel.text = str(carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost']) + " coin"
 		else:
-			pOneCostLabel.text = str(carCosts[globalVars.pOneCarSelected]) + " coins"
+			pOneCostLabel.text = str(carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost']) + " coins"
 		$locks/pTwoCarLock.visible = true
 	_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 	_updateCarNameLabels()

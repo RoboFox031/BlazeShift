@@ -239,6 +239,7 @@ animations = [{
 size = Vector2(60, 60)
 
 [node name="powerupBox" type="Node2D"]
+scale = Vector2(1.25, 1.25)
 script = ExtResource("1_waxfh")
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]

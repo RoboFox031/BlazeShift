@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://3o4xe5gkyt04"]
+[gd_scene load_steps=26 format=4 uid="uid://3o4xe5gkyt04"]
 
 [ext_resource type="Script" uid="uid://clrhe6giqrbwi" path="res://Scripts/Tracks/ruralTrack.gd" id="1_4l54d"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="1_a08p6"]
@@ -8,7 +8,9 @@
 [ext_resource type="TileSet" uid="uid://bf4uogxfjmwmc" path="res://Assets/Sprites/Tracks/ruralMapTiles/ruralTrack.tres" id="6_v8d64"]
 [ext_resource type="TileSet" uid="uid://bjrgtgiklvksp" path="res://Scenes/Tracks/track.tres" id="9_0u2nk"]
 [ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://Assets/Sprites/Tracks/ruralMapTiles/sandwater.png" id="10_h0h4c"]
+[ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="11_oyt2e"]
 [ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://Assets/Sprites/Tracks/ruralMapTiles/sand.png" id="11_te1ji"]
+[ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://Scenes/Pickups/powerupBox.tscn" id="12_jn0hv"]
 [ext_resource type="PackedScene" uid="uid://ba81k30logwad" path="res://Scenes/Cars/Mustang.tscn" id="15_mrn2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f8xj"]
@@ -6217,3 +6219,207 @@ position = Vector2(1231, -913.01)
 scale = Vector2(1.92, 1.92)
 tile_map_data = PackedByteArray("AADz/wMAAAAiAAAAAADz/wQAAAAiAAEAAADz/wUAAAAiAAIAAADz/wYAAAAiAAMAAADz/wcAAAAiAAQAAADz/wgAAAAiAAUAAADz/wkAAAAiAAYAAADz/woAAAAiAAcAAADz/wsAAAAiAAgAAADz/wwAAAAiAAkAAADz/w0AAAAiAAoAAADz/w4AAAAiAAsAAAD0/wMAAAAjAAAAAAD0/wQAAAAjAAEAAAD0/wUAAAAjAAIAAAD0/wYAAAAjAAMAAAD0/wcAAAAjAAQAAAD0/wgAAAAjAAUAAAD0/wkAAAAjAAYAAAD0/woAAAAjAAcAAAD0/wsAAAAjAAgAAAD0/wwAAAAjAAkAAAD0/w0AAAAjAAoAAAD0/w4AAAAjAAsAAAD1/wMAAAAkAAAAAAD1/wQAAAAkAAEAAAD1/wUAAAAkAAIAAAD1/wYAAAAkAAMAAAD1/wcAAAAkAAQAAAD1/wgAAAAkAAUAAAD1/wkAAAAkAAYAAAD1/woAAAAkAAcAAAD1/wsAAAAkAAgAAAD1/wwAAAAkAAkAAAD1/w0AAAAkAAoAAAD1/w4AAAAkAAsAAAD2/wMAAAAlAAAAAAD2/wQAAAAlAAEAAAD2/wUAAAAlAAIAAAD2/wYAAAAlAAMAAAD2/wcAAAAlAAQAAAD2/wgAAAAlAAUAAAD2/wkAAAAlAAYAAAD2/woAAAAlAAcAAAD2/wsAAAAlAAgAAAD2/wwAAAAlAAkAAAD2/w0AAAAlAAoAAAD2/w4AAAAlAAsAAAD3/wMAAAAmAAAAAAD3/wQAAAAmAAEAAAD3/wUAAAAmAAIAAAD3/wYAAAAmAAMAAAD3/wcAAAAmAAQAAAD3/wgAAAAmAAUAAAD3/wkAAAAmAAYAAAD3/woAAAAmAAcAAAD3/wsAAAAmAAgAAAD3/wwAAAAmAAkAAAD3/w0AAAAmAAoAAAD3/w4AAAAmAAsAAAD4/wMAAAAnAAAAAAD4/wQAAAAnAAEAAAD4/wUAAAAnAAIAAAD4/wYAAAAnAAMAAAD4/wcAAAAnAAQAAAD4/wgAAAAnAAUAAAD4/wkAAAAnAAYAAAD4/woAAAAnAAcAAAD4/wsAAAAnAAgAAAD4/wwAAAAnAAkAAAD4/w0AAAAnAAoAAAD4/w4AAAAnAAsAAADz/w8AAAAiAAwAAAD0/w8AAAAjAAwAAAD1/w8AAAAkAAwAAAD2/w8AAAAlAAwAAAD3/w8AAAAmAAwAAAD4/w8AAAAnAAwAAAA=")
 tile_set = SubResource("TileSet_v8d64")
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="coins" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(228, -706)
+
+[node name="coins2" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(228, -545)
+
+[node name="coins3" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-645, 76)
+
+[node name="coins4" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-493, 74)
+
+[node name="coins5" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-645, 224)
+
+[node name="coins6" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-493, 222)
+
+[node name="coins7" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-3535, 1567)
+
+[node name="coins8" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-3383, 1565)
+
+[node name="coins9" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-3535, 2004)
+
+[node name="coins10" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-3383, 2002)
+
+[node name="coins11" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1640, 942)
+
+[node name="coins12" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1488, 940)
+
+[node name="coins13" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2567, 942)
+
+[node name="coins14" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2415, 940)
+
+[node name="coins15" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2628, 2624)
+
+[node name="coins16" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2476, 2622)
+
+[node name="coins17" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1633, 2639)
+
+[node name="coins18" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1481, 2637)
+
+[node name="coins19" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2025, 3154)
+
+[node name="coins20" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1873, 3152)
+
+[node name="coins21" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2025, 3302)
+
+[node name="coins22" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1873, 3300)
+
+[node name="coins23" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2743, 4056)
+
+[node name="coins24" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2743, 4217)
+
+[node name="coins25" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1782, 4064)
+
+[node name="coins26" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1782, 4225)
+
+[node name="coins27" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-716, 4048)
+
+[node name="coins28" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-716, 4209)
+
+[node name="coins29" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(603, 2691)
+
+[node name="coins30" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(1034, 2694)
+
+[node name="coins31" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2125, 195)
+
+[node name="coins32" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2125, 356)
+
+[node name="coins33" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(1197, 1083)
+
+[node name="coins34" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(1197, 1244)
+
+[node name="coins35" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(1917, 2011)
+
+[node name="coins36" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2025, 1883)
+
+[node name="coins37" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(3229, 2912)
+
+[node name="coins38" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(3337, 2784)
+
+[node name="coins39" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2052, 3942)
+
+[node name="coins40" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2180, 4050)
+
+[node name="Powerup Boxes" type="Node" parent="."]
+
+[node name="powerupBox" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-756, 752)
+
+[node name="powerupBox2" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-637, 883)
+
+[node name="powerupBox3" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-3331, 976)
+
+[node name="powerupBox4" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-3212, 1107)
+
+[node name="powerupBox5" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-969, 1944)
+
+[node name="powerupBox6" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-850, 2075)
+
+[node name="powerupBox7" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-3494, 3315)
+
+[node name="powerupBox8" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-3375, 3446)
+
+[node name="powerupBox9" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-1227, 4075)
+
+[node name="powerupBox10" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-1227, 4227)
+
+[node name="powerupBox11" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(805, 2560)
+
+[node name="powerupBox12" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(805, 2712)
+
+[node name="powerupBox13" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(1557, 4375)
+
+[node name="powerupBox14" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(1557, 4527)
+
+[node name="powerupBox15" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(2673, 2719)
+
+[node name="powerupBox16" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(2673, 2871)
+
+[node name="powerupBox18" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(807, 1641)
+
+[node name="powerupBox19" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(641, 1638)
+
+[node name="powerupBox17" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(2348, -434)
+
+[node name="powerupBox20" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(2461, -559)

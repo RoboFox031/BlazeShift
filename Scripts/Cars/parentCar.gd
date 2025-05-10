@@ -6,6 +6,11 @@ class_name Car
 
 var color = "blue"
 var fireball: PackedScene = preload("res://Scenes/Pickups/fireball.tscn")
+var snowball: PackedScene = preload('res://Scenes/Pickups/snowball.tscn')
+var roadSpikes: PackedScene = preload("res://Scenes/Pickups/roadSpikes.tscn")
+var fireCyclone: PackedScene = preload('res://Scenes/Pickups/fireCyclone.tscn')
+var paused = false
+var inCyclone = false
 
 ########
 #Important Car Stats:
@@ -63,7 +68,7 @@ var currentOwnerStr:String:
 	get:
 		return playerChoices.find_key(currentOwner)
 
-#controls how the car reacts to offroading
+#controls how the car reacts to offroadingsa
 var offRoadSpeedMult:float=.6 ##Controls how offroading affects speed and acceleration
 var offRoadAccelMult:float=.8 ##Controls how offroading affects turning
 var offRoadTurnSpeedMult:float=.8 ##Controls how offroading affects turning speed
@@ -145,7 +150,7 @@ func _ready() -> void:
 	#Setup car stats
 	applyStats()
 	
-	z_index = 10
+	z_index = 6
 	#makes you resoawn at the start if you respawn before reaching a valid checkpoint
 	progressPoint=global_position
 	progressRot=global_rotation
@@ -182,14 +187,23 @@ func _physics_process(delta):
 	
 	if isDrifting==false:
 		#Gets the input, and converts it to positive or negitive 1
-		turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right")
+		if not inCyclone:
+			turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right")
+		if inCyclone:
+			turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right") * -1
 	if isDrifting==true:
 		#if you are drifting, locks your turning in the drifing direction, and only allows for small adjustments
 		#turnDirection=currentDrift
 		if currentDrift<0:
-			turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),currentDrift,0)
+			if not inCyclone:
+				turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),currentDrift,0)
+			if inCyclone:
+				turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),currentDrift,0) * -1
 		elif currentDrift>0:
-			turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),-0,currentDrift)
+			if not inCyclone:
+				turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),-0,currentDrift)
+			if inCyclone:
+				turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),-0,currentDrift) * -1
 		print(turnDirection)
 	#If you are clicking a button, turns in that direction based on the acceleration value
 	if turnDirection:# and currentLinSpeed!=0:
@@ -210,8 +224,9 @@ func _physics_process(delta):
 		
 		
 	#Like a car, you can only turn while moving, and going backwards reverses your turn
-	turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
-	rotation_degrees+=turnOutput
+	if globalVars.canMove == true and paused == false:
+		turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
+		rotation_degrees+=turnOutput
 	
 	#If your traction isn't at it's normal value, and you aren't on ice or drifting, slowly increase the traction
 	if(traction!=baseTraction)and(currentTerrain!=trackEnums.terrainTypes.ice) and (isDrifting==false):
@@ -223,7 +238,8 @@ func _physics_process(delta):
 	driftVector=Vector2(move_toward(driftVector.x,fwdVector.x,traction),move_toward(driftVector.y,fwdVector.y,traction))
 	velocity=(fwdVector+driftVector)/2
 	
-	move_and_slide()
+	if globalVars.canMove == true and paused == false:
+		move_and_slide()
 	# print("Fwd: "+str(fwdVector))
 	# print("Drift: "+str(driftVector))
 	#print("Traction: "+str(traction))
@@ -235,16 +251,118 @@ func _physics_process(delta):
 		elif(globalVars.p2BlazeCurrent==0) and (currentOwner==playerChoices.p2):
 			resetMovement()
 
+func usePowerup():
+	if currentOwnerStr == 'p1':
+		if globalVars.pOnePowerup != 'none':
+			#player 1 blaze powerup
+			if globalVars.pOnePowerup == "blazePickup":
+				globalVars.pOnePowerup = 'none'
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+				print()
+				if globalVars.p1BlazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax:
+					globalVars.p1BlazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) 
+				else:
+					globalVars.p1BlazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax
+			#player 1 fireball powerup
+			if globalVars.pOnePowerup == 'fireballPickup':
+				globalVars.pOnePowerup = 'none'
+				var instance = fireball.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation 
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p1:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+			#snowball
+			if globalVars.pOnePowerup == 'snowballPickup':
+				globalVars.pOnePowerup = 'none'
+				var instance = snowball.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation 
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p1:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+					
+			if globalVars.pOnePowerup == 'roadSpikesPickup':
+				globalVars.pOnePowerup = 'none'
+				var instance = roadSpikes.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p1:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+			if globalVars.pOnePowerup == 'fireCyclonePickup':
+				globalVars.pOnePowerup = 'none'
+				var instance = fireCyclone.instantiate()
+				instance.playerNum = 'p1'
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p1:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+	if currentOwnerStr == 'p2':			
+		if globalVars.pTwoPowerup != 'none':
+			#player 2 blaze pickup
+			if globalVars.pTwoPowerup == "blazePickup":
+				globalVars.pTwoPowerup = 'none'
+				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+				if globalVars.p2BlazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax:
+					globalVars.p2BlazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) 
+				else:
+					globalVars.p2BlazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax
+			if globalVars.pTwoPowerup == 'fireballPickup':
+				globalVars.pTwoPowerup = 'none'
+				var instance = fireball.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p2:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+			#snowball
+			if globalVars.pTwoPowerup == 'snowballPickup':
+				globalVars.pTwoPowerup = 'none'
+				var instance = snowball.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation 
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p2:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+					
+			if globalVars.pTwoPowerup == 'roadSpikesPickup':
+				globalVars.pTwoPowerup = 'none'
+				var instance = roadSpikes.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p2:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+			
+			if globalVars.pTwoPowerup == 'fireCyclonePickup':
+				globalVars.pTwoPowerup = 'none'
+				var instance = fireCyclone.instantiate()
+				instance.playerNum = 'p2'
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p2:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+			
+		
+
 
 
 func _input(event):
 	#Allows boost
-	if Input.is_action_just_pressed(currentOwnerStr+"_x"):
+	if globalVars.canMove == true and paused == false:
+		if Input.is_action_just_pressed(currentOwnerStr+"_x"):
+			
+			startBoost()
+		if Input.is_action_just_released(currentOwnerStr+"_x"):
+			print(currentOwnerStr+" stopped boosting")
+			resetMovement()
 		
-		startBoost()
-	if Input.is_action_just_released(currentOwnerStr+"_x"):
-		print(currentOwnerStr+" stopped boosting")
-		resetMovement()
+
 	
 	#Allows drift
 	if Input.is_action_just_pressed(currentOwnerStr+"_l1"):
@@ -260,42 +378,20 @@ func _input(event):
 		#Rerun the drift action when a turn is started
 		if Input.is_action_just_pressed(currentOwnerStr+"_left") or Input.is_action_just_pressed(currentOwnerStr+"_right")  :
 			startDrift()
+		if Input.is_action_just_released(currentOwnerStr+"_l1"):
+			print(currentOwnerStr+" stopped drifting")
+			resetMovement()
+			#stop listening for a directional input
+			driftNoInput=false
+		#If you tried to drift but wern't turning, listen for a turning action
+		if driftNoInput==true:
+			#Rerun the drift action when a turn is started
+			if Input.is_action_just_pressed(currentOwnerStr+"_left") or Input.is_action_just_pressed(currentOwnerStr+"_right")  :
+				startDrift()
 
 	#Control powerups
 	if Input.is_action_just_pressed(currentOwnerStr+"_r1"):###might change the input later
-		if globalVars.pOnePowerup != 'none':
-			if globalVars.pOnePowerup == "blaze":
-				globalVars.pOnePowerup = 'none'
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
-				if get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax:
-					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazePowerupFill) 
-				else:
-					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOneBlazeHud").blazeMax
-			if globalVars.pOnePowerup == 'fireball':
-				globalVars.pOnePowerup = 'none'
-				var instance = fireball.instantiate()
-				if currentOwner == playerChoices.p1:
-					add_child(instance)
-				if currentOwner == playerChoices.p2:
-					add_child(instance)
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem()
-		if globalVars.pTwoPowerup != 'none':
-			if globalVars.pTwoPowerup == "blaze":
-				globalVars.pTwoPowerup = 'none'
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
-				if get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent + (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) <= get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax:
-					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent += (get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax * get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazePowerupFill) 
-				else:
-					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeCurrent = get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoBlazeHud").blazeMax
-			if globalVars.pTwoPowerup == 'fireball':
-				globalVars.pTwoPowerup = 'none'
-				var instance = fireball.instantiate()
-				if currentOwner == playerChoices.p1:
-					add_child(instance)
-				if currentOwner == playerChoices.p2:
-					add_child(instance)
-				get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem()
-
+		usePowerup()
 #Resets movement variables to their defult
 func resetMovement():
 	#Resets drifting
@@ -421,7 +517,6 @@ func updatePosition(area:Area2D):
 						#Stores the position and rotation of the legal point
 						progressPoint=area.global_position
 						progressRot=area.global_rotation
-						print(currentOwnerStr+" reverse "+str(reverseCount))
 						#increase the reverse count 
 						reverseCount+=1
 						if(reverseCount>reverseTolerance):
@@ -447,8 +542,8 @@ func updatePosition(area:Area2D):
 					largestLegalProgress=checkpoints.progress
 		#If none of the progress point you are touching result in legal moves, respawn
 		if anyLegalMove==false:
-			print("Illegal")
-			respawn()
+			#respawn()
+			pass
 		#If you didn't skip and aren't reversing, then update the progress
 		elif isReverse==false:
 			lastProgress=currentProgress
@@ -485,7 +580,38 @@ func respawn():
 func nextLap():
 	#If you are on lap 3, end the race
 	if currentLap==3:
-		finishRace()
+		if currentOwnerStr == 'p1':
+			globalVars.pOneDone = true
+			if globalVars.pTwoLastRacePlacement == null:
+				globalVars.pOneLastRacePlacement = '1st'
+				playerWin(globalVars.pOneName)
+			elif globalVars.pTwoLastRacePlacement == '1st':
+				globalVars.pOneLastRacePlacement = '2nd'
+				print('p1 2nd')
+		elif currentOwnerStr == 'p2':
+			globalVars.pTwoDone = true
+			if globalVars.pOneLastRacePlacement == null:
+				globalVars.pTwoLastRacePlacement = '1st'
+				playerWin(globalVars.pTwoName)
+				print('p2 first')
+			elif globalVars.pOneLastRacePlacement == '1st':
+				globalVars.pTwoLastRacePlacement = '2nd'
+				print('p2 second')
+		if globalVars.pOneDone == true and globalVars.pTwoDone == true:
+			if currentOwnerStr == 'p1':
+				globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pOneName,float(globalVars.pOneLastRaceTime))
+				finishRace()
+			if currentOwnerStr == 'p2':
+				globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pTwoName,float(globalVars.pTwoLastRaceTime))
+				finishRace()
+		elif globalVars.pOneDone == true or globalVars.pTwoDone == true:
+			paused = true
+			if currentOwnerStr == 'p1':
+				globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pOneName,float(globalVars.pOneLastRaceTime))
+			if currentOwnerStr == 'p2':
+				globalVars.saveScores(globalVars.track.instantiate().name,globalVars.pTwoName,float(globalVars.pTwoLastRaceTime))
+		
+	
 	#If you aren't on lap 3, add one to the lap and reset the position
 	else:
 		currentLap+=1
@@ -506,11 +632,17 @@ func checkTrackDistance():
 	var currentDistance=global_position.distance_to(progressPoint)
 	#if the player is too far away, respawn
 	if (currentDistance>trackMaxDist):
-		respawn()
-
+		#respawn()
+		pass
 
 #finishes the race
 func finishRace():
+	var trackName = globalVars.track.instantiate().name
+	if currentOwnerStr == 'p1':
+		globalVars.saveScores(trackName,globalVars.pOneName,globalVars.pOneLastRaceTime)
+	if currentOwnerStr == 'p1':
+		globalVars.saveScores(trackName,globalVars.pTwoName,globalVars.pTwoLastRaceTime)
+	get_tree().change_scene_to_file("res://Scenes/UI/raceFinishScreen.tscn")
 	print("ur done!")
 #Sets the stats of the car based on the resource and upgrades
 func applyStats():
@@ -531,3 +663,20 @@ func applyStats():
 	
 	#Resets movement to apply changes
 	resetMovement()
+	
+func playerWin(winner):
+	if winner == globalVars.pOneName:
+		globalVars.pOneTotalWins += 1
+		pass
+	elif winner == globalVars.pTwoName:
+		globalVars.pTwoTotalWins += 1
+	if globalVars.pOneTotalWins > globalVars.pTwoTotalWins:
+		globalVars.pOneOverallPlacement = '1st'
+		globalVars.pTwoOverallPlacement = '2nd'
+	if globalVars.pOneTotalWins < globalVars.pTwoTotalWins:
+		globalVars.pOneOverallPlacement = '2nd'
+		globalVars.pTwoOverallPlacement = '1st'
+	if globalVars.pOneTotalWins == globalVars.pTwoTotalWins:
+		globalVars.pOneOverallPlacement = 'Tie'
+		globalVars.pTwoOverallPlacement = 'Tie'
+	pass

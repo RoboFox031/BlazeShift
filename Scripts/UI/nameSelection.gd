@@ -30,6 +30,7 @@ var pOneDownArrows = []
 var pTwoDownArrows = []
 
 func _ready() -> void:
+	globalVars.musicType = 'royaltyMusic'
 	for a in $nameSelection/pOneNameSelection.get_children():
 		pOneLabels.append(a)
 		_updateCharacterDisplays()
@@ -143,16 +144,20 @@ func _updateCharacterDisplays():
 		if label == pOneLabels[pOneSlotSelected]:
 			label.add_theme_color_override("font_outline_color", Color.BLACK)
 			label.add_theme_constant_override("outline_size", 30)
+			label.startFlashing()
 		else:
 			label.add_theme_color_override("font_outline_color", Color.WHITE)
 			label.add_theme_constant_override("outline_size", 1)
+			label.stopFlashing()
 	for label in pTwoLabels:
 		if label == pTwoLabels[pTwoSlotSelected]:
 			label.add_theme_color_override("font_outline_color", Color.BLACK)
 			label.add_theme_constant_override("outline_size", 30)
+			label.startFlashing()
 		else:
 			label.add_theme_color_override("font_outline_color", Color.WHITE)
 			label.add_theme_constant_override("outline_size", 1)
+			label.stopFlashing()
 	pOneLabels[pOneSlotSelected].text = letters[pOneSelected]
 	if len(pTwoLabels) > 1:
 		pTwoLabels[pTwoSlotSelected].text = letters[pTwoSelected]

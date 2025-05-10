@@ -1,6 +1,6 @@
 extends Node2D
 
-
+@onready var timer = $timer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -12,13 +12,19 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
+	timer.start()
 	if body.currentOwner == body.playerChoices.p1:
-		globalVars.pOneCoins += 1
-		print('player1: '+str(globalVars.p1Coin))
-		queue_free()
+		globalVars.pOneLastRaceCoinsCollected += 1
+		self.visible = false
 	if body.currentOwner == body.playerChoices.p2:
-		globalVars.pTwoCoins += 1
-		print('player2: '+str(globalVars.p2Coin))
-		queue_free()
+		globalVars.pTwoLastRaceCoinsCollected += 1
+		self.visible = false
+	if self.visible == false:
+		pass
 	#globalVars.p1Coin
 	pass # Replace with function body.
+
+
+func _on_timer_timeout() -> void:
+	self.visible = true
+	

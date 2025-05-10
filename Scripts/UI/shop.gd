@@ -3,6 +3,61 @@ class_name shop
 
 ####order in the shop for the cars goes as follows Mustang, NSX, S13, CRX,FC RX7, 69 Charger, Lancia 037, Lotus Esprit, RUF CTR, 300ZX, Camaro
 
+var carTiers = {
+	'mustang': {
+		"tier": 'good',
+		"color": '00cc00',
+		'cost': 10
+	},
+	'nsx': {
+		"tier": 'elite',
+		"color": 'ffe50d',
+		'cost': 20
+	},
+	's13': {
+		"tier": 'mid',
+		"color": 'ff0000'
+	},
+	'crx': {
+		"tier": 'mid',
+		"color": 'ff0000'
+	},
+	'fc rx7': {
+		"tier": 'mid',
+		"color": 'ff0000'
+	},
+	'69 charger': {
+		"tier": 'good',
+		"color": '00cc00',
+		'cost': 10
+	},
+	'lancia 037': {
+		"tier": 'elite',
+		"color": 'ffe50d',
+		'cost': 20
+	},
+	'lotus esprit': {
+		"tier": 'god',
+		"color": 'd70dff',
+		'cost': 30
+	},
+	'ruf ctr': {
+		"tier": 'god',
+		"color": 'd70dff',
+		'cost': 30
+	},
+	'300zx': {
+		"tier": 'good',
+		"color": '00cc00',
+		'cost': 10
+	},
+	'camaro': {
+		"tier": 'elite',
+		"color": 'ffe50d',
+		'cost': 20
+	}
+}
+
 var pOneReady = false
 var pTwoReady = false
 
@@ -128,6 +183,10 @@ func _ready() -> void:
 			pTwoOwned.append(pTwoCars[car])
 	#pOneOwned = [pOneCars[0],pOneCars[1]]
 	#pTwoOwned = [pTwoCars[0],pTwoCars[1]]
+	pOneRightArrow.startFlashing()
+	pOneLeftArrow.startFlashing()
+	pTwoRightArrow.startFlashing()
+	pTwoLeftArrow.startFlashing()
 	
 	_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 	_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
@@ -158,12 +217,20 @@ func _process(delta: float) -> void:
 					c.get_child(0).visible = false
 				pOneLeftArrow.get_child(0).visible = false
 				pOneRightArrow.get_child(0).visible = false
+				pOneLeftArrow.stopFlashing()
+				pOneRightArrow.stopFlashing()
+			_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
+				
 		else:
 			pOneOptionSelected = "car"
 			for c in pOneColors:
 				c.get_child(0).visible = false
 			pOneLeftArrow.get_child(0).visible = true
 			pOneRightArrow.get_child(0).visible = true
+			pOneLeftArrow.startFlashing()
+			pOneRightArrow.startFlashing()
+			for color in pOneColors:
+				color.stopFlashing()
 	if (Input.is_action_just_pressed("p2_down") or Input.is_action_just_pressed("p2_up"))  and pTwoReady == false:
 		if pTwoOptionSelected == "car":
 			pTwoOptionSelected = "color"
@@ -174,12 +241,21 @@ func _process(delta: float) -> void:
 					c.get_child(0).visible = false
 				pTwoLeftArrow.get_child(0).visible = false
 				pTwoRightArrow.get_child(0).visible = false
+				pTwoLeftArrow.stopFlashing()
+				pTwoRightArrow.stopFlashing()
+			_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
+		
+
 		else:
 			pTwoOptionSelected = "car"
 			for c in pTwoColors:
 				c.get_child(0).visible = false
 			pTwoLeftArrow.get_child(0).visible = true
 			pTwoRightArrow.get_child(0).visible = true
+			pTwoLeftArrow.startFlashing()
+			pTwoRightArrow.startFlashing()
+			for color in pTwoColors:
+				color.stopFlashing()
 	if Input.is_action_just_pressed("p1_right") and pOneReady == false:
 		if pOneOptionSelected == "car":
 			if globalVars.pOneCarSelected + 1 < len(pOneCars):
@@ -239,6 +315,12 @@ func _process(delta: float) -> void:
 
 #updates the car display
 func _updateCarDisplay(pOneCar,pTwoCar):
+	if pOneOptionSelected == 'car':
+		for color in pOneColors:
+			color.stopFlashing()
+	if pTwoOptionSelected == 'car':
+		for color in pTwoColors:
+			color.stopFlashing()
 	for c in pOneCars:
 		if c == pOneCar:
 			c.visible = true
@@ -281,20 +363,24 @@ func _updateColorDisplay(pOneColor,pTwoColor):
 				c.scale.x = .15
 				c.scale.y = .15
 				c.get_child(0).visible = true
+				c.startFlashing()
 			else:
 				c.scale.x = .088
 				c.scale.y = .088
 				c.get_child(0).visible = false
+				c.stopFlashing()
 	if pTwoOptionSelected == "color":
 		for c in pTwoColors:
 			if c == pTwoColor:
 				c.scale.x = .15
 				c.scale.y = .15
 				c.get_child(0).visible = true
+				c.startFlashing()
 			else:
 				c.scale.x = .088
 				c.scale.y = .088
 				c.get_child(0).visible = false
+				c.stopFlashing()
 	_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 
 #updates the middle display based on the type of car and color
@@ -332,23 +418,23 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 		pTwoOwnedLabel.position.x = 1245
 		pTwoOwnedLabel.add_theme_color_override("font_color", Color("9f0000"))
 		$locks/pTwoLockFinal.visible = true
+	_updateTierDisplays()
 
-#function to allow the player to buy a car######this might be broken helpppp
 func _buyCar(player):
 	if player == 1:
 		if pOneCars[globalVars.pOneCarSelected] not in pOneOwned:
-			if globalVars.pOneCoins - carCosts[globalVars.pOneCarSelected] >= 0:
+			if globalVars.pOneCoins - carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['cost'] >= 0:
 				pOneOwned.append(pOneCars[globalVars.pOneCarSelected])
-				globalVars.pOneCoins -= carCosts[globalVars.pOneCarSelected]
+				globalVars.pOneCoins -= carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['cost']
 				$pOneCoinHud.update()
 				$uiSFX.playBuySound()
 				_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 				_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 	if player == 2:
 		if pTwoCars[globalVars.pTwoCarSelected] not in pTwoOwned:
-			if globalVars.pTwoCoins - carCosts[globalVars.pTwoCarSelected] >= 0:
+			if globalVars.pTwoCoins - carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost'] >= 0:
 				pTwoOwned.append(pTwoCars[globalVars.pTwoCarSelected])
-				globalVars.pTwoCoins -= carCosts[globalVars.pTwoCarSelected]
+				globalVars.pTwoCoins -= carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost']
 				$pTwoCoinHud.update()
 				$uiSFX.playBuySound()
 				_updateFinalDisplay(pTwoCarsFinal[globalVars.pTwoCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
@@ -400,3 +486,9 @@ func _updateBuyButtonLabels():
 
 func _on_timer_timeout() -> void:
 	_updateColorDisplay(pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
+
+func _updateTierDisplays():
+	$pOneTierLabel.text = carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['tier']
+	$pTwoTierLabel.text = carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['tier']
+	$pOneTierLabel.add_theme_color_override("font_color", Color(carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['color']))
+	$pTwoTierLabel.add_theme_color_override("font_color", Color(carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['color']))

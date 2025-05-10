@@ -1,12 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://bprrfv755425b"]
+[gd_scene load_steps=12 format=3 uid="uid://cdo2pr6gigps"]
 
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="1_7f0wt"]
 [ext_resource type="Script" uid="uid://csnvj8kdiiior" path="res://Scripts/UI/leaderboard.gd" id="1_trr20"]
 [ext_resource type="Texture2D" uid="uid://cdienlvw5alel" path="res://Assets/Sprites/UI/whiteArrow.png" id="3_bl5mr"]
 [ext_resource type="Texture2D" uid="uid://eod83ktvte4" path="res://Assets/Sprites/UI/blackOutlineArrow.png" id="4_7ajj7"]
+[ext_resource type="Script" uid="uid://0bfxv81mvhip" path="res://Scripts/UI/flash.gd" id="4_r85ew"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trr20"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bl5mr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ajj7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r85ew"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yf6ji"]
+
+[sub_resource type="Theme" id="Theme_lqqoe"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_trr20")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_bl5mr")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_7ajj7")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_r85ew")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_yf6ji")
 
 [node name="leaderboard" type="Node2D"]
 script = ExtResource("1_trr20")
+metadata/_edit_horizontal_guides_ = [846.0]
 
 [node name="colorRect" type="ColorRect" parent="."]
 offset_right = 1920.0
@@ -19,6 +38,19 @@ offset_right = 1920.0
 offset_bottom = 116.0
 color = Color(0.913725, 0.466667, 0.0470588, 1)
 metadata/_edit_lock_ = true
+
+[node name="trackLabel" type="Label" parent="."]
+offset_left = 561.0
+offset_top = 167.0
+offset_right = 1359.0
+offset_bottom = 318.0
+pivot_offset = Vector2(399, 50.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_7f0wt")
+theme_override_font_sizes/font_size = 150
+text = "track"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="line2d" type="Line2D" parent="."]
 points = PackedVector2Array(0, 116, 1920, 116)
@@ -46,20 +78,35 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="leaderbaordLabel" type="Label" parent="."]
-offset_left = 733.0
+[node name="scrollContainer" type="ScrollContainer" parent="."]
+offset_left = 705.0
 offset_top = 346.0
-offset_right = 1187.0
-offset_bottom = 738.0
-pivot_offset = Vector2(227, 0)
+offset_right = 1215.0
+offset_bottom = 872.0
+theme = SubResource("Theme_lqqoe")
+scroll_vertical = 100
+
+[node name="vBoxContainer" type="VBoxContainer" parent="scrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="leaderboardLabel" type="Label" parent="scrollContainer/vBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_7f0wt")
 theme_override_font_sizes/font_size = 100
-text = "name: 00:00
-name: 00:00
-name: 00:00
-name: 00:00
-name: 00:00"
+text = "XXX: 00:00.000
+XXX: 00:00.000
+XXX: 00:00.000
+XXX: 00:00.000
+XXX: 00:00.000
+F
+F
+F
+F
+Z
+ "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -67,10 +114,11 @@ vertical_alignment = 1
 
 [node name="rightArrow" type="Sprite2D" parent="arrows"]
 self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
-position = Vector2(1301, 603)
+position = Vector2(1321, 546)
 scale = Vector2(2, 2)
 texture = ExtResource("3_bl5mr")
 offset = Vector2(9, 28)
+script = ExtResource("4_r85ew")
 
 [node name="rightArrowOutline" type="Sprite2D" parent="arrows/rightArrow"]
 scale = Vector2(1.03, 1.03)
@@ -79,39 +127,65 @@ offset = Vector2(8, 28)
 
 [node name="leftArrow" type="Sprite2D" parent="arrows"]
 self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
-position = Vector2(615, 607)
+position = Vector2(599, 546)
 rotation = 3.14159
 scale = Vector2(2, 2)
 texture = ExtResource("3_bl5mr")
 offset = Vector2(9, 28)
+script = ExtResource("4_r85ew")
 
 [node name="leftArrowOutline" type="Sprite2D" parent="arrows/leftArrow"]
 scale = Vector2(1.03, 1.03)
 texture = ExtResource("4_7ajj7")
 offset = Vector2(8, 28)
 
-[node name="trackLabel" type="Label" parent="."]
-offset_left = 561.0
-offset_top = 167.0
-offset_right = 1359.0
-offset_bottom = 268.0
-pivot_offset = Vector2(399, 50.5)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_7f0wt")
-theme_override_font_sizes/font_size = 150
-text = "track"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="leftArrow2" type="Sprite2D" parent="arrows"]
+self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
+position = Vector2(948, 985)
+rotation = 1.5708
+texture = ExtResource("3_bl5mr")
+offset = Vector2(9, 28)
+
+[node name="leftArrowOutline" type="Sprite2D" parent="arrows/leftArrow2"]
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("4_7ajj7")
+offset = Vector2(8, 28)
 
 [node name="label2" type="Label" parent="."]
-offset_left = 561.0
-offset_top = 867.0
-offset_right = 1359.0
-offset_bottom = 1018.0
+offset_left = 563.0
+offset_top = 834.0
+offset_right = 1361.0
+offset_bottom = 985.0
 pivot_offset = Vector2(399, 50.5)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_7f0wt")
 theme_override_font_sizes/font_size = 50
 text = "press a to switch leader board"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label4" type="Label" parent="."]
+offset_left = 563.0
+offset_top = 76.0
+offset_right = 1361.0
+offset_bottom = 227.0
+pivot_offset = Vector2(399, 50.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_7f0wt")
+theme_override_font_sizes/font_size = 50
+text = "press b to go back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label3" type="Label" parent="."]
+offset_left = 563.0
+offset_top = 973.0
+offset_right = 1361.0
+offset_bottom = 1124.0
+pivot_offset = Vector2(399, 50.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_7f0wt")
+theme_override_font_sizes/font_size = 50
+text = "press down to scroll"
 horizontal_alignment = 1
 vertical_alignment = 1

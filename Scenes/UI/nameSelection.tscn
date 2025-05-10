@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bprxdakxg5ib3"]
+[gd_scene load_steps=7 format=3 uid="uid://c8ab6ji4x7543"]
 
 [ext_resource type="Script" uid="uid://caunhbnokh8hd" path="res://Scripts/UI/nameSelection.gd" id="1_eks6l"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="1_pxn6u"]
 [ext_resource type="Texture2D" uid="uid://cdienlvw5alel" path="res://Assets/Sprites/UI/whiteArrow.png" id="3_u8rjj"]
+[ext_resource type="Script" uid="uid://0bfxv81mvhip" path="res://Scripts/UI/flash.gd" id="4_0dp7e"]
 [ext_resource type="Texture2D" uid="uid://eod83ktvte4" path="res://Assets/Sprites/UI/blackOutlineArrow.png" id="4_c2r7b"]
 [ext_resource type="PackedScene" uid="uid://bmtbwlc4rj8uy" path="res://Scenes/UI/uiSFX.tscn" id="5_c2r7b"]
 
@@ -65,6 +66,7 @@ theme_override_font_sizes/font_size = 200
 text = "a"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_0dp7e")
 
 [node name="two" type="Label" parent="nameSelection/pOneNameSelection"]
 offset_left = 412.0
@@ -78,6 +80,7 @@ theme_override_font_sizes/font_size = 200
 text = "a"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_0dp7e")
 
 [node name="three" type="Label" parent="nameSelection/pOneNameSelection"]
 offset_left = 560.0
@@ -91,6 +94,7 @@ theme_override_font_sizes/font_size = 200
 text = "a"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_0dp7e")
 
 [node name="pTwoNameSelection" type="Node" parent="nameSelection"]
 
@@ -106,6 +110,7 @@ theme_override_font_sizes/font_size = 200
 text = "a"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_0dp7e")
 
 [node name="two" type="Label" parent="nameSelection/pTwoNameSelection"]
 offset_left = 1389.0
@@ -119,6 +124,7 @@ theme_override_font_sizes/font_size = 200
 text = "a"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_0dp7e")
 
 [node name="three" type="Label" parent="nameSelection/pTwoNameSelection"]
 offset_left = 1537.0
@@ -132,6 +138,7 @@ theme_override_font_sizes/font_size = 200
 text = "a"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_0dp7e")
 
 [node name="arrows" type="Node" parent="."]
 

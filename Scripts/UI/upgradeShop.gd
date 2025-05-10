@@ -98,17 +98,24 @@ func _process(delta: float) -> void:
 func _updateSelected():
 	$uiSFX.playCursorMoveSound()
 	for label in pOneUpgrades:
+		label.stopFlashing()
+	for label in pOneUpgrades:
 		if label == pOneUpgrades[pOneUpgradeSelected]:
 			label.add_theme_color_override("font_outline_color", Color(0,0,0)) 
 			label.add_theme_constant_override("outline_size", 25)
+			label.startFlashing()
 		else:
 			label.add_theme_constant_override("outline_size", 0)
+	for label in pTwoUpgrades:
+		label.stopFlashing()
 	for label in pTwoUpgrades:
 		if label == pTwoUpgrades[pTwoUpgradeSelected]:
 			label.add_theme_color_override("font_outline_color", Color(0,0,0)) 
 			label.add_theme_constant_override("outline_size", 25)
+			label.startFlashing()
 		else:
 			label.add_theme_constant_override("outline_size", 0)
+			label.stopFlashing()
 	_updateCostLabel()
 	_updateUpgradeSprites()
 #updates cost label
@@ -174,7 +181,8 @@ func _updateReadyScreen():
 	else:
 		$pTwoReadyScreen.visible = false
 	if pOneReady == true and pTwoReady == true:
-		get_tree().change_scene_to_file("res://Scenes/UI/trackSelection.tscn")
+		globalVars.nextScene = "res://Scenes/UI/trackSelection.tscn"
+		get_tree().change_scene_to_file("res://Scenes/UI/loadingScreen.tscn")
 	if pOneBack == true:
 		$pOneBackScreen.visible = true
 	else:

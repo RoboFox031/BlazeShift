@@ -1,5 +1,5 @@
 extends powerupsHud
 class_name pOnePowerupsHud
 
-func _ready():
-	player = 1
+func _ready() -> void:
+	pass

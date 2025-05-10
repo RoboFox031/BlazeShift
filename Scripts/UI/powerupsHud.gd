@@ -2,11 +2,29 @@ extends UI
 class_name powerupsHud
 
 @onready var sprite = $animatedSprite2d
-var player: int
 
-func changeItem():
-	if player == 1:
+
+func changeItem(playerStr):
+	if playerStr == 'p1':
 		sprite.play(globalVars.pOnePowerup)
-	elif player == 2:
+		if globalVars.pOnePowerup == 'snowballPickup':
+			sprite.scale = Vector2(11,11)
+			sprite.modulate = Color('ffffff')
+		elif globalVars.pOnePowerup == 'fireCyclonePickup':
+			sprite.scale = Vector2(5.5,5.5)
+			sprite.modulate = Color('ec2d42')
+		else:
+			sprite.scale = Vector2(1,1)
+			sprite.modulate = Color('ffffff')
+	elif playerStr == 'p2':
 		sprite.play(globalVars.pTwoPowerup)
-		pass
+		if globalVars.pTwoPowerup == 'snowballPickup':
+			sprite.scale = Vector2(11,11)
+			sprite.modulate = Color('ffffff')
+		elif globalVars.pTwoPowerup == 'fireCyclonePickup':
+			sprite.scale = Vector2(5.5,5.5)
+			sprite.modulate = Color('ec2d42')
+		else:
+			sprite.scale = Vector2(1,1)
+			sprite.modulate = Color('ffffff')
+		

@@ -6,7 +6,7 @@ var inControl: int = 0
 
 var selected: int = 0
 
-var options = ["resume", "options", "restart"]
+var options = ["resume", "options", 'controls', "restart"]
 
 var labels
 
@@ -14,7 +14,7 @@ var pOneConfirm = false
 var pTwoConfirm = false
 
 func _ready():
-	labels = [$colorRect/resumeLabel, $colorRect/optionsLabel, $colorRect/restartLabel]
+	labels = [$colorRect/resumeLabel, $colorRect/optionsLabel, $colorRect/controls, $colorRect/restartLabel]
 	_updateMenu()
 
 func _physics_process(delta: float) -> void:
@@ -46,10 +46,10 @@ func _physics_process(delta: float) -> void:
 		if selected - 1 >= 0:
 			selected -= 1
 		else:
-			selected = 2
+			selected = 3
 		_updateMenu()
 	if Input.is_action_just_pressed("p1_down") and inControl == 1:
-		if selected + 1 <= 2:
+		if selected + 1 <= 3:
 			selected += 1
 		else:
 			selected = 0
@@ -58,10 +58,10 @@ func _physics_process(delta: float) -> void:
 		if selected - 1 >= 0:
 			selected -= 1
 		else:
-			selected = 2
+			selected = 3
 		_updateMenu()
 	if Input.is_action_just_pressed("p2_down") and inControl == 2:
-		if selected + 1 <= 2:
+		if selected + 1 <= 3:
 			selected += 1
 		else:
 			selected = 0
@@ -108,12 +108,14 @@ func _updateMenu():
 	
 	if pOneConfirm == true and pTwoConfirm == true:
 		_restart()
-			
 		
+	for label in labels:
+		label.stopFlashing()
 	for label in labels:
 		if label == labels[selected]:
 			label.add_theme_color_override("font_outline_color", Color(0,0,0)) 
 			label.add_theme_constant_override("outline_size", 30)
+			label.startFlashing()
 		else:
 			label.add_theme_constant_override("outline_size", 0)
 
@@ -123,11 +125,15 @@ func _useButton(option):
 		self.visible = false
 		print('hit')
 	if option == 'options':
-		self.visible == false
+		$pauseOptionsScreen.pausedToMenu = true
+		$pauseOptionsScreen.visible = true
 	if option == 'restart':
 		inControl = 3
 		$pOneConfirmLabel.visible = true
 		$pTwoConfirmLabel.visible = true
+	if option == 'controls':
+		$controlScreen.visible = true
+		$controlScreen.pausedToControls = true
 		
 func _restart():
 	get_tree().change_scene_to_file("res://Scenes/UI/titleScreen.tscn")

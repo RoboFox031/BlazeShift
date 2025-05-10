@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d0wlf3bfyqpuh" path="res://Assets/Sprites/Tracks/ruralMapTiles/tileset_preview.png" id="4_jhqve"]
 [ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://Assets/Sprites/Tracks/grass_tileset_16x16.png" id="5_iocsr"]
 [ext_resource type="TileSet" uid="uid://bf4uogxfjmwmc" path="res://Assets/Sprites/Tracks/ruralMapTiles/ruralTrack.tres" id="6_v8d64"]
-[ext_resource type="TileSet" uid="uid://bjrgtgiklvksp" path="res://Scenes/Tracks/track.tres" id="9_0u2nk"]
+[ext_resource type="TileSet" uid="uid://shirjmw44fyk" path="res://Scenes/Tracks/track.tres" id="9_0u2nk"]
 [ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://Assets/Sprites/Tracks/ruralMapTiles/sandwater.png" id="10_h0h4c"]
 [ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="11_oyt2e"]
 [ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://Assets/Sprites/Tracks/ruralMapTiles/sand.png" id="11_te1ji"]

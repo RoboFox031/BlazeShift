@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://3o4xe5gkyt04"]
+[gd_scene load_steps=27 format=4 uid="uid://cxnex58nqf4ss"]
 
 [ext_resource type="Script" uid="uid://clrhe6giqrbwi" path="res://Scripts/Tracks/ruralTrack.gd" id="1_4l54d"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="1_a08p6"]
@@ -6,11 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://d0wlf3bfyqpuh" path="res://Assets/Sprites/Tracks/ruralMapTiles/tileset_preview.png" id="4_jhqve"]
 [ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://Assets/Sprites/Tracks/grass_tileset_16x16.png" id="5_iocsr"]
 [ext_resource type="TileSet" uid="uid://bf4uogxfjmwmc" path="res://Assets/Sprites/Tracks/ruralMapTiles/ruralTrack.tres" id="6_v8d64"]
-[ext_resource type="TileSet" uid="uid://dqdcbt7l7acll" path="res://Scenes/Tracks/track.tres" id="9_0u2nk"]
+[ext_resource type="TileSet" uid="uid://shirjmw44fyk" path="res://Scenes/Tracks/track.tres" id="9_0u2nk"]
 [ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://Assets/Sprites/Tracks/ruralMapTiles/sandwater.png" id="10_h0h4c"]
+[ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="11_oyt2e"]
 [ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://Assets/Sprites/Tracks/ruralMapTiles/sand.png" id="11_te1ji"]
 [ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="11_v8d64"]
-[ext_resource type="PackedScene" uid="uid://cej22tp7ejihv" path="res://Scenes/Cars/carSpawn.tscn" id="12_oyt2e"]
+[ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://Scenes/Pickups/powerupBox.tscn" id="12_jn0hv"]
+[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://Scenes/Cars/carSpawn.tscn" id="12_oyt2e"]
 [ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://Scripts/Tracks/terrain.gd" id="13_jn0hv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d180l"]
@@ -5082,3 +5084,207 @@ polygon = PackedVector2Array(-110, -421, -148, -417, -201, -404, -244, -381, -28
 
 [node name="outside" type="CollisionPolygon2D" parent="terrain"]
 polygon = PackedVector2Array(-3660, 1233, -3651, 1130, -3631, 1060, -3606, 999, -3550, 913, -5307, -1309, -5304, 5089, 5378, 5153, 5405, -1838, -5311, -1310, -3550, 913, -3497, 856, -3446, 819, -3374, 776, -3285, 743, -3205, 730, -3132, 729, -3086, 732, -3038, 729, -1016, 729, -949, 720, -915, 709, -881, 693, -852, 672, -820, 643, -781, 583, -763, 525, -758, 480, -759, -210, -756, -245, -761, -290, -757, -378, -738, -461, -713, -532, -670, -611, -624, -667, -567, -718, -504, -758, -436, -790, -357, -812, -272, -822, 60, -822, 2126, -821, 2168, -817, 2218, -821, 2305, -818, 2391, -800, 2465, -770, 2531, -732, 2586, -687, 2635, -632, 2676, -572, 2710, -495, 2731, -417, 2741, -339, 2742, -286, 2737, -247, 2741, -173, 2740, -111, 2739, -70, 2742, -3, 2734, 49, 2718, 129, 2695, 191, 2671, 236, 2633, 291, 2583, 348, 2523, 394, 2456, 432, 2373, 462, 2285, 479, 2093, 479, 2009, 492, 1957, 518, 1904, 564, 1864, 623, 1847, 679, 1840, 759, 1841, 853, 1837, 949, 1822, 1011, 1801, 1076, 1769, 1135, 1728, 1199, 1674, 1254, 1618, 1298, 1551, 1333, 1471, 1363, 1383, 1377, 1283, 1378, 1187, 1379, 1118, 1388, 1080, 1404, 1040, 1428, 996, 1472, 957, 1537, 944, 1590, 940, 1635, 950, 1659, 969, 1676, 1003, 1679, 1067, 1679, 1884, 1679, 1946, 1683, 2001, 1698, 2055, 1721, 2086, 1742, 2126, 1775, 2158, 1810, 2182, 1852, 2203, 1897, 2218, 1957, 2226, 2017, 2236, 2066, 2242, 2116, 2241, 2508, 2245, 2545, 2263, 2570, 2296, 2578, 3110, 2579, 3196, 2579, 3270, 2589, 3316, 2604, 3364, 2627, 3403, 2653, 3439, 2692, 3469, 2728, 3494, 2775, 3510, 2824, 3521, 2873, 3536, 2963, 3541, 3009, 3541, 3702, 3539, 3733, 3541, 3774, 3539, 3818, 3526, 3878, 3508, 3929, 3481, 3977, 3450, 4017, 3415, 4050, 3371, 4081, 3321, 4105, 3268, 4122, 3207, 4129, 3102, 4129, 2285, 4128, 2261, 4137, 2248, 4152, 2241, 4169, 2239, 4219, 2237, 4237, 2241, 4282, 2236, 4330, 2226, 4378, 2206, 4432, 2182, 4476, 2151, 4515, 2114, 4551, 2071, 4583, 2022, 4604, 1967, 4621, 1906, 4629, 1847, 4632, 1770.22, 4631.47, 1267, 4628, 1203, 4629, 1142, 4619, 1087, 4605, 1040, 4585, 995, 4554, 955, 4518, 927, 4482, 901, 4436, 879, 4382, 869, 4323, 865, 4268, 865, 4135, 867, 2873, 863, 2858, 844, 2839, 827, 2831, 813, 2830, 793, 2834, 778, 2841, 772, 2855, 766, 2878, 766, 3710, 762, 3758, 766, 3803, 763, 3864, 752, 3940, 729, 4016, 694, 4089, 653, 4149, 603, 4200, 543, 4244, 482, 4279, 400, 4310, 311, 4327, 224, 4329, 25, 4329, -3194, 4328, -3252, 4330, -3349, 4321, -3431, 4298, -3501, 4268, -3564, 4229, -3618, 4181, -3665, 4126, -3705, 4057, -3736, 3983, -3755, 3900, -3762, 3815, -3753, 3708, -3762, 3531, -3747, 3415, -3722, 3337, -3692, 3274, -3646, 3209, -3599, 3163, -3541, 3115, -3475, 3081, -3403, 3050, -3315, 3032, -3231, 3027, -3115, 3028, -705, 3029, -679, 3016, -663, 2999, -659, 2967, -660, 2167, -680, 2139, -703, 2130, -729, 2133, -748, 2147, -758, 2166, -759, 2195, -761, 2277, -760, 2355, -771, 2436, -799, 2525, -833, 2593, -873, 2647, -926, 2705, -986, 2748, -1051, 2783, -1125, 2811, -1218, 2827, -1317, 2828, -1350, 2826, -1390, 2829, -3040, 2829, -3132, 2827, -3256, 2820, -3328, 2801, -3400, 2768, -3466, 2726, -3520, 2678, -3566, 2625, -3606, 2557, -3635, 2484, -3653, 2399, -3661, 2325, -3659, 2207, -3660, 1340)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="coins" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(228, -706)
+
+[node name="coins2" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(228, -545)
+
+[node name="coins3" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-645, 76)
+
+[node name="coins4" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-493, 74)
+
+[node name="coins5" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-645, 224)
+
+[node name="coins6" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-493, 222)
+
+[node name="coins7" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-3535, 1567)
+
+[node name="coins8" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-3383, 1565)
+
+[node name="coins9" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-3535, 2004)
+
+[node name="coins10" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-3383, 2002)
+
+[node name="coins11" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1640, 942)
+
+[node name="coins12" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1488, 940)
+
+[node name="coins13" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2567, 942)
+
+[node name="coins14" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2415, 940)
+
+[node name="coins15" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2628, 2624)
+
+[node name="coins16" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2476, 2622)
+
+[node name="coins17" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1633, 2639)
+
+[node name="coins18" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1481, 2637)
+
+[node name="coins19" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2025, 3154)
+
+[node name="coins20" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1873, 3152)
+
+[node name="coins21" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2025, 3302)
+
+[node name="coins22" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1873, 3300)
+
+[node name="coins23" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2743, 4056)
+
+[node name="coins24" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2743, 4217)
+
+[node name="coins25" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1782, 4064)
+
+[node name="coins26" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1782, 4225)
+
+[node name="coins27" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-716, 4048)
+
+[node name="coins28" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-716, 4209)
+
+[node name="coins29" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(603, 2691)
+
+[node name="coins30" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(1034, 2694)
+
+[node name="coins31" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2125, 195)
+
+[node name="coins32" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2125, 356)
+
+[node name="coins33" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(1197, 1083)
+
+[node name="coins34" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(1197, 1244)
+
+[node name="coins35" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(1917, 2011)
+
+[node name="coins36" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2025, 1883)
+
+[node name="coins37" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(3229, 2912)
+
+[node name="coins38" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(3337, 2784)
+
+[node name="coins39" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2052, 3942)
+
+[node name="coins40" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2180, 4050)
+
+[node name="Powerup Boxes" type="Node" parent="."]
+
+[node name="powerupBox" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-756, 752)
+
+[node name="powerupBox2" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-637, 883)
+
+[node name="powerupBox3" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-3331, 976)
+
+[node name="powerupBox4" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-3212, 1107)
+
+[node name="powerupBox5" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-969, 1944)
+
+[node name="powerupBox6" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-850, 2075)
+
+[node name="powerupBox7" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-3494, 3315)
+
+[node name="powerupBox8" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-3375, 3446)
+
+[node name="powerupBox9" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-1227, 4075)
+
+[node name="powerupBox10" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-1227, 4227)
+
+[node name="powerupBox11" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(805, 2560)
+
+[node name="powerupBox12" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(805, 2712)
+
+[node name="powerupBox13" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(1557, 4375)
+
+[node name="powerupBox14" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(1557, 4527)
+
+[node name="powerupBox15" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(2673, 2719)
+
+[node name="powerupBox16" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(2673, 2871)
+
+[node name="powerupBox18" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(807, 1641)
+
+[node name="powerupBox19" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(641, 1638)
+
+[node name="powerupBox17" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(2348, -434)
+
+[node name="powerupBox20" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(2461, -559)

@@ -1,14 +1,16 @@
-[gd_scene load_steps=18 format=4 uid="uid://bsv7hccft4sf2"]
+[gd_scene load_steps=20 format=4 uid="uid://7fuinj7l2klw"]
 
 [ext_resource type="Script" uid="uid://cga3dxrepqccb" path="res://Scripts/Tracks/volcanoTrack.gd" id="1_ejygx"]
 [ext_resource type="Texture2D" uid="uid://b11whu5nqhr63" path="res://Assets/Sprites/Tracks/volcanoe_tileset_and_assets/volcanoe_assets.png" id="1_pnoux"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="2_b7uh5"]
 [ext_resource type="Texture2D" uid="uid://diftod1f83vx" path="res://Assets/Sprites/Tracks/volcanoe_tileset_and_assets/volcanoe_tiles.png" id="2_fmrw8"]
-[ext_resource type="TileSet" uid="uid://bs0pqokyeb1y0" path="res://Scenes/Tracks/volcanoMountains.tres" id="3_3fxna"]
-[ext_resource type="TileSet" uid="uid://dqdcbt7l7acll" path="res://Scenes/Tracks/track.tres" id="5_3fxna"]
+[ext_resource type="TileSet" uid="uid://bth44gyob6c8w" path="res://Scenes/Tracks/volcanoMountains.tres" id="3_3fxna"]
+[ext_resource type="TileSet" uid="uid://shirjmw44fyk" path="res://Scenes/Tracks/track.tres" id="5_3fxna"]
 [ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="7_3fxna"]
-[ext_resource type="PackedScene" uid="uid://cej22tp7ejihv" path="res://Scenes/Cars/carSpawn.tscn" id="8_apncx"]
+[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://Scenes/Cars/carSpawn.tscn" id="8_apncx"]
 [ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://Scripts/Tracks/terrain.gd" id="9_l5arc"]
+[ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="10_3fxna"]
+[ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://Scenes/Pickups/powerupBox.tscn" id="11_apncx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xlcya"]
 texture = ExtResource("2_fmrw8")
@@ -6808,3 +6810,193 @@ polygon = PackedVector2Array(-512, 640, -1024, 640, -1024, 128, -2173, 128, -217
 
 [node name="outside" type="CollisionPolygon2D" parent="lava"]
 polygon = PackedVector2Array(1280, 1792, 1280, -384, 801, -384, 761, -443, 817, -481, 816, -519, 787, -548, 808, -569, 809, -607, 770, -717, 817, -737, 816, -775, 787, -803, 808, -825, 809, -860, 787, -892, 825, -960, 848, -960, 902, -995, 948, -963, 1027, -1002, 1100, -966, 1158, -1003, 1198, -968, 1285, -1005, 1343, -970, 1387, -968, 1412, -1001, 1455, -965, 1474, -967, 1535, -991, 1543, -1002, 1596, -973, 1618, -968, 1640, -968, 1669, -1007, 1711, -968, 1765, -981, 1794, -1004, 1873, -965, 1901, -967, 1926, -1007, 1964, -966, 1986.78, -965.647, 2050, -1005, 2129, -967, 2152.45, -966.57, 2179, -1006, 2240, -964, 2308, -1007, 2406, -967, 2436, -1005, 2496, -967, 2563, -1006, 2644, -967, 2664.42, -966.365, 2693, -1004, 2756, -966, 2823, -1004, 2924, -961, 2954, -989, 3020, -963, 3088, -1005, 3153, -966, 3319, -991, 3353, -1018, 3373, -1051, 3344, -1122, 3365, -1153, 3330, -1216, 3377, -1248, 3379, -1280, 3324, -1338, 3379, -1376, 3369, -2722, 3375, -2788, 3328, -2841, 3328, -3328, 3584, -3328, 3584, -4480, 2432, -4480, 2432, -6400, -1280, -6400, -1280, -5376, -2000, -5376, -2016, -5592, -8160, -5608, -8376, -5544, -8384, -2136, -8223, -2128, -8188, -2159, -8134, -2121, -8060, -2159, -7973, -2121, -7931, -2157, -7882, -2121, -7803, -2160, -7716, -2120, -7676, -2157, -7624, -2120, -7547, -2160, -7458.57, -2120.52, -7420, -2158, -7368, -2119, -7291, -2160, -7205.38, -2120.29, -7163, -2154, -7136, -2130, -7109, -2119, -7037, -2159, -6953, -2120, -6908, -2156, -6863, -2118, -6779, -2159, -6695, -2119, -6651, -2160, -6604, -2120, -6524, -2160, -6443, -2120, -6396, -2158, -6347, -2120, -6268, -2160, -6199, -2124, -6177, -2119, -6138, -2158, -6088, -2120, -6013, -2159, -5882, -2141, -5872, -2097, -5824, -2047, -5777, -2045, -5751, -2025, -5673, -2001, -5632, -2021, -5632, -1920, -7040, -1920, -7040, 256, -5504, 256, -5504, 1792, -3968, 1792, -3968, 1408, -3584, 1408, -3584, 1024, -3328, 1024, -3327, 769.83, -3277, 767, -3252, 737, -3245, 845, -3208, 912, -3112, 944, -3016, 952, -2176, 952, -2176, 1792, -1024, 1792, -1024, 2304, -896, 2304, -896, 2432, -768, 2432, -768, 2688, 1024, 2688, 5632, 4224, -8932, 4170, -8960, -7053, 5628, -7051, 5632, 4224, 1024, 2688, 1024, 2304, 1152, 2304, 1152, 1792)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="coins" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(129, 2085)
+
+[node name="coins2" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(125, 1926)
+
+[node name="coins3" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(391, 7)
+
+[node name="coins4" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(387, -165)
+
+[node name="coins5" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(396, 372)
+
+[node name="coins6" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(396, 180)
+
+[node name="coins7" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(1176, -1417)
+
+[node name="coins8" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(1172, -1589)
+
+[node name="coins9" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(2379, -1422)
+
+[node name="coins10" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(2375, -1594)
+
+[node name="coins11" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(2800, -2363)
+
+[node name="coins12" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(2974, -2364)
+
+[node name="coins13" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(2322, -3723)
+
+[node name="coins14" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(2318, -3895)
+
+[node name="coins15" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(2102, -3723)
+
+[node name="coins16" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(2098, -3895)
+
+[node name="coins17" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(732, -5428)
+
+[node name="coins18" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(728, -5600)
+
+[node name="coins19" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(512, -5428)
+
+[node name="coins20" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(508, -5600)
+
+[node name="coins21" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-1042, -4730)
+
+[node name="coins22" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-1046, -4902)
+
+[node name="coins23" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-1262, -4730)
+
+[node name="coins24" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-1266, -4902)
+
+[node name="coins25" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-2861, -4045)
+
+[node name="coins26" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-2865, -4217)
+
+[node name="coins27" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-4193, -4038)
+
+[node name="coins28" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-4197, -4210)
+
+[node name="coins29" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-4945, -2855)
+
+[node name="coins30" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-5124, -2849)
+
+[node name="coins31" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-3723, -2878)
+
+[node name="coins32" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-3902, -2872)
+
+[node name="coins33" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-2833, -1249)
+
+[node name="coins34" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-3012, -1243)
+
+[node name="coins35" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-6425, -927)
+
+[node name="coins36" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-6604, -921)
+
+[node name="coins37" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-3022, 168)
+
+[node name="coins38" parent="Coins" instance=ExtResource("10_3fxna")]
+position = Vector2(-3201, 174)
+
+[node name="Powerup Boxes" type="Node" parent="."]
+
+[node name="powerupBox" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(267, 119)
+
+[node name="powerupBox2" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(483, 119)
+
+[node name="powerupBox3" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(2747, -3660)
+
+[node name="powerupBox4" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(2858, -3776)
+
+[node name="powerupBox5" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-134, -5479)
+
+[node name="powerupBox6" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-9, -5365)
+
+[node name="powerupBox7" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-3545, -4885)
+
+[node name="powerupBox8" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-3548, -4723)
+
+[node name="powerupBox9" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-5920, -2608)
+
+[node name="powerupBox10" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-5809, -2724)
+
+[node name="powerupBox11" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-1970, -3017)
+
+[node name="powerupBox12" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-1845, -2903)
+
+[node name="powerupBox13" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-4585, -1301)
+
+[node name="powerupBox14" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-4474, -1417)
+
+[node name="powerupBox15" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-4285, -350)
+
+[node name="powerupBox16" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-4288, -188)
+
+[node name="powerupBox17" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-1793, 799)
+
+[node name="powerupBox18" parent="Powerup Boxes" instance=ExtResource("11_apncx")]
+z_index = 10
+position = Vector2(-1682, 683)

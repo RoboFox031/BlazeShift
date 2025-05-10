@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbfmgub402k83"]
+[gd_scene load_steps=6 format=3 uid="uid://cbfmgub402k83"]
 
 [ext_resource type="Script" uid="uid://ciqlrjjg2527c" path="res://Scripts/UI/titleScreen.gd" id="1_iq0ie"]
 [ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="1_jy4yn"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_pkee8"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/uiSFX.tscn" id="4_cpfnc"]
+[ext_resource type="PackedScene" uid="uid://bmtbwlc4rj8uy" path="res://Scenes/UI/uiSFX.tscn" id="4_cpfnc"]
+[ext_resource type="Script" uid="uid://0bfxv81mvhip" path="res://Scripts/UI/flash.gd" id="4_xco0s"]
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_iq0ie")
@@ -17,12 +18,13 @@ metadata/_edit_lock_ = true
 [node name="playButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 867.0
-offset_top = 384.0
+offset_top = 274.0
 offset_right = 1097.0
-offset_bottom = 476.0
+offset_bottom = 366.0
 pivot_offset = Vector2(116, 45)
 theme_override_fonts/font = ExtResource("2_pkee8")
 theme_override_font_sizes/font_size = 100
+script = ExtResource("4_xco0s")
 
 [node name="label" type="Label" parent="playButton"]
 layout_mode = 0
@@ -39,11 +41,12 @@ vertical_alignment = 1
 
 [node name="quitButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 874.0
-offset_top = 736.0
-offset_right = 1079.0
-offset_bottom = 827.0
+offset_left = 872.0
+offset_top = 732.0
+offset_right = 1077.0
+offset_bottom = 823.0
 pivot_offset = Vector2(104, 47)
+script = ExtResource("4_xco0s")
 
 [node name="label" type="Label" parent="quitButton"]
 layout_mode = 0
@@ -57,13 +60,35 @@ theme_override_font_sizes/font_size = 130
 text = "QUIT
 "
 
+[node name="controlsButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 874.0
+offset_top = 626.0
+offset_right = 1079.0
+offset_bottom = 717.0
+pivot_offset = Vector2(104, 47)
+script = ExtResource("4_xco0s")
+
+[node name="label" type="Label" parent="controlsButton"]
+layout_mode = 0
+offset_left = -867.0
+offset_top = -18.0
+offset_right = 1055.0
+offset_bottom = 247.0
+theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
+theme_override_fonts/font = ExtResource("2_pkee8")
+theme_override_font_sizes/font_size = 130
+text = "controls"
+horizontal_alignment = 1
+
 [node name="optionsButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 796.0
-offset_top = 498.0
+offset_top = 388.0
 offset_right = 1165.0
-offset_bottom = 588.0
+offset_bottom = 478.0
 pivot_offset = Vector2(187, 46)
+script = ExtResource("4_xco0s")
 
 [node name="label" type="Label" parent="optionsButton"]
 layout_mode = 0
@@ -79,12 +104,13 @@ text = "OPTIONS"
 [node name="tutorialButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 757.0
-offset_top = 618.0
+offset_top = 508.0
 offset_right = 1207.0
-offset_bottom = 709.0
+offset_bottom = 599.0
 pivot_offset = Vector2(227, 47)
 text = "
 "
+script = ExtResource("4_xco0s")
 
 [node name="label" type="Label" parent="tutorialButton"]
 layout_mode = 0
@@ -111,7 +137,6 @@ text = "BLAZESHIFT
 "
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="label" type="Label" parent="."]
 offset_left = 737.0

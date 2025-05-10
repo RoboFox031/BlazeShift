@@ -10,3 +10,4 @@ var blazePowerupFill: float = .5
 func _ready() -> void:
 	blazeBar.max_value = blazeMax
 	blazeBar.value = blazeMax
+	print(blazeMax)

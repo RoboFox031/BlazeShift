@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://bc8p8ge8obiqe"]
+[gd_scene load_steps=24 format=3 uid="uid://bc8p8ge8obiqe"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_ter08"]
+[ext_resource type="Resource" uid="uid://cl7bdji6ucuel" path="res://Resources/carStats/crxStats.tres" id="2_2ru7u"]
 [ext_resource type="Texture2D" uid="uid://dttuw3nxohr0y" path="res://Assets/Sprites/Cars/CRX/CRXBlack.png" id="2_4cbh4"]
 [ext_resource type="Texture2D" uid="uid://cwskv64hh3g5c" path="res://Assets/Sprites/Cars/CRX/CRXBlue.png" id="3_2ru7u"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_gb3ma"]
@@ -116,9 +117,13 @@ size = Vector2(47, 94)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mox8c"]
 size = Vector2(8.99993, 13.9999)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ru7u"]
+size = Vector2(94, 46)
+
 [node name="CRX" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_ter08")
+stats = ExtResource("2_2ru7u")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-5, 2)
@@ -159,8 +164,19 @@ position = Vector2(0, 17)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_mox8c")
 
+[node name="progressChecker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="progressChecker"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_2ru7u")
+debug_color = Color(0.991716, 0, 0.261882, 0.42)
+
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]
 [connection signal="area_exited" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_exited"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
 [connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]
+[connection signal="area_entered" from="progressChecker" to="." method="updatePosition"]
+[connection signal="area_exited" from="progressChecker" to="." method="leavePosition"]

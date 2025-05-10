@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dqdcbt7l7acll"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://shirjmw44fyk"]
 
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="1_3ii43"]
 [ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://Assets/Sprites/Tracks/192 racetrack Divided.svg" id="2_k6hrb"]

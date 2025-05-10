@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d144gcklqd7rl"]
+[gd_scene load_steps=18 format=3 uid="uid://d144gcklqd7rl"]
 
 [ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="1_g3g0w"]
 [ext_resource type="Script" uid="uid://bjgnpwkhw08v7" path="res://Scripts/UI/upgradeShop.gd" id="1_wh008"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="4_0i7vc"]
 [ext_resource type="Theme" uid="uid://xmhincb25u0y" path="res://Resources/shopTheme.tres" id="5_xr0vv"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="6_bpr6m"]
+[ext_resource type="Script" uid="uid://0bfxv81mvhip" path="res://Scripts/UI/flash.gd" id="7_5uiuf"]
 [ext_resource type="Texture2D" uid="uid://dcn5bmbutohrv" path="res://Assets/Sprites/UI/upgradeBoxesSpriteSheet.png" id="7_mffm5"]
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="8_h78wn"]
 [ext_resource type="PackedScene" uid="uid://icevwd4ir3d2" path="res://Scenes/UI/uiSFX.tscn" id="9_8a2bt"]
@@ -118,6 +119,7 @@ offset_bottom = 583.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "top speed"
+script = ExtResource("7_5uiuf")
 
 [node name="maxBlazeLabel" type="Label" parent="pOneLabels"]
 offset_left = 45.0
@@ -127,16 +129,17 @@ offset_bottom = 682.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "max blaze"
+script = ExtResource("7_5uiuf")
 
-[node name="blazeRefillLabel" type="Label" parent="pOneLabels"]
+[node name="handlingLabel" type="Label" parent="pOneLabels"]
 offset_left = 45.0
 offset_top = 681.0
 offset_right = 714.0
 offset_bottom = 886.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
-text = "blaze refill speed
-"
+text = "handling"
+script = ExtResource("7_5uiuf")
 
 [node name="accelerationLabel" type="Label" parent="pOneLabels"]
 offset_left = 45.0
@@ -147,6 +150,7 @@ theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "acceleration
 "
+script = ExtResource("7_5uiuf")
 
 [node name="costLabel" type="Label" parent="pOneLabels"]
 offset_left = 38.0
@@ -172,6 +176,7 @@ offset_bottom = 583.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "top speed"
+script = ExtResource("7_5uiuf")
 
 [node name="maxBlazeLabel" type="Label" parent="pTwoLabels"]
 offset_left = 1011.0
@@ -181,16 +186,17 @@ offset_bottom = 682.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "max blaze"
+script = ExtResource("7_5uiuf")
 
-[node name="blazeRefillLabel" type="Label" parent="pTwoLabels"]
+[node name="handlingLabel" type="Label" parent="pTwoLabels"]
 offset_left = 1011.0
 offset_top = 681.0
 offset_right = 1680.0
 offset_bottom = 886.0
 theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
-text = "blaze refill speed
-"
+text = "handling"
+script = ExtResource("7_5uiuf")
 
 [node name="accelerationLabel" type="Label" parent="pTwoLabels"]
 offset_left = 1011.0
@@ -201,6 +207,7 @@ theme = ExtResource("5_xr0vv")
 theme_override_colors/font_color = Color(0.764706, 0.384314, 0.0156863, 1)
 text = "acceleration
 "
+script = ExtResource("7_5uiuf")
 
 [node name="costLabel" type="Label" parent="pTwoLabels"]
 offset_left = 1004.0
@@ -229,14 +236,14 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
 
-[node name="blazeRefillSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
-position = Vector2(832, 732)
+[node name="handlingSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
+position = Vector2(543, 732)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
 
 [node name="accelerationSprite" type="AnimatedSprite2D" parent="pOneUpgradeBoxes"]
-position = Vector2(638, 832)
+position = Vector2(638, 827)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
@@ -255,14 +262,14 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
 
-[node name="blazeRefillSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
-position = Vector2(1798, 732)
+[node name="handlingSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
+position = Vector2(1509, 732)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"
 
 [node name="accelerationSprite" type="AnimatedSprite2D" parent="pTwoUpgradeBoxes"]
-position = Vector2(1602, 832)
+position = Vector2(1602, 827)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_84gca")
 animation = &"5"

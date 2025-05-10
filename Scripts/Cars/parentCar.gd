@@ -6,8 +6,11 @@ class_name Car
 
 var color = "blue"
 var fireball: PackedScene = preload("res://Scenes/Pickups/fireball.tscn")
+var snowball: PackedScene = preload('res://Scenes/Pickups/snowball.tscn')
 var roadSpikes: PackedScene = preload("res://Scenes/Pickups/roadSpikes.tscn")
+var fireCyclone: PackedScene = preload('res://Scenes/Pickups/fireCyclone.tscn')
 var paused = false
+var inCyclone = false
 
 ########
 #Important Car Stats:
@@ -38,11 +41,17 @@ var linOutput:float=0
 #Outputs the true turning speed of the car
 var turnOutput:float=0
 
+#Controls how the car brakes
+var baseBrakes:float
+
 #Stores the vector the car is going in
 var fwdVector:Vector2
+#Stores the impact of the loss of speed when turning
+var turningSpeedLoss=0
 
 #Stores direction the car is traveling in
 var turnDirection
+var linDirection
 
 #handles traction
 var baseTraction:float=1
@@ -148,14 +157,28 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
+	#applyStats()
 	#Checks if the player is too far from the track
 	checkTrackDistance()
 	#Changes the color
 	colorSprite.play(color)
-	#Gets the input, and converts it to positive or negitive 1
-	var linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
-	#If you are clicking a button, accelerates based on the acceleration value
-	if linDirection:
+	#if you are boosting, you must go forwards
+	if boosting==true:
+		linDirection=1
+	else:
+		#Gets the input, and converts it to positive or negitive 1
+		linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
+	#If you click forwards and are stopped or driving forwards, accelerate based on the acceleration value
+	if linDirection>0 and currentLinSpeed>=0:
+		currentLinSpeed = move_toward(currentLinSpeed, currentTopSpeed*linDirection*terrainSpeedMult, currentAcceleration*terrainAccelMult)
+	#if you click reverse and are driving forward, brake
+	elif linDirection<0 and currentLinSpeed>0:
+		currentLinSpeed = move_toward(currentLinSpeed, 0, baseBrakes*terrainDecelMult)
+	#if you click forward and are driving reverse, brake
+	elif linDirection>0 and currentLinSpeed<0:
+		currentLinSpeed = move_toward(currentLinSpeed, 0, baseBrakes*terrainDecelMult)
+	#if you go reverse and are stopped, reverse
+	elif linDirection<0 and currentLinSpeed<=0:
 		currentLinSpeed = move_toward(currentLinSpeed, currentTopSpeed*linDirection*terrainSpeedMult, currentAcceleration*terrainAccelMult)
 	#If no button is being clicked, decelerates by the deceleration speed
 	else:
@@ -164,22 +187,42 @@ func _physics_process(delta):
 	
 	if isDrifting==false:
 		#Gets the input, and converts it to positive or negitive 1
-		turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right")
+		if not inCyclone:
+			turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right")
+		if inCyclone:
+			turnDirection = Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right") * -1
 	if isDrifting==true:
 		#if you are drifting, locks your turning in the drifing direction, and only allows for small adjustments
 		#turnDirection=currentDrift
 		if currentDrift<0:
-			turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),currentDrift,0)
+			if not inCyclone:
+				turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),currentDrift,0)
+			if inCyclone:
+				turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),currentDrift,0) * -1
 		elif currentDrift>0:
-			turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),-0,currentDrift)
+			if not inCyclone:
+				turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),-0,currentDrift)
+			if inCyclone:
+				turnDirection=clamp(move_toward(turnDirection,Input.get_axis(currentOwnerStr+"_left", currentOwnerStr+"_right"),.05),-0,currentDrift) * -1
 		print(turnDirection)
 	#If you are clicking a button, turns in that direction based on the acceleration value
-	if turnDirection and currentLinSpeed!=0:
+	if turnDirection:# and currentLinSpeed!=0:
 		currentTurnForce = move_toward(currentTurnForce, trueCurrentTurnPower*turnDirection*terrainTurnPowerMult, trueCurrentTurnSpeed*terrainTurnSpeedMult)
 	#If no button is being clicked, stops turning
 	else:
 		currentTurnForce = move_toward(currentTurnForce, 0,trueBaseTurnSpeed*terrainTurnSpeedMult)
 	
+	#slows you down when you are turning
+	
+	if currentTurnForce!=0:
+		turningSpeedLoss=(currentLinSpeed*.1)*abs(currentTurnForce/(trueCurrentTurnPower*terrainTurnPowerMult))
+		#print(str(currentOwnerStr)+" "+str(turningSpeedLoss))
+	#If you aren't turning, don't lose speed
+	else:
+		turningSpeedLoss=0
+		
+		
+		
 	#Like a car, you can only turn while moving, and going backwards reverses your turn
 	if globalVars.canMove == true and paused == false:
 		turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
@@ -189,7 +232,9 @@ func _physics_process(delta):
 	if(traction!=baseTraction)and(currentTerrain!=trackEnums.terrainTypes.ice) and (isDrifting==false):
 		traction=move_toward(traction,baseTraction,4)
 	#Sets the velocity to fwd vector added to the drift vector
-	fwdVector=Vector2(currentLinSpeed*cos(rotation),currentLinSpeed*sin(rotation))
+	
+	#fwdVector=Vector2((currentLinSpeoed-turningSpeedLoss)*cos(rotation),(currentLinSpeed-turningSpeedLoss)*sin(rotation))
+	fwdVector=Vector2((currentLinSpeed)*cos(rotation),(currentLinSpeed)*sin(rotation))
 	driftVector=Vector2(move_toward(driftVector.x,fwdVector.x,traction),move_toward(driftVector.y,fwdVector.y,traction))
 	velocity=(fwdVector+driftVector)/2
 	
@@ -198,6 +243,7 @@ func _physics_process(delta):
 	# print("Fwd: "+str(fwdVector))
 	# print("Drift: "+str(driftVector))
 	#print("Traction: "+str(traction))
+	
 	#If you are boosting, stops you when you run out
 	if boosting==true:
 		if(globalVars.p1BlazeCurrent==0) and (currentOwner==playerChoices.p1):
@@ -227,12 +273,30 @@ func usePowerup():
 				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 				if currentOwner == playerChoices.p1:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+			#snowball
+			if globalVars.pOnePowerup == 'snowballPickup':
+				globalVars.pOnePowerup = 'none'
+				var instance = snowball.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation 
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p1:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+					
 			if globalVars.pOnePowerup == 'roadSpikesPickup':
 				globalVars.pOnePowerup = 'none'
 				var instance = roadSpikes.instantiate()
 				instance.spawnPosition = global_position
 				instance.direction = rotation
 				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p1:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
+			if globalVars.pOnePowerup == 'fireCyclonePickup':
+				globalVars.pOnePowerup = 'none'
+				var instance = fireCyclone.instantiate()
+				instance.playerNum = 'p1'
 				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 				if currentOwner == playerChoices.p1:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer/canvasLayer/pOnePowerupsHud").changeItem('p1')
@@ -255,6 +319,17 @@ func usePowerup():
 				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 				if currentOwner == playerChoices.p2:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+			#snowball
+			if globalVars.pTwoPowerup == 'snowballPickup':
+				globalVars.pTwoPowerup = 'none'
+				var instance = snowball.instantiate()
+				instance.spawnPosition = global_position
+				instance.direction = rotation 
+				instance.ignore = self
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p2:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
+					
 			if globalVars.pTwoPowerup == 'roadSpikesPickup':
 				globalVars.pTwoPowerup = 'none'
 				var instance = roadSpikes.instantiate()
@@ -264,7 +339,14 @@ func usePowerup():
 				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
 				if currentOwner == playerChoices.p2:
 					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
-				
+			
+			if globalVars.pTwoPowerup == 'fireCyclonePickup':
+				globalVars.pTwoPowerup = 'none'
+				var instance = fireCyclone.instantiate()
+				instance.playerNum = 'p2'
+				get_node('/root/trackLoader/hSplitContainer/subViewportContainer/subViewport/track').add_child(instance)
+				if currentOwner == playerChoices.p2:
+					get_node("/root/trackLoader/hSplitContainer/subViewportContainer2/canvasLayer/pTwoPowerupsHud").changeItem('p2')
 			
 		
 
@@ -272,9 +354,6 @@ func usePowerup():
 
 func _input(event):
 	#Allows boost
-	if Input.is_action_just_pressed('test'):
-		print('next lap')
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index('music'),-100)
 	if globalVars.canMove == true and paused == false:
 		if Input.is_action_just_pressed(currentOwnerStr+"_x"):
 			
@@ -345,29 +424,31 @@ func startBoost():
 
 #Changes the movement varibles to the drifing state
 func startDrift():
-	#Resets the drift varible
-	currentDrift=driftDir.none
-	#Determine which direction the player is currently turning and sets the driftDir accordingly
-	if Input.is_action_pressed(currentOwnerStr+"_left"):
-		currentDrift=driftDir.lDrift
-		#Locks drifitng direction
-		driftNoInput=false
-		print(currentOwnerStr+" is drifting left")
-	elif Input.is_action_pressed(currentOwnerStr+"_right"):
-		currentDrift=driftDir.rDrift
-		#Locks drifitng direction
-		driftNoInput=false
-		print(currentOwnerStr+" is drifting right")
-	#If you aren't turning, change the variable to match
-	if currentDrift==driftDir.none:
-		driftNoInput=true
-		print(currentOwnerStr+" tried to drift")
-	#if you are drfiting, alter the variables accordingly
-	else:
-		isDrifting=true
-		#currentTurnPower=baseTurnPower*.5
-		#Lowers traction while drifing
-		traction=traction/driftTractionMult
+	#Only allows you to drift if going forwards
+	if linDirection>0:
+		#Resets the drift varible
+		currentDrift=driftDir.none
+		#Determine which direction the player is currently turning and sets the driftDir accordingly
+		if Input.is_action_pressed(currentOwnerStr+"_left"):
+			currentDrift=driftDir.lDrift
+			#Locks drifitng direction
+			driftNoInput=false
+			print(currentOwnerStr+" is drifting left")
+		elif Input.is_action_pressed(currentOwnerStr+"_right"):
+			currentDrift=driftDir.rDrift
+			#Locks drifitng direction
+			driftNoInput=false
+			print(currentOwnerStr+" is drifting right")
+		#If you aren't turning, change the variable to match
+		if currentDrift==driftDir.none:
+			driftNoInput=true
+			print(currentOwnerStr+" tried to drift")
+		#if you are drfiting, alter the variables accordingly
+		else:
+			isDrifting=true
+			#currentTurnPower=baseTurnPower*.5
+			#Lowers traction while drifing
+			traction=traction/driftTractionMult
 		
 	
 
@@ -573,15 +654,18 @@ func finishRace():
 func applyStats():
 	baseAcceleration=stats.acceleration+globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"acceleration")
 	baseTopSpeed=stats.topSpeed+globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"topSpeed")
-	baseTurnSpeed=stats.turnSpeed
-	baseTurnPower=stats.turnPower
+	baseBrakes=stats.brakes
+	#Turn speed can't exceed 100
+	baseTurnSpeed=clamp(stats.turnSpeed +(globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"handling")*.2),0,100)
+	#Turn power can't exceed 220
+	baseTurnPower=clamp(stats.turnPower +globalUpgrades.statValue(currentOwnerStr,globalVars.currentCarNames[currentOwnerStr],"handling"),0,220)
 	baseDecel=stats.deceleration
 	baseTraction=stats.traction
 	
 	#Print the upgraded stats
-	print("accel: "+str(baseAcceleration))
-	print("top speed: "+str(baseTopSpeed))
-	print("handling: "+str(baseAcceleration))
+	#print("accel: "+str(baseAcceleration))
+	#print("top speed: "+str(baseTopSpeed))
+	#print("handling: "+str(baseAcceleration))
 	
 	#Resets movement to apply changes
 	resetMovement()

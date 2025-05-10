@@ -12,6 +12,7 @@ func _ready():
 	p2Start=p2Spawn.global_position
 	playerRotation=p1Spawn.global_rotation_degrees
 	loadCars()
+	print($player1/camera2d.global_position)
 	pass # Replace with function body.
 
 

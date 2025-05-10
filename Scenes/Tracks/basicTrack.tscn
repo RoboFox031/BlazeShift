@@ -1,13 +1,14 @@
-[gd_scene load_steps=14 format=4 uid="uid://djbb2ffhj2n2h"]
+[gd_scene load_steps=15 format=4 uid="uid://djbb2ffhj2n2h"]
 
 [ext_resource type="Script" uid="uid://71egy5gs0lbp" path="res://Scripts/Tracks/basicTrack.gd" id="1_ifg0j"]
 [ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://Assets/Sprites/Tracks/grass_tileset_16x16.png" id="2_t0oks"]
-[ext_resource type="TileSet" uid="uid://dqdcbt7l7acll" path="res://Scenes/Tracks/track.tres" id="3_ikrvl"]
+[ext_resource type="TileSet" uid="uid://shirjmw44fyk" path="res://Scenes/Tracks/track.tres" id="3_ikrvl"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="4_ikrvl"]
 [ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="5_s70l0"]
 [ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://Scenes/Pickups/powerupBox.tscn" id="6_ryjmn"]
-[ext_resource type="PackedScene" uid="uid://cej22tp7ejihv" path="res://Scenes/Cars/carSpawn.tscn" id="7_acw34"]
+[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://Scenes/Cars/carSpawn.tscn" id="7_acw34"]
 [ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://Scripts/Tracks/terrain.gd" id="8_4kgag"]
+[ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="9_s70l0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_anobo"]
 texture = ExtResource("2_t0oks")
@@ -3027,10 +3028,6 @@ script = ExtResource("5_s70l0")
 checkpointLength = 750.0
 run = true
 
-[node name="powerupBox" parent="." instance=ExtResource("6_ryjmn")]
-z_index = 10
-position = Vector2(-2001, 2248)
-
 [node name="spawns" type="Node2D" parent="."]
 position = Vector2(-1554, 2100)
 
@@ -3050,3 +3047,151 @@ polygon = PackedVector2Array(-7, 2024, 127, 2025, 165, 2023, 272, 2036, 353, 206
 
 [node name="outside" type="CollisionPolygon2D" parent="terrain"]
 polygon = PackedVector2Array(-3996, -2767, -3967, -2827, -3924, -2891, -3881, -2939, -6654, -6262, -6781, 4948, 3804, 4894, 3923, -6560, -6488, -6310, -3875, -2945, -3845, -2969, -3814, -2993, -3779, -3012, -3746, -3029, -3713, -3044, -3666, -3058, -3620, -3068, -3537, -3077, -3477, -3074, -3431, -3074, -3398, -3077, -2971, -3077, -2933, -3080, -2894, -3094, -2847, -3117, -2813, -3145, -2792, -3167, -2769, -3200, -2752, -3230, -2742, -3262, -2735, -3308, -2734, -3363, -2731, -3392, -2735, -3441, -2731, -3535, -2720, -3589, -2700, -3659, -2668, -3727, -2624, -3792, -2571, -3850, -2507, -3896, -2438, -3932, -2368, -3959, -2287, -3973, -2204, -3976, -2098, -3977, -1932, -3976, -1826, -3964, -1746, -3939, -1675, -3905, -1612, -3861, -1568, -3819, -1522, -3761, -1484, -3694, -1457, -3619, -1438, -3530, -1435, -3451, -1438, -3399, -1435, -3344, -1428, -3267, -1415, -3226, -1384, -3174, -1358, -3147, -1319, -3114, -1289, -3099, -1255, -3086, -1213, -3078, -1186, -3076, 48, -3077, 70, -3075, 95, -3073, 126, -3075, 160, -3077, 207, -3075, 253, -3068, 308, -3056, 358, -3038, 419, -3008, 480, -2968, 536, -2914, 579, -2860, 616, -2794, 645, -2716, 662, -2633, 666, -2557, 664, -2519, 662, -2494, 664, -2470, 666, -2447, 666, -2404, 668, -2394, 672, -2372, 687, -2323, 705, -2289, 746, -2243, 785, -2212, 835, -2189, 882, -2178, 943, -2176, 1002, -2172, 1049, -2177, 1114, -2174, 1177, -2163, 1231, -2148, 1284, -2127, 1341, -2095, 1385, -2063, 1421, -2031, 1463, -1982, 1489, -1944, 1508, -1910, 1535, -1851, 1548, -1804, 1559, -1742, 1566, -1691, 1564, -1628, 1563, -1578, 1566, -1512, 1564, -1469, 1564, -1426, 1564, -1332, 1551, -1257, 1531, -1183, 1491, -1112, 1425, -1027, 1369, -977, 1329, -949, 1279, -922, 1187, -892, 1076, -877, 972, -879, 839, -871, 767, -831, 710, -771, 687, -726, 674, -689, 665, -645, 665, 578, 675, 642, 711, 720, 776, 783, 823, 807, 877, 822, 983, 826, 1078, 818, 1194, 839, 1246, 855, 1320, 887, 1383, 932, 1436, 983, 1487, 1049, 1546, 1169, 1563, 1260, 1567, 1362, 1562, 1404, 1566, 1445, 1566, 2697, 1562, 2753, 1566, 2807, 1560, 2896, 1543, 2972, 1520, 3033, 1496, 3080, 1456, 3139, 1390, 3208, 1333, 3248, 1272, 3279, 1197, 3306, 1136, 3317, 1063, 3324, 991, 3319, 945.289, 3323.24, 885, 3324, 839, 3320, 783, 3323, 721, 3321, 680, 3314, 653, 3311, 616, 3300, 555, 3278, 487, 3241, 449, 3213, 412, 3180, 366, 3128, 332, 3075, 309, 3029, 295, 2992, 279, 2936, 272, 2901, 266, 2849, 267, 2772, 267, 2722, 263, 2640, 249, 2584, 235, 2552, 211, 2515, 124, 2446, 24, 2422, -3777, 2424, -3989, 2422, -4080, 2403, -4164.92, 2366.76, -4233, 2328, -4308, 2261, -4362, 2189, -4410, 2082, -4427, 2019, -4435, 1952, -4430, 1855, -4435, 1812, -4435, 737, -4431, 700, -4434.47, 611.034, -4424, 529, -4413, 477, -4396, 435, -4372, 377, -4344, 332, -4304, 281, -4218, 208, -4158, 176, -4111, 155, -4028, 132, -3916, 122, -3862, 128, -3786, 123, -3717, 125, -3634, 123, -3528, 135, -3424, 169, -3348, 214, -3278, 269, -3202, 364, -3154, 484, -3136, 574, -3133, 641, -3137, 699, -3134, 765, -3134, 1179, -3130, 1196, -3120, 1207, -3108, 1219, -3088, 1224, -1495, 1223, -1404, 1210, -1341, 1177, -1295, 1138, -1268, 1093, -1248, 1051, -1237, 1011, -1234, 979, -1242, 913, -1259, 863, -1313, 790, -1369, 753, -1418, 732, -1475, 724, -1893, 724, -2022, 723, -2083, 708, -2109, 702, -2150, 683, -2207, 648, -2259, 596, -2290, 554, -2322, 471, -2333, 413, -2336, 349, -2333, 326, -2335, 290, -2335, -123, -2338, -168, -2351, -215, -2372, -257, -2411, -305, -2476, -354, -2538, -372, -2590, -377, -3392, -376, -3463, -381, -3530, -376, -3561, -379, -3614, -384, -3669, -394, -3728, -413, -3770, -436, -3829, -470, -3879, -509, -3922, -559, -3965, -615, -3996, -679, -4025, -784, -4035, -865, -4031, -947, -4035, -992, -4035, -1064, -4033, -1085, -4027, -1202, -4001, -1286, -3953, -1357, -3907, -1401, -3859, -1435, -3813, -1455, -3740, -1473, -3702, -1477, -3669, -1477, -3637, -1475, -3606, -1477, -2011, -1477, -1977, -1478, -1965, -1482, -1950, -1490, -1944, -1498, -1935, -1526, -1935, -1545, -1939, -1565, -1942, -1585, -1948, -1605, -1954, -1622, -1962, -1640, -1974, -1660, -1988, -1681, -2002, -1697, -2029, -1722, -2056, -1741, -2095, -1760, -2142, -1773, -2211, -1776, -3397, -1776, -3461, -1780, -3547, -1776, -3606, -1782, -3703, -1806, -3792, -1846, -3840, -1879, -3867, -1900, -3905, -1939, -3940, -1980, -3963, -2017, -3982, -2052, -4000, -2092, -4009, -2121, -4031, -2213, -4035, -2279, -4031, -2348, -4035, -2400, -4034, -2465, -4031, -2504, -4035, -2570, -4031, -2637, -4022, -2689, -4013, -2724)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="coins" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-754, 2158)
+
+[node name="coins2" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-753, 2299)
+
+[node name="coins3" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(1291, 1925)
+
+[node name="coins4" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(1292, 2053)
+
+[node name="coins5" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(1429, 1924)
+
+[node name="coins6" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(1430, 2052)
+
+[node name="coins7" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(372, -29)
+
+[node name="coins8" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(373, 99)
+
+[node name="coins9" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(544, -29)
+
+[node name="coins10" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(545, 99)
+
+[node name="coins11" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-286, -2939)
+
+[node name="coins12" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-285, -2811)
+
+[node name="coins13" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-439, -2939)
+
+[node name="coins14" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-438, -2811)
+
+[node name="coins15" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-595, -2939)
+
+[node name="coins16" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-594, -2811)
+
+[node name="coins17" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-2920, -2047)
+
+[node name="coins18" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-2919, -1919)
+
+[node name="coins19" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-2644, -1339)
+
+[node name="coins20" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-2643, -1211)
+
+[node name="coins21" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-3012, -640)
+
+[node name="coins22" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-3011, -512)
+
+[node name="coins23" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-1874, 1360)
+
+[node name="coins24" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-1873, 1488)
+
+[node name="coins25" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-2037, 1362)
+
+[node name="coins26" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-2036, 1490)
+
+[node name="coins27" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-2207, 1358)
+
+[node name="coins28" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-2206, 1486)
+
+[node name="coins29" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-4245, 1122)
+
+[node name="coins30" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-4242, 1250)
+
+[node name="coins31" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-4243, 1373)
+
+[node name="coins32" parent="Coins" instance=ExtResource("9_s70l0")]
+position = Vector2(-4242, 1501)
+
+[node name="Powerup Boxes" type="Node" parent="."]
+
+[node name="powerupBox" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
+z_index = 17
+position = Vector2(383, -474)
+
+[node name="powerupBox2" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
+z_index = 17
+position = Vector2(546, -474)
+
+[node name="powerupBox3" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
+z_index = 17
+position = Vector2(-2625, -3322)
+
+[node name="powerupBox4" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
+z_index = 17
+position = Vector2(-2466, -3325)
+
+[node name="powerupBox5" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
+z_index = 17
+position = Vector2(-3068, -1201)
+
+[node name="powerupBox6" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
+z_index = 17
+position = Vector2(-3067, -1338)
+
+[node name="powerupBox7" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
+z_index = 17
+position = Vector2(-1693, 591)
+
+[node name="powerupBox8" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
+z_index = 17
+position = Vector2(-1695, 440)
+
+[node name="powerupBox9" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
+z_index = 17
+position = Vector2(-4358, 1315)
+
+[node name="powerupBox10" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
+z_index = 17
+position = Vector2(-4121, 1312)
+
+[node name="powerupBox11" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
+z_index = 17
+position = Vector2(-2336, 2322)
+
+[node name="powerupBox12" parent="Powerup Boxes" instance=ExtResource("6_ryjmn")]
+z_index = 17
+position = Vector2(-2334, 2167)

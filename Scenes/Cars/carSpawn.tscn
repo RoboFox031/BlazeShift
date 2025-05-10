@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://db35m7igq2e5h"]
+[gd_scene load_steps=2 format=3 uid="uid://bl7wwwkvflmp5"]
 
 [ext_resource type="Script" path="res://Scripts/Cars/carSpawn.gd" id="1_oykp5"]
 

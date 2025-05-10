@@ -69,10 +69,10 @@ var currentOwnerStr:String:
 		return playerChoices.find_key(currentOwner)
 
 #controls how the car reacts to offroadingsa
-var offRoadSpeedMult:float=.6 ##Controls how offroading affects speed and acceleration
-var offRoadAccelMult:float=.8 ##Controls how offroading affects turning
-var offRoadTurnSpeedMult:float=.8 ##Controls how offroading affects turning speed
-var offRoadTurnPowerMult:float=.8 ##Controls how offroading affects turning power
+var offRoadSpeedMult:float=.5 ##Controls how offroading affects speed and acceleration
+var offRoadAccelMult:float=1000 ##Controls how offroading affects turning
+var offRoadTurnSpeedMult:float=.9 ##Controls how offroading affects turning speed
+var offRoadTurnPowerMult:float=.9 ##Controls how offroading affects turning power
 var offRoadDecelMult:float=2 ##Controls how offroading affects decleration 
 #controls how the car reacts to ice
 var iceSpeedMult:float=1 ##Controls how offroading affects speed and acceleration
@@ -477,6 +477,7 @@ func updateTerrain(newTerrain):
 			terrainTurnSpeedMult=offRoadTurnSpeedMult
 			terrainTurnPowerMult=offRoadTurnPowerMult
 			terrainDecelMult=offRoadDecelMult
+			traction=baseTraction*29
 		#If the car is going onto ice, set the terrain mults accordingly
 		elif newTerrain==trackEnums.terrainTypes.ice:
 			terrainSpeedMult=iceSpeedMult
@@ -485,6 +486,11 @@ func updateTerrain(newTerrain):
 			terrainDecelMult=iceDecelMult
 			#Lowers traction on ice
 			traction=traction/15
+			
+		#If you drive on a hazard, respawn
+		elif newTerrain==trackEnums.terrainTypes.hazzard:
+			print("hazard")
+			respawn()
 
 func updatePosition(area:Area2D):
 	if area is checkpoint:
@@ -632,8 +638,8 @@ func checkTrackDistance():
 	var currentDistance=global_position.distance_to(progressPoint)
 	#if the player is too far away, respawn
 	if (currentDistance>trackMaxDist):
-		#respawn()
-		pass
+		respawn()
+		
 
 #finishes the race
 func finishRace():

@@ -1,8 +1,24 @@
 Thoughts throughout the Project:
-	
+	Overall, I'm really proud of the work we did. When we first came up with the idea for the project, I recognized
+	that it was a lot. But at the same time, I wasn't too worried becuse I knew that our group was definitely capable.
+	My experience was also significantly better than the rpg project. I no longer felt like the only person that was
+	contributing. Everyone contributed and we were able to get a lot done. This productivness even allowed us to enjoy
+	the games and movies we had in class without having to worry about the project. I also learned more about godot's files
+	and began to understand things that were confusing at first. Prior to this project the .tcsn files just looked like alphabet
+	soup, but now I understand them.
 Difficulties:
-	
+	Being Quality Manager was very easy at first since we didn't have any major features going on. But as we kept working
+	on the project, merge conflicts became more of an issue. Sometimes I had troubles with Github not being friendly and encountering
+	problems that I hadn't experienced before. But eventually I was able to overcome the challenges which allowed me to learn more
+	about Github and be more experienced. Another difficulty I experienced was the leaderboard. In the previous project, I was able
+	to work with saving and loading game files. For this project, I used a similar system for the loading and saving of scores. The
+	difficutly came with having to organize the scores. I also had to convert the times to minutes and seconds in order for the
+	time to make sense for the player. It took a lot of debugging, but I finally was able to solve the problem.
 Surprises:
-	
+	One of the biggest suprises to me was how much work we were getting done per week. During the rpg project, it was so hard to make
+	progress because I mainly the only one working on the project. But having the chance to work with Zane, Owen, Kyle, and Bobby
+	allowed me to see how much work can get down in one week with five people.
 Lessons:
-	
+	One lesson I learned was the importance of organization. To be honest, in the last porject, our group wasn't that organized which
+	sometimes led to confusion on what features we needed to work on. With the help of my group members I was able to work on my
+	organzation skills and understand its importance.

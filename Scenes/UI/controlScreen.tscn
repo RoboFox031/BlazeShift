@@ -1,0 +1,293 @@
+[gd_scene load_steps=9 format=3 uid="uid://3vhjky33day0"]
+
+[ext_resource type="Script" path="res://Scenes/UI/controlScreen.gd" id="1_012t4"]
+[ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="1_wcmai"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_pxxje"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/UI/joystick.webp" id="3_kpeef"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/UI/greenButton.webp" id="4_0qgd0"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/UI/blueButton.webp" id="4_admpf"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/UI/yellowButton.webp" id="6_012t4"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/UI/redButton.webp" id="7_alxfv"]
+
+[node name="controlScreen" type="Node2D"]
+script = ExtResource("1_012t4")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.57895, 1.29808)
+texture = ExtResource("1_wcmai")
+metadata/_edit_lock_ = true
+
+[node name="titleLabel" type="Label" parent="."]
+offset_right = 1920.0
+offset_bottom = 529.0
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.765026, 0.384565, 0.0148376, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 11
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 200
+text = "BLAZESHIFT
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="label" type="Label" parent="."]
+offset_left = 223.0
+offset_top = 844.0
+offset_right = 1708.0
+offset_bottom = 1109.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 60
+text = "press b to go back"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="joystick" type="Sprite2D" parent="."]
+position = Vector2(516, 566)
+texture = ExtResource("3_kpeef")
+
+[node name="b" type="Sprite2D" parent="."]
+position = Vector2(699, 523)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_0qgd0")
+
+[node name="label" type="Label" parent="b"]
+z_index = 4
+offset_left = -230.0
+offset_top = -500.0
+offset_right = 209.0
+offset_bottom = 501.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 700
+text = "B"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="a" type="Sprite2D" parent="."]
+position = Vector2(699, 674)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_admpf")
+
+[node name="label" type="Label" parent="a"]
+z_index = 4
+offset_left = -230.0
+offset_top = -500.0
+offset_right = 209.0
+offset_bottom = 501.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 700
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="l1" type="Sprite2D" parent="."]
+position = Vector2(827, 451)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_012t4")
+
+[node name="label" type="Label" parent="l1"]
+z_index = 4
+offset_left = -230.0
+offset_top = -500.0
+offset_right = 209.0
+offset_bottom = 501.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 700
+text = "l1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="l2" type="Sprite2D" parent="."]
+position = Vector2(827, 610)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_012t4")
+
+[node name="r1" type="Sprite2D" parent="."]
+modulate = Color(100, 100, 100, 1)
+position = Vector2(990, 451)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_012t4")
+
+[node name="label" type="Label" parent="r1"]
+z_index = 4
+offset_left = -230.0
+offset_top = -500.0
+offset_right = 209.0
+offset_bottom = 501.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 700
+text = "r1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="r2" type="Sprite2D" parent="."]
+modulate = Color(100, 100, 100, 1)
+position = Vector2(990, 610)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_012t4")
+
+[node name="x" type="Sprite2D" parent="."]
+position = Vector2(1118, 528)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_alxfv")
+
+[node name="label" type="Label" parent="x"]
+z_index = 4
+offset_left = -230.0
+offset_top = -500.0
+offset_right = 209.0
+offset_bottom = 501.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 700
+text = "x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="start" type="Sprite2D" parent="."]
+modulate = Color(0.313726, 0.262745, 0.207843, 1)
+position = Vector2(1222, 410)
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("7_alxfv")
+
+[node name="label2" type="Label" parent="."]
+offset_left = 1218.0
+offset_top = 369.0
+offset_right = 1762.0
+offset_bottom = 466.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 40
+text = "pause/ready/select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line2d" type="Line2D" parent="label2"]
+position = Vector2(-144, -33)
+points = PackedVector2Array(262, 78, 192, 78)
+
+[node name="label3" type="Label" parent="."]
+offset_left = 1037.0
+offset_top = 484.0
+offset_right = 1581.0
+offset_bottom = 581.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 40
+text = "boost"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line2d" type="Line2D" parent="label3"]
+position = Vector2(-43, -33)
+points = PackedVector2Array(262, 78, 197, 78)
+
+[node name="label4" type="Label" parent="."]
+offset_left = 725.0
+offset_top = 243.0
+offset_right = 1269.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 40
+text = "use power up"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line2d" type="Line2D" parent="label4"]
+position = Vector2(341, -113)
+rotation = 1.5708
+points = PackedVector2Array(262, 78, 197, 78)
+
+[node name="label5" type="Label" parent="."]
+offset_left = 558.0
+offset_top = 241.0
+offset_right = 1102.0
+offset_bottom = 338.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 40
+text = "drift"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line2d" type="Line2D" parent="label5"]
+position = Vector2(346, -113)
+rotation = 1.5708
+points = PackedVector2Array(262, 78, 197, 78)
+
+[node name="label6" type="Label" parent="."]
+offset_left = 431.0
+offset_top = 309.0
+offset_right = 975.0
+offset_bottom = 406.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 40
+text = "brake/reverse"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line2d" type="Line2D" parent="label6"]
+position = Vector2(346, -113)
+rotation = 1.5708
+points = PackedVector2Array(262, 78, 197, 78)
+
+[node name="label8" type="Label" parent="."]
+offset_left = 431.0
+offset_top = 309.0
+offset_right = 975.0
+offset_bottom = 406.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 40
+text = "brake/reverse"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line2d" type="Line2D" parent="label8"]
+position = Vector2(346, -113)
+rotation = 1.5708
+points = PackedVector2Array(262, 78, 197, 78)
+
+[node name="label7" type="Label" parent="."]
+offset_left = 431.0
+offset_top = 780.0
+offset_right = 975.0
+offset_bottom = 877.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 40
+text = "accelerate"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line2d" type="Line2D" parent="label7"]
+position = Vector2(346, -244)
+rotation = 1.5708
+points = PackedVector2Array(262, 78, 197, 78)
+
+[node name="label9" type="Label" parent="."]
+offset_left = 243.0
+offset_top = 727.0
+offset_right = 787.0
+offset_bottom = 824.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_pxxje")
+theme_override_font_sizes/font_size = 40
+text = "turning/menu selection"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line2d" type="Line2D" parent="label9"]
+position = Vector2(346, -244)
+rotation = 1.5708
+points = PackedVector2Array(262, 78, 197, 78)

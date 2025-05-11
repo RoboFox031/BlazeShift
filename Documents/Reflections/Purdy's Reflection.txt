@@ -1,8 +1,36 @@
 Thoughts throughout the Project:
-	
+	I thought the project overall was a success, and I had a great time working with the guys to make a well running project that is fun to play, fun
+	to make, and overall was a great way to end out the semester. Somethings could have been better, but those will be talked about in the difficulties
+	section. 
 Difficulties:
+	I also believe that somethings could have been smoother, such as communication and alignment on visions, becausee if everyone had a clear vision
+	as to what the final product is going to look like, or how everything is going to be structured, there would be less work that is paved over to fit
+	in someone else's vision instead of just having the main feature and only being adjusted and tweaked. For example, I had an instance on the project where
+	I had been working on the powerups for weeks, and I had a system where they were all separate instances and it worked fine, and allowed for the future fireCyclone
+	to block each projectile individualy and ignore them correctly. But because we were in the last week of the project, My work had been taken over and it got remade
+	to be a global type of class, so now ach powerup was changed significantly, and now the fire cyclone doesn't just ignore only the enemy's powerups, but rather any
+	powerup because they have been made a global class. Thus, all the work I ad done to bugfix and code for 5 weeks had just been uprooted to someone else's vision, and
+	my work had been for nothing. I understand that this is part of the coding process where things will get tweaked and revamped upon confirmation, but not like this.
+	I'm not saying it was super bad to the extreme, and I'm not saying that they weren't doing it for malicious intent, I just think that everyone else in my group might
+	not have thought about the consequences they were putting on someone else. 
 	
+	With the coding aspect, I had trouble with lots of typos with directories, and not being able to see on the godot workspace, because the window wasn't big enough, so
+	I wasn't working to my fullest extent most of the tme because the window wasn't big enough. I also had difficultis with the tilemaps being compatible so they would look
+	together and correct. It was very tough having not a lotof resource to put from because everything that I had found on the internet was only 2.5D instead of a true top-down perspective.
+
 Surprises:
-	
+	I was suprised about the internet's selection of top-down tilemaps not being as abundant as I thought. It was very tough to find the tilemaps I did, and also using the 
+	tilemap layers correctly to make the game look and feel the best when it comes to gameplay for the background details. I was also suprised when coding the powerups because
+	I didn't know that many functions were possible when in a certain instance. I didn't know there was a function that you could just use self. to run a commnd on a certain instance.
+	It was very helpful to find this so I could differentiate as to who to ignore so the powerup would acutally be fired correctly.
 Lessons:
-	
+	I learned a lot throughout this project. Firstly I leaned about the resources online that are necessarily available, so I had to rely on Bobby for a lot of the art
+	that I could use on the maps when I didn't have something readily available. I also had to learn the actually 4 pillars of coding, and how to acutally use them, because last semester
+	I was fiddleing around with a tech-tree that could have just been used in the Godot engine, not VS-Code, so I was able to actually put into process the four pillars correctly and 
+	effectively. Lastly, I had to learn the hard truth about being a software developer. I had to learn about the way it worked, and how they actually function. Sadly, Its something I
+	personally have a problem with, but I can't change the innate function of how a jub works. I just have to accept it and move on, so thats what I'm going to do, because I
+	don't just feel like it's not going to matter in the future, but I also feel like there is more benefit in the long run from this if I continue down this path. So, with what I have learned,
+	I may not be happy about it, nor am I completely over it, but I can't do anything about it so I have to just move on and learn from it. I feel like if I just move on, 
+	I'm going to be able to learn gret things in the future, and them be able to use those skills in the real world, making projects that everyone will be able to use and have fun with,
+	maybe even becoming a solo dev, making my own games like ConcernedApe and many others out there. If I can get past this, the reward will be much grander than I ever imagined, with the
+	boundaries of creativity and innovation being non-existent. 

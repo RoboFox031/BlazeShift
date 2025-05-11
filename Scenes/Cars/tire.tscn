@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://bydf7awxku2av"]
+
+[ext_resource type="Texture2D" uid="uid://cfycs0tm75lrs" path="res://Assets/Sprites/Cars/Tires/Tire Top View.png" id="1_5gbjo"]
+[ext_resource type="Script" uid="uid://4hror264o2i3" path="res://Scripts/Cars/tire.gd" id="2_wy7e5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d15ea"]
+atlas = ExtResource("1_5gbjo")
+region = Rect2(79, 53, 28, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwuid"]
+atlas = ExtResource("1_5gbjo")
+region = Rect2(271, 53, 28, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hb44"]
+atlas = ExtResource("1_5gbjo")
+region = Rect2(79, 245, 28, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhkm1"]
+atlas = ExtResource("1_5gbjo")
+region = Rect2(271, 245, 28, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6mqvb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d15ea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwuid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hb44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhkm1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="tire" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_6mqvb")
+frame_progress = 0.0682713
+script = ExtResource("2_wy7e5")

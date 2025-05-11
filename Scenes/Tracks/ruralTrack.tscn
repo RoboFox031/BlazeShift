@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://3o4xe5gkyt04"]
+[gd_scene load_steps=27 format=4 uid="uid://cxnex58nqf4ss"]
 
 [ext_resource type="Script" uid="uid://clrhe6giqrbwi" path="res://Scripts/Tracks/ruralTrack.gd" id="1_4l54d"]
 [ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="1_a08p6"]
@@ -6,1174 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://d0wlf3bfyqpuh" path="res://Assets/Sprites/Tracks/ruralMapTiles/tileset_preview.png" id="4_jhqve"]
 [ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://Assets/Sprites/Tracks/grass_tileset_16x16.png" id="5_iocsr"]
 [ext_resource type="TileSet" uid="uid://bf4uogxfjmwmc" path="res://Assets/Sprites/Tracks/ruralMapTiles/ruralTrack.tres" id="6_v8d64"]
-[ext_resource type="TileSet" uid="uid://bjrgtgiklvksp" path="res://Scenes/Tracks/track.tres" id="9_0u2nk"]
+[ext_resource type="TileSet" uid="uid://shirjmw44fyk" path="res://Scenes/Tracks/track.tres" id="9_0u2nk"]
 [ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://Assets/Sprites/Tracks/ruralMapTiles/sandwater.png" id="10_h0h4c"]
+[ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="11_oyt2e"]
 [ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://Assets/Sprites/Tracks/ruralMapTiles/sand.png" id="11_te1ji"]
-[ext_resource type="PackedScene" uid="uid://ba81k30logwad" path="res://Scenes/Cars/Mustang.tscn" id="15_mrn2o"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f8xj"]
-texture = ExtResource("1_a08p6")
-texture_region_size = Vector2i(25, 25)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
-12:0/0 = 0
-13:0/0 = 0
-14:0/0 = 0
-15:0/0 = 0
-16:0/0 = 0
-17:0/0 = 0
-18:0/0 = 0
-19:0/0 = 0
-20:0/0 = 0
-21:0/0 = 0
-22:0/0 = 0
-23:0/0 = 0
-24:0/0 = 0
-25:0/0 = 0
-26:0/0 = 0
-27:0/0 = 0
-28:0/0 = 0
-29:0/0 = 0
-30:0/0 = 0
-31:0/0 = 0
-32:0/0 = 0
-33:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-10:1/0 = 0
-11:1/0 = 0
-12:1/0 = 0
-13:1/0 = 0
-14:1/0 = 0
-15:1/0 = 0
-16:1/0 = 0
-17:1/0 = 0
-18:1/0 = 0
-19:1/0 = 0
-20:1/0 = 0
-21:1/0 = 0
-22:1/0 = 0
-23:1/0 = 0
-24:1/0 = 0
-25:1/0 = 0
-26:1/0 = 0
-27:1/0 = 0
-28:1/0 = 0
-29:1/0 = 0
-30:1/0 = 0
-31:1/0 = 0
-32:1/0 = 0
-33:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-10:2/0 = 0
-11:2/0 = 0
-12:2/0 = 0
-13:2/0 = 0
-14:2/0 = 0
-15:2/0 = 0
-16:2/0 = 0
-17:2/0 = 0
-18:2/0 = 0
-19:2/0 = 0
-20:2/0 = 0
-21:2/0 = 0
-22:2/0 = 0
-23:2/0 = 0
-24:2/0 = 0
-25:2/0 = 0
-26:2/0 = 0
-27:2/0 = 0
-28:2/0 = 0
-29:2/0 = 0
-30:2/0 = 0
-31:2/0 = 0
-32:2/0 = 0
-33:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-12:3/0 = 0
-13:3/0 = 0
-14:3/0 = 0
-15:3/0 = 0
-16:3/0 = 0
-17:3/0 = 0
-18:3/0 = 0
-19:3/0 = 0
-20:3/0 = 0
-21:3/0 = 0
-22:3/0 = 0
-23:3/0 = 0
-24:3/0 = 0
-25:3/0 = 0
-26:3/0 = 0
-27:3/0 = 0
-28:3/0 = 0
-29:3/0 = 0
-30:3/0 = 0
-31:3/0 = 0
-32:3/0 = 0
-33:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-10:4/0 = 0
-11:4/0 = 0
-12:4/0 = 0
-13:4/0 = 0
-14:4/0 = 0
-15:4/0 = 0
-16:4/0 = 0
-17:4/0 = 0
-18:4/0 = 0
-19:4/0 = 0
-20:4/0 = 0
-21:4/0 = 0
-22:4/0 = 0
-23:4/0 = 0
-24:4/0 = 0
-25:4/0 = 0
-26:4/0 = 0
-27:4/0 = 0
-28:4/0 = 0
-29:4/0 = 0
-30:4/0 = 0
-31:4/0 = 0
-32:4/0 = 0
-33:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-12:5/0 = 0
-13:5/0 = 0
-14:5/0 = 0
-15:5/0 = 0
-16:5/0 = 0
-17:5/0 = 0
-18:5/0 = 0
-19:5/0 = 0
-20:5/0 = 0
-21:5/0 = 0
-22:5/0 = 0
-23:5/0 = 0
-24:5/0 = 0
-25:5/0 = 0
-26:5/0 = 0
-27:5/0 = 0
-28:5/0 = 0
-29:5/0 = 0
-30:5/0 = 0
-31:5/0 = 0
-32:5/0 = 0
-33:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-10:6/0 = 0
-11:6/0 = 0
-12:6/0 = 0
-13:6/0 = 0
-14:6/0 = 0
-15:6/0 = 0
-16:6/0 = 0
-17:6/0 = 0
-18:6/0 = 0
-19:6/0 = 0
-20:6/0 = 0
-21:6/0 = 0
-22:6/0 = 0
-23:6/0 = 0
-24:6/0 = 0
-25:6/0 = 0
-26:6/0 = 0
-27:6/0 = 0
-28:6/0 = 0
-29:6/0 = 0
-30:6/0 = 0
-31:6/0 = 0
-32:6/0 = 0
-33:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-9:7/0 = 0
-10:7/0 = 0
-11:7/0 = 0
-12:7/0 = 0
-13:7/0 = 0
-14:7/0 = 0
-15:7/0 = 0
-16:7/0 = 0
-17:7/0 = 0
-18:7/0 = 0
-19:7/0 = 0
-20:7/0 = 0
-21:7/0 = 0
-22:7/0 = 0
-23:7/0 = 0
-24:7/0 = 0
-25:7/0 = 0
-26:7/0 = 0
-27:7/0 = 0
-28:7/0 = 0
-29:7/0 = 0
-30:7/0 = 0
-31:7/0 = 0
-32:7/0 = 0
-33:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-9:8/0 = 0
-10:8/0 = 0
-11:8/0 = 0
-12:8/0 = 0
-13:8/0 = 0
-14:8/0 = 0
-15:8/0 = 0
-16:8/0 = 0
-17:8/0 = 0
-18:8/0 = 0
-19:8/0 = 0
-20:8/0 = 0
-21:8/0 = 0
-22:8/0 = 0
-23:8/0 = 0
-24:8/0 = 0
-25:8/0 = 0
-26:8/0 = 0
-27:8/0 = 0
-28:8/0 = 0
-29:8/0 = 0
-30:8/0 = 0
-31:8/0 = 0
-32:8/0 = 0
-33:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-11:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-15:9/0 = 0
-16:9/0 = 0
-17:9/0 = 0
-18:9/0 = 0
-19:9/0 = 0
-20:9/0 = 0
-21:9/0 = 0
-22:9/0 = 0
-23:9/0 = 0
-24:9/0 = 0
-25:9/0 = 0
-26:9/0 = 0
-27:9/0 = 0
-28:9/0 = 0
-29:9/0 = 0
-30:9/0 = 0
-31:9/0 = 0
-32:9/0 = 0
-33:9/0 = 0
-0:10/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-3:10/0 = 0
-4:10/0 = 0
-5:10/0 = 0
-6:10/0 = 0
-7:10/0 = 0
-8:10/0 = 0
-9:10/0 = 0
-10:10/0 = 0
-11:10/0 = 0
-12:10/0 = 0
-13:10/0 = 0
-14:10/0 = 0
-15:10/0 = 0
-16:10/0 = 0
-17:10/0 = 0
-18:10/0 = 0
-19:10/0 = 0
-20:10/0 = 0
-21:10/0 = 0
-22:10/0 = 0
-23:10/0 = 0
-24:10/0 = 0
-25:10/0 = 0
-26:10/0 = 0
-27:10/0 = 0
-28:10/0 = 0
-29:10/0 = 0
-30:10/0 = 0
-31:10/0 = 0
-32:10/0 = 0
-33:10/0 = 0
-0:11/0 = 0
-1:11/0 = 0
-2:11/0 = 0
-3:11/0 = 0
-4:11/0 = 0
-5:11/0 = 0
-6:11/0 = 0
-7:11/0 = 0
-8:11/0 = 0
-9:11/0 = 0
-10:11/0 = 0
-11:11/0 = 0
-12:11/0 = 0
-13:11/0 = 0
-14:11/0 = 0
-15:11/0 = 0
-16:11/0 = 0
-17:11/0 = 0
-18:11/0 = 0
-19:11/0 = 0
-20:11/0 = 0
-21:11/0 = 0
-22:11/0 = 0
-23:11/0 = 0
-24:11/0 = 0
-25:11/0 = 0
-26:11/0 = 0
-27:11/0 = 0
-28:11/0 = 0
-29:11/0 = 0
-30:11/0 = 0
-31:11/0 = 0
-32:11/0 = 0
-33:11/0 = 0
-0:12/0 = 0
-1:12/0 = 0
-2:12/0 = 0
-3:12/0 = 0
-4:12/0 = 0
-5:12/0 = 0
-6:12/0 = 0
-7:12/0 = 0
-8:12/0 = 0
-9:12/0 = 0
-10:12/0 = 0
-11:12/0 = 0
-12:12/0 = 0
-13:12/0 = 0
-14:12/0 = 0
-15:12/0 = 0
-16:12/0 = 0
-17:12/0 = 0
-18:12/0 = 0
-19:12/0 = 0
-20:12/0 = 0
-21:12/0 = 0
-22:12/0 = 0
-23:12/0 = 0
-24:12/0 = 0
-25:12/0 = 0
-26:12/0 = 0
-27:12/0 = 0
-28:12/0 = 0
-29:12/0 = 0
-30:12/0 = 0
-31:12/0 = 0
-32:12/0 = 0
-33:12/0 = 0
-0:13/0 = 0
-1:13/0 = 0
-2:13/0 = 0
-3:13/0 = 0
-4:13/0 = 0
-5:13/0 = 0
-6:13/0 = 0
-7:13/0 = 0
-8:13/0 = 0
-9:13/0 = 0
-10:13/0 = 0
-11:13/0 = 0
-12:13/0 = 0
-13:13/0 = 0
-14:13/0 = 0
-15:13/0 = 0
-16:13/0 = 0
-17:13/0 = 0
-18:13/0 = 0
-19:13/0 = 0
-20:13/0 = 0
-21:13/0 = 0
-22:13/0 = 0
-23:13/0 = 0
-24:13/0 = 0
-25:13/0 = 0
-26:13/0 = 0
-27:13/0 = 0
-28:13/0 = 0
-29:13/0 = 0
-30:13/0 = 0
-31:13/0 = 0
-32:13/0 = 0
-33:13/0 = 0
-0:14/0 = 0
-1:14/0 = 0
-2:14/0 = 0
-3:14/0 = 0
-4:14/0 = 0
-5:14/0 = 0
-6:14/0 = 0
-7:14/0 = 0
-8:14/0 = 0
-9:14/0 = 0
-10:14/0 = 0
-11:14/0 = 0
-12:14/0 = 0
-13:14/0 = 0
-14:14/0 = 0
-15:14/0 = 0
-16:14/0 = 0
-17:14/0 = 0
-18:14/0 = 0
-19:14/0 = 0
-20:14/0 = 0
-21:14/0 = 0
-22:14/0 = 0
-23:14/0 = 0
-24:14/0 = 0
-25:14/0 = 0
-26:14/0 = 0
-27:14/0 = 0
-28:14/0 = 0
-29:14/0 = 0
-30:14/0 = 0
-31:14/0 = 0
-32:14/0 = 0
-33:14/0 = 0
-0:15/0 = 0
-1:15/0 = 0
-2:15/0 = 0
-3:15/0 = 0
-4:15/0 = 0
-5:15/0 = 0
-6:15/0 = 0
-7:15/0 = 0
-8:15/0 = 0
-9:15/0 = 0
-10:15/0 = 0
-11:15/0 = 0
-12:15/0 = 0
-13:15/0 = 0
-14:15/0 = 0
-15:15/0 = 0
-16:15/0 = 0
-17:15/0 = 0
-18:15/0 = 0
-19:15/0 = 0
-20:15/0 = 0
-21:15/0 = 0
-22:15/0 = 0
-23:15/0 = 0
-24:15/0 = 0
-25:15/0 = 0
-26:15/0 = 0
-27:15/0 = 0
-28:15/0 = 0
-29:15/0 = 0
-30:15/0 = 0
-31:15/0 = 0
-32:15/0 = 0
-33:15/0 = 0
-0:16/0 = 0
-1:16/0 = 0
-2:16/0 = 0
-3:16/0 = 0
-4:16/0 = 0
-5:16/0 = 0
-6:16/0 = 0
-7:16/0 = 0
-8:16/0 = 0
-9:16/0 = 0
-10:16/0 = 0
-11:16/0 = 0
-12:16/0 = 0
-13:16/0 = 0
-14:16/0 = 0
-15:16/0 = 0
-16:16/0 = 0
-17:16/0 = 0
-18:16/0 = 0
-19:16/0 = 0
-20:16/0 = 0
-21:16/0 = 0
-22:16/0 = 0
-23:16/0 = 0
-24:16/0 = 0
-25:16/0 = 0
-26:16/0 = 0
-27:16/0 = 0
-28:16/0 = 0
-29:16/0 = 0
-30:16/0 = 0
-31:16/0 = 0
-32:16/0 = 0
-33:16/0 = 0
-0:17/0 = 0
-1:17/0 = 0
-2:17/0 = 0
-3:17/0 = 0
-4:17/0 = 0
-5:17/0 = 0
-6:17/0 = 0
-7:17/0 = 0
-8:17/0 = 0
-9:17/0 = 0
-10:17/0 = 0
-11:17/0 = 0
-12:17/0 = 0
-13:17/0 = 0
-14:17/0 = 0
-15:17/0 = 0
-16:17/0 = 0
-17:17/0 = 0
-18:17/0 = 0
-19:17/0 = 0
-20:17/0 = 0
-21:17/0 = 0
-22:17/0 = 0
-23:17/0 = 0
-24:17/0 = 0
-25:17/0 = 0
-26:17/0 = 0
-27:17/0 = 0
-28:17/0 = 0
-29:17/0 = 0
-30:17/0 = 0
-31:17/0 = 0
-32:17/0 = 0
-33:17/0 = 0
-0:18/0 = 0
-1:18/0 = 0
-2:18/0 = 0
-3:18/0 = 0
-4:18/0 = 0
-5:18/0 = 0
-6:18/0 = 0
-7:18/0 = 0
-8:18/0 = 0
-9:18/0 = 0
-10:18/0 = 0
-11:18/0 = 0
-12:18/0 = 0
-13:18/0 = 0
-14:18/0 = 0
-15:18/0 = 0
-16:18/0 = 0
-17:18/0 = 0
-18:18/0 = 0
-19:18/0 = 0
-20:18/0 = 0
-21:18/0 = 0
-22:18/0 = 0
-23:18/0 = 0
-24:18/0 = 0
-25:18/0 = 0
-26:18/0 = 0
-27:18/0 = 0
-28:18/0 = 0
-29:18/0 = 0
-30:18/0 = 0
-31:18/0 = 0
-32:18/0 = 0
-33:18/0 = 0
-0:19/0 = 0
-1:19/0 = 0
-2:19/0 = 0
-3:19/0 = 0
-4:19/0 = 0
-5:19/0 = 0
-6:19/0 = 0
-7:19/0 = 0
-8:19/0 = 0
-9:19/0 = 0
-10:19/0 = 0
-11:19/0 = 0
-12:19/0 = 0
-13:19/0 = 0
-14:19/0 = 0
-15:19/0 = 0
-16:19/0 = 0
-17:19/0 = 0
-18:19/0 = 0
-19:19/0 = 0
-20:19/0 = 0
-21:19/0 = 0
-22:19/0 = 0
-23:19/0 = 0
-24:19/0 = 0
-25:19/0 = 0
-26:19/0 = 0
-27:19/0 = 0
-28:19/0 = 0
-29:19/0 = 0
-30:19/0 = 0
-31:19/0 = 0
-32:19/0 = 0
-33:19/0 = 0
-0:20/0 = 0
-1:20/0 = 0
-2:20/0 = 0
-3:20/0 = 0
-4:20/0 = 0
-5:20/0 = 0
-6:20/0 = 0
-7:20/0 = 0
-8:20/0 = 0
-9:20/0 = 0
-10:20/0 = 0
-11:20/0 = 0
-12:20/0 = 0
-13:20/0 = 0
-14:20/0 = 0
-15:20/0 = 0
-16:20/0 = 0
-17:20/0 = 0
-18:20/0 = 0
-19:20/0 = 0
-20:20/0 = 0
-21:20/0 = 0
-22:20/0 = 0
-23:20/0 = 0
-24:20/0 = 0
-25:20/0 = 0
-26:20/0 = 0
-27:20/0 = 0
-28:20/0 = 0
-29:20/0 = 0
-30:20/0 = 0
-31:20/0 = 0
-32:20/0 = 0
-33:20/0 = 0
-0:21/0 = 0
-1:21/0 = 0
-2:21/0 = 0
-3:21/0 = 0
-4:21/0 = 0
-5:21/0 = 0
-6:21/0 = 0
-7:21/0 = 0
-8:21/0 = 0
-9:21/0 = 0
-10:21/0 = 0
-11:21/0 = 0
-12:21/0 = 0
-13:21/0 = 0
-14:21/0 = 0
-15:21/0 = 0
-16:21/0 = 0
-17:21/0 = 0
-18:21/0 = 0
-19:21/0 = 0
-20:21/0 = 0
-21:21/0 = 0
-22:21/0 = 0
-23:21/0 = 0
-24:21/0 = 0
-25:21/0 = 0
-26:21/0 = 0
-27:21/0 = 0
-28:21/0 = 0
-29:21/0 = 0
-30:21/0 = 0
-31:21/0 = 0
-32:21/0 = 0
-33:21/0 = 0
-0:22/0 = 0
-1:22/0 = 0
-2:22/0 = 0
-3:22/0 = 0
-4:22/0 = 0
-5:22/0 = 0
-6:22/0 = 0
-7:22/0 = 0
-8:22/0 = 0
-9:22/0 = 0
-10:22/0 = 0
-11:22/0 = 0
-12:22/0 = 0
-13:22/0 = 0
-14:22/0 = 0
-15:22/0 = 0
-16:22/0 = 0
-17:22/0 = 0
-18:22/0 = 0
-19:22/0 = 0
-20:22/0 = 0
-21:22/0 = 0
-22:22/0 = 0
-23:22/0 = 0
-24:22/0 = 0
-25:22/0 = 0
-26:22/0 = 0
-27:22/0 = 0
-28:22/0 = 0
-29:22/0 = 0
-30:22/0 = 0
-31:22/0 = 0
-32:22/0 = 0
-33:22/0 = 0
-0:23/0 = 0
-1:23/0 = 0
-2:23/0 = 0
-3:23/0 = 0
-4:23/0 = 0
-5:23/0 = 0
-6:23/0 = 0
-7:23/0 = 0
-8:23/0 = 0
-9:23/0 = 0
-10:23/0 = 0
-11:23/0 = 0
-12:23/0 = 0
-13:23/0 = 0
-14:23/0 = 0
-15:23/0 = 0
-16:23/0 = 0
-17:23/0 = 0
-18:23/0 = 0
-19:23/0 = 0
-20:23/0 = 0
-21:23/0 = 0
-22:23/0 = 0
-23:23/0 = 0
-24:23/0 = 0
-25:23/0 = 0
-26:23/0 = 0
-27:23/0 = 0
-28:23/0 = 0
-29:23/0 = 0
-30:23/0 = 0
-31:23/0 = 0
-32:23/0 = 0
-33:23/0 = 0
-0:24/0 = 0
-1:24/0 = 0
-2:24/0 = 0
-3:24/0 = 0
-4:24/0 = 0
-5:24/0 = 0
-6:24/0 = 0
-7:24/0 = 0
-8:24/0 = 0
-9:24/0 = 0
-10:24/0 = 0
-11:24/0 = 0
-12:24/0 = 0
-13:24/0 = 0
-14:24/0 = 0
-15:24/0 = 0
-16:24/0 = 0
-17:24/0 = 0
-18:24/0 = 0
-19:24/0 = 0
-20:24/0 = 0
-21:24/0 = 0
-22:24/0 = 0
-23:24/0 = 0
-24:24/0 = 0
-25:24/0 = 0
-26:24/0 = 0
-27:24/0 = 0
-28:24/0 = 0
-29:24/0 = 0
-30:24/0 = 0
-31:24/0 = 0
-32:24/0 = 0
-33:24/0 = 0
-0:25/0 = 0
-1:25/0 = 0
-2:25/0 = 0
-3:25/0 = 0
-4:25/0 = 0
-5:25/0 = 0
-6:25/0 = 0
-7:25/0 = 0
-8:25/0 = 0
-9:25/0 = 0
-10:25/0 = 0
-11:25/0 = 0
-12:25/0 = 0
-13:25/0 = 0
-14:25/0 = 0
-15:25/0 = 0
-16:25/0 = 0
-17:25/0 = 0
-18:25/0 = 0
-19:25/0 = 0
-20:25/0 = 0
-21:25/0 = 0
-22:25/0 = 0
-23:25/0 = 0
-24:25/0 = 0
-25:25/0 = 0
-26:25/0 = 0
-27:25/0 = 0
-28:25/0 = 0
-29:25/0 = 0
-30:25/0 = 0
-31:25/0 = 0
-32:25/0 = 0
-33:25/0 = 0
-0:26/0 = 0
-1:26/0 = 0
-2:26/0 = 0
-3:26/0 = 0
-4:26/0 = 0
-5:26/0 = 0
-6:26/0 = 0
-7:26/0 = 0
-8:26/0 = 0
-9:26/0 = 0
-10:26/0 = 0
-11:26/0 = 0
-12:26/0 = 0
-13:26/0 = 0
-14:26/0 = 0
-15:26/0 = 0
-16:26/0 = 0
-17:26/0 = 0
-18:26/0 = 0
-19:26/0 = 0
-20:26/0 = 0
-21:26/0 = 0
-22:26/0 = 0
-23:26/0 = 0
-24:26/0 = 0
-25:26/0 = 0
-26:26/0 = 0
-27:26/0 = 0
-28:26/0 = 0
-29:26/0 = 0
-30:26/0 = 0
-31:26/0 = 0
-32:26/0 = 0
-33:26/0 = 0
-0:27/0 = 0
-1:27/0 = 0
-2:27/0 = 0
-3:27/0 = 0
-4:27/0 = 0
-5:27/0 = 0
-6:27/0 = 0
-7:27/0 = 0
-8:27/0 = 0
-9:27/0 = 0
-10:27/0 = 0
-11:27/0 = 0
-12:27/0 = 0
-13:27/0 = 0
-14:27/0 = 0
-15:27/0 = 0
-16:27/0 = 0
-17:27/0 = 0
-18:27/0 = 0
-19:27/0 = 0
-20:27/0 = 0
-21:27/0 = 0
-22:27/0 = 0
-23:27/0 = 0
-24:27/0 = 0
-25:27/0 = 0
-26:27/0 = 0
-27:27/0 = 0
-28:27/0 = 0
-29:27/0 = 0
-30:27/0 = 0
-31:27/0 = 0
-32:27/0 = 0
-33:27/0 = 0
-0:28/0 = 0
-1:28/0 = 0
-2:28/0 = 0
-3:28/0 = 0
-4:28/0 = 0
-5:28/0 = 0
-6:28/0 = 0
-7:28/0 = 0
-8:28/0 = 0
-9:28/0 = 0
-10:28/0 = 0
-11:28/0 = 0
-12:28/0 = 0
-13:28/0 = 0
-14:28/0 = 0
-15:28/0 = 0
-16:28/0 = 0
-17:28/0 = 0
-18:28/0 = 0
-19:28/0 = 0
-20:28/0 = 0
-21:28/0 = 0
-22:28/0 = 0
-23:28/0 = 0
-24:28/0 = 0
-25:28/0 = 0
-26:28/0 = 0
-27:28/0 = 0
-28:28/0 = 0
-29:28/0 = 0
-30:28/0 = 0
-31:28/0 = 0
-32:28/0 = 0
-33:28/0 = 0
-0:29/0 = 0
-1:29/0 = 0
-2:29/0 = 0
-3:29/0 = 0
-4:29/0 = 0
-5:29/0 = 0
-6:29/0 = 0
-7:29/0 = 0
-8:29/0 = 0
-9:29/0 = 0
-10:29/0 = 0
-11:29/0 = 0
-12:29/0 = 0
-13:29/0 = 0
-14:29/0 = 0
-15:29/0 = 0
-16:29/0 = 0
-17:29/0 = 0
-18:29/0 = 0
-19:29/0 = 0
-20:29/0 = 0
-21:29/0 = 0
-22:29/0 = 0
-23:29/0 = 0
-24:29/0 = 0
-25:29/0 = 0
-26:29/0 = 0
-27:29/0 = 0
-28:29/0 = 0
-29:29/0 = 0
-30:29/0 = 0
-31:29/0 = 0
-32:29/0 = 0
-33:29/0 = 0
-0:30/0 = 0
-1:30/0 = 0
-2:30/0 = 0
-3:30/0 = 0
-4:30/0 = 0
-5:30/0 = 0
-6:30/0 = 0
-7:30/0 = 0
-8:30/0 = 0
-9:30/0 = 0
-10:30/0 = 0
-11:30/0 = 0
-12:30/0 = 0
-13:30/0 = 0
-14:30/0 = 0
-15:30/0 = 0
-16:30/0 = 0
-17:30/0 = 0
-18:30/0 = 0
-19:30/0 = 0
-20:30/0 = 0
-21:30/0 = 0
-22:30/0 = 0
-23:30/0 = 0
-24:30/0 = 0
-25:30/0 = 0
-26:30/0 = 0
-27:30/0 = 0
-28:30/0 = 0
-29:30/0 = 0
-30:30/0 = 0
-31:30/0 = 0
-32:30/0 = 0
-33:30/0 = 0
-0:31/0 = 0
-1:31/0 = 0
-2:31/0 = 0
-3:31/0 = 0
-4:31/0 = 0
-5:31/0 = 0
-6:31/0 = 0
-7:31/0 = 0
-8:31/0 = 0
-9:31/0 = 0
-10:31/0 = 0
-11:31/0 = 0
-12:31/0 = 0
-13:31/0 = 0
-14:31/0 = 0
-15:31/0 = 0
-16:31/0 = 0
-17:31/0 = 0
-18:31/0 = 0
-19:31/0 = 0
-20:31/0 = 0
-21:31/0 = 0
-22:31/0 = 0
-23:31/0 = 0
-24:31/0 = 0
-25:31/0 = 0
-26:31/0 = 0
-27:31/0 = 0
-28:31/0 = 0
-29:31/0 = 0
-30:31/0 = 0
-31:31/0 = 0
-32:31/0 = 0
-33:31/0 = 0
-0:32/0 = 0
-1:32/0 = 0
-2:32/0 = 0
-3:32/0 = 0
-4:32/0 = 0
-5:32/0 = 0
-6:32/0 = 0
-7:32/0 = 0
-8:32/0 = 0
-9:32/0 = 0
-10:32/0 = 0
-11:32/0 = 0
-12:32/0 = 0
-13:32/0 = 0
-14:32/0 = 0
-15:32/0 = 0
-16:32/0 = 0
-17:32/0 = 0
-18:32/0 = 0
-19:32/0 = 0
-20:32/0 = 0
-21:32/0 = 0
-22:32/0 = 0
-23:32/0 = 0
-24:32/0 = 0
-25:32/0 = 0
-26:32/0 = 0
-27:32/0 = 0
-28:32/0 = 0
-29:32/0 = 0
-30:32/0 = 0
-31:32/0 = 0
-32:32/0 = 0
-33:32/0 = 0
-0:33/0 = 0
-1:33/0 = 0
-2:33/0 = 0
-3:33/0 = 0
-4:33/0 = 0
-5:33/0 = 0
-6:33/0 = 0
-7:33/0 = 0
-8:33/0 = 0
-9:33/0 = 0
-10:33/0 = 0
-11:33/0 = 0
-12:33/0 = 0
-13:33/0 = 0
-14:33/0 = 0
-15:33/0 = 0
-16:33/0 = 0
-17:33/0 = 0
-18:33/0 = 0
-19:33/0 = 0
-20:33/0 = 0
-21:33/0 = 0
-22:33/0 = 0
-23:33/0 = 0
-24:33/0 = 0
-25:33/0 = 0
-26:33/0 = 0
-27:33/0 = 0
-28:33/0 = 0
-29:33/0 = 0
-30:33/0 = 0
-31:33/0 = 0
-32:33/0 = 0
-33:33/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_a17n7"]
-tile_size = Vector2i(25, 25)
-sources/0 = SubResource("TileSetAtlasSource_1f8xj")
+[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="11_v8d64"]
+[ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://Scenes/Pickups/powerupBox.tscn" id="12_jn0hv"]
+[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://Scenes/Cars/carSpawn.tscn" id="12_oyt2e"]
+[ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://Scripts/Tracks/terrain.gd" id="13_jn0hv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d180l"]
 texture = ExtResource("11_te1ji")
@@ -6170,13 +5010,14 @@ texture = ExtResource("1_a08p6")
 [sub_resource type="TileSet" id="TileSet_v8d64"]
 sources/0 = SubResource("TileSetAtlasSource_0u2nk")
 
+[sub_resource type="Curve2D" id="Curve2D_oyt2e"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1016, -618, 0, 0, 0, 0, 828, -618, 200.122, -3.02071, -200.122, 3.02071, -115, -621, 8.30696, -243.167, -8.30696, 243.167, -566, -245, 4.53107, -197.102, -4.53107, 197.102, -569, 537, 231.085, -7.55178, -231.085, 7.55178, -946, 900, 208.429, -6.04143, -208.429, 6.04143, -3042, 926, 2.26554, -228.064, -2.26554, 228.064, -3470, 1315, 1.51036, -190.305, -1.51036, 190.305, -3473, 2251, -206.919, -6.04143, 206.919, 6.04143, -3027, 2641, -230.329, 4.53107, 230.329, -4.53107, -1354, 2636, -5.28625, 191.815, 5.28625, -191.815, -955, 2239, -209.184, 3.02071, 209.184, -3.02071, -706, 1936, 1.51036, -144.239, -1.51036, 144.239, -450, 2197, 3.02071, -155.567, -3.02071, 155.567, -468, 3024, 129.135, -6.04143, -129.135, 6.04143, -690, 3236, 147.26, 0, -147.26, 0, -3171, 3230, 3.77589, -182.753, -3.77589, 182.753, -3582, 3666, -179.732, -2.26554, 179.732, 2.26554, -3155, 4119, -198.612, 5.28625, 198.612, -5.28625, 141, 4108, -5.28625, 178.977, 5.28625, -178.977, 561, 3735, 2.26554, 189.55, -2.26554, -189.55, 564, 2856, -177.467, -0.755178, 177.467, 0.755178, 815, 2625, 1.51036, -173.691, -1.51036, 173.691, 1084, 2870, 0, -185.019, 0, 185.019, 1096, 4222, -163.874, 2.26554, 163.874, -2.26554, 1289, 4417, -154.812, 1.51036, 154.812, -1.51036, 1827, 4416, -3.02071, 237.881, 3.02071, -237.881, 2058, 4160, -120.829, 1.51036, 120.829, -1.51036, 2269, 3920, -159.343, 6.04143, 159.343, -6.04143, 3126, 3915, -0.755178, 119.318, 0.755178, -119.318, 3343, 3711, 1.51036, 93.6421, -1.51036, -93.6421, 3341, 2982, 80.0489, 2.26554, -80.0489, -2.26554, 3100, 2776, 106.48, 3.77589, -106.48, -3.77589, 2286, 2777, 6.79661, 128.38, -6.79661, -128.38, 2022, 2518, 3.02071, 123.849, -3.02071, -123.849, 2039, 2099, 114.787, 3.02071, -114.787, -3.02071, 1861, 1897, 111.766, 3.77589, -111.766, -3.77589, 956, 1893, 5.28625, 122.339, -5.28625, -122.339, 718, 1637, -184.264, 12.0829, 184.264, -12.0829, 1084, 1203, -14.3484, 280.926, 14.3484, -280.926, 1620, 826, -319.44, 13.5932, 319.44, -13.5932, 2155, 260, -1.48119, 213.292, 1.48119, -213.292, 2546, -160, 184.408, -0.740596, -184.408, 0.740596, 2162, -620, 0, 0, 0, 0, 1016, -618)
+}
+point_count = 45
+
 [node name="ruralTrack" type="Node2D"]
 script = ExtResource("1_4l54d")
-
-[node name="Start_finish" type="TileMapLayer" parent="."]
-z_index = 3
-tile_map_data = PackedByteArray("AAAgAOT/AAAJAAkAAAAgAOX/AAAJAAoAAAAgAOb/AAAJAAsAAAAgAOf/AAAJAAwAAAAgAOj/AAAJAA0AAAAgAOn/AAAJAA4AAAAgAOr/AAAJAA8AAAAgAOv/AAAJABAAAAAhAOT/AAAKAAkAAAAhAOX/AAAKAAoAAAAhAOb/AAAKAAsAAAAhAOf/AAAKAAwAAAAhAOj/AAAKAA0AAAAhAOn/AAAKAA4AAAAhAOr/AAAKAA8AAAAhAOv/AAAKABAAAAAiAOT/AAALAAkAAAAiAOX/AAALAAoAAAAiAOb/AAALAAsAAAAiAOf/AAALAAwAAAAiAOj/AAALAA0AAAAiAOn/AAALAA4AAAAiAOr/AAALAA8AAAAiAOv/AAALABAAAAAjAOT/AAAMAAkAAAAjAOX/AAAMAAoAAAAjAOb/AAAMAAsAAAAjAOf/AAAMAAwAAAAjAOj/AAAMAA0AAAAjAOn/AAAMAA4AAAAjAOr/AAAMAA8AAAAjAOv/AAAMABAAAAA=")
-tile_set = SubResource("TileSet_a17n7")
 
 [node name="Plants" type="TileMapLayer" parent="."]
 z_index = 3
@@ -6208,12 +5049,242 @@ position = Vector2(878, -584)
 tile_map_data = PackedByteArray("AADY//7/BQAYAAAAAADo//7/BQAYAAAAAAD4//7/BQAYAAAAAAAIAP7/BQAYAAAAAAAYAP7/BQAYAAAAAAAoAP7/BQAYAAAAAAA9AAMABQANACAAAAA9AB0ABQANAC0AAAAjACcABQAAACAAAAAZAEEABQANAC0AAAD//0sABQAAACAAAACx/3sABQANAC0AAACc/4AABQAYAAAAAACM/4AABQAYAAAAAAB8/4AABQAYAAAAAABs/4AABQAYAAAAAABX/3sABQAAAC0AAABS/2YABQAgAAAAAABS/1YABQAgAAAAAABX/0EABQAAACAAAABs/zwABQAYAAAAAAB8/zwABQAYAAAAAACM/zwABQAYAAAAAACc/zwABQAYAAAAAACs/zwABQAYAAAAAADB/zcABQANAC0AAADG/yIABQAgAAAAAADL/wMABQAAACAAAADG/xgABQAgAAAAAAC3/2UABQAgADAAAAD7/2EABQAgADkAAAAMAGIABQAYAAAAAAAcAGIABQAYAAAAAADJ/2UABQApADAAAAAtAGMABQApADAAAAAuAHQABQAgAAAAAADK/3YABQAgAAAAAADK/4YABQAgAAAAAADJ/5cABQApADkAAAC4/5gABQAYAAAAAACo/5gABQAYAAAAAACY/5gABQAYAAAAAACI/5gABQAYAAAAAAB4/5gABQAYAAAAAABo/5gABQAYAAAAAABT/50ABQAAACAAAABT/7cABQAAAC0AAABo/7wABQAYAAAAAAB4/7wABQAYAAAAAACI/7wABQAYAAAAAACY/7wABQAYAAAAAACo/7wABQAYAAAAAAC4/7wABQAYAAAAAADI/7wABQAYAAAAAADu/7cABQANAC0AAADZ/7wABQAYAAAAAADW/7wABQAYAAAAAADz/6IABQAgAAAAAADz/5IABQAgAAAAAAD0/4EABQAgADAAAAAGAIEABQApADAAAAAHAJIABQAgAAAAAAAHAKIABQAgAAAAAAAHALIABQAgAAAAAAAtAMcABQApADkAAAAIAMcABQAgADkAAAAZAMgABQAYAAAAAAAcAMgABQAYAAAAAAAHALYABQAgAAAAAAAvAIUABQAgADkAAAAvALUABQAgADAAAABAALQABQAYAAAAAABQALQABQAYAAAAAABhALMABQApADkAAABhAIcABQApADAAAABiAJgABQAgAAAAAABiAKIABQAgAAAAAABAAIYABQAYAAAAAABQAIYABQAYAAAAAAA=")
 tile_set = ExtResource("9_0u2nk")
 
-[node name="lemkeCar" parent="." instance=ExtResource("15_mrn2o")]
-position = Vector2(1547, 3979)
-
 [node name="finish_start line" type="TileMapLayer" parent="."]
 z_index = 10
 position = Vector2(1231, -913.01)
 scale = Vector2(1.92, 1.92)
 tile_map_data = PackedByteArray("AADz/wMAAAAiAAAAAADz/wQAAAAiAAEAAADz/wUAAAAiAAIAAADz/wYAAAAiAAMAAADz/wcAAAAiAAQAAADz/wgAAAAiAAUAAADz/wkAAAAiAAYAAADz/woAAAAiAAcAAADz/wsAAAAiAAgAAADz/wwAAAAiAAkAAADz/w0AAAAiAAoAAADz/w4AAAAiAAsAAAD0/wMAAAAjAAAAAAD0/wQAAAAjAAEAAAD0/wUAAAAjAAIAAAD0/wYAAAAjAAMAAAD0/wcAAAAjAAQAAAD0/wgAAAAjAAUAAAD0/wkAAAAjAAYAAAD0/woAAAAjAAcAAAD0/wsAAAAjAAgAAAD0/wwAAAAjAAkAAAD0/w0AAAAjAAoAAAD0/w4AAAAjAAsAAAD1/wMAAAAkAAAAAAD1/wQAAAAkAAEAAAD1/wUAAAAkAAIAAAD1/wYAAAAkAAMAAAD1/wcAAAAkAAQAAAD1/wgAAAAkAAUAAAD1/wkAAAAkAAYAAAD1/woAAAAkAAcAAAD1/wsAAAAkAAgAAAD1/wwAAAAkAAkAAAD1/w0AAAAkAAoAAAD1/w4AAAAkAAsAAAD2/wMAAAAlAAAAAAD2/wQAAAAlAAEAAAD2/wUAAAAlAAIAAAD2/wYAAAAlAAMAAAD2/wcAAAAlAAQAAAD2/wgAAAAlAAUAAAD2/wkAAAAlAAYAAAD2/woAAAAlAAcAAAD2/wsAAAAlAAgAAAD2/wwAAAAlAAkAAAD2/w0AAAAlAAoAAAD2/w4AAAAlAAsAAAD3/wMAAAAmAAAAAAD3/wQAAAAmAAEAAAD3/wUAAAAmAAIAAAD3/wYAAAAmAAMAAAD3/wcAAAAmAAQAAAD3/wgAAAAmAAUAAAD3/wkAAAAmAAYAAAD3/woAAAAmAAcAAAD3/wsAAAAmAAgAAAD3/wwAAAAmAAkAAAD3/w0AAAAmAAoAAAD3/w4AAAAmAAsAAAD4/wMAAAAnAAAAAAD4/wQAAAAnAAEAAAD4/wUAAAAnAAIAAAD4/wYAAAAnAAMAAAD4/wcAAAAnAAQAAAD4/wgAAAAnAAUAAAD4/wkAAAAnAAYAAAD4/woAAAAnAAcAAAD4/wsAAAAnAAgAAAD4/wwAAAAnAAkAAAD4/w0AAAAnAAoAAAD4/w4AAAAnAAsAAADz/w8AAAAiAAwAAAD0/w8AAAAjAAwAAAD1/w8AAAAkAAwAAAD2/w8AAAAlAAwAAAD3/w8AAAAmAAwAAAD4/w8AAAAnAAwAAAA=")
 tile_set = SubResource("TileSet_v8d64")
+
+[node name="checkpointPath" type="Path2D" parent="."]
+z_index = 10
+curve = SubResource("Curve2D_oyt2e")
+script = ExtResource("11_v8d64")
+checkpointLength = 400.0
+run = true
+
+[node name="spawns" type="Node2D" parent="."]
+
+[node name="p1CarSpawn" parent="spawns" instance=ExtResource("12_oyt2e")]
+position = Vector2(1170, -746)
+rotation = 3.14159
+
+[node name="p2CarSpawn" parent="spawns" instance=ExtResource("12_oyt2e")]
+position = Vector2(1170, -502)
+rotation = -3.14159
+
+[node name="terrain" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("13_jn0hv")
+metadata/_custom_type_script = "uid://dt7wyvnp8qj5e"
+
+[node name="inside" type="CollisionPolygon2D" parent="terrain"]
+polygon = PackedVector2Array(-110, -421, -148, -417, -201, -404, -244, -381, -285, -347, -320, -304, -347, -247, -357, -195, -359, -149, -359, 512, -358, 596, -360, 686, -373, 741, -387, 797, -409, 851, -446, 916, -491, 972, -525, 1005, -566, 1036, -607, 1064, -682, 1098, -725, 1112, -780, 1125, -850, 1131, -1025, 1129, -3014, 1128, -3048, 1131, -3084, 1140, -3131, 1161, -3168, 1185, -3199, 1215, -3235, 1270, -3253, 1321, -3259, 1369, -3259, 2198, -3253, 2238, -3235, 2289, -3197, 2344, -3158, 2380, -3119, 2403, -3048, 2425, -3002, 2429, -1396, 2429, -1349, 2421, -1294, 2400, -1250, 2370, -1215, 2334, -1186, 2290, -1170, 2249, -1160, 2198, -1159, 2140, -1160, 2092, -1158, 2031, -1147, 1975, -1120, 1910, -1087, 1858, -1048, 1816, -999, 1781, -949, 1756, -897, 1739, -848, 1730, -769, 1728, -729, 1728, -601, 1728, -542, 1734, -498, 1747, -468, 1760, -422, 1785, -386, 1813, -351, 1850, -323, 1891, -294, 1953, -280, 2021, -277, 2057, -262, 2129, -260, 2156, -259, 2990, -261, 3025, -261, 3047, -258, 3087, -261, 3110, -266, 3155, -280, 3201, -297, 3241, -326, 3289, -348, 3315, -366, 3334, -400, 3363, -440, 3388, -484, 3408, -516, 3417, -568, 3427, -619, 3430, -705, 3429, -3111, 3428, -3181, 3438, -3237, 3465, -3289, 3507, -3335, 3562, -3355, 3622, -3364, 3692, -3353, 3753, -3311, 3836, -3259, 3881, -3185, 3921, -3132, 3928, -3118, 3929, 82, 3929, 122, 3929, 155, 3924, 189, 3917, 224, 3903, 245, 3892, 276, 3870, 304, 3842, 328, 3809, 342, 3783, 352, 3756, 362, 3717, 366, 3685, 365, 2850, 365, 2803, 365, 2749, 372, 2706, 376, 2688, 386, 2657, 402, 2619, 420, 2585, 440, 2557, 478, 2517, 520, 2485, 560, 2462, 594, 2449, 620, 2441, 658, 2432, 694, 2428, 739, 2428, 762, 2430, 781, 2431, 804, 2428, 835, 2428, 844, 2431, 885, 2430, 890, 2428, 938, 2428, 989, 2437, 1041, 2452, 1087, 2474, 1128, 2502, 1160, 2533, 1179, 2557, 1194, 2577, 1210, 2605, 1223, 2633, 1231, 2655, 1242, 2693, 1246, 2721, 1250, 2759, 1258, 2791, 1262, 2815, 1264, 2835, 1266, 2929, 1266, 4187, 1271, 4201, 1281, 4216, 1300, 4226, 1316, 4229, 1797, 4229, 1818, 4220, 1836, 4199, 1841, 4176, 1841, 4084, 1842, 4030, 1855, 3973, 1877, 3919, 1902, 3872, 1936, 3833, 1975, 3799, 2019, 3771, 2063, 3751, 2116, 3736, 2177, 3728, 2281, 3728, 3094, 3729, 3116, 3720, 3133, 3704, 3141, 3677, 3140, 3025, 3133, 3008, 3127, 2994, 3112, 2983, 3094, 2978, 2288, 2978, 2249, 2977, 2196, 2979, 2147, 2977, 2112, 2971, 2058, 2954, 2010, 2933, 1967, 2902, 1931, 2870, 1901, 2830, 1874, 2784, 1854, 2733, 1842, 2677, 1840, 2646, 1840, 2554, 1841, 2128, 1834, 2104, 1813, 2083, 1787, 2079, 973, 2079, 888, 2079, 835, 2075, 794, 2068, 738, 2047, 695, 2022, 667, 2002, 636, 1975, 598, 1928, 576, 1888, 555, 1833, 542, 1775, 539, 1734, 540, 1653, 539, 1505, 542, 1429, 553, 1369, 578, 1286, 613, 1218, 649, 1164, 703, 1107, 759, 1063, 829, 1025, 904, 997, 992, 980, 1064, 978, 1099, 980, 1117, 983, 1132, 979, 1167, 978, 1215, 977, 1244, 972, 1282, 961, 1331, 935, 1381, 890, 1419, 830, 1437, 767, 1441, 738, 1440, 689, 1443, 663, 1440, 612, 1443, 529, 1457, 454, 1481, 378, 1515, 313, 1556, 256, 1608, 201, 1672, 156, 1735, 122, 1816, 95, 1898, 79, 1969, 78, 2070, 78, 2135, 74, 2179, 62, 2218, 44, 2257, 14, 2293, -25, 2319, -67, 2334, -114, 2341, -163, 2339, -196, 2331, -243, 2312, -288, 2274, -341, 2208, -392, 2154, -414, 2088, -421)
+
+[node name="outside" type="CollisionPolygon2D" parent="terrain"]
+polygon = PackedVector2Array(-3660, 1233, -3651, 1130, -3631, 1060, -3606, 999, -3550, 913, -5307, -1309, -5304, 5089, 5378, 5153, 5405, -1838, -5311, -1310, -3550, 913, -3497, 856, -3446, 819, -3374, 776, -3285, 743, -3205, 730, -3132, 729, -3086, 732, -3038, 729, -1016, 729, -949, 720, -915, 709, -881, 693, -852, 672, -820, 643, -781, 583, -763, 525, -758, 480, -759, -210, -756, -245, -761, -290, -757, -378, -738, -461, -713, -532, -670, -611, -624, -667, -567, -718, -504, -758, -436, -790, -357, -812, -272, -822, 60, -822, 2126, -821, 2168, -817, 2218, -821, 2305, -818, 2391, -800, 2465, -770, 2531, -732, 2586, -687, 2635, -632, 2676, -572, 2710, -495, 2731, -417, 2741, -339, 2742, -286, 2737, -247, 2741, -173, 2740, -111, 2739, -70, 2742, -3, 2734, 49, 2718, 129, 2695, 191, 2671, 236, 2633, 291, 2583, 348, 2523, 394, 2456, 432, 2373, 462, 2285, 479, 2093, 479, 2009, 492, 1957, 518, 1904, 564, 1864, 623, 1847, 679, 1840, 759, 1841, 853, 1837, 949, 1822, 1011, 1801, 1076, 1769, 1135, 1728, 1199, 1674, 1254, 1618, 1298, 1551, 1333, 1471, 1363, 1383, 1377, 1283, 1378, 1187, 1379, 1118, 1388, 1080, 1404, 1040, 1428, 996, 1472, 957, 1537, 944, 1590, 940, 1635, 950, 1659, 969, 1676, 1003, 1679, 1067, 1679, 1884, 1679, 1946, 1683, 2001, 1698, 2055, 1721, 2086, 1742, 2126, 1775, 2158, 1810, 2182, 1852, 2203, 1897, 2218, 1957, 2226, 2017, 2236, 2066, 2242, 2116, 2241, 2508, 2245, 2545, 2263, 2570, 2296, 2578, 3110, 2579, 3196, 2579, 3270, 2589, 3316, 2604, 3364, 2627, 3403, 2653, 3439, 2692, 3469, 2728, 3494, 2775, 3510, 2824, 3521, 2873, 3536, 2963, 3541, 3009, 3541, 3702, 3539, 3733, 3541, 3774, 3539, 3818, 3526, 3878, 3508, 3929, 3481, 3977, 3450, 4017, 3415, 4050, 3371, 4081, 3321, 4105, 3268, 4122, 3207, 4129, 3102, 4129, 2285, 4128, 2261, 4137, 2248, 4152, 2241, 4169, 2239, 4219, 2237, 4237, 2241, 4282, 2236, 4330, 2226, 4378, 2206, 4432, 2182, 4476, 2151, 4515, 2114, 4551, 2071, 4583, 2022, 4604, 1967, 4621, 1906, 4629, 1847, 4632, 1770.22, 4631.47, 1267, 4628, 1203, 4629, 1142, 4619, 1087, 4605, 1040, 4585, 995, 4554, 955, 4518, 927, 4482, 901, 4436, 879, 4382, 869, 4323, 865, 4268, 865, 4135, 867, 2873, 863, 2858, 844, 2839, 827, 2831, 813, 2830, 793, 2834, 778, 2841, 772, 2855, 766, 2878, 766, 3710, 762, 3758, 766, 3803, 763, 3864, 752, 3940, 729, 4016, 694, 4089, 653, 4149, 603, 4200, 543, 4244, 482, 4279, 400, 4310, 311, 4327, 224, 4329, 25, 4329, -3194, 4328, -3252, 4330, -3349, 4321, -3431, 4298, -3501, 4268, -3564, 4229, -3618, 4181, -3665, 4126, -3705, 4057, -3736, 3983, -3755, 3900, -3762, 3815, -3753, 3708, -3762, 3531, -3747, 3415, -3722, 3337, -3692, 3274, -3646, 3209, -3599, 3163, -3541, 3115, -3475, 3081, -3403, 3050, -3315, 3032, -3231, 3027, -3115, 3028, -705, 3029, -679, 3016, -663, 2999, -659, 2967, -660, 2167, -680, 2139, -703, 2130, -729, 2133, -748, 2147, -758, 2166, -759, 2195, -761, 2277, -760, 2355, -771, 2436, -799, 2525, -833, 2593, -873, 2647, -926, 2705, -986, 2748, -1051, 2783, -1125, 2811, -1218, 2827, -1317, 2828, -1350, 2826, -1390, 2829, -3040, 2829, -3132, 2827, -3256, 2820, -3328, 2801, -3400, 2768, -3466, 2726, -3520, 2678, -3566, 2625, -3606, 2557, -3635, 2484, -3653, 2399, -3661, 2325, -3659, 2207, -3660, 1340)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="coins" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(228, -706)
+
+[node name="coins2" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(228, -545)
+
+[node name="coins3" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-645, 76)
+
+[node name="coins4" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-493, 74)
+
+[node name="coins5" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-645, 224)
+
+[node name="coins6" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-493, 222)
+
+[node name="coins7" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-3535, 1567)
+
+[node name="coins8" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-3383, 1565)
+
+[node name="coins9" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-3535, 2004)
+
+[node name="coins10" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-3383, 2002)
+
+[node name="coins11" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1640, 942)
+
+[node name="coins12" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1488, 940)
+
+[node name="coins13" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2567, 942)
+
+[node name="coins14" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2415, 940)
+
+[node name="coins15" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2628, 2624)
+
+[node name="coins16" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2476, 2622)
+
+[node name="coins17" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1633, 2639)
+
+[node name="coins18" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1481, 2637)
+
+[node name="coins19" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2025, 3154)
+
+[node name="coins20" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1873, 3152)
+
+[node name="coins21" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2025, 3302)
+
+[node name="coins22" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1873, 3300)
+
+[node name="coins23" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2743, 4056)
+
+[node name="coins24" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-2743, 4217)
+
+[node name="coins25" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1782, 4064)
+
+[node name="coins26" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-1782, 4225)
+
+[node name="coins27" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-716, 4048)
+
+[node name="coins28" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(-716, 4209)
+
+[node name="coins29" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(603, 2691)
+
+[node name="coins30" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(1034, 2694)
+
+[node name="coins31" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2125, 195)
+
+[node name="coins32" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2125, 356)
+
+[node name="coins33" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(1197, 1083)
+
+[node name="coins34" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(1197, 1244)
+
+[node name="coins35" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(1917, 2011)
+
+[node name="coins36" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2025, 1883)
+
+[node name="coins37" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(3229, 2912)
+
+[node name="coins38" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(3337, 2784)
+
+[node name="coins39" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2052, 3942)
+
+[node name="coins40" parent="Coins" instance=ExtResource("11_oyt2e")]
+position = Vector2(2180, 4050)
+
+[node name="Powerup Boxes" type="Node" parent="."]
+
+[node name="powerupBox" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-756, 752)
+
+[node name="powerupBox2" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-637, 883)
+
+[node name="powerupBox3" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-3331, 976)
+
+[node name="powerupBox4" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-3212, 1107)
+
+[node name="powerupBox5" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-969, 1944)
+
+[node name="powerupBox6" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-850, 2075)
+
+[node name="powerupBox7" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-3494, 3315)
+
+[node name="powerupBox8" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-3375, 3446)
+
+[node name="powerupBox9" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-1227, 4075)
+
+[node name="powerupBox10" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(-1227, 4227)
+
+[node name="powerupBox11" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(805, 2560)
+
+[node name="powerupBox12" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(805, 2712)
+
+[node name="powerupBox13" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(1557, 4375)
+
+[node name="powerupBox14" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(1557, 4527)
+
+[node name="powerupBox15" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(2673, 2719)
+
+[node name="powerupBox16" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(2673, 2871)
+
+[node name="powerupBox18" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(807, 1641)
+
+[node name="powerupBox19" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(641, 1638)
+
+[node name="powerupBox17" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(2348, -434)
+
+[node name="powerupBox20" parent="Powerup Boxes" instance=ExtResource("12_jn0hv")]
+z_index = 8
+position = Vector2(2461, -559)

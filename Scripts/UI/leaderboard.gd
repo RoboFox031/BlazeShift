@@ -49,9 +49,13 @@ func _updateArrows():
 	if arrowSelected == 'right':
 		$arrows/leftArrow/leftArrowOutline.visible = false
 		$arrows/rightArrow/rightArrowOutline.visible = true
+		$arrows/leftArrow.stopFlashing()
+		$arrows/rightArrow.startFlashing()
 	else:
 		$arrows/leftArrow/leftArrowOutline.visible = true
 		$arrows/rightArrow/rightArrowOutline.visible = false
+		$arrows/leftArrow.startFlashing()
+		$arrows/rightArrow.stopFlashing()
 	
 func _updateLabel():
 	$trackLabel.text = leaderboardOptions[leaderboardSelected]

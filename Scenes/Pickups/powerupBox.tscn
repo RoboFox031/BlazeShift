@@ -238,25 +238,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usrwc"]
 size = Vector2(60, 60)
 
-[node name="powerupBox" type="Node2D"]
+[node name="powerupBox" type="Area2D"]
 script = ExtResource("1_waxfh")
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
-position = Vector2(15, -28)
+position = Vector2(10, -16)
+scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_8if87")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.165969
+frame_progress = 0.98688
 
-[node name="area2d" type="Area2D" parent="."]
-
-[node name="collisionShape2d" type="CollisionShape2D" parent="area2d"]
-position = Vector2(7, -15)
+[node name="collisionShape2d" type="CollisionShape2D" parent="."]
+scale = Vector2(1.25, 1.25)
 shape = SubResource("RectangleShape2D_usrwc")
 
 [node name="timer" type="Timer" parent="."]
-wait_time = 3.5
+wait_time = 5.0
 one_shot = true
 
-[connection signal="body_entered" from="area2d" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

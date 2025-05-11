@@ -492,7 +492,7 @@ func updateTerrain(newTerrain):
 			print("hazard")
 			respawn()
 
-func updatePosition(area:Area2D):
+func updatePosition(area:checkpoint):
 	if area is checkpoint:
 		#Adds the area to the array
 		touchingProgress.append(area)
@@ -566,7 +566,7 @@ func updatePosition(area:Area2D):
 			# print(currentOwnerStr+" progress: "+str(currentProgress))#+", point: " +str(progressPoint))
 
 #This function removes progress points you are touching from the array they are in
-func leavePosition(area:Area2D):
+func leavePosition(area:checkpoint):
 	if area is checkpoint:
 		touchingProgress.erase(area)
 

@@ -7,17 +7,23 @@ var playerOneCarSprite = null
 var playerTwoCarSprite = null
 var playerOneColor = "blue"
 var playerTwoColor = "blue"
+var musicType = 'spotifyMusic'
+var musicDB = 50
+var sfxDB = 50
+var nextScene
 #Defults to mustang
 var currentCarNames={"p1":"Mustang","p2":"Mustang"}
 var pOnePowerup = 'none'
 var pTwoPowerup = 'none'
-var pOneCoins = 0
-var pTwoCoins = 0
+var pOneCoins = 90
+var pTwoCoins = 90
 const NSX = preload("res://Scenes/Cars/NSX.tscn")
 var p1BlazeCurrent = 100
 var p2BlazeCurrent = 100
 var pOneDone = false
 var pTwoDone = false
+var playMusic
+var inCyclone = false
 #Stores the progress value and the lap value for each player
 var progress={
 	"p1":0,
@@ -31,15 +37,17 @@ var laps={
 var pOneLastRaceTime = '00:00'
 var pOneTotalTime = '00:00'
 var pOneLastRacePlacement = null
-var pOneOverallPlacement = null
+var pOneOverallPlacement = '1st'
 var pOneLastRaceCoinsCollected = 0
+var pOneTotalCoinsCollected = 0
 var pOneTotalWins = 0
 
 var pTwoLastRaceTime = '00:00'
 var pTwoTotalTime = '00:00'
 var pTwoLastRacePlacement = null
-var pTwoOverallPlacement = null
+var pTwoOverallPlacement = '1st'
 var pTwoLastRaceCoinsCollected = 0
+var pTwoTotalCoinsCollected = 0
 var pTwoTotalWins = 0
 
 #shop variables

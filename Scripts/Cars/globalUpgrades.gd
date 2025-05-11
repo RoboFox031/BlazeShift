@@ -1,4 +1,13 @@
 extends Node
+
+#Stores how much of each varible is gained per level
+#The max increase of each of these is the amount bellow *5
+const topSpeedPerLevel=30 #Max 150
+const accelPerLevel=3.5 #Max 17.5
+const maxBlazePerLevel=25 #Max 125
+const handlingPerLevel=7 #Max 35
+
+
 #List of upgrades
 var upgrades=[
 	"topSpeed",
@@ -11,7 +20,14 @@ var cars=[
 	"NSX",
 	"S13",
 	"Mustang",
-	"LemkeCar",
+	"CRX",
+	"FC RX7",
+	"69 Charger",
+	"Lancia 037",
+	"Lotus Esprit",
+	"RUF CTR",
+	"300ZX",
+	"Camaro"
 ]
 #The dictionnary that stores all the upgrades
 ##When acessing a specific upgrade the format is as folows: globalUpgrades.upgradesDict[player][car][upgrade]
@@ -19,25 +35,32 @@ var upgradesDict={
 	"p1":{},
 	"p2":{}
 	}
+
+	#Stores price of cheap upgrades
+var cheapUpgradeCost={
+	1:1,
+	2:2,
+	3:4,
+	4:8,
+	5:10
+}
+#Stores price of cheap upgrades
+var normalUpgradeCost={
+	1:2,
+	2:5,
+	3:8,
+	4:10,
+	5:15
+}
+
 #used to determine the cost of an upgrade
 var upgradesCost = {
-	'p1':{'topSpeed':1,
-		'maxBlaze':1,
-		'handling':1,
-		'acceleration':1
-	},
-	'p2':{'topSpeed':1,
-		'maxBlaze':1,
-		'handling':1,
-		'acceleration':1
-		}
+	'topSpeed':normalUpgradeCost,
+	'maxBlaze':cheapUpgradeCost,
+	'handling':normalUpgradeCost,
+	'acceleration':cheapUpgradeCost
 	}
-#Stores how much of each varible is gained per level
-#The max increase of each of these is the amount bellow *5
-const topSpeedPerLevel=160 #Max 800
-const accelPerLevel=14 #Max 70
-const maxBlazePerLevel=10 #Max 100
-const handlingPerLevel=5 #Max 50
+
 
 
 
@@ -77,4 +100,13 @@ func statValue(player:String,car:String,upgradeName:String):
 func getStatLevel(player:String,car:String,upgradeName:String):
 	#Returns the level of the chosen upgrade
 	var level=upgradesDict[player][car][upgradeName]
+	#print(upgradeName+" "+str(level))
 	return level
+	
+
+
+#Gets the level of a stat
+func getUpgradeCost(player:String,upgradeName:String):
+	#Returns the level of the chosen upgrade
+	var cost=globalUpgrades.upgradesCost[upgradeName][1+globalUpgrades.getStatLevel(player,globalVars.currentCarNames[player],upgradeName)]
+	return cost

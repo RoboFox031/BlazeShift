@@ -5,7 +5,13 @@ signal _startRace
 signal _startRaceTimer
 var trackName = track.instantiate().name
 var timer = 'on'
+@onready var camera = $hSplitContainer/subViewportContainer/subViewport/camera2d
 
+@onready var basicMusic = $royaltyMusic/basicMusic
+@onready var ruralMusic = $royaltyMusic/ruralMusic
+@onready var iceMusic = $royaltyMusic/iceTrack
+@onready var volcanoMusic = $royaltyMusic/volcanoMusic
+@onready var cityMusic = $royaltyMusic/cityMusic
 
 @onready var pTwoTimer = $hSplitContainer/subViewportContainer2/canvasLayer/pTwoTimer
 @onready var pOneTimer = $hSplitContainer/subViewportContainer/canvasLayer/pOneTimer
@@ -40,6 +46,8 @@ func _ready():
 	pass # Replace with function body.
 	
 func _physics_process(delta):
+	if globalVars.playMusic == true:
+		playMusic(trackName)
 	if globalVars.canMove == true:
 		if not globalVars.pTwoDone:
 			pTwoTimer.text = str(snapped((float(pTwoTimer.text) + delta),.001))
@@ -52,3 +60,8 @@ func _on_pause_screen_p_pause():
 	globalVars.canMove = false
 func _on_pause_screen_p_resume() -> void:
 	globalVars.canMove = true
+
+func playMusic(track):
+	if get_node(globalVars.musicType+"/"+trackName).playing != true:
+		get_node(globalVars.musicType+"/"+trackName).play()
+#globalVars.musicType+"/"+trackName

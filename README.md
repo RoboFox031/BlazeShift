@@ -30,7 +30,7 @@ OOP Concepts and Godot Features:
 	Encapsulation- All of our logic in most scripts is organized, private varibales and functions can be found in the shop and upgrade shop.
 	Inheritance- Almost every unique node in our project is a class. The cars, pickups, powerups, and maps all use parent classes and parent logic. The maps overide parent logic in order to change where the player spawns.
 	Polymorphism- Polymorphism is used primarily when updating the car. The "is" keyword is used when the player collides with a coin or powerup box in order to varify that a player is the one colliding. The car has functions for updating its position that uses the object type of checkpointIDK what the last requirement wants is asking???
-	Shaders- We have a shader in the game 
+	Shaders- We have a shader in the game, allthough it isn't used in the final build, the shader is able to replace the color of a car to be any other color.
 	Resources- All of the car stats are stored in resources.
 	Custom Signals- The terrian is one instance in where custom signals are used.
 	

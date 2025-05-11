@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ba81k30logwad"]
+[gd_scene load_steps=26 format=3 uid="uid://bid51mxifofd3"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_n68py"]
 [ext_resource type="Texture2D" uid="uid://ks7e4wgfjt7o" path="res://Assets/Sprites/Cars/Mustang/MustangBlack.png" id="2_a4jnl"]
@@ -136,7 +136,8 @@ material = SubResource("ShaderMaterial_iquv0")
 position = Vector2(-24, 11)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_wu7g6")
-animation = &"yellow"
+animation = &"blue"
+autoplay = "blue"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

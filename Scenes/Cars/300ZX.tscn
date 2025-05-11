@@ -1,0 +1,170 @@
+[gd_scene load_steps=17 format=3 uid="uid://blsisj56bwqpa"]
+
+[ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_qgdms"]
+[ext_resource type="Resource" uid="uid://bmegibr67mtqr" path="res://Resources/carStats/300ZXStats.tres" id="2_5qdwp"]
+[ext_resource type="Texture2D" uid="uid://ofm4ucfy12ix" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Black.png.png" id="2_odt6w"]
+[ext_resource type="Texture2D" uid="uid://l3hl4wyojnqn" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Blue.png.png" id="3_5qdwp"]
+[ext_resource type="Texture2D" uid="uid://840g0ccu8rp" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Green.png.png" id="4_f1yef"]
+[ext_resource type="Texture2D" uid="uid://df1rhjrmlgf5q" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Orange.png.png" id="5_ltdr7"]
+[ext_resource type="Texture2D" uid="uid://h8v5x2f4s3x0" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Purple.png.png" id="6_yxwo1"]
+[ext_resource type="Texture2D" uid="uid://oyn7tb6whw5b" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Red.png.png" id="7_awgk6"]
+[ext_resource type="Texture2D" uid="uid://dcvfow1t081ty" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32White.png.png" id="8_oe5e7"]
+[ext_resource type="Texture2D" uid="uid://cnh5ouj3j3bmy" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Yellow.png.png" id="9_mmeq6"]
+[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="10_5ib7d"]
+[ext_resource type="PackedScene" uid="uid://bydf7awxku2av" path="res://Scenes/Cars/tire.tscn" id="12_5qdwp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_da6k4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_odt6w")
+}],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5qdwp")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_f1yef")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ltdr7")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_yxwo1")
+}],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_awgk6")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_oe5e7")
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_mmeq6")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k7hj"]
+size = Vector2(51.9998, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_soqsf"]
+size = Vector2(8.99993, 13.9999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsabg"]
+size = Vector2(127, 52)
+
+[node name="300ZX" type="CharacterBody2D"]
+script = ExtResource("1_qgdms")
+stats = ExtResource("2_5qdwp")
+metadata/_custom_type_script = "uid://pdxcl38fqf8b"
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13.5)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_da6k4")
+animation = &"yellow"
+autoplay = "blue"
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.00005, -0.00012207)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_3k7hj")
+debug_color = Color(0.88312, 0.19237, 0.679116, 0.42)
+
+[node name="camera2d" type="Camera2D" parent="."]
+position = Vector2(0, -2)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="terrainDetector" type="Node2D" parent="."]
+position = Vector2(0, -2)
+script = ExtResource("10_5ib7d")
+
+[node name="terrainDetectorL" type="Area2D" parent="terrainDetector"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorL"]
+position = Vector2(0, -19)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_soqsf")
+
+[node name="terrainDetectorR" type="Area2D" parent="terrainDetector"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="terrainDetector/terrainDetectorR"]
+position = Vector2(0, 22)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_soqsf")
+
+[node name="progressChecker" type="Area2D" parent="."]
+position = Vector2(0, -2)
+collision_layer = 0
+collision_mask = 4
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="progressChecker"]
+position = Vector2(1.5, 2)
+shape = SubResource("RectangleShape2D_nsabg")
+debug_color = Color(0.991716, 0, 0.261882, 0.42)
+
+[node name="tires" type="Node2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(13, 0)
+
+[node name="tireR" parent="tires" instance=ExtResource("12_5qdwp")]
+position = Vector2(21, 23.5)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+frame_progress = 0.247693
+
+[node name="tireL" parent="tires" instance=ExtResource("12_5qdwp")]
+position = Vector2(21, -23.9)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+
+[connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
+[connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_exited"]
+[connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
+[connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]
+[connection signal="area_entered" from="progressChecker" to="." method="updatePosition"]
+[connection signal="area_exited" from="progressChecker" to="." method="leavePosition"]

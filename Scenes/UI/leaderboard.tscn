@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdo2pr6gigps"]
+[gd_scene load_steps=12 format=3 uid="uid://cdo2pr6gigps"]
 
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="1_7f0wt"]
 [ext_resource type="Script" uid="uid://csnvj8kdiiior" path="res://Scripts/UI/leaderboard.gd" id="1_trr20"]
 [ext_resource type="Texture2D" uid="uid://cdienlvw5alel" path="res://Assets/Sprites/UI/whiteArrow.png" id="3_bl5mr"]
 [ext_resource type="Texture2D" uid="uid://eod83ktvte4" path="res://Assets/Sprites/UI/blackOutlineArrow.png" id="4_7ajj7"]
+[ext_resource type="Script" uid="uid://0bfxv81mvhip" path="res://Scripts/UI/flash.gd" id="4_r85ew"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trr20"]
 
@@ -113,10 +114,11 @@ vertical_alignment = 1
 
 [node name="rightArrow" type="Sprite2D" parent="arrows"]
 self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
-position = Vector2(1321, 602)
+position = Vector2(1321, 546)
 scale = Vector2(2, 2)
 texture = ExtResource("3_bl5mr")
 offset = Vector2(9, 28)
+script = ExtResource("4_r85ew")
 
 [node name="rightArrowOutline" type="Sprite2D" parent="arrows/rightArrow"]
 scale = Vector2(1.03, 1.03)
@@ -125,11 +127,12 @@ offset = Vector2(8, 28)
 
 [node name="leftArrow" type="Sprite2D" parent="arrows"]
 self_modulate = Color(0.764706, 0.384314, 0.0156863, 1)
-position = Vector2(599, 602)
+position = Vector2(599, 546)
 rotation = 3.14159
 scale = Vector2(2, 2)
 texture = ExtResource("3_bl5mr")
 offset = Vector2(9, 28)
+script = ExtResource("4_r85ew")
 
 [node name="leftArrowOutline" type="Sprite2D" parent="arrows/leftArrow"]
 scale = Vector2(1.03, 1.03)

@@ -1,8 +1,7 @@
-Thoughts throughout the Project:
+Thoughts throughout the Project: This project was very fun to work on. I was able to grow both as a developer and as a member of a team. I feel like our game is amazing and I am very proud of what we were able to accomplish this project. 
+		
+Difficulties: During this project I had several difficulties making the cars drive realistically. I got better at this as the project progressed. I also had some difficulties with fixing some bugs and errors that were in the game.
 	
-Difficulties:
+Surprises: I was surprised by the difficulties of getting drifting to work, as it was much harder than I originally expected. 
 	
-Surprises:
-	
-Lessons:
-	
+Lessons: I learned a lot about working as a team and coordinating things this project. This project was a blast and my team was amazing!

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1a1hg3wj7wg"]
+[gd_scene load_steps=10 format=3 uid="uid://b1a1hg3wj7wg"]
 
 [ext_resource type="Script" uid="uid://bfs6y3o88ea24" path="res://Scripts/UI/trackSelection.gd" id="1_orx78"]
 [ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="2_cmn5v"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://babwu1hxlb0qj" path="res://Assets/Sprites/UI/iceTrackBackground.png" id="6_g3ra5"]
 [ext_resource type="PackedScene" uid="uid://bmtbwlc4rj8uy" path="res://Scenes/UI/uiSFX.tscn" id="7_sw51p"]
 [ext_resource type="Texture2D" uid="uid://d31sy2thgde5u" path="res://Assets/Sprites/UI/volvanoMapBackground.png" id="7_y4fag"]
+[ext_resource type="Texture2D" uid="uid://db4jefy0g2mw7" path="res://Assets/Sprites/UI/cityTrackBackground.png" id="8_spuve"]
 
 [node name="trackSelection" type="Node2D"]
 script = ExtResource("1_orx78")
@@ -36,7 +37,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="mapOne" type="Sprite2D" parent="."]
-position = Vector2(445, 510)
+position = Vector2(445, 430)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_nbqvf")
 
@@ -48,9 +49,10 @@ offset_top = -295.0
 offset_right = 1064.0
 offset_bottom = 803.0
 scale = Vector2(0.537, 0.537)
+metadata/_edit_use_anchors_ = true
 
 [node name="mapTwo" type="Sprite2D" parent="."]
-position = Vector2(978, 510)
+position = Vector2(978, 430)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_s22wx")
 
@@ -64,7 +66,7 @@ offset_bottom = 803.0
 scale = Vector2(0.537, 0.537)
 
 [node name="mapThree" type="Sprite2D" parent="."]
-position = Vector2(1475, 510)
+position = Vector2(1475, 430)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_g3ra5")
 
@@ -78,7 +80,7 @@ offset_bottom = 803.0
 scale = Vector2(0.537, 0.537)
 
 [node name="mapFour" type="Sprite2D" parent="."]
-position = Vector2(705, 811)
+position = Vector2(705, 771)
 scale = Vector2(0.5, 0.604444)
 texture = ExtResource("7_y4fag")
 
@@ -89,23 +91,26 @@ offset_top = -247.0
 offset_right = 396.0
 offset_bottom = 250.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="mapFive" type="ColorRect" parent="."]
-offset_left = 1048.0
-offset_top = 676.0
-offset_right = 1415.5
-offset_bottom = 951.0
-color = Color(0, 0, 0, 1)
+[node name="mapFive" type="Sprite2D" parent="."]
+position = Vector2(1235, 773.5)
+scale = Vector2(0.25, 0.251818)
+texture = ExtResource("8_spuve")
 
-[node name="colorRect" type="ColorRect" parent="mapFive"]
-modulate = Color(0, 0, 0, 1)
+[node name="mapFour" type="ColorRect" parent="mapFive"]
 z_index = -1
-layout_mode = 0
-offset_left = 130.0
-offset_top = 27.9999
-offset_right = 1586.0
-offset_bottom = 1126.0
-scale = Vector2(0.2, 0.2)
+anchors_preset = -1
+anchor_left = -0.00776197
+anchor_top = -0.0145455
+anchor_right = -0.00776197
+anchor_bottom = -0.0145455
+offset_left = -816.0
+offset_top = -602.058
+offset_right = 840.0
+offset_bottom = 617.942
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="trackSelectionLabel" type="Label" parent="."]
 offset_left = 551.0

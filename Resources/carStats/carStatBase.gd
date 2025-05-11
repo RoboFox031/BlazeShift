@@ -12,3 +12,5 @@ class_name carStats
 @export var deceleration:float; ##The base deceleration value
 #Stores base tracktion
 @export var traction:float=100
+#Stores base braking power
+@export var brakes:float ##brake power

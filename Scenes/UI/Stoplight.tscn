@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://n3sg0thh08rh"]
 
-[ext_resource type="Script" uid="uid://csevk25te31by" path="res://Scripts/UI/StoplightStart.gd" id="1_u138q"]
-[ext_resource type="Texture2D" uid="uid://c530hqwk3u3uc" path="res://Assets/Sprites/Cars/Race Assets/Starting Light.png" id="2_olog8"]
-[ext_resource type="AudioStream" uid="uid://rxh701q0yjt3" path="res://Assets/Sounds/uiSFX/stoplightSounds.mp3" id="3_ipva3"]
+[ext_resource type="Script" uid="uid://csevk25te31by" path="res://scripts/ui/StoplightStart.gd" id="1_u138q"]
+[ext_resource type="Texture2D" uid="uid://c530hqwk3u3uc" path="res://assets/sprites/cars/Race Assets/Starting Light.png" id="2_olog8"]
+[ext_resource type="AudioStream" uid="uid://rxh701q0yjt3" path="res://assets/sounds/uiSFX/stoplightSounds.mp3" id="3_ipva3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oxko1"]
 atlas = ExtResource("2_olog8")

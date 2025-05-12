@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwjqmh1hsl74v"
-path="res://.godot/imported/lava_tileset_orake.png-5f92fb010f424083394b0cfc3b28fadb.ctex"
+path="res://.godot/imported/lava_tileset_orake.png-9c643b6da2ffd3cae714edffaffb6f8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/volcanoTrack/lava_tileset_orake.png"
-dest_files=["res://.godot/imported/lava_tileset_orake.png-5f92fb010f424083394b0cfc3b28fadb.ctex"]
+source_file="res://assets/sprites/tracks/volcanoTrack/lava_tileset_orake.png"
+dest_files=["res://.godot/imported/lava_tileset_orake.png-9c643b6da2ffd3cae714edffaffb6f8e.ctex"]
 
 [params]
 

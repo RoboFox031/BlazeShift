@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhjv7c64f762c"
-path="res://.godot/imported/Ice_Square.png-084531b0c3e13e1158423778cc508c1c.ctex"
+path="res://.godot/imported/Ice_Square.png-6b74d294c2176c3aa738174b18e1efba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/iceTrack/Terrain/Misc/Ice_Square.png"
-dest_files=["res://.godot/imported/Ice_Square.png-084531b0c3e13e1158423778cc508c1c.ctex"]
+source_file="res://assets/sprites/tracks/iceTrack/Terrain/Misc/Ice_Square.png"
+dest_files=["res://.godot/imported/Ice_Square.png-6b74d294c2176c3aa738174b18e1efba.ctex"]
 
 [params]
 

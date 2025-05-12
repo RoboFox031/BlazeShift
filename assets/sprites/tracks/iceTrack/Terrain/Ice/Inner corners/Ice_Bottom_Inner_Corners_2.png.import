@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1qst0dm0hjx6"
-path="res://.godot/imported/Ice_Bottom_Inner_Corners_2.png-bc4d87078bd46da060d3221fd25ce824.ctex"
+path="res://.godot/imported/Ice_Bottom_Inner_Corners_2.png-ae912d52f506668695ca40fe1731f1ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/iceTrack/Terrain/Ice/Inner corners/Ice_Bottom_Inner_Corners_2.png"
-dest_files=["res://.godot/imported/Ice_Bottom_Inner_Corners_2.png-bc4d87078bd46da060d3221fd25ce824.ctex"]
+source_file="res://assets/sprites/tracks/iceTrack/Terrain/Ice/Inner corners/Ice_Bottom_Inner_Corners_2.png"
+dest_files=["res://.godot/imported/Ice_Bottom_Inner_Corners_2.png-ae912d52f506668695ca40fe1731f1ad.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvfpgagkpyofy"
-path="res://.godot/imported/rug.png-e247138d8e59f8b209b4f5cf7c263e57.ctex"
+path="res://.godot/imported/rug.png-82239ee0a3840037bfc81be210bc61ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/iceTrack/rug.png"
-dest_files=["res://.godot/imported/rug.png-e247138d8e59f8b209b4f5cf7c263e57.ctex"]
+source_file="res://assets/sprites/tracks/iceTrack/rug.png"
+dest_files=["res://.godot/imported/rug.png-82239ee0a3840037bfc81be210bc61ef.ctex"]
 
 [params]
 

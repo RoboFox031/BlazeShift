@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4ak48n1ye76y"
-path="res://.godot/imported/Chevy Camaro SS Blue-1.png.png-83321777f0cb8fb083b315207dff17b1.ctex"
+path="res://.godot/imported/Chevy Camaro SS Blue-1.png.png-5d36b0b7ec02493e0fa0efed3af2f79b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/Camaro SS/Chevy Camaro SS Blue-1.png.png"
-dest_files=["res://.godot/imported/Chevy Camaro SS Blue-1.png.png-83321777f0cb8fb083b315207dff17b1.ctex"]
+source_file="res://assets/sprites/cars/Camaro SS/Chevy Camaro SS Blue-1.png.png"
+dest_files=["res://.godot/imported/Chevy Camaro SS Blue-1.png.png-5d36b0b7ec02493e0fa0efed3af2f79b.ctex"]
 
 [params]
 

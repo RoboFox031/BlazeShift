@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gksdwrb0dr70"
-path="res://.godot/imported/farming_fishing.png-eb5ad0598c3ff3ddd84561ea0b8907ad.ctex"
+path="res://.godot/imported/farming_fishing.png-fd9aa2f582693b9654e09a3f3189cf67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/ruralTrack/farming_fishing.png"
-dest_files=["res://.godot/imported/farming_fishing.png-eb5ad0598c3ff3ddd84561ea0b8907ad.ctex"]
+source_file="res://assets/sprites/tracks/ruralTrack/farming_fishing.png"
+dest_files=["res://.godot/imported/farming_fishing.png-fd9aa2f582693b9654e09a3f3189cf67.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxpkneddk6yle"
-path="res://.godot/imported/path-tilemap.png-d9f389afc90d06390b4e5d9248a0be62.ctex"
+path="res://.godot/imported/path-tilemap.png-7de4336fe890791172852b03b00ccd9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/iceTrack/path-tilemap.png"
-dest_files=["res://.godot/imported/path-tilemap.png-d9f389afc90d06390b4e5d9248a0be62.ctex"]
+source_file="res://assets/sprites/tracks/iceTrack/path-tilemap.png"
+dest_files=["res://.godot/imported/path-tilemap.png-7de4336fe890791172852b03b00ccd9a.ctex"]
 
 [params]
 

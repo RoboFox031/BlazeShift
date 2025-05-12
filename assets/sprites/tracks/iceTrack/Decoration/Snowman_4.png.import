@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxd3isyiwmoqb"
-path="res://.godot/imported/Snowman_4.png-4d0edd9bffeb49bf6b2116dbe07670ac.ctex"
+path="res://.godot/imported/Snowman_4.png-85fcf1a3b382482e499e3fee7845c659.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/iceTrack/Decoration/Snowman_4.png"
-dest_files=["res://.godot/imported/Snowman_4.png-4d0edd9bffeb49bf6b2116dbe07670ac.ctex"]
+source_file="res://assets/sprites/tracks/iceTrack/Decoration/Snowman_4.png"
+dest_files=["res://.godot/imported/Snowman_4.png-85fcf1a3b382482e499e3fee7845c659.ctex"]
 
 [params]
 

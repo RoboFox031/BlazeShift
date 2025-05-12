@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://npk030u0owhm"
-path="res://.godot/imported/old-christmas-palette.png-141d8a31168f39d7449f22ecbc8d3282.ctex"
+path="res://.godot/imported/old-christmas-palette.png-3739cc55ac85e11c2fd9f58fcf74aa64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/iceTrack/old-christmas-palette.png"
-dest_files=["res://.godot/imported/old-christmas-palette.png-141d8a31168f39d7449f22ecbc8d3282.ctex"]
+source_file="res://assets/sprites/tracks/iceTrack/old-christmas-palette.png"
+dest_files=["res://.godot/imported/old-christmas-palette.png-3739cc55ac85e11c2fd9f58fcf74aa64.ctex"]
 
 [params]
 

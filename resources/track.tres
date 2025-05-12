@@ -1,8 +1,8 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://d1phorlqglw3r"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://shirjmw44fyk"]
 
-[ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/Track/checkboard pattern.png" id="1_3ii43"]
-[ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://Assets/Sprites/Tracks/Track/192 racetrack Divided.svg" id="2_k6hrb"]
-[ext_resource type="Texture2D" uid="uid://dwiyha8k28rle" path="res://Assets/Sprites/Tracks/Track/update v3 192 racetrack.png" id="3_d1qqm"]
+[ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://assets/sprites/tracks/Track/checkboard pattern.png" id="1_3ii43"]
+[ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://assets/sprites/tracks/Track/192 racetrack Divided.svg" id="2_k6hrb"]
+[ext_resource type="Texture2D" uid="uid://dwiyha8k28rle" path="res://assets/sprites/tracks/Track/update v3 192 racetrack.png" id="3_d1qqm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jn0hv"]
 texture = ExtResource("1_3ii43")

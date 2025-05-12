@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7pu883n8gtrf"
-path="res://.godot/imported/spikeStrip.png-7a00f50068c7f96af3bb8fd861a5c110.ctex"
+path="res://.godot/imported/spikeStrip.png-bc78806dff0f975aa9b2a18d5db4b8b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/powerups/spikeStrip.png"
-dest_files=["res://.godot/imported/spikeStrip.png-7a00f50068c7f96af3bb8fd861a5c110.ctex"]
+source_file="res://assets/sprites/powerups/spikeStrip.png"
+dest_files=["res://.godot/imported/spikeStrip.png-bc78806dff0f975aa9b2a18d5db4b8b6.ctex"]
 
 [params]
 

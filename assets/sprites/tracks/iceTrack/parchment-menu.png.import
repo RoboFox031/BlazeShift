@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://deixxvmnd60we"
-path="res://.godot/imported/parchment-menu.png-0a5e77cd4967af24e53ae3230180f685.ctex"
+path="res://.godot/imported/parchment-menu.png-e9fc3e71ac65823f07feff1f2d8e8fe2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/iceTrack/parchment-menu.png"
-dest_files=["res://.godot/imported/parchment-menu.png-0a5e77cd4967af24e53ae3230180f685.ctex"]
+source_file="res://assets/sprites/tracks/iceTrack/parchment-menu.png"
+dest_files=["res://.godot/imported/parchment-menu.png-e9fc3e71ac65823f07feff1f2d8e8fe2.ctex"]
 
 [params]
 

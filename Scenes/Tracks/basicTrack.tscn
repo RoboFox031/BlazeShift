@@ -1,14 +1,14 @@
 [gd_scene load_steps=15 format=4 uid="uid://djbb2ffhj2n2h"]
 
-[ext_resource type="Script" uid="uid://71egy5gs0lbp" path="res://Scripts/Tracks/basicTrack.gd" id="1_ifg0j"]
-[ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://Assets/Sprites/Tracks/basicTrack/grass_tileset_16x16.png" id="2_t0oks"]
-[ext_resource type="TileSet" uid="uid://d1phorlqglw3r" path="res://Resources/track.tres" id="3_muhto"]
-[ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/Track/checkboard pattern.png" id="4_ikrvl"]
-[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="5_s70l0"]
-[ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://Scenes/Pickups/powerupBox.tscn" id="6_ryjmn"]
-[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://Scenes/Cars/carSpawn.tscn" id="7_acw34"]
-[ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://Scripts/Tracks/terrain.gd" id="8_4kgag"]
-[ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="9_s70l0"]
+[ext_resource type="Script" uid="uid://71egy5gs0lbp" path="res://scripts/tracks/basicTrack.gd" id="1_ifg0j"]
+[ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://assets/sprites/tracks/basicTrack/grass_tileset_16x16.png" id="2_t0oks"]
+[ext_resource type="TileSet" uid="uid://shirjmw44fyk" path="res://resources/track.tres" id="3_ikrvl"]
+[ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://assets/sprites/tracks/Track/checkboard pattern.png" id="4_ikrvl"]
+[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://scripts/tracks/checkpointPath.gd" id="5_s70l0"]
+[ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://scenes/pickups/powerupBox.tscn" id="6_ryjmn"]
+[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://scenes/cars/carSpawn.tscn" id="7_acw34"]
+[ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://scripts/tracks/terrain.gd" id="8_4kgag"]
+[ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://scenes/pickups/coins.tscn" id="9_s70l0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_anobo"]
 texture = ExtResource("2_t0oks")
@@ -3010,7 +3010,7 @@ tile_set = SubResource("TileSet_htf8n")
 z_index = 1
 position = Vector2(178, 136)
 tile_map_data = PackedByteArray("AAAGAFgABQANACAAAADx/1MABQAYAAAAAADh/1MABQAYAAAAAADR/1MABQAYAAAAAADB/1MABQAYAAAAAACx/1MABQAYAAAAAACh/1MABQAYAAAAAACR/1MABQAYAAAAAACB/1MABQAYAAAAAABx/1MABQAYAAAAAABU/04ABQAAAC0AAABp/1MABQAYAAAAAAAQAHIABQAAAC0AAAAqAHIABQANAC0AAAAvAF0ABQAgAAAAAAAvAE0ABQAgAAAAAAAvAD0ABQAgAAAAAAAqACgABQANACAAAAAQAB4ABQAAAC0AAAALAAkABQAgAAAAAAALAPn/BQAgAAAAAAALAOn/BQAgAAAAAAAQANT/BQAAACAAAAAqAMr/BQANAC0AAAAqALD/BQANACAAAAAQAKb/BQAAAC0AAAAGAIz/BQANACAAAADx/4f/BQAYAAAAAADh/4f/BQAYAAAAAADR/4f/BQAYAAAAAAC8/4L/BQAAAC0AAACy/2j/BQANACAAAACY/2j/BQAAACAAAACO/4L/BQANAC0AAAB5/4f/BQAYAAAAAABk/4z/BQAAACAAAABk/6b/BQAAAC0AAAB5/6v/BQAYAAAAAACJ/6v/BQAYAAAAAACZ/6v/BQAYAAAAAACu/7D/BQANACAAAACy/8b/BQApADkAAACh/8f/BQAYAAAAAACR/8f/BQAYAAAAAACB/8f/BQAYAAAAAABx/8f/BQAYAAAAAABg/8j/BQAgADAAAABk/97/BQAAAC0AAAB5/+P/BQAYAAAAAACJ/+P/BQAYAAAAAACe/+j/BQANACAAAACj//3/BQAgAAAAAACk/w4ABQAgADkAAAC1/w8ABQAYAAAAAADK/xQABQANACAAAADK/y4ABQANAC0AAAC1/zMABQAYAAAAAACl/zMABQAYAAAAAACV/zMABQAYAAAAAACF/zMABQAYAAAAAAB0/zIABQAgADkAAABz/yEABQAgAAAAAABu/wwABQANACAAAABU/wwABQAAACAAAABP/yEABQAgAAAAAABP/zEABQAgAAAAAABP/zkABQAgAAAAAAA=")
-tile_set = ExtResource("3_muhto")
+tile_set = ExtResource("3_ikrvl")
 
 [node name="finish_start line" type="TileMapLayer" parent="."]
 z_index = 2

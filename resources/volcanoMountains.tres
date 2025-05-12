@@ -1,7 +1,7 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bp8jxhfcf1tdm"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bth44gyob6c8w"]
 
-[ext_resource type="Texture2D" uid="uid://diftod1f83vx" path="res://Assets/Sprites/Tracks/volcanoTrack/volcanoe_tileset_and_assets/volcanoe_tiles.png" id="1_ulppa"]
-[ext_resource type="Texture2D" uid="uid://dwjqmh1hsl74v" path="res://Assets/Sprites/Tracks/volcanoTrack/lava_tileset_orake.png" id="2_36jot"]
+[ext_resource type="Texture2D" uid="uid://diftod1f83vx" path="res://assets/sprites/tracks/volcanoTrack/volcanoe_tileset_and_assets/volcanoe_tiles.png" id="1_ulppa"]
+[ext_resource type="Texture2D" uid="uid://dwjqmh1hsl74v" path="res://assets/sprites/tracks/volcanoTrack/lava_tileset_orake.png" id="2_36jot"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wr5e1"]
 texture = ExtResource("1_ulppa")

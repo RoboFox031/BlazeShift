@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhesx5x4bna1d"
-path="res://.godot/imported/mysteryBox.png-9a734d2a1fc175e85bbe1420ca2f58c4.ctex"
+path="res://.godot/imported/mysteryBox.png-32260a36f19c7d10e0d2799ec58c28cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/powerups/mysteryBox.png"
-dest_files=["res://.godot/imported/mysteryBox.png-9a734d2a1fc175e85bbe1420ca2f58c4.ctex"]
+source_file="res://assets/sprites/powerups/mysteryBox.png"
+dest_files=["res://.godot/imported/mysteryBox.png-32260a36f19c7d10e0d2799ec58c28cb.ctex"]
 
 [params]
 

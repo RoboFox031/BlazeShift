@@ -1,5 +1,4 @@
 extends UI
-class_name controlScreen
 
 @export var inPauseMenu = false
 

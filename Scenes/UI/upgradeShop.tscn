@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="4_0i7vc"]
 [ext_resource type="Theme" uid="uid://xmhincb25u0y" path="res://Resources/shopTheme.tres" id="5_xr0vv"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="6_bpr6m"]
-[ext_resource type="Script" uid="uid://0bfxv81mvhip" path="res://Scripts/UI/flash.gd" id="7_5uiuf"]
+[ext_resource type="Script" path="res://Scripts/UI/flash.gd" id="7_5uiuf"]
 [ext_resource type="Texture2D" uid="uid://dcn5bmbutohrv" path="res://Assets/Sprites/UI/upgradeBoxesSpriteSheet.png" id="7_mffm5"]
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="8_h78wn"]
-[ext_resource type="PackedScene" uid="uid://icevwd4ir3d2" path="res://Scenes/UI/uiSFX.tscn" id="9_8a2bt"]
+[ext_resource type="PackedScene" uid="uid://bmtbwlc4rj8uy" path="res://Scenes/UI/uiSFX.tscn" id="9_8a2bt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r53p5"]
 atlas = ExtResource("7_mffm5")

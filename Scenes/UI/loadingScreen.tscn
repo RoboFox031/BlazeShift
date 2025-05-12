@@ -1,6 +1,6 @@
 [gd_scene load_steps=230 format=3 uid="uid://dl1ynwru15loe"]
 
-[ext_resource type="Script" uid="uid://b75wdqaqfn1es" path="res://Scripts/UI/loading_screen.gd" id="1_tjrs3"]
+[ext_resource type="Script" path="res://Scripts/UI/loading_screen.gd" id="1_tjrs3"]
 [ext_resource type="Texture2D" uid="uid://baompkj7fnmcw" path="res://Assets/Sprites/loadingScreens/Matrix Blue Driving Animation.png" id="2_tjrs3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tjrs3"]
@@ -1621,11 +1621,13 @@ frame = 224
 frame_progress = 1.0
 
 [node name="colorRect2" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 480.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
 [node name="colorRect3" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 1441.0
 offset_right = 1924.0
 offset_bottom = 1080.0

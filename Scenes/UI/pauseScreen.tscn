@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c0mm05lkl687a" path="res://Scripts/UI/pauseScreen.gd" id="1_e0kag"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_o611i"]
-[ext_resource type="Script" uid="uid://0bfxv81mvhip" path="res://Scripts/UI/flash.gd" id="3_odqo6"]
+[ext_resource type="Script" path="res://Scripts/UI/flash.gd" id="3_odqo6"]
 [ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="3_prih7"]
 [ext_resource type="PackedScene" uid="uid://281f6a2pilei" path="res://Scenes/UI/pauseOptionsScreen.tscn" id="4_si8yw"]
-[ext_resource type="PackedScene" uid="uid://3vhjky33day0" path="res://Scenes/UI/controlScreen.tscn" id="6_hycrd"]
+[ext_resource type="PackedScene" uid="uid://bqmsr24em1p25" path="res://Scenes/UI/controlScreen.tscn" id="6_hycrd"]
 
 [sub_resource type="Animation" id="Animation_si8yw"]
 length = 0.001

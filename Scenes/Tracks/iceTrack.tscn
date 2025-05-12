@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cueqx5qhr0r4f" path="res://Assets/Sprites/Tracks/christmas-village-asset-pack/street-sign-post.png" id="10_ttsky"]
 [ext_resource type="Texture2D" uid="uid://clnb8ql3ya20e" path="res://Assets/Sprites/Tracks/christmas-village-asset-pack/sign-post.png" id="11_naldj"]
 [ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="12_5bqh8"]
-[ext_resource type="PackedScene" uid="uid://cej22tp7ejihv" path="res://Scenes/Cars/carSpawn.tscn" id="13_2idqy"]
+[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://Scenes/Cars/carSpawn.tscn" id="13_2idqy"]
 [ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="13_5bqh8"]
 [ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://Scenes/Pickups/powerupBox.tscn" id="14_2idqy"]
 

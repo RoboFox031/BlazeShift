@@ -179,3 +179,4 @@ scale = Vector2(0.25, 0.25)
 [connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
 [connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]
 [connection signal="area_entered" from="progressChecker" to="." method="updatePosition"]
+[connection signal="area_exited" from="progressChecker" to="." method="leavePosition"]

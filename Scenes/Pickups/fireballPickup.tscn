@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://cqtcf0iskrr84"]
 
-[ext_resource type="Script" uid="uid://dmh5ujvntvfn2" path="res://Scripts/Pickups/fireballPickup.gd" id="1_x0pa4"]
-[ext_resource type="Texture2D" uid="uid://bvsqesqb1kkgo" path="res://Assets/Sprites/Poweups/fireball/FB500-1.png" id="2_1ppd3"]
-[ext_resource type="Texture2D" uid="uid://ccu17583wgd12" path="res://Assets/Sprites/Poweups/fireball/FB500-2.png" id="3_337vp"]
-[ext_resource type="Texture2D" uid="uid://be11avld1gaco" path="res://Assets/Sprites/Poweups/fireball/FB500-3.png" id="4_uvjpq"]
-[ext_resource type="Texture2D" uid="uid://yf4mtxhouqqt" path="res://Assets/Sprites/Poweups/fireball/FB500-4.png" id="5_fwpe4"]
+[ext_resource type="Script" uid="uid://dmh5ujvntvfn2" path="res://scripts/pickups/fireballPickup.gd" id="1_x0pa4"]
+[ext_resource type="Texture2D" uid="uid://bvsqesqb1kkgo" path="res://assets/sprites/powerups/fireball/FB500-1.png" id="2_1ppd3"]
+[ext_resource type="Texture2D" uid="uid://ccu17583wgd12" path="res://assets/sprites/powerups/fireball/FB500-2.png" id="3_337vp"]
+[ext_resource type="Texture2D" uid="uid://be11avld1gaco" path="res://assets/sprites/powerups/fireball/FB500-3.png" id="4_uvjpq"]
+[ext_resource type="Texture2D" uid="uid://yf4mtxhouqqt" path="res://assets/sprites/powerups/fireball/FB500-4.png" id="5_fwpe4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ncm1f"]
 atlas = ExtResource("2_1ppd3")

@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://caginwkaoih7h"]
 
-[ext_resource type="Script" uid="uid://o3je8x1dnvh3" path="res://Scripts/Pickups/fireball.gd" id="1_4u1og"]
-[ext_resource type="Texture2D" uid="uid://bvsqesqb1kkgo" path="res://Assets/Sprites/Poweups/fireball/FB500-1.png" id="2_eacxl"]
-[ext_resource type="Texture2D" uid="uid://ccu17583wgd12" path="res://Assets/Sprites/Poweups/fireball/FB500-2.png" id="3_2s3ao"]
-[ext_resource type="Texture2D" uid="uid://be11avld1gaco" path="res://Assets/Sprites/Poweups/fireball/FB500-3.png" id="4_ygwhq"]
-[ext_resource type="Texture2D" uid="uid://yf4mtxhouqqt" path="res://Assets/Sprites/Poweups/fireball/FB500-4.png" id="5_100md"]
-[ext_resource type="Texture2D" uid="uid://buo5fu1o3w7f6" path="res://Assets/Sprites/Poweups/fireball/FB500-5.png" id="6_hnc8w"]
+[ext_resource type="Script" uid="uid://o3je8x1dnvh3" path="res://scripts/pickups/fireball.gd" id="1_4u1og"]
+[ext_resource type="Texture2D" uid="uid://bvsqesqb1kkgo" path="res://assets/sprites/powerups/fireball/FB500-1.png" id="2_eacxl"]
+[ext_resource type="Texture2D" uid="uid://ccu17583wgd12" path="res://assets/sprites/powerups/fireball/FB500-2.png" id="3_2s3ao"]
+[ext_resource type="Texture2D" uid="uid://be11avld1gaco" path="res://assets/sprites/powerups/fireball/FB500-3.png" id="4_ygwhq"]
+[ext_resource type="Texture2D" uid="uid://yf4mtxhouqqt" path="res://assets/sprites/powerups/fireball/FB500-4.png" id="5_100md"]
+[ext_resource type="Texture2D" uid="uid://buo5fu1o3w7f6" path="res://assets/sprites/powerups/fireball/FB500-5.png" id="6_hnc8w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ea5pf"]
 atlas = ExtResource("2_eacxl")

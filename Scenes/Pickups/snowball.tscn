@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bseikap2mpwvq"]
 
-[ext_resource type="Script" uid="uid://cde8lfdkn1h5i" path="res://Scripts/Pickups/snowball.gd" id="1_vmcom"]
-[ext_resource type="Texture2D" uid="uid://mxqclthghmo4" path="res://Assets/Sprites/Poweups/snowball.png" id="2_vmcom"]
+[ext_resource type="Script" uid="uid://cde8lfdkn1h5i" path="res://scripts/pickups/snowball.gd" id="1_vmcom"]
+[ext_resource type="Texture2D" uid="uid://mxqclthghmo4" path="res://assets/sprites/powerups/snowball.png" id="2_vmcom"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3tsn"]
 atlas = ExtResource("2_vmcom")

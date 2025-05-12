@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://3vhjky33day0"]
 
-[ext_resource type="Script" uid="uid://d1ba8s4g5x8vb" path="res://Scenes/UI/controlScreen.gd" id="1_012t4"]
-[ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="1_wcmai"]
-[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_pxxje"]
-[ext_resource type="Texture2D" uid="uid://n8vqlo2tsphf" path="res://Assets/Sprites/UI/joystick.webp" id="3_kpeef"]
-[ext_resource type="Texture2D" uid="uid://bp61rkwsiqklk" path="res://Assets/Sprites/UI/greenButton.webp" id="4_0qgd0"]
-[ext_resource type="Texture2D" uid="uid://d0wppub1q1yg5" path="res://Assets/Sprites/UI/blueButton.webp" id="4_admpf"]
-[ext_resource type="Texture2D" uid="uid://bxrpy5roh7rtr" path="res://Assets/Sprites/UI/yellowButton.webp" id="6_012t4"]
-[ext_resource type="Texture2D" uid="uid://b6ysf4jon43m5" path="res://Assets/Sprites/UI/redButton.webp" id="7_alxfv"]
+[ext_resource type="Script" uid="uid://d1ba8s4g5x8vb" path="res://scripts/ui/controlScreen.gd" id="1_012t4"]
+[ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://assets/sprites/UI/titleScreenBackground.png" id="1_wcmai"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://assets/fonts/college/collegec.ttf" id="2_pxxje"]
+[ext_resource type="Texture2D" uid="uid://n8vqlo2tsphf" path="res://assets/sprites/UI/joystick.webp" id="3_kpeef"]
+[ext_resource type="Texture2D" uid="uid://bp61rkwsiqklk" path="res://assets/sprites/UI/greenButton.webp" id="4_0qgd0"]
+[ext_resource type="Texture2D" uid="uid://d0wppub1q1yg5" path="res://assets/sprites/UI/blueButton.webp" id="4_admpf"]
+[ext_resource type="Texture2D" uid="uid://bxrpy5roh7rtr" path="res://assets/sprites/UI/yellowButton.webp" id="6_012t4"]
+[ext_resource type="Texture2D" uid="uid://b6ysf4jon43m5" path="res://assets/sprites/UI/redButton.webp" id="7_alxfv"]
 
 [node name="controlScreen" type="Node2D"]
 script = ExtResource("1_012t4")

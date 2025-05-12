@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fw0r6dvgqle7"
-path="res://.godot/imported/present2.png-6b7b57a593d1189c37fe87895b19f1bd.ctex"
+path="res://.godot/imported/present2.png-d5d5850a4096ca10ff22a3aebbc5dc1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/iceTrack/present2.png"
-dest_files=["res://.godot/imported/present2.png-6b7b57a593d1189c37fe87895b19f1bd.ctex"]
+source_file="res://Assets/Sprites/Tracks/iceTrack/present2.png"
+dest_files=["res://.godot/imported/present2.png-d5d5850a4096ca10ff22a3aebbc5dc1c.ctex"]
 
 [params]
 

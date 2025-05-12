@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxx6omwubod8u"
-path="res://.godot/imported/Cliff_Middle_0.png-a10671d0a31f8456668ee69ad5c4176d.ctex"
+path="res://.godot/imported/Cliff_Middle_0.png-58822123eb64f2e1c5959ff22445bb9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/iceTrack/Terrain/Snow/Cliff_Middle_0.png"
-dest_files=["res://.godot/imported/Cliff_Middle_0.png-a10671d0a31f8456668ee69ad5c4176d.ctex"]
+source_file="res://Assets/Sprites/Tracks/iceTrack/Terrain/Snow/Cliff_Middle_0.png"
+dest_files=["res://.godot/imported/Cliff_Middle_0.png-58822123eb64f2e1c5959ff22445bb9e.ctex"]
 
 [params]
 

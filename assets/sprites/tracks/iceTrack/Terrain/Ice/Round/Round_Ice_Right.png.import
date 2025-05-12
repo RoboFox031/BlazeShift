@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bypot6pwvns4i"
-path="res://.godot/imported/Round_Ice_Right.png-49517be0e6034cdfc7826bf7c292debb.ctex"
+path="res://.godot/imported/Round_Ice_Right.png-b050f7d0fea07f6419c15f9bd7ea7a38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/iceTrack/Terrain/Ice/Round/Round_Ice_Right.png"
-dest_files=["res://.godot/imported/Round_Ice_Right.png-49517be0e6034cdfc7826bf7c292debb.ctex"]
+source_file="res://Assets/Sprites/Tracks/iceTrack/Terrain/Ice/Round/Round_Ice_Right.png"
+dest_files=["res://.godot/imported/Round_Ice_Right.png-b050f7d0fea07f6419c15f9bd7ea7a38.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhlfx7crex7rk"
-path="res://.godot/imported/lamp-post.png-fe8459779bd0a3c3ecf25a2541aca020.ctex"
+path="res://.godot/imported/lamp-post.png-3518d5015d83d787faa23e8b79e6af70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/iceTrack/lamp-post.png"
-dest_files=["res://.godot/imported/lamp-post.png-fe8459779bd0a3c3ecf25a2541aca020.ctex"]
+source_file="res://Assets/Sprites/Tracks/iceTrack/lamp-post.png"
+dest_files=["res://.godot/imported/lamp-post.png-3518d5015d83d787faa23e8b79e6af70.ctex"]
 
 [params]
 

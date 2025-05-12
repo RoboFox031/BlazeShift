@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://sm0mi8hr2nf6"
-path="res://.godot/imported/wreath.png-59131515543daa1972650ea8920a4e98.ctex"
+path="res://.godot/imported/wreath.png-7e1894b92a17e74d7d6615b19d6311f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/iceTrack/wreath.png"
-dest_files=["res://.godot/imported/wreath.png-59131515543daa1972650ea8920a4e98.ctex"]
+source_file="res://Assets/Sprites/Tracks/iceTrack/wreath.png"
+dest_files=["res://.godot/imported/wreath.png-7e1894b92a17e74d7d6615b19d6311f6.ctex"]
 
 [params]
 

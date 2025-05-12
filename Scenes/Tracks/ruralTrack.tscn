@@ -1,19 +1,19 @@
 [gd_scene load_steps=27 format=4 uid="uid://cxnex58nqf4ss"]
 
-[ext_resource type="Script" uid="uid://clrhe6giqrbwi" path="res://scripts/tracks/ruralTrack.gd" id="1_4l54d"]
-[ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://assets/sprites/tracks/Track/checkboard pattern.png" id="1_a08p6"]
-[ext_resource type="Texture2D" uid="uid://6xmdt8xqccid" path="res://assets/sprites/tracks/ruralTrack/plowed_soil.png" id="3_7cshe"]
-[ext_resource type="Texture2D" uid="uid://d0wlf3bfyqpuh" path="res://assets/sprites/tracks/ruralTrack/tileset_preview.png" id="4_jhqve"]
-[ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://assets/sprites/tracks/basicTrack/grass_tileset_16x16.png" id="5_iocsr"]
-[ext_resource type="TileSet" uid="uid://bf4uogxfjmwmc" path="res://assets/sprites/tracks/ruralTrack/ruralTrack.tres" id="6_v8d64"]
-[ext_resource type="TileSet" uid="uid://shirjmw44fyk" path="res://resources/track.tres" id="9_0u2nk"]
-[ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://assets/sprites/tracks/ruralTrack/sandwater.png" id="10_h0h4c"]
-[ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://scenes/pickups/coins.tscn" id="11_oyt2e"]
-[ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://assets/sprites/tracks/ruralTrack/sand.png" id="11_te1ji"]
-[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://scripts/tracks/checkpointPath.gd" id="11_v8d64"]
-[ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://scenes/pickups/powerupBox.tscn" id="12_jn0hv"]
-[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://scenes/cars/carSpawn.tscn" id="12_oyt2e"]
-[ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://scripts/tracks/terrain.gd" id="13_jn0hv"]
+[ext_resource type="Script" uid="uid://clrhe6giqrbwi" path="res://Scripts/Tracks/ruralTrack.gd" id="1_4l54d"]
+[ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/Track/checkboard pattern.png" id="1_a08p6"]
+[ext_resource type="Texture2D" uid="uid://6xmdt8xqccid" path="res://Assets/Sprites/Tracks/ruralTrack/plowed_soil.png" id="3_7cshe"]
+[ext_resource type="Texture2D" uid="uid://d0wlf3bfyqpuh" path="res://Assets/Sprites/Tracks/ruralTrack/tileset_preview.png" id="4_jhqve"]
+[ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://Assets/Sprites/Tracks/basicTrack/grass_tileset_16x16.png" id="5_iocsr"]
+[ext_resource type="TileSet" uid="uid://bf4uogxfjmwmc" path="res://Assets/Sprites/Tracks/ruralTrack/ruralTrack.tres" id="6_v8d64"]
+[ext_resource type="TileSet" uid="uid://d1phorlqglw3r" path="res://Resources/track.tres" id="8_adp1f"]
+[ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://Assets/Sprites/Tracks/ruralTrack/sandwater.png" id="10_h0h4c"]
+[ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="11_oyt2e"]
+[ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://Assets/Sprites/Tracks/ruralTrack/sand.png" id="11_te1ji"]
+[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="11_v8d64"]
+[ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://Scenes/Pickups/powerupBox.tscn" id="12_jn0hv"]
+[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://Scenes/Cars/carSpawn.tscn" id="12_oyt2e"]
+[ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://Scripts/Tracks/terrain.gd" id="13_jn0hv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d180l"]
 texture = ExtResource("11_te1ji")
@@ -5047,7 +5047,7 @@ tile_set = SubResource("TileSet_u48br")
 z_index = 4
 position = Vector2(878, -584)
 tile_map_data = PackedByteArray("AADY//7/BQAYAAAAAADo//7/BQAYAAAAAAD4//7/BQAYAAAAAAAIAP7/BQAYAAAAAAAYAP7/BQAYAAAAAAAoAP7/BQAYAAAAAAA9AAMABQANACAAAAA9AB0ABQANAC0AAAAjACcABQAAACAAAAAZAEEABQANAC0AAAD//0sABQAAACAAAACx/3sABQANAC0AAACc/4AABQAYAAAAAACM/4AABQAYAAAAAAB8/4AABQAYAAAAAABs/4AABQAYAAAAAABX/3sABQAAAC0AAABS/2YABQAgAAAAAABS/1YABQAgAAAAAABX/0EABQAAACAAAABs/zwABQAYAAAAAAB8/zwABQAYAAAAAACM/zwABQAYAAAAAACc/zwABQAYAAAAAACs/zwABQAYAAAAAADB/zcABQANAC0AAADG/yIABQAgAAAAAADL/wMABQAAACAAAADG/xgABQAgAAAAAAC3/2UABQAgADAAAAD7/2EABQAgADkAAAAMAGIABQAYAAAAAAAcAGIABQAYAAAAAADJ/2UABQApADAAAAAtAGMABQApADAAAAAuAHQABQAgAAAAAADK/3YABQAgAAAAAADK/4YABQAgAAAAAADJ/5cABQApADkAAAC4/5gABQAYAAAAAACo/5gABQAYAAAAAACY/5gABQAYAAAAAACI/5gABQAYAAAAAAB4/5gABQAYAAAAAABo/5gABQAYAAAAAABT/50ABQAAACAAAABT/7cABQAAAC0AAABo/7wABQAYAAAAAAB4/7wABQAYAAAAAACI/7wABQAYAAAAAACY/7wABQAYAAAAAACo/7wABQAYAAAAAAC4/7wABQAYAAAAAADI/7wABQAYAAAAAADu/7cABQANAC0AAADZ/7wABQAYAAAAAADW/7wABQAYAAAAAADz/6IABQAgAAAAAADz/5IABQAgAAAAAAD0/4EABQAgADAAAAAGAIEABQApADAAAAAHAJIABQAgAAAAAAAHAKIABQAgAAAAAAAHALIABQAgAAAAAAAtAMcABQApADkAAAAIAMcABQAgADkAAAAZAMgABQAYAAAAAAAcAMgABQAYAAAAAAAHALYABQAgAAAAAAAvAIUABQAgADkAAAAvALUABQAgADAAAABAALQABQAYAAAAAABQALQABQAYAAAAAABhALMABQApADkAAABhAIcABQApADAAAABiAJgABQAgAAAAAABiAKIABQAgAAAAAABAAIYABQAYAAAAAABQAIYABQAYAAAAAAA=")
-tile_set = ExtResource("9_0u2nk")
+tile_set = ExtResource("8_adp1f")
 
 [node name="finish_start line" type="TileMapLayer" parent="."]
 z_index = 10

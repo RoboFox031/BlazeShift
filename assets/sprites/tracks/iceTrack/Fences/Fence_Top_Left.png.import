@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2u2q7qpftc4d"
-path="res://.godot/imported/Fence_Top_Left.png-b50b7d40fe445081cd363a3d08d41901.ctex"
+path="res://.godot/imported/Fence_Top_Left.png-8db8bd234130cf141035b650b2f89dc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/iceTrack/Fences/Fence_Top_Left.png"
-dest_files=["res://.godot/imported/Fence_Top_Left.png-b50b7d40fe445081cd363a3d08d41901.ctex"]
+source_file="res://Assets/Sprites/Tracks/iceTrack/Fences/Fence_Top_Left.png"
+dest_files=["res://.godot/imported/Fence_Top_Left.png-8db8bd234130cf141035b650b2f89dc5.ctex"]
 
 [params]
 

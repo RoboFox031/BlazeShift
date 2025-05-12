@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://40t87gimc800"
-path="res://.godot/imported/sandwater.png-2023456bf6e31e16d2540445012e9b08.ctex"
+path="res://.godot/imported/sandwater.png-5850796dbd1e1197a41fb7003da8c2f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/ruralTrack/sandwater.png"
-dest_files=["res://.godot/imported/sandwater.png-2023456bf6e31e16d2540445012e9b08.ctex"]
+source_file="res://Assets/Sprites/Tracks/ruralTrack/sandwater.png"
+dest_files=["res://.godot/imported/sandwater.png-5850796dbd1e1197a41fb7003da8c2f6.ctex"]
 
 [params]
 

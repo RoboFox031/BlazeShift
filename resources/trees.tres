@@ -1,8 +1,8 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://ydsf8xr6qvsm"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://c6inb8sjwj5a3"]
 
-[ext_resource type="Texture2D" uid="uid://bwb2oalo6c030" path="res://assets/sprites/tracks/iceTrack/spritesheet.png" id="1_20y77"]
-[ext_resource type="Texture2D" uid="uid://brf21x30oasly" path="res://assets/sprites/tracks/iceTrack/house2.png" id="2_as814"]
-[ext_resource type="Texture2D" uid="uid://bpq3btiokvybu" path="res://assets/sprites/tracks/basicTrack/Crystals for decoration.png" id="3_sojvc"]
+[ext_resource type="Texture2D" uid="uid://bwb2oalo6c030" path="res://Assets/Sprites/Tracks/iceTrack/spritesheet.png" id="1_20y77"]
+[ext_resource type="Texture2D" uid="uid://brf21x30oasly" path="res://Assets/Sprites/Tracks/iceTrack/house2.png" id="2_as814"]
+[ext_resource type="Texture2D" uid="uid://bpq3btiokvybu" path="res://Assets/Sprites/Tracks/basicTrack/Crystals for decoration.png" id="3_sojvc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1iknw"]
 texture = ExtResource("1_20y77")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://q4soe8ln3tl8"
-path="res://.godot/imported/floor-tile.png-3f627c201f312a29fee4bf7b43af528b.ctex"
+path="res://.godot/imported/floor-tile.png-06d8e1899b137f6fe358e801e1f918d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/iceTrack/floor-tile.png"
-dest_files=["res://.godot/imported/floor-tile.png-3f627c201f312a29fee4bf7b43af528b.ctex"]
+source_file="res://Assets/Sprites/Tracks/iceTrack/floor-tile.png"
+dest_files=["res://.godot/imported/floor-tile.png-06d8e1899b137f6fe358e801e1f918d2.ctex"]
 
 [params]
 

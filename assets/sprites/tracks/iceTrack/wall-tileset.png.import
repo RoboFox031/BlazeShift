@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://l78ig5ksyg5h"
-path="res://.godot/imported/wall-tileset.png-a0cabc705e01b995f0a88566d196300e.ctex"
+path="res://.godot/imported/wall-tileset.png-3f4b7c8a724c2fa228f0c0bef83719aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/iceTrack/wall-tileset.png"
-dest_files=["res://.godot/imported/wall-tileset.png-a0cabc705e01b995f0a88566d196300e.ctex"]
+source_file="res://Assets/Sprites/Tracks/iceTrack/wall-tileset.png"
+dest_files=["res://.godot/imported/wall-tileset.png-3f4b7c8a724c2fa228f0c0bef83719aa.ctex"]
 
 [params]
 

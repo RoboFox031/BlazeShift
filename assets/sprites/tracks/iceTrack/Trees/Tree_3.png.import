@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtuwgqxj7l7hf"
-path="res://.godot/imported/Tree_3.png-b432c3a4a5e5915d528f6f3e0ab0f155.ctex"
+path="res://.godot/imported/Tree_3.png-c889b768ffafda70e4b8a798c3739241.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/iceTrack/Trees/Tree_3.png"
-dest_files=["res://.godot/imported/Tree_3.png-b432c3a4a5e5915d528f6f3e0ab0f155.ctex"]
+source_file="res://Assets/Sprites/Tracks/iceTrack/Trees/Tree_3.png"
+dest_files=["res://.godot/imported/Tree_3.png-c889b768ffafda70e4b8a798c3739241.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0smkbq2aaawc"
-path="res://.godot/imported/Ice_Right.png-8cd73d04b0e213e6d83e1f84bc9a2bf8.ctex"
+path="res://.godot/imported/Ice_Right.png-20c379f6cb45cfdc66bbae269af9ddad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/iceTrack/Terrain/Ice/Ice_Right.png"
-dest_files=["res://.godot/imported/Ice_Right.png-8cd73d04b0e213e6d83e1f84bc9a2bf8.ctex"]
+source_file="res://Assets/Sprites/Tracks/iceTrack/Terrain/Ice/Ice_Right.png"
+dest_files=["res://.godot/imported/Ice_Right.png-20c379f6cb45cfdc66bbae269af9ddad.ctex"]
 
 [params]
 

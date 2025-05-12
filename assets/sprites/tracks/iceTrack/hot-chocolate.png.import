@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq28hvi8gmrp6"
-path="res://.godot/imported/hot-chocolate.png-bab07e63d2059349adfd1c81240025ba.ctex"
+path="res://.godot/imported/hot-chocolate.png-1464dd0aa7c5015ea58a3640cb78d9f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/iceTrack/hot-chocolate.png"
-dest_files=["res://.godot/imported/hot-chocolate.png-bab07e63d2059349adfd1c81240025ba.ctex"]
+source_file="res://Assets/Sprites/Tracks/iceTrack/hot-chocolate.png"
+dest_files=["res://.godot/imported/hot-chocolate.png-1464dd0aa7c5015ea58a3640cb78d9f5.ctex"]
 
 [params]
 

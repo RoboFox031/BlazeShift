@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cueqx5qhr0r4f"
-path="res://.godot/imported/street-sign-post.png-a7bba1ed970c2c624540fff50156311d.ctex"
+path="res://.godot/imported/street-sign-post.png-498c0f3c47befbb7410ac5b06bd16778.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/iceTrack/street-sign-post.png"
-dest_files=["res://.godot/imported/street-sign-post.png-a7bba1ed970c2c624540fff50156311d.ctex"]
+source_file="res://Assets/Sprites/Tracks/iceTrack/street-sign-post.png"
+dest_files=["res://.godot/imported/street-sign-post.png-498c0f3c47befbb7410ac5b06bd16778.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0vmb58vv6bki"
-path="res://.godot/imported/Log.png-1d409d5243f09723d61d45b9aa90372f.ctex"
+path="res://.godot/imported/Log.png-09b50a0d7f61654a28ab9b1ccd30e38c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/iceTrack/Decoration/Log.png"
-dest_files=["res://.godot/imported/Log.png-1d409d5243f09723d61d45b9aa90372f.ctex"]
+source_file="res://Assets/Sprites/Tracks/iceTrack/Decoration/Log.png"
+dest_files=["res://.godot/imported/Log.png-09b50a0d7f61654a28ab9b1ccd30e38c.ctex"]
 
 [params]
 

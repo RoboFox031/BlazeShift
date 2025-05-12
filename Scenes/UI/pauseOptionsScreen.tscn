@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://281f6a2pilei"]
 
-[ext_resource type="Script" uid="uid://cis5be7dcnrey" path="res://Scripts/UI/pauseOptionsScreen.gd" id="1_xvi3v"]
-[ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="2_8t5jp"]
-[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="3_07gfd"]
-[ext_resource type="PackedScene" uid="uid://chaw7kly572j4" path="res://Scenes/UI/sfxSlider.tscn" id="4_1t56e"]
-[ext_resource type="PackedScene" uid="uid://cpwf36cljl8vm" path="res://Scenes/UI/musicSlider.tscn" id="5_xdth3"]
+[ext_resource type="Script" uid="uid://cis5be7dcnrey" path="res://scripts/ui/pauseOptionsScreen.gd" id="1_xvi3v"]
+[ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://assets/sprites/UI/titleScreenBackground.png" id="2_8t5jp"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://assets/fonts/college/collegec.ttf" id="3_07gfd"]
+[ext_resource type="PackedScene" uid="uid://chaw7kly572j4" path="res://scenes/ui/sfxSlider.tscn" id="4_1t56e"]
+[ext_resource type="PackedScene" uid="uid://cpwf36cljl8vm" path="res://scenes/ui/musicSlider.tscn" id="5_xdth3"]
 
 [node name="pauseOptionsScreen" type="Node2D"]
 script = ExtResource("1_xvi3v")

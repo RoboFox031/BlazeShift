@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://co6q4klcpljhi"]
 
-[ext_resource type="Script" uid="uid://cve76p5fp5ns3" path="res://Scripts/UI/pTwoBlazeHud.gd" id="1_kl1qf"]
-[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_a2rco"]
-[ext_resource type="Texture2D" uid="uid://45pmnrmfttd" path="res://Assets/Sprites/UI/blackBoxOutline.png" id="3_7p1jp"]
+[ext_resource type="Script" uid="uid://cve76p5fp5ns3" path="res://scripts/ui/pTwoBlazeHud.gd" id="1_kl1qf"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://assets/fonts/college/collegec.ttf" id="2_a2rco"]
+[ext_resource type="Texture2D" uid="uid://45pmnrmfttd" path="res://assets/sprites/UI/blackBoxOutline.png" id="3_7p1jp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh6hi"]
 bg_color = Color(0.764706, 0.384314, 0.0156863, 1)

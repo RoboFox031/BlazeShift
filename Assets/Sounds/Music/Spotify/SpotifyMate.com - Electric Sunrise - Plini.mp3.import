@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bshvofaad75od"
-path="res://.godot/imported/SpotifyMate.com - Electric Sunrise - Plini.mp3-e655ffa06bae191de7816e2010b33ebd.mp3str"
+path="res://.godot/imported/SpotifyMate.com - Electric Sunrise - Plini.mp3-c5adde6bf83f5b21ce4e074e79e11dc9.mp3str"
 
 [deps]
 
-source_file="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Electric Sunrise - Plini.mp3"
-dest_files=["res://.godot/imported/SpotifyMate.com - Electric Sunrise - Plini.mp3-e655ffa06bae191de7816e2010b33ebd.mp3str"]
+source_file="res://assets/sounds/music/spotify/SpotifyMate.com - Electric Sunrise - Plini.mp3"
+dest_files=["res://.godot/imported/SpotifyMate.com - Electric Sunrise - Plini.mp3-c5adde6bf83f5b21ce4e074e79e11dc9.mp3str"]
 
 [params]
 

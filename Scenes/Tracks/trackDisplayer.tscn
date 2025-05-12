@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bg1ngibf6qsfv"]
 
-[ext_resource type="Script" uid="uid://ccn80v8oyrbus" path="res://Scripts/Tracks/trackDisplayer.gd" id="1_iseco"]
-[ext_resource type="AudioStream" uid="uid://cs74w6vw33nlc" path="res://Assets/Sounds/uiSFX/main-library-super-fanfare-276484.mp3" id="3_6rijy"]
+[ext_resource type="Script" uid="uid://ccn80v8oyrbus" path="res://scripts/tracks/trackDisplayer.gd" id="1_iseco"]
+[ext_resource type="AudioStream" uid="uid://cs74w6vw33nlc" path="res://assets/sounds/uiSFX/main-library-super-fanfare-276484.mp3" id="3_6rijy"]
 
 [sub_resource type="Animation" id="Animation_6rijy"]
 length = 0.001

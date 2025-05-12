@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://chaw7kly572j4"]
 
-[ext_resource type="Script" path="res://Scripts/UI/sfxSlider.gd" id="1_r0two"]
+[ext_resource type="Script" uid="uid://bsrju108oljci" path="res://scripts/ui/sfxSlider.gd" id="1_aifa5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0two"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -20,7 +20,7 @@ offset_bottom = 30.0
 scale = Vector2(2, 2)
 value = 50.0
 show_percentage = false
-script = ExtResource("1_r0two")
+script = ExtResource("1_aifa5")
 
 [node name="panel" type="Panel" parent="."]
 layout_mode = 0

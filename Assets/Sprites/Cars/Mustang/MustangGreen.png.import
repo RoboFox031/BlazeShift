@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdtvtbhos3c8b"
-path="res://.godot/imported/MustangGreen.png-f4daac17ef51a19af913f030ef77ff69.ctex"
+path="res://.godot/imported/MustangGreen.png-b20a88e8347816103012314c4e0cb6fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/Mustang/MustangGreen.png"
-dest_files=["res://.godot/imported/MustangGreen.png-f4daac17ef51a19af913f030ef77ff69.ctex"]
+source_file="res://assets/sprites/cars/Mustang/MustangGreen.png"
+dest_files=["res://.godot/imported/MustangGreen.png-b20a88e8347816103012314c4e0cb6fc.ctex"]
 
 [params]
 

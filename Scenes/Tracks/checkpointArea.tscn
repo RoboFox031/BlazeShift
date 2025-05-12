@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ggj8e0iovwe7"]
 
-[ext_resource type="Script" uid="uid://dmiiqlo4ckddy" path="res://Scripts/Tracks/checkpointArea.gd" id="1_6ek0n"]
+[ext_resource type="Script" uid="uid://dmiiqlo4ckddy" path="res://scripts/tracks/checkpointArea.gd" id="1_6ek0n"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6ek0n"]
 b = Vector2(0, 600)

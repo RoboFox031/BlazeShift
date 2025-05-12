@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bl7wwwkvflmp5"]
 
-[ext_resource type="Script" path="res://Scripts/Cars/carSpawn.gd" id="1_oykp5"]
+[ext_resource type="Script" uid="uid://iq3aipo73nn5" path="res://scripts/cars/carSpawn.gd" id="1_oykp5"]
 
 [node name="carSpawn" type="Node2D"]
 z_index = 10

@@ -1,38 +1,38 @@
 [gd_scene load_steps=19 format=3 uid="uid://7ysc21hplbc2"]
 
-[ext_resource type="Script" uid="uid://0hyyoerby0kf" path="res://Scripts/Tracks/trackLoader.gd" id="1_txhea"]
-[ext_resource type="PackedScene" uid="uid://co6q4klcpljhi" path="res://Scenes/UI/pTwoBlazeHud.tscn" id="3_2qf2f"]
-[ext_resource type="Script" path="res://Scenes/UI/pOneTrackCoinHud.gd" id="3_158u3"]
-[ext_resource type="PackedScene" uid="uid://bhcaxmvifx6r1" path="res://Scenes/UI/pOneCoinHud.tscn" id="3_go0ff"]
-[ext_resource type="PackedScene" uid="uid://bwffy2tfu4rbe" path="res://Scenes/UI/pOneBlazeHud.tscn" id="3_sw20d"]
-[ext_resource type="PackedScene" uid="uid://bwvjkcqhdw5e6" path="res://Scenes/UI/pOnePowerupsHud.tscn" id="4_n1ubl"]
-[ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://Scenes/UI/pTwoCoinHud.tscn" id="5_5lhqp"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/placementTracker.tscn" id="5_kxt15"]
-[ext_resource type="PackedScene" uid="uid://n3sg0thh08rh" path="res://Scenes/UI/Stoplight.tscn" id="5_t261b"]
-[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="6_m4tpg"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/wrongWayIndicator.tscn" id="6_rcrto"]
-[ext_resource type="PackedScene" uid="uid://bbpaemnpu0ei8" path="res://Scenes/UI/pTwoPowerupsHud.tscn" id="7_8we7n"]
-[ext_resource type="PackedScene" uid="uid://gdyc002hat4w" path="res://Scenes/UI/pauseScreen.tscn" id="8_ig87d"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/snowballSplatter.tscn" id="10_iwjg5"]
-[ext_resource type="PackedScene" uid="uid://cd4tg6xllfeij" path="res://Scenes/UI/royaltyMusic.tscn" id="15_c8num"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/spotifyMusic.tscn" id="16_bfptf"]
+[ext_resource type="Script" uid="uid://0hyyoerby0kf" path="res://scripts/tracks/trackLoader.gd" id="1_0rpxl"]
+[ext_resource type="PackedScene" uid="uid://eu1i7ue0qsdq" path="res://scenes/ui/snowballSplatter.tscn" id="2_jq5ro"]
+[ext_resource type="PackedScene" uid="uid://bhcaxmvifx6r1" path="res://scenes/ui/pOneCoinHud.tscn" id="3_t4oar"]
+[ext_resource type="Script" uid="uid://bkwsi75gj8ueq" path="res://scripts/ui/pOneTrackCoinHud.gd" id="4_usvf8"]
+[ext_resource type="PackedScene" uid="uid://bwffy2tfu4rbe" path="res://scenes/ui/pOneBlazeHud.tscn" id="5_x3flx"]
+[ext_resource type="PackedScene" uid="uid://bwvjkcqhdw5e6" path="res://scenes/ui/pOnePowerupsHud.tscn" id="6_sxcoc"]
+[ext_resource type="PackedScene" uid="uid://bv6secx1ql0dq" path="res://scenes/ui/placementTracker.tscn" id="7_sbcv1"]
+[ext_resource type="PackedScene" uid="uid://duambc5sqs45o" path="res://scenes/ui/wrongWayIndicator.tscn" id="8_lwaqe"]
+[ext_resource type="PackedScene" uid="uid://n3sg0thh08rh" path="res://scenes/ui/stoplight.tscn" id="9_ufykr"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://assets/fonts/college/collegec.ttf" id="10_tqf7s"]
+[ext_resource type="PackedScene" uid="uid://bbpaemnpu0ei8" path="res://scenes/ui/pTwoPowerupsHud.tscn" id="11_jn2kh"]
+[ext_resource type="PackedScene" uid="uid://co6q4klcpljhi" path="res://scenes/ui/pTwoBlazeHud.tscn" id="12_80aar"]
+[ext_resource type="PackedScene" uid="uid://b2xqco54jbt6w" path="res://scenes/ui/pTwoCoinHud.tscn" id="13_dj04t"]
+[ext_resource type="PackedScene" uid="uid://dn5sw0bq4y0ad" path="res://scenes/ui/pauseScreen.tscn" id="14_d8mky"]
+[ext_resource type="PackedScene" uid="uid://b2ed3gfuvmfdt" path="res://scenes/ui/royaltyMusic.tscn" id="15_gycpo"]
+[ext_resource type="PackedScene" uid="uid://d05oihsshblo7" path="res://scenes/ui/spotifyMusic.tscn" id="16_gsard"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3v6t4"]
-font = ExtResource("6_m4tpg")
+font = ExtResource("10_tqf7s")
 font_size = 120
 font_color = Color(0.784314, 0, 0.12549, 1)
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xym10"]
-font = ExtResource("6_m4tpg")
+font = ExtResource("10_tqf7s")
 font_size = 120
 font_color = Color(0.78427, 0, 0.124484, 1)
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [node name="trackLoader" type="Node2D"]
-script = ExtResource("1_txhea")
+script = ExtResource("1_0rpxl")
 
 [node name="hSplitContainer" type="HSplitContainer" parent="."]
 offset_right = 1920.0
@@ -49,7 +49,7 @@ render_target_update_mode = 4
 [node name="camera2d" type="Camera2D" parent="hSplitContainer/subViewportContainer/subViewport"]
 zoom = Vector2(0.5, 0.5)
 
-[node name="snowballSplatter" parent="hSplitContainer/subViewportContainer/subViewport" instance=ExtResource("10_iwjg5")]
+[node name="snowballSplatter" parent="hSplitContainer/subViewportContainer/subViewport" instance=ExtResource("2_jq5ro")]
 z_index = 20
 position = Vector2(504, 543)
 scale = Vector2(1.8, 1.8)
@@ -60,24 +60,24 @@ handle_input_locally = false
 size = Vector2i(954, 1080)
 render_target_update_mode = 4
 
-[node name="snowballSplatter" parent="hSplitContainer/subViewportContainer/snowballPort" instance=ExtResource("10_iwjg5")]
+[node name="snowballSplatter" parent="hSplitContainer/subViewportContainer/snowballPort" instance=ExtResource("2_jq5ro")]
 z_index = 20
 position = Vector2(504, 543)
 scale = Vector2(1.8, 1.8)
 
 [node name="canvasLayer" type="CanvasLayer" parent="hSplitContainer/subViewportContainer"]
 
-[node name="pOneCoinHud" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("3_go0ff")]
+[node name="pOneCoinHud" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("3_t4oar")]
 position = Vector2(2, 900)
-script = ExtResource("3_158u3")
+script = ExtResource("4_usvf8")
 
-[node name="pOneBlazeHud" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("3_sw20d")]
+[node name="pOneBlazeHud" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("5_x3flx")]
 position = Vector2(20, 1000)
 
-[node name="pOnePowerupsHud" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("4_n1ubl")]
+[node name="pOnePowerupsHud" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("6_sxcoc")]
 position = Vector2(842, 977)
 
-[node name="placementTracker" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("5_kxt15")]
+[node name="placementTracker" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("7_sbcv1")]
 offset_left = 812.0
 offset_top = 461.0
 offset_right = 812.0
@@ -85,20 +85,20 @@ offset_bottom = 461.0
 scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 0
 
-[node name="pOneWrongWayIndicator" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("6_rcrto")]
+[node name="pOneWrongWayIndicator" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("8_lwaqe")]
 offset_left = -712.0
 offset_top = -340.0
 offset_right = -712.0
 offset_bottom = -340.0
 
-[node name="pTwoWrongWayIndicator" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("6_rcrto")]
+[node name="pTwoWrongWayIndicator" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("8_lwaqe")]
 offset_left = 232.0
 offset_top = -340.0
 offset_right = 232.0
 offset_bottom = -340.0
 playerFor = 1
 
-[node name="pTwoStoplight" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("5_t261b")]
+[node name="pTwoStoplight" parent="hSplitContainer/subViewportContainer/canvasLayer" instance=ExtResource("9_ufykr")]
 position = Vector2(1470, 536)
 scale = Vector2(4, 4)
 
@@ -122,7 +122,7 @@ render_target_update_mode = 4
 [node name="camera2d" type="Camera2D" parent="hSplitContainer/subViewportContainer2/subViewport"]
 zoom = Vector2(0.5, 0.5)
 
-[node name="snowballSplatter" parent="hSplitContainer/subViewportContainer2/subViewport" instance=ExtResource("10_iwjg5")]
+[node name="snowballSplatter" parent="hSplitContainer/subViewportContainer2/subViewport" instance=ExtResource("2_jq5ro")]
 z_index = 10
 position = Vector2(504, 543)
 scale = Vector2(1.8, 1.8)
@@ -133,23 +133,23 @@ handle_input_locally = false
 size = Vector2i(954, 1080)
 render_target_update_mode = 4
 
-[node name="snowballSplatter" parent="hSplitContainer/subViewportContainer2/snowballPort" instance=ExtResource("10_iwjg5")]
+[node name="snowballSplatter" parent="hSplitContainer/subViewportContainer2/snowballPort" instance=ExtResource("2_jq5ro")]
 z_index = 10
 position = Vector2(504, 543)
 scale = Vector2(1.8, 1.8)
 
 [node name="canvasLayer" type="CanvasLayer" parent="hSplitContainer/subViewportContainer2"]
 
-[node name="pTwoPowerupsHud" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("7_8we7n")]
+[node name="pTwoPowerupsHud" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("11_jn2kh")]
 position = Vector2(1808, 975)
 
-[node name="pTwoBlazeHud" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("3_2qf2f")]
+[node name="pTwoBlazeHud" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("12_80aar")]
 position = Vector2(20, 1000)
 
-[node name="pTwoCoinHud" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("5_5lhqp")]
+[node name="pTwoCoinHud" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("13_dj04t")]
 position = Vector2(970, 900)
 
-[node name="pOneStoplight" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("5_t261b")]
+[node name="pOneStoplight" parent="hSplitContainer/subViewportContainer2/canvasLayer" instance=ExtResource("9_ufykr")]
 position = Vector2(480, 536)
 scale = Vector2(4, 4)
 
@@ -170,11 +170,11 @@ offset_bottom = 1080.0
 
 [node name="canvasLayer" type="CanvasLayer" parent="."]
 
-[node name="pauseScreen" parent="canvasLayer" instance=ExtResource("8_ig87d")]
+[node name="pauseScreen" parent="canvasLayer" instance=ExtResource("14_d8mky")]
 
-[node name="royaltyMusic" parent="." instance=ExtResource("15_c8num")]
+[node name="royaltyMusic" parent="." instance=ExtResource("15_gycpo")]
 
-[node name="spotifyMusic" parent="." instance=ExtResource("16_bfptf")]
+[node name="spotifyMusic" parent="." instance=ExtResource("16_gsard")]
 
 [connection signal="_startRace" from="." to="hSplitContainer/subViewportContainer/canvasLayer/pTwoStoplight" method="_on_track_loader__start_race"]
 [connection signal="_startRace" from="." to="hSplitContainer/subViewportContainer2/canvasLayer/pOneStoplight" method="_on_track_loader__start_race"]

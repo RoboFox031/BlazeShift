@@ -1,11 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://bwu3f2og4hln5"]
+[gd_scene load_steps=17 format=3 uid="uid://bwu3f2og4hln5"]
 
-[ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://scripts/cars/parentCar.gd" id="1_bubl4"]
-[ext_resource type="Resource" uid="uid://nogcafh0k4qb" path="res://resources/carStats/basicCarStats.tres" id="2_fiv63"]
-[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://scripts/cars/terrainDetector.gd" id="3_p1olo"]
-[ext_resource type="Material" uid="uid://c0d1ogp2ifqly" path="res://resources/shadersAndMaterials/carMaterial.tres" id="5_t6ktb"]
-[ext_resource type="PackedScene" uid="uid://bydf7awxku2av" path="res://scenes/cars/tire.tscn" id="6_o0n8p"]
-[ext_resource type="Texture2D" uid="uid://ypmvk8doc3mr" path="res://assets/sprites/cars/Mustang/MustangYellow.png" id="13_ypl1a"]
+[ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_bubl4"]
+[ext_resource type="Resource" uid="uid://nogcafh0k4qb" path="res://Resources/carStats/basicCarStats.tres" id="2_fiv63"]
+[ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_p1olo"]
+[ext_resource type="Material" uid="uid://c0d1ogp2ifqly" path="res://Resources/shadersAndMaterials/carMaterial.tres" id="5_t6ktb"]
+[ext_resource type="PackedScene" uid="uid://bydf7awxku2av" path="res://Scenes/Cars/tire.tscn" id="6_o0n8p"]
+[ext_resource type="Script" path="res://Scripts/Cars/tire.gd" id="7_ernon"]
+[ext_resource type="Texture2D" uid="uid://ypmvk8doc3mr" path="res://Assets/Sprites/Cars/Mustang/MustangYellow.png" id="13_ypl1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y51"]
 size = Vector2(44, 98)
@@ -167,11 +168,13 @@ position = Vector2(25, 19)
 rotation = 1.5708
 scale = Vector2(0.25, 0.25)
 frame_progress = 0.101594
+script = ExtResource("7_ernon")
 
 [node name="tireR" parent="tires" instance=ExtResource("6_o0n8p")]
 position = Vector2(25, -19)
 rotation = 1.5708
 scale = Vector2(0.25, 0.25)
+script = ExtResource("7_ernon")
 
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]
@@ -179,3 +182,4 @@ scale = Vector2(0.25, 0.25)
 [connection signal="area_entered" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_entered"]
 [connection signal="area_exited" from="terrainDetector/terrainDetectorR" to="terrainDetector" method="_on_terrain_detector_r_area_exited"]
 [connection signal="area_entered" from="progressChecker" to="." method="updatePosition"]
+[connection signal="area_exited" from="progressChecker" to="." method="leavePosition"]

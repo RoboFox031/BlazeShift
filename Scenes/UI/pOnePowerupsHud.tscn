@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://bwvjkcqhdw5e6"]
 
-[ext_resource type="Script" uid="uid://o6qymwybpwqn" path="res://scripts/ui/pOnePowerupsHud.gd" id="1_ak3vq"]
-[ext_resource type="Texture2D" uid="uid://da1xc5ggm3prx" path="res://assets/sprites/powerups/blaze.png" id="1_bhts4"]
-[ext_resource type="Texture2D" uid="uid://45pmnrmfttd" path="res://assets/sprites/UI/blackBoxOutline.png" id="2_ik3pl"]
-[ext_resource type="Texture2D" uid="uid://bhpcdtwe1fjfm" path="res://assets/sprites/powerups/cyclone.png" id="3_h4jvw"]
-[ext_resource type="Texture2D" uid="uid://bvsqesqb1kkgo" path="res://assets/sprites/powerups/fireball/FB500-1.png" id="3_twdgi"]
-[ext_resource type="Texture2D" uid="uid://chu50x54x7gnw" path="res://assets/sprites/powerups/roadSpike.png" id="4_gt2p8"]
-[ext_resource type="Texture2D" uid="uid://mxqclthghmo4" path="res://assets/sprites/powerups/snowball.png" id="5_fpsgs"]
+[ext_resource type="Script" uid="uid://o6qymwybpwqn" path="res://Scripts/UI/pOnePowerupsHud.gd" id="1_ak3vq"]
+[ext_resource type="Texture2D" uid="uid://da1xc5ggm3prx" path="res://Assets/Sprites/Poweups/blaze.png" id="1_bhts4"]
+[ext_resource type="Texture2D" uid="uid://45pmnrmfttd" path="res://Assets/Sprites/UI/blackBoxOutline.png" id="2_ik3pl"]
+[ext_resource type="Texture2D" uid="uid://bhpcdtwe1fjfm" path="res://Assets/Sprites/Poweups/Spritesheets/Gravity-Sheet.png" id="3_h4jvw"]
+[ext_resource type="Texture2D" uid="uid://bvsqesqb1kkgo" path="res://Assets/Sprites/Poweups/fireball/FB500-1.png" id="3_twdgi"]
+[ext_resource type="Texture2D" uid="uid://chu50x54x7gnw" path="res://Assets/Sprites/Poweups/road Spike Icon.png" id="4_gt2p8"]
+[ext_resource type="Texture2D" uid="uid://mxqclthghmo4" path="res://Assets/Sprites/Poweups/snowball.png" id="5_fpsgs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekhb1"]
 atlas = ExtResource("1_bhts4")

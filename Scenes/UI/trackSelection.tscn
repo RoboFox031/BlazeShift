@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://b1a1hg3wj7wg"]
 
-[ext_resource type="Script" uid="uid://bfs6y3o88ea24" path="res://scripts/ui/trackSelection.gd" id="1_orx78"]
-[ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://assets/sprites/UI/titleScreenBackground.png" id="2_cmn5v"]
-[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://assets/fonts/college/collegec.ttf" id="3_x4n2t"]
-[ext_resource type="Texture2D" uid="uid://d23f07gjc1b01" path="res://assets/sprites/UI/ruralMapBackground.png" id="4_s22wx"]
-[ext_resource type="Texture2D" uid="uid://071ov745k868" path="res://assets/sprites/UI/basicTrackBackground.png" id="5_nbqvf"]
-[ext_resource type="Texture2D" uid="uid://babwu1hxlb0qj" path="res://assets/sprites/UI/iceTrackBackground.png" id="6_g3ra5"]
-[ext_resource type="PackedScene" uid="uid://icevwd4ir3d2" path="res://scenes/ui/uiSFX.tscn" id="7_sw51p"]
-[ext_resource type="Texture2D" uid="uid://d31sy2thgde5u" path="res://assets/sprites/UI/volcanoMapBackground.png" id="7_y4fag"]
-[ext_resource type="Texture2D" uid="uid://db4jefy0g2mw7" path="res://assets/sprites/UI/cityTrackBackground.png" id="8_spuve"]
+[ext_resource type="Script" uid="uid://bfs6y3o88ea24" path="res://Scripts/UI/trackSelection.gd" id="1_orx78"]
+[ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="2_cmn5v"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="3_x4n2t"]
+[ext_resource type="Texture2D" uid="uid://d23f07gjc1b01" path="res://Assets/Sprites/UI/ruralMapBackground.png" id="4_s22wx"]
+[ext_resource type="Texture2D" uid="uid://071ov745k868" path="res://Assets/Sprites/UI/basicTrackBackground.png" id="5_nbqvf"]
+[ext_resource type="Texture2D" uid="uid://babwu1hxlb0qj" path="res://Assets/Sprites/UI/iceTrackBackground.png" id="6_g3ra5"]
+[ext_resource type="PackedScene" uid="uid://icevwd4ir3d2" path="res://Scenes/UI/uiSFX.tscn" id="7_sw51p"]
+[ext_resource type="Texture2D" uid="uid://d31sy2thgde5u" path="res://Assets/Sprites/UI/volvanoMapBackground.png" id="7_y4fag"]
+[ext_resource type="Texture2D" uid="uid://db4jefy0g2mw7" path="res://Assets/Sprites/UI/cityTrackBackground.png" id="8_spuve"]
 
 [node name="trackSelection" type="Node2D"]
 script = ExtResource("1_orx78")

@@ -15,15 +15,11 @@ run/main_scene="uid://cbfmgub402k83"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[audio]
-
-buses/default_bus_layout="res://resources/default_bus_layout.tres"
-
 [autoload]
 
-globalVars="*res://scripts/globalVars.gd"
-trackEnums="*res://scripts/tracks/trackEnums.gd"
-globalUpgrades="*res://scripts/cars/globalUpgrades.gd"
+globalVars="*res://Scripts/globalVars.gd"
+trackEnums="*res://Scripts/Tracks/trackEnums.gd"
+globalUpgrades="*res://Scripts/Cars/globalUpgrades.gd"
 
 [display]
 

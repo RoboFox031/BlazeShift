@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcmxtn86hb31x"]
 
-[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://scripts/tracks/checkpointPath.gd" id="1_dabp1"]
+[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="1_dabp1"]
 
 [sub_resource type="Curve2D" id="Curve2D_xwdf3"]
 _data = {

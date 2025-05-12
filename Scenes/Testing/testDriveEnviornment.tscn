@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://btn8h1ucesygv"]
+
+[ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="1_5antp"]
+[ext_resource type="PackedScene" uid="uid://bwu3f2og4hln5" path="res://Scenes/Cars/parentCar.tscn" id="2_6flfi"]
+[ext_resource type="Script" uid="uid://cm4c08konxr5r" path="res://Scripts/Tracks/terrain.gd" id="3_qj48c"]
+[ext_resource type="PackedScene" uid="uid://bwffy2tfu4rbe" path="res://Scenes/UI/pOneBlazeHud.tscn" id="4_tgek6"]
+[ext_resource type="PackedScene" uid="uid://co6q4klcpljhi" path="res://Scenes/UI/pTwoBlazeHud.tscn" id="5_ex8ib"]
+
+[node name="TestDriveEnviornment" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.439049, 0.439049, 0.439049, 1)
+scale = Vector2(50, 50)
+texture = ExtResource("1_5antp")
+
+[node name="parentCar" parent="." instance=ExtResource("2_6flfi")]
+position = Vector2(-510, -4)
+
+[node name="Offroad" type="Area2D" parent="."]
+modulate = Color(0.0100784, 0.498925, 0, 1)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_qj48c")
+
+[node name="collisionPolygon2d" type="CollisionPolygon2D" parent="Offroad"]
+position = Vector2(2036, -173)
+polygon = PackedVector2Array(22, -159, -105, -161, -217, -78, -152, 58, -10, 96, 72, 57, 170, 68, 351, 100, 500, 136, 582, 383, 738, 413, 776, 216, 777, -17, 757, -157, 655, -245, 578, -224, 360, -188, 144, -172)
+
+[node name="Ice" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_qj48c")
+myTerrain = 2
+
+[node name="collisionPolygon2d" type="CollisionPolygon2D" parent="Ice"]
+modulate = Color(0.215238, 1.54018e-05, 0.86549, 1)
+position = Vector2(118, -109)
+polygon = PackedVector2Array(-258, -82, -365, 40, -410, 196, -17, 602, 346, 851, 1210, 855, 599, -81, 269, -183, 53, -181)
+
+[node name="pOneBlazeHud" parent="." instance=ExtResource("4_tgek6")]
+position = Vector2(-624, 204)
+
+[node name="pTwoBlazeHud" parent="." instance=ExtResource("5_ex8ib")]

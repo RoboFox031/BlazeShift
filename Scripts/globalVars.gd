@@ -68,7 +68,6 @@ var basicScores := {}
 var ruralScores := {}
 var iceScores := {}
 var volcanoScores := {}
-var cityScores := {}
 var organizedScores := {}
 #name,score,track
 
@@ -78,7 +77,7 @@ var organizedScores := {}
 func saveScores(trackName,playerName,time):
 	var timeScore = ConfigFile.new()
 	if trackName == 'basicTrack':
-		var error = timeScore.load('res://scores/basicScores.cfg')
+		var error = timeScore.load('res://basicScores.cfg')
 		if timeScore.has_section(playerName):
 			if timeScore.get_value(playerName,'time') >= time:
 				timeScore.set_value(playerName, 'time', time)
@@ -86,10 +85,9 @@ func saveScores(trackName,playerName,time):
 				pass
 		else:
 			timeScore.set_value(playerName, 'time', time)
-		var save_error = timeScore.save('res://scores/basicScores.cfg')
-		
+		var save_error = timeScore.save('res://basicScores.cfg')
 	elif trackName == 'ruralTrack':
-		var error = timeScore.load('res://scores/ruralScores.cfg')
+		var error = timeScore.load('res://ruralScores.cfg')
 		if timeScore.has_section(playerName):
 			if timeScore.get_value(playerName,'time') >= time:
 				timeScore.set_value(playerName, 'time', time)
@@ -97,10 +95,9 @@ func saveScores(trackName,playerName,time):
 				pass
 		else:
 			timeScore.set_value(playerName, 'time', time)
-		var save_error = timeScore.save('res://scores/ruralScores.cfg')
-		
+		var save_error = timeScore.save('res://ruralScores.cfg')
 	elif trackName == 'iceTrack':
-		var error = timeScore.load('res://scores/iceScores.cfg')
+		var error = timeScore.load('res://iceScores.cfg')
 		if timeScore.has_section(playerName):
 			if timeScore.get_value(playerName,'time') >= time:
 				timeScore.set_value(playerName, 'time', time)
@@ -108,10 +105,9 @@ func saveScores(trackName,playerName,time):
 				pass
 		else:
 			timeScore.set_value(playerName, 'time', time)
-		var save_error = timeScore.save('res://scores/iceScores.cfg')
-		
+		var save_error = timeScore.save('res://iceScores.cfg')
 	elif trackName == 'volcanoTrack':
-		var error = timeScore.load('res://scores/volcanoScores.cfg')
+		var error = timeScore.load('res://volcanoScores.cfg')
 		if timeScore.has_section(playerName):
 			if timeScore.get_value(playerName,'time') >= time:
 				timeScore.set_value(playerName, 'time', time)
@@ -119,25 +115,14 @@ func saveScores(trackName,playerName,time):
 				pass
 		else:
 			timeScore.set_value(playerName, 'time', time)
-		var save_error = timeScore.save('res://scores/volcanoScores.cfg')
-	
-	elif trackName == 'cityTrack':
-		var error = timeScore.load('res://scores/cityScores.cfg')
-		if timeScore.has_section(playerName):
-			if timeScore.get_value(playerName,'time') >= time:
-				timeScore.set_value(playerName, 'time', time)
-			else:
-				pass
-		else:
-			timeScore.set_value(playerName, 'time', time)
-		var save_error = timeScore.save('res://scores/cityScores.cfg')	
+		var save_error = timeScore.save('res://volcanoScores.cfg')
 		pass
 		
 func loadScores(trackName):
 	var timeScore = ConfigFile.new()
 	if trackName == 'basicTrack':
 		print('loadScores')
-		var list = timeScore.load("res://scores/basicScores.cfg")
+		var list = timeScore.load("res://basicScores.cfg")
 		if list == OK:
 			var players = timeScore.get_sections()
 			for x in players:
@@ -147,7 +132,7 @@ func loadScores(trackName):
 			
 	elif trackName == 'ruralTrack':
 		print('loadScores')
-		var list = timeScore.load("res://scores/ruralScores.cfg")
+		var list = timeScore.load("res://ruralScores.cfg")
 		if list == OK:
 			var players = timeScore.get_sections()
 			for x in players:
@@ -156,7 +141,7 @@ func loadScores(trackName):
 			return sortScores(ruralScores)
 			
 	elif trackName == 'iceTrack':
-		var list = timeScore.load("res://scores/iceScores.cfg")
+		var list = timeScore.load("res://iceScores.cfg")
 		if list == OK:
 			var players = timeScore.get_sections() 
 			for x in players:
@@ -165,7 +150,7 @@ func loadScores(trackName):
 			return sortScores(iceScores)
 			
 	elif trackName == 'volcanoTrack':
-		var list = timeScore.load("res://scores/volcanoScores.cfg")
+		var list = timeScore.load("res://volcanoScores.cfg")
 		if list == OK:
 			var players = timeScore.get_sections() 
 			for x in players:
@@ -173,14 +158,23 @@ func loadScores(trackName):
 				volcanoScores[x] = float(score)
 			return sortScores(volcanoScores)
 			
-	elif trackName == 'cityTrack':
-		var list = timeScore.load("res://scores/cityScores.cfg")
+	elif trackName == 'testingTrack':
+		var list = timeScore.load("res://basicScores.cfg")
 		if list == OK:
 			var players = timeScore.get_sections() 
 			for x in players:
 				var score = timeScore.get_value(x,'time')
-				cityScores[x] = float(score)
-			return sortScores(cityScores)
+				basicScores[x] = float(score)
+			return sortScores(basicScores)
+			
+	elif trackName == 'overall':
+		var list = timeScore.load("res://basicScores.cfg")
+		if list == OK:
+			var players = timeScore.get_sections() 
+			for x in players:
+				var score = timeScore.get_value(x,'time')
+				basicScores[x] = float(score)
+			return sortScores(basicScores)
 
 
 

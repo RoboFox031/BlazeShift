@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://d141ibd8at8su"]
 
-[ext_resource type="Script" uid="uid://d8e2euh8mfri" path="res://scripts/pickups/roadSpikes.gd" id="1_r7n71"]
-[ext_resource type="Texture2D" uid="uid://b7pu883n8gtrf" path="res://assets/sprites/powerups/spikeStrip.png" id="2_t38l2"]
+[ext_resource type="Script" uid="uid://d8e2euh8mfri" path="res://Scripts/Pickups/road_spikes.gd" id="1_r7n71"]
+[ext_resource type="Texture2D" uid="uid://b7pu883n8gtrf" path="res://Assets/Sprites/Poweups/Spike Strip (1).png" id="2_t38l2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_42c4f"]
 atlas = ExtResource("2_t38l2")

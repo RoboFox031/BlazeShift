@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://xmhincb25u0y"]
 
-[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://assets/fonts/college/collegec.ttf" id="1_r72jw"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="1_r72jw"]
 
 [resource]
 default_font = ExtResource("1_r72jw")

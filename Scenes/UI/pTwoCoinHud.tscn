@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2xqco54jbt6w"]
 
-[ext_resource type="Script" uid="uid://bob1tcunk7crj" path="res://scripts/ui/pTwoCoinHud.gd" id="1_7m4jv"]
-[ext_resource type="Texture2D" uid="uid://bubvui6wq7y2v" path="res://assets/sprites/powerups/coin.png" id="2_8f8jc"]
-[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://assets/fonts/college/collegec.ttf" id="3_u7x61"]
+[ext_resource type="Script" uid="uid://bob1tcunk7crj" path="res://Scripts/UI/pTwoCoinHud.gd" id="1_7m4jv"]
+[ext_resource type="Texture2D" uid="uid://bubvui6wq7y2v" path="res://Assets/Sprites/Poweups/coin.png" id="2_8f8jc"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="3_u7x61"]
 
 [node name="pOneCoinHud" type="Node2D"]
 script = ExtResource("1_7m4jv")

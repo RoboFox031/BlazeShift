@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://rxh701q0yjt3"
-path="res://.godot/imported/stoplightSounds.mp3-1fae150cef2e0a25cbfee511220f755d.mp3str"
+path="res://.godot/imported/stoplightSounds.mp3-a6ec0358ec0b180c1a1263033911eb50.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/uiSFX/stoplightSounds.mp3"
-dest_files=["res://.godot/imported/stoplightSounds.mp3-1fae150cef2e0a25cbfee511220f755d.mp3str"]
+source_file="res://Assets/Sounds/uiSFX/stoplightSounds.mp3"
+dest_files=["res://.godot/imported/stoplightSounds.mp3-a6ec0358ec0b180c1a1263033911eb50.mp3str"]
 
 [params]
 

@@ -410,13 +410,13 @@ func resetMovement():
 func startBoost():
 	if currentOwner==playerChoices.p1 and globalVars.p1BlazeCurrent>0:
 		currentAcceleration=baseAcceleration*3
-		currentTopSpeed=baseTopSpeed*2
-		currentTurnPower=baseTurnPower*.5
+		currentTopSpeed=baseTopSpeed*1.5
+		currentTurnPower=baseTurnPower*.8
 		boosting=true
 	elif currentOwner==playerChoices.p2 and globalVars.p2BlazeCurrent>0:
 		currentAcceleration=baseAcceleration*3
-		currentTopSpeed=baseTopSpeed*2
-		currentTurnPower=baseTurnPower*.5
+		currentTopSpeed=baseTopSpeed*1.5
+		currentTurnPower=baseTurnPower*.8
 		boosting=true
 
 

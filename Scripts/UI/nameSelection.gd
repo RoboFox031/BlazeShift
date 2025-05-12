@@ -94,7 +94,7 @@ func _process(delta: float) -> void:
 		else:
 			playerOneReady = false
 		_updateCleanNameLabels('one')
-		_updateReadyScreen()
+		_getReady()
 	if playerTwoReady == false:
 		if Input.is_action_just_pressed('p2_down'):
 			if pTwoSelected + 1 > len(letters)-1:
@@ -136,7 +136,7 @@ func _process(delta: float) -> void:
 		else:
 			playerTwoReady = false
 		_updateCleanNameLabels('two')
-		_updateReadyScreen()
+		_getReady()
 		
 func _updateCharacterDisplays():
 	$uiSFX.playCursorMoveSound()
@@ -212,7 +212,7 @@ func _checkCleanName(name):
 			return true
 
 
-func _updateReadyScreen():
+func _getReady():
 	if playerOneReady == true:
 		$playerOneReadyLabel.text = 'confirmed press start again to undo'
 		$playerOneReadyLabel.add_theme_color_override("font_color",Color.GREEN)

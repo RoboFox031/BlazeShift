@@ -204,13 +204,13 @@ func _process(delta: float) -> void:
 			pOneReady = true
 		else:
 			pOneReady = false
-		_updateReadyScreen()
+		getReady()
 	if Input.is_action_just_pressed("p2_start"):
 		if pTwoReady == false and carNames[globalVars.pTwoCarSelected].to_lower() in pTwoOwned:
 			pTwoReady = true
 		else:
 			pTwoReady = false
-		_updateReadyScreen()
+		getReady()
 		
 	if (Input.is_action_just_pressed("p1_down") or Input.is_action_just_pressed("p1_up")) and pOneReady == false:
 		
@@ -462,7 +462,7 @@ func _changeGlobalVars():
 	globalVars.playerTwoCarSprite = carStringNames[globalVars.pTwoCarSelected] + colors[globalVars.pTwoColorSelected].capitalize()
 
 #updates ready screen
-func _updateReadyScreen():
+func getReady():
 	$uiSFX.playSelectSound()
 	await get_tree().create_timer(0.5).timeout 
 	if pOneReady == true:

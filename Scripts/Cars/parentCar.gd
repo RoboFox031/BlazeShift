@@ -410,13 +410,13 @@ func resetMovement():
 func startBoost():
 	if currentOwner==playerChoices.p1 and globalVars.p1BlazeCurrent>0:
 		currentAcceleration=baseAcceleration*3
-		currentTopSpeed=baseTopSpeed*2
-		currentTurnPower=baseTurnPower*.5
+		currentTopSpeed=baseTopSpeed*1.5
+		currentTurnPower=baseTurnPower*.8
 		boosting=true
 	elif currentOwner==playerChoices.p2 and globalVars.p2BlazeCurrent>0:
 		currentAcceleration=baseAcceleration*3
-		currentTopSpeed=baseTopSpeed*2
-		currentTurnPower=baseTurnPower*.5
+		currentTopSpeed=baseTopSpeed*1.5
+		currentTurnPower=baseTurnPower*.8
 		boosting=true
 
 
@@ -492,7 +492,7 @@ func updateTerrain(newTerrain):
 			print("hazard")
 			respawn()
 
-func updatePosition(area:Area2D):
+func updatePosition(area:checkpoint):
 	if area is checkpoint:
 		#Adds the area to the array
 		touchingProgress.append(area)
@@ -566,7 +566,7 @@ func updatePosition(area:Area2D):
 			# print(currentOwnerStr+" progress: "+str(currentProgress))#+", point: " +str(progressPoint))
 
 #This function removes progress points you are touching from the array they are in
-func leavePosition(area:Area2D):
+func leavePosition(area:checkpoint):
 	if area is checkpoint:
 		touchingProgress.erase(area)
 

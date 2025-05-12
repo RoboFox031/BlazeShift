@@ -44,26 +44,26 @@ func _process(delta: float) -> void:
 			pOneReady = true
 		else:
 			pOneReady = false
-		_updateReadyScreen()
+		_getReady()
 	if Input.is_action_just_pressed("p2_start"):
 		if pTwoReady == false and pTwoBack == false:
 			pTwoReady = true
 		else:
 			pTwoReady = false
-		_updateReadyScreen()
+		_getReady()
 	#back screen inputs
 	if Input.is_action_just_pressed("p1_b"):
 		if pOneBack == false and pOneReady == false:
 			pOneBack = true
 		else:
 			pOneBack = false
-		_updateReadyScreen()
+		_getReady()
 	if Input.is_action_just_pressed("p2_b"):
 		if pTwoBack == false and pTwoReady == false:
 			pTwoBack = true
 		else:
 			pTwoBack = false
-		_updateReadyScreen()
+		_getReady()
 	#selecting upgrade inputs
 	if Input.is_action_just_pressed('p1_down') and pOneReady == false:
 		if pOneUpgradeSelected + 1 < len(pOneUpgrades):
@@ -169,7 +169,7 @@ func _updateUpgradeSprites():
 	add_child(playerCarSpriteTwo)'''
 	
 #updates the ready screen
-func _updateReadyScreen():
+func _getReady():
 	$uiSFX.playSelectSound()
 	await get_tree().create_timer(0.5).timeout 
 	if pOneReady == true:

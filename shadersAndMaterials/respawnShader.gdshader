@@ -11,6 +11,8 @@ void fragment() {
 	float brightness=texture(dissolveNoise,UV).r;
 	COLOR=textureColor;
 	COLOR.a*=step(disolveVar,brightness);
+	float disolveDiff=abs(brightness-disolveVar);
+	COLOR.rgb+=vec3(1,.6,0)*step(disolveDiff,0.05);
 	// Called for every pixel the material is visible on.
 }
 

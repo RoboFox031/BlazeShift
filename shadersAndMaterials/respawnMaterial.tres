@@ -3,7 +3,8 @@
 [ext_resource type="Shader" uid="uid://dq26j3thv54af" path="res://shadersAndMaterials/respawnShader.gdshader" id="1_73v1c"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_73v1c"]
-seed = 10
+seed = 99
+frequency = 0.001
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2reyb"]
 noise = SubResource("FastNoiseLite_73v1c")

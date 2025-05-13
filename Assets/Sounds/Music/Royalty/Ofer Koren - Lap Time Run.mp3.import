@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bxv3k6hhf4rhe"
-path="res://.godot/imported/Ofer Koren - Lap Time Run.mp3-eb304a27c22f1976457a60af7a9f5db0.mp3str"
+path="res://.godot/imported/Ofer Koren - Lap Time Run.mp3-488874f058c8fd9c0126e69cc9533260.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/music/royalty/Ofer Koren - Lap Time Run.mp3"
-dest_files=["res://.godot/imported/Ofer Koren - Lap Time Run.mp3-eb304a27c22f1976457a60af7a9f5db0.mp3str"]
+source_file="res://Assets/Sounds/Music/Royalty/Ofer Koren - Lap Time Run.mp3"
+dest_files=["res://.godot/imported/Ofer Koren - Lap Time Run.mp3-488874f058c8fd9c0126e69cc9533260.mp3str"]
 
 [params]
 

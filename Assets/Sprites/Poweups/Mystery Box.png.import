@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhesx5x4bna1d"
-path="res://.godot/imported/Mystery Box.png-ddf4db6dc188a9fbe5bf259251ed5a8a.ctex"
+path="res://.godot/imported/Mystery Box.png-f24967ccea3dfe74bafb837a9c971445.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Poweups/Mystery Box.png"
-dest_files=["res://.godot/imported/Mystery Box.png-ddf4db6dc188a9fbe5bf259251ed5a8a.ctex"]
+source_file="res://Assets/Sprites/Poweups/Mystery Box.png"
+dest_files=["res://.godot/imported/Mystery Box.png-f24967ccea3dfe74bafb837a9c971445.ctex"]
 
 [params]
 

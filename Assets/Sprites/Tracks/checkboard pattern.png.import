@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dinjuixewbhxo"
-path="res://.godot/imported/checkboard pattern.png-bab5e7008655c522e7b4fb2b10d0693f.ctex"
+path="res://.godot/imported/checkboard pattern.png-4dc7f9362551c7a6e36f58619e6fdf24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/checkboard pattern.png"
-dest_files=["res://.godot/imported/checkboard pattern.png-bab5e7008655c522e7b4fb2b10d0693f.ctex"]
+source_file="res://assets/sprites/tracks/checkboard pattern.png"
+dest_files=["res://.godot/imported/checkboard pattern.png-4dc7f9362551c7a6e36f58619e6fdf24.ctex"]
 
 [params]
 

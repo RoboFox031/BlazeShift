@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ctj7iyf1nkt4t"
-path="res://.godot/imported/SpotifyMate.com - Away - Plini.mp3-38b9ea85c02a1ec42cbd32071317c94d.mp3str"
+path="res://.godot/imported/SpotifyMate.com - Away - Plini.mp3-4c8218df256be3ccacedae91318e1d7a.mp3str"
 
 [deps]
 
-source_file="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Away - Plini.mp3"
-dest_files=["res://.godot/imported/SpotifyMate.com - Away - Plini.mp3-38b9ea85c02a1ec42cbd32071317c94d.mp3str"]
+source_file="res://assets/sounds/music/spotify/SpotifyMate.com - Away - Plini.mp3"
+dest_files=["res://.godot/imported/SpotifyMate.com - Away - Plini.mp3-4c8218df256be3ccacedae91318e1d7a.mp3str"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://be7i582mkc3u7"
-path="res://.godot/imported/Regen.png-042a54b3f86a62b2340c17e8afa0f299.ctex"
+path="res://.godot/imported/Regen.png-55d6191bf3696c670a412cd84ab81853.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Poweups/Spritesheets/Regen.png"
-dest_files=["res://.godot/imported/Regen.png-042a54b3f86a62b2340c17e8afa0f299.ctex"]
+source_file="res://assets/sprites/Poweups/Spritesheets/Regen.png"
+dest_files=["res://.godot/imported/Regen.png-55d6191bf3696c670a412cd84ab81853.ctex"]
 
 [params]
 

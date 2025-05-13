@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dogd3hglgokrv"
-path="res://.godot/imported/NSXRed.png-a65ba8ee2607a417f0914313d3aea0bf.ctex"
+path="res://.godot/imported/NSXRed.png-da19144c36eb42d30312a6f7c2c56ea1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/NSX/NSXRed.png"
-dest_files=["res://.godot/imported/NSXRed.png-a65ba8ee2607a417f0914313d3aea0bf.ctex"]
+source_file="res://assets/sprites/cars/NSX/NSXRed.png"
+dest_files=["res://.godot/imported/NSXRed.png-da19144c36eb42d30312a6f7c2c56ea1.ctex"]
 
 [params]
 

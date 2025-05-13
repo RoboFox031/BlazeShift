@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5m7pd6d4detp"
-path="res://.godot/imported/fence.png-0254ca063608bba371bb81b4e3334581.ctex"
+path="res://.godot/imported/fence.png-d2ae8ef8514235e8223a30db093ad9f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/christmas-village-asset-pack/fence.png"
-dest_files=["res://.godot/imported/fence.png-0254ca063608bba371bb81b4e3334581.ctex"]
+source_file="res://assets/sprites/tracks/christmas-village-asset-pack/fence.png"
+dest_files=["res://.godot/imported/fence.png-d2ae8ef8514235e8223a30db093ad9f2.ctex"]
 
 [params]
 

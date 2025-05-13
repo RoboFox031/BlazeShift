@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhmqhj8vi23ux"
-path="res://.godot/imported/Eletric Aura.png-6d83bf5a462247f1f4f0d0b9ce1a30a4.ctex"
+path="res://.godot/imported/Eletric Aura.png-86e50dde53e5dc3663a568f51a17755d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Poweups/Spritesheets/Eletric Aura.png"
-dest_files=["res://.godot/imported/Eletric Aura.png-6d83bf5a462247f1f4f0d0b9ce1a30a4.ctex"]
+source_file="res://assets/sprites/Poweups/Spritesheets/Eletric Aura.png"
+dest_files=["res://.godot/imported/Eletric Aura.png-86e50dde53e5dc3663a568f51a17755d.ctex"]
 
 [params]
 

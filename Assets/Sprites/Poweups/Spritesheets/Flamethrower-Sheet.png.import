@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmidbfbgmjwml"
-path="res://.godot/imported/Flamethrower-Sheet.png-61d0d8e7167ecc5e8624a91ab697372f.ctex"
+path="res://.godot/imported/Flamethrower-Sheet.png-f0ff2c2af28c30979ec9b3a2bc90414f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Poweups/Spritesheets/Flamethrower-Sheet.png"
-dest_files=["res://.godot/imported/Flamethrower-Sheet.png-61d0d8e7167ecc5e8624a91ab697372f.ctex"]
+source_file="res://assets/sprites/Poweups/Spritesheets/Flamethrower-Sheet.png"
+dest_files=["res://.godot/imported/Flamethrower-Sheet.png-f0ff2c2af28c30979ec9b3a2bc90414f.ctex"]
 
 [params]
 

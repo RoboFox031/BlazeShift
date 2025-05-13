@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csgqyta2qgjo8"
-path="res://.godot/imported/192 racetrack Divided.svg-68b2f2460a29c725807edce3af0b6f98.ctex"
+path="res://.godot/imported/192 racetrack Divided.svg-b0b2c59a8309b90689309c323480ffe4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/192 racetrack Divided.svg"
-dest_files=["res://.godot/imported/192 racetrack Divided.svg-68b2f2460a29c725807edce3af0b6f98.ctex"]
+source_file="res://assets/sprites/tracks/192 racetrack Divided.svg"
+dest_files=["res://.godot/imported/192 racetrack Divided.svg-b0b2c59a8309b90689309c323480ffe4.ctex"]
 
 [params]
 

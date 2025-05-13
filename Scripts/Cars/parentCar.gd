@@ -585,7 +585,7 @@ func respawn():
 #Makes the player be on the next lap
 func nextLap():
 	#If you are on lap 3, end the race
-	if currentLap==3:
+	if currentLap==1:
 		if currentOwnerStr == 'p1':
 			globalVars.pOneDone = true
 			if globalVars.pTwoLastRacePlacement == null:
@@ -646,7 +646,7 @@ func finishRace():
 	var trackName = globalVars.track.instantiate().name
 	if currentOwnerStr == 'p1':
 		globalVars.saveScores(trackName,globalVars.pOneName,globalVars.pOneLastRaceTime)
-	if currentOwnerStr == 'p1':
+	if currentOwnerStr == 'p2':
 		globalVars.saveScores(trackName,globalVars.pTwoName,globalVars.pTwoLastRaceTime)
 	get_tree().change_scene_to_file("res://Scenes/UI/raceFinishScreen.tscn")
 	print("ur done!")

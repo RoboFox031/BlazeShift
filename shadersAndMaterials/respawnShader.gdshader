@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float disolveVar:hint_range(0.0, 1.0);
+uniform float disolveVar:hint_range(0.0, 1.1);
 uniform sampler2D dissolveNoise;
 uniform vec4 dissolveColor:source_color;
 void vertex() {
@@ -9,7 +9,7 @@ void vertex() {
 
 void fragment() {
 	vec4 textureColor=texture(TEXTURE,UV);
-	float brightness=texture(dissolveNoise,UV).r;
+	float brightness=texture(dissolveNoise,UV).r+.1;
 	COLOR=textureColor;
 	COLOR.a*=step(disolveVar,brightness);
 	float disolveDiff=abs(brightness-disolveVar);

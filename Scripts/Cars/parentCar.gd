@@ -143,6 +143,9 @@ var trackMaxDist=1000
 signal startReversing
 signal stopReversing
 
+#stores if this specific car can move
+var localCanMove:bool=true
+
 func _ready() -> void:
 	#for testing upgrades
 	#for i in 5:
@@ -225,7 +228,7 @@ func _physics_process(delta):
 		
 		
 	#Like a car, you can only turn while moving, and going backwards reverses your turn
-	if globalVars.canMove == true and paused == false:
+	if globalVars.canMove == true and paused == false and localCanMove==true:
 		turnOutput= (currentLinSpeed/currentTopSpeed)*currentTurnForce
 		rotation_degrees+=turnOutput
 	
@@ -239,7 +242,7 @@ func _physics_process(delta):
 	driftVector=Vector2(move_toward(driftVector.x,fwdVector.x,traction),move_toward(driftVector.y,fwdVector.y,traction))
 	velocity=(fwdVector+driftVector)/2
 	
-	if globalVars.canMove == true and paused == false:
+	if globalVars.canMove == true and paused == false and localCanMove==true:
 		move_and_slide()
 	# print("Fwd: "+str(fwdVector))
 	# print("Drift: "+str(driftVector))
@@ -355,7 +358,7 @@ func usePowerup():
 
 func _input(event):
 	#Allows boost
-	if globalVars.canMove == true and paused == false:
+	if globalVars.canMove == true and paused == false and localCanMove==true:
 		if Input.is_action_just_pressed(currentOwnerStr+"_x"):
 			
 			startBoost()
@@ -549,7 +552,7 @@ func updatePosition(area:checkpoint):
 					largestLegalProgress=checkpoints.progress
 		#If none of the progress point you are touching result in legal moves, respawn
 		if anyLegalMove==false:
-			#respawn()
+			respawn('illegal')
 			pass
 		#If you didn't skip and aren't reversing, then update the progress
 		elif isReverse==false:
@@ -572,15 +575,29 @@ func leavePosition(area:checkpoint):
 		touchingProgress.erase(area)
 
 #This function respawns the car at the last legal location
-func respawn():
+func respawn(reason:String='weapon'):
 	#Resets the player's speed
 	currentLinSpeed=0
 	resetMovement()
+	#locks the player's movement
+	localCanMove=false
+	#if the player is respawns due to a weapon, play the smoke animation
+	if reason=='weapon':
+		respawnAnimator.play("smokeRespawn")
+	#if the player respawns due to going off the track, play the didsolve animation
+	elif reason=='illegal':
+		respawnAnimator.play("dissolveRespawn")
+	#Wait for the animation to finish
+	await(respawnAnimator.animation_finished)
 	#Teleports the player
 	global_position=progressPoint
 	global_rotation=progressRot
+	#Makes the player visible again
+	respawnAnimator.play("RESET")
 	#resets reverse count
 	reverseCount=0
+	#unlock player movement
+	localCanMove=true
 	pass
 
 #Makes the player be on the next lap
@@ -639,7 +656,7 @@ func checkTrackDistance():
 	var currentDistance=global_position.distance_to(progressPoint)
 	#if the player is too far away, respawn
 	if (currentDistance>trackMaxDist):
-		respawn()
+		respawn('illegal')
 		
 
 #finishes the race

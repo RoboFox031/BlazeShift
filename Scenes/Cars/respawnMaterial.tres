@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bmyelq7hphgfk"]
 
-[ext_resource type="Shader" uid="uid://dq26j3thv54af" path="res://shadersAndMaterials/respawnShader.gdshader" id="1_73v1c"]
+[ext_resource type="Shader" uid="uid://dq26j3thv54af" path="res://shadersAndMaterials/respawnShader.gdshader" id="1_kkd3w"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_73v1c"]
 frequency = 0.0071
@@ -9,7 +9,8 @@ frequency = 0.0071
 noise = SubResource("FastNoiseLite_73v1c")
 
 [resource]
-shader = ExtResource("1_73v1c")
+resource_local_to_scene = true
+shader = ExtResource("1_kkd3w")
 shader_parameter/disolveVar = 0.0
 shader_parameter/dissolveNoise = SubResource("NoiseTexture2D_2reyb")
 shader_parameter/dissolveColor = Color(1, 0.423529, 0, 1)

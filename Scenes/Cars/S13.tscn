@@ -1,6 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://dnoj3j4pbv0xf"]
+[gd_scene load_steps=30 format=3 uid="uid://dnoj3j4pbv0xf"]
 
-[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://shadersAndMaterials/respawnMaterial.tres" id="1_c87eh"]
+[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://Scenes/Cars/respawnMaterial.tres" id="1_c87eh"]
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_krq1h"]
 [ext_resource type="Resource" uid="uid://b11f7b5sh5urm" path="res://Resources/carStats/s13Stats.tres" id="2_c87eh"]
 [ext_resource type="Texture2D" uid="uid://cxho7kl4koftr" path="res://Assets/Sprites/Cars/S13/S13Black.png" id="2_e0f06"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://3a1wuvq3kodg" path="res://Assets/Sprites/Cars/S13/S13White.png" id="8_lrxqk"]
 [ext_resource type="Texture2D" uid="uid://07sdktfft6a8" path="res://Assets/Sprites/Cars/S13/S13Yellow.png" id="9_n8slv"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="9_pyvhv"]
-[ext_resource type="Texture2D" uid="uid://dsitif05hpi0y" path="res://Assets/Sprites/Cars/Smoke/smoke.png" id="13_sb6u4"]
+[ext_resource type="PackedScene" uid="uid://bjqnojw0nj2fm" path="res://Scenes/Cars/smoke.tscn" id="13_sb6u4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2lkgh"]
 atlas = ExtResource("2_e0f06")
@@ -122,20 +122,6 @@ size = Vector2(8.99993, 13.9999)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tr4uc"]
 size = Vector2(109.5, 50)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o3quo"]
-particles_animation = true
-particles_anim_h_frames = 3
-particles_anim_v_frames = 3
-particles_anim_loop = false
-
-[sub_resource type="Curve" id="Curve_c87eh"]
-_data = [Vector2(0.932161, 0.528382), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Gradient" id="Gradient_sb6u4"]
-offsets = PackedFloat32Array(0.781977, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
-
 [sub_resource type="Animation" id="Animation_8krrb"]
 length = 0.001
 tracks/0/type = "value"
@@ -184,10 +170,10 @@ tracks/0/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 1.0]
+"values": [0.0, 1.1]
 }
 
 [sub_resource type="Animation" id="Animation_ekqyh"]
@@ -280,34 +266,13 @@ position = Vector2(5.25, 0)
 shape = SubResource("RectangleShape2D_tr4uc")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
 
-[node name="smoke" type="CPUParticles2D" parent="."]
-material = SubResource("CanvasItemMaterial_o3quo")
-position = Vector2(6, 0)
-emitting = false
-amount = 50
-texture = ExtResource("13_sb6u4")
-one_shot = true
-explosiveness = 1.0
-lifetime_randomness = 1.0
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 60.0
-initial_velocity_max = 130.0
-angular_velocity_min = -50.0
-angular_velocity_max = 50.0
-damping_min = 50.0
-damping_max = 100.0
-scale_amount_min = 0.1
-scale_amount_max = 0.2
-scale_amount_curve = SubResource("Curve_c87eh")
-color_ramp = SubResource("Gradient_sb6u4")
-anim_speed_min = 0.3
-anim_speed_max = 0.3
+[node name="smoke" parent="." instance=ExtResource("13_sb6u4")]
 
 [node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_rak18")
 }
+autoplay = "RESET"
 
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]

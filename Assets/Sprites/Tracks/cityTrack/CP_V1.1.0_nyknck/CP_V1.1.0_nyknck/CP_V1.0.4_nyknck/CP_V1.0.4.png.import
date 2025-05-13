@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tkdnu7aogg3c"
-path="res://.godot/imported/CP_V1.0.4.png-1f002002a85c31d5f537eb8e7a45a2a1.ctex"
+path="res://.godot/imported/CP_V1.0.4.png-cbd5cdea757b371a5c16eb3947679393.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/cityTrack/CP_V1.1.0_nyknck/CP_V1.1.0_nyknck/CP_V1.0.4_nyknck/CP_V1.0.4.png"
-dest_files=["res://.godot/imported/CP_V1.0.4.png-1f002002a85c31d5f537eb8e7a45a2a1.ctex"]
+source_file="res://Assets/Sprites/Tracks/cityTrack/CP_V1.1.0_nyknck/CP_V1.1.0_nyknck/CP_V1.0.4_nyknck/CP_V1.0.4.png"
+dest_files=["res://.godot/imported/CP_V1.0.4.png-cbd5cdea757b371a5c16eb3947679393.ctex"]
 
 [params]
 

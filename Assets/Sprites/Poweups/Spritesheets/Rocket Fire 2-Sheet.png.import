@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mivmd7m4xlqr"
-path="res://.godot/imported/Rocket Fire 2-Sheet.png-be39e596aaa283730fba36ae3d98f3ab.ctex"
+path="res://.godot/imported/Rocket Fire 2-Sheet.png-bba9943c82ce60dccf595217b990bae0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Poweups/Spritesheets/Rocket Fire 2-Sheet.png"
-dest_files=["res://.godot/imported/Rocket Fire 2-Sheet.png-be39e596aaa283730fba36ae3d98f3ab.ctex"]
+source_file="res://Assets/Sprites/Poweups/Spritesheets/Rocket Fire 2-Sheet.png"
+dest_files=["res://.godot/imported/Rocket Fire 2-Sheet.png-bba9943c82ce60dccf595217b990bae0.ctex"]
 
 [params]
 

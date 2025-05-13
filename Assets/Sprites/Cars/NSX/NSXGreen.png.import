@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd6u861qw1dog"
-path="res://.godot/imported/NSXGreen.png-88a6d3506a954013d82fef58e806eb9d.ctex"
+path="res://.godot/imported/NSXGreen.png-1efe68d18c2f50b8a972942e031d8a00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cars/NSX/NSXGreen.png"
-dest_files=["res://.godot/imported/NSXGreen.png-88a6d3506a954013d82fef58e806eb9d.ctex"]
+source_file="res://Assets/Sprites/Cars/NSX/NSXGreen.png"
+dest_files=["res://.godot/imported/NSXGreen.png-1efe68d18c2f50b8a972942e031d8a00.ctex"]
 
 [params]
 

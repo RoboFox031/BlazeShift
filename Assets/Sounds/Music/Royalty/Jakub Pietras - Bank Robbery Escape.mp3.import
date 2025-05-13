@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dcv7amvcx7bvk"
-path="res://.godot/imported/Jakub Pietras - Bank Robbery Escape.mp3-79896282e73a390b02cbe0d0aedb7623.mp3str"
+path="res://.godot/imported/Jakub Pietras - Bank Robbery Escape.mp3-b1f3a5640bd292154e8032e2e4fc0a81.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/music/royalty/Jakub Pietras - Bank Robbery Escape.mp3"
-dest_files=["res://.godot/imported/Jakub Pietras - Bank Robbery Escape.mp3-79896282e73a390b02cbe0d0aedb7623.mp3str"]
+source_file="res://Assets/Sounds/Music/Royalty/Jakub Pietras - Bank Robbery Escape.mp3"
+dest_files=["res://.godot/imported/Jakub Pietras - Bank Robbery Escape.mp3-b1f3a5640bd292154e8032e2e4fc0a81.mp3str"]
 
 [params]
 

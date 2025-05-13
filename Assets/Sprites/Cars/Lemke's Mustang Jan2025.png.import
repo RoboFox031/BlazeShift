@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuqmbuvekow53"
-path="res://.godot/imported/Lemke's Mustang Jan2025.png-90f41852601339aa995f45ae15ab8ba9.ctex"
+path="res://.godot/imported/Lemke's Mustang Jan2025.png-bdfb230a0941b1fba8bbc727fc3592ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cars/Lemke's Mustang Jan2025.png"
-dest_files=["res://.godot/imported/Lemke's Mustang Jan2025.png-90f41852601339aa995f45ae15ab8ba9.ctex"]
+source_file="res://Assets/Sprites/Cars/Lemke's Mustang Jan2025.png"
+dest_files=["res://.godot/imported/Lemke's Mustang Jan2025.png-bdfb230a0941b1fba8bbc727fc3592ab.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce8pf0hmtxvtt"
-path="res://.godot/imported/RUF CTR Top View Purple.png.png-072f47a42a24ed6672e0904616d75a30.ctex"
+path="res://.godot/imported/RUF CTR Top View Purple.png.png-34a1ce06b093cebc2c4b21704e90f252.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cars/RUF CTR Top View/RUF CTR Top View Purple.png.png"
-dest_files=["res://.godot/imported/RUF CTR Top View Purple.png.png-072f47a42a24ed6672e0904616d75a30.ctex"]
+source_file="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View Purple.png.png"
+dest_files=["res://.godot/imported/RUF CTR Top View Purple.png.png-34a1ce06b093cebc2c4b21704e90f252.ctex"]
 
 [params]
 

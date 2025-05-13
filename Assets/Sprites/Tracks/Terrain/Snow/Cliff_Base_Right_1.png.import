@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu8t10r4py37m"
-path="res://.godot/imported/Cliff_Base_Right_1.png-ce003e6d88945c2950b54764739397b5.ctex"
+path="res://.godot/imported/Cliff_Base_Right_1.png-68faa3d9e0562150f914ae0a1e5b189b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/Terrain/Snow/Cliff_Base_Right_1.png"
-dest_files=["res://.godot/imported/Cliff_Base_Right_1.png-ce003e6d88945c2950b54764739397b5.ctex"]
+source_file="res://Assets/Sprites/Tracks/Terrain/Snow/Cliff_Base_Right_1.png"
+dest_files=["res://.godot/imported/Cliff_Base_Right_1.png-68faa3d9e0562150f914ae0a1e5b189b.ctex"]
 
 [params]
 

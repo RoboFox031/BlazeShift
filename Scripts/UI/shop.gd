@@ -109,8 +109,7 @@ var pOneCars: Array = []
 var pTwoCars: Array = []
 var pOneCarsFinal: Array = []
 var pTwoCarsFinal: Array = []
-var pOneOwned: Array
-var pTwoOwned: Array
+
 
 
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
@@ -181,10 +180,10 @@ func _ready() -> void:
 		
 	for car in carTiers:
 		if carTiers[car]['cost']==0:
-			pOneOwned.append(car)
-			pTwoOwned.append(car)
+			globalVars.pOneOwned.append(car)
+			globalVars.pTwoOwned.append(car)
 			
-	print("owned "+str(pOneOwned))
+	print("owned "+str(globalVars.pOneOwned))
 	print("cars "+str(pOneCars))
 	
 	#pOneOwned = [pOneCars[0],pOneCars[1]]
@@ -200,13 +199,13 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('p1_start'):
-		if pOneReady == false and carNames[globalVars.pOneCarSelected].to_lower() in pOneOwned:
+		if pOneReady == false and carNames[globalVars.pOneCarSelected].to_lower() in globalVars.pOneOwned:
 			pOneReady = true
 		else:
 			pOneReady = false
 		getReady()
 	if Input.is_action_just_pressed("p2_start"):
-		if pTwoReady == false and carNames[globalVars.pTwoCarSelected].to_lower() in pTwoOwned:
+		if pTwoReady == false and carNames[globalVars.pTwoCarSelected].to_lower() in globalVars.pTwoOwned:
 			pTwoReady = true
 		else:
 			pTwoReady = false
@@ -337,7 +336,7 @@ func _updateCarDisplay(pOneCar,pTwoCar):
 			c.visible = true
 		else:
 			c.visible = false
-	if carNames[globalVars.pOneCarSelected].to_lower() in pOneOwned:
+	if carNames[globalVars.pOneCarSelected].to_lower() in globalVars.pOneOwned:
 		pOneCostLabel.visible = false
 		$locks/pOneCarLock.visible = false
 	else:
@@ -347,7 +346,7 @@ func _updateCarDisplay(pOneCar,pTwoCar):
 		else:
 			pOneCostLabel.text = str(carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['cost']) + " coins"
 		$locks/pOneCarLock.visible = true
-	if carNames[globalVars.pTwoCarSelected].to_lower() in pTwoOwned:
+	if carNames[globalVars.pTwoCarSelected].to_lower() in globalVars.pTwoOwned:
 		pTwoCostLabel.visible = false
 		$locks/pTwoCarLock.visible = false
 	else:
@@ -406,7 +405,7 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 			c.play(colors[globalVars.pTwoColorSelected])
 		else:
 			c.visible = false
-	if carNames[globalVars.pOneCarSelected].to_lower() in pOneOwned:
+	if carNames[globalVars.pOneCarSelected].to_lower() in globalVars.pOneOwned:
 		pOneOwnedLabel.text = "owned"
 		pOneOwnedLabel.position.x = 362
 		pOneOwnedLabel.add_theme_color_override("font_color", Color("008b00"))
@@ -416,7 +415,7 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 		pOneOwnedLabel.position.x = 280
 		pOneOwnedLabel.add_theme_color_override("font_color", Color("9f0000"))
 		$locks/pOneLockFinal.visible = true
-	if carNames[globalVars.pTwoCarSelected].to_lower() in pTwoOwned:
+	if carNames[globalVars.pTwoCarSelected].to_lower() in globalVars.pTwoOwned:
 		pTwoOwnedLabel.text = "owned"
 		pTwoOwnedLabel.position.x = 1330
 		pTwoOwnedLabel.add_theme_color_override("font_color", Color("008b00"))
@@ -430,24 +429,24 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 
 func _buyCar(player):
 	if player == 1:
-		if carNames[globalVars.pOneCarSelected].to_lower() not in pOneOwned:
+		if carNames[globalVars.pOneCarSelected].to_lower() not in globalVars.pOneOwned:
 			if globalVars.pOneCoins - carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['cost'] >= 0:
-				pOneOwned.append(carNames[globalVars.pOneCarSelected].to_lower())
+				globalVars.pOneOwned.append(carNames[globalVars.pOneCarSelected].to_lower())
 				globalVars.pOneCoins -= carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['cost']
 				$pOneCoinHud.update()
 				$uiSFX.playBuySound()
 				_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 				_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 	if player == 2:
-		if carNames[globalVars.pTwoCarSelected].to_lower() not in pTwoOwned:
+		if carNames[globalVars.pTwoCarSelected].to_lower() not in globalVars.pTwoOwned:
 			if globalVars.pTwoCoins - carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost'] >= 0:
-				pTwoOwned.append(carNames[globalVars.pTwoCarSelected].to_lower())
+				globalVars.pTwoOwned.append(carNames[globalVars.pTwoCarSelected].to_lower())
 				globalVars.pTwoCoins -= carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost']
 				$pTwoCoinHud.update()
 				$uiSFX.playBuySound()
 				_updateFinalDisplay(pTwoCarsFinal[globalVars.pTwoCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 				_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
-	print("p1 owned: "+str(pOneOwned))
+	print("p1 owned: "+str(globalVars.pOneOwned))
 	carNames
 #updates the global vars before moving onto the upgrade shop
 func _changeGlobalVars():
@@ -484,11 +483,11 @@ func _updateCarNameLabels():
 	
 #updates the visibility of a label if the car is not owner
 func _updateBuyButtonLabels():
-	if carNames[globalVars.pOneCarSelected].to_lower() not in pOneOwned:
+	if carNames[globalVars.pOneCarSelected].to_lower() not in globalVars.pOneOwned:
 		$pOneBuyButtonLabel.visible = true
 	else:
 		$pOneBuyButtonLabel.visible = false
-	if carNames[globalVars.pTwoCarSelected].to_lower() not in pTwoOwned:
+	if carNames[globalVars.pTwoCarSelected].to_lower() not in globalVars.pTwoOwned:
 		$pTwoBuyButtonLabel.visible = true
 	else:
 		$pTwoBuyButtonLabel.visible = false

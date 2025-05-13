@@ -11,7 +11,7 @@ var musicType = 'spotifyMusic'
 var musicDB = 50
 var sfxDB = 50
 var nextScene
-var tracksCompleted = [0,3]
+var tracksCompleted = []
 #Defults to mustang
 var currentCarNames={"p1":"Mustang","p2":"Mustang"}
 var pOnePowerup = 'none'
@@ -63,6 +63,9 @@ var pTwoName = 'BBB'
 
 var canMove = false
 var canPause = false
+
+var pOneOwned: Array
+var pTwoOwned: Array
 
 #global score list for each track
 var basicScores := {}

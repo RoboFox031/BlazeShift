@@ -175,6 +175,21 @@ tracks/2/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_sb6u4"]
+resource_name = "dissolveRespawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
 [sub_resource type="Animation" id="Animation_ekqyh"]
 resource_name = "smokeRespawn"
 tracks/0/type = "value"
@@ -202,21 +217,6 @@ tracks/1/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_sb6u4"]
-resource_name = "dissolveRespawn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rak18"]
 _data = {
 &"RESET": SubResource("Animation_8krrb"),
@@ -235,7 +235,7 @@ position = Vector2(3, -11)
 rotation = -3.14159
 scale = Vector2(0.895, 0.895)
 sprite_frames = SubResource("SpriteFrames_gy3yo")
-animation = &"orange"
+animation = &"black"
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -304,7 +304,7 @@ color_ramp = SubResource("Gradient_sb6u4")
 anim_speed_min = 0.3
 anim_speed_max = 0.3
 
-[node name="animationPlayer" type="AnimationPlayer" parent="."]
+[node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_rak18")
 }

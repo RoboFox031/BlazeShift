@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Car
 
 @onready var colorSprite: AnimatedSprite2D = $Sprite2D
+@onready var respawnAnimator:AnimationPlayer=$respawnAnimator
 
 
 var color = "blue"

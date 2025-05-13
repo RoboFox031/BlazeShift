@@ -2,6 +2,7 @@ shader_type canvas_item;
 
 uniform float disolveVar:hint_range(0.0, 1.0);
 uniform sampler2D dissolveNoise;
+uniform vec4 dissolveColor:source_color;
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
@@ -12,7 +13,7 @@ void fragment() {
 	COLOR=textureColor;
 	COLOR.a*=step(disolveVar,brightness);
 	float disolveDiff=abs(brightness-disolveVar);
-	COLOR.rgb+=vec3(1,.6,0)*step(disolveDiff,0.05);
+	COLOR.rgb+=dissolveColor.rgb*step(disolveDiff,0.05);
 	// Called for every pixel the material is visible on.
 }
 

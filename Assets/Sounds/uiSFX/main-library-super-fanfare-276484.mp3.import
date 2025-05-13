@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cs74w6vw33nlc"
-path="res://.godot/imported/main-library-super-fanfare-276484.mp3-61bd10eb2018040727fee1ef4d79b798.mp3str"
+path="res://.godot/imported/main-library-super-fanfare-276484.mp3-bd2e957e225539f2794a566e616313b4.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/uiSFX/main-library-super-fanfare-276484.mp3"
-dest_files=["res://.godot/imported/main-library-super-fanfare-276484.mp3-61bd10eb2018040727fee1ef4d79b798.mp3str"]
+source_file="res://Assets/Sounds/uiSFX/main-library-super-fanfare-276484.mp3"
+dest_files=["res://.godot/imported/main-library-super-fanfare-276484.mp3-bd2e957e225539f2794a566e616313b4.mp3str"]
 
 [params]
 

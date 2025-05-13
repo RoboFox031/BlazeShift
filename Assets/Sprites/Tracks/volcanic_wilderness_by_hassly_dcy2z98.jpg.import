@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coadummwdr3qh"
-path="res://.godot/imported/volcanic_wilderness_by_hassly_dcy2z98.jpg-91e3976c31ed9f6aaa551f9c6408f788.ctex"
+path="res://.godot/imported/volcanic_wilderness_by_hassly_dcy2z98.jpg-811fd543caa8574b4877b22c4ed643ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/volcanic_wilderness_by_hassly_dcy2z98.jpg"
-dest_files=["res://.godot/imported/volcanic_wilderness_by_hassly_dcy2z98.jpg-91e3976c31ed9f6aaa551f9c6408f788.ctex"]
+source_file="res://Assets/Sprites/Tracks/volcanic_wilderness_by_hassly_dcy2z98.jpg"
+dest_files=["res://.godot/imported/volcanic_wilderness_by_hassly_dcy2z98.jpg-811fd543caa8574b4877b22c4ed643ad.ctex"]
 
 [params]
 

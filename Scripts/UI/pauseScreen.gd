@@ -13,35 +13,42 @@ var labels
 var pOneConfirm = false
 var pTwoConfirm = false
 
+signal puased
+signal unpaused
+
 func _ready():
 	labels = [$colorRect/resumeLabel, $colorRect/optionsLabel, $colorRect/controls, $colorRect/restartLabel]
 	_updateMenu()
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("p1_start"):
-		if inControl == 0:
-			inControl = 1 
-		elif inControl == 1:
-			_useButton(options[selected])
-		elif inControl == 3:
-			if pOneConfirm == false:
-				pOneConfirm = true
-			else:
-				pOneConfirm = false
-		_updateMenu()
+	if globalVars.canPause == true:
+		if Input.is_action_just_pressed("p1_start"):
+			emit_signal('puased')
+			print('puase')
+			if inControl == 0:
+				inControl = 1 
+			elif inControl == 1:
+				_useButton(options[selected])
+			elif inControl == 3:
+				if pOneConfirm == false:
+					pOneConfirm = true
+				else:
+					pOneConfirm = false
+			_updateMenu()
+				
+		elif Input.is_action_just_pressed("p2_start"):
+			emit_signal('puased')
+			if inControl == 0:
+				inControl = 2
+			elif inControl == 2:
+				_useButton(options[selected])
+			elif inControl == 3:
+				if pTwoConfirm == false:
+					pTwoConfirm = true
+				else:
+					pTwoConfirm = false
+			_updateMenu()
 			
-	elif Input.is_action_just_pressed("p2_start"):
-		if inControl == 0:
-			inControl = 2
-		elif inControl == 2:
-			_useButton(options[selected])
-		elif inControl == 3:
-			if pTwoConfirm == false:
-				pTwoConfirm = true
-			else:
-				pTwoConfirm = false
-		_updateMenu()
-		
 	if Input.is_action_just_pressed("p1_up") and inControl == 1:
 		if selected - 1 >= 0:
 			selected -= 1
@@ -124,6 +131,7 @@ func _useButton(option):
 		inControl = 0
 		self.visible = false
 		print('hit')
+		emit_signal('unpaused')
 	if option == 'options':
 		$pauseOptionsScreen.pausedToMenu = true
 		$pauseOptionsScreen.visible = true

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://deyyh12fkkhv6"
-path="res://.godot/imported/TruckLoadScreenWhite.png-1c540bb976b152289be1abe00b78d74c.ctex"
+path="res://.godot/imported/TruckLoadScreenWhite.png-652e6de50875fed13baccf080a6a7ffe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/loadingScreens/TruckLoadScreenWhite.png"
-dest_files=["res://.godot/imported/TruckLoadScreenWhite.png-1c540bb976b152289be1abe00b78d74c.ctex"]
+source_file="res://Assets/Sprites/loadingScreens/TruckLoadScreenWhite.png"
+dest_files=["res://.godot/imported/TruckLoadScreenWhite.png-652e6de50875fed13baccf080a6a7ffe.ctex"]
 
 [params]
 

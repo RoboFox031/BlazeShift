@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bumhb2yrrgit5"
-path="res://.godot/imported/5bf1197eaf30095fa2ee3ba2e94db599Car_Engine_Rev_Sound_Effect_HD.wav-172757d413707e408c58136edf5b3047.sample"
+path="res://.godot/imported/5bf1197eaf30095fa2ee3ba2e94db599Car_Engine_Rev_Sound_Effect_HD.wav-99d05a9d4ee8e4345c195426fc7ae789.sample"
 
 [deps]
 
-source_file="res://assets/sounds/uiSFX/5bf1197eaf30095fa2ee3ba2e94db599Car_Engine_Rev_Sound_Effect_HD.wav"
-dest_files=["res://.godot/imported/5bf1197eaf30095fa2ee3ba2e94db599Car_Engine_Rev_Sound_Effect_HD.wav-172757d413707e408c58136edf5b3047.sample"]
+source_file="res://Assets/Sounds/uiSFX/5bf1197eaf30095fa2ee3ba2e94db599Car_Engine_Rev_Sound_Effect_HD.wav"
+dest_files=["res://.godot/imported/5bf1197eaf30095fa2ee3ba2e94db599Car_Engine_Rev_Sound_Effect_HD.wav-99d05a9d4ee8e4345c195426fc7ae789.sample"]
 
 [params]
 

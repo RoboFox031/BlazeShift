@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tejkgrt3nxrd"
-path="res://.godot/imported/Lancia 037 Top View Blue-1.png.png-dab9a99d9730b3527e21929e14701a0d.ctex"
+path="res://.godot/imported/Lancia 037 Top View Blue-1.png.png-7ae579a281bc371e91c0dc2291f8666c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cars/Lancia 037/Lancia 037 Top View Blue-1.png.png"
-dest_files=["res://.godot/imported/Lancia 037 Top View Blue-1.png.png-dab9a99d9730b3527e21929e14701a0d.ctex"]
+source_file="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Blue-1.png.png"
+dest_files=["res://.godot/imported/Lancia 037 Top View Blue-1.png.png-7ae579a281bc371e91c0dc2291f8666c.ctex"]
 
 [params]
 

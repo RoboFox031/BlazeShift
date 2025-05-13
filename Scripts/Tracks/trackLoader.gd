@@ -58,6 +58,7 @@ func _physics_process(delta):
 			globalVars.pOneLastRaceTime = float(pOneTimer.text)
 func _on_pause_screen_p_pause():
 	globalVars.canMove = false
+	print(globalVars.canMove)
 func _on_pause_screen_p_resume() -> void:
 	globalVars.canMove = true
 

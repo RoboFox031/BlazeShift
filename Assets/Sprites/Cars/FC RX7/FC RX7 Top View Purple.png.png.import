@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bi88stoa2xt1l"
-path="res://.godot/imported/FC RX7 Top View Purple.png.png-289f0afb3c6f6a04a0468bd11833f258.ctex"
+path="res://.godot/imported/FC RX7 Top View Purple.png.png-2972029f28f62741a1a835720c8fef0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cars/FC RX7/FC RX7 Top View Purple.png.png"
-dest_files=["res://.godot/imported/FC RX7 Top View Purple.png.png-289f0afb3c6f6a04a0468bd11833f258.ctex"]
+source_file="res://Assets/Sprites/Cars/FC RX7/FC RX7 Top View Purple.png.png"
+dest_files=["res://.godot/imported/FC RX7 Top View Purple.png.png-2972029f28f62741a1a835720c8fef0e.ctex"]
 
 [params]
 

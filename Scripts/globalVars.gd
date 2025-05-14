@@ -11,13 +11,13 @@ var musicType = 'spotifyMusic'
 var musicDB = 50
 var sfxDB = 50
 var nextScene
-var tracksCompleted = []
+var tracksCompleted = [0,1,2,3]
 #Defults to mustang
 var currentCarNames={"p1":"Mustang","p2":"Mustang"}
 var pOnePowerup = 'none'
 var pTwoPowerup = 'none'
-var pOneCoins = 90
-var pTwoCoins = 90
+var pOneCoins = 0
+var pTwoCoins = 0
 const NSX = preload("res://Scenes/Cars/NSX.tscn")
 var p1BlazeCurrent = 100
 var p2BlazeCurrent = 100
@@ -41,7 +41,7 @@ var pOneLastRacePlacement = null
 var pOneOverallPlacement = '1st'
 var pOneLastRaceCoinsCollected = 0
 var pOneTotalCoinsCollected = 0
-var pOneTotalWins = 0
+var pOneTotalWins = 2
 
 var pTwoLastRaceTime = '00:00'
 var pTwoTotalTime = '00:00'
@@ -49,7 +49,7 @@ var pTwoLastRacePlacement = null
 var pTwoOverallPlacement = '1st'
 var pTwoLastRaceCoinsCollected = 0
 var pTwoTotalCoinsCollected = 0
-var pTwoTotalWins = 0
+var pTwoTotalWins = 2
 
 #shop variables
 var pOneCarSelected = 0
@@ -63,6 +63,7 @@ var pTwoName = 'BBB'
 
 var canMove = false
 var canPause = false
+var winner
 
 var pOneOwned: Array
 var pTwoOwned: Array

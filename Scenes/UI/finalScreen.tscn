@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://baucv5jtrcijm"]
 
-[ext_resource type="Script" path="res://Scripts/UI/finalScreen.gd" id="1_sm6fy"]
+[ext_resource type="Script" uid="uid://c7xcnefxl82on" path="res://Scripts/UI/finalScreen.gd" id="1_sm6fy"]
 [ext_resource type="Texture2D" uid="uid://dv7ryu32wteg3" path="res://Assets/Sprites/UI/finishLine.png" id="1_u24u8"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_sm6fy"]
 
@@ -66,7 +66,7 @@ text = "player one"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="raceTime" type="Label" parent="playerOneLabels"]
+[node name="finalCoinsCollected" type="Label" parent="playerOneLabels"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -82,11 +82,11 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_sm6fy")
 theme_override_font_sizes/font_size = 75
-text = "completion time: xx:xx"
+text = "final coins collected: xx:xx"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="coinsCollected" type="Label" parent="playerOneLabels"]
+[node name="totalCoinsCollected" type="Label" parent="playerOneLabels"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -102,7 +102,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_sm6fy")
 theme_override_font_sizes/font_size = 75
-text = "Total coins colected: x"
+text = "Total coins collected: x"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -180,7 +180,7 @@ text = "player two"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="raceTime" type="Label" parent="playerTwoLabels"]
+[node name="finalCoinsCollected" type="Label" parent="playerTwoLabels"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -196,11 +196,11 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_sm6fy")
 theme_override_font_sizes/font_size = 75
-text = "completion time: xx:xx"
+text = "final coins collected: xx:xx"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="coinsCollected" type="Label" parent="playerTwoLabels"]
+[node name="totalCoinsCollected" type="Label" parent="playerTwoLabels"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -216,7 +216,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_sm6fy")
 theme_override_font_sizes/font_size = 75
-text = "total coins colected: x"
+text = "total coins collected: x"
 horizontal_alignment = 1
 vertical_alignment = 1
 

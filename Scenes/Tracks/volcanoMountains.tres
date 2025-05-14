@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bbvxukt51crmm"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bth44gyob6c8w"]
 
 [ext_resource type="Texture2D" uid="uid://diftod1f83vx" path="res://Assets/Sprites/Tracks/volcanoe_tileset_and_assets/volcanoe_tiles.png" id="1_ulppa"]
 [ext_resource type="Texture2D" uid="uid://dwjqmh1hsl74v" path="res://Assets/Sprites/Tracks/lava_tileset_orake.png" id="2_36jot"]

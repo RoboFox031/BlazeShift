@@ -26,6 +26,8 @@ func _ready():
 		winner.text = 'player '+globalVars.pOneName+' won the race'
 		globalVars.winner = 'player1'
 		globalVars.pOneCoins += 5
+		$confetti3.emitting = true
+		$confetti4.emitting = true
 		
 		globalVars.pOneTotalCoinsCollected += reward
 	else:
@@ -33,6 +35,8 @@ func _ready():
 		globalVars.pTwoCoins += 5
 		globalVars.pTwoTotalCoinsCollected += reward
 		globalVars.winner = 'player2'
+		$confetti.emitting = true
+		$confetti2.emitting = true
 		
 	pOneInfo[0] = globalVars.convertSec(globalVars.pOneLastRaceTime)
 	pOneInfo[1] = globalVars.pOneLastRaceCoinsCollected
@@ -44,6 +48,7 @@ func _ready():
 	pTwoInfo[2] = globalVars.pTwoLastRacePlacement
 	pTwoInfo[3] = globalVars.pTwoOverallPlacement
 	
+	_updateCoins()
 	_updateLabels()
 	_updateReady()
 	_updateCoins()
@@ -95,3 +100,13 @@ func _updateCoins():
 	globalVars.pTwoTotalCoinsCollected += globalVars.pTwoLastRaceCoinsCollected
 	print(globalVars.pOneCoins)
 	print(globalVars.pTwoCoins)
+
+func _updateConfetti():
+	if globalVars.pOneLastRacePlacement == '1st':
+		print('emit')
+		$confetti3.emitting = true
+		$confetti4.emitting = true
+	if globalVars.pTwoLastRacePlacement == '1st':
+		print('emit')
+		$confetti.emitting = true
+		$confetti1.emitting = true

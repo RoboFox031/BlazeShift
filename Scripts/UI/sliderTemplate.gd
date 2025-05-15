@@ -1,7 +1,6 @@
 extends ProgressBar
 class_name sliderTemplate
 @onready var tick = $tick
-
 var selected = false
 
 func _ready():

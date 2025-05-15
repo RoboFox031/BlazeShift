@@ -1,30 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://d05oihsshblo7"]
+[gd_scene load_steps=6 format=3 uid="uid://bskr5tlwvl7db"]
 
-[ext_resource type="AudioStream" uid="uid://7uowwytxe3qv" path="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Hot Saturn - Sungazer.mp3" id="1_e5ka5"]
-[ext_resource type="AudioStream" uid="uid://dqxone87maspu" path="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Cool 7 - Sungazer.mp3" id="2_ke7ur"]
-[ext_resource type="AudioStream" uid="uid://bshvofaad75od" path="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Electric Sunrise - Plini.mp3" id="3_5117x"]
-[ext_resource type="AudioStream" uid="uid://ctj7iyf1nkt4t" path="res://Assets/Sounds/Music/Spotify/SpotifyMate.com - Away - Plini.mp3" id="4_ydh4t"]
-[ext_resource type="AudioStream" uid="uid://d4iwnhhm1f6yw" path="res://Assets/Sounds/Music/Royalty/Tokyo Drift.mp3" id="5_ke7ur"]
+[ext_resource type="AudioStream" uid="uid://bot3hmkrpl8jv" path="res://Assets/Sounds/Music/Spotify/spotifyHotSaturn.mp3" id="1_ke7ur"]
+[ext_resource type="AudioStream" uid="uid://5a002lngbp18" path="res://Assets/Sounds/Music/Spotify/spotifyAway.mp3" id="2_5117x"]
+[ext_resource type="AudioStream" uid="uid://u0x6jbirum0j" path="res://Assets/Sounds/Music/Spotify/spotifyElectricSunrise.mp3" id="3_ydh4t"]
+[ext_resource type="AudioStream" uid="uid://bd06lnopsvd8w" path="res://Assets/Sounds/Music/Spotify/spotifyCool7.mp3" id="4_1bxn6"]
+[ext_resource type="AudioStream" uid="uid://5imc0x6o57dm" path="res://Assets/Sounds/Music/Royalty/royaltyCityTrack.mp3" id="5_oav80"]
 
 [node name="spotifyMusic" type="Node2D"]
 
-[node name="basicTrack" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("1_e5ka5")
+[node name="basicTrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ke7ur")
+volume_db = -12.0
 bus = &"music"
 
-[node name="ruralTrack" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_ke7ur")
+[node name="ruralTrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5117x")
+volume_db = -10.0
 bus = &"music"
 
-[node name="iceTrack" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_5117x")
+[node name="iceTrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ydh4t")
+volume_db = -10.0
 bus = &"music"
 
-[node name="volcanoTrack" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_ydh4t")
+[node name="volcanoTrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1bxn6")
+volume_db = -12.0
 bus = &"music"
 
-[node name="cityTrack" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_ke7ur")
+[node name="cityTrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_oav80")
 volume_db = 21.65
 bus = &"music"

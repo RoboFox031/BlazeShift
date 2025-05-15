@@ -30,6 +30,13 @@ func _updateLabels():
 	pTwoLabels[2].text = "overall placement: " + globalVars.pTwoOverallPlacement
 	pTwoLabels[3].text = "total wins: " + str(globalVars.pTwoTotalWins)
 	
+	if globalVars.pOneOverallPlacement == '1st':
+		$confetti3.emitting = true
+		$confetti4.emitting = true
+	else:
+		$confetti.emitting = true
+		$confetti2.emitting = true
+
 func _startNewGame():
 	globalVars.gameReset()
 	get_tree().change_scene_to_file('res://Scenes/UI/titleScreen.tscn')

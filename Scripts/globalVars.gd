@@ -1,13 +1,13 @@
 extends Node
 
-var track = preload("res://Scenes/Tracks/ruralTrack.tscn")
+var track = preload("res://Scenes/Tracks/basicTrack.tscn")
 var playerOneCar = preload("res://Scenes/Cars/Mustang.tscn")
 var playerTwoCar = preload("res://Scenes/Cars/Mustang.tscn")
 var playerOneCarSprite = null
 var playerTwoCarSprite = null
 var playerOneColor = "blue"
 var playerTwoColor = "blue"
-var musicType = 'spotifyMusic'
+var musicType = 'royaltyMusic'
 var musicDB = 50
 var sfxDB = 50
 var nextScene
@@ -23,7 +23,7 @@ var p1BlazeCurrent = 100
 var p2BlazeCurrent = 100
 var pOneDone = false
 var pTwoDone = false
-var playMusic
+var playMusic = false
 var inCyclone = false
 #Stores the progress value and the lap value for each player
 var progress={
@@ -38,7 +38,7 @@ var laps={
 var pOneLastRaceTime = '00:00'
 var pOneTotalTime = '00:00'
 var pOneLastRacePlacement = null
-var pOneOverallPlacement = '1st'
+var pOneOverallPlacement = null
 var pOneLastRaceCoinsCollected = 0
 var pOneTotalCoinsCollected = 0
 var pOneTotalWins = 0
@@ -46,7 +46,7 @@ var pOneTotalWins = 0
 var pTwoLastRaceTime = '00:00'
 var pTwoTotalTime = '00:00'
 var pTwoLastRacePlacement = null
-var pTwoOverallPlacement = '1st'
+var pTwoOverallPlacement = null
 var pTwoLastRaceCoinsCollected = 0
 var pTwoTotalCoinsCollected = 0
 var pTwoTotalWins = 0
@@ -77,7 +77,9 @@ var organizedScores := {}
 #name,score,track
 
 #func saveScores(trackName, playerName, time):
-
+func _ready():
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index('sfx'),globalVars.sfxDB)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index('music'),globalVars.musicDB)
 
 func saveScores(trackName,playerName,time):
 	var timeScore = ConfigFile.new()

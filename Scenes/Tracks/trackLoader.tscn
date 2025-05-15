@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://duambc5sqs45o" path="res://Scenes/UI/wrongWayIndicator.tscn" id="6_rcrto"]
 [ext_resource type="PackedScene" uid="uid://bbpaemnpu0ei8" path="res://Scenes/UI/pTwoPowerupsHud.tscn" id="7_8we7n"]
 [ext_resource type="PackedScene" uid="uid://dn5sw0bq4y0ad" path="res://Scenes/UI/pauseScreen.tscn" id="8_ig87d"]
-[ext_resource type="PackedScene" path="res://scenes/ui/snowballSplatter.tscn" id="10_iwjg5"]
+[ext_resource type="PackedScene" uid="uid://3e5oobj3ptua" path="res://scenes/ui/snowballSplatter.tscn" id="10_iwjg5"]
 [ext_resource type="PackedScene" uid="uid://dmwb088cqqc42" path="res://Scenes/UI/royaltyMusic.tscn" id="15_c8num"]
-[ext_resource type="PackedScene" path="res://scenes/ui/spotifyMusic.tscn" id="16_bfptf"]
+[ext_resource type="PackedScene" uid="uid://bskr5tlwvl7db" path="res://Scenes/UI/spotifyMusic.tscn" id="16_bfptf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3v6t4"]
 font = ExtResource("6_m4tpg")

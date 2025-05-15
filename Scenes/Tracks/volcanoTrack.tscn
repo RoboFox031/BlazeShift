@@ -7,7 +7,7 @@
 [ext_resource type="TileSet" uid="uid://bth44gyob6c8w" path="res://scenes/tracks/volcanoMountains.tres" id="3_3fxna"]
 [ext_resource type="TileSet" uid="uid://shirjmw44fyk" path="res://scenes/tracks/track.tres" id="5_3fxna"]
 [ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://scripts/tracks/checkpointPath.gd" id="7_3fxna"]
-[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://Scenes/Cars/carSpawn.tscn" id="8_apncx"]
+[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://scenes/cars/carSpawn.tscn" id="8_apncx"]
 [ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://scripts/tracks/terrain.gd" id="9_l5arc"]
 [ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://scenes/pickups/coins.tscn" id="10_3fxna"]
 [ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://scenes/pickups/powerupBox.tscn" id="11_apncx"]

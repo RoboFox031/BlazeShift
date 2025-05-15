@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c185whjc1fwtc"
-path="res://.godot/imported/Water Vortex Splash-Sheet.png-d3ccb84d6787b52ddb9c0a4d07b56539.ctex"
+path="res://.godot/imported/Water Vortex Splash-Sheet.png-fd70e5705d6c2fe4575c7645ec7e3483.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Poweups/Spritesheets/Water Vortex Splash-Sheet.png"
-dest_files=["res://.godot/imported/Water Vortex Splash-Sheet.png-d3ccb84d6787b52ddb9c0a4d07b56539.ctex"]
+source_file="res://assets/sprites/Poweups/Spritesheets/Water Vortex Splash-Sheet.png"
+dest_files=["res://.godot/imported/Water Vortex Splash-Sheet.png-fd70e5705d6c2fe4575c7645ec7e3483.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpv23dj1ro2c"
-path="res://.godot/imported/scrollsandblocks.png-5a48be457859b3e81fc69206b985fbbc.ctex"
+path="res://.godot/imported/scrollsandblocks.png-569724e172e0cd944e5e48c6f3901ba3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/submission_daneeklu/ui/scrollsandblocks.png"
-dest_files=["res://.godot/imported/scrollsandblocks.png-5a48be457859b3e81fc69206b985fbbc.ctex"]
+source_file="res://assets/sprites/tracks/submission_daneeklu/ui/scrollsandblocks.png"
+dest_files=["res://.godot/imported/scrollsandblocks.png-569724e172e0cd944e5e48c6f3901ba3.ctex"]
 
 [params]
 

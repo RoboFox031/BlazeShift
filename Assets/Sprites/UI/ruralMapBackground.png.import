@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d23f07gjc1b01"
-path="res://.godot/imported/ruralMapBackground.png-4ef4cecefb106d9fa1c461afff39a4d9.ctex"
+path="res://.godot/imported/ruralMapBackground.png-151422bbb9116fb443e300b99d8bb276.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/ruralMapBackground.png"
-dest_files=["res://.godot/imported/ruralMapBackground.png-4ef4cecefb106d9fa1c461afff39a4d9.ctex"]
+source_file="res://assets/sprites/UI/ruralMapBackground.png"
+dest_files=["res://.godot/imported/ruralMapBackground.png-151422bbb9116fb443e300b99d8bb276.ctex"]
 
 [params]
 

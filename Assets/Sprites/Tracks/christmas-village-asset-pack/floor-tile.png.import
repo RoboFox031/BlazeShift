@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://q4soe8ln3tl8"
-path="res://.godot/imported/floor-tile.png-d60e1c75836d58d30856e033542549d6.ctex"
+path="res://.godot/imported/floor-tile.png-74f4d2e9410bd3871a842b670e32e64e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/christmas-village-asset-pack/floor-tile.png"
-dest_files=["res://.godot/imported/floor-tile.png-d60e1c75836d58d30856e033542549d6.ctex"]
+source_file="res://assets/sprites/tracks/christmas-village-asset-pack/floor-tile.png"
+dest_files=["res://.godot/imported/floor-tile.png-74f4d2e9410bd3871a842b670e32e64e.ctex"]
 
 [params]
 

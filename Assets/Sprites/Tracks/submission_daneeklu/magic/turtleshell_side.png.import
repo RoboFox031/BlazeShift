@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://v4304eabomlu"
-path="res://.godot/imported/turtleshell_side.png-1af922e009e148ea11e9e1b7c043b445.ctex"
+path="res://.godot/imported/turtleshell_side.png-2549234a8c9f397f081851f00853b433.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/submission_daneeklu/magic/turtleshell_side.png"
-dest_files=["res://.godot/imported/turtleshell_side.png-1af922e009e148ea11e9e1b7c043b445.ctex"]
+source_file="res://assets/sprites/tracks/submission_daneeklu/magic/turtleshell_side.png"
+dest_files=["res://.godot/imported/turtleshell_side.png-2549234a8c9f397f081851f00853b433.ctex"]
 
 [params]
 

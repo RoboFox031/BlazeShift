@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://by10d1jfm3ssq"
-path="res://.godot/imported/Ice_Circle_2.png-5c33729a42d3f49a7a68b041ce7228fb.ctex"
+path="res://.godot/imported/Ice_Circle_2.png-885f940198e28b2cdf71497e3931260e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/Terrain/Misc/Ice_Circle_2.png"
-dest_files=["res://.godot/imported/Ice_Circle_2.png-5c33729a42d3f49a7a68b041ce7228fb.ctex"]
+source_file="res://assets/sprites/tracks/Terrain/Misc/Ice_Circle_2.png"
+dest_files=["res://.godot/imported/Ice_Circle_2.png-885f940198e28b2cdf71497e3931260e.ctex"]
 
 [params]
 

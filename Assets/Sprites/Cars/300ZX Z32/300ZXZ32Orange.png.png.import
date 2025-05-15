@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://df1rhjrmlgf5q"
-path="res://.godot/imported/300ZXZ32Orange.png.png-f39d1fa23f058d4acb4b1ebbd14cfa34.ctex"
+path="res://.godot/imported/300ZXZ32Orange.png.png-74ac0a23fb498e2c521f6089b129cc57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Orange.png.png"
-dest_files=["res://.godot/imported/300ZXZ32Orange.png.png-f39d1fa23f058d4acb4b1ebbd14cfa34.ctex"]
+source_file="res://assets/sprites/cars/300ZX Z32/300ZXZ32Orange.png.png"
+dest_files=["res://.godot/imported/300ZXZ32Orange.png.png-74ac0a23fb498e2c521f6089b129cc57.ctex"]
 
 [params]
 

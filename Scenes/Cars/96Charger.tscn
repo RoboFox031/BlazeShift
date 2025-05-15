@@ -1,9 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://b6j1ri7e2eu3q"]
+[gd_scene load_steps=23 format=3 uid="uid://b6j1ri7e2eu3q"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_mm3dk"]
-[ext_resource type="Shader" uid="uid://b0ijw40aod2u8" path="res://shadersAndMaterials/carShader.gdshader" id="2_emdmu"]
 [ext_resource type="Resource" uid="uid://bdfyic0hpxvpy" path="res://Resources/carStats/96ChargerStats.tres" id="2_wshfl"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_45npj"]
+[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://Scenes/Cars/respawnMaterial.tres" id="3_m0ncg"]
 [ext_resource type="Texture2D" uid="uid://vyu03tdxjntf" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerBlack.png" id="4_s5wax"]
 [ext_resource type="Texture2D" uid="uid://7bbalg5f57tj" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerBlue.png" id="5_m0ncg"]
 [ext_resource type="Texture2D" uid="uid://csnqmhnpqeoaw" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerGreen.png" id="6_5h7hp"]
@@ -13,11 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://doiysamrwtd0x" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerWhite.png" id="10_ej5ic"]
 [ext_resource type="Texture2D" uid="uid://ck4xxg6l0cu26" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerYellow.png" id="11_gfykb"]
 [ext_resource type="PackedScene" uid="uid://bydf7awxku2av" path="res://Scenes/Cars/tire.tscn" id="13_s5wax"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_710ok"]
-shader = ExtResource("2_emdmu")
-shader_parameter/replaceColor = Color(0.964706, 1, 0.00392157, 1)
-shader_parameter/newColor = Color(0.60921, 0.599859, 0.461508, 1)
+[ext_resource type="PackedScene" uid="uid://bjqnojw0nj2fm" path="res://Scenes/Cars/smoke.tscn" id="14_m0ncg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jnx1k"]
 animations = [{
@@ -95,13 +91,101 @@ size = Vector2(8.99993, 13.9999)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbeql"]
 size = Vector2(133, 42)
 
+[sub_resource type="Animation" id="Animation_8krrb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_sb6u4"]
+resource_name = "dissolveRespawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.1]
+}
+
+[sub_resource type="Animation" id="Animation_ekqyh"]
+resource_name = "smokeRespawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rak18"]
+_data = {
+&"RESET": SubResource("Animation_8krrb"),
+&"dissolveRespawn": SubResource("Animation_sb6u4"),
+&"smokeRespawn": SubResource("Animation_ekqyh")
+}
+
 [node name="96Charger" type="CharacterBody2D"]
 script = ExtResource("1_mm3dk")
 stats = ExtResource("2_wshfl")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_710ok")
+material = ExtResource("3_m0ncg")
 position = Vector2(1, -6)
 rotation = 3.14159
 scale = Vector2(0.8, 0.8)
@@ -163,6 +247,14 @@ rotation = 1.5708
 scale = Vector2(0.25, 0.25)
 autoplay = "default"
 frame_progress = 0.882887
+
+[node name="smoke" parent="." instance=ExtResource("14_m0ncg")]
+
+[node name="respawnAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rak18")
+}
+autoplay = "RESET"
 
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]

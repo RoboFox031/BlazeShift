@@ -1,6 +1,6 @@
 extends powerUp
 
-var speed = 750
+var speed = 1500
 func _ready():
 	#type = 'snowball'
 	self.position=spawnPosition

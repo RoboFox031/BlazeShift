@@ -3,9 +3,20 @@ var playerNum
 func _ready():
 	$animatedSprite2d.play("default")
 	$timer.start(5)
+	var trackName = globalVars.track.instantiate().name
 	#type = 'fireCyclone'
 	#self.position = spawnPosition
-	#self.z_index = 10
+	if trackName == 'basicTrack':
+		self.z_index = 2
+	if trackName == 'iceTrack':
+		self.z_index = 2
+	if trackName == 'ruralTrack':
+		self.z_index = 5
+	if trackName == 'cityTrack':
+		self.z_index = 1
+	if trackName == 'volcanoTrack':
+		self.z_index = 5
+		
 	#self.sprite.rotation = direction
 	pass
 func _process(delta):

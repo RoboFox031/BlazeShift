@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://q7r0qogbo4a2"]
 
-[ext_resource type="Script" path="res://Scripts/Pickups/fireCyclone.gd" id="1_lgebe"]
+[ext_resource type="Script" uid="uid://ck4cut3ovhibv" path="res://Scripts/Pickups/fireCyclone.gd" id="1_lgebe"]
 [ext_resource type="Texture2D" uid="uid://bhpcdtwe1fjfm" path="res://Assets/Sprites/Poweups/Spritesheets/Gravity-Sheet.png" id="2_h3o6k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufhab"]
@@ -156,7 +156,7 @@ radius = 30.3
 height = 77.4
 
 [node name="fireCyclone" type="Node2D"]
-scale = Vector2(10, 10)
+scale = Vector2(3, 3)
 script = ExtResource("1_lgebe")
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]

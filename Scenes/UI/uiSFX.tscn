@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://icevwd4ir3d2"]
 
-[ext_resource type="Script" path="res://Scripts/UI/uiSFX.gd" id="1_p2roh"]
-[ext_resource type="AudioStream" uid="uid://bumhb2yrrgit5" path="res://Assets/Sounds/uiSFX/5bf1197eaf30095fa2ee3ba2e94db599Car_Engine_Rev_Sound_Effect_HD.wav" id="2_10i1k"]
-[ext_resource type="AudioStream" uid="uid://bdcwduwimlfi2" path="res://Assets/Sounds/uiSFX/coin-donation-2-180438.wav" id="3_xi4ua"]
-[ext_resource type="AudioStream" uid="uid://cjjxogv0y28ke" path="res://Assets/Sounds/uiSFX/click.wav" id="4_r5yma"]
+[ext_resource type="Script" uid="uid://bodipktvkh5fp" path="res://scripts/ui/uiSFX.gd" id="1_u1wd1"]
+[ext_resource type="AudioStream" uid="uid://bumhb2yrrgit5" path="res://assets/sounds/uiSFX/5bf1197eaf30095fa2ee3ba2e94db599Car_Engine_Rev_Sound_Effect_HD.wav" id="2_10i1k"]
+[ext_resource type="AudioStream" uid="uid://bdcwduwimlfi2" path="res://assets/sounds/uiSFX/coin-donation-2-180438.wav" id="3_xi4ua"]
+[ext_resource type="AudioStream" uid="uid://cjjxogv0y28ke" path="res://assets/sounds/uiSFX/click.wav" id="4_r5yma"]
 
 [node name="uiSFX" type="Node2D"]
-script = ExtResource("1_p2roh")
+script = ExtResource("1_u1wd1")
 
 [node name="selectSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_10i1k")

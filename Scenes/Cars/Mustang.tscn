@@ -1,22 +1,18 @@
-[gd_scene load_steps=26 format=3 uid="uid://bid51mxifofd3"]
+[gd_scene load_steps=30 format=3 uid="uid://bid51mxifofd3"]
 
+[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://Scenes/Cars/respawnMaterial.tres" id="1_j3mk2"]
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_n68py"]
 [ext_resource type="Texture2D" uid="uid://ks7e4wgfjt7o" path="res://Assets/Sprites/Cars/Mustang/MustangBlack.png" id="2_a4jnl"]
 [ext_resource type="Resource" uid="uid://nogcafh0k4qb" path="res://Resources/carStats/basicCarStats.tres" id="2_bvbms"]
 [ext_resource type="Texture2D" uid="uid://befl2sg56r4h" path="res://Assets/Sprites/Cars/Mustang/MustangBlue.png" id="3_43b8t"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_dulba"]
-[ext_resource type="Shader" uid="uid://b0ijw40aod2u8" path="res://shadersAndMaterials/carShader.gdshader" id="3_e1slv"]
 [ext_resource type="Texture2D" uid="uid://cdtvtbhos3c8b" path="res://Assets/Sprites/Cars/Mustang/MustangGreen.png" id="4_aoyom"]
 [ext_resource type="Texture2D" uid="uid://nc6g74bvbffw" path="res://Assets/Sprites/Cars/Mustang/MustangOrange.png" id="5_aketd"]
 [ext_resource type="Texture2D" uid="uid://v3882tth70xu" path="res://Assets/Sprites/Cars/Mustang/MustangPurple.png" id="6_htkji"]
 [ext_resource type="Texture2D" uid="uid://csukxh1aew7ks" path="res://Assets/Sprites/Cars/Mustang/MustangRed.png" id="7_mmygb"]
 [ext_resource type="Texture2D" uid="uid://4mmpom5mqd3r" path="res://Assets/Sprites/Cars/Mustang/MustangWhite.png" id="8_m12a3"]
 [ext_resource type="Texture2D" uid="uid://ypmvk8doc3mr" path="res://Assets/Sprites/Cars/Mustang/MustangYellow.png" id="9_irmh2"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iquv0"]
-shader = ExtResource("3_e1slv")
-shader_parameter/replaceColor = Color(0.964706, 1, 0.00392157, 1)
-shader_parameter/newColor = Color(0.60921, 0.599859, 0.461508, 1)
+[ext_resource type="PackedScene" uid="uid://bjqnojw0nj2fm" path="res://Scenes/Cars/smoke.tscn" id="13_jj3n2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uk60q"]
 atlas = ExtResource("2_a4jnl")
@@ -126,13 +122,102 @@ size = Vector2(8.99993, 13.9999)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qbmm"]
 size = Vector2(99, 44.625)
 
+[sub_resource type="Animation" id="Animation_8krrb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_sb6u4"]
+resource_name = "dissolveRespawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.1]
+}
+
+[sub_resource type="Animation" id="Animation_ekqyh"]
+resource_name = "smokeRespawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rak18"]
+_data = {
+&"RESET": SubResource("Animation_8krrb"),
+&"dissolveRespawn": SubResource("Animation_sb6u4"),
+&"smokeRespawn": SubResource("Animation_ekqyh")
+}
+
 [node name="lemkeCar" type="CharacterBody2D"]
 z_index = 1
+material = ExtResource("1_j3mk2")
 script = ExtResource("1_n68py")
 stats = ExtResource("2_bvbms")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_iquv0")
+material = ExtResource("1_j3mk2")
 position = Vector2(-24, 11)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_wu7g6")
@@ -179,6 +264,14 @@ collision_mask = 4
 position = Vector2(3.5, 0.6875)
 shape = SubResource("RectangleShape2D_2qbmm")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
+
+[node name="smoke" parent="." instance=ExtResource("13_jj3n2")]
+
+[node name="respawnAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rak18")
+}
+autoplay = "RESET"
 
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]

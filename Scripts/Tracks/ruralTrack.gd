@@ -8,5 +8,6 @@ func _ready():
 	p1Start=p1Spawn.global_position
 	p2Start=p2Spawn.global_position
 	playerRotation=p1Spawn.global_rotation_degrees
+	z=6
 	loadCars()
 	pass # Replace with function body.

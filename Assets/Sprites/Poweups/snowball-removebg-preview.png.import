@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cl5p6op5xfams"
-path="res://.godot/imported/snowball-removebg-preview.png-fce1116d4e12fa9c62d44488ae446794.ctex"
+path="res://.godot/imported/snowball-removebg-preview.png-e762d6ab87610ca4040908665409c76c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Poweups/snowball-removebg-preview.png"
-dest_files=["res://.godot/imported/snowball-removebg-preview.png-fce1116d4e12fa9c62d44488ae446794.ctex"]
+source_file="res://assets/sprites/Poweups/snowball-removebg-preview.png"
+dest_files=["res://.godot/imported/snowball-removebg-preview.png-e762d6ab87610ca4040908665409c76c.ctex"]
 
 [params]
 

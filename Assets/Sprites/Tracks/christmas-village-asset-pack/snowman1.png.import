@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cp53u203dger2"
-path="res://.godot/imported/snowman1.png-f9352a809e0446558110b02405199a7a.ctex"
+path="res://.godot/imported/snowman1.png-6fbb8c54c3a399b84a76ba7884062437.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/christmas-village-asset-pack/snowman1.png"
-dest_files=["res://.godot/imported/snowman1.png-f9352a809e0446558110b02405199a7a.ctex"]
+source_file="res://assets/sprites/tracks/christmas-village-asset-pack/snowman1.png"
+dest_files=["res://.godot/imported/snowman1.png-6fbb8c54c3a399b84a76ba7884062437.ctex"]
 
 [params]
 

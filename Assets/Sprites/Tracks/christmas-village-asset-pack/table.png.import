@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch84jrln35xn0"
-path="res://.godot/imported/table.png-fedb235f4d2aa95f60dfea643ad0766e.ctex"
+path="res://.godot/imported/table.png-0c30be7b481133e13424182df88fef70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/christmas-village-asset-pack/table.png"
-dest_files=["res://.godot/imported/table.png-fedb235f4d2aa95f60dfea643ad0766e.ctex"]
+source_file="res://assets/sprites/tracks/christmas-village-asset-pack/table.png"
+dest_files=["res://.godot/imported/table.png-0c30be7b481133e13424182df88fef70.ctex"]
 
 [params]
 

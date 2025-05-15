@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcfuvby2swjml"
-path="res://.godot/imported/CRXWhite.png-4dab33728fb758e147f3ea7f90192fae.ctex"
+path="res://.godot/imported/CRXWhite.png-e0b42ba9abd32e16c738dd06e693cb9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/CRX/CRXWhite.png"
-dest_files=["res://.godot/imported/CRXWhite.png-4dab33728fb758e147f3ea7f90192fae.ctex"]
+source_file="res://assets/sprites/cars/CRX/CRXWhite.png"
+dest_files=["res://.godot/imported/CRXWhite.png-e0b42ba9abd32e16c738dd06e693cb9f.ctex"]
 
 [params]
 

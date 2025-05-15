@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b11whu5nqhr63"
-path="res://.godot/imported/volcanoe_assets.png-b265df67d3531f968faeccee23801899.ctex"
+path="res://.godot/imported/volcanoe_assets.png-66546df0ccf2787796165e6f37613d90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/volcanoe_tileset_and_assets/volcanoe_assets.png"
-dest_files=["res://.godot/imported/volcanoe_assets.png-b265df67d3531f968faeccee23801899.ctex"]
+source_file="res://assets/sprites/tracks/volcanoe_tileset_and_assets/volcanoe_assets.png"
+dest_files=["res://.godot/imported/volcanoe_assets.png-66546df0ccf2787796165e6f37613d90.ctex"]
 
 [params]
 

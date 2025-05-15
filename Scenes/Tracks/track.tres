@@ -1,11 +1,8 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://shirjmw44fyk"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://shirjmw44fyk"]
 
-[ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://assets/sprites/tracks/checkboard pattern.png" id="1_3ii43"]
-[ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://assets/sprites/tracks/192 racetrack Divided.svg" id="2_k6hrb"]
-[ext_resource type="Texture2D" uid="uid://dwiyha8k28rle" path="res://assets/sprites/tracks/update v3 192 racetrack.png" id="3_d1qqm"]
+[ext_resource type="Texture2D" uid="uid://dwiyha8k28rle" path="res://assets/sprites/tracks/update v3 192 racetrack.png" id="1_oomf8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jn0hv"]
-texture = ExtResource("1_3ii43")
 texture_region_size = Vector2i(25, 25)
 0:0/0 = 0
 1:0/0 = 0
@@ -1165,122 +1162,22 @@ texture_region_size = Vector2i(25, 25)
 33:33/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_adp1f"]
-texture = ExtResource("2_k6hrb")
 texture_region_size = Vector2i(25, 25)
-0:0/size_in_atlas = Vector2i(8, 8)
-0:0/0 = 0
-8:0/size_in_atlas = Vector2i(8, 8)
-8:0/0 = 0
-16:0/size_in_atlas = Vector2i(8, 8)
-16:0/0 = 0
-24:0/size_in_atlas = Vector2i(8, 8)
-24:0/0 = 0
-32:0/size_in_atlas = Vector2i(8, 8)
-32:0/0 = 0
-0:8/size_in_atlas = Vector2i(8, 8)
-0:8/0 = 0
-8:8/size_in_atlas = Vector2i(8, 8)
-8:8/0 = 0
-16:8/size_in_atlas = Vector2i(8, 8)
-16:8/0 = 0
-24:8/size_in_atlas = Vector2i(8, 8)
-24:8/0 = 0
-32:8/size_in_atlas = Vector2i(8, 8)
-32:8/0 = 0
-40:8/size_in_atlas = Vector2i(10, 10)
-40:8/0 = 0
-50:8/size_in_atlas = Vector2i(8, 8)
-50:8/0 = 0
-58:8/size_in_atlas = Vector2i(8, 8)
-58:8/0 = 0
-50:16/size_in_atlas = Vector2i(8, 8)
-50:16/0 = 0
-58:16/size_in_atlas = Vector2i(8, 8)
-58:16/0 = 0
-50:24/size_in_atlas = Vector2i(8, 8)
-50:24/0 = 0
-58:24/size_in_atlas = Vector2i(8, 8)
-58:24/0 = 0
-50:32/size_in_atlas = Vector2i(8, 8)
-50:32/0 = 0
-58:32/size_in_atlas = Vector2i(8, 8)
-58:32/0 = 0
-32:16/size_in_atlas = Vector2i(8, 8)
-32:16/0 = 0
-24:16/size_in_atlas = Vector2i(8, 8)
-24:16/0 = 0
-16:16/size_in_atlas = Vector2i(8, 8)
-16:16/0 = 0
-8:16/size_in_atlas = Vector2i(8, 8)
-8:16/0 = 0
-0:16/size_in_atlas = Vector2i(8, 8)
-0:16/0 = 0
-0:24/size_in_atlas = Vector2i(8, 8)
-0:24/0 = 0
-8:24/size_in_atlas = Vector2i(8, 8)
-8:24/0 = 0
-16:24/size_in_atlas = Vector2i(8, 8)
-16:24/0 = 0
-24:24/size_in_atlas = Vector2i(8, 8)
-24:24/0 = 0
-32:24/size_in_atlas = Vector2i(8, 8)
-32:24/0 = 0
-32:32/size_in_atlas = Vector2i(8, 16)
-32:32/0 = 0
-32:48/size_in_atlas = Vector2i(9, 9)
-32:48/0 = 0
-32:48/0/texture_origin = Vector2i(-37, 37)
-41:48/size_in_atlas = Vector2i(9, 9)
-41:48/0 = 0
-41:48/0/texture_origin = Vector2i(37, 37)
-41:57/size_in_atlas = Vector2i(9, 9)
-41:57/0 = 0
-41:57/0/texture_origin = Vector2i(37, -37)
-40:38/size_in_atlas = Vector2i(10, 10)
-40:38/0 = 0
-40:28/size_in_atlas = Vector2i(10, 10)
-40:28/0 = 0
-40:18/size_in_atlas = Vector2i(10, 10)
-40:18/0 = 0
-0:64/size_in_atlas = Vector2i(16, 8)
 0:64/0 = 0
-16:64/size_in_atlas = Vector2i(16, 8)
-16:64/0 = 0
-32:57/size_in_atlas = Vector2i(9, 9)
-32:57/0 = 0
-32:57/0/texture_origin = Vector2i(-37, -37)
-50:40/size_in_atlas = Vector2i(8, 16)
-50:40/0 = 0
-58:40/size_in_atlas = Vector2i(8, 16)
-58:40/0 = 0
-62:56/size_in_atlas = Vector2i(16, 8)
-62:56/0 = 0
-0:32/size_in_atlas = Vector2i(13, 13)
-0:32/0 = 0
-0:32/0/texture_origin = Vector2i(-62, 63)
-0:45/size_in_atlas = Vector2i(13, 13)
-0:45/0 = 0
-0:45/0/texture_origin = Vector2i(-62, -62)
-13:32/size_in_atlas = Vector2i(13, 13)
-13:32/0 = 0
-13:32/0/texture_origin = Vector2i(63, 63)
-13:45/size_in_atlas = Vector2i(13, 13)
-13:45/0 = 0
-13:45/0/texture_origin = Vector2i(63, -62)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrn2o"]
-texture = ExtResource("3_d1qqm")
+texture = ExtResource("1_oomf8")
 texture_region_size = Vector2i(50, 50)
-0:32/size_in_atlas = Vector2i(13, 13)
-0:32/0 = 0
-24:0/size_in_atlas = Vector2i(8, 8)
-24:0/0 = 0
-13:32/size_in_atlas = Vector2i(13, 13)
-13:32/0 = 0
 13:45/size_in_atlas = Vector2i(13, 13)
 13:45/0 = 0
+0:32/size_in_atlas = Vector2i(13, 13)
+0:32/0 = 0
+13:32/size_in_atlas = Vector2i(13, 13)
+13:32/0 = 0
 0:45/size_in_atlas = Vector2i(13, 13)
 0:45/0 = 0
+24:0/size_in_atlas = Vector2i(8, 8)
+24:0/0 = 0
 32:0/size_in_atlas = Vector2i(8, 8)
 32:0/0 = 0
 32:48/size_in_atlas = Vector2i(9, 9)
@@ -1291,8 +1188,6 @@ texture_region_size = Vector2i(50, 50)
 41:57/0 = 0
 32:57/size_in_atlas = Vector2i(9, 9)
 32:57/0 = 0
-40:29/size_in_atlas = Vector2i(10, 8)
-40:29/0 = 0
 
 [resource]
 tile_size = Vector2i(25, 25)

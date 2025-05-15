@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://b8y2taotrov67"]
 
-[ext_resource type="Script" uid="uid://d0tecbd580w4t" path="res://Scripts/Pickups/powerup_box.gd" id="1_8if87"]
-[ext_resource type="Texture2D" uid="uid://bhesx5x4bna1d" path="res://Assets/Sprites/Poweups/Mystery Box.png" id="2_8if87"]
+[ext_resource type="Script" uid="uid://d0tecbd580w4t" path="res://scripts/pickups/powerup_box.gd" id="1_c75pq"]
+[ext_resource type="Texture2D" uid="uid://bhesx5x4bna1d" path="res://assets/sprites/Poweups/Mystery Box.png" id="2_8if87"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ay43o"]
 atlas = ExtResource("2_8if87")
@@ -239,7 +239,7 @@ animations = [{
 size = Vector2(60, 60)
 
 [node name="powerupBox" type="Area2D"]
-script = ExtResource("1_8if87")
+script = ExtResource("1_c75pq")
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
 position = Vector2(10, -16)

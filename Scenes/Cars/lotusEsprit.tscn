@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://cqvqit5wx77dp"]
+[gd_scene load_steps=22 format=3 uid="uid://cqvqit5wx77dp"]
 
+[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://Scenes/Cars/respawnMaterial.tres" id="1_ck2mm"]
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_e1b7u"]
 [ext_resource type="Texture2D" uid="uid://c34jqo1xmnbeu" path="res://Assets/Sprites/Cars/Lotus Esprit/LotusEspritBlack.png" id="2_77ch3"]
 [ext_resource type="Resource" uid="uid://c2f0nxu7r0qgo" path="res://Resources/carStats/lotusEsprit.tres" id="2_p0ub8"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dh2kti5ls1x0a" path="res://Assets/Sprites/Cars/Lotus Esprit/LotusEspritWhite.png" id="8_bxk3w"]
 [ext_resource type="Texture2D" uid="uid://b8f1umvnc63j4" path="res://Assets/Sprites/Cars/Lotus Esprit/LotusEspritYellow.png" id="9_wurey"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="10_camqf"]
+[ext_resource type="PackedScene" uid="uid://bjqnojw0nj2fm" path="res://Scenes/Cars/smoke.tscn" id="13_ac1p7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ygrl"]
 animations = [{
@@ -88,12 +90,102 @@ size = Vector2(8.99993, 13.9999)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6cqp"]
 size = Vector2(108, 42)
 
+[sub_resource type="Animation" id="Animation_8krrb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_sb6u4"]
+resource_name = "dissolveRespawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.1]
+}
+
+[sub_resource type="Animation" id="Animation_ekqyh"]
+resource_name = "smokeRespawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rak18"]
+_data = {
+&"RESET": SubResource("Animation_8krrb"),
+&"dissolveRespawn": SubResource("Animation_sb6u4"),
+&"smokeRespawn": SubResource("Animation_ekqyh")
+}
+
 [node name="Lotus Esprit" type="CharacterBody2D"]
+material = ExtResource("1_ck2mm")
 script = ExtResource("1_e1b7u")
 stats = ExtResource("2_p0ub8")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("1_ck2mm")
 position = Vector2(0, -7)
 rotation = 3.14159
 scale = Vector2(0.6, 0.6)
@@ -143,6 +235,14 @@ collision_mask = 4
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_q6cqp")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
+
+[node name="smoke" parent="." instance=ExtResource("13_ac1p7")]
+
+[node name="respawnAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rak18")
+}
+autoplay = "RESET"
 
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]

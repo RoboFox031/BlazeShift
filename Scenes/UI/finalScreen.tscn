@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://baucv5jtrcijm"]
 
-[ext_resource type="Script" path="res://Scripts/UI/finalScreen.gd" id="1_sm6fy"]
-[ext_resource type="Texture2D" uid="uid://dv7ryu32wteg3" path="res://Assets/Sprites/UI/finishLine.png" id="1_u24u8"]
-[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_sm6fy"]
+[ext_resource type="Script" uid="uid://c7xcnefxl82on" path="res://scripts/ui/finalScreen.gd" id="1_tykcp"]
+[ext_resource type="Texture2D" uid="uid://dv7ryu32wteg3" path="res://assets/sprites/UI/finishLine.png" id="1_u24u8"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://assets/fonts/college/collegec.ttf" id="2_sm6fy"]
 
 [node name="finalScreen" type="Node2D"]
-script = ExtResource("1_sm6fy")
+script = ExtResource("1_tykcp")
 
 [node name="colorRect" type="ColorRect" parent="."]
 offset_right = 1920.0

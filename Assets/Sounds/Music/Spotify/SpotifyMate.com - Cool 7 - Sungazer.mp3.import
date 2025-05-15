@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dqxone87maspu"
-path="res://.godot/imported/SpotifyMate.com - Cool 7 - Sungazer.mp3-94f8d26da917f074f547b6f9137e20ff.mp3str"
+path="res://.godot/imported/SpotifyMate.com - Cool 7 - Sungazer.mp3-6e4124e85551206ac6b84e54915d0aa1.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/music/spotify/SpotifyMate.com - Cool 7 - Sungazer.mp3"
-dest_files=["res://.godot/imported/SpotifyMate.com - Cool 7 - Sungazer.mp3-94f8d26da917f074f547b6f9137e20ff.mp3str"]
+source_file="res://assets/sounds/Music/Spotify/SpotifyMate.com - Cool 7 - Sungazer.mp3"
+dest_files=["res://.godot/imported/SpotifyMate.com - Cool 7 - Sungazer.mp3-6e4124e85551206ac6b84e54915d0aa1.mp3str"]
 
 [params]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://blsisj56bwqpa"]
+[gd_scene load_steps=23 format=3 uid="uid://blsisj56bwqpa"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_qgdms"]
 [ext_resource type="Resource" uid="uid://bmegibr67mtqr" path="res://Resources/carStats/300ZXStats.tres" id="2_5qdwp"]
 [ext_resource type="Texture2D" uid="uid://ofm4ucfy12ix" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Black.png.png" id="2_odt6w"]
 [ext_resource type="Texture2D" uid="uid://l3hl4wyojnqn" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Blue.png.png" id="3_5qdwp"]
+[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://Scenes/Cars/respawnMaterial.tres" id="3_ltdr7"]
 [ext_resource type="Texture2D" uid="uid://840g0ccu8rp" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Green.png.png" id="4_f1yef"]
 [ext_resource type="Texture2D" uid="uid://df1rhjrmlgf5q" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Orange.png.png" id="5_ltdr7"]
 [ext_resource type="Texture2D" uid="uid://h8v5x2f4s3x0" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Purple.png.png" id="6_yxwo1"]
@@ -12,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cnh5ouj3j3bmy" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Yellow.png.png" id="9_mmeq6"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="10_5ib7d"]
 [ext_resource type="PackedScene" uid="uid://bydf7awxku2av" path="res://Scenes/Cars/tire.tscn" id="12_5qdwp"]
+[ext_resource type="PackedScene" uid="uid://bjqnojw0nj2fm" path="res://Scenes/Cars/smoke.tscn" id="14_ltdr7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_da6k4"]
 animations = [{
@@ -89,12 +91,101 @@ size = Vector2(8.99993, 13.9999)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsabg"]
 size = Vector2(127, 52)
 
+[sub_resource type="Animation" id="Animation_8krrb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_sb6u4"]
+resource_name = "dissolveRespawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.1]
+}
+
+[sub_resource type="Animation" id="Animation_ekqyh"]
+resource_name = "smokeRespawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rak18"]
+_data = {
+&"RESET": SubResource("Animation_8krrb"),
+&"dissolveRespawn": SubResource("Animation_sb6u4"),
+&"smokeRespawn": SubResource("Animation_ekqyh")
+}
+
 [node name="300ZX" type="CharacterBody2D"]
 script = ExtResource("1_qgdms")
 stats = ExtResource("2_5qdwp")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("3_ltdr7")
 position = Vector2(0, -13.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
@@ -160,6 +251,14 @@ frame_progress = 0.247693
 position = Vector2(21, -23.9)
 rotation = 1.5708
 scale = Vector2(0.25, 0.25)
+
+[node name="smoke" parent="." instance=ExtResource("14_ltdr7")]
+
+[node name="respawnAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rak18")
+}
+autoplay = "RESET"
 
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]

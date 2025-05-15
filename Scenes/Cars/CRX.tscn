@@ -1,16 +1,18 @@
-[gd_scene load_steps=24 format=3 uid="uid://bc8p8ge8obiqe"]
+[gd_scene load_steps=30 format=3 uid="uid://bc8p8ge8obiqe"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_ter08"]
 [ext_resource type="Resource" uid="uid://cl7bdji6ucuel" path="res://Resources/carStats/crxStats.tres" id="2_2ru7u"]
 [ext_resource type="Texture2D" uid="uid://dttuw3nxohr0y" path="res://Assets/Sprites/Cars/CRX/CRXBlack.png" id="2_4cbh4"]
 [ext_resource type="Texture2D" uid="uid://cwskv64hh3g5c" path="res://Assets/Sprites/Cars/CRX/CRXBlue.png" id="3_2ru7u"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_gb3ma"]
+[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://Scenes/Cars/respawnMaterial.tres" id="3_tyoli"]
 [ext_resource type="Texture2D" uid="uid://cme7v1045t4bk" path="res://Assets/Sprites/Cars/CRX/CRXGreen.png" id="4_xscoo"]
 [ext_resource type="Texture2D" uid="uid://cdqjs5pftp2s6" path="res://Assets/Sprites/Cars/CRX/CRXOrange.png" id="5_tyoli"]
 [ext_resource type="Texture2D" uid="uid://dnedia3iycj7p" path="res://Assets/Sprites/Cars/CRX/CRXPurple.png" id="6_j2pin"]
 [ext_resource type="Texture2D" uid="uid://dlcvvmo3dfm2s" path="res://Assets/Sprites/Cars/CRX/CRXRed.png" id="7_a5712"]
 [ext_resource type="Texture2D" uid="uid://dcfuvby2swjml" path="res://Assets/Sprites/Cars/CRX/CRXWhite.png" id="8_0c0ur"]
 [ext_resource type="Texture2D" uid="uid://tv0i0bpyf4ld" path="res://Assets/Sprites/Cars/CRX/CRXYellow.png" id="9_m6hh6"]
+[ext_resource type="PackedScene" uid="uid://bjqnojw0nj2fm" path="res://Scenes/Cars/smoke.tscn" id="13_j2pin"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7utfb"]
 atlas = ExtResource("2_4cbh4")
@@ -120,12 +122,101 @@ size = Vector2(8.99993, 13.9999)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ru7u"]
 size = Vector2(94, 46)
 
+[sub_resource type="Animation" id="Animation_8krrb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_sb6u4"]
+resource_name = "dissolveRespawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.1]
+}
+
+[sub_resource type="Animation" id="Animation_ekqyh"]
+resource_name = "smokeRespawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rak18"]
+_data = {
+&"RESET": SubResource("Animation_8krrb"),
+&"dissolveRespawn": SubResource("Animation_sb6u4"),
+&"smokeRespawn": SubResource("Animation_ekqyh")
+}
+
 [node name="CRX" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_ter08")
 stats = ExtResource("2_2ru7u")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("3_tyoli")
 position = Vector2(-5, 2)
 rotation = 3.14159
 scale = Vector2(0.6, 0.6)
@@ -172,6 +263,14 @@ collision_mask = 4
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_2ru7u")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
+
+[node name="smoke" parent="." instance=ExtResource("13_j2pin")]
+
+[node name="respawnAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rak18")
+}
+autoplay = "RESET"
 
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]

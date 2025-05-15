@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://7uowwytxe3qv"
-path="res://.godot/imported/SpotifyMate.com - Hot Saturn - Sungazer.mp3-323497255028a221c4092c55dcf3be36.mp3str"
+path="res://.godot/imported/SpotifyMate.com - Hot Saturn - Sungazer.mp3-ba7e120bd44efaa82ec9091b94b0bafb.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/music/spotify/SpotifyMate.com - Hot Saturn - Sungazer.mp3"
-dest_files=["res://.godot/imported/SpotifyMate.com - Hot Saturn - Sungazer.mp3-323497255028a221c4092c55dcf3be36.mp3str"]
+source_file="res://assets/sounds/Music/Spotify/SpotifyMate.com - Hot Saturn - Sungazer.mp3"
+dest_files=["res://.godot/imported/SpotifyMate.com - Hot Saturn - Sungazer.mp3-ba7e120bd44efaa82ec9091b94b0bafb.mp3str"]
 
 [params]
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://br13w330e8krn"]
+[gd_scene load_steps=22 format=3 uid="uid://br13w330e8krn"]
 
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_xjq6m"]
 [ext_resource type="Resource" uid="uid://dqws2pw3a34f2" path="res://Resources/carStats/lancia037Stats.tres" id="2_grgam"]
 [ext_resource type="Texture2D" uid="uid://cfilf58ps6uif" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Black-1.png (1).png" id="3_lcjh2"]
+[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://Scenes/Cars/respawnMaterial.tres" id="3_pf6g8"]
 [ext_resource type="Texture2D" uid="uid://tejkgrt3nxrd" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Blue-1.png.png" id="4_3t6ot"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="4_orgny"]
 [ext_resource type="Texture2D" uid="uid://bllvbf8rfsljc" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Green-1.png.png" id="5_6rvpk"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ka6oiijs51ka" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Red-1.png (1).png" id="8_i441w"]
 [ext_resource type="Texture2D" uid="uid://dmvn3n8werno" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View White-1.png (1).png" id="9_sxark"]
 [ext_resource type="Texture2D" uid="uid://j0rmnrm8gy25" path="res://Assets/Sprites/Cars/Lancia 037/Lancia 037 Top View Yellow-1.png.png" id="10_gc3de"]
+[ext_resource type="PackedScene" uid="uid://bjqnojw0nj2fm" path="res://Scenes/Cars/smoke.tscn" id="13_0blf5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xvnd6"]
 animations = [{
@@ -88,12 +90,101 @@ size = Vector2(8.99993, 13.9999)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3t6ot"]
 size = Vector2(105, 47)
 
+[sub_resource type="Animation" id="Animation_8krrb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_sb6u4"]
+resource_name = "dissolveRespawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/disolveVar")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.1]
+}
+
+[sub_resource type="Animation" id="Animation_ekqyh"]
+resource_name = "smokeRespawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rak18"]
+_data = {
+&"RESET": SubResource("Animation_8krrb"),
+&"dissolveRespawn": SubResource("Animation_sb6u4"),
+&"smokeRespawn": SubResource("Animation_ekqyh")
+}
+
 [node name="lancia037" type="CharacterBody2D"]
 script = ExtResource("1_xjq6m")
 stats = ExtResource("2_grgam")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("3_pf6g8")
 position = Vector2(-1, -7)
 rotation = 3.14159
 scale = Vector2(0.6, 0.6)
@@ -141,6 +232,14 @@ collision_mask = 4
 position = Vector2(1.5, 0.5)
 shape = SubResource("RectangleShape2D_3t6ot")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
+
+[node name="smoke" parent="." instance=ExtResource("13_0blf5")]
+
+[node name="respawnAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rak18")
+}
+autoplay = "RESET"
 
 [connection signal="updateTerrain" from="terrainDetector" to="." method="updateTerrain"]
 [connection signal="area_entered" from="terrainDetector/terrainDetectorL" to="terrainDetector" method="_on_terrain_detector_l_area_entered"]

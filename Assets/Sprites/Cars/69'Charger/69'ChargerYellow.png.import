@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck4xxg6l0cu26"
-path="res://.godot/imported/69'ChargerYellow.png-8c556acfa623db6b8ed3d72ad2bf0e2e.ctex"
+path="res://.godot/imported/69'ChargerYellow.png-5f60cd44b18e073742e05dcdac34ff3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cars/69'Charger/69'ChargerYellow.png"
-dest_files=["res://.godot/imported/69'ChargerYellow.png-8c556acfa623db6b8ed3d72ad2bf0e2e.ctex"]
+source_file="res://Assets/Sprites/Cars/69'Charger/69'ChargerYellow.png"
+dest_files=["res://.godot/imported/69'ChargerYellow.png-5f60cd44b18e073742e05dcdac34ff3e.ctex"]
 
 [params]
 

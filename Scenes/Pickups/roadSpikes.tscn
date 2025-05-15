@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://d141ibd8at8su"]
 
-[ext_resource type="Script" uid="uid://d8e2euh8mfri" path="res://scripts/pickups/road_spikes.gd" id="1_ppbla"]
-[ext_resource type="Texture2D" uid="uid://b7pu883n8gtrf" path="res://assets/sprites/Poweups/Spike Strip (1).png" id="2_t38l2"]
+[ext_resource type="Script" path="res://Scripts/Pickups/road_spikes.gd" id="1_r7n71"]
+[ext_resource type="Texture2D" uid="uid://b7pu883n8gtrf" path="res://Assets/Sprites/Poweups/Spike Strip (1).png" id="2_t38l2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_42c4f"]
 atlas = ExtResource("2_t38l2")
@@ -101,7 +101,7 @@ size = Vector2(208, 720)
 [node name="roadSpikes" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("1_ppbla")
+script = ExtResource("1_r7n71")
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://itji1nhipbm"
-path="res://.godot/imported/collegeb.ttf-040eb13258f4141e104bee3ce66a1b2e.fontdata"
+path="res://.godot/imported/collegeb.ttf-1efbd5b7c0f3114aa3e8f7906306bdfd.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/college/collegeb.ttf"
-dest_files=["res://.godot/imported/collegeb.ttf-040eb13258f4141e104bee3ce66a1b2e.fontdata"]
+source_file="res://Assets/Fonts/college/collegeb.ttf"
+dest_files=["res://.godot/imported/collegeb.ttf-1efbd5b7c0f3114aa3e8f7906306bdfd.fontdata"]
 
 [params]
 

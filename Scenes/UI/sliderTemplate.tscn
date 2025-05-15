@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://by3mmfel3f6wl"]
+[gd_scene load_steps=2 format=3 uid="uid://cc5sucemi37se"]
 
-[ext_resource type="Script" uid="uid://bp3k4klvux7u0" path="res://Scripts/UI/sliderTemplate.gd" id="1_jd371"]
+[ext_resource type="Script" path="res://Scripts/UI/sliderTemplate.gd" id="1_jd371"]
 
 [node name="sliderTemplate" type="ProgressBar"]
 offset_right = 1100.0

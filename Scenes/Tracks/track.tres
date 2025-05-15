@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://shirjmw44fyk"]
 
-[ext_resource type="Texture2D" uid="uid://dwiyha8k28rle" path="res://assets/sprites/tracks/update v3 192 racetrack.png" id="1_oomf8"]
+[ext_resource type="Texture2D" uid="uid://dwiyha8k28rle" path="res://Assets/Sprites/Tracks/update v3 192 racetrack.png" id="1_oomf8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jn0hv"]
 texture_region_size = Vector2i(25, 25)

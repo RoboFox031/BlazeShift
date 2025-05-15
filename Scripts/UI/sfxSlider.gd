@@ -5,5 +5,5 @@ func _ready():
 	value = globalVars.sfxDB
 	
 func _process(delta):
-	#AudioServer.set_bus_volume_linear(AudioServer.get_bus_index('sfx'),value)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index('sfx'),value)
 	globalVars.sfxDB = value

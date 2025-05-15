@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://7lnr23nws6xb"
-path="res://.godot/imported/Ace - Verdant Green Swans.mp3-4cba51124020d47ad1d5982fdb60ba9b.mp3str"
+path="res://.godot/imported/Ace - Verdant Green Swans.mp3-cbc86e2362aac25ee5a303c76097aff1.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/Music/Royalty/Ace - Verdant Green Swans.mp3"
-dest_files=["res://.godot/imported/Ace - Verdant Green Swans.mp3-4cba51124020d47ad1d5982fdb60ba9b.mp3str"]
+source_file="res://Assets/Sounds/Music/Royalty/Ace - Verdant Green Swans.mp3"
+dest_files=["res://.godot/imported/Ace - Verdant Green Swans.mp3-cbc86e2362aac25ee5a303c76097aff1.mp3str"]
 
 [params]
 

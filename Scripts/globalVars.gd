@@ -11,7 +11,7 @@ var musicType = 'spotifyMusic'
 var musicDB = 50
 var sfxDB = 50
 var nextScene
-var tracksCompleted = [0,1,2,3]
+var tracksCompleted = []
 #Defults to mustang
 var currentCarNames={"p1":"Mustang","p2":"Mustang"}
 var pOnePowerup = 'none'
@@ -41,7 +41,7 @@ var pOneLastRacePlacement = null
 var pOneOverallPlacement = '1st'
 var pOneLastRaceCoinsCollected = 0
 var pOneTotalCoinsCollected = 0
-var pOneTotalWins = 2
+var pOneTotalWins = 0
 
 var pTwoLastRaceTime = '00:00'
 var pTwoTotalTime = '00:00'
@@ -49,7 +49,7 @@ var pTwoLastRacePlacement = null
 var pTwoOverallPlacement = '1st'
 var pTwoLastRaceCoinsCollected = 0
 var pTwoTotalCoinsCollected = 0
-var pTwoTotalWins = 2
+var pTwoTotalWins = 0
 
 #shop variables
 var pOneCarSelected = 0

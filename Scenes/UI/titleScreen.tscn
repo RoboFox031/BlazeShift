@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbfmgub402k83"]
 
-[ext_resource type="Script" uid="uid://ciqlrjjg2527c" path="res://Scripts/UI/titleScreen.gd" id="1_iq0ie"]
-[ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="1_jy4yn"]
-[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_pkee8"]
-[ext_resource type="PackedScene" uid="uid://bmtbwlc4rj8uy" path="res://Scenes/UI/uiSFX.tscn" id="4_cpfnc"]
-[ext_resource type="Script" path="res://Scripts/UI/flash.gd" id="4_xco0s"]
+[ext_resource type="Script" uid="uid://ciqlrjjg2527c" path="res://scripts/ui/titleScreen.gd" id="1_iq0ie"]
+[ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://assets/sprites/UI/titleScreenBackground.png" id="1_jy4yn"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://assets/fonts/college/collegec.ttf" id="2_pkee8"]
+[ext_resource type="PackedScene" uid="uid://icevwd4ir3d2" path="res://Scenes/UI/uiSFX.tscn" id="4_cpfnc"]
+[ext_resource type="Script" uid="uid://0bfxv81mvhip" path="res://Scripts/UI/flash.gd" id="4_xco0s"]
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_iq0ie")

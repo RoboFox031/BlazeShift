@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d4iwnhhm1f6yw"
-path="res://.godot/imported/Tokyo Drift.mp3-124a5b5d463f0381df7369af11f8aff0.mp3str"
+path="res://.godot/imported/Tokyo Drift.mp3-3cb436d189f3d556984b915543e4ae43.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/music/royalty/Tokyo Drift.mp3"
-dest_files=["res://.godot/imported/Tokyo Drift.mp3-124a5b5d463f0381df7369af11f8aff0.mp3str"]
+source_file="res://assets/sounds/Music/Royalty/Tokyo Drift.mp3"
+dest_files=["res://.godot/imported/Tokyo Drift.mp3-3cb436d189f3d556984b915543e4ae43.mp3str"]
 
 [params]
 

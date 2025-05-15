@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bonhku8rjh0g1"
-path="res://.godot/imported/plants.png-35bd1f019c49787e99cad816112d079e.ctex"
+path="res://.godot/imported/plants.png-d8369b564d0db1fd71484b766f687f01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/ruralMapTiles/plants.png"
-dest_files=["res://.godot/imported/plants.png-35bd1f019c49787e99cad816112d079e.ctex"]
+source_file="res://assets/sprites/tracks/ruralMapTiles/plants.png"
+dest_files=["res://.godot/imported/plants.png-d8369b564d0db1fd71484b766f687f01.ctex"]
 
 [params]
 

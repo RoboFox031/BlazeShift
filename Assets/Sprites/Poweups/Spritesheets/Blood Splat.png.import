@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://esp22o8ggh6f"
-path="res://.godot/imported/Blood Splat.png-f877a09b8c21d6a68add9e5343465736.ctex"
+path="res://.godot/imported/Blood Splat.png-8dea9354bd808c36cf0e13f868ca0e32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Poweups/Spritesheets/Blood Splat.png"
-dest_files=["res://.godot/imported/Blood Splat.png-f877a09b8c21d6a68add9e5343465736.ctex"]
+source_file="res://assets/sprites/Poweups/Spritesheets/Blood Splat.png"
+dest_files=["res://.godot/imported/Blood Splat.png-8dea9354bd808c36cf0e13f868ca0e32.ctex"]
 
 [params]
 

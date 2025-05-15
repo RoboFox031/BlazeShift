@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d0dnv3lcmaaro"
-path="res://.godot/imported/car-motor-revving-99317.mp3-62ef15c19722f26576add6c155488851.mp3str"
+path="res://.godot/imported/car-motor-revving-99317.mp3-dbf21341690da6939422f3acaec1d681.mp3str"
 
 [deps]
 
-source_file="res://Assets/Sounds/uiSFX/car-motor-revving-99317.mp3"
-dest_files=["res://.godot/imported/car-motor-revving-99317.mp3-62ef15c19722f26576add6c155488851.mp3str"]
+source_file="res://assets/sounds/uiSFX/car-motor-revving-99317.mp3"
+dest_files=["res://.godot/imported/car-motor-revving-99317.mp3-dbf21341690da6939422f3acaec1d681.mp3str"]
 
 [params]
 

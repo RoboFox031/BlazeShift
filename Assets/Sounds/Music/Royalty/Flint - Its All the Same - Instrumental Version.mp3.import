@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cfmovcmbdtdc5"
-path="res://.godot/imported/Flint - Its All the Same - Instrumental Version.mp3-dba30cbc368b1c8c2bfed5455c4ab767.mp3str"
+path="res://.godot/imported/Flint - Its All the Same - Instrumental Version.mp3-7e44a3ee7809578d55b2be06d4403091.mp3str"
 
 [deps]
 
-source_file="res://Assets/Sounds/Music/Royalty/Flint - Its All the Same - Instrumental Version.mp3"
-dest_files=["res://.godot/imported/Flint - Its All the Same - Instrumental Version.mp3-dba30cbc368b1c8c2bfed5455c4ab767.mp3str"]
+source_file="res://assets/sounds/music/royalty/Flint - Its All the Same - Instrumental Version.mp3"
+dest_files=["res://.godot/imported/Flint - Its All the Same - Instrumental Version.mp3-7e44a3ee7809578d55b2be06d4403091.mp3str"]
 
 [params]
 

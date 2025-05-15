@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bdcwduwimlfi2"
-path="res://.godot/imported/coin-donation-2-180438.wav-e358891175361d880e832df73e2b4ac4.sample"
+path="res://.godot/imported/coin-donation-2-180438.wav-579e73eb6dcbb6d1644d43804675f518.sample"
 
 [deps]
 
-source_file="res://Assets/Sounds/uiSFX/coin-donation-2-180438.wav"
-dest_files=["res://.godot/imported/coin-donation-2-180438.wav-e358891175361d880e832df73e2b4ac4.sample"]
+source_file="res://assets/sounds/uiSFX/coin-donation-2-180438.wav"
+dest_files=["res://.godot/imported/coin-donation-2-180438.wav-579e73eb6dcbb6d1644d43804675f518.sample"]
 
 [params]
 

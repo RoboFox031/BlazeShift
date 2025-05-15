@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdienlvw5alel"
-path="res://.godot/imported/whiteArrow.png-d244dd1b23ece02eadc3a35794ce031c.ctex"
+path="res://.godot/imported/whiteArrow.png-6fdeec4f68b02a373b85874214fd7cf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/whiteArrow.png"
-dest_files=["res://.godot/imported/whiteArrow.png-d244dd1b23ece02eadc3a35794ce031c.ctex"]
+source_file="res://assets/sprites/UI/whiteArrow.png"
+dest_files=["res://.godot/imported/whiteArrow.png-6fdeec4f68b02a373b85874214fd7cf9.ctex"]
 
 [params]
 

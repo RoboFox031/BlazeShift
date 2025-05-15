@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://071ov745k868"
-path="res://.godot/imported/basicTrackBackground.png-dfc6885340ce0dd6b5228179046ef912.ctex"
+path="res://.godot/imported/basicTrackBackground.png-5c1d54111aca5adc8f392ba270d6f7e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/basicTrackBackground.png"
-dest_files=["res://.godot/imported/basicTrackBackground.png-dfc6885340ce0dd6b5228179046ef912.ctex"]
+source_file="res://assets/sprites/UI/basicTrackBackground.png"
+dest_files=["res://.godot/imported/basicTrackBackground.png-5c1d54111aca5adc8f392ba270d6f7e0.ctex"]
 
 [params]
 

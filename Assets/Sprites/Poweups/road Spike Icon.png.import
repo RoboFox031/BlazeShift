@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chu50x54x7gnw"
-path="res://.godot/imported/road Spike Icon.png-c70fb288ce0aa799da576110af5b948e.ctex"
+path="res://.godot/imported/road Spike Icon.png-3d00efe2590f080ae8531cb2b56714d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Poweups/road Spike Icon.png"
-dest_files=["res://.godot/imported/road Spike Icon.png-c70fb288ce0aa799da576110af5b948e.ctex"]
+source_file="res://assets/sprites/Poweups/road Spike Icon.png"
+dest_files=["res://.godot/imported/road Spike Icon.png-3d00efe2590f080ae8531cb2b56714d1.ctex"]
 
 [params]
 

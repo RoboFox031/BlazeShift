@@ -64,6 +64,7 @@ var pTwoName = 'BBB'
 var canMove = false
 var canPause = false
 var winner
+var canEdit
 
 var pOneOwned: Array
 var pTwoOwned: Array

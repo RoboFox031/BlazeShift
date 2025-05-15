@@ -133,6 +133,7 @@ func _useButton(option):
 		print('hit')
 		emit_signal('unpaused')
 	if option == 'options':
+		globalVars.canEdit = true
 		$pauseOptionsScreen.pausedToMenu = true
 		$pauseOptionsScreen.visible = true
 	if option == 'restart':

@@ -176,3 +176,5 @@ offset_bottom = 1080.0
 
 [connection signal="_startRace" from="." to="hSplitContainer/subViewportContainer/canvasLayer/pTwoStoplight" method="_on_track_loader__start_race"]
 [connection signal="_startRace" from="." to="hSplitContainer/subViewportContainer2/canvasLayer/pOneStoplight" method="_on_track_loader__start_race"]
+[connection signal="puased" from="canvasLayer/pauseScreen" to="." method="_on_pause_screen_p_pause"]
+[connection signal="unpaused" from="canvasLayer/pauseScreen" to="." method="_on_pause_screen_p_resume"]

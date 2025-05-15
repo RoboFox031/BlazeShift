@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 			selected = 0
 		_updateLabels()
 	if Input.is_action_just_pressed('p1_b') or Input.is_action_just_pressed('p2_b'):
+		globalVars.canEdit == false
 		get_tree().change_scene_to_file('res://Scenes/UI/titleScreen.tscn')
 		
 func _updateLabels():

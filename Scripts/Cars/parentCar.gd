@@ -131,13 +131,13 @@ var lastProgress=0
 var progressPoint:Vector2
 var progressRot=0
 #how far you can skip
-var skipTolerance=20
+var skipTolerance=40
 #Stores how long you've reversed for
 var reverseCount=0
 #Stores how long you can reverse(before it gets mad)
-var reverseTolerance=15
+var reverseTolerance=10
 #Stores the max distance the player can be from the track
-var trackMaxDist=1000
+var trackMaxDist=1050
 
 #The signal that is called when you are reversing
 signal startReversing
@@ -171,7 +171,7 @@ func _physics_process(delta):
 		linDirection=1
 	else:
 		#Gets the input, and converts it to positive or negitive 1
-		linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
+		linDirection = Input.get_axis(currentOwnerStr+"_b", currentOwnerStr+"_a")
 	#If you click forwards and are stopped or driving forwards, accelerate based on the acceleration value
 	if linDirection>0 and currentLinSpeed>=0:
 		currentLinSpeed = move_toward(currentLinSpeed, currentTopSpeed*linDirection*terrainSpeedMult, currentAcceleration*terrainAccelMult)

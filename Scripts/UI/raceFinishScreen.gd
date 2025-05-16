@@ -12,6 +12,8 @@ var pTwoInfo = [0,0,0,0]
 var pOneReady = false
 var pTwoReady = false
 
+var reward = 5
+
 @onready var winner = $backGroundStuff/label
 
 func _ready():
@@ -22,8 +24,19 @@ func _ready():
 	
 	if globalVars.pOneLastRacePlacement == '1st':
 		winner.text = 'player '+globalVars.pOneName+' won the race'
+		globalVars.winner = 'player1'
+		globalVars.pOneCoins += 5
+		$confetti3.emitting = true
+		$confetti4.emitting = true
+		
+		globalVars.pOneTotalCoinsCollected += reward
 	else:
 		winner.text = 'player '+globalVars.pTwoName+' won the race'
+		globalVars.pTwoCoins += 5
+		globalVars.pTwoTotalCoinsCollected += reward
+		globalVars.winner = 'player2'
+		$confetti.emitting = true
+		$confetti2.emitting = true
 		
 	pOneInfo[0] = globalVars.convertSec(globalVars.pOneLastRaceTime)
 	pOneInfo[1] = globalVars.pOneLastRaceCoinsCollected
@@ -35,6 +48,7 @@ func _ready():
 	pTwoInfo[2] = globalVars.pTwoLastRacePlacement
 	pTwoInfo[3] = globalVars.pTwoOverallPlacement
 	
+	_updateCoins()
 	_updateLabels()
 	_updateReady()
 	_updateCoins()
@@ -74,14 +88,26 @@ func _updateReady():
 		$pTwoReadyLabel.visible = false
 	if pOneReady == true and pTwoReady == true:
 		if (globalVars.pOneTotalWins + globalVars.pTwoTotalWins) >= 5:
-			get_tree().change_scene_to_file('res://Scenes/UI/titleScreen.tscn')
-			globalVars.gameReset()
-		else:
-			get_tree().change_scene_to_file('res://Scenes/UI/shop.tscn')
 			globalVars.resetRaceVars()
+			get_tree().change_scene_to_file('res://Scenes/UI/finalScreen.tscn')
+		else:
+			globalVars.resetRaceVars()
+			get_tree().change_scene_to_file('res://Scenes/UI/shop.tscn')
 		
 func _updateCoins():
 	globalVars.pOneCoins += globalVars.pOneLastRaceCoinsCollected
 	globalVars.pTwoCoins += globalVars.pTwoLastRaceCoinsCollected
+	globalVars.pOneTotalCoinsCollected += globalVars.pOneLastRaceCoinsCollected
+	globalVars.pTwoTotalCoinsCollected += globalVars.pTwoLastRaceCoinsCollected
 	print(globalVars.pOneCoins)
 	print(globalVars.pTwoCoins)
+
+func _updateConfetti():
+	if globalVars.pOneLastRacePlacement == '1st':
+		print('emit')
+		$confetti3.emitting = true
+		$confetti4.emitting = true
+	if globalVars.pTwoLastRacePlacement == '1st':
+		print('emit')
+		$confetti.emitting = true
+		$confetti1.emitting = true

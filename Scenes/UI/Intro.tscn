@@ -1,0 +1,229 @@
+[gd_scene load_steps=17 format=3 uid="uid://btsofo0uo4gkw"]
+
+[ext_resource type="Script" uid="uid://dcuc756tfosm6" path="res://Scripts/UI/intro.gd" id="1_bjyge"]
+[ext_resource type="Texture2D" uid="uid://deyyh12fkkhv6" path="res://Assets/Sprites/loadingScreens/TruckLoadScreenWhite.png" id="1_ibvsm"]
+[ext_resource type="AudioStream" uid="uid://ctjv4yps07b1b" path="res://Assets/Sounds/Music/Spotify/intro.mp3" id="2_3l18w"]
+[ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="2_n66p7"]
+
+[sub_resource type="Animation" id="Animation_n66p7"]
+resource_name = "intro"
+length = 15.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.06667, 6.2, 8.6, 13.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"startFade"
+}, {
+"args": [],
+"method": &"fadeout"
+}, {
+"args": [],
+"method": &"nextColor"
+}, {
+"args": [],
+"method": &"titleScreen"
+}]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("audioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_3l18w")
+}],
+"times": PackedFloat32Array(1)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("animatedSprite2d:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(8.60003),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("colorRect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8.6),
+"transitions": PackedFloat32Array(1e+06, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.699653, 0.699653, 0.699653, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8.60003),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_3l18w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animatedSprite2d:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("colorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bjyge"]
+_data = {
+&"RESET": SubResource("Animation_3l18w"),
+&"intro": SubResource("Animation_n66p7")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l18w"]
+atlas = ExtResource("1_ibvsm")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysgm0"]
+atlas = ExtResource("1_ibvsm")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x3a3"]
+atlas = ExtResource("1_ibvsm")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayn7r"]
+atlas = ExtResource("1_ibvsm")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq348"]
+atlas = ExtResource("1_ibvsm")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72vj6"]
+atlas = ExtResource("1_ibvsm")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6acn"]
+atlas = ExtResource("1_ibvsm")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xym5"]
+atlas = ExtResource("1_ibvsm")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfr0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l18w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysgm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x3a3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayn7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq348")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72vj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6acn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xym5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_bjyge")
+
+[node name="camera2d" type="Camera2D" parent="."]
+
+[node name="colorRect" type="ColorRect" parent="."]
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+
+[node name="animationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bjyge")
+}
+
+[node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(10.1068, 10.1068)
+sprite_frames = SubResource("SpriteFrames_yfr0l")
+autoplay = "default"
+frame_progress = 0.346136
+
+[node name="label" type="Label" parent="."]
+visible = false
+offset_left = -807.0
+offset_top = -175.0
+offset_right = 659.0
+offset_bottom = 327.0
+scale = Vector2(1.09596, 0.723641)
+theme_override_fonts/font = ExtResource("2_n66p7")
+theme_override_font_sizes/font_size = 500
+text = "BHOKZ"
+
+[node name="audioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -1,28 +1,29 @@
 extends Node
 
-var track = preload("res://Scenes/Tracks/iceTrack.tscn")
+var track = preload("res://Scenes/Tracks/basicTrack.tscn")
 var playerOneCar = preload("res://Scenes/Cars/Mustang.tscn")
 var playerTwoCar = preload("res://Scenes/Cars/Mustang.tscn")
 var playerOneCarSprite = null
 var playerTwoCarSprite = null
 var playerOneColor = "blue"
 var playerTwoColor = "blue"
-var musicType = 'spotifyMusic'
+var musicType = 'royaltyMusic'
 var musicDB = 50
 var sfxDB = 50
 var nextScene
+var tracksCompleted = []
 #Defults to mustang
 var currentCarNames={"p1":"Mustang","p2":"Mustang"}
 var pOnePowerup = 'none'
 var pTwoPowerup = 'none'
-var pOneCoins = 90
-var pTwoCoins = 90
+var pOneCoins = 0
+var pTwoCoins = 0
 const NSX = preload("res://Scenes/Cars/NSX.tscn")
 var p1BlazeCurrent = 100
 var p2BlazeCurrent = 100
 var pOneDone = false
 var pTwoDone = false
-var playMusic
+var playMusic = false
 var inCyclone = false
 #Stores the progress value and the lap value for each player
 var progress={
@@ -37,7 +38,7 @@ var laps={
 var pOneLastRaceTime = '00:00'
 var pOneTotalTime = '00:00'
 var pOneLastRacePlacement = null
-var pOneOverallPlacement = '1st'
+var pOneOverallPlacement = null
 var pOneLastRaceCoinsCollected = 0
 var pOneTotalCoinsCollected = 0
 var pOneTotalWins = 0
@@ -45,7 +46,7 @@ var pOneTotalWins = 0
 var pTwoLastRaceTime = '00:00'
 var pTwoTotalTime = '00:00'
 var pTwoLastRacePlacement = null
-var pTwoOverallPlacement = '1st'
+var pTwoOverallPlacement = null
 var pTwoLastRaceCoinsCollected = 0
 var pTwoTotalCoinsCollected = 0
 var pTwoTotalWins = 0
@@ -62,6 +63,11 @@ var pTwoName = 'BBB'
 
 var canMove = false
 var canPause = false
+var winner
+var canEdit
+
+var pOneOwned: Array
+var pTwoOwned: Array
 
 #global score list for each track
 var basicScores := {}
@@ -72,7 +78,9 @@ var organizedScores := {}
 #name,score,track
 
 #func saveScores(trackName, playerName, time):
-
+func _ready():
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index('sfx'),globalVars.sfxDB)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index('music'),globalVars.musicDB)
 
 func saveScores(trackName,playerName,time):
 	var timeScore = ConfigFile.new()
@@ -227,12 +235,17 @@ func checkDecimals(number):
 		return 0
 
 func resetRaceVars():
+	#Defults to mustang
+	currentCarNames={"p1":"Mustang","p2":"Mustang"}
 	pOnePowerup = 'none'
 	pTwoPowerup = 'none'
 	p1BlazeCurrent = 100
 	p2BlazeCurrent = 100
 	pOneDone = false
 	pTwoDone = false
+	playMusic = false
+	inCyclone = false
+	#Stores the progress value and the lap value for each player
 	progress={
 		"p1":0,
 		"p2":0,
@@ -241,27 +254,16 @@ func resetRaceVars():
 		"p1":0,
 		"p2":0,
 	}
-	pOneLastRaceTime = '00:00'
-	pOneTotalTime = '00:00'
-	pOneLastRacePlacement = null
-	pOneOverallPlacement = null
-	pOneLastRaceCoinsCollected = 0
-	pTwoLastRaceTime = '00:00'
-	pTwoTotalTime = '00:00'
-	pTwoLastRacePlacement = null
-	pTwoOverallPlacement = null
-	pTwoLastRaceCoinsCollected = 0
+
 	canMove = false
 	canPause = false
+	winner
+	canEdit
 	
 func gameReset():
-	track = preload("res://Scenes/Tracks/basicTrack.tscn")
-	playerOneCar = preload("res://Scenes/Cars/Mustang.tscn")
-	playerTwoCar = preload("res://Scenes/Cars/Mustang.tscn")
-	playerOneCarSprite = null
-	playerTwoCarSprite = null
-	playerOneColor = "blue"
-	playerTwoColor = "blue"
+	musicType = 'royaltyMusic'
+	tracksCompleted = []
+	#Defults to mustang
 	currentCarNames={"p1":"Mustang","p2":"Mustang"}
 	pOnePowerup = 'none'
 	pTwoPowerup = 'none'
@@ -271,6 +273,9 @@ func gameReset():
 	p2BlazeCurrent = 100
 	pOneDone = false
 	pTwoDone = false
+	playMusic = false
+	inCyclone = false
+	#Stores the progress value and the lap value for each player
 	progress={
 		"p1":0,
 		"p2":0,
@@ -279,23 +284,36 @@ func gameReset():
 		"p1":0,
 		"p2":0,
 	}
+	#racing variables
 	pOneLastRaceTime = '00:00'
 	pOneTotalTime = '00:00'
 	pOneLastRacePlacement = null
 	pOneOverallPlacement = null
 	pOneLastRaceCoinsCollected = 0
+	pOneTotalCoinsCollected = 0
 	pOneTotalWins = 0
+
 	pTwoLastRaceTime = '00:00'
 	pTwoTotalTime = '00:00'
 	pTwoLastRacePlacement = null
 	pTwoOverallPlacement = null
 	pTwoLastRaceCoinsCollected = 0
+	pTwoTotalCoinsCollected = 0
 	pTwoTotalWins = 0
+
+	#shop variables
 	pOneCarSelected = 0
 	pTwoCarSelected = 0
 	pOneColorSelected = 0
 	pTwoColorSelected = 0
+
+	#name variables
 	pOneName = 'AAA'
 	pTwoName = 'BBB'
+
 	canMove = false
 	canPause = false
+	winner
+	canEdit
+	pOneOwned = []
+	pTwoOwned = []

@@ -664,7 +664,7 @@ func finishRace():
 	var trackName = globalVars.track.instantiate().name
 	if currentOwnerStr == 'p1':
 		globalVars.saveScores(trackName,globalVars.pOneName,globalVars.pOneLastRaceTime)
-	if currentOwnerStr == 'p1':
+	if currentOwnerStr == 'p2':
 		globalVars.saveScores(trackName,globalVars.pTwoName,globalVars.pTwoLastRaceTime)
 	get_tree().change_scene_to_file("res://Scenes/UI/raceFinishScreen.tscn")
 	print("ur done!")

@@ -52,6 +52,7 @@ func buttonPressed(button):
 	if button == playButton:
 		get_tree().change_scene_to_file("res://Scenes/UI/nameSelection.tscn")
 	elif button == optionsButton:
+		globalVars.canEdit = true
 		get_tree().change_scene_to_file("res://Scenes/UI/optionsScreen.tscn")
 	elif button == tutorialButton:
 		get_tree().change_scene_to_file("res://Scenes/UI/leaderboard.tscn")

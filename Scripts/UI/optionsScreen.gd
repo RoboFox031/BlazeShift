@@ -9,7 +9,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('p1_up') or Input.is_action_just_pressed('p2_up'):
 		if selected == 0:
 			selected = 1
-			
 		else:
 			selected = 0
 		_updateLabels()
@@ -20,6 +19,7 @@ func _process(delta: float) -> void:
 			selected = 0
 		_updateLabels()
 	if Input.is_action_just_pressed('p1_b') or Input.is_action_just_pressed('p2_b'):
+		globalVars.canEdit == false
 		get_tree().change_scene_to_file('res://Scenes/UI/titleScreen.tscn')
 		
 func _updateLabels():
@@ -33,3 +33,10 @@ func _updateLabels():
 		$musicSlider.selected = true
 		$sfxSlider/panel.visible = false
 		$musicSlider/panel.visible = true
+
+func _input(event):
+	if Input.is_action_just_pressed('p1_up') or Input.is_action_just_pressed('p1_down') or Input.is_action_just_pressed('p1_left') or Input.is_action_just_pressed('p1_right'):
+		get_node('uiSFX/cursorMoveSound').play()
+	if Input.is_action_just_pressed('p2_up') or Input.is_action_just_pressed('p2_down') or Input.is_action_just_pressed('p2_left') or Input.is_action_just_pressed('p2_right'):
+		get_node('uiSFX/cursorMoveSound').play()
+	pass

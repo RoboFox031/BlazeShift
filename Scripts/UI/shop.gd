@@ -9,21 +9,6 @@ var aCost=60
 var sCost=100
 
 var carTiers = {
-	'mustang': {
-		"tier": 'good',
-		"color": '00cc00',
-		'cost': bCost
-	},
-	'nsx': {
-		"tier": 'elite',
-		"color": 'ffe50d',
-		'cost': aCost
-	},
-	's13': {
-		"tier": 'mid',
-		"color": 'ff0000',
-		"cost":0
-	},
 	'crx': {
 		"tier": 'mid',
 		"color": 'ff0000',
@@ -34,12 +19,37 @@ var carTiers = {
 		"color": 'ff0000',
 		"cost":0
 	},
+	's13': {
+		"tier": 'mid',
+		"color": 'ff0000',
+		"cost":0
+	},
+	'300zx': {
+		"tier": 'good',
+		"color": '00cc00',
+		'cost': bCost
+	},
 	'69 charger': {
 		"tier": 'good',
 		"color": '00cc00',
 		'cost': bCost
 	},
+	'mustang': {
+		"tier": 'good',
+		"color": '00cc00',
+		'cost': bCost
+	},
+	'camaro': {
+		"tier": 'elite',
+		"color": 'ffe50d',
+		'cost': aCost
+	},
 	'lancia 037': {
+		"tier": 'elite',
+		"color": 'ffe50d',
+		'cost': aCost
+	},
+	'nsx': {
 		"tier": 'elite',
 		"color": 'ffe50d',
 		'cost': aCost
@@ -53,16 +63,6 @@ var carTiers = {
 		"tier": 'god',
 		"color": 'd70dff',
 		'cost': sCost
-	},
-	'300zx': {
-		"tier": 'good',
-		"color": '00cc00',
-		'cost': bCost
-	},
-	'camaro': {
-		"tier": 'elite',
-		"color": 'ffe50d',
-		'cost': aCost
 	}
 }
 
@@ -109,28 +109,15 @@ var pOneCars: Array = []
 var pTwoCars: Array = []
 var pOneCarsFinal: Array = []
 var pTwoCarsFinal: Array = []
-var pOneOwned: Array
-var pTwoOwned: Array
+
 
 
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 
-var carStringNames: Array = ['Mustang/Mustang','NSX/NSX','S13/S13',"CRX/CRX","FC RX7/FC RX7","69 Charger/69 Charger","Lancia 037/Lancia 037","Lotus Esprit/Lotus Esprit","RUF CTR/RUF CTR","300ZX/300ZX","Camaro/Camaro"]
-var carNames: Array = ['Mustang', "NSX", "S13","CRX","FC RX7","69 Charger","Lancia 037","Lotus Esprit","RUF CTR","300ZX","Camaro"]
+var carStringNames: Array = ["CRX/CRX","FC RX7/FC RX7",'S13/S13',"300ZX/300ZX","69 Charger/69 Charger",'Mustang/Mustang',"Camaro/Camaro","Lancia 037/Lancia 037",'NSX/NSX',"Lotus Esprit/Lotus Esprit","RUF CTR/RUF CTR"]
+var carNames: Array = ["CRX","FC RX7",'S13',"300ZX","69 Charger",'Mustang',"Camaro","Lancia 037",'NSX',"Lotus Esprit","RUF CTR"]
 
 var cars := {
-	"Mustang": {
-	carScene = preload("res://Scenes/Cars/Mustang.tscn"), 
-	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-	},
-	"NSX": {
-	carScene = preload("res://Scenes/Cars/NSX.tscn"), 
-	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-	},
-	"S13": {
-	carScene = preload("res://Scenes/Cars/S13.tscn"), 
-	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-	},
 	"CRX": {
 		carScene = preload("res://Scenes/Cars/CRX.tscn"),
 		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
@@ -139,13 +126,33 @@ var cars := {
 		carScene = preload("res://Scenes/Cars/FCRX7.tscn"),
 		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 	},
+	"S13": {
+	carScene = preload("res://Scenes/Cars/S13.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"300ZX": {
+		carScene = preload("res://Scenes/Cars/300ZX.tscn"),
+		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
 	"69 Charger": {
 		carScene = preload("res://Scenes/Cars/96Charger.tscn"),
+		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"Mustang": {
+	carScene = preload("res://Scenes/Cars/Mustang.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"Camaro": {
+		carScene = preload("res://Scenes/Cars/camaro.tscn"),
 		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 	},
 	"Lancia 037": {
 		carScene = preload("res://Scenes/Cars/lancia037.tscn"),
 		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"NSX": {
+	carScene = preload("res://Scenes/Cars/NSX.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 	},
 	"Lotus Esprit": {
 		carScene = preload("res://Scenes/Cars/lotusEsprit.tscn"),
@@ -154,16 +161,7 @@ var cars := {
 	"RUF CTR": {
 		carScene = preload("res://Scenes/Cars/rufCTR.tscn"),
 		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-	},
-	"300ZX": {
-		carScene = preload("res://Scenes/Cars/300ZX.tscn"),
-		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-	},
-	"Camaro": {
-		carScene = preload("res://Scenes/Cars/camaro.tscn"),
-		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-	},
-	
+	}
 }
 
 
@@ -181,10 +179,10 @@ func _ready() -> void:
 		
 	for car in carTiers:
 		if carTiers[car]['cost']==0:
-			pOneOwned.append(car)
-			pTwoOwned.append(car)
+			globalVars.pOneOwned.append(car)
+			globalVars.pTwoOwned.append(car)
 			
-	print("owned "+str(pOneOwned))
+	print("owned "+str(globalVars.pOneOwned))
 	print("cars "+str(pOneCars))
 	
 	#pOneOwned = [pOneCars[0],pOneCars[1]]
@@ -200,13 +198,13 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('p1_start'):
-		if pOneReady == false and carNames[globalVars.pOneCarSelected].to_lower() in pOneOwned:
+		if pOneReady == false and carNames[globalVars.pOneCarSelected].to_lower() in globalVars.pOneOwned:
 			pOneReady = true
 		else:
 			pOneReady = false
 		getReady()
 	if Input.is_action_just_pressed("p2_start"):
-		if pTwoReady == false and carNames[globalVars.pTwoCarSelected].to_lower() in pTwoOwned:
+		if pTwoReady == false and carNames[globalVars.pTwoCarSelected].to_lower() in globalVars.pTwoOwned:
 			pTwoReady = true
 		else:
 			pTwoReady = false
@@ -337,7 +335,7 @@ func _updateCarDisplay(pOneCar,pTwoCar):
 			c.visible = true
 		else:
 			c.visible = false
-	if carNames[globalVars.pOneCarSelected].to_lower() in pOneOwned:
+	if carNames[globalVars.pOneCarSelected].to_lower() in globalVars.pOneOwned:
 		pOneCostLabel.visible = false
 		$locks/pOneCarLock.visible = false
 	else:
@@ -347,7 +345,7 @@ func _updateCarDisplay(pOneCar,pTwoCar):
 		else:
 			pOneCostLabel.text = str(carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['cost']) + " coins"
 		$locks/pOneCarLock.visible = true
-	if carNames[globalVars.pTwoCarSelected].to_lower() in pTwoOwned:
+	if carNames[globalVars.pTwoCarSelected].to_lower() in globalVars.pTwoOwned:
 		pTwoCostLabel.visible = false
 		$locks/pTwoCarLock.visible = false
 	else:
@@ -406,7 +404,7 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 			c.play(colors[globalVars.pTwoColorSelected])
 		else:
 			c.visible = false
-	if carNames[globalVars.pOneCarSelected].to_lower() in pOneOwned:
+	if carNames[globalVars.pOneCarSelected].to_lower() in globalVars.pOneOwned:
 		pOneOwnedLabel.text = "owned"
 		pOneOwnedLabel.position.x = 362
 		pOneOwnedLabel.add_theme_color_override("font_color", Color("008b00"))
@@ -416,7 +414,7 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 		pOneOwnedLabel.position.x = 280
 		pOneOwnedLabel.add_theme_color_override("font_color", Color("9f0000"))
 		$locks/pOneLockFinal.visible = true
-	if carNames[globalVars.pTwoCarSelected].to_lower() in pTwoOwned:
+	if carNames[globalVars.pTwoCarSelected].to_lower() in globalVars.pTwoOwned:
 		pTwoOwnedLabel.text = "owned"
 		pTwoOwnedLabel.position.x = 1330
 		pTwoOwnedLabel.add_theme_color_override("font_color", Color("008b00"))
@@ -430,24 +428,24 @@ func _updateFinalDisplay(pOneCar,pTwoCar,pOneColor,pTwoColor):
 
 func _buyCar(player):
 	if player == 1:
-		if carNames[globalVars.pOneCarSelected].to_lower() not in pOneOwned:
+		if carNames[globalVars.pOneCarSelected].to_lower() not in globalVars.pOneOwned:
 			if globalVars.pOneCoins - carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['cost'] >= 0:
-				pOneOwned.append(carNames[globalVars.pOneCarSelected].to_lower())
+				globalVars.pOneOwned.append(carNames[globalVars.pOneCarSelected].to_lower())
 				globalVars.pOneCoins -= carTiers[carNames[globalVars.pOneCarSelected].to_lower()]['cost']
 				$pOneCoinHud.update()
 				$uiSFX.playBuySound()
 				_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 				_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
 	if player == 2:
-		if carNames[globalVars.pTwoCarSelected].to_lower() not in pTwoOwned:
+		if carNames[globalVars.pTwoCarSelected].to_lower() not in globalVars.pTwoOwned:
 			if globalVars.pTwoCoins - carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost'] >= 0:
-				pTwoOwned.append(carNames[globalVars.pTwoCarSelected].to_lower())
+				globalVars.pTwoOwned.append(carNames[globalVars.pTwoCarSelected].to_lower())
 				globalVars.pTwoCoins -= carTiers[carNames[globalVars.pTwoCarSelected].to_lower()]['cost']
 				$pTwoCoinHud.update()
 				$uiSFX.playBuySound()
 				_updateFinalDisplay(pTwoCarsFinal[globalVars.pTwoCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 				_updateCarDisplay(pOneCars[globalVars.pOneCarSelected],pTwoCars[globalVars.pTwoCarSelected])
-	print("p1 owned: "+str(pOneOwned))
+	print("p1 owned: "+str(globalVars.pOneOwned))
 	carNames
 #updates the global vars before moving onto the upgrade shop
 func _changeGlobalVars():
@@ -484,11 +482,11 @@ func _updateCarNameLabels():
 	
 #updates the visibility of a label if the car is not owner
 func _updateBuyButtonLabels():
-	if carNames[globalVars.pOneCarSelected].to_lower() not in pOneOwned:
+	if carNames[globalVars.pOneCarSelected].to_lower() not in globalVars.pOneOwned:
 		$pOneBuyButtonLabel.visible = true
 	else:
 		$pOneBuyButtonLabel.visible = false
-	if carNames[globalVars.pTwoCarSelected].to_lower() not in pTwoOwned:
+	if carNames[globalVars.pTwoCarSelected].to_lower() not in globalVars.pTwoOwned:
 		$pTwoBuyButtonLabel.visible = true
 	else:
 		$pTwoBuyButtonLabel.visible = false

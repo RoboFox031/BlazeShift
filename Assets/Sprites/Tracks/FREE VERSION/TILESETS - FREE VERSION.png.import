@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brbcmtpotj1if"
-path="res://.godot/imported/TILESETS - FREE VERSION.png-610221b8edcf5b6d7a226637ee8684a8.ctex"
+path="res://.godot/imported/TILESETS - FREE VERSION.png-debf45fe1ee9e224105f7bee99afdebb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/FREE VERSION/TILESETS - FREE VERSION.png"
-dest_files=["res://.godot/imported/TILESETS - FREE VERSION.png-610221b8edcf5b6d7a226637ee8684a8.ctex"]
+source_file="res://Assets/Sprites/Tracks/FREE VERSION/TILESETS - FREE VERSION.png"
+dest_files=["res://.godot/imported/TILESETS - FREE VERSION.png-debf45fe1ee9e224105f7bee99afdebb.ctex"]
 
 [params]
 

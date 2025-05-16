@@ -1,7 +1,7 @@
 extends UI
 
 var pausedToMenu = false #used to tell if options screen is opened in game
-
+var canEdit
 var selected = 0 #0 is sfx 1 is music
 
 func _ready() -> void:
@@ -25,6 +25,7 @@ func _process(delta: float) -> void:
 			_updateLabels()
 	if Input.is_action_just_pressed('p1_b') or Input.is_action_just_pressed('p2_b'):
 		self.visible = false
+		globalVars.canEdit = false
 		pausedToMenu = false
 		
 func _updateLabels():

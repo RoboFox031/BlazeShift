@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://4bi15gho6wx6"]
+[gd_scene load_steps=7 format=3 uid="uid://4bi15gho6wx6"]
 
 [ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="1_4qqhy"]
-[ext_resource type="Script" path="res://Scripts/UI/optionsScreen.gd" id="1_laix0"]
+[ext_resource type="Script" uid="uid://b4i3c0yk0ggwe" path="res://Scripts/UI/optionsScreen.gd" id="1_laix0"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_pgymt"]
 [ext_resource type="PackedScene" uid="uid://cpwf36cljl8vm" path="res://Scenes/UI/musicSlider.tscn" id="3_pgymt"]
 [ext_resource type="PackedScene" uid="uid://chaw7kly572j4" path="res://Scenes/UI/sfxSlider.tscn" id="4_nmkow"]
+[ext_resource type="PackedScene" uid="uid://icevwd4ir3d2" path="res://Scenes/UI/uiSFX.tscn" id="6_ygk4j"]
 
 [node name="optionsScreen" type="Node2D"]
 script = ExtResource("1_laix0")
@@ -63,3 +64,5 @@ theme_override_font_sizes/font_size = 70
 text = "press b to go back"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="uiSFX" parent="." instance=ExtResource("6_ygk4j")]

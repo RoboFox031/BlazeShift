@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dkswl6q5y0c8d" path="res://Scripts/UI/shop.gd" id="1_6j5yt"]
 [ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="2_qad3o"]
 [ext_resource type="Texture2D" uid="uid://bv3prfv0yhkc" path="res://Assets/Sprites/UI/whiteCircle.png" id="3_sycxl"]
-[ext_resource type="Script" path="res://Scripts/UI/flash.gd" id="4_c0yic"]
+[ext_resource type="Script" uid="uid://0bfxv81mvhip" path="res://Scripts/UI/flash.gd" id="4_c0yic"]
 [ext_resource type="Texture2D" uid="uid://cwie6jc02kiqw" path="res://Assets/Sprites/UI/blackRing.png" id="4_wo2en"]
 [ext_resource type="Texture2D" uid="uid://ks7e4wgfjt7o" path="res://Assets/Sprites/Cars/Mustang/MustangBlack.png" id="5_i6uuj"]
 [ext_resource type="Texture2D" uid="uid://c4j141rwvqapi" path="res://Assets/Sprites/Cars/NSX/NSXBlack.png" id="6_76mq5"]
@@ -175,6 +175,73 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_w51kr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_qq1sq")
+}],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58_ulc3w")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_yeike")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_3exwq")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_qfwtt")
+}],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62_xqv2a")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_7khwb")
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_efjfu")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wjn4u"]
 shader = ExtResource("16_tiod0")
 shader_parameter/replaceColor = Color(0.964706, 1, 0.00392157, 1)
@@ -241,6 +308,73 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("32_wvtgu")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y51na"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_odqji")
+}],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_c0yic")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("67_it6ig")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("68_2ly1b")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("69_kusnf")
+}],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("70_caekk")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("71_p06cn")
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("72_f1g0e")
 }],
 "loop": true,
 "name": &"yellow",
@@ -442,140 +576,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("56_muq0a")
-}],
-"loop": true,
-"name": &"yellow",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_w51kr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("57_qq1sq")
-}],
-"loop": true,
-"name": &"black",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("58_ulc3w")
-}],
-"loop": true,
-"name": &"blue",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("59_yeike")
-}],
-"loop": true,
-"name": &"green",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("60_3exwq")
-}],
-"loop": true,
-"name": &"orange",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("61_qfwtt")
-}],
-"loop": true,
-"name": &"purple",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("62_xqv2a")
-}],
-"loop": true,
-"name": &"red",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("63_7khwb")
-}],
-"loop": true,
-"name": &"white",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("64_efjfu")
-}],
-"loop": true,
-"name": &"yellow",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_y51na"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("65_odqji")
-}],
-"loop": true,
-"name": &"black",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("66_c0yic")
-}],
-"loop": true,
-"name": &"blue",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("67_it6ig")
-}],
-"loop": true,
-"name": &"green",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("68_2ly1b")
-}],
-"loop": true,
-"name": &"orange",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("69_kusnf")
-}],
-"loop": true,
-"name": &"purple",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("70_caekk")
-}],
-"loop": true,
-"name": &"red",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("71_p06cn")
-}],
-"loop": true,
-"name": &"white",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("72_f1g0e")
 }],
 "loop": true,
 "name": &"yellow",
@@ -1484,34 +1484,14 @@ autostart = true
 
 [node name="pOneCars" type="Node2D" parent="."]
 
-[node name="pOneCarOne" type="Sprite2D" parent="pOneCars"]
-position = Vector2(404, 972)
-rotation = 1.5708
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_i6uuj")
-
-[node name="pOneCarTwo" type="Sprite2D" parent="pOneCars"]
-visible = false
-position = Vector2(453, 977)
-rotation = 3.14159
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("6_76mq5")
-
-[node name="pOneCarThree" type="Sprite2D" parent="pOneCars"]
-visible = false
-position = Vector2(465, 924)
-rotation = 3.14159
-scale = Vector2(2, 2)
-texture = ExtResource("7_s7cvf")
-
-[node name="pOneCarFour" type="Sprite2D" parent="pOneCars"]
+[node name="CRX" type="Sprite2D" parent="pOneCars"]
 visible = false
 position = Vector2(463, 939)
 rotation = 3.14159
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("24_tfx5t")
 
-[node name="pOneCarFive" type="AnimatedSprite2D" parent="pOneCars"]
+[node name="FCRX7" type="AnimatedSprite2D" parent="pOneCars"]
 visible = false
 material = SubResource("ShaderMaterial_mor8m")
 position = Vector2(473, 915)
@@ -1521,7 +1501,23 @@ sprite_frames = SubResource("SpriteFrames_0kpgh")
 animation = &"black"
 autoplay = "black"
 
-[node name="pOneCarSix" type="AnimatedSprite2D" parent="pOneCars"]
+[node name="S13" type="Sprite2D" parent="pOneCars"]
+visible = false
+position = Vector2(465, 924)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("7_s7cvf")
+
+[node name="300ZX" type="AnimatedSprite2D" parent="pOneCars"]
+visible = false
+position = Vector2(473, 916)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+sprite_frames = SubResource("SpriteFrames_w51kr")
+animation = &"black"
+autoplay = "black"
+
+[node name="69Charger" type="AnimatedSprite2D" parent="pOneCars"]
 visible = false
 material = SubResource("ShaderMaterial_wjn4u")
 position = Vector2(469, 935)
@@ -1531,7 +1527,21 @@ sprite_frames = SubResource("SpriteFrames_i10kn")
 animation = &"black"
 autoplay = "black"
 
-[node name="pOneCarSeven" type="AnimatedSprite2D" parent="pOneCars"]
+[node name="Mustang" type="Sprite2D" parent="pOneCars"]
+position = Vector2(404, 972)
+rotation = 1.5708
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_i6uuj")
+
+[node name="Camaro" type="AnimatedSprite2D" parent="pOneCars"]
+position = Vector2(468, 932)
+rotation = -3.14159
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_y51na")
+animation = &"black"
+autoplay = "black"
+
+[node name="Lancia037" type="AnimatedSprite2D" parent="pOneCars"]
 visible = false
 position = Vector2(465, 926)
 rotation = 3.14159
@@ -1540,7 +1550,14 @@ sprite_frames = SubResource("SpriteFrames_6hwhc")
 animation = &"black"
 autoplay = "black"
 
-[node name="pOneCarEight" type="AnimatedSprite2D" parent="pOneCars"]
+[node name="NSX" type="Sprite2D" parent="pOneCars"]
+visible = false
+position = Vector2(453, 977)
+rotation = 3.14159
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_76mq5")
+
+[node name="LotusEsprit" type="AnimatedSprite2D" parent="pOneCars"]
 visible = false
 position = Vector2(479, 931)
 rotation = 3.14159
@@ -1549,7 +1566,7 @@ sprite_frames = SubResource("SpriteFrames_o76ws")
 animation = &"black"
 autoplay = "black"
 
-[node name="pOneCarNine" type="AnimatedSprite2D" parent="pOneCars"]
+[node name="RUFCTR" type="AnimatedSprite2D" parent="pOneCars"]
 position = Vector2(469, 928)
 rotation = 3.14159
 scale = Vector2(1.6, 1.6)
@@ -1557,53 +1574,16 @@ sprite_frames = SubResource("SpriteFrames_qq1sq")
 animation = &"black"
 autoplay = "black"
 
-[node name="pOneCarTen" type="AnimatedSprite2D" parent="pOneCars"]
-visible = false
-position = Vector2(473, 916)
-rotation = 3.14159
-scale = Vector2(1.4, 1.4)
-sprite_frames = SubResource("SpriteFrames_w51kr")
-animation = &"black"
-autoplay = "black"
-
-[node name="pOneCarEleven" type="AnimatedSprite2D" parent="pOneCars"]
-position = Vector2(468, 932)
-rotation = -3.14159
-scale = Vector2(1.6, 1.6)
-sprite_frames = SubResource("SpriteFrames_y51na")
-animation = &"black"
-autoplay = "black"
-
 [node name="pTwoCars" type="Node2D" parent="."]
 
-[node name="pTwoCarOne" type="Sprite2D" parent="pTwoCars"]
-position = Vector2(1390, 972)
-rotation = 1.5708
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_i6uuj")
-
-[node name="pTwoCarTwo" type="Sprite2D" parent="pTwoCars"]
-visible = false
-position = Vector2(1441, 977)
-rotation = 3.14159
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("6_76mq5")
-
-[node name="pTwoCarThree" type="Sprite2D" parent="pTwoCars"]
-visible = false
-position = Vector2(1463, 924)
-rotation = 3.14159
-scale = Vector2(2, 2)
-texture = ExtResource("7_s7cvf")
-
-[node name="pTwoCarFour" type="Sprite2D" parent="pTwoCars"]
+[node name="CRX" type="Sprite2D" parent="pTwoCars"]
 visible = false
 position = Vector2(1439, 947)
 rotation = 3.14159
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("24_tfx5t")
 
-[node name="pTwoCarFive" type="AnimatedSprite2D" parent="pTwoCars"]
+[node name="FCRX7" type="AnimatedSprite2D" parent="pTwoCars"]
 visible = false
 material = SubResource("ShaderMaterial_mor8m")
 position = Vector2(1465, 915)
@@ -1614,7 +1594,23 @@ animation = &"black"
 autoplay = "black"
 frame_progress = 0.736909
 
-[node name="pTwoCarSix" type="AnimatedSprite2D" parent="pTwoCars"]
+[node name="S13" type="Sprite2D" parent="pTwoCars"]
+visible = false
+position = Vector2(1463, 924)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("7_s7cvf")
+
+[node name="300ZX" type="AnimatedSprite2D" parent="pTwoCars"]
+visible = false
+position = Vector2(1452, 918)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+sprite_frames = SubResource("SpriteFrames_w51kr")
+animation = &"black"
+autoplay = "black"
+
+[node name="69Charger" type="AnimatedSprite2D" parent="pTwoCars"]
 visible = false
 material = SubResource("ShaderMaterial_wjn4u")
 position = Vector2(1462, 933)
@@ -1624,7 +1620,21 @@ sprite_frames = SubResource("SpriteFrames_i10kn")
 animation = &"black"
 autoplay = "black"
 
-[node name="pTwoCarSeven" type="AnimatedSprite2D" parent="pTwoCars"]
+[node name="Mustang" type="Sprite2D" parent="pTwoCars"]
+position = Vector2(1390, 972)
+rotation = 1.5708
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_i6uuj")
+
+[node name="Camaro" type="AnimatedSprite2D" parent="pTwoCars"]
+position = Vector2(1449, 936)
+rotation = -3.14159
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_y51na")
+animation = &"black"
+autoplay = "black"
+
+[node name="Lancia037" type="AnimatedSprite2D" parent="pTwoCars"]
 visible = false
 position = Vector2(1448, 929)
 rotation = 3.14159
@@ -1633,7 +1643,14 @@ sprite_frames = SubResource("SpriteFrames_6hwhc")
 animation = &"black"
 autoplay = "black"
 
-[node name="pTwoCarEight" type="AnimatedSprite2D" parent="pTwoCars"]
+[node name="NSX" type="Sprite2D" parent="pTwoCars"]
+visible = false
+position = Vector2(1441, 977)
+rotation = 3.14159
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_76mq5")
+
+[node name="LotusEsprit" type="AnimatedSprite2D" parent="pTwoCars"]
 visible = false
 position = Vector2(1464, 930)
 rotation = 3.14159
@@ -1642,29 +1659,12 @@ sprite_frames = SubResource("SpriteFrames_o76ws")
 animation = &"black"
 autoplay = "black"
 
-[node name="pTwoCarNine" type="AnimatedSprite2D" parent="pTwoCars"]
+[node name="RUFCTR" type="AnimatedSprite2D" parent="pTwoCars"]
 visible = false
 position = Vector2(1466, 928)
 rotation = 3.14159
 scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_qq1sq")
-animation = &"black"
-autoplay = "black"
-
-[node name="pTwoCarTen" type="AnimatedSprite2D" parent="pTwoCars"]
-visible = false
-position = Vector2(1452, 918)
-rotation = 3.14159
-scale = Vector2(1.4, 1.4)
-sprite_frames = SubResource("SpriteFrames_w51kr")
-animation = &"black"
-autoplay = "black"
-
-[node name="pTwoCarEleven" type="AnimatedSprite2D" parent="pTwoCars"]
-position = Vector2(1449, 936)
-rotation = -3.14159
-scale = Vector2(1.6, 1.6)
-sprite_frames = SubResource("SpriteFrames_y51na")
 animation = &"black"
 autoplay = "black"
 

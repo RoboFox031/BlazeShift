@@ -264,6 +264,7 @@ position = Vector2(940, 1480)
 zoom = Vector2(0.5, 0.5)
 
 [node name="audioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -7.0
 
 [node name="animationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

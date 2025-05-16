@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://dnoj3j4pbv0xf"]
 
-[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://Scenes/Cars/respawnMaterial.tres" id="1_c87eh"]
+[ext_resource type="Material" uid="uid://shscjc8522m2" path="res://Scenes/Cars/respawnMaterial.tres" id="1_c87eh"]
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_krq1h"]
 [ext_resource type="Resource" uid="uid://b11f7b5sh5urm" path="res://Resources/carStats/s13Stats.tres" id="2_c87eh"]
 [ext_resource type="Texture2D" uid="uid://cxho7kl4koftr" path="res://Assets/Sprites/Cars/S13/S13Black.png" id="2_e0f06"]

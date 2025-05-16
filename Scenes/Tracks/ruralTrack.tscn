@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://Assets/Sprites/Tracks/ruralMapTiles/sandwater.png" id="10_h0h4c"]
 [ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="11_oyt2e"]
 [ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://Assets/Sprites/Tracks/ruralMapTiles/sand.png" id="11_te1ji"]
-[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="11_v8d64"]
+[ext_resource type="Script" path="res://Scripts/Tracks/checkpointPath.gd" id="11_v8d64"]
 [ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://Scenes/Pickups/powerupBox.tscn" id="12_jn0hv"]
 [ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://Scenes/Cars/carSpawn.tscn" id="12_oyt2e"]
-[ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://Scripts/Tracks/terrain.gd" id="13_jn0hv"]
+[ext_resource type="Script" uid="uid://cm4c08konxr5r" path="res://Scripts/Tracks/terrain.gd" id="13_jn0hv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wr7v"]
 texture = ExtResource("3_7cshe")

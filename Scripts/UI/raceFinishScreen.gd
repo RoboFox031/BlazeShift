@@ -51,7 +51,6 @@ func _ready():
 	_updateCoins()
 	_updateLabels()
 	_updateReady()
-	_updateCoins()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("p1_start"):

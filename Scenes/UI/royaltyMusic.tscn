@@ -10,25 +10,25 @@
 
 [node name="basicTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_povtx")
-volume_db = -12.0
+volume_db = -7.0
 bus = &"music"
 
 [node name="ruralTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_b36in")
-volume_db = -10.0
+volume_db = -5.0
 bus = &"music"
 
 [node name="iceTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_otvvu")
-volume_db = -10.0
+volume_db = -5.0
 bus = &"music"
 
 [node name="volcanoTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_rgmw4")
-volume_db = -10.0
+volume_db = -5.0
 bus = &"music"
 
 [node name="cityTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_8ppw1")
-volume_db = -10.0
+volume_db = -5.0
 bus = &"music"

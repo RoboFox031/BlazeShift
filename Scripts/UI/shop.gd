@@ -9,21 +9,6 @@ var aCost=60
 var sCost=100
 
 var carTiers = {
-	'mustang': {
-		"tier": 'good',
-		"color": '00cc00',
-		'cost': bCost
-	},
-	'nsx': {
-		"tier": 'elite',
-		"color": 'ffe50d',
-		'cost': aCost
-	},
-	's13': {
-		"tier": 'mid',
-		"color": 'ff0000',
-		"cost":0
-	},
 	'crx': {
 		"tier": 'mid',
 		"color": 'ff0000',
@@ -34,12 +19,37 @@ var carTiers = {
 		"color": 'ff0000',
 		"cost":0
 	},
+	's13': {
+		"tier": 'mid',
+		"color": 'ff0000',
+		"cost":0
+	},
+	'300zx': {
+		"tier": 'good',
+		"color": '00cc00',
+		'cost': bCost
+	},
 	'69 charger': {
 		"tier": 'good',
 		"color": '00cc00',
 		'cost': bCost
 	},
+	'mustang': {
+		"tier": 'good',
+		"color": '00cc00',
+		'cost': bCost
+	},
+	'camaro': {
+		"tier": 'elite',
+		"color": 'ffe50d',
+		'cost': aCost
+	},
 	'lancia 037': {
+		"tier": 'elite',
+		"color": 'ffe50d',
+		'cost': aCost
+	},
+	'nsx': {
 		"tier": 'elite',
 		"color": 'ffe50d',
 		'cost': aCost
@@ -53,16 +63,6 @@ var carTiers = {
 		"tier": 'god',
 		"color": 'd70dff',
 		'cost': sCost
-	},
-	'300zx': {
-		"tier": 'good',
-		"color": '00cc00',
-		'cost': bCost
-	},
-	'camaro': {
-		"tier": 'elite',
-		"color": 'ffe50d',
-		'cost': aCost
 	}
 }
 
@@ -114,22 +114,10 @@ var pTwoCarsFinal: Array = []
 
 var colors: Array = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 
-var carStringNames: Array = ['Mustang/Mustang','NSX/NSX','S13/S13',"CRX/CRX","FC RX7/FC RX7","69 Charger/69 Charger","Lancia 037/Lancia 037","Lotus Esprit/Lotus Esprit","RUF CTR/RUF CTR","300ZX/300ZX","Camaro/Camaro"]
-var carNames: Array = ['Mustang', "NSX", "S13","CRX","FC RX7","69 Charger","Lancia 037","Lotus Esprit","RUF CTR","300ZX","Camaro"]
+var carStringNames: Array = ["CRX/CRX","FC RX7/FC RX7",'S13/S13',"300ZX/300ZX","69 Charger/69 Charger",'Mustang/Mustang',"Camaro/Camaro","Lancia 037/Lancia 037",'NSX/NSX',"Lotus Esprit/Lotus Esprit","RUF CTR/RUF CTR"]
+var carNames: Array = ["CRX","FC RX7",'S13',"300ZX","69 Charger",'Mustang',"Camaro","Lancia 037",'NSX',"Lotus Esprit","RUF CTR"]
 
 var cars := {
-	"Mustang": {
-	carScene = preload("res://Scenes/Cars/Mustang.tscn"), 
-	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-	},
-	"NSX": {
-	carScene = preload("res://Scenes/Cars/NSX.tscn"), 
-	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-	},
-	"S13": {
-	carScene = preload("res://Scenes/Cars/S13.tscn"), 
-	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-	},
 	"CRX": {
 		carScene = preload("res://Scenes/Cars/CRX.tscn"),
 		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
@@ -138,13 +126,33 @@ var cars := {
 		carScene = preload("res://Scenes/Cars/FCRX7.tscn"),
 		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 	},
+	"S13": {
+	carScene = preload("res://Scenes/Cars/S13.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"300ZX": {
+		carScene = preload("res://Scenes/Cars/300ZX.tscn"),
+		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
 	"69 Charger": {
 		carScene = preload("res://Scenes/Cars/96Charger.tscn"),
+		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"Mustang": {
+	carScene = preload("res://Scenes/Cars/Mustang.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"Camaro": {
+		carScene = preload("res://Scenes/Cars/camaro.tscn"),
 		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 	},
 	"Lancia 037": {
 		carScene = preload("res://Scenes/Cars/lancia037.tscn"),
 		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
+	},
+	"NSX": {
+	carScene = preload("res://Scenes/Cars/NSX.tscn"), 
+	colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
 	},
 	"Lotus Esprit": {
 		carScene = preload("res://Scenes/Cars/lotusEsprit.tscn"),
@@ -153,16 +161,7 @@ var cars := {
 	"RUF CTR": {
 		carScene = preload("res://Scenes/Cars/rufCTR.tscn"),
 		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-	},
-	"300ZX": {
-		carScene = preload("res://Scenes/Cars/300ZX.tscn"),
-		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-	},
-	"Camaro": {
-		carScene = preload("res://Scenes/Cars/camaro.tscn"),
-		colors = ["white", "black", "red", "orange", "yellow", "green", "blue", "purple"]
-	},
-	
+	}
 }
 
 

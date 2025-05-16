@@ -88,10 +88,11 @@ func _updateReady():
 		$pTwoReadyLabel.visible = false
 	if pOneReady == true and pTwoReady == true:
 		if (globalVars.pOneTotalWins + globalVars.pTwoTotalWins) >= 5:
+			globalVars.resetRaceVars()
 			get_tree().change_scene_to_file('res://Scenes/UI/finalScreen.tscn')
 		else:
-			get_tree().change_scene_to_file('res://Scenes/UI/shop.tscn')
 			globalVars.resetRaceVars()
+			get_tree().change_scene_to_file('res://Scenes/UI/shop.tscn')
 		
 func _updateCoins():
 	globalVars.pOneCoins += globalVars.pOneLastRaceCoinsCollected

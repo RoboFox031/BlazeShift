@@ -235,12 +235,17 @@ func checkDecimals(number):
 		return 0
 
 func resetRaceVars():
+	#Defults to mustang
+	currentCarNames={"p1":"Mustang","p2":"Mustang"}
 	pOnePowerup = 'none'
 	pTwoPowerup = 'none'
 	p1BlazeCurrent = 100
 	p2BlazeCurrent = 100
 	pOneDone = false
 	pTwoDone = false
+	playMusic = false
+	inCyclone = false
+	#Stores the progress value and the lap value for each player
 	progress={
 		"p1":0,
 		"p2":0,
@@ -249,27 +254,16 @@ func resetRaceVars():
 		"p1":0,
 		"p2":0,
 	}
-	pOneLastRaceTime = '00:00'
-	pOneTotalTime = '00:00'
-	pOneLastRacePlacement = null
-	pOneOverallPlacement = null
-	pOneLastRaceCoinsCollected = 0
-	pTwoLastRaceTime = '00:00'
-	pTwoTotalTime = '00:00'
-	pTwoLastRacePlacement = null
-	pTwoOverallPlacement = null
-	pTwoLastRaceCoinsCollected = 0
+
 	canMove = false
 	canPause = false
+	winner
+	canEdit
 	
 func gameReset():
-	track = preload("res://Scenes/Tracks/basicTrack.tscn")
-	playerOneCar = preload("res://Scenes/Cars/Mustang.tscn")
-	playerTwoCar = preload("res://Scenes/Cars/Mustang.tscn")
-	playerOneCarSprite = null
-	playerTwoCarSprite = null
-	playerOneColor = "blue"
-	playerTwoColor = "blue"
+	musicType = 'royaltyMusic'
+	tracksCompleted = []
+	#Defults to mustang
 	currentCarNames={"p1":"Mustang","p2":"Mustang"}
 	pOnePowerup = 'none'
 	pTwoPowerup = 'none'
@@ -279,6 +273,9 @@ func gameReset():
 	p2BlazeCurrent = 100
 	pOneDone = false
 	pTwoDone = false
+	playMusic = false
+	inCyclone = false
+	#Stores the progress value and the lap value for each player
 	progress={
 		"p1":0,
 		"p2":0,
@@ -287,23 +284,36 @@ func gameReset():
 		"p1":0,
 		"p2":0,
 	}
+	#racing variables
 	pOneLastRaceTime = '00:00'
 	pOneTotalTime = '00:00'
 	pOneLastRacePlacement = null
 	pOneOverallPlacement = null
 	pOneLastRaceCoinsCollected = 0
+	pOneTotalCoinsCollected = 0
 	pOneTotalWins = 0
+
 	pTwoLastRaceTime = '00:00'
 	pTwoTotalTime = '00:00'
 	pTwoLastRacePlacement = null
 	pTwoOverallPlacement = null
 	pTwoLastRaceCoinsCollected = 0
+	pTwoTotalCoinsCollected = 0
 	pTwoTotalWins = 0
+
+	#shop variables
 	pOneCarSelected = 0
 	pTwoCarSelected = 0
 	pOneColorSelected = 0
 	pTwoColorSelected = 0
+
+	#name variables
 	pOneName = 'AAA'
 	pTwoName = 'BBB'
+
 	canMove = false
 	canPause = false
+	winner
+	canEdit
+	pOneOwned = []
+	pTwoOwned = []

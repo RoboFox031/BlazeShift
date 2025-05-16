@@ -603,7 +603,7 @@ func respawn(reason:String='weapon'):
 #Makes the player be on the next lap
 func nextLap():
 	#If you are on lap 3, end the race
-	if currentLap==1:
+	if currentLap==3:
 		if currentOwnerStr == 'p1':
 			globalVars.pOneDone = true
 			if globalVars.pTwoLastRacePlacement == null:

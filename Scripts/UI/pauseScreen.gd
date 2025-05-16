@@ -145,4 +145,5 @@ func _useButton(option):
 		$controlScreen.pausedToControls = true
 		
 func _restart():
+	globalVars.gameReset()
 	get_tree().change_scene_to_file("res://Scenes/UI/titleScreen.tscn")

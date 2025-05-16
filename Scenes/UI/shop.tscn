@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dkswl6q5y0c8d" path="res://Scripts/UI/shop.gd" id="1_6j5yt"]
 [ext_resource type="Texture2D" uid="uid://cqrmesepqwdlr" path="res://Assets/Sprites/UI/shopBackground.png" id="2_qad3o"]
 [ext_resource type="Texture2D" uid="uid://bv3prfv0yhkc" path="res://Assets/Sprites/UI/whiteCircle.png" id="3_sycxl"]
-[ext_resource type="Script" uid="uid://0bfxv81mvhip" path="res://Scripts/UI/flash.gd" id="4_c0yic"]
+[ext_resource type="Script" path="res://Scripts/UI/flash.gd" id="4_c0yic"]
 [ext_resource type="Texture2D" uid="uid://cwie6jc02kiqw" path="res://Assets/Sprites/UI/blackRing.png" id="4_wo2en"]
 [ext_resource type="Texture2D" uid="uid://ks7e4wgfjt7o" path="res://Assets/Sprites/Cars/Mustang/MustangBlack.png" id="5_i6uuj"]
 [ext_resource type="Texture2D" uid="uid://c4j141rwvqapi" path="res://Assets/Sprites/Cars/NSX/NSXBlack.png" id="6_76mq5"]

@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://bmegibr67mtqr" path="res://Resources/carStats/300ZXStats.tres" id="2_5qdwp"]
 [ext_resource type="Texture2D" uid="uid://ofm4ucfy12ix" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Black.png.png" id="2_odt6w"]
 [ext_resource type="Texture2D" uid="uid://l3hl4wyojnqn" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Blue.png.png" id="3_5qdwp"]
-[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://Scenes/Cars/respawnMaterial.tres" id="3_ltdr7"]
+[ext_resource type="Material" uid="uid://shscjc8522m2" path="res://Scenes/Cars/respawnMaterial.tres" id="3_ltdr7"]
 [ext_resource type="Texture2D" uid="uid://840g0ccu8rp" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Green.png.png" id="4_f1yef"]
 [ext_resource type="Texture2D" uid="uid://df1rhjrmlgf5q" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Orange.png.png" id="5_ltdr7"]
 [ext_resource type="Texture2D" uid="uid://h8v5x2f4s3x0" path="res://Assets/Sprites/Cars/300ZX Z32/300ZXZ32Purple.png.png" id="6_yxwo1"]
@@ -180,6 +180,7 @@ _data = {
 }
 
 [node name="300ZX" type="CharacterBody2D"]
+collision_mask = 0
 script = ExtResource("1_qgdms")
 stats = ExtResource("2_5qdwp")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"

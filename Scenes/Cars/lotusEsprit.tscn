@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://cqvqit5wx77dp"]
 
-[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://Scenes/Cars/respawnMaterial.tres" id="1_ck2mm"]
+[ext_resource type="Material" uid="uid://shscjc8522m2" path="res://Scenes/Cars/respawnMaterial.tres" id="1_ck2mm"]
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_e1b7u"]
 [ext_resource type="Texture2D" uid="uid://c34jqo1xmnbeu" path="res://Assets/Sprites/Cars/Lotus Esprit/LotusEspritBlack.png" id="2_77ch3"]
 [ext_resource type="Resource" uid="uid://c2f0nxu7r0qgo" path="res://Resources/carStats/lotusEsprit.tres" id="2_p0ub8"]
@@ -180,6 +180,7 @@ _data = {
 
 [node name="Lotus Esprit" type="CharacterBody2D"]
 material = ExtResource("1_ck2mm")
+collision_mask = 0
 script = ExtResource("1_e1b7u")
 stats = ExtResource("2_p0ub8")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"

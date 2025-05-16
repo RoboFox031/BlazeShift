@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_7oeao"]
 [ext_resource type="Resource" uid="uid://ddlrw52u8xvo2" path="res://Resources/carStats/fcRX7Stats.tres" id="2_bl1xb"]
 [ext_resource type="Texture2D" uid="uid://cfy883ywymbgo" path="res://Assets/Sprites/Cars/FC RX7/FC RX7 Top View Black.png.png" id="3_bl1xb"]
-[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://Scenes/Cars/respawnMaterial.tres" id="3_mr3y6"]
+[ext_resource type="Material" uid="uid://shscjc8522m2" path="res://Scenes/Cars/respawnMaterial.tres" id="3_mr3y6"]
 [ext_resource type="Texture2D" uid="uid://dewi8ekogm8at" path="res://Assets/Sprites/Cars/FC RX7/FC RX7 Top View Blue.png.png" id="4_mr3y6"]
 [ext_resource type="Texture2D" uid="uid://ce0bw8kibvajt" path="res://Assets/Sprites/Cars/FC RX7/FC RX7 Top View Green.png.png" id="5_e57jl"]
 [ext_resource type="Texture2D" uid="uid://cx7c35uy1gmr3" path="res://Assets/Sprites/Cars/FC RX7/FC RX7 Top View Orange.png.png" id="6_67uff"]
@@ -179,6 +179,7 @@ _data = {
 }
 
 [node name="FC RX7" type="CharacterBody2D"]
+collision_mask = 0
 script = ExtResource("1_7oeao")
 stats = ExtResource("2_bl1xb")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"

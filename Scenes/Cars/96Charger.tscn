@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_mm3dk"]
 [ext_resource type="Resource" uid="uid://bdfyic0hpxvpy" path="res://Resources/carStats/96ChargerStats.tres" id="2_wshfl"]
 [ext_resource type="Script" uid="uid://cbi321211hexg" path="res://Scripts/Cars/terrainDetector.gd" id="3_45npj"]
-[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://Scenes/Cars/respawnMaterial.tres" id="3_m0ncg"]
+[ext_resource type="Material" uid="uid://shscjc8522m2" path="res://Scenes/Cars/respawnMaterial.tres" id="3_m0ncg"]
 [ext_resource type="Texture2D" uid="uid://vyu03tdxjntf" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerBlack.png" id="4_s5wax"]
 [ext_resource type="Texture2D" uid="uid://7bbalg5f57tj" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerBlue.png" id="5_m0ncg"]
 [ext_resource type="Texture2D" uid="uid://csnqmhnpqeoaw" path="res://Assets/Sprites/Cars/69'Charger/69'ChargerGreen.png" id="6_5h7hp"]
@@ -180,6 +180,7 @@ _data = {
 }
 
 [node name="96Charger" type="CharacterBody2D"]
+collision_mask = 0
 script = ExtResource("1_mm3dk")
 stats = ExtResource("2_wshfl")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"

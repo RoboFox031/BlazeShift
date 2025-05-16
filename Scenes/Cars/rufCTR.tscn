@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://pdxcl38fqf8b" path="res://Scripts/Cars/parentCar.gd" id="1_bqikr"]
 [ext_resource type="Texture2D" uid="uid://bkkxiddkvhopg" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View Black.png.png" id="2_gr7s5"]
 [ext_resource type="Resource" uid="uid://0u2jyggm4gr2" path="res://Resources/carStats/rufCTRStats.tres" id="2_l6sun"]
-[ext_resource type="Material" uid="uid://bmyelq7hphgfk" path="res://Scenes/Cars/respawnMaterial.tres" id="3_in8d4"]
+[ext_resource type="Material" uid="uid://shscjc8522m2" path="res://Scenes/Cars/respawnMaterial.tres" id="3_in8d4"]
 [ext_resource type="Texture2D" uid="uid://d2l42fj64p8c7" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View Blue.png.png" id="3_l6sun"]
 [ext_resource type="Texture2D" uid="uid://b33mlaj7s86r" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View Green.png.png" id="4_in8d4"]
 [ext_resource type="Texture2D" uid="uid://b11sws0dvlkk3" path="res://Assets/Sprites/Cars/RUF CTR Top View/RUF CTR Top View Orange.png.png" id="5_1g24k"]
@@ -179,6 +179,7 @@ _data = {
 }
 
 [node name="rufCTR" type="CharacterBody2D"]
+collision_mask = 0
 script = ExtResource("1_bqikr")
 stats = ExtResource("2_l6sun")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"

@@ -38,19 +38,19 @@ var upgradesDict={
 
 	#Stores price of cheap upgrades
 var cheapUpgradeCost={
-	1:1,
-	2:2,
-	3:4,
-	4:8,
-	5:10
+	1:2,
+	2:4,
+	3:8,
+	4:16,
+	5:20
 }
 #Stores price of cheap upgrades
 var normalUpgradeCost={
-	1:2,
-	2:5,
-	3:8,
-	4:10,
-	5:15
+	1:4,
+	2:10,
+	3:16,
+	4:20,
+	5:30
 }
 
 #used to determine the cost of an upgrade

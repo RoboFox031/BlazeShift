@@ -4,9 +4,9 @@ class_name shop
 ####order in the shop for the cars goes as follows Mustang, NSX, S13, CRX,FC RX7, 69 Charger, Lancia 037, Lotus Esprit, RUF CTR, 300ZX, Camaro
 
 #Costs of each rarity
-var bCost=20
-var aCost=60
-var sCost=100
+var bCost=35
+var aCost=120
+var sCost=200
 
 var carTiers = {
 	'crx': {

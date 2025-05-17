@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://kwwavixl5n7i" path="res://Assets/Sounds/Music/Royalty/royaltyRuralTrack.mp3" id="2_b36in"]
 [ext_resource type="AudioStream" uid="uid://ctjotvyvdfwrh" path="res://Assets/Sounds/Music/Royalty/royaltyIceTrack.mp3" id="3_otvvu"]
 [ext_resource type="AudioStream" uid="uid://dvjnvxtwo4alc" path="res://Assets/Sounds/Music/Royalty/royaltyVolcanoTrack.mp3" id="4_rgmw4"]
-[ext_resource type="AudioStream" uid="uid://5imc0x6o57dm" path="res://Assets/Sounds/Music/Royalty/royaltyCityTrack.mp3" id="5_8ppw1"]
+[ext_resource type="AudioStream" uid="uid://4hfk6tbj0umf" path="res://Assets/Sounds/Music/Royalty/royaltyCityTrack.mp3" id="5_8ppw1"]
 
 [node name="royaltyMusic" type="Node2D"]
 
@@ -30,5 +30,5 @@ bus = &"music"
 
 [node name="cityTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_8ppw1")
-volume_db = -5.0
+volume_db = -25.0
 bus = &"music"

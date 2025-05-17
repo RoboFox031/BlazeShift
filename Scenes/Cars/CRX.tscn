@@ -267,6 +267,7 @@ shape = SubResource("RectangleShape2D_2ru7u")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
 
 [node name="smoke" parent="." instance=ExtResource("13_j2pin")]
+z_index = 2
 
 [node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {

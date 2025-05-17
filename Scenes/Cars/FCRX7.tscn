@@ -237,6 +237,7 @@ shape = SubResource("RectangleShape2D_k8srv")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
 
 [node name="smoke" parent="." instance=ExtResource("13_e57jl")]
+z_index = 2
 
 [node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {

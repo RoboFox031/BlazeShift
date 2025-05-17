@@ -251,6 +251,7 @@ autoplay = "default"
 frame_progress = 0.882887
 
 [node name="smoke" parent="." instance=ExtResource("14_m0ncg")]
+z_index = 2
 
 [node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {

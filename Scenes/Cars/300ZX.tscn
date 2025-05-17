@@ -255,6 +255,7 @@ rotation = 1.5708
 scale = Vector2(0.25, 0.25)
 
 [node name="smoke" parent="." instance=ExtResource("14_ltdr7")]
+z_index = 2
 
 [node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {

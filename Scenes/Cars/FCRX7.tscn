@@ -179,7 +179,8 @@ _data = {
 }
 
 [node name="FC RX7" type="CharacterBody2D"]
-collision_mask = 0
+y_sort_enabled = true
+collision_mask = 32
 script = ExtResource("1_7oeao")
 stats = ExtResource("2_bl1xb")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"

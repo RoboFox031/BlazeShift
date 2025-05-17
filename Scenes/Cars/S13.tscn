@@ -212,7 +212,8 @@ _data = {
 
 [node name="S13" type="CharacterBody2D"]
 z_index = 1
-collision_mask = 0
+y_sort_enabled = true
+collision_mask = 32
 script = ExtResource("1_krq1h")
 stats = ExtResource("2_c87eh")
 

@@ -30,5 +30,5 @@ bus = &"music"
 
 [node name="cityTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_8ppw1")
-volume_db = -25.0
+volume_db = -30.0
 bus = &"music"

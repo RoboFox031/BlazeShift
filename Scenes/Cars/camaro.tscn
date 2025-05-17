@@ -179,7 +179,8 @@ _data = {
 }
 
 [node name="camaro" type="CharacterBody2D"]
-collision_mask = 0
+y_sort_enabled = true
+collision_mask = 32
 script = ExtResource("1_6um6a")
 stats = ExtResource("2_to1ap")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"
@@ -237,6 +238,7 @@ shape = SubResource("RectangleShape2D_is8f3")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
 
 [node name="smoke" parent="." instance=ExtResource("13_8d2sp")]
+z_index = 2
 
 [node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {

@@ -179,8 +179,9 @@ _data = {
 }
 
 [node name="Lotus Esprit" type="CharacterBody2D"]
+y_sort_enabled = true
 material = ExtResource("1_ck2mm")
-collision_mask = 0
+collision_mask = 32
 script = ExtResource("1_e1b7u")
 stats = ExtResource("2_p0ub8")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"
@@ -238,6 +239,7 @@ shape = SubResource("RectangleShape2D_q6cqp")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
 
 [node name="smoke" parent="." instance=ExtResource("13_ac1p7")]
+z_index = 2
 
 [node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {

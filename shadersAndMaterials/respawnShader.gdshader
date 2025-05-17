@@ -16,5 +16,3 @@ void fragment() {
 	COLOR.rgb+=dissolveColor.rgb*step(disolveDiff,0.05);
 	// Called for every pixel the material is visible on.
 }
-
-

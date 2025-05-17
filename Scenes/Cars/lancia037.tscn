@@ -179,7 +179,8 @@ _data = {
 }
 
 [node name="lancia037" type="CharacterBody2D"]
-collision_mask = 0
+y_sort_enabled = true
+collision_mask = 32
 script = ExtResource("1_xjq6m")
 stats = ExtResource("2_grgam")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"
@@ -235,6 +236,7 @@ shape = SubResource("RectangleShape2D_3t6ot")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
 
 [node name="smoke" parent="." instance=ExtResource("13_0blf5")]
+z_index = 2
 
 [node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {

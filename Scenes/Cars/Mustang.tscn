@@ -212,8 +212,9 @@ _data = {
 
 [node name="lemkeCar" type="CharacterBody2D"]
 z_index = 1
+y_sort_enabled = true
 material = ExtResource("1_j3mk2")
-collision_mask = 0
+collision_mask = 32
 script = ExtResource("1_n68py")
 stats = ExtResource("2_bvbms")
 
@@ -267,6 +268,7 @@ shape = SubResource("RectangleShape2D_2qbmm")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
 
 [node name="smoke" parent="." instance=ExtResource("13_jj3n2")]
+z_index = 2
 
 [node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {

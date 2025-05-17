@@ -154,7 +154,7 @@ func _ready() -> void:
 	#Setup car stats
 	applyStats()
 	
-	z_index = 6
+	z_index = 1
 	#makes you resoawn at the start if you respawn before reaching a valid checkpoint
 	progressPoint=global_position
 	progressRot=global_rotation

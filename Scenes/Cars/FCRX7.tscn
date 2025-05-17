@@ -179,7 +179,8 @@ _data = {
 }
 
 [node name="FC RX7" type="CharacterBody2D"]
-collision_mask = 0
+y_sort_enabled = true
+collision_mask = 32
 script = ExtResource("1_7oeao")
 stats = ExtResource("2_bl1xb")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"
@@ -236,6 +237,7 @@ shape = SubResource("RectangleShape2D_k8srv")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
 
 [node name="smoke" parent="." instance=ExtResource("13_e57jl")]
+z_index = 2
 
 [node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {

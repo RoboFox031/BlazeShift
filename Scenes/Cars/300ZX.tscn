@@ -180,7 +180,8 @@ _data = {
 }
 
 [node name="300ZX" type="CharacterBody2D"]
-collision_mask = 0
+y_sort_enabled = true
+collision_mask = 32
 script = ExtResource("1_qgdms")
 stats = ExtResource("2_5qdwp")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"
@@ -254,6 +255,7 @@ rotation = 1.5708
 scale = Vector2(0.25, 0.25)
 
 [node name="smoke" parent="." instance=ExtResource("14_ltdr7")]
+z_index = 2
 
 [node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {

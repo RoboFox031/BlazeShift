@@ -208,7 +208,8 @@ _data = {
 
 [node name="NSX" type="CharacterBody2D"]
 z_index = 1
-collision_mask = 0
+y_sort_enabled = true
+collision_mask = 32
 script = ExtResource("1_gmmup")
 stats = ExtResource("2_ij5hg")
 
@@ -263,6 +264,7 @@ shape = SubResource("RectangleShape2D_ni7tt")
 debug_color = Color(0.991716, 0, 0.261882, 0.42)
 
 [node name="smoke" parent="." instance=ExtResource("13_ikrcg")]
+z_index = 2
 
 [node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {

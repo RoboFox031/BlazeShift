@@ -180,7 +180,8 @@ _data = {
 }
 
 [node name="96Charger" type="CharacterBody2D"]
-collision_mask = 0
+y_sort_enabled = true
+collision_mask = 32
 script = ExtResource("1_mm3dk")
 stats = ExtResource("2_wshfl")
 metadata/_custom_type_script = "uid://pdxcl38fqf8b"
@@ -250,6 +251,7 @@ autoplay = "default"
 frame_progress = 0.882887
 
 [node name="smoke" parent="." instance=ExtResource("14_m0ncg")]
+z_index = 2
 
 [node name="respawnAnimator" type="AnimationPlayer" parent="."]
 libraries = {

@@ -13,7 +13,7 @@ config_version=5
 config/name="Blaze Shift"
 run/main_scene="uid://btsofo0uo4gkw"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="uid://b7pwkmwamqdp6"
+config/icon="uid://b82b74x642m1m"
 
 [autoload]
 
@@ -519,6 +519,7 @@ test={
 2d_physics/layer_3="checkpoints"
 2d_physics/layer_4="cars"
 2d_physics/layer_5="powerups"
+2d_physics/layer_6="obstacles"
 2d_physics/layer_10="Layer Detectors"
 
 [rendering]

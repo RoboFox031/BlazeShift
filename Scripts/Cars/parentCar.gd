@@ -171,7 +171,7 @@ func _physics_process(delta):
 		linDirection=1
 	else:
 		#Gets the input, and converts it to positive or negitive 1
-		linDirection = Input.get_axis(currentOwnerStr+"_b", currentOwnerStr+"_a")
+		linDirection = Input.get_axis(currentOwnerStr+"_down", currentOwnerStr+"_up")
 	#If you click forwards and are stopped or driving forwards, accelerate based on the acceleration value
 	if linDirection>0 and currentLinSpeed>=0:
 		currentLinSpeed = move_toward(currentLinSpeed, currentTopSpeed*linDirection*terrainSpeedMult, currentAcceleration*terrainAccelMult)

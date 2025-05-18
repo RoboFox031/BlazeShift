@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bd06lnopsvd8w"
-path="res://.godot/imported/spotifyCool7.mp3-6699fe0b0b26b26b37acaa29195d72bc.mp3str"
+path="res://.godot/imported/spotifyCool7.mp3-5ab08f295ea6fdbf3cb703630f653ea4.mp3str"
 
 [deps]
 
-source_file="res://Assets/Sounds/Music/Spotify/spotifyCool7.mp3"
-dest_files=["res://.godot/imported/spotifyCool7.mp3-6699fe0b0b26b26b37acaa29195d72bc.mp3str"]
+source_file="res://assets/sounds/Music/Spotify/spotifyCool7.mp3"
+dest_files=["res://.godot/imported/spotifyCool7.mp3-5ab08f295ea6fdbf3cb703630f653ea4.mp3str"]
 
 [params]
 

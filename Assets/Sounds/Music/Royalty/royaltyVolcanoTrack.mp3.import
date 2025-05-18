@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dvjnvxtwo4alc"
-path="res://.godot/imported/royaltyVolcanoTrack.mp3-175071feee4bd18d74ad41e2b5059902.mp3str"
+path="res://.godot/imported/royaltyVolcanoTrack.mp3-0c1aa1a4ab160f1f93cd7b8600c85b48.mp3str"
 
 [deps]
 
-source_file="res://Assets/Sounds/Music/Royalty/royaltyVolcanoTrack.mp3"
-dest_files=["res://.godot/imported/royaltyVolcanoTrack.mp3-175071feee4bd18d74ad41e2b5059902.mp3str"]
+source_file="res://assets/sounds/Music/Royalty/royaltyVolcanoTrack.mp3"
+dest_files=["res://.godot/imported/royaltyVolcanoTrack.mp3-0c1aa1a4ab160f1f93cd7b8600c85b48.mp3str"]
 
 [params]
 

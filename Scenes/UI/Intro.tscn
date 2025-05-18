@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://btsofo0uo4gkw"]
 
-[ext_resource type="Script" path="res://Scripts/UI/intro.gd" id="1_bjyge"]
-[ext_resource type="Texture2D" uid="uid://deyyh12fkkhv6" path="res://Assets/Sprites/loadingScreens/TruckLoadScreenWhite.png" id="1_ibvsm"]
-[ext_resource type="AudioStream" uid="uid://ctjv4yps07b1b" path="res://Assets/Sounds/Music/Spotify/intro.mp3" id="2_3l18w"]
-[ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://Assets/Fonts/college/collegeb.ttf" id="2_n66p7"]
+[ext_resource type="Script" uid="uid://dcuc756tfosm6" path="res://Scripts/UI/intro.gd" id="1_bjyge"]
+[ext_resource type="Texture2D" uid="uid://deyyh12fkkhv6" path="res://assets/sprites/loadingScreens/TruckLoadScreenWhite.png" id="1_ibvsm"]
+[ext_resource type="AudioStream" uid="uid://ctjv4yps07b1b" path="res://assets/sounds/Music/Spotify/intro.mp3" id="2_3l18w"]
+[ext_resource type="FontFile" uid="uid://itji1nhipbm" path="res://assets/fonts/college/collegeb.ttf" id="2_n66p7"]
 
 [sub_resource type="Animation" id="Animation_3l18w"]
 length = 0.001

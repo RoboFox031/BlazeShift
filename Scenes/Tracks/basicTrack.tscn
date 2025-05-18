@@ -1,14 +1,14 @@
 [gd_scene load_steps=15 format=4 uid="uid://djbb2ffhj2n2h"]
 
-[ext_resource type="Script" uid="uid://71egy5gs0lbp" path="res://Scripts/Tracks/basicTrack.gd" id="1_ifg0j"]
-[ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://Assets/Sprites/Tracks/grass_tileset_16x16.png" id="2_t0oks"]
-[ext_resource type="TileSet" uid="uid://shirjmw44fyk" path="res://Scenes/Tracks/track.tres" id="3_ikrvl"]
-[ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="4_ikrvl"]
-[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="5_s70l0"]
-[ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://Scenes/Pickups/powerupBox.tscn" id="6_ryjmn"]
-[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://Scenes/Cars/carSpawn.tscn" id="7_acw34"]
-[ext_resource type="Script" uid="uid://mh0y6i6gacvk" path="res://Scripts/Tracks/terrain.gd" id="7_muhto"]
-[ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="9_s70l0"]
+[ext_resource type="Script" uid="uid://71egy5gs0lbp" path="res://scripts/tracks/basicTrack.gd" id="1_ifg0j"]
+[ext_resource type="Texture2D" uid="uid://dx276t12llat1" path="res://assets/sprites/tracks/grass_tileset_16x16.png" id="2_t0oks"]
+[ext_resource type="TileSet" uid="uid://shirjmw44fyk" path="res://scenes/tracks/track.tres" id="3_ikrvl"]
+[ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://assets/sprites/tracks/checkboard pattern.png" id="4_ikrvl"]
+[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://scripts/tracks/checkpointPath.gd" id="5_s70l0"]
+[ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://scenes/pickups/powerupBox.tscn" id="6_ryjmn"]
+[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://scenes/cars/carSpawn.tscn" id="7_acw34"]
+[ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://Scripts/Tracks/terrain.gd" id="7_muhto"]
+[ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://scenes/pickups/coins.tscn" id="9_s70l0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_anobo"]
 texture = ExtResource("2_t0oks")

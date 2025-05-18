@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnashv8neclx3"
-path="res://.godot/imported/magic_torrentacle.png-56a47d7674b88beb85ab89c0272389b2.ctex"
+path="res://.godot/imported/magic_torrentacle.png-44812557bd93b88ff7a215a6c12e035a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/submission_daneeklu/magic/magic_torrentacle.png"
-dest_files=["res://.godot/imported/magic_torrentacle.png-56a47d7674b88beb85ab89c0272389b2.ctex"]
+source_file="res://assets/sprites/tracks/submission_daneeklu/magic/magic_torrentacle.png"
+dest_files=["res://.godot/imported/magic_torrentacle.png-44812557bd93b88ff7a215a6c12e035a.ctex"]
 
 [params]
 

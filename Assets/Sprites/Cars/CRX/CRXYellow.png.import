@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tv0i0bpyf4ld"
-path="res://.godot/imported/CRXYellow.png-3ee7f2d405bc5f802833882a8bcb2c5d.ctex"
+path="res://.godot/imported/CRXYellow.png-1d90b762dcce688f05c89652d1cc14b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/CRX/CRXYellow.png"
-dest_files=["res://.godot/imported/CRXYellow.png-3ee7f2d405bc5f802833882a8bcb2c5d.ctex"]
+source_file="res://assets/sprites/cars/CRX/CRXYellow.png"
+dest_files=["res://.godot/imported/CRXYellow.png-1d90b762dcce688f05c89652d1cc14b0.ctex"]
 
 [params]
 

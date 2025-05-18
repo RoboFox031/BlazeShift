@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d31sy2thgde5u"
-path="res://.godot/imported/volvanoMapBackground.png-0cde8e35e266ae46894a0c7eed710f21.ctex"
+path="res://.godot/imported/volvanoMapBackground.png-cd6d3978f113e3a8e770477ef067c4c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/volvanoMapBackground.png"
-dest_files=["res://.godot/imported/volvanoMapBackground.png-0cde8e35e266ae46894a0c7eed710f21.ctex"]
+source_file="res://assets/sprites/UI/volvanoMapBackground.png"
+dest_files=["res://.godot/imported/volvanoMapBackground.png-cd6d3978f113e3a8e770477ef067c4c2.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq28hvi8gmrp6"
-path="res://.godot/imported/hot-chocolate.png-2c2d86848918cfaa50facf4d950c9a51.ctex"
+path="res://.godot/imported/hot-chocolate.png-a36cd0e6ee6f62e25c490b424da5aa6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/christmas-village-asset-pack/hot-chocolate.png"
-dest_files=["res://.godot/imported/hot-chocolate.png-2c2d86848918cfaa50facf4d950c9a51.ctex"]
+source_file="res://assets/sprites/tracks/christmas-village-asset-pack/hot-chocolate.png"
+dest_files=["res://.godot/imported/hot-chocolate.png-a36cd0e6ee6f62e25c490b424da5aa6d.ctex"]
 
 [params]
 

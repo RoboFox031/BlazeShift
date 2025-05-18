@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ks7e4wgfjt7o"
-path="res://.godot/imported/MustangBlack.png-16a7a24ee95241767e35979f0d3740cc.ctex"
+path="res://.godot/imported/MustangBlack.png-8c987a17e9406398b26ba0886a94bb16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/Mustang/MustangBlack.png"
-dest_files=["res://.godot/imported/MustangBlack.png-16a7a24ee95241767e35979f0d3740cc.ctex"]
+source_file="res://assets/sprites/cars/Mustang/MustangBlack.png"
+dest_files=["res://.godot/imported/MustangBlack.png-8c987a17e9406398b26ba0886a94bb16.ctex"]
 
 [params]
 

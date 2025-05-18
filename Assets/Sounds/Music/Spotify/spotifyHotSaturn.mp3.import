@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bot3hmkrpl8jv"
-path="res://.godot/imported/spotifyHotSaturn.mp3-fe186141bd4f2b746b0de0f8d226c119.mp3str"
+path="res://.godot/imported/spotifyHotSaturn.mp3-7f54bc2627efe68d6b87963c2d690e52.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/Music/Spotify/spotifyHotSaturn.mp3"
-dest_files=["res://.godot/imported/spotifyHotSaturn.mp3-fe186141bd4f2b746b0de0f8d226c119.mp3str"]
+source_file="res://Assets/Sounds/Music/Spotify/spotifyHotSaturn.mp3"
+dest_files=["res://.godot/imported/spotifyHotSaturn.mp3-7f54bc2627efe68d6b87963c2d690e52.mp3str"]
 
 [params]
 

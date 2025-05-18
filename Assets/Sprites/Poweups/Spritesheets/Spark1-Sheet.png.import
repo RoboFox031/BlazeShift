@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdg77hijf48mf"
-path="res://.godot/imported/Spark1-Sheet.png-4f1a08f3cd045b9106bd160e98b00897.ctex"
+path="res://.godot/imported/Spark1-Sheet.png-f0fc98ce22ace8cf4f2ee58a655efc39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Poweups/Spritesheets/Spark1-Sheet.png"
-dest_files=["res://.godot/imported/Spark1-Sheet.png-4f1a08f3cd045b9106bd160e98b00897.ctex"]
+source_file="res://Assets/Sprites/Poweups/Spritesheets/Spark1-Sheet.png"
+dest_files=["res://.godot/imported/Spark1-Sheet.png-f0fc98ce22ace8cf4f2ee58a655efc39.ctex"]
 
 [params]
 

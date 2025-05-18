@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://4hfk6tbj0umf"
-path="res://.godot/imported/royaltyCityTrack.mp3-f06f33c602be0994f6f79074f7bb77c9.mp3str"
+path="res://.godot/imported/royaltyCityTrack.mp3-55096d6b49e0910ad8e54f21db671803.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/Music/Royalty/royaltyCityTrack.mp3"
-dest_files=["res://.godot/imported/royaltyCityTrack.mp3-f06f33c602be0994f6f79074f7bb77c9.mp3str"]
+source_file="res://Assets/Sounds/Music/Royalty/royaltyCityTrack.mp3"
+dest_files=["res://.godot/imported/royaltyCityTrack.mp3-55096d6b49e0910ad8e54f21db671803.mp3str"]
 
 [params]
 

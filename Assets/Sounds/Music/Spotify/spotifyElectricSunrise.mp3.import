@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://u0x6jbirum0j"
-path="res://.godot/imported/spotifyElectricSunrise.mp3-812df0af50037db5979e267d57d3932c.mp3str"
+path="res://.godot/imported/spotifyElectricSunrise.mp3-b05db966bebae214394e99b312597e8e.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/Music/Spotify/spotifyElectricSunrise.mp3"
-dest_files=["res://.godot/imported/spotifyElectricSunrise.mp3-812df0af50037db5979e267d57d3932c.mp3str"]
+source_file="res://Assets/Sounds/Music/Spotify/spotifyElectricSunrise.mp3"
+dest_files=["res://.godot/imported/spotifyElectricSunrise.mp3-b05db966bebae214394e99b312597e8e.mp3str"]
 
 [params]
 

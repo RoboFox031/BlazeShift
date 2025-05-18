@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tejcfn11h675"
-path="res://.godot/imported/Stairs_0.png-660202e851c9957f1234e7207262c938.ctex"
+path="res://.godot/imported/Stairs_0.png-a24a6f5f594e238c6dffd112965a7611.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/Terrain/Misc/Stairs_0.png"
-dest_files=["res://.godot/imported/Stairs_0.png-660202e851c9957f1234e7207262c938.ctex"]
+source_file="res://Assets/Sprites/Tracks/Terrain/Misc/Stairs_0.png"
+dest_files=["res://.godot/imported/Stairs_0.png-a24a6f5f594e238c6dffd112965a7611.ctex"]
 
 [params]
 

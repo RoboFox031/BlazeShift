@@ -179,6 +179,7 @@ _data = {
 }
 
 [node name="rufCTR" type="CharacterBody2D"]
+z_index = 2
 y_sort_enabled = true
 collision_mask = 32
 script = ExtResource("1_bqikr")

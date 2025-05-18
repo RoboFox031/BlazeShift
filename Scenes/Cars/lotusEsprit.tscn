@@ -179,6 +179,7 @@ _data = {
 }
 
 [node name="Lotus Esprit" type="CharacterBody2D"]
+z_index = 2
 y_sort_enabled = true
 material = ExtResource("1_ck2mm")
 collision_mask = 32

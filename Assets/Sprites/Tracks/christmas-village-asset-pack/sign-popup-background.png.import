@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj61k5dw2nty8"
-path="res://.godot/imported/sign-popup-background.png-194cb5ec457cf7188fc9a94ddcff4945.ctex"
+path="res://.godot/imported/sign-popup-background.png-2d24c65d4746692cc0d103491817f41f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/christmas-village-asset-pack/sign-popup-background.png"
-dest_files=["res://.godot/imported/sign-popup-background.png-194cb5ec457cf7188fc9a94ddcff4945.ctex"]
+source_file="res://Assets/Sprites/Tracks/christmas-village-asset-pack/sign-popup-background.png"
+dest_files=["res://.godot/imported/sign-popup-background.png-2d24c65d4746692cc0d103491817f41f.ctex"]
 
 [params]
 

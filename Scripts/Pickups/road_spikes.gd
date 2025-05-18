@@ -8,7 +8,7 @@ var ignore
 
 func _ready():
 	self.position = spawnPosition
-	self.z_index = 10
+	self.z_index = 1
 	rotation = direction
 func _on_area_2d_body_entered(body):
 	if body != ignore and body is Car:

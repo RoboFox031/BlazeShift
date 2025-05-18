@@ -1,12 +1,12 @@
 [gd_resource type="TileSet" load_steps=15 format=3 uid="uid://bf4uogxfjmwmc"]
 
-[ext_resource type="Texture2D" uid="uid://x6enk3imd1hx" path="res://assets/sprites/tracks/ruralMapTiles/fence.png" id="1_ksfhd"]
-[ext_resource type="Texture2D" uid="uid://bonhku8rjh0g1" path="res://assets/sprites/tracks/ruralMapTiles/plants.png" id="2_ot37m"]
-[ext_resource type="Texture2D" uid="uid://bu582yiqn7se2" path="res://assets/sprites/tracks/ruralMapTiles/wheat.png" id="3_bbw83"]
-[ext_resource type="Texture2D" uid="uid://gksdwrb0dr70" path="res://assets/sprites/tracks/ruralMapTiles/farming_fishing.png" id="4_13803"]
-[ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://assets/sprites/tracks/ruralMapTiles/sandwater.png" id="5_kwbd1"]
-[ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://assets/sprites/tracks/ruralMapTiles/sand.png" id="6_ox1a1"]
-[ext_resource type="Texture2D" uid="uid://c13mxbp6tgng6" path="res://assets/sprites/tracks/ruralMapTiles/reed.png" id="7_m0t8a"]
+[ext_resource type="Texture2D" uid="uid://x6enk3imd1hx" path="res://Assets/Sprites/Tracks/ruralMapTiles/fence.png" id="1_ksfhd"]
+[ext_resource type="Texture2D" uid="uid://bonhku8rjh0g1" path="res://Assets/Sprites/Tracks/ruralMapTiles/plants.png" id="2_ot37m"]
+[ext_resource type="Texture2D" uid="uid://bu582yiqn7se2" path="res://Assets/Sprites/Tracks/ruralMapTiles/wheat.png" id="3_bbw83"]
+[ext_resource type="Texture2D" uid="uid://gksdwrb0dr70" path="res://Assets/Sprites/Tracks/ruralMapTiles/farming_fishing.png" id="4_13803"]
+[ext_resource type="Texture2D" uid="uid://40t87gimc800" path="res://Assets/Sprites/Tracks/ruralMapTiles/sandwater.png" id="5_kwbd1"]
+[ext_resource type="Texture2D" uid="uid://y7bw6h35v06o" path="res://Assets/Sprites/Tracks/ruralMapTiles/sand.png" id="6_ox1a1"]
+[ext_resource type="Texture2D" uid="uid://c13mxbp6tgng6" path="res://Assets/Sprites/Tracks/ruralMapTiles/reed.png" id="7_m0t8a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ke07e"]
 texture = ExtResource("1_ksfhd")

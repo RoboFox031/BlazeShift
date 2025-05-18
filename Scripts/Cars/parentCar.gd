@@ -146,6 +146,9 @@ signal stopReversing
 #stores if this specific car can move
 var localCanMove:bool=true
 
+#Controls how fast blaze is used
+var blazeBurnSpeed=35
+
 func _ready() -> void:
 	#for testing upgrades
 	#for i in 5:
@@ -154,13 +157,13 @@ func _ready() -> void:
 	#Setup car stats
 	applyStats()
 	
-	z_index = 1
 	#makes you resoawn at the start if you respawn before reaching a valid checkpoint
 	progressPoint=global_position
 	progressRot=global_rotation
 
 
 func _physics_process(delta):
+
 	#applyStats()
 	#Checks if the player is too far from the track
 	checkTrackDistance()
@@ -248,12 +251,16 @@ func _physics_process(delta):
 	# print("Drift: "+str(driftVector))
 	#print("Traction: "+str(traction))
 	
-	#If you are boosting, stops you when you run out
+	#If you are boosting, consume blaze fuel and stop when you run out
 	if boosting==true:
-		if(globalVars.p1BlazeCurrent==0) and (currentOwner==playerChoices.p1):
-			resetMovement()
-		elif(globalVars.p2BlazeCurrent==0) and (currentOwner==playerChoices.p2):
-			resetMovement()
+		if (currentOwner==playerChoices.p1):
+			globalVars.p1BlazeCurrent -= blazeBurnSpeed*delta
+			if(globalVars.p1BlazeCurrent==0):
+				resetMovement()
+		elif (currentOwner==playerChoices.p2):
+			globalVars.p2BlazeCurrent -= blazeBurnSpeed * delta
+			if (globalVars.p2BlazeCurrent==0):
+				resetMovement()
 
 func usePowerup():
 	if currentOwnerStr == 'p1':
@@ -414,12 +421,12 @@ func resetMovement():
 func startBoost():
 	if currentOwner==playerChoices.p1 and globalVars.p1BlazeCurrent>0:
 		currentAcceleration=baseAcceleration*3
-		currentTopSpeed=baseTopSpeed*1.5
+		currentTopSpeed=baseTopSpeed*1.6
 		currentTurnPower=baseTurnPower*.8
 		boosting=true
 	elif currentOwner==playerChoices.p2 and globalVars.p2BlazeCurrent>0:
 		currentAcceleration=baseAcceleration*3
-		currentTopSpeed=baseTopSpeed*1.5
+		currentTopSpeed=baseTopSpeed*1.6
 		currentTurnPower=baseTurnPower*.8
 		boosting=true
 

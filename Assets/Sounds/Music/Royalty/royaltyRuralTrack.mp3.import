@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://kwwavixl5n7i"
-path="res://.godot/imported/royaltyRuralTrack.mp3-a53d34681437f5142d8fe99f42e7dd12.mp3str"
+path="res://.godot/imported/royaltyRuralTrack.mp3-f3bf838f0709f580e023214113a3b75b.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/Music/Royalty/royaltyRuralTrack.mp3"
-dest_files=["res://.godot/imported/royaltyRuralTrack.mp3-a53d34681437f5142d8fe99f42e7dd12.mp3str"]
+source_file="res://Assets/Sounds/Music/Royalty/royaltyRuralTrack.mp3"
+dest_files=["res://.godot/imported/royaltyRuralTrack.mp3-f3bf838f0709f580e023214113a3b75b.mp3str"]
 
 [params]
 

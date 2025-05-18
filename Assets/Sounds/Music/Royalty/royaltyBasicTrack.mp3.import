@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dg8tcys08o23d"
-path="res://.godot/imported/royaltyBasicTrack.mp3-b2298a98d7a34b5b77509731b3b0f680.mp3str"
+path="res://.godot/imported/royaltyBasicTrack.mp3-23138b41f8ab5b4ff712af49d09244a2.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/Music/Royalty/royaltyBasicTrack.mp3"
-dest_files=["res://.godot/imported/royaltyBasicTrack.mp3-b2298a98d7a34b5b77509731b3b0f680.mp3str"]
+source_file="res://Assets/Sounds/Music/Royalty/royaltyBasicTrack.mp3"
+dest_files=["res://.godot/imported/royaltyBasicTrack.mp3-23138b41f8ab5b4ff712af49d09244a2.mp3str"]
 
 [params]
 

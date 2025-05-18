@@ -17,6 +17,7 @@ var reward = 5
 @onready var winner = $backGroundStuff/label
 
 func _ready():
+	
 	for label in $playerOneLabels.get_children():
 		pOneLabels.append(label)
 	for label in $playerTwoLabels.get_children():

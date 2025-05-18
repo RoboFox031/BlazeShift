@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ikkh621woibs"
-path="res://.godot/imported/B500-2.PNG-3ea1f5c9468dd9b3ad257fd91b7b6969.ctex"
+path="res://.godot/imported/B500-2.PNG-214984151691dc3f06e0a9eb809ac27c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Poweups/fireball/B500-2.PNG"
-dest_files=["res://.godot/imported/B500-2.PNG-3ea1f5c9468dd9b3ad257fd91b7b6969.ctex"]
+source_file="res://assets/sprites/Poweups/fireball/B500-2.PNG"
+dest_files=["res://.godot/imported/B500-2.PNG-214984151691dc3f06e0a9eb809ac27c.ctex"]
 
 [params]
 

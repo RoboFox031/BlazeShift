@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c530hqwk3u3uc"
-path="res://.godot/imported/Starting Light.png-f71e75d0b659c327a4e7338f612a3a82.ctex"
+path="res://.godot/imported/Starting Light.png-4e05ab8c07d63f37b00d05ab2b71e4db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cars/Race Assets/Starting Light.png"
-dest_files=["res://.godot/imported/Starting Light.png-f71e75d0b659c327a4e7338f612a3a82.ctex"]
+source_file="res://assets/sprites/cars/Race Assets/Starting Light.png"
+dest_files=["res://.godot/imported/Starting Light.png-4e05ab8c07d63f37b00d05ab2b71e4db.ctex"]
 
 [params]
 

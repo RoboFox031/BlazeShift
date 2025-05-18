@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxpi5bytu2kcb"
-path="res://.godot/imported/Water_Hole_0.png-13cce3c33714eef0fc13e2d534434940.ctex"
+path="res://.godot/imported/Water_Hole_0.png-83193fba0dcc0f53482c4a8933e45110.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tracks/Terrain/Misc/Water_Hole_0.png"
-dest_files=["res://.godot/imported/Water_Hole_0.png-13cce3c33714eef0fc13e2d534434940.ctex"]
+source_file="res://assets/sprites/tracks/Terrain/Misc/Water_Hole_0.png"
+dest_files=["res://.godot/imported/Water_Hole_0.png-83193fba0dcc0f53482c4a8933e45110.ctex"]
 
 [params]
 

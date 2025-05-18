@@ -35,7 +35,7 @@ var laps={
 	"p2":0,
 }
 #racing variables
-var pOneLastRaceTime = '00:00'
+var pOneLastRaceTime = 200.0402
 var pOneTotalTime = '00:00'
 var pOneLastRacePlacement = null
 var pOneOverallPlacement = null
@@ -43,7 +43,7 @@ var pOneLastRaceCoinsCollected = 0
 var pOneTotalCoinsCollected = 0
 var pOneTotalWins = 0
 
-var pTwoLastRaceTime = '00:00'
+var pTwoLastRaceTime = 200.0402
 var pTwoTotalTime = '00:00'
 var pTwoLastRacePlacement = null
 var pTwoOverallPlacement = null
@@ -217,22 +217,32 @@ func convertSec(sec):
 		
 	#fixes 0's for milliseconds
 	var miliseconds = checkDecimals(seconds)
-	if miliseconds == 1:
-		seconds = str(seconds) + '00'
-	elif miliseconds == 2:
-		seconds = str(seconds) + '0'
+	seconds = miliseconds
+	#seconds = miliseconds
+	#if miliseconds == 1:
+		#seconds = str(seconds) + '00'
+	#elif miliseconds == 2:
+		#seconds = str(seconds) + '0'
+	
 		
 		
 	return str(minutes)+':'+str(seconds)
 	pass
 
 func checkDecimals(number):
-	var number_str = str(number)
-	if number_str.find('.') != -1:
-		var decimal_part = number_str.split('.')[1]
-		return decimal_part.length()
-	else:
-		return 0
+	number = str(number)
+	var decimal = number[0] +number[1] + number[2] + number[3]+number[4]+number[5]
+	print(decimal)
+	return decimal
+	#var number_str = str(number)
+	#print(number_str)
+	#if number_str.find('.') != -1:
+		#print(number_str.find('.'))
+		#var decimal_part = number_str.split('.')[1]
+		#print(decimal_part)
+		#return decimal_part.length()
+	#else:
+		#return 0
 
 func resetRaceVars():
 	#Defults to mustang

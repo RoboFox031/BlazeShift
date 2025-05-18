@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://peohhu5g60nh"
-path="res://.godot/imported/Holy Light Aura.png-566d48600f0e6e974d69df1e28b4210b.ctex"
+path="res://.godot/imported/Holy Light Aura.png-4f85a64922c7523c8b3ae3c4c5a39318.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Poweups/Spritesheets/Holy Light Aura.png"
-dest_files=["res://.godot/imported/Holy Light Aura.png-566d48600f0e6e974d69df1e28b4210b.ctex"]
+source_file="res://assets/sprites/Poweups/Spritesheets/Holy Light Aura.png"
+dest_files=["res://.godot/imported/Holy Light Aura.png-4f85a64922c7523c8b3ae3c4c5a39318.ctex"]
 
 [params]
 

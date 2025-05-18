@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhpcdtwe1fjfm"
-path="res://.godot/imported/Gravity-Sheet.png-f94538d295c7e90eecad3af54d00a09f.ctex"
+path="res://.godot/imported/Gravity-Sheet.png-058dc3cd05377ee7cd342888a7a8b811.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Poweups/Spritesheets/Gravity-Sheet.png"
-dest_files=["res://.godot/imported/Gravity-Sheet.png-f94538d295c7e90eecad3af54d00a09f.ctex"]
+source_file="res://assets/sprites/Poweups/Spritesheets/Gravity-Sheet.png"
+dest_files=["res://.godot/imported/Gravity-Sheet.png-058dc3cd05377ee7cd342888a7a8b811.ctex"]
 
 [params]
 

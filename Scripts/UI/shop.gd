@@ -234,7 +234,8 @@ func _process(delta: float) -> void:
 			pOneLeftArrow.startFlashing()
 			pOneRightArrow.startFlashing()
 			for color in pOneColors:
-				color.stopFlashing()
+				#color.stopFlashing()
+				pass
 	if (Input.is_action_just_pressed("p2_down") or Input.is_action_just_pressed("p2_up"))  and pTwoReady == false:
 		if pTwoOptionSelected == "car":
 			pTwoOptionSelected = "color"
@@ -259,7 +260,8 @@ func _process(delta: float) -> void:
 			pTwoLeftArrow.startFlashing()
 			pTwoRightArrow.startFlashing()
 			for color in pTwoColors:
-				color.stopFlashing()
+				#color.stopFlashing()
+				pass
 	if Input.is_action_just_pressed("p1_right") and pOneReady == false:
 		if pOneOptionSelected == "car":
 			if globalVars.pOneCarSelected + 1 < len(pOneCars):
@@ -321,10 +323,12 @@ func _process(delta: float) -> void:
 func _updateCarDisplay(pOneCar,pTwoCar):
 	if pOneOptionSelected == 'car':
 		for color in pOneColors:
-			color.stopFlashing()
+			#color.stopFlashing()
+			pass
 	if pTwoOptionSelected == 'car':
 		for color in pTwoColors:
-			color.stopFlashing()
+			#color.stopFlashing()
+			pass
 	for c in pOneCars:
 		if c == pOneCar:
 			c.visible = true
@@ -369,24 +373,25 @@ func _updateColorDisplay(pOneColor,pTwoColor):
 				c.scale.x = .15
 				c.scale.y = .15
 				c.get_child(0).visible = true
-				c.startFlashing()
+				#c.startFlashing()
+				
 			else:
 				c.scale.x = .088
 				c.scale.y = .088
 				c.get_child(0).visible = false
-				c.stopFlashing()
+				#c.stopFlashing()
 	if pTwoOptionSelected == "color":
 		for c in pTwoColors:
 			if c == pTwoColor:
 				c.scale.x = .15
 				c.scale.y = .15
 				c.get_child(0).visible = true
-				c.startFlashing()
+				#c.startFlashing()
 			else:
 				c.scale.x = .088
 				c.scale.y = .088
 				c.get_child(0).visible = false
-				c.stopFlashing()
+				#c.stopFlashing()
 	_updateFinalDisplay(pOneCarsFinal[globalVars.pOneCarSelected],pTwoCarsFinal[globalVars.pTwoCarSelected],pOneColors[globalVars.pOneColorSelected],pTwoColors[globalVars.pTwoColorSelected])
 
 #updates the middle display based on the type of car and color

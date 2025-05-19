@@ -1,59 +1,62 @@
 [gd_scene load_steps=17 format=3 uid="uid://d141ibd8at8su"]
 
 [ext_resource type="Script" uid="uid://d8e2euh8mfri" path="res://Scripts/Pickups/road_spikes.gd" id="1_r7n71"]
-[ext_resource type="Texture2D" uid="uid://b7pu883n8gtrf" path="res://Assets/Sprites/Poweups/Spike Strip (1).png" id="2_t38l2"]
+[ext_resource type="Texture2D" uid="uid://b7pu883n8gtrf" path="res://Assets/Sprites/Poweups/spikeStripAnimation.png" id="2_r7n71"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_42c4f"]
-atlas = ExtResource("2_t38l2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_t38l2"]
+atlas = ExtResource("2_r7n71")
 region = Rect2(0, 0, 1536, 1536)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_go8ph"]
-atlas = ExtResource("2_t38l2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_42c4f"]
+atlas = ExtResource("2_r7n71")
 region = Rect2(1536, 0, 1536, 1536)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uq8st"]
-atlas = ExtResource("2_t38l2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_go8ph"]
+atlas = ExtResource("2_r7n71")
 region = Rect2(3072, 0, 1536, 1536)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_urmdb"]
-atlas = ExtResource("2_t38l2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq8st"]
+atlas = ExtResource("2_r7n71")
 region = Rect2(0, 1536, 1536, 1536)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0tbrl"]
-atlas = ExtResource("2_t38l2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_urmdb"]
+atlas = ExtResource("2_r7n71")
 region = Rect2(1536, 1536, 1536, 1536)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pxd1k"]
-atlas = ExtResource("2_t38l2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tbrl"]
+atlas = ExtResource("2_r7n71")
 region = Rect2(3072, 1536, 1536, 1536)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hheoq"]
-atlas = ExtResource("2_t38l2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxd1k"]
+atlas = ExtResource("2_r7n71")
 region = Rect2(0, 3072, 1536, 1536)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_obckx"]
-atlas = ExtResource("2_t38l2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hheoq"]
+atlas = ExtResource("2_r7n71")
 region = Rect2(1536, 3072, 1536, 1536)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sisbh"]
-atlas = ExtResource("2_t38l2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_obckx"]
+atlas = ExtResource("2_r7n71")
 region = Rect2(3072, 3072, 1536, 1536)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x8qp1"]
-atlas = ExtResource("2_t38l2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_sisbh"]
+atlas = ExtResource("2_r7n71")
 region = Rect2(0, 4608, 1536, 1536)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_26jh5"]
-atlas = ExtResource("2_t38l2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8qp1"]
+atlas = ExtResource("2_r7n71")
 region = Rect2(1536, 4608, 1536, 1536)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fjfyv"]
-atlas = ExtResource("2_t38l2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_26jh5"]
+atlas = ExtResource("2_r7n71")
 region = Rect2(3072, 4608, 1536, 1536)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ut17y"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fjfyv"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t38l2")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_42c4f")
 }, {
@@ -86,27 +89,27 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_26jh5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fjfyv")
 }],
 "loop": false,
-"name": &"default",
-"speed": 15.0
+"name": &"deploy",
+"speed": 16.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_whpak"]
-size = Vector2(208, 720)
+size = Vector2(208, 712)
 
 [node name="roadSpikes" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_r7n71")
 
 [node name="animatedSprite2d" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
 scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_ut17y")
-autoplay = "default"
+sprite_frames = SubResource("SpriteFrames_fjfyv")
+animation = &"deploy"
+autoplay = "deploy"
 frame = 11
 frame_progress = 1.0
 
@@ -118,9 +121,6 @@ position = Vector2(-24, 0)
 scale = Vector2(0.25, 0.25)
 shape = SubResource("RectangleShape2D_whpak")
 
-[node name="collisionShape2d" type="CollisionShape2D" parent="."]
-position = Vector2(-28, -8)
-scale = Vector2(0.25, 0.25)
-shape = SubResource("RectangleShape2D_whpak")
+[node name="camera2d" type="Camera2D" parent="."]
 
 [connection signal="body_entered" from="area2d" to="." method="_on_area_2d_body_entered"]

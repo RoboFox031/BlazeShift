@@ -267,8 +267,11 @@ func resetRaceVars():
 
 	canMove = false
 	canPause = false
-	winner
+	winner = null
 	canEdit
+	
+	pOneLastRacePlacement = null
+	pTwoLastRacePlacement=null
 	
 func gameReset():
 	musicType = 'royaltyMusic'
@@ -323,7 +326,7 @@ func gameReset():
 
 	canMove = false
 	canPause = false
-	winner
+	winner=''
 	canEdit
 	pOneOwned = []
 	pTwoOwned = []

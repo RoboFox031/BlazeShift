@@ -1,9 +1,10 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://shirjmw44fyk"]
 
-[ext_resource type="Texture2D" uid="uid://dwiyha8k28rle" path="res://Assets/Sprites/Tracks/update v3 192 racetrack.png" id="1_oomf8"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dbgbo"]
+load_path = "res://.godot/imported/update v3 192 racetrack.png-784d6db67d891034b3e0e1bd1cdc2bb7.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrn2o"]
-texture = ExtResource("1_oomf8")
+texture = SubResource("CompressedTexture2D_dbgbo")
 texture_region_size = Vector2i(50, 50)
 13:45/size_in_atlas = Vector2i(13, 13)
 13:45/0 = 0

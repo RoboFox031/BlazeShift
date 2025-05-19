@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dn7utn160k75c"]
 
-[ext_resource type="Script" uid="uid://6hsxt2722qam" path="res://scripts/ui/raceFinishScreen.gd" id="1_0f0jv"]
-[ext_resource type="Texture2D" uid="uid://dv7ryu32wteg3" path="res://assets/sprites/UI/finishLine.png" id="1_1q7vm"]
-[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://assets/fonts/college/collegec.ttf" id="2_nr2hj"]
-[ext_resource type="PackedScene" uid="uid://bnef5gny07opk" path="res://scenes/ui/confetti.tscn" id="4_qddsw"]
+[ext_resource type="Script" uid="uid://6hsxt2722qam" path="res://Scripts/UI/raceFinishScreen.gd" id="1_0f0jv"]
+[ext_resource type="Texture2D" uid="uid://dv7ryu32wteg3" path="res://Assets/Sprites/UI/finishLine.png" id="1_1q7vm"]
+[ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_nr2hj"]
+[ext_resource type="PackedScene" uid="uid://bnef5gny07opk" path="res://Scenes/UI/confetti.tscn" id="4_qddsw"]
 
 [node name="raceFinishScreen" type="Node2D"]
 script = ExtResource("1_0f0jv")

@@ -1,22 +1,22 @@
 [gd_scene load_steps=32 format=4 uid="uid://bianlysxo3bi6"]
 
-[ext_resource type="Script" uid="uid://bhvtu8dlnub0a" path="res://scripts/tracks/iceTrack.gd" id="1_ftibf"]
-[ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://assets/sprites/tracks/192 racetrack Divided.svg" id="1_vep5x"]
-[ext_resource type="Texture2D" uid="uid://bwb2oalo6c030" path="res://assets/sprites/tracks/spritesheet.png" id="2_rqd63"]
-[ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://assets/sprites/tracks/checkboard pattern.png" id="5_m4j1f"]
-[ext_resource type="TileSet" uid="uid://ydsf8xr6qvsm" path="res://scenes/tracks/trees.tres" id="6_5bqh8"]
-[ext_resource type="Texture2D" uid="uid://brf21x30oasly" path="res://assets/sprites/tracks/christmas-village-asset-pack/house2.png" id="6_aawjx"]
-[ext_resource type="Texture2D" uid="uid://dwiyha8k28rle" path="res://assets/sprites/tracks/update v3 192 racetrack.png" id="6_tqusy"]
-[ext_resource type="Texture2D" uid="uid://bn38co0sunc26" path="res://assets/sprites/tracks/christmas-village-asset-pack/house1.png" id="8_5bqh8"]
-[ext_resource type="Texture2D" uid="uid://bhlfx7crex7rk" path="res://assets/sprites/tracks/christmas-village-asset-pack/lamp-post.png" id="9_2idqy"]
-[ext_resource type="Texture2D" uid="uid://cueqx5qhr0r4f" path="res://assets/sprites/tracks/christmas-village-asset-pack/street-sign-post.png" id="10_ttsky"]
-[ext_resource type="Texture2D" uid="uid://clnb8ql3ya20e" path="res://assets/sprites/tracks/christmas-village-asset-pack/sign-post.png" id="11_naldj"]
-[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://scripts/tracks/checkpointPath.gd" id="12_naldj"]
-[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://scenes/cars/carSpawn.tscn" id="13_2idqy"]
-[ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://scenes/pickups/coins.tscn" id="13_5bqh8"]
-[ext_resource type="Script" uid="uid://dt7wyvnp8qj5e" path="res://Scripts/Tracks/terrain.gd" id="13_p3gkq"]
-[ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://scenes/pickups/powerupBox.tscn" id="14_2idqy"]
-[ext_resource type="Curve2D" uid="uid://d1i6h4ee6tufc" path="res://resources/iceTrackCurve.tres" id="16_p3gkq"]
+[ext_resource type="Script" uid="uid://bhvtu8dlnub0a" path="res://Scripts/Tracks/iceTrack.gd" id="1_ftibf"]
+[ext_resource type="Texture2D" uid="uid://csgqyta2qgjo8" path="res://Assets/Sprites/Tracks/192 racetrack Divided.svg" id="1_vep5x"]
+[ext_resource type="Texture2D" uid="uid://bwb2oalo6c030" path="res://Assets/Sprites/Tracks/spritesheet.png" id="2_rqd63"]
+[ext_resource type="Texture2D" uid="uid://dinjuixewbhxo" path="res://Assets/Sprites/Tracks/checkboard pattern.png" id="5_m4j1f"]
+[ext_resource type="TileSet" uid="uid://ydsf8xr6qvsm" path="res://Scenes/Tracks/trees.tres" id="6_5bqh8"]
+[ext_resource type="Texture2D" uid="uid://brf21x30oasly" path="res://Assets/Sprites/Tracks/christmas-village-asset-pack/house2.png" id="6_aawjx"]
+[ext_resource type="Texture2D" uid="uid://dwiyha8k28rle" path="res://Assets/Sprites/Tracks/update v3 192 racetrack.png" id="6_tqusy"]
+[ext_resource type="Texture2D" uid="uid://bn38co0sunc26" path="res://Assets/Sprites/Tracks/christmas-village-asset-pack/house1.png" id="8_5bqh8"]
+[ext_resource type="Texture2D" uid="uid://bhlfx7crex7rk" path="res://Assets/Sprites/Tracks/christmas-village-asset-pack/lamp-post.png" id="9_2idqy"]
+[ext_resource type="Texture2D" uid="uid://cueqx5qhr0r4f" path="res://Assets/Sprites/Tracks/christmas-village-asset-pack/street-sign-post.png" id="10_ttsky"]
+[ext_resource type="Texture2D" uid="uid://clnb8ql3ya20e" path="res://Assets/Sprites/Tracks/christmas-village-asset-pack/sign-post.png" id="11_naldj"]
+[ext_resource type="Script" uid="uid://c2yn3wll1ek5v" path="res://Scripts/Tracks/checkpointPath.gd" id="12_naldj"]
+[ext_resource type="PackedScene" uid="uid://bl7wwwkvflmp5" path="res://Scenes/Cars/carSpawn.tscn" id="13_2idqy"]
+[ext_resource type="PackedScene" uid="uid://cbqrhlbxu7ocb" path="res://Scenes/Pickups/coins.tscn" id="13_5bqh8"]
+[ext_resource type="Script" uid="uid://mh0y6i6gacvk" path="res://Scripts/Tracks/terrain.gd" id="13_p3gkq"]
+[ext_resource type="PackedScene" uid="uid://b8y2taotrov67" path="res://Scenes/Pickups/powerupBox.tscn" id="14_2idqy"]
+[ext_resource type="Curve2D" uid="uid://d1i6h4ee6tufc" path="res://Resources/iceTrackCurve.tres" id="16_p3gkq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o3ehg"]
 texture = ExtResource("2_rqd63")
@@ -5187,6 +5187,6 @@ position = Vector2(-1811, 1838)
 z_index = 10
 curve = ExtResource("16_p3gkq")
 script = ExtResource("12_naldj")
-checkpointLength = 420.0
+checkpointLength = 450.0
 run = true
 metadata/_custom_type_script = "uid://c2yn3wll1ek5v"

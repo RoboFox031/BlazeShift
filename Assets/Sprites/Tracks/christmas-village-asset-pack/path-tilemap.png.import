@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxpkneddk6yle"
-path="res://.godot/imported/path-tilemap.png-7ecc6c2408326409d0eea9d783b51edf.ctex"
+path="res://.godot/imported/path-tilemap.png-c4b1ee979530cfad6f63f0457f4d08e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/christmas-village-asset-pack/path-tilemap.png"
-dest_files=["res://.godot/imported/path-tilemap.png-7ecc6c2408326409d0eea9d783b51edf.ctex"]
+source_file="res://Assets/Sprites/Tracks/christmas-village-asset-pack/path-tilemap.png"
+dest_files=["res://.godot/imported/path-tilemap.png-c4b1ee979530cfad6f63f0457f4d08e0.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://5a002lngbp18"
-path="res://.godot/imported/spotifyAway.mp3-ddd04d367cdedf9de7d43018f4a374bc.mp3str"
+path="res://.godot/imported/spotifyAway.mp3-5cc2b533747969e03f67ad67829359d5.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/Music/Spotify/spotifyAway.mp3"
-dest_files=["res://.godot/imported/spotifyAway.mp3-ddd04d367cdedf9de7d43018f4a374bc.mp3str"]
+source_file="res://Assets/Sounds/Music/Spotify/spotifyAway.mp3"
+dest_files=["res://.godot/imported/spotifyAway.mp3-5cc2b533747969e03f67ad67829359d5.mp3str"]
 
 [params]
 

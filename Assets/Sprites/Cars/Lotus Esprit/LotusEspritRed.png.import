@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8qqn8gm58ipi"
-path="res://.godot/imported/LotusEspritRed.png-96e31e69d8abe694eab689fd5c16d036.ctex"
+path="res://.godot/imported/LotusEspritRed.png-a3ca49c237647890359a191c311318e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cars/Lotus Esprit/LotusEspritRed.png"
-dest_files=["res://.godot/imported/LotusEspritRed.png-96e31e69d8abe694eab689fd5c16d036.ctex"]
+source_file="res://Assets/Sprites/Cars/Lotus Esprit/LotusEspritRed.png"
+dest_files=["res://.godot/imported/LotusEspritRed.png-a3ca49c237647890359a191c311318e0.ctex"]
 
 [params]
 

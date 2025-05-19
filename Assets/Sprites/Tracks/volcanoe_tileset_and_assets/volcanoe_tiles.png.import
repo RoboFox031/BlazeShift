@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://diftod1f83vx"
-path="res://.godot/imported/volcanoe_tiles.png-25e0e1fb2f90bbdf4cbf8983db11a7ee.ctex"
+path="res://.godot/imported/volcanoe_tiles.png-5e4ca535db977be475198e163dd4edf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tracks/volcanoe_tileset_and_assets/volcanoe_tiles.png"
-dest_files=["res://.godot/imported/volcanoe_tiles.png-25e0e1fb2f90bbdf4cbf8983db11a7ee.ctex"]
+source_file="res://Assets/Sprites/Tracks/volcanoe_tileset_and_assets/volcanoe_tiles.png"
+dest_files=["res://.godot/imported/volcanoe_tiles.png-5e4ca535db977be475198e163dd4edf6.ctex"]
 
 [params]
 

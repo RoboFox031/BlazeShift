@@ -270,6 +270,10 @@ func resetRaceVars():
 	winner
 	canEdit
 	
+	pOneLastRacePlacement = null
+	pTwoLastRacePlacement = null
+
+	
 func gameReset():
 	musicType = 'royaltyMusic'
 	tracksCompleted = []

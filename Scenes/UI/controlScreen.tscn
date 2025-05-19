@@ -1,13 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqmsr24em1p25"]
+[gd_scene load_steps=5 format=3 uid="uid://bqmsr24em1p25"]
 
 [ext_resource type="Script" uid="uid://d1ba8s4g5x8vb" path="res://Scenes/UI/controlScreen.gd" id="1_012t4"]
 [ext_resource type="Texture2D" uid="uid://c1gax1lttiuyu" path="res://Assets/Sprites/UI/titleScreenBackground.png" id="1_wcmai"]
 [ext_resource type="FontFile" uid="uid://du1ji46cwnufr" path="res://Assets/Fonts/college/collegec.ttf" id="2_pxxje"]
-[ext_resource type="Texture2D" uid="uid://n8vqlo2tsphf" path="res://Assets/Sprites/UI/joystick.webp" id="3_kpeef"]
-[ext_resource type="Texture2D" uid="uid://bp61rkwsiqklk" path="res://Assets/Sprites/UI/greenButton.webp" id="4_0qgd0"]
-[ext_resource type="Texture2D" uid="uid://d0wppub1q1yg5" path="res://Assets/Sprites/UI/blueButton.webp" id="4_admpf"]
-[ext_resource type="Texture2D" uid="uid://bxrpy5roh7rtr" path="res://Assets/Sprites/UI/yellowButton.webp" id="6_012t4"]
-[ext_resource type="Texture2D" uid="uid://b6ysf4jon43m5" path="res://Assets/Sprites/UI/redButton.webp" id="7_alxfv"]
+[ext_resource type="FontFile" uid="uid://cp00yo2qtoc7r" path="res://Assets/Fonts/college/college.ttf" id="4_admpf"]
 
 [node name="controlScreen" type="Node2D"]
 script = ExtResource("1_012t4")
@@ -46,248 +42,40 @@ text = "press b to go back"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="joystick" type="Sprite2D" parent="."]
-position = Vector2(516, 566)
-texture = ExtResource("3_kpeef")
-
-[node name="b" type="Sprite2D" parent="."]
-position = Vector2(699, 523)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_0qgd0")
-
-[node name="label" type="Label" parent="b"]
-z_index = 4
-offset_left = -230.0
-offset_top = -500.0
-offset_right = 209.0
-offset_bottom = 501.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_pxxje")
-theme_override_font_sizes/font_size = 700
-text = "B"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="a" type="Sprite2D" parent="."]
-position = Vector2(699, 674)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_admpf")
-
-[node name="label" type="Label" parent="a"]
-z_index = 4
-offset_left = -230.0
-offset_top = -500.0
-offset_right = 209.0
-offset_bottom = 501.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_pxxje")
-theme_override_font_sizes/font_size = 700
-text = "a"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="l1" type="Sprite2D" parent="."]
-position = Vector2(827, 451)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_012t4")
-
-[node name="label" type="Label" parent="l1"]
-z_index = 4
-offset_left = -230.0
-offset_top = -500.0
-offset_right = 209.0
-offset_bottom = 501.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_pxxje")
-theme_override_font_sizes/font_size = 700
-text = "l1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="l2" type="Sprite2D" parent="."]
-position = Vector2(827, 610)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_012t4")
-
-[node name="r1" type="Sprite2D" parent="."]
-modulate = Color(100, 100, 100, 1)
-position = Vector2(990, 451)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_012t4")
-
-[node name="label" type="Label" parent="r1"]
-z_index = 4
-offset_left = -230.0
-offset_top = -500.0
-offset_right = 209.0
-offset_bottom = 501.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_pxxje")
-theme_override_font_sizes/font_size = 700
-text = "r1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="r2" type="Sprite2D" parent="."]
-modulate = Color(100, 100, 100, 1)
-position = Vector2(990, 610)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_012t4")
-
-[node name="x" type="Sprite2D" parent="."]
-position = Vector2(1118, 528)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("7_alxfv")
-
-[node name="label" type="Label" parent="x"]
-z_index = 4
-offset_left = -230.0
-offset_top = -500.0
-offset_right = 209.0
-offset_bottom = 501.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_pxxje")
-theme_override_font_sizes/font_size = 700
-text = "x"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="start" type="Sprite2D" parent="."]
-modulate = Color(0.313726, 0.262745, 0.207843, 1)
-position = Vector2(1222, 410)
-scale = Vector2(0.065, 0.065)
-texture = ExtResource("7_alxfv")
-
-[node name="label2" type="Label" parent="."]
-offset_left = 1218.0
-offset_top = 369.0
-offset_right = 1762.0
-offset_bottom = 466.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_pxxje")
+[node name="p1Controls" type="Label" parent="."]
+offset_left = 392.0
+offset_top = 296.0
+offset_right = 767.0
+offset_bottom = 783.0
+theme_override_fonts/font = ExtResource("4_admpf")
 theme_override_font_sizes/font_size = 40
-text = "pause/ready/select"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "Player 1:
+W - Up/Accelerate
+D - Right
+S - Down/Decelerate
+A - Left
+E - Use PowerUp
+X - Drift
+C - Boost
+Q - Player 1 Start
+R - select
+F - go back"
 
-[node name="line2d" type="Line2D" parent="label2"]
-position = Vector2(-144, -33)
-points = PackedVector2Array(262, 78, 192, 78)
-
-[node name="label3" type="Label" parent="."]
-offset_left = 1037.0
-offset_top = 484.0
-offset_right = 1581.0
-offset_bottom = 581.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_pxxje")
+[node name="p2Controls" type="Label" parent="."]
+offset_left = 1216.0
+offset_top = 296.0
+offset_right = 1596.0
+offset_bottom = 786.0
+theme_override_fonts/font = ExtResource("4_admpf")
 theme_override_font_sizes/font_size = 40
-text = "boost"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="line2d" type="Line2D" parent="label3"]
-position = Vector2(-43, -33)
-points = PackedVector2Array(262, 78, 197, 78)
-
-[node name="label4" type="Label" parent="."]
-offset_left = 725.0
-offset_top = 243.0
-offset_right = 1269.0
-offset_bottom = 340.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_pxxje")
-theme_override_font_sizes/font_size = 40
-text = "use power up"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="line2d" type="Line2D" parent="label4"]
-position = Vector2(341, -113)
-rotation = 1.5708
-points = PackedVector2Array(262, 78, 197, 78)
-
-[node name="label5" type="Label" parent="."]
-offset_left = 558.0
-offset_top = 241.0
-offset_right = 1102.0
-offset_bottom = 338.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_pxxje")
-theme_override_font_sizes/font_size = 40
-text = "drift"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="line2d" type="Line2D" parent="label5"]
-position = Vector2(346, -113)
-rotation = 1.5708
-points = PackedVector2Array(262, 78, 197, 78)
-
-[node name="label6" type="Label" parent="."]
-offset_left = 431.0
-offset_top = 309.0
-offset_right = 975.0
-offset_bottom = 406.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_pxxje")
-theme_override_font_sizes/font_size = 40
-text = "brake/reverse"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="line2d" type="Line2D" parent="label6"]
-position = Vector2(346, -113)
-rotation = 1.5708
-points = PackedVector2Array(262, 78, 197, 78)
-
-[node name="label8" type="Label" parent="."]
-offset_left = 431.0
-offset_top = 309.0
-offset_right = 975.0
-offset_bottom = 406.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_pxxje")
-theme_override_font_sizes/font_size = 40
-text = "brake/reverse"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="line2d" type="Line2D" parent="label8"]
-position = Vector2(346, -113)
-rotation = 1.5708
-points = PackedVector2Array(262, 78, 197, 78)
-
-[node name="label7" type="Label" parent="."]
-offset_left = 431.0
-offset_top = 780.0
-offset_right = 975.0
-offset_bottom = 877.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_pxxje")
-theme_override_font_sizes/font_size = 40
-text = "accelerate"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="line2d" type="Line2D" parent="label7"]
-position = Vector2(346, -244)
-rotation = 1.5708
-points = PackedVector2Array(262, 78, 197, 78)
-
-[node name="label9" type="Label" parent="."]
-offset_left = 243.0
-offset_top = 727.0
-offset_right = 787.0
-offset_bottom = 824.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_pxxje")
-theme_override_font_sizes/font_size = 40
-text = "turning/menu selection"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="line2d" type="Line2D" parent="label9"]
-position = Vector2(346, -244)
-rotation = 1.5708
-points = PackedVector2Array(262, 78, 197, 78)
+text = "Player 2:
+I - Up/Accelerate
+L - Right
+K - Down/Decelerate
+J - Left
+O - Use PowerUp
+. - Drift
+/ - Boost
+U - Player 2 Start
+P - select
+;- go back"

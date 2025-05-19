@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d141ibd8at8su"]
+[gd_scene load_steps=20 format=3 uid="uid://d141ibd8at8su"]
 
 [ext_resource type="Script" uid="uid://d8e2euh8mfri" path="res://Scripts/Pickups/road_spikes.gd" id="1_r7n71"]
 [ext_resource type="Texture2D" uid="uid://b7pu883n8gtrf" path="res://Assets/Sprites/Poweups/spikeStripAnimation.png" id="2_r7n71"]
@@ -98,6 +98,57 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_whpak"]
 size = Vector2(208, 712)
 
+[sub_resource type="Animation" id="Animation_r7n71"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("area2d/collisionShape2d:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(208, 712)]
+}
+
+[sub_resource type="Animation" id="Animation_t38l2"]
+resource_name = "deploySpikes"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("area2d/collisionShape2d:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00192394, 0.375, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(128, 136), Vector2(128, 536), Vector2(208, 712)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animatedSprite2d")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"deploy", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_42c4f"]
+_data = {
+&"RESET": SubResource("Animation_r7n71"),
+&"deploySpikes": SubResource("Animation_t38l2")
+}
+
 [node name="roadSpikes" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 0
@@ -109,7 +160,6 @@ position = Vector2(0, -1)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_fjfyv")
 animation = &"deploy"
-autoplay = "deploy"
 frame = 11
 frame_progress = 1.0
 
@@ -122,5 +172,11 @@ scale = Vector2(0.25, 0.25)
 shape = SubResource("RectangleShape2D_whpak")
 
 [node name="camera2d" type="Camera2D" parent="."]
+
+[node name="animationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_42c4f")
+}
+autoplay = "deploySpikes"
 
 [connection signal="body_entered" from="area2d" to="." method="_on_area_2d_body_entered"]

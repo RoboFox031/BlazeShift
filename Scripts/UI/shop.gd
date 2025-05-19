@@ -166,6 +166,10 @@ var cars := {
 
 
 func _ready() -> void:
+	if globalVars.pOneName == 'sun':
+		globalVars.musicType == "spotifyMusic"
+	if globalVars.pTwoName == 'sun':
+		globalVars.musicType == "spotifyMusic"
 	pOneColors = [pOneWhite, pOneBlack, pOneRed, pOneOrange, pOneYellow, pOneGreen, pOneBlue, pOnePurple]
 	pTwoColors = [pTwoWhite, pTwoBlack, pTwoRed, pTwoOrange, pTwoYellow, pTwoGreen, pTwoBlue, pTwoPurple]
 	for car in $pOneCars.get_children():

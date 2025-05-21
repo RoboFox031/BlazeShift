@@ -616,9 +616,10 @@ func nextLap():
 			if globalVars.pTwoLastRacePlacement == null:
 				globalVars.pOneLastRacePlacement = '1st'
 				playerWin(globalVars.pOneName)
+				print("p1 first")
 			elif globalVars.pTwoLastRacePlacement == '1st':
 				globalVars.pOneLastRacePlacement = '2nd'
-				print('p1 2nd')
+				print('p1 second')
 		elif currentOwnerStr == 'p2':
 			globalVars.pTwoDone = true
 			if globalVars.pOneLastRacePlacement == null:
@@ -673,7 +674,8 @@ func finishRace():
 		globalVars.saveScores(trackName,globalVars.pOneName,globalVars.pOneLastRaceTime)
 	if currentOwnerStr == 'p2':
 		globalVars.saveScores(trackName,globalVars.pTwoName,globalVars.pTwoLastRaceTime)
-	get_tree().change_scene_to_file("res://Scenes/UI/raceFinishScreen.tscn")
+	get_tree().call_deferred("change_scene_to_file","res://Scenes/UI/raceFinishScreen.tscn")
+	#get_tree().change_scene_to_file("res://Scenes/UI/raceFinishScreen.tscn")
 	print("ur done!")
 #Sets the stats of the car based on the resource and upgrades
 func applyStats():

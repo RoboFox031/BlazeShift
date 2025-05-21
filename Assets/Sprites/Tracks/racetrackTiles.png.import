@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7pu883n8gtrf"
-path="res://.godot/imported/Spike Strip (1).png-8a74a1b9e2f6306fc0255015df36c8f7.ctex"
+uid="uid://dwiyha8k28rle"
+path="res://.godot/imported/racetrackTiles.png-26ac3dc327924b84f7bf45169ddaa8dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Poweups/Spike Strip (1).png"
-dest_files=["res://.godot/imported/Spike Strip (1).png-8a74a1b9e2f6306fc0255015df36c8f7.ctex"]
+source_file="res://Assets/Sprites/Tracks/racetrackTiles.png"
+dest_files=["res://.godot/imported/racetrackTiles.png-26ac3dc327924b84f7bf45169ddaa8dc.ctex"]
 
 [params]
 

@@ -147,7 +147,7 @@ signal stopReversing
 var localCanMove:bool=true
 
 #Controls how fast blaze is used
-var blazeBurnSpeed=35
+var blazeBurnSpeed=36
 
 func _ready() -> void:
 	#for testing upgrades
@@ -421,12 +421,12 @@ func resetMovement():
 func startBoost():
 	if currentOwner==playerChoices.p1 and globalVars.p1BlazeCurrent>0:
 		currentAcceleration=baseAcceleration*3
-		currentTopSpeed=baseTopSpeed*1.6
+		currentTopSpeed=baseTopSpeed*1.45
 		currentTurnPower=baseTurnPower*.8
 		boosting=true
 	elif currentOwner==playerChoices.p2 and globalVars.p2BlazeCurrent>0:
 		currentAcceleration=baseAcceleration*3
-		currentTopSpeed=baseTopSpeed*1.6
+		currentTopSpeed=baseTopSpeed*1.45
 		currentTurnPower=baseTurnPower*.8
 		boosting=true
 
